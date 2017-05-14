@@ -8,8 +8,7 @@
 #include "include.h"
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
+void test1(){
     std::cout << "Hello, World!\n";
 
     Article a1("a1","articletitle1","text1");
@@ -34,5 +33,26 @@ int main(int argc, const char * argv[]) {
     std::cout<<r2;
 
     std::cout<<std::endl;
+}
+
+int test2(int argc, char *argv[])
+{
+    // UTF-8 Encoding
+    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
+
+    QApplication app(argc, argv);
+    interface Fenprincipale;
+    Fenprincipale.showMaximized();
+
+
+    return app.exec();
+
+}
+
+int main(int argc, const char * argv[]) {
+	//test1();
+	test2(argc,argv);
     return 0;
 }
