@@ -82,7 +82,7 @@ public:
     const QTextDocument& getText() const {return text;}
     void setText(const QString& t){text.setPlainText(t);}
 
-    Article(const QString& i, const QString& ti, const QString te);
+    Article(const QString& i, const QString& ti, const QString& te);
 
     //PRIVATE ?
     Article(const Article& a); //constructeur de recopie private pour le handler

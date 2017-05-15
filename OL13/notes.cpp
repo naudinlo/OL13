@@ -89,7 +89,7 @@ Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(fals
 }
 
 
-Article::Article(const QString& i, const QString& ti, const QString te):Note(i,ti), text(te){}
+Article::Article(const QString& i, const QString& ti, const QString &te):Note(i,ti), text(te){}
 
 
 Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s):Note(i, ti), action(a), status(s){};  //Premier type de constructeur : les deux optionels oubliés
