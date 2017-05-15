@@ -2,7 +2,6 @@
 
 interface::interface(): QMainWindow(), fen_creerNote(this)
 {
-    listNote=new selection_note();
     QWidget *ZoneCentrale = new QWidget(this);
     MenuFichier =menuBar()->addMenu("&fichier");
     MenuEd =menuBar()->addMenu("&Edition");
@@ -54,17 +53,28 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
 }
 
 void interface::CreateDock_selected_Note(){
-    QDockWidget* dock=new QDockWidget("Selectionner Une Note",this);
-    dock->setAllowedAreas(Qt::LeftDockWidgetArea );
-    dock->setWidget(listNote);
-    addDockWidget(Qt::LeftDockWidgetArea, dock);
-    MenuAff->addAction(dock->toggleViewAction());
+    listNote=new selection_note();
+    dock_selected_Note=new QDockWidget("Selectionner Une Note",this);
+    dock_selected_Note->setAllowedAreas(Qt::LeftDockWidgetArea );
+    dock_selected_Note->setWidget(listNote);
+    addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
+    MenuAff->addAction(dock_selected_Note->toggleViewAction());
 }
+void interface::Destruct_selected_Note(){
+    delete listNote;
+    MenuAff->removeAction(dock_selected_Note->toggleViewAction());
+    delete dock_selected_Note;
+}
+
 void interface::OuvrirFichier(){
     QString fichier = QFileDialog::getOpenFileName(this,"Ouvrir un fichier",QString());
     if(fichier != 0)
-            QMessageBox::information(this,"Fichier","vous avez sélèctionnée:"+fichier);
-
+    {
+        QMessageBox::information(this,"Fichier","vous avez sélèctionnée:"+fichier);
+        Destruct_selected_Note();
+        QMessageBox::information(this,"Fichier","vous avez sélèctionnée:"+fichier);
+        CreateDock_selected_Note(); //prendre en compte le changement de vue
+    }
 }
 
 void interface::CreerNote(){
@@ -74,9 +84,14 @@ void interface::CreerNote(){
 
 selection_note::selection_note():QWidget(){
     layout= new QVBoxLayout(this);
-    model=new QDirModel;
+    model= new QStandardItemModel;
+    QStandardItem *item = new QStandardItem("article bidule");
+    model->appendRow(item);
+    item->appendRow(new QStandardItem("1 version"));
     vue=new QTreeView(this);
     vue->setModel(model);
+    vue->header()->hide();
+    vue->setDisabled(false);
     layout->addWidget(vue);
     setLayout(layout);
 }

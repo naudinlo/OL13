@@ -15,10 +15,12 @@ class interface:public QMainWindow
     QMenu *MenuEd;
     QMenu *MenuAff;
     QMenu *fichiersRecents;
+    QDockWidget* dock_selected_Note;
 
 public:
     interface();
-    void CreateDock_selected_Note();
+    void CreateDock_selected_Note();//doit prendre un fichier est chargé la liste
+    void Destruct_selected_Note();
 public slots:
    void OuvrirFichier();
    void CreerNote();
@@ -28,11 +30,13 @@ public slots:
 
 class selection_note: public QWidget{
     QVBoxLayout* layout;
-    QDirModel* model;
+    QStandardItemModel* model;
     QTreeView* vue;
 
 public:
     selection_note();
+public slots:
+
 };
 
 
