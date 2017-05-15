@@ -14,6 +14,7 @@
 void test1(){
     std::cout << "Hello, World!\n";
 
+
     Article a1("a1","articletitle1","text1");
     std::cout<<a1;
 
