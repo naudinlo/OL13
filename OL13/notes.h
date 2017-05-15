@@ -65,7 +65,7 @@ public:
     //PRIVATE ?
     Note(const Note& n); //constructeur de recopie private pour le handler
     Note& operator=(const Note& n);   //operateur d'affectation private pour le handler
-    //~Note();
+    virtual ~Note(){}
 
     virtual std::string toString() const=0;
     void display(std::ostream& f=std::cout) const{
