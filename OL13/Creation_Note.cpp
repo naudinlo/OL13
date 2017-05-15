@@ -1,5 +1,4 @@
 #include "Creation_Note.h"
-#include "QTextDocument"
 Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null(false), E_note_not_null(true){
     this->setWindowTitle("Nouvelle Note");
 
@@ -32,7 +31,7 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
     Creer->setEnabled(false);
     quitter=new(QPushButton) ("Quitter", this);
     QObject::connect(quitter,SIGNAL(clicked(bool)),this,SLOT(close()));
-    QObject::connect(Creer,SIGNAL(clicked(bool)),this,SLOT(Creer_fen()));
+    QObject::connect(Creer,SIGNAL(clicked(bool)),this,SLOT(Creer_Note()));
 
     B_defNote=new(QGroupBox)("Note:",this);
     B_defNote->setLayout(L_defClass);
@@ -102,20 +101,14 @@ void Creation_Note::select_type(int type){
     L_type->addWidget(note,0,0);
 }
 
-Note* Creation_Note::Creer_Note(){
+void Creation_Note::Creer_Note(){
     //gérer l'id
-    int id=0;
-    return note->get_note(id,E_title->text());
+    QString id("xxx");
+    Note* essai=note->get_note(id,E_title->text());
+
+    QMessageBox::information(this,E_title->text(),QString::fromStdString(essai->toString()));
 }
 
-void Creation_Note::Creer_fen(){
-    QMessageBox::information(this,"fenSecondaire","On va essayer de Creer le code");
-
-    Fensecondaire code(this->Creer_Note(),this);
-    code.show();
-    code.exec();
-
-}
 
 
 QArticle::QArticle(): QNote(){
@@ -214,16 +207,21 @@ void QTask::check_creer(){
 
     }
 
-Note *QArticle::get_note(QString title){
-   //return new article(id,title,E_text->document());
+Note *QArticle::get_note(QString id,QString title){
+   return new Article(id,title,E_text->document()->toPlainText());
 }
 
-Note *QTask::get_note(QString title){
+Note *QTask::get_note(QString id, QString title){
+    ENUM::StatusType etat=static_cast<ENUM::StatusType>(E_status->currentIndex());
     if(optional->isChecked())
-        //return new Task(id,title,E_action->text(),E_status->currentText(),E_priority->value(),E_duedate->date());
-    //return new Task(id,title,E_action->text(),E_status->currentText());
+    {
+        QMessageBox::warning(this,"pas encore fait","gérer la date");
+        //return new Task(id,title,E_action->text(),etat,E_priority->value(),E_duedate->date());
+    }
+    return new Task(id,title,E_action->text(),etat);
 }
 
-Note *QRecording::get_note(QString title){
-    //return new Recording(id,title,E_description->document(),E_type->currentText(),E_link->text());
+Note *QRecording::get_note(QString id, QString title){
+    ENUM::RecordingType t=static_cast<ENUM::RecordingType>(E_type->currentIndex());
+    return new Recording(id,title,E_description->document()->toPlainText(),t,E_link->text());
 }

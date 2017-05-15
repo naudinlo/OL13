@@ -1,7 +1,9 @@
 #ifndef Creation_Note_H
 #define Creation_Note_H
-#include "include.h"
 
+//#include "include.h"
+#include "QInclude.h"
+#include "notes.h"
 class QNote;
 
 class Creation_Note: public QDialog
@@ -47,7 +49,7 @@ signals:
     void change_Creer();
 
  public slots:
-    Note* Creer_Note();
+    void Creer_Note();
     void select_type(int type);
     void activer_E_title_not_null(){
         E_title_not_null=!E_title->text().isEmpty();
@@ -66,8 +68,8 @@ class QNote:public QWidget{
     Q_OBJECT
 protected:
     QGridLayout* grid;
-    Note* get_note(QString title)=0;
 public:
+    virtual Note* get_note(QString id,QString title)=0;
     QNote():QWidget(){}
 public slots:
     virtual void check_creer()=0;
@@ -80,7 +82,7 @@ class QArticle: public QNote{
     QLabel* text;
     QTextEdit* E_text;
     QGridLayout* grid;
-    Note* get_note(QString title);
+    Note* get_note(QString id, QString title);
 public:
     QArticle();
 public slots:
@@ -105,7 +107,7 @@ class QTask: public QNote{
     QLabel* status;
     QComboBox* E_status;
     QGridLayout* grid;
-    Note* get_note(QString title);
+    Note* get_note(QString id, QString title);
 public:
     QTask();
 signals:
@@ -123,7 +125,7 @@ class QRecording: public QNote{
     QLineEdit* E_link;
     QPushButton* link;
     QGridLayout* grid;
-    Note *get_note(QString title);
+    Note* get_note(QString id, QString title);
 public:
     QRecording();
 public slots:

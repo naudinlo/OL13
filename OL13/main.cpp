@@ -5,9 +5,12 @@
 //  Created by Louise Naudin on 11/05/2017.
 //  Copyright © 2017 LNA. All rights reserved.
 //
-#include "include.h"
-#include <iostream>
 
+#include "QInclude.h"
+//#include "include.h"
+#include "notes.h"
+#include "interface.h"
+/*
 void test1(){
     std::cout << "Hello, World!\n";
 
@@ -34,8 +37,8 @@ void test1(){
 
     std::cout<<std::endl;
 }
-
-int test2(int argc, char *argv[])
+*/
+int test2(int argc,char *argv[])
 {
     // UTF-8 Encoding
     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
@@ -51,8 +54,8 @@ int test2(int argc, char *argv[])
 
 }
 
-int main(int argc, const char * argv[]) {
+int main(int argc, char * argv[]) {
 	//test1();
-	test2(argc,argv);
+    test2(argc,argv);
     return 0;
 }

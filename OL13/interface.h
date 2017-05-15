@@ -1,7 +1,8 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
-#include "include.h"
-
+//#include "include.h"
+//#include "QInclude.h"
+#include "Creation_Note.h"
 class interface:public QMainWindow
 {
     Q_OBJECT

@@ -9,7 +9,8 @@
 #include "notes.h"
 #include "timing.h"
 #include "function.h"
-#include "include.h"
+#include "sstream"
+//#include "include.h"
 
 
 
@@ -34,13 +35,13 @@ Note& Note::operator=(const Note& n){
 
 
 //Surcharge la méthode constructeur dans le cas nouvel article Article B(A);
-Article::Article(const Article& a):Note(a), text(a.text){};
+Article::Article(const Article& a):Note(a), text(a.text.toPlainText()){};
 
 //Surcharge de l'opérateur = dans le cas nouvel article Article B=A;
 Article& Article::operator=(const Article& a){
     if (this!=&a){  //empecher l'auto-affectation
         Note::operator=(a);
-        text=a.text;
+        text.setPlainText(a.text.toPlainText());
     }
     return *this;
 };
@@ -62,13 +63,13 @@ Task& Task::operator=(const Task& t){
 };
 
 //Surcharge la méthode constructeur dans le cas nouveau recording B(A);
-Recording::Recording(const Recording& r):Note(r),type(r.type),description(r.description){};
+Recording::Recording(const Recording& r):Note(r),type(r.type),description(r.description.toPlainText()){};
 
 //Surcharge de l'opérateur = dans le cas nouveau recording B=A;
 Recording& Recording::operator=(const Recording& r){
     if (this!=&r){  //empecher l'auto-affectation
         Recording::operator=(r);
-        description=r.description;
+        description.setPlainText(r.description.toPlainText());
         type=r.type;
     }
     return *this;
@@ -77,7 +78,7 @@ Recording& Recording::operator=(const Recording& r){
 
 //====CONSTRUCTEUR
 
-Note::Note(const std::string& i, const std::string& ti):id(i), title(ti), isArchive(false), isDeleted(false){
+Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false){
 //    time_t theTime = time(NULL);
 //    struct tm *aTime = localtime(&theTime);
 //    TIME::Date t0(aTime->tm_mday,aTime->tm_mon + 1,aTime->tm_year + 1900);
@@ -88,41 +89,41 @@ Note::Note(const std::string& i, const std::string& ti):id(i), title(ti), isArch
 }
 
 
-Article::Article(const std::string& i, const std::string& ti, const std::string& te):Note(i,ti), text(te){}
+Article::Article(const QString& i, const QString& ti, const QString te):Note(i,ti), text(te){}
 
 
-Task::Task(const std::string& i, const std::string& ti, const std::string& a, ENUM::StatusType s):Note(i, ti), action(a), status(s){};  //Premier type de constructeur : les deux optionels oubliés
-Task::Task(const std::string& i, const std::string& ti, const std::string& a, ENUM::StatusType s, unsigned int p):Note(i, ti), action(a), priority(p), status(s){}; //Deuxième type de constructeur : priorité ajoutée
-Task::Task(const std::string& i, const std::string& ti, const std::string& a, ENUM::StatusType s, const TIME::Date d):Note(i, ti), action(a), dueDate(d), status(s){};  //Troisième type : dueDate ajoutée
-Task::Task(const std::string& i, const std::string& ti, const std::string& a, ENUM::StatusType s, unsigned int p, const TIME::Date d):Note(i, ti), action(a), priority(p), dueDate(d), status(s){} //Quatrième type : prio et dueDate ajoutés
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s):Note(i, ti), action(a), status(s){};  //Premier type de constructeur : les deux optionels oubliés
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p):Note(i, ti), action(a), priority(p), status(s){}; //Deuxième type de constructeur : priorité ajoutée
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const TIME::Date d):Note(i, ti), action(a), dueDate(d), status(s){};  //Troisième type : dueDate ajoutée
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const TIME::Date d):Note(i, ti), action(a), priority(p), dueDate(d), status(s){} //Quatrième type : prio et dueDate ajoutés
 
-Recording::Recording(const std::string& i, const std::string& ti, const std::string& d, ENUM::RecordingType r):Note(i, ti), description(d), type(r){};
+Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l):Note(i, ti), description(d), type(r), link(l){};
 
 
 
 //====METHODE ET SURCHARGE
 
 //toString pour display Article
-std::string Article::toString() const {
+std::__cxx11::string Article::toString()const {
     std::stringstream f;
-    f<<"\n=== ARTICLE "<<getId()<<" ===\n";
-    f<<"ID : "<<getId() <<" - Title : "<<getTitle()<<" - Text : "<<text<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\n";
+    f<<"\n=== ARTICLE "<<getId().toStdString()<<" ===\n";
+    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Text : "<<text.toPlainText().toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\n";
     return f.str();
 }
 
 //toString pour display Task
-std::string Task::toString() const {
+std::__cxx11::string Task::toString() const {
     std::stringstream f;
-    f<<"\n=== TASK "<<getId()<<" ===\n";
-    f<<"ID : "<<getId() <<" - Title : "<<getTitle()<<" - Action : "<<action<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\nPriority :"<<priority<<" - Status : "<<status<<" - dueDate : "<<dueDate<<"\n";
+    f<<"\n=== TASK "<<getId().toStdString()<<" ===\n";
+    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Action : "<<action.toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\nPriority :"<<priority<<" - Status : "<<status<<" - dueDate : "<<dueDate<<"\n";
     return f.str();
 }
 
 //toString pour display Recording
-std::string Recording::toString() const {
+std::__cxx11::string Recording::toString() const {
     std::stringstream f;
-    f<<"\n=== RECORDING "<<getId()<<" ===\n";
-    f<<"ID : "<<getId() <<" - Title : "<<getTitle()<<" - Description : "<<description<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\nType :"<<type<<"\n";
+    f<<"\n=== RECORDING "<<getId().toStdString()<<" ===\n";
+    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Description : "<<description.toPlainText().toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\nType :"<<type<<"\n";
     return f.str();
 }
 

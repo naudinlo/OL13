@@ -8,9 +8,10 @@
 
 #ifndef notes_h
 #define notes_h
-
+#include <QString>
+#include <QTextDocument>
 #include "timing.h"
-#include "include.h"
+//#include "include.h"
 
 class NotesException;
 class Article;
@@ -27,10 +28,10 @@ namespace ENUM
 
 class NotesException{
 public:
-    NotesException(const std::string& message):info(message){}
-    std::string getinfo() const {return info;}
+    NotesException(const QString& message):info(message){}
+    QString getinfo() const {return info;}
 private:
-    std::string info;
+    QString info;
 /* POUR QT
  public:
  NotesException(const QString& message):info(message){}
@@ -42,24 +43,24 @@ private:
 
 class Note{
 private:
-    const std::string id;
-    std::string title;
+    const QString id;
+    QString title;
     TIME::Date creation_date;
     TIME::Date lastmodif_date;
     bool isArchive; //Si jamais on l'archive alors elle devient const
     bool isDeleted; //Si jamais on la met dans la corbeille
 
 public:
-    const std::string getId() const {return id;}
-    const std::string getTitle() const {return title;}
+    const QString getId() const {return id;}
+    const QString getTitle() const {return title;}
     const TIME::Date getCreation_date() const {return creation_date;}
     const TIME::Date getLastmodif_date() const {return lastmodif_date;}
     bool getIsArchive() const {return isArchive;}
     bool getIsDeleted() const {return isDeleted;}
 
-    Note(const std::string& i, const std::string& ti);
+    Note(const QString& i, const QString& ti);
 
-    void setTitle(const std::string& t){title=t;}
+    void setTitle(const QString& t){title=t;}
     void setLastmodif_date(const TIME::Date& d){lastmodif_date=d;}
 
     //PRIVATE ?
@@ -76,12 +77,12 @@ public:
 
 class Article : public Note{
 private:
-    std::string text;
+    QTextDocument text;
 public:
-    const std::string getText() const {return text;}
-    void setText(const std::string& t){text=t;}
+    const QTextDocument& getText() const {return text;}
+    void setText(const QString& t){text.setPlainText(t);}
 
-    Article(const std::string& i, const std::string& ti, const std::string& te);
+    Article(const QString& i, const QString& ti, const QString te);
 
     //PRIVATE ?
     Article(const Article& a); //constructeur de recopie private pour le handler
@@ -94,13 +95,13 @@ public:
 
 class Task : public Note{
 private:
-    std::string action;
+    QString action;
     ENUM::StatusType status;
     unsigned int priority;
     TIME::Date dueDate;
 public:
-    const std::string getAction() const {return action;}
-    void setAction(const std::string& a) {action=a;}
+    const QString getAction() const {return action;}
+    void setAction(const QString& a) {action=a;}
     const ENUM::StatusType getStatus() const {return status;}
     void setStatus(const ENUM::StatusType& s) {status=s;}
     int getPriority() const {return priority;}
@@ -108,10 +109,10 @@ public:
     const TIME::Date getDueDate() const{return dueDate;}
     void setDueDate(const TIME::Date d){dueDate=d;}
 
-    Task(const std::string& i, const std::string& ti, const std::string& a, ENUM::StatusType s);  //Premier type de constructeur : les deux optionels oubliés
-    Task(const std::string& i, const std::string& ti, const std::string& a, ENUM::StatusType s, unsigned int p); //Deuxième type de constructeur : priorité ajoutée
-    Task(const std::string& i, const std::string& ti, const std::string& a, ENUM::StatusType s, const TIME::Date d);  //Troisième type : dueDate ajoutée
-    Task(const std::string& i, const std::string& ti, const std::string& a, ENUM::StatusType s, unsigned int p, const TIME::Date d);    //Quatrième type : priorité et dueDate ajoutés
+    Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s);  //Premier type de constructeur : les deux optionels oubliés
+    Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p); //Deuxième type de constructeur : priorité ajoutée
+    Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const TIME::Date d);  //Troisième type : dueDate ajoutée
+    Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const TIME::Date d);    //Quatrième type : priorité et dueDate ajoutés
 
     //PRIVATE ?
     Task(const Task& t); //constructeur de recopie private pour le handler
@@ -124,16 +125,17 @@ public:
 
 class Recording : public Note{
 private:
-    std::string description;
+    QTextDocument description;
     ENUM::RecordingType type;
+    QString link;
     //Fichier image a ajouter
 public:
-    const std::string getDescription() const {return description;}
-    void setDescription(const std::string& d) {description=d;}
+    const QTextDocument& getDescription() const {return description;}
+    void setDescription(const QString& d) {description.setPlainText(d);}
     const ENUM::RecordingType getType() const {return type;}
     void setType(const ENUM::RecordingType& r) {type=r;}
 
-    Recording(const std::string& i, const std::string& ti, const std::string& d, ENUM::RecordingType r);
+    Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l);
 
     //PRIVATE ?
     Recording(const Recording& r); //constructeur de recopie private pour le handler
