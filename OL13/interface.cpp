@@ -2,11 +2,12 @@
 
 interface::interface(): QMainWindow(), fen_creerNote(this)
 {
+    listNote=new selection_note();
     QWidget *ZoneCentrale = new QWidget(this);
-    QMenu *MenuFichier =menuBar()->addMenu("&fichier");
-    QMenu *MenuEd =menuBar()->addMenu("&Edition");
-    QMenu *MenuAff =menuBar()->addMenu("&Affichage");
-    QMenu *fichiersRecents=MenuFichier->addMenu("Ficher &récents");
+    MenuFichier =menuBar()->addMenu("&fichier");
+    MenuEd =menuBar()->addMenu("&Edition");
+    MenuAff =menuBar()->addMenu("&Affichage");
+    fichiersRecents=MenuFichier->addMenu("Ficher &récents");
     fichiersRecents->addAction("Fichier bidon 1.txt");
 
     fichiersRecents->addAction("Fichier bidon 2.txt");
@@ -44,14 +45,21 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
     layout->addStretch();
     layout->addWidget(text);
     layout->addStretch();
-    //ZoneCentrale->setEnabled(false);
+    ZoneCentrale->setEnabled(false);
     ZoneCentrale->setFont(QFont("grey0"));
     ZoneCentrale->setLayout(layout);
+
+    CreateDock_selected_Note();
     setCentralWidget(ZoneCentrale);
-
-
 }
 
+void interface::CreateDock_selected_Note(){
+    QDockWidget* dock=new QDockWidget("Selectionner Une Note",this);
+    dock->setAllowedAreas(Qt::LeftDockWidgetArea );
+    dock->setWidget(listNote);
+    addDockWidget(Qt::LeftDockWidgetArea, dock);
+    MenuAff->addAction(dock->toggleViewAction());
+}
 void interface::OuvrirFichier(){
     QString fichier = QFileDialog::getOpenFileName(this,"Ouvrir un fichier",QString());
     if(fichier != 0)
@@ -62,4 +70,13 @@ void interface::OuvrirFichier(){
 void interface::CreerNote(){
 
     fen_creerNote.show();
+}
+
+selection_note::selection_note():QWidget(){
+    layout= new QVBoxLayout(this);
+    model=new QDirModel;
+    vue=new QTreeView(this);
+    vue->setModel(model);
+    layout->addWidget(vue);
+    setLayout(layout);
 }
