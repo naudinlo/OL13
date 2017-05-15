@@ -9,6 +9,12 @@
 #ifndef include_h
 #define include_h
 
+
+
+
+
+
+
 #include <iostream>
 #include <iomanip>
 #include <stdio.h>
@@ -20,9 +26,12 @@
 
 #include <sstream>  //pour le toString nécessaire pour afficher
 
-
-#include "notes.h"
+// FICHIER
 #include "timing.h"
+#include "notes.h"
+
+#include "Creation_Note.h"
+#include "interface.h"
 
 
 #endif /* include_h */
