@@ -60,6 +60,7 @@ void interface::CreateDock_selected_Note(){
     dock_selected_Note->setWidget(listNote);
     addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
     MenuAff->addAction(dock_selected_Note->toggleViewAction());
+    connect(listNote,SIGNAL(selection()),this,SLOT(afficher_note()));
 }
 void interface::Destruct_selected_Note(){
     delete listNote;
@@ -85,6 +86,11 @@ void interface::CreerNote(){
 }
 
 void interface::addNewNote(Note* n){
+    QStandardItem *newitem = new QStandardItem("article autre");
+    newitem->setEditable(false);
+    listNote->getModel()->appendRow(newitem);
+    newitem->appendRow(new QStandardItem("1 version"));
+    listNote->getVue()->setModel(listNote->getModel());
 
 }
 
@@ -101,4 +107,11 @@ selection_note::selection_note():QWidget(){
     item->setEditable(false);
     layout->addWidget(vue);
     setLayout(layout);
+    connect(vue,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_selection()));
+
 }
+
+void interface::afficher_note(){
+    QMessageBox::information(this, "note","new note");
+}
+
