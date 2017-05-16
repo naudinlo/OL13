@@ -44,6 +44,7 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
     layout->addStretch();
     layout->addWidget(text);
     layout->addStretch();
+
     ZoneCentrale->setEnabled(false);
     ZoneCentrale->setFont(QFont("grey0"));
     ZoneCentrale->setLayout(layout);
@@ -80,6 +81,11 @@ void interface::OuvrirFichier(){
 void interface::CreerNote(){
 
     fen_creerNote.show();
+    connect(&fen_creerNote,SIGNAL(newNote(Note* )),this,SLOT(addNewNote(Note*)));
+}
+
+void interface::addNewNote(Note* n){
+
 }
 
 selection_note::selection_note():QWidget(){
@@ -92,6 +98,7 @@ selection_note::selection_note():QWidget(){
     vue->setModel(model);
     vue->header()->hide();
     vue->setDisabled(false);
+    item->setEditable(false);
     layout->addWidget(vue);
     setLayout(layout);
 }
