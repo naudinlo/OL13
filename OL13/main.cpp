@@ -50,7 +50,6 @@ int test2(int argc,char *argv[])
     interface Fenprincipale;
     Fenprincipale.showMaximized();
 
-
     return app.exec();
 
 }

@@ -35,3 +35,5 @@
 #include <QFormLayout>
 #include "QTextDocument"
 
+#include <QStandardItemModel>
+#include <QHeaderView>

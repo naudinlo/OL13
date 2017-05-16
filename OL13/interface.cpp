@@ -3,10 +3,10 @@
 interface::interface(): QMainWindow(), fen_creerNote(this)
 {
     QWidget *ZoneCentrale = new QWidget(this);
-    QMenu *MenuFichier =menuBar()->addMenu("&fichier");
-    QMenu *MenuEd =menuBar()->addMenu("&Edition");
-    QMenu *MenuAff =menuBar()->addMenu("&Affichage");
-    QMenu *fichiersRecents=MenuFichier->addMenu("Ficher &récents");
+    MenuFichier =menuBar()->addMenu("&fichier");
+    MenuEd =menuBar()->addMenu("&Edition");
+    MenuAff =menuBar()->addMenu("&Affichage");
+    fichiersRecents=MenuFichier->addMenu("Ficher &récents");
     fichiersRecents->addAction("Fichier bidon 1.txt");
 
     fichiersRecents->addAction("Fichier bidon 2.txt");
@@ -44,22 +44,61 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
     layout->addStretch();
     layout->addWidget(text);
     layout->addStretch();
-    //ZoneCentrale->setEnabled(false);
+
+    ZoneCentrale->setEnabled(false);
     ZoneCentrale->setFont(QFont("grey0"));
     ZoneCentrale->setLayout(layout);
+
+    CreateDock_selected_Note();
     setCentralWidget(ZoneCentrale);
+}
 
-
+void interface::CreateDock_selected_Note(){
+    listNote=new selection_note();
+    dock_selected_Note=new QDockWidget("Selectionner Une Note",this);
+    dock_selected_Note->setAllowedAreas(Qt::LeftDockWidgetArea );
+    dock_selected_Note->setWidget(listNote);
+    addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
+    MenuAff->addAction(dock_selected_Note->toggleViewAction());
+}
+void interface::Destruct_selected_Note(){
+    delete listNote;
+    MenuAff->removeAction(dock_selected_Note->toggleViewAction());
+    delete dock_selected_Note;
 }
 
 void interface::OuvrirFichier(){
     QString fichier = QFileDialog::getOpenFileName(this,"Ouvrir un fichier",QString());
     if(fichier != 0)
-            QMessageBox::information(this,"Fichier","vous avez sélèctionnée:"+fichier);
-
+    {
+        QMessageBox::information(this,"Fichier","vous avez sélèctionnée:"+fichier);
+        Destruct_selected_Note();
+        QMessageBox::information(this,"Fichier","vous avez sélèctionnée:"+fichier);
+        CreateDock_selected_Note(); //prendre en compte le changement de vue
+    }
 }
 
 void interface::CreerNote(){
 
     fen_creerNote.show();
+    connect(&fen_creerNote,SIGNAL(newNote(Note* )),this,SLOT(addNewNote(Note*)));
+}
+
+void interface::addNewNote(Note* n){
+
+}
+
+selection_note::selection_note():QWidget(){
+    layout= new QVBoxLayout(this);
+    model= new QStandardItemModel;
+    QStandardItem *item = new QStandardItem("article bidule");
+    model->appendRow(item);
+    item->appendRow(new QStandardItem("1 version"));
+    vue=new QTreeView(this);
+    vue->setModel(model);
+    vue->header()->hide();
+    vue->setDisabled(false);
+    item->setEditable(false);
+    layout->addWidget(vue);
+    setLayout(layout);
 }

@@ -105,11 +105,16 @@ void Creation_Note::Creer_Note(){
     //gérer l'id
     QString id("xxx");
     Note* essai=note->get_note(id,E_title->text());
-
-    QMessageBox::information(this,E_title->text(),QString::fromStdString(essai->toString()));
+    if(essai)
+    {
+        QMessageBox::information(this,E_title->text(),QString::fromStdString(essai->toString()));
+        emit(newNote(essai));
+    }
+    else
+    {
+        QMessageBox::warning(this,"echec", "cette nouvelle Note n'est pas valide");
+    }
 }
-
-
 
 QArticle::QArticle(): QNote(){
     grid=new QGridLayout(this);
