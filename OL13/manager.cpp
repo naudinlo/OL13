@@ -1,4 +1,4 @@
-#include "Manager.h"
+#include "manager.h"
 #include<fstream>
 
 /**************NotesManager********************/
@@ -19,7 +19,7 @@ void NotesManager::createNote(Note* n){
 
 Note& NotesManager::getNote(const string& id){
     for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getId()==id) return *notes[i];
+        if (notes[i]->getId().toStdString()==id) return *notes[i];
     }
     throw NotesException("error, non existent note");
 
@@ -31,7 +31,7 @@ Note& NotesManager::getNote(const string& id){
     return *n;
 }*/
 
-NotesManager::NotesManager():notes(nullptr),nbNotes(0),nbMaxNotes(0){}
+NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0){}
 
 NotesManager::~NotesManager(){
     save();
@@ -40,7 +40,7 @@ NotesManager::~NotesManager(){
 }
 
 void NotesManager::save() const {
-    ofstream fout(filename);
+    ofstream fout(filename.c_str());
     for(unsigned int i=0; i<nbNotes; i++){
         fout<<*notes[i];
     }
@@ -48,8 +48,8 @@ void NotesManager::save() const {
 }
 
 ostream& operator<<(ostream& f, const Note& n){
-    f<<n.getId()<<"\n";
-    f<<n.getTitle()<<"\n";
+    f<<n.getId().toStdString()<<"\n";
+    f<<n.getTitle().toStdString()<<"\n";
     return f;
 }
 
@@ -82,13 +82,13 @@ NotesManager::Handler NotesManager::handler=NotesManager::Handler();
 NotesManager& NotesManager::getInstance(){
     //if (instanceUnique==0)
         //instanceUnique=new NotesManager;
-    if(handler.instance==nullptr) handler.instance=new NotesManager;
+    if(handler.instance==0) handler.instance=new NotesManager;
     return *handler.instance;
 }
 
 void NotesManager::libererInstance(){
     delete handler.instance;
-    handler.instance=nullptr;
+    handler.instance=0;
 }
 
 
@@ -123,13 +123,13 @@ void ArchiveManager::addNote(Note* n){
 
 Note& ArchiveManager::getArchive(const string& id){
     for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getId()==id) return *notes[i];
+        if (notes[i]->getId().toStdString()==id) return *notes[i];
     }
     throw NotesException("error, non existent note");
 
 }
 
-ArchiveManager::ArchiveManager():notes(nullptr),nbNotes(0),nbMaxNotes(0){}
+ArchiveManager::ArchiveManager():notes(0),nbNotes(0),nbMaxNotes(0){}
 
 ArchiveManager::~ArchiveManager(){
     save();
@@ -138,7 +138,7 @@ ArchiveManager::~ArchiveManager(){
 }
 
 void ArchiveManager::save() const {
-    ofstream fout(filename);
+    ofstream fout(filename.c_str());
     for(unsigned int i=0; i<nbNotes; i++){
         fout<<*notes[i];
     }
@@ -160,13 +160,13 @@ ArchiveManager::Handler ArchiveManager::handler=ArchiveManager::Handler();
 ArchiveManager& ArchiveManager::getInstance(){
     //if (instanceUnique==0)
         //instanceUnique=new NotesManager;
-    if(handler.instance==nullptr) handler.instance=new ArchiveManager;
+    if(handler.instance==0) handler.instance=new ArchiveManager;
     return *handler.instance;
 }
 
 void ArchiveManager::libererInstance(){
     delete handler.instance;
-    handler.instance=nullptr;
+    handler.instance=0;
 }
 
 /*************TrashManager*******************/
@@ -188,13 +188,13 @@ void TrashManager::addNote(Note* n){
 
 Note& TrashManager::getTrash(const string& id){
     for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getId()==id) return *notes[i];
+        if (notes[i]->getId().toStdString()==id) return *notes[i];
     }
     throw NotesException("error, non existent note");
 
 }
 
-TrashManager::TrashManager():notes(nullptr),nbNotes(0),nbMaxNotes(0){}
+TrashManager::TrashManager():notes(0),nbNotes(0),nbMaxNotes(0){}
 
 TrashManager::~TrashManager(){
     save();
@@ -203,7 +203,7 @@ TrashManager::~TrashManager(){
 }
 
 void TrashManager::save() const {
-    ofstream fout(filename);
+    ofstream fout(filename.c_str());
     for(unsigned int i=0; i<nbNotes; i++){
         fout<<*notes[i];
     }
@@ -225,11 +225,11 @@ TrashManager::Handler TrashManager::handler=TrashManager::Handler();
 TrashManager& TrashManager::getInstance(){
     //if (instanceUnique==0)
         //instanceUnique=new NotesManager;
-    if(handler.instance==nullptr) handler.instance=new TrashManager;
+    if(handler.instance==0) handler.instance=new TrashManager;
     return *handler.instance;
 }
 
 void TrashManager::libererInstance(){
     delete handler.instance;
-    handler.instance=nullptr;
+    handler.instance=0;
 }

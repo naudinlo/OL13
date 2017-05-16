@@ -19,8 +19,8 @@ private:
     Manager& operator=(const Manager& m);
     struct Handler{
         Manager* instance;
-        Handler():instance(nullptr){}
-        ~Handler(){delete instance; instance=nullptr;}
+        Handler():instance(0){}
+        ~Handler(){delete instance; instance=0;}
     };
     static Handler handler;
 public:
@@ -45,8 +45,8 @@ private:
     NotesManager& operator=(const NotesManager& m);
     struct Handler{
         NotesManager* instance;
-        Handler():instance(nullptr){}
-        ~Handler(){delete instance; instance=nullptr;}
+        Handler():instance(0){}
+        ~Handler(){delete instance; instance=0;}
     };
     static Handler handler;
 public:
@@ -84,8 +84,8 @@ private:
     ArchiveManager& operator=(const ArchiveManager& m);
     struct Handler{
         ArchiveManager* instance;
-        Handler():instance(nullptr){}
-        ~Handler(){delete instance; instance=nullptr;}
+        Handler():instance(0){}
+        ~Handler(){delete instance; instance=0;}
     };
     static Handler handler;
 public:
@@ -122,8 +122,8 @@ private:
     TrashManager& operator=(const TrashManager& m);
     struct Handler{
         TrashManager* instance;
-        Handler():instance(nullptr){}
-        ~Handler(){delete instance; instance=nullptr;}
+        Handler():instance(0){}
+        ~Handler(){delete instance; instance=0;}
     };
     static Handler handler;
 public:

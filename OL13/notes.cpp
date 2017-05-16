@@ -117,7 +117,7 @@ std::__cxx11::string Task::toString() const {
     f<<"\n=== TASK "<<getId().toStdString()<<" ===\n";
     f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Action : "<<action.toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\nPriority :"<<priority;
     f<<" - Status : ";
-    switch(type){
+    switch(status){
     case 0 :
         f<<"Pending";
         break;
@@ -130,7 +130,7 @@ std::__cxx11::string Task::toString() const {
     default :
         f<<"None";
     }
-    Date d;
+    TIME::Date d;
     if(dueDate==d){f<<" - No due date.";}
     else {f<<" - Due date : "<<dueDate;}
     f<<"\n";

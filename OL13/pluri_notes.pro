@@ -6,6 +6,7 @@ HEADERS += \
     timing.h \
     QInclude.h \
     function.h \
+    manager.h
 
 QT += widgets
 
@@ -15,3 +16,4 @@ SOURCES += \
     Creation_Note.cpp \
     notes.cpp \
     timing.cpp \
+    manager.cpp
