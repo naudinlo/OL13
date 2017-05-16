@@ -8,6 +8,7 @@ class selection_note;
 
 
 class selection_note: public QWidget{
+    Q_OBJECT
     QVBoxLayout* layout;
     QStandardItemModel* model;
     QTreeView* vue;
@@ -16,10 +17,12 @@ public:
     selection_note();
     QStandardItemModel* getModel(){return model;}
     QTreeView* getVue(){return vue;}
-
-
+signals:
+    void selection();
 public slots:
-
+    void emit_selection(){
+        emit selection();
+    }
 };
 
 
@@ -45,14 +48,9 @@ public slots:
    void OuvrirFichier();
    void CreerNote();
    void test(){
-       QStandardItem *newitem = new QStandardItem("article autre");
-       newitem->setEditable(false);
-       listNote->getModel()->appendRow(newitem);
-       newitem->appendRow(new QStandardItem("1 version"));
-       listNote->getVue()->setModel(listNote->getModel());
    }
    void addNewNote(Note* n);
-
+   void afficher_note();
 
 };
 

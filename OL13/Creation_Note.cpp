@@ -23,10 +23,6 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
     L_defClass->addWidget(type, 1,0);
     L_defClass->addWidget(typeBox, 1,1);
 
-
-
-
-
     Creer=new(QPushButton) ("Créer",this);
     Creer->setEnabled(false);
     quitter=new(QPushButton) ("Quitter", this);
