@@ -115,7 +115,25 @@ std::__cxx11::string Article::toString()const {
 std::__cxx11::string Task::toString() const {
     std::stringstream f;
     f<<"\n=== TASK "<<getId().toStdString()<<" ===\n";
-    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Action : "<<action.toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\nPriority :"<<priority<<" - Status : "<<status<<" - dueDate : "<<dueDate<<"\n";
+    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Action : "<<action.toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\nPriority :"<<priority;
+    f<<" - Status : ";
+    switch(type){
+    case 0 :
+        f<<"Pending";
+        break;
+    case 1 :
+        f<<"On going";
+        break;
+    case 2 :
+        f<<"Completed";
+        break;
+    default :
+        f<<"None";
+    }
+    Date d;
+    if(dueDate==d){f<<" - No due date.";}
+    else {f<<" - Due date : "<<dueDate;}
+    f<<"\n";
     return f.str();
 }
 
@@ -123,7 +141,20 @@ std::__cxx11::string Task::toString() const {
 std::__cxx11::string Recording::toString() const {
     std::stringstream f;
     f<<"\n=== RECORDING "<<getId().toStdString()<<" ===\n";
-    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Description : "<<description.toPlainText().toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\nType :"<<type<<"\n";
+    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Description : "<<description.toPlainText().toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\n";
+    f<<"Type : ";
+    switch(type){
+    case 0 :
+        f<<"Image";
+        break;
+    case 1 :
+        f<<"Audio";
+        break;
+    case 2 :
+        f<<"Video";
+        break;
+    }
+    f<<"\n";
     return f.str();
 }
 
