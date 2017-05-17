@@ -159,7 +159,7 @@ QTask::QTask():QNote(){
     grid->addWidget(duedate,2,0,2,2);
     grid->addWidget(priority,3,0,3,2);
 
-    fen=new QVBoxLayout (this);
+    fen=new QVBoxLayout ();
     fen->addLayout(grid);
 
 }
@@ -224,7 +224,6 @@ Note *QTask::get_note(QString id, QString title){
     ENUM::StatusType etat=static_cast<ENUM::StatusType>(E_status->currentIndex());
     if(priority->isChecked() && duedate->isChecked())
     {
-        QMessageBox::warning(this,"pas encore fait","gérer la date");
         return new Task(id,title,E_action->text(),etat,E_priority->value(),E_duedate->date());
     }
     else if(priority->isChecked())
