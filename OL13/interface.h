@@ -4,24 +4,26 @@
 //#include "QInclude.h"
 #include "Creation_Note.h"
 #include <QDockWidget>
+#include "manager.h"
 class selection_note;
 
 
 class selection_note: public QWidget{
     Q_OBJECT
     QVBoxLayout* layout;
-    QStandardItemModel* model;
+
     QTreeView* vue;
 
 public:
+    QStandardItemModel* model;
     selection_note();
     QStandardItemModel* getModel(){return model;}
     QTreeView* getVue(){return vue;}
 signals:
-    void selection();
+    void selection(QModelIndex);
 public slots:
-    void emit_selection(){
-        emit selection();
+    void emit_selection(QModelIndex i){
+        emit selection(i);
     }
 };
 
@@ -37,12 +39,15 @@ class interface:public QMainWindow
     QMenu *MenuAff;
     QMenu *fichiersRecents;
     QDockWidget* dock_selected_Note;
+    NotesManager* note_manager;
 
 public:
     interface();
     void CreateDock_selected_Note();//doit prendre un fichier est chargé la liste
     void Destruct_selected_Note();
-
+    ~interface(){
+        NotesManager::libererInstance();
+    }
 
 public slots:
    void OuvrirFichier();
@@ -50,8 +55,8 @@ public slots:
    void test(){
    }
    void addNewNote(Note* n);
-   void afficher_note();
-
+   void afficher_note(QModelIndex index);
+   void save();
 };
 
 

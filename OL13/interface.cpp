@@ -2,6 +2,8 @@
 
 interface::interface(): QMainWindow(), fen_creerNote(this)
 {
+    note_manager=NotesManager::getInstance();
+
     QWidget *ZoneCentrale = new QWidget(this);
     MenuFichier =menuBar()->addMenu("&fichier");
     MenuEd =menuBar()->addMenu("&Edition");
@@ -25,6 +27,7 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
 
     QAction *ActionOuvrir=new QAction("&Ouvrir",this);
     connect(ActionOuvrir,SIGNAL(triggered(bool)),this,SLOT(OuvrirFichier()));
+    ActionOuvrir->setShortcut(QKeySequence("ctrl+O"));
     ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
     QToolBar *toolBarFichier =addToolBar("fichier");
     toolBarFichier->addAction(ActionOuvrir);
@@ -37,6 +40,13 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
     connect(ActionNouveau,SIGNAL(triggered(bool)),this,SLOT(CreerNote()));
     toolBarFichier->addAction(ActionNouveau);
     MenuFichier->addAction(ActionNouveau);
+
+    QAction *ActionSave=new QAction("&Sauvegarder",this);
+    ActionSave->setIcon(QIcon("save.png"));
+    ActionSave->setShortcut(QKeySequence("ctrl+S"));
+    connect(ActionSave,SIGNAL(triggered(bool)),this,SLOT(save()));
+    toolBarFichier->addAction(ActionSave);
+    MenuFichier->addAction(ActionSave);
 
     QLabel *text = new QLabel("selectionner une Note à afficher");
     text->setEnabled(false);
@@ -60,7 +70,7 @@ void interface::CreateDock_selected_Note(){
     dock_selected_Note->setWidget(listNote);
     addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
     MenuAff->addAction(dock_selected_Note->toggleViewAction());
-    connect(listNote,SIGNAL(selection()),this,SLOT(afficher_note()));
+    connect(listNote,SIGNAL(selection(QModelIndex)),this,SLOT(afficher_note(QModelIndex)));
 }
 void interface::Destruct_selected_Note(){
     delete listNote;
@@ -76,7 +86,20 @@ void interface::OuvrirFichier(){
         Destruct_selected_Note();
         QMessageBox::information(this,"Fichier","vous avez sélèctionnée:"+fichier);
         CreateDock_selected_Note(); //prendre en compte le changement de vue
+        note_manager->setFilename(fichier.toStdString());
+        //note_manager->load();
     }
+    else
+        QMessageBox::warning(this,"Fichier","Impossible d'ouvrir le fichier"+fichier);
+
+}
+void interface::save(){
+    while(note_manager->getFilename().empty())
+    {
+        QMessageBox::information(this,"sauvegarde","selectionner un ficher");
+        OuvrirFichier();
+    }
+    note_manager->save();
 }
 
 void interface::CreerNote(){
@@ -86,8 +109,10 @@ void interface::CreerNote(){
 }
 
 void interface::addNewNote(Note* n){
-    QStandardItem *newitem = new QStandardItem("article autre");
+
+    QStandardItem *newitem = new QStandardItem(n->getTitle());
     newitem->setEditable(false);
+    newitem->setWhatsThis(n->getId());
     listNote->getModel()->appendRow(newitem);
     newitem->appendRow(new QStandardItem("1 version"));
     listNote->getVue()->setModel(listNote->getModel());
@@ -95,6 +120,7 @@ void interface::addNewNote(Note* n){
 }
 
 selection_note::selection_note():QWidget(){
+
     layout= new QVBoxLayout(this);
     model= new QStandardItemModel;
     QStandardItem *item = new QStandardItem("article bidule");
@@ -107,11 +133,13 @@ selection_note::selection_note():QWidget(){
     item->setEditable(false);
     layout->addWidget(vue);
     setLayout(layout);
-    connect(vue,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_selection()));
+    connect(vue,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
 
 }
-
-void interface::afficher_note(){
+void interface::afficher_note(QModelIndex index){
     QMessageBox::information(this, "note","new note");
+    QStandardItem* current=listNote->model->item(index.row(),index.column());
+    QMessageBox::information(this, current->text(),current->whatsThis());
+
 }
 

@@ -54,11 +54,12 @@ public:
     Note& getNote(const string& id);
     void deleteNote(const Note &n);
     void editNote(string& id, string& title);
-
+    void setFilename(string f){filename=f;}
+    string getFilename()const {return filename;}
     void load(const string& f);
     void save() const;
 
-    static NotesManager& getInstance();
+    static NotesManager* getInstance();
     static void libererInstance();
 
     /*Autres méthodes singleton:
