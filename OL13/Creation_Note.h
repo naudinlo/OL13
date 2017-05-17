@@ -95,15 +95,16 @@ signals:
 
 class QTask: public QNote{
     Q_OBJECT
-    QGroupBox* optional;
-    QGridLayout* optional_box;
+    QGroupBox* duedate;
+    QHBoxLayout* optional_duedate;
     QVBoxLayout* fen;
     QLabel* action;
     QLineEdit* E_action;
-    QLabel* priority;
+    QGroupBox* priority;
+    QHBoxLayout* optional_priority;
     QSpinBox* E_priority;
 
-    QLabel* duedate;
+    //QLabel* duedate;
     QDateEdit* E_duedate;
     QLabel* status;
     QComboBox* E_status;

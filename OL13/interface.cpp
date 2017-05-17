@@ -70,7 +70,7 @@ void interface::CreateDock_selected_Note(){
     dock_selected_Note->setWidget(listNote);
     addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
     MenuAff->addAction(dock_selected_Note->toggleViewAction());
-    connect(listNote,SIGNAL(selection(QModelIndex)),this,SLOT(afficher_note(QModelIndex)));
+    connect(listNote,SIGNAL(selection(QString)),this,SLOT(afficher_note(QString)));
 }
 void interface::Destruct_selected_Note(){
     delete listNote;
@@ -79,22 +79,23 @@ void interface::Destruct_selected_Note(){
 }
 
 void interface::OuvrirFichier(){
-    QString fichier = QFileDialog::getOpenFileName(this,"Ouvrir un fichier",QString());
+    //QString fichier = QFileDialog::getOpenFileName(this,"Ouvrir un fichier",QString());
+    QFileDialog openfile(this,"ouvrir un fichier",QString());
+    QString fichier=openfile.getOpenFileName();
     if(fichier != 0)
     {
-        QMessageBox::information(this,"Fichier","vous avez sélèctionnée:"+fichier);
         Destruct_selected_Note();
         QMessageBox::information(this,"Fichier","vous avez sélèctionnée:"+fichier);
         CreateDock_selected_Note(); //prendre en compte le changement de vue
         note_manager->setFilename(fichier.toStdString());
         //note_manager->load();
     }
-    else
+    else if(!openfile.close())
         QMessageBox::warning(this,"Fichier","Impossible d'ouvrir le fichier"+fichier);
 
 }
 void interface::save(){
-    while(note_manager->getFilename().empty())
+    if(note_manager->getFilename().empty())
     {
         QMessageBox::information(this,"sauvegarde","selectionner un ficher");
         OuvrirFichier();
@@ -109,12 +110,21 @@ void interface::CreerNote(){
 }
 
 void interface::addNewNote(Note* n){
+    note_manager->createNote(n);
+    QList< QStandardItem* > note;
+    note.append(new QStandardItem (n->getTitle()));
+    note.append(new QStandardItem(QString(n->getType()).remove(0,1)));
 
-    QStandardItem *newitem = new QStandardItem(n->getTitle());
-    newitem->setEditable(false);
-    newitem->setWhatsThis(n->getId());
-    listNote->getModel()->appendRow(newitem);
-    newitem->appendRow(new QStandardItem("1 version"));
+
+    std::stringstream f;
+    f<<n->getCreation_date();
+    QList< QStandardItem* > items;
+    items.append(new QStandardItem(n->getTitle()));
+    items.append(new QStandardItem (f.str().c_str()));
+    note.at(0)->appendRow(items);
+    items.at(0)->setWhatsThis(n->getId());;
+    listNote->getModel()->appendRow(note);
+
     listNote->getVue()->setModel(listNote->getModel());
 
 }
@@ -124,22 +134,52 @@ selection_note::selection_note():QWidget(){
     layout= new QVBoxLayout(this);
     model= new QStandardItemModel;
     QStandardItem *item = new QStandardItem("article bidule");
-    model->appendRow(item);
+    QStandardItem *item2 = new QStandardItem("type");
+    QList< QStandardItem* >  items;
+    items.append(item);
+    items.append(item2);
+
+    model->appendRow(items);
     item->appendRow(new QStandardItem("1 version"));
+
     vue=new QTreeView(this);
+    vue->setAlternatingRowColors(true);
+    vue->setEditTriggers(QAbstractItemView::NoEditTriggers);
     vue->setModel(model);
     vue->header()->hide();
     vue->setDisabled(false);
-    item->setEditable(false);
     layout->addWidget(vue);
     setLayout(layout);
     connect(vue,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
 
 }
-void interface::afficher_note(QModelIndex index){
-    QMessageBox::information(this, "note","new note");
-    QStandardItem* current=listNote->model->item(index.row(),index.column());
-    QMessageBox::information(this, current->text(),current->whatsThis());
+void selection_note::emit_selection(QModelIndex i){
+    QModelIndex index;
+    QStandardItem* current_note;
+    QStandardItem* current_versions;
+
+    if(!i.parent().isValid())
+    {
+        current_note=model->item(i.row(),0);
+        current_versions=current_note->child(0,0); //on selection la plus récente version si on a pas select de versions
+    }
+    else
+    {
+        current_note=model->item(i.parent().row(),0);
+        current_versions=current_note->child(i.row(),0);
+    }
+  emit selection(current_versions->whatsThis());
+}
+
+void interface::afficher_note(QString id){
+    try{
+    Note& current=note_manager->getNote(id.toStdString());
+    QMessageBox::information(this,current.getId(),current.getTitle());
+    }
+    catch(NotesException e)
+    {
+        QMessageBox::warning(this,"error",e.getinfo());
+    }
 
 }
 

@@ -36,7 +36,6 @@ private:
     Note** notes;
     unsigned int nbNotes;
     unsigned int nbMaxNotes;
-    void createNote(Note* n);
     string filename;
 
     NotesManager();
@@ -53,6 +52,7 @@ public:
     Note& getNewNote(const string& id); //Revoir pour la déclaration suivant le type de note
     Note& getNote(const string& id);
     void deleteNote(const Note &n);
+    void createNote(Note* n); //je l'ai déplacé en privé pour pourvoir ajouté une note créer par interface
     void editNote(string& id, string& title);
     void setFilename(string f){filename=f;}
     string getFilename()const {return filename;}

@@ -28,7 +28,7 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
     quitter=new(QPushButton) ("Quitter", this);
     QObject::connect(quitter,SIGNAL(clicked(bool)),this,SLOT(close()));
     QObject::connect(Creer,SIGNAL(clicked(bool)),this,SLOT(Creer_Note()));
-
+    QObject::connect(Creer,SIGNAL(clicked(bool)),this,SLOT(close()));
     B_defNote=new(QGroupBox)("Note:",this);
     B_defNote->setLayout(L_defClass);
 
@@ -100,15 +100,14 @@ void Creation_Note::select_type(int type){
 void Creation_Note::Creer_Note(){
     //gérer l'id
     QString id("xxx");
+    try{
     Note* essai=note->get_note(id,E_title->text());
-    if(essai)
-    {
-        QMessageBox::information(this,E_title->text(),QString::fromStdString(essai->toString()));
-        emit(newNote(essai));
+    QMessageBox::information(this,E_title->text(),QString::fromStdString(essai->toString()));
+    emit(newNote(essai));
     }
-    else
+    catch(NotesException e)
     {
-        QMessageBox::warning(this,"echec", "cette nouvelle Note n'est pas valide");
+        QMessageBox::warning(this,"echec création de note", e.getinfo());
     }
 }
 
@@ -121,39 +120,48 @@ QArticle::QArticle(): QNote(){
 }
 
 QTask::QTask():QNote(){
-    optional=new QGroupBox (this);
-    fen=new QVBoxLayout (this);
-    optional->setCheckable(true);
-    optional->setTitle("option :");
-    optional_box=new QGridLayout;
-    grid=new QGridLayout(this);
+
     action=new QLabel ("action");
-    priority=new QLabel ("Prioritée");
-    E_priority=new QSpinBox;
-    duedate=new QLabel ("Date de réalisation");
-    E_duedate=new QDateEdit;
+    E_action=new QLineEdit;
+    connect(E_action,SIGNAL(textEdited(QString)),SLOT(check_creer()));
+
+
+    duedate=new QGroupBox ();
+    duedate->setCheckable(true);
+    duedate->setTitle("Date de réalisation :");
+    optional_duedate=new QHBoxLayout();
+    duedate->setLayout(optional_duedate);
+    E_duedate=new QDateEdit();
     E_duedate->setDate(QDate::currentDate());
     E_duedate->setCalendarPopup(true);
+    optional_duedate->addStretch();
+    optional_duedate->addWidget(E_duedate);
+    priority=new QGroupBox ();
+    priority->setCheckable(true);
+    priority->setTitle("priorité :");
+    optional_priority=new QHBoxLayout;
+    priority->setLayout(optional_priority);
+    E_priority=new QSpinBox();
+    optional_priority->addStretch();
+    optional_priority->addWidget(E_priority);
+
     status=new QLabel("Etat");
     E_status=new QComboBox;
     E_status->addItem("En cours");
     E_status->addItem("En attente");
     E_status->addItem("Complétée");
-    E_action=new QLineEdit;
-    connect(E_action,SIGNAL(textEdited(QString)),SLOT(check_creer()));
+
+    grid=new QGridLayout(this);
     grid->addWidget(action,0,0);
     grid->addWidget(E_action,0,1);
     grid->addWidget(status,1,0);
     grid->addWidget(E_status,1,1);
+    grid->addWidget(duedate,2,0,2,2);
+    grid->addWidget(priority,3,0,3,2);
 
-    optional_box->addWidget(priority,0,1);
-    optional_box->addWidget(E_priority,0,2);
-    optional_box->addWidget(duedate,1,1);
-    optional_box->addWidget(E_duedate,1,2);
-
+    fen=new QVBoxLayout (this);
     fen->addLayout(grid);
-    optional->setLayout(optional_box);
-    fen->addWidget(optional);
+
 }
 
 QRecording::QRecording():QNote(){
@@ -214,11 +222,15 @@ Note *QArticle::get_note(QString id,QString title){
 
 Note *QTask::get_note(QString id, QString title){
     ENUM::StatusType etat=static_cast<ENUM::StatusType>(E_status->currentIndex());
-    if(optional->isChecked())
+    if(priority->isChecked() && duedate->isChecked())
     {
         QMessageBox::warning(this,"pas encore fait","gérer la date");
-        //return new Task(id,title,E_action->text(),etat,E_priority->value(),E_duedate->date());
+        return new Task(id,title,E_action->text(),etat,E_priority->value(),E_duedate->date());
     }
+    else if(priority->isChecked())
+        return new Task(id,title,E_action->text(),etat,E_priority->value());
+    else if(duedate->isChecked())
+        return new Task(id,title,E_action->text(),etat,E_duedate->date());
     return new Task(id,title,E_action->text(),etat);
 }
 

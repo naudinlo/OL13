@@ -5,6 +5,10 @@
 #include "Creation_Note.h"
 #include <QDockWidget>
 #include "manager.h"
+#include "sstream"
+#include <QList>
+#include <QStandardItemModel>
+#include <typeinfo>
 class selection_note;
 
 
@@ -13,18 +17,15 @@ class selection_note: public QWidget{
     QVBoxLayout* layout;
 
     QTreeView* vue;
-
-public:
     QStandardItemModel* model;
+public:
     selection_note();
-    QStandardItemModel* getModel(){return model;}
+    QStandardItemModel* getModel()const {return model;}
     QTreeView* getVue(){return vue;}
 signals:
-    void selection(QModelIndex);
+    void selection(QString);
 public slots:
-    void emit_selection(QModelIndex i){
-        emit selection(i);
-    }
+    void emit_selection(QModelIndex i);
 };
 
 
@@ -55,7 +56,7 @@ public slots:
    void test(){
    }
    void addNewNote(Note* n);
-   void afficher_note(QModelIndex index);
+   void afficher_note(QString id);
    void save();
 };
 
