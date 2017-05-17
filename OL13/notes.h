@@ -11,6 +11,8 @@
 #include <QString>
 #include <QTextDocument>
 #include "timing.h"
+#include <QDate>
+#include <typeinfo>
 //#include "include.h"
 
 class NotesException;
@@ -57,7 +59,7 @@ public:
     const TIME::Date getLastmodif_date() const {return lastmodif_date;}
     bool getIsArchive() const {return isArchive;}
     bool getIsDeleted() const {return isDeleted;}
-
+    QString getType()const {return QString(typeid(*this).name());}
     Note(const QString& i, const QString& ti);
 
     void setTitle(const QString& t){title=t;}
@@ -98,7 +100,7 @@ private:
     QString action;
     ENUM::StatusType status;
     unsigned int priority;
-    TIME::Date dueDate;
+    QDate dueDate;
 public:
     const QString getAction() const {return action;}
     void setAction(const QString& a) {action=a;}
@@ -106,13 +108,13 @@ public:
     void setStatus(const ENUM::StatusType& s) {status=s;}
     int getPriority() const {return priority;}
     void setPriority(unsigned int p) {priority=p;}
-    const TIME::Date getDueDate() const{return dueDate;}
-    void setDueDate(const TIME::Date d){dueDate=d;}
+    const QDate getDueDate() const{return dueDate;}
+    void setDueDate(const QDate d){dueDate=d;}
 
     Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s);  //Premier type de constructeur : les deux optionels oubliés
     Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p); //Deuxième type de constructeur : priorité ajoutée
-    Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const TIME::Date d);  //Troisième type : dueDate ajoutée
-    Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const TIME::Date d);    //Quatrième type : priorité et dueDate ajoutés
+    Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const QDate d);  //Troisième type : dueDate ajoutée
+    Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const QDate d);    //Quatrième type : priorité et dueDate ajoutés
 
     //PRIVATE ?
     Task(const Task& t); //constructeur de recopie private pour le handler

@@ -79,11 +79,11 @@ ostream& operator<<(ostream& f, const Note& n){
 
 NotesManager::Handler NotesManager::handler=NotesManager::Handler();
 
-NotesManager& NotesManager::getInstance(){
+NotesManager *NotesManager::getInstance(){
     //if (instanceUnique==0)
         //instanceUnique=new NotesManager;
     if(handler.instance==0) handler.instance=new NotesManager;
-    return *handler.instance;
+    return handler.instance;
 }
 
 void NotesManager::libererInstance(){

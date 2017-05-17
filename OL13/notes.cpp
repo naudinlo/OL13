@@ -92,10 +92,10 @@ Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(fals
 Article::Article(const QString& i, const QString& ti, const QString &te):Note(i,ti), text(te){}
 
 
-Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s):Note(i, ti), action(a), status(s){};  //Premier type de constructeur : les deux optionels oubliés
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s):Note(i, ti), action(a), status(s), priority(-1){};  //Premier type de constructeur : les deux optionels oubliés
 Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p):Note(i, ti), action(a), priority(p), status(s){}; //Deuxième type de constructeur : priorité ajoutée
-Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const TIME::Date d):Note(i, ti), action(a), dueDate(d), status(s){};  //Troisième type : dueDate ajoutée
-Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const TIME::Date d):Note(i, ti), action(a), priority(p), dueDate(d), status(s){} //Quatrième type : prio et dueDate ajoutés
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const QDate d):Note(i, ti), action(a), dueDate(d), status(s), priority(-1) {};  //Troisième type : dueDate ajoutée
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const QDate d):Note(i, ti), action(a), priority(p), dueDate(d), status(s){} //Quatrième type : prio et dueDate ajoutés
 
 Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l):Note(i, ti), description(d), type(r), link(l){};
 
@@ -115,7 +115,11 @@ std::__cxx11::string Article::toString()const {
 std::__cxx11::string Task::toString() const {
     std::stringstream f;
     f<<"\n=== TASK "<<getId().toStdString()<<" ===\n";
-    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Action : "<<action.toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\nPriority :"<<priority;
+    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Action : "<<action.toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date();
+    if(priority!=-1)
+        f<<"\nPriority :"<<priority;
+    else
+        f<<"\n No Priority";
     f<<" - Status : ";
     switch(status){
     case 0 :
@@ -130,9 +134,9 @@ std::__cxx11::string Task::toString() const {
     default :
         f<<"None";
     }
-    TIME::Date d;
-    if(dueDate==d){f<<" - No due date.";}
-    else {f<<" - Due date : "<<dueDate;}
+
+    if(dueDate.isNull()){f<<" - No due date.";}
+    else {f<<" - Due date : "<<dueDate.toString().toStdString();}
     f<<"\n";
     return f.str();
 }
