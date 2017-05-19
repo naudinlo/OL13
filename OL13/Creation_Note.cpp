@@ -121,7 +121,7 @@ QArticle::QArticle(): QNote(){
 
 QTask::QTask():QNote(){
 
-    action=new QLabel ("action");
+    action=new QLabel ("Action");
     E_action=new QLineEdit;
     connect(E_action,SIGNAL(textEdited(QString)),SLOT(check_creer()));
 
@@ -131,8 +131,9 @@ QTask::QTask():QNote(){
     duedate->setTitle("Date de réalisation :");
     optional_duedate=new QHBoxLayout();
     duedate->setLayout(optional_duedate);
-    E_duedate=new QDateEdit();
+    E_duedate=new QDateTimeEdit();
     E_duedate->setDate(QDate::currentDate());
+    E_duedate->setTime(QTime::currentTime());
     E_duedate->setCalendarPopup(true);
     optional_duedate->addStretch();
     optional_duedate->addWidget(E_duedate);
@@ -166,9 +167,9 @@ QTask::QTask():QNote(){
 
 QRecording::QRecording():QNote(){
     grid=new QGridLayout(this);
-    description=new QLabel("descrition:");
+    description=new QLabel("Descrition:");
     E_description=new QTextEdit;
-    type=new QLabel("type d'enregistrement");
+    type=new QLabel("Type d'enregistrement");
     E_link=new QLineEdit;
     E_link->setEnabled(false);
     link=new QPushButton("Selectionner enregistrement");
@@ -225,12 +226,12 @@ Note *QTask::get_note(QString id, QString title){
     if(priority->isChecked() && duedate->isChecked())
     {
         QMessageBox::warning(this,"pas encore fait","gérer la date");
-        return new Task(id,title,E_action->text(),etat,E_priority->value(),E_duedate->date());
+        return new Task(id,title,E_action->text(),etat,E_priority->value(),E_duedate->dateTime());
     }
     else if(priority->isChecked())
         return new Task(id,title,E_action->text(),etat,E_priority->value());
     else if(duedate->isChecked())
-        return new Task(id,title,E_action->text(),etat,E_duedate->date());
+        return new Task(id,title,E_action->text(),etat,E_duedate->dateTime());
     return new Task(id,title,E_action->text(),etat);
 }
 

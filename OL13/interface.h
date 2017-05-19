@@ -7,6 +7,7 @@
 #include "manager.h"
 #include "sstream"
 #include <QList>
+#include <QDate>
 #include <QStandardItemModel>
 #include <typeinfo>
 class selection_note;

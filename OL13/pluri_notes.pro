@@ -3,10 +3,9 @@ HEADERS += \
     Creation_Note.h \
     include.h \
     notes.h \
-    timing.h \
     QInclude.h \
-    function.h \
-    manager.h
+    manager.h \
+    undoredo.h
 
 QT += widgets
 
@@ -15,5 +14,5 @@ SOURCES += \
     main.cpp \
     Creation_Note.cpp \
     notes.cpp \
-    timing.cpp \
-    manager.cpp
+    manager.cpp \
+    undoredo.cpp

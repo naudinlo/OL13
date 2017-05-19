@@ -105,7 +105,7 @@ class QTask: public QNote{
     QSpinBox* E_priority;
 
     //QLabel* duedate;
-    QDateEdit* E_duedate;
+    QDateTimeEdit* E_duedate;
     QLabel* status;
     QComboBox* E_status;
     QGridLayout* grid;

@@ -23,11 +23,12 @@
 #include <ctime>    //obligatoire pour timing
 #include <ratio>        //pas sur que nécessaire
 #include <chrono>       //pas sur que nécessaire
+#include <QDateTime>
+
 
 #include <sstream>  //pour le toString nécessaire pour afficher
 
 // FICHIER
-#include "timing.h"
 #include "notes.h"
 
 #include "Creation_Note.h"

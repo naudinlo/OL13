@@ -7,8 +7,6 @@
 //
 
 #include "notes.h"
-#include "timing.h"
-#include "function.h"
 #include "sstream"
 //#include "include.h"
 
@@ -17,10 +15,7 @@
 //====OPERATEUR AFFECATION, CONSTRUCTEUR DE RECOPIE
 
 //Surcharge la méthode constructeur dans le cas nouvelle note B(A);
-Note::Note(const Note& n):title(n.title), id(n.id+"_bis"){
-//    std::ostream& f;
-//    f<<lastmodif_date;
-//    id=n.id+f;
+Note::Note(const Note& n):id(n.id+lastmodif_date.toString("dd.MM")),title(n.title){
 };
 
 //Surcharge de l'opérateur = dans le cas nouvelle note B=A;
@@ -48,7 +43,7 @@ Article& Article::operator=(const Article& a){
 
 
 //Surcharge la méthode constructeur dans le cas nouvelle task B(A);
-Task::Task(const Task& t):Note(t), action(t.action),priority(t.priority),dueDate(t.dueDate),status(t.status){};
+Task::Task(const Task& t):Note(t), action(t.action),status(t.status),priority(t.priority),dueDate(t.dueDate){};
 
 //Surcharge de l'opérateur = dans le cas nouvelle task B=A;
 Task& Task::operator=(const Task& t){
@@ -63,7 +58,7 @@ Task& Task::operator=(const Task& t){
 };
 
 //Surcharge la méthode constructeur dans le cas nouveau recording B(A);
-Recording::Recording(const Recording& r):Note(r),type(r.type),description(r.description.toPlainText()){};
+Recording::Recording(const Recording& r):Note(r),description(r.description.toPlainText()),type(r.type){};
 
 //Surcharge de l'opérateur = dans le cas nouveau recording B=A;
 Recording& Recording::operator=(const Recording& r){
@@ -84,7 +79,7 @@ Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(fals
 //    TIME::Date t0(aTime->tm_mday,aTime->tm_mon + 1,aTime->tm_year + 1900);
 //    creation_date=t0;
 //    lastmodif_date=t0;
-    creation_date=currentDate();
+    creation_date=QDateTime::currentDateTime();
     lastmodif_date=creation_date;
 }
 
@@ -93,9 +88,10 @@ Article::Article(const QString& i, const QString& ti, const QString &te):Note(i,
 
 
 Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s):Note(i, ti), action(a), status(s), priority(-1){};  //Premier type de constructeur : les deux optionels oubliés
-Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p):Note(i, ti), action(a), priority(p), status(s){}; //Deuxième type de constructeur : priorité ajoutée
-Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const QDate d):Note(i, ti), action(a), dueDate(d), status(s), priority(-1) {};  //Troisième type : dueDate ajoutée
-Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const QDate d):Note(i, ti), action(a), priority(p), dueDate(d), status(s){} //Quatrième type : prio et dueDate ajoutés
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p):Note(i, ti), action(a), status(s), priority(p){}; //Deuxième type de constructeur : priorité ajoutée
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const QDateTime d):Note(i, ti), action(a), status(s), priority(-1), dueDate(d){};  //Troisième type : dueDate ajoutée
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d):Note(i, ti), action(a), status(s), priority(p), dueDate(d){} //Quatrième type : prio et dueDate ajoutés
+
 
 Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l):Note(i, ti), description(d), type(r), link(l){};
 
@@ -104,23 +100,23 @@ Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::
 //====METHODE ET SURCHARGE
 
 //toString pour display Article
-std::__cxx11::string Article::toString()const {
+std::string Article::toString()const {
     std::stringstream f;
     f<<"\n=== ARTICLE "<<getId().toStdString()<<" ===\n";
-    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Text : "<<text.toPlainText().toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\n";
+    f<<"ID : "<<getId().toStdString()<<"\n - Title : "<<getTitle().toStdString()<<"\n - Text : "<<text.toPlainText().toStdString()<<"\n - Creation date : "<<getCreation_date().toString("dd.MM.yyyy").toStdString()<<"\n - Last modification date : "<<getLastmodif_date().toString("dd.MM.yyyy").toStdString()<<"\n";
     return f.str();
 }
 
 //toString pour display Task
-std::__cxx11::string Task::toString() const {
+std::string Task::toString() const {
     std::stringstream f;
     f<<"\n=== TASK "<<getId().toStdString()<<" ===\n";
-    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Action : "<<action.toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date();
+    f<<"ID : "<<getId().toStdString() <<"\n - Title : "<<getTitle().toStdString()<<"\n - Action : "<<action.toStdString()<<"\n - Creation date : "<<getCreation_date().toString("dd.MM.yyyy").toStdString()<<"\n - Last modification date : "<<getLastmodif_date().toString("dd.MM.yyyy").toStdString();
     if(priority!=-1)
-        f<<"\nPriority :"<<priority;
+        f<<"\n - Priority : "<<priority;
     else
         f<<"\n No Priority";
-    f<<" - Status : ";
+    f<<"\n - Status : ";
     switch(status){
     case 0 :
         f<<"Pending";
@@ -135,18 +131,18 @@ std::__cxx11::string Task::toString() const {
         f<<"None";
     }
 
-    if(dueDate.isNull()){f<<" - No due date.";}
-    else {f<<" - Due date : "<<dueDate.toString().toStdString();}
+    if(dueDate.isNull()){f<<"\n - No due date.";}
+    else {f<<"\n - Due date : "<<dueDate.toString("dd.MM.yyyy").toStdString();}
     f<<"\n";
     return f.str();
 }
 
 //toString pour display Recording
-std::__cxx11::string Recording::toString() const {
+std::string Recording::toString() const {
     std::stringstream f;
     f<<"\n=== RECORDING "<<getId().toStdString()<<" ===\n";
-    f<<"ID : "<<getId().toStdString() <<" - Title : "<<getTitle().toStdString()<<" - Description : "<<description.toPlainText().toStdString()<<"\nCreation Date : "<<getCreation_date()<<" - Last Modification Date : "<<getLastmodif_date()<<"\n";
-    f<<"Type : ";
+    f<<"\n - ID : "<<getId().toStdString() <<"\n - Title : "<<getTitle().toStdString()<<"\n - Description : "<<description.toPlainText().toStdString()<<"\n - Creation date : "<<getCreation_date().toString("dd.MM.yyyy").toStdString()<<"\n - Last modification date : "<<getLastmodif_date().toString("dd.MM.yyyy").toStdString()<<"\n";
+    f<<"\n - Type : ";
     switch(type){
     case 0 :
         f<<"Image";
@@ -178,4 +174,16 @@ std::ostream& operator<<(std::ostream& f, const Task& t){
 std::ostream& operator<<(std::ostream& f, const Recording& r){
     r.display(f);
     return f;
+}
+
+//Retourner directement le statut de int à string
+QString getStatustoStr(ENUM::StatusType status) {
+    QString statusName[] = {"Pending", "OnGoing", "Completed"};
+    return statusName[status];
+}
+
+//Retourner directement le recording de int à string
+QString getRecordingtoStr(ENUM::StatusType recording) {
+    QString recordingName[] = {"Image", "Audio", "Video"};
+    return recordingName[recording];
 }

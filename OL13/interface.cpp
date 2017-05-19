@@ -21,28 +21,28 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
 
     QAction *ActionQuitter =new QAction("&Quitter", this);
     ActionQuitter->setShortcut(QKeySequence("ctrl+Q"));
-    ActionQuitter->setIcon(QIcon("LOGOUT.png"));
+//    ActionQuitter->setIcon(QIcon("LOGOUT.png"));
     connect(ActionQuitter,SIGNAL(triggered(bool)),qApp,SLOT(quit()));
     MenuFichier->addAction(ActionQuitter);
 
     QAction *ActionOuvrir=new QAction("&Ouvrir",this);
     connect(ActionOuvrir,SIGNAL(triggered(bool)),this,SLOT(OuvrirFichier()));
     ActionOuvrir->setShortcut(QKeySequence("ctrl+O"));
-    ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
+//    ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
     QToolBar *toolBarFichier =addToolBar("fichier");
     toolBarFichier->addAction(ActionOuvrir);
     MenuFichier->addAction(ActionOuvrir);
 
 
     QAction *ActionNouveau=new QAction("&Nouvelle Note",this);
-    ActionNouveau->setIcon(QIcon("new.png"));
+//    ActionNouveau->setIcon(QIcon("new.png"));
     ActionNouveau->setShortcut(QKeySequence("ctrl+N"));
     connect(ActionNouveau,SIGNAL(triggered(bool)),this,SLOT(CreerNote()));
     toolBarFichier->addAction(ActionNouveau);
     MenuFichier->addAction(ActionNouveau);
 
     QAction *ActionSave=new QAction("&Sauvegarder",this);
-    ActionSave->setIcon(QIcon("save.png"));
+//    ActionSave->setIcon(QIcon("save.png"));
     ActionSave->setShortcut(QKeySequence("ctrl+S"));
     connect(ActionSave,SIGNAL(triggered(bool)),this,SLOT(save()));
     toolBarFichier->addAction(ActionSave);
@@ -117,7 +117,9 @@ void interface::addNewNote(Note* n){
 
 
     std::stringstream f;
-    f<<n->getCreation_date();
+    //QDateTime dt=n->getCreation_date();`
+    QString string_dt=(n->getCreation_date()).toString("dd.MM.yyyy");
+    f<<string_dt.toStdString();
     QList< QStandardItem* > items;
     items.append(new QStandardItem(n->getTitle()));
     items.append(new QStandardItem (f.str().c_str()));

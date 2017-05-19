@@ -10,6 +10,7 @@
 //#include "include.h"
 #include "notes.h"
 #include "interface.h"
+
 /*
 void test1(){
     std::cout << "Hello, World!\n";
@@ -33,6 +34,10 @@ void test1(){
     Recording r1("r1", "recordingtitle1", "description1", ENUM::Audio);
     Recording r2("r2", "recordingtitle2", "description2", ENUM::Image);
 
+    Task q1("t1","tasktitle1","action1",0);
+    Task q2("t2","tasktitle2","action2",1, 5);
+
+
     std::cout<<r1;
     std::cout<<r2;
 
@@ -42,8 +47,6 @@ void test1(){
 int test2(int argc,char *argv[])
 {
     // UTF-8 Encoding
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
-    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
     QApplication app(argc, argv);
@@ -55,7 +58,7 @@ int test2(int argc,char *argv[])
 }
 
 int main(int argc, char * argv[]) {
-	//test1();
+    //test1();
     test2(argc,argv);
     return 0;
 }
