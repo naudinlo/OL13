@@ -34,7 +34,7 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
     MenuFichier->addAction(ActionOuvrir);
 
 
-    QAction *ActionNouveau=new QAction("&Nouvelle Note",this);
+    QAction *ActionNouveau=new QAction("&Nouvelle note",this);
 //    ActionNouveau->setIcon(QIcon("new.png"));
     ActionNouveau->setShortcut(QKeySequence("ctrl+N"));
     connect(ActionNouveau,SIGNAL(triggered(bool)),this,SLOT(CreerNote()));
@@ -48,7 +48,7 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
     toolBarFichier->addAction(ActionSave);
     MenuFichier->addAction(ActionSave);
 
-    QLabel *text = new QLabel("selectionner une Note à afficher");
+    QLabel *text = new QLabel("Sélectionner une note à afficher");
     text->setEnabled(false);
     QHBoxLayout *layout=new QHBoxLayout;
     layout->addStretch();
@@ -65,7 +65,7 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
 
 void interface::CreateDock_selected_Note(){
     listNote=new selection_note();
-    dock_selected_Note=new QDockWidget("Selectionner Une Note",this);
+    dock_selected_Note=new QDockWidget("Sélectionner une note",this);
     dock_selected_Note->setAllowedAreas(Qt::LeftDockWidgetArea );
     dock_selected_Note->setWidget(listNote);
     addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
@@ -80,12 +80,12 @@ void interface::Destruct_selected_Note(){
 
 void interface::OuvrirFichier(){
     //QString fichier = QFileDialog::getOpenFileName(this,"Ouvrir un fichier",QString());
-    QFileDialog openfile(this,"ouvrir un fichier",QString());
+    QFileDialog openfile(this,"Ouvrir un fichier",QString());
     QString fichier=openfile.getOpenFileName();
     if(fichier != 0)
     {
         Destruct_selected_Note();
-        QMessageBox::information(this,"Fichier","vous avez sélèctionnée:"+fichier);
+        QMessageBox::information(this,"Fichier","Vous avez sélectionné:"+fichier);
         CreateDock_selected_Note(); //prendre en compte le changement de vue
         note_manager->setFilename(fichier.toStdString());
         //note_manager->load();
@@ -97,7 +97,7 @@ void interface::OuvrirFichier(){
 void interface::save(){
     if(note_manager->getFilename().empty())
     {
-        QMessageBox::information(this,"sauvegarde","selectionner un ficher");
+        QMessageBox::information(this,"Sauvegarde","Sélectionner un ficher");
         OuvrirFichier();
     }
     note_manager->save();
@@ -175,7 +175,7 @@ void selection_note::emit_selection(QModelIndex i){
 
 void interface::afficher_note(QString id){
     try{
-    Note& current=note_manager->getNote(id.toStdString());
+    Note& current=note_manager->getNote(id);
     QMessageBox::information(this,current.getId(),current.getTitle());
     }
     catch(NotesException e)

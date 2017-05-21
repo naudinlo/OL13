@@ -15,7 +15,7 @@
 //====OPERATEUR AFFECATION, CONSTRUCTEUR DE RECOPIE
 
 //Surcharge la méthode constructeur dans le cas nouvelle note B(A);
-Note::Note(const Note& n):id(n.id+lastmodif_date.toString("dd.MM")),title(n.title){
+Note::Note(const Note& n):id(n.id+lastmodif_date.toString("dd.MM")),title(n.title),lastmodif_date(QDateTime::currentDateTime()){
 };
 
 //Surcharge de l'opérateur = dans le cas nouvelle note B=A;
@@ -115,6 +115,9 @@ std::string Article::toString()const {
     }
     f<<"\n - Article reférencé par "<<getNbIsRef()<<" note(s).";
 
+    if (getIsArchive()) f<<"\n - Note Archivée.";
+    if (getIsDeleted()) f<<"\n - Note Supprimée.";
+
     f<<"\n";
     return f.str();
 }
@@ -155,6 +158,10 @@ std::string Task::toString() const {
     }
     f<<"\n - Tâche reférencée par "<<getNbIsRef()<<" note(s).";
 
+
+    if (getIsArchive()) f<<"\n - Note Archivée.";
+    if (getIsDeleted()) f<<"\n - Note Supprimée.";
+
     f<<"\n";
     return f.str();
 }
@@ -184,6 +191,9 @@ std::string Recording::toString() const {
         f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
     }
     f<<"\n - Enregistrement reférencé par "<<getNbIsRef()<<" note(s).";
+
+    if (getIsArchive()) f<<"\n - Note Archivée.";
+    if (getIsDeleted()) f<<"\n - Note Supprimée.";
 
     f<<"\n";
     return f.str();
@@ -252,34 +262,6 @@ void Note::addReference(Note* n){
     nbRef++;
 };
 
-//void Note::addIsReferenced(Note* n){
-//    if (nbIsRef==nbMaxIsRef){
-//        //besoin en grandissement
-//        Note** newtab=isreferenced;
-//        for(unsigned int i=0; i<nbIsRef; i++){
-//            newtab[i]=isreferenced[i];
-//            //mise à jour des attributs
-//        }
-//        nbMaxIsRef+=5;
-//        Note ** old=isreferenced;
-//        isreferenced=newtab;
-//        delete[] old;
-//    }
-//    isreferenced[nbIsRef]=n;
-//    nbIsRef++;
-//};
-
-//Note::~NotesManager(){
-//    for(unsigned int i=0; i<nbArticles; i++){
-//        delete articles[i];
-//    }
-//    delete[] articles;
-//    nbArticles=0;
-//    nbMaxArticles=0;
-//    articles=nullptr;
-//}
-
-
 Note& Note::getReference(Note* n)const{
     for(unsigned int i=0; i<nbRef; i++){
         if (references[i]->getId()==n->id){
@@ -294,11 +276,3 @@ Note& Note::getReferenceInt(unsigned int i) const{
   return (*references[i]);
 };
 
-//Note& Note::getIsReferenced(Note* n) const{
-//    for(unsigned int i=0; i<nbIsRef; i++){
-//        if (isreferenced[i]->getId()==n->id){
-//            return (*isreferenced[i]);
-//        }
-//    }
-//    throw NotesException("erreur, cette note n'est pas reference de l'autre");
-//}

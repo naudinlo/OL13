@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include "notes.h"
+#include "relations.h"
 using namespace std;
 
 
@@ -49,18 +50,21 @@ private:
     };
     static Handler handler;
 public:
-    Note& getNewNote(const string& id); //Revoir pour la déclaration suivant le type de note
-    Note& getNote(const string& id);
-    void deleteNote(const Note &n);
+    Note& getNewNote(const QString& id); //Revoir pour la déclaration suivant le type de note
+    Note& getNote(const QString& id);
+    void deleteNote(Note *n);
     void createNote(Note* n); //je l'ai déplacé en privé pour pourvoir ajouté une note créer par interface
-    void editNote(string& id, string& title);
+    void editNote(QString& id);
     void setFilename(string f){filename=f;}
     string getFilename()const {return filename;}
-    void load(const string& f);
+    void load(const QString& f);
     void save() const;
 
     static NotesManager* getInstance();
     static void libererInstance();
+
+    //Utile de faire un manager de trash ?
+    void emptyTrash();
 
     /*Autres méthodes singleton:
         static NotesManager& getInstance(){
@@ -90,11 +94,11 @@ private:
     };
     static Handler handler;
 public:
-    Note& getArchive(const string& id);
+    Note& getArchive(const QString& id);
     void deleteArchive(const Note& n);
-    void restoreArchive(const string& id);
+    void restoreArchive(const QString& id);
 
-    void load(const string& f);
+    void load(const QString& f);
     void save() const;
 
     static ArchiveManager& getInstance();
@@ -128,11 +132,11 @@ private:
     };
     static Handler handler;
 public:
-    Note& getTrash(const string& id);
+    Note& getTrash(const QString& id);
     void emptyTrash();
-    void restoreTrash(const string& id);
+    void restoreTrash(const QString& id);
 
-    void load(const string& f);
+    void load(const QString& f);
     void save() const;
 
     static TrashManager& getInstance();
@@ -146,6 +150,55 @@ public:
     }
     */
 };
+
+
+
+class RelationManager {
+private:
+    Relation** tabrelations;
+    unsigned int nbRelations;
+    unsigned int nbMaxRelations;
+    void addRelation(Relation* r);
+
+   /* RelationManager();
+    ~RelationManager();
+    RelationManager(const RelationManager& m);
+    RelationManager& operator=(const RelationManager& m);
+    */
+    struct Handler{
+        RelationManager* instance;
+        Handler():instance(0){}
+        ~Handler(){delete instance; instance=0;}
+    };
+    static Handler handler;
+public:
+    Relation &getRelation(const QString& title);
+    void deleteRelation(const Relation& r);
+
+    static RelationManager& getInstance();
+    static void libererInstance();
+
+    //Iterator
+    class Iterator{
+    private:
+        Relation** tab;  //adresse du tableau de pointeur
+        unsigned int nb;        //nb élément dans le tableau
+        unsigned int index;     //indice courant
+        Iterator(Relation** t, unsigned int n):tab(t), nb(n), index(0){}
+        friend class RelationManager;
+    public:
+        void next(){
+            if (index==nb) throw NotesException("incrémentation invalide");
+            index++;
+        }
+        bool isDone()const {return nb==index;}
+        Relation& current() const {return *tab[index];}
+    };
+    Iterator getIterator(){
+        return Iterator(tabrelations, nbRelations);
+    }
+};
+
 
 ostream& operator<<(ostream& f, const Note& n);
 

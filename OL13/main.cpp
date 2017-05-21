@@ -71,33 +71,36 @@ void test1(){
     rel.getNewCoupleRelation(&pt1,&pt2, "relation de tache");
 
     std::cout<<"\n RELATION : ";
-    rel.displayRelation(&pt1,&pt2);
+    //rel.displayRelation(&pt1,&pt2);
 
     rel.getNewCoupleRelation(&pr1,&pr2, "relation de recording");
-    rel.displayRelation(&pr1,&pr2);
+    //rel.displayRelation(&pr1,&pr2);
 
     rel.getNewCoupleRelation(&pt1,&pr2,"relation Sym",true);
     rel.displayRelation(&pt1,&pr2);
 
-    rel.removeCoupleRelation(&pt1,&pr2);
+//    rel.removeCoupleRelation(&pt1,&pr2);
 //    rel.displayRelation(&pt1,&pr2); //Pourquoi ne supprime pas directement les deux ?
 
-    rel.removeCoupleRelation(&pt1,&pt2);
-    rel.displayRelation(&pt1,&pr2);
+//    rel.removeCoupleRelation(&pt1,&pt2);
+    //rel.displayRelation(&pt1,&pr2);
     rel.displayRelation(&pt1,&pt2);
 
     pt1.setNewRef(&pt2);
     pr1.setNewRef(&pr2);
 
+//    pt1.display();
+//    pr1.display();
+
+//    pt2.display();
+//    pr2.display();
+
+    //Il faut un relation manager
+    rel.removeNoteRelation(&pt1);
+    rel.displayRelation(&pt1,&pt2);
+
+    pt1.setIsArchive(true);
     pt1.display();
-    pr1.display();
-
-    std::cout<<pt1.getNbIsRef();
-    std::cout<<pt2.getNbIsRef();
-    std::cout<<pr2.getNbIsRef();
-
-    pt2.display();
-    pr2.display();
 
     std::cout<<endl;
     std::cout<<endl;

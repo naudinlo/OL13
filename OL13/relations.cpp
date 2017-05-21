@@ -90,6 +90,19 @@ void Relation::removeCoupleRelation(Note* n1, Note* n2){
     }
 }
 
+
+void Relation::removeNoteRelation(Note* n1){
+    for(unsigned int i=0; i<nbCouple; i++){
+        if (relations[i]->getCoupleNoteX()->getId()==n1->getId() || relations[i]->getCoupleNoteY()->getId()==n1->getId()){
+            delete relations[i];
+            relations[i]=relations[--nbCouple];
+        }
+    }
+}
+
+
+
+
 /*
 void Relation::removeCoupleRelation(Note* n1, Note* n2){
     unsigned int i;

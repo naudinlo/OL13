@@ -37,6 +37,8 @@ public:
     const QString getDescription() const{return description;}
     NotesCouple* getCoupleRelation(Note* n1, Note* n2)const;
     void removeCoupleRelation(Note* n1, Note* n2);
+    void removeNoteRelation(Note* n1);
+
 
 //    std::string toStringRel(Note *n1, Note *n2)const;
 //    void displayRel(Note *n1, Note *n2, std::ostream& f=std::cout) const{

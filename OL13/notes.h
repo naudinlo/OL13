@@ -65,6 +65,9 @@ public:
     const QDateTime getLastmodif_date() const {return lastmodif_date;}
     bool getIsArchive() const {return isArchive;}
     bool getIsDeleted() const {return isDeleted;}
+    void setIsArchive(bool a){isArchive=a;}
+    void setIsDeleted(bool d){isDeleted=d;}
+
     QString getType()const {return QString(typeid(*this).name());}
     Note(const QString& i, const QString& ti);
 
@@ -96,7 +99,6 @@ public:
 
 //    //Les notes qui référence la note this
 //    Note& getIsReferenced(Note *n) const;
-
 };
 
 
