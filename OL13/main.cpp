@@ -86,11 +86,18 @@ void test1(){
     rel.displayRelation(&pt1,&pr2);
     rel.displayRelation(&pt1,&pt2);
 
-    pt1.addReference(&pt2);
-    pr1.addReference(&pr2);
+    pt1.setNewRef(&pt2);
+    pr1.setNewRef(&pr2);
 
     pt1.display();
     pr1.display();
+
+    std::cout<<pt1.getNbIsRef();
+    std::cout<<pt2.getNbIsRef();
+    std::cout<<pr2.getNbIsRef();
+
+    pt2.display();
+    pr2.display();
 
     std::cout<<endl;
     std::cout<<endl;

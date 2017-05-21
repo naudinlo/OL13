@@ -73,7 +73,7 @@ Recording& Recording::operator=(const Recording& r){
 
 //====CONSTRUCTEUR
 
-Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false), references(new Note*[5]), nbRef(0), nbMaxRef(5){
+Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false), references(new Note*[5]), nbRef(0), nbMaxRef(5),nbIsRef(0){
 //    time_t theTime = time(NULL);
 //    struct tm *aTime = localtime(&theTime);
 //    TIME::Date t0(aTime->tm_mday,aTime->tm_mon + 1,aTime->tm_year + 1900);
@@ -113,6 +113,7 @@ std::string Article::toString()const {
     for(unsigned int i=0; i<getNbRef(); i++){
         f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
     }
+    f<<"\n - Article reférencé par "<<getNbIsRef()<<" note(s).";
 
     f<<"\n";
     return f.str();
@@ -152,6 +153,7 @@ std::string Task::toString() const {
     for(unsigned int i=0; i<getNbRef(); i++){
         f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
     }
+    f<<"\n - Tâche reférencée par "<<getNbIsRef()<<" note(s).";
 
     f<<"\n";
     return f.str();
@@ -181,6 +183,7 @@ std::string Recording::toString() const {
     for(unsigned int i=0; i<getNbRef(); i++){
         f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
     }
+    f<<"\n - Enregistrement reférencé par "<<getNbIsRef()<<" note(s).";
 
     f<<"\n";
     return f.str();
@@ -220,6 +223,17 @@ QString getRecordingtoStr(ENUM::StatusType recording) {
 
 //====REFERENCE
 
+Note& Note::setNewRef(Note* n){
+    for(unsigned int i=0; i<nbRef; i++){
+        if (references[i]->getId()==n->getId()){
+            throw NotesException("erreur, ID déjà existant");
+        }
+    }
+    addReference(n);
+    //Incrémente de un le nombre de note qui référence this
+    n->setNbIsRef(n->getNbIsRef()+1);
+    return *n;
+};
 
 void Note::addReference(Note* n){
     if (nbRef==nbMaxRef){
@@ -238,6 +252,23 @@ void Note::addReference(Note* n){
     nbRef++;
 };
 
+//void Note::addIsReferenced(Note* n){
+//    if (nbIsRef==nbMaxIsRef){
+//        //besoin en grandissement
+//        Note** newtab=isreferenced;
+//        for(unsigned int i=0; i<nbIsRef; i++){
+//            newtab[i]=isreferenced[i];
+//            //mise à jour des attributs
+//        }
+//        nbMaxIsRef+=5;
+//        Note ** old=isreferenced;
+//        isreferenced=newtab;
+//        delete[] old;
+//    }
+//    isreferenced[nbIsRef]=n;
+//    nbIsRef++;
+//};
+
 //Note::~NotesManager(){
 //    for(unsigned int i=0; i<nbArticles; i++){
 //        delete articles[i];
@@ -249,9 +280,9 @@ void Note::addReference(Note* n){
 //}
 
 
-Note& Note::getReference(const QString &id)const{
+Note& Note::getReference(Note* n)const{
     for(unsigned int i=0; i<nbRef; i++){
-        if (references[i]->getId()==id){
+        if (references[i]->getId()==n->id){
             return (*references[i]);
         }
     }
@@ -262,3 +293,12 @@ Note& Note::getReference(const QString &id)const{
 Note& Note::getReferenceInt(unsigned int i) const{
   return (*references[i]);
 };
+
+//Note& Note::getIsReferenced(Note* n) const{
+//    for(unsigned int i=0; i<nbIsRef; i++){
+//        if (isreferenced[i]->getId()==n->id){
+//            return (*isreferenced[i]);
+//        }
+//    }
+//    throw NotesException("erreur, cette note n'est pas reference de l'autre");
+//}

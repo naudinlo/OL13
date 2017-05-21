@@ -49,6 +49,15 @@ private:
     unsigned int nbRef;
     unsigned int nbMaxRef;
 
+    unsigned int nbIsRef;
+
+//    Note ** isreferenced;
+//    unsigned int nbIsRef;
+//    unsigned int nbMaxIsRef;
+
+    void addReference(Note* n);
+    //    void addIsReferenced(Note* n);
+
 public:
     const QString getId() const {return id;}
     const QString getTitle() const {return title;}
@@ -72,12 +81,22 @@ public:
         f<<toString();
     }
 
-    void addReference(Note* n);
-    Note& getReference(const QString& id) const;
+    //Les notes que this reference
+//    void addReference(Note* n);
+    Note& setNewRef(Note* n);
+
+    Note& getReference(Note *n) const;
     Note& getReferenceInt(unsigned int i) const;
     unsigned int getNbRef() const{return nbRef;}
     unsigned int getNbMaxRef() const{return nbMaxRef;}
     void setNbRef(unsigned int n){ nbRef=n;}
+
+    void setNbIsRef(unsigned int n){nbIsRef=n;}
+    unsigned int getNbIsRef()const{return nbIsRef;}
+
+//    //Les notes qui référence la note this
+//    Note& getIsReferenced(Note *n) const;
+
 };
 
 
