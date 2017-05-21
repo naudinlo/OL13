@@ -115,7 +115,7 @@ std::string Task::toString() const {
     if(priority!=-1)
         f<<"\n - Priority : "<<priority;
     else
-        f<<"\n No Priority";
+        f<<"\n - No Priority";
     f<<"\n - Status : ";
     switch(status){
     case 0 :
@@ -141,7 +141,7 @@ std::string Task::toString() const {
 std::string Recording::toString() const {
     std::stringstream f;
     f<<"\n=== RECORDING "<<getId().toStdString()<<" ===\n";
-    f<<"\n - ID : "<<getId().toStdString() <<"\n - Title : "<<getTitle().toStdString()<<"\n - Description : "<<description.toPlainText().toStdString()<<"\n - Creation date : "<<getCreation_date().toString("dd.MM.yyyy").toStdString()<<"\n - Last modification date : "<<getLastmodif_date().toString("dd.MM.yyyy").toStdString()<<"\n";
+    f<<"\n - ID : "<<getId().toStdString() <<"\n - Title : "<<getTitle().toStdString()<<"\n - Description : "<<description.toPlainText().toStdString()<<"\n - Creation date : "<<getCreation_date().toString("dd.MM.yyyy").toStdString()<<"\n - Last modification date : "<<getLastmodif_date().toString("dd.MM.yyyy").toStdString();
     f<<"\n - Type : ";
     switch(type){
     case 0 :

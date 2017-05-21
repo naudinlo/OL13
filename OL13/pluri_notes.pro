@@ -5,7 +5,8 @@ HEADERS += \
     notes.h \
     QInclude.h \
     manager.h \
-    undoredo.h
+    undoredo.h \
+    relations.h
 
 QT += widgets
 
@@ -15,4 +16,5 @@ SOURCES += \
     Creation_Note.cpp \
     notes.cpp \
     manager.cpp \
-    undoredo.cpp
+    undoredo.cpp \
+    relations.cpp
