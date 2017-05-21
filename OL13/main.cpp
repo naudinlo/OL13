@@ -80,11 +80,17 @@ void test1(){
     rel.displayRelation(&pt1,&pr2);
 
     rel.removeCoupleRelation(&pt1,&pr2);
-    rel.displayRelation(&pt1,&pr2); //Pourquoi ne supprime pas directement les deux ?
+//    rel.displayRelation(&pt1,&pr2); //Pourquoi ne supprime pas directement les deux ?
 
     rel.removeCoupleRelation(&pt1,&pt2);
     rel.displayRelation(&pt1,&pr2);
     rel.displayRelation(&pt1,&pt2);
+
+    pt1.addReference(&pt2);
+    pr1.addReference(&pr2);
+
+    pt1.display();
+    pr1.display();
 
     std::cout<<endl;
     std::cout<<endl;

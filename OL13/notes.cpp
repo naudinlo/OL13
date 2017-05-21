@@ -73,7 +73,7 @@ Recording& Recording::operator=(const Recording& r){
 
 //====CONSTRUCTEUR
 
-Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false){
+Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false), references(new Note*[5]), nbRef(0), nbMaxRef(5){
 //    time_t theTime = time(NULL);
 //    struct tm *aTime = localtime(&theTime);
 //    TIME::Date t0(aTime->tm_mday,aTime->tm_mon + 1,aTime->tm_year + 1900);
@@ -99,11 +99,22 @@ Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::
 
 //====METHODE ET SURCHARGE
 
+
+
 //toString pour display Article
 std::string Article::toString()const {
     std::stringstream f;
     f<<"\n=== ARTICLE "<<getId().toStdString()<<" ===\n";
     f<<"ID : "<<getId().toStdString()<<"\n - Title : "<<getTitle().toStdString()<<"\n - Text : "<<text.toPlainText().toStdString()<<"\n - Creation date : "<<getCreation_date().toString("dd.MM.yyyy").toStdString()<<"\n - Last modification date : "<<getLastmodif_date().toString("dd.MM.yyyy").toStdString()<<"\n";
+
+    //Affichage des references
+    f<<"\n - Reference :";
+    if(getNbRef()==0) f<<" none";
+    for(unsigned int i=0; i<getNbRef(); i++){
+        f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
+    }
+
+    f<<"\n";
     return f.str();
 }
 
@@ -133,6 +144,15 @@ std::string Task::toString() const {
 
     if(dueDate.isNull()){f<<"\n - No due date.";}
     else {f<<"\n - Due date : "<<dueDate.toString("dd.MM.yyyy").toStdString();}
+
+
+    //Affichage des references
+    f<<"\n - Reference :";
+    if(getNbRef()==0) f<<" none";
+    for(unsigned int i=0; i<getNbRef(); i++){
+        f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
+    }
+
     f<<"\n";
     return f.str();
 }
@@ -154,6 +174,14 @@ std::string Recording::toString() const {
         f<<"Video";
         break;
     }
+
+    //Affichage des references
+    f<<"\n - Reference :";
+    if(getNbRef()==0) f<<" none";
+    for(unsigned int i=0; i<getNbRef(); i++){
+        f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
+    }
+
     f<<"\n";
     return f.str();
 }
@@ -187,3 +215,50 @@ QString getRecordingtoStr(ENUM::StatusType recording) {
     QString recordingName[] = {"Image", "Audio", "Video"};
     return recordingName[recording];
 }
+
+
+
+//====REFERENCE
+
+
+void Note::addReference(Note* n){
+    if (nbRef==nbMaxRef){
+        //besoin en grandissement
+        Note** newtab=references;
+        for(unsigned int i=0; i<nbRef; i++){
+            newtab[i]=references[i];
+            //mise à jour des attributs
+        }
+        nbMaxRef+=5;
+        Note ** old=references;
+        references=newtab;
+        delete[] old;
+    }
+    references[nbRef]=n;
+    nbRef++;
+};
+
+//Note::~NotesManager(){
+//    for(unsigned int i=0; i<nbArticles; i++){
+//        delete articles[i];
+//    }
+//    delete[] articles;
+//    nbArticles=0;
+//    nbMaxArticles=0;
+//    articles=nullptr;
+//}
+
+
+Note& Note::getReference(const QString &id)const{
+    for(unsigned int i=0; i<nbRef; i++){
+        if (references[i]->getId()==id){
+            return (*references[i]);
+        }
+    }
+    throw NotesException("erreur, ID inexistant");
+};
+
+
+Note& Note::getReferenceInt(unsigned int i) const{
+  return (*references[i]);
+};

@@ -21,7 +21,6 @@ public:
     bool getSymetric() const {return symetric;}
 };
 
-
 class Relation {
 private:
     QString title;

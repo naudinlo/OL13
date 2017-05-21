@@ -45,6 +45,10 @@ private:
     bool isArchive; //Si jamais on l'archive alors elle devient const
     bool isDeleted; //Si jamais on la met dans la corbeille
 
+    Note ** references;
+    unsigned int nbRef;
+    unsigned int nbMaxRef;
+
 public:
     const QString getId() const {return id;}
     const QString getTitle() const {return title;}
@@ -67,6 +71,13 @@ public:
     void display(std::ostream& f=std::cout) const{
         f<<toString();
     }
+
+    void addReference(Note* n);
+    Note& getReference(const QString& id) const;
+    Note& getReferenceInt(unsigned int i) const;
+    unsigned int getNbRef() const{return nbRef;}
+    unsigned int getNbMaxRef() const{return nbMaxRef;}
+    void setNbRef(unsigned int n){ nbRef=n;}
 };
 
 
