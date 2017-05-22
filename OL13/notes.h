@@ -162,6 +162,7 @@ public:
     void setDescription(const QString& d) {description.setPlainText(d);}
     ENUM::RecordingType getType() const {return type;}
     void setType(const ENUM::RecordingType& r) {type=r;}
+    const QString getLink() const {return link;} //voir si on garde cette structure pour les images
 
     Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l);
 

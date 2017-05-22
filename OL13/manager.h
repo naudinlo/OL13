@@ -4,6 +4,7 @@
 #include <iostream>
 #include "notes.h"
 #include "relations.h"
+#include "QInclude.h"
 using namespace std;
 
 
@@ -37,7 +38,7 @@ private:
     Note** notes;
     unsigned int nbNotes;
     unsigned int nbMaxNotes;
-    string filename;
+    mutable QString filename;
 
     NotesManager();
     ~NotesManager();
@@ -55,8 +56,8 @@ public:
     void deleteNote(Note *n);
     void createNote(Note* n); //je l'ai déplacé en privé pour pourvoir ajouté une note créer par interface
     void editNote(QString& id);
-    void setFilename(string f){filename=f;}
-    string getFilename()const {return filename;}
+    void setFilename(const QString f){filename=f;}
+    QString getFilename()const {return filename;}
     void load();
     void save() const;
 

@@ -87,7 +87,7 @@ void interface::OuvrirFichier(){
         Destruct_selected_Note();
         QMessageBox::information(this,"Fichier","Vous avez sélectionné:"+fichier);
         CreateDock_selected_Note(); //prendre en compte le changement de vue
-        note_manager->setFilename(fichier.toStdString());
+        note_manager->setFilename(fichier);
         //note_manager->load();
     }
     else if(!openfile.close())
@@ -95,7 +95,7 @@ void interface::OuvrirFichier(){
 
 }
 void interface::save(){
-    if(note_manager->getFilename().empty())
+    if(note_manager->getFilename().isEmpty())
     {
         QMessageBox::information(this,"Sauvegarde","Sélectionner un ficher");
         OuvrirFichier();

@@ -42,7 +42,7 @@ NotesManager::~NotesManager(){
     delete[] notes;
 }
 
-/*void NotesManager::save() const {
+void NotesManager::save() const {
     QFile newfile(filename);
     if (!newfile.open(QIODevice::WriteOnly | QIODevice::Text))
         throw NotesException(QString("erreur sauvegarde notes : ouverture fichier xml"));
@@ -50,17 +50,62 @@ NotesManager::~NotesManager(){
     stream.setAutoFormatting(true);
     stream.writeStartDocument();
     stream.writeStartElement("notes");
-    for(unsigned int i=0; i<nbArticles; i++){
-        stream.writeStartElement("article");
-        stream.writeTextElement("id",articles[i]->getId());
-        stream.writeTextElement("title",articles[i]->getTitle());
-        stream.writeTextElement("text",articles[i]->getText());
-        stream.writeEndElement();
+    for(unsigned int i=0; i<nbNotes; i++){
+
+        if(notes[i]->getType()=="Article"){
+            Article a=dynamic_cast<Article>(**notes[i]);
+            stream.writeStartElement("article");
+            stream.writeTextElement("id",a.getId());
+            stream.writeTextElement("title",a.getTitle());
+            stream.writeTextElement("c_date",a.getCreation_date());
+            stream.writeTextElement("lm_date",a.getLastmodif_date());
+            if(a.getIsArchive()) stream.writeTextElement("isArchive","true");
+            else stream.writeTextElement("isArchive","false");
+            if(a.getIsDeleted()) stream.writeTextElement("isDeleted","true");
+            else stream.writeTextElement("isDeleted","false");
+            stream.writeTextElement("text",a.getText());
+            stream.writeEndElement();
+        }
+
+        if(notes[i]->getType()=="Task"){
+            Task t=dynamic_cast<Task>(notes[i]);
+            stream.writeStartElement("Task");
+            stream.writeTextElement("id",t.getId());
+            stream.writeTextElement("title",t.getTitle());
+            stream.writeTextElement("c_date",t.getCreation_date());
+            stream.writeTextElement("lm_date",t.getLastmodif_date());
+            if(t.getIsArchive()) stream.writeTextElement("isArchive","true");
+            else stream.writeTextElement("isArchive","false");
+            if(t.getIsDeleted()) stream.writeTextElement("isDeleted","true");
+            else stream.writeTextElement("isDeleted","false");
+            stream.writeTextElement("action",t.getAction());
+            stream.writeTextElement("priority",t.getPriority());
+            stream.writeTextElement("d_date",t.getDueDate());
+            stream.writeTextElement("status",t.getStatus());
+            stream.writeEndElement();
+        }
+
+        if(notes[i]->getType()=="Recording"){
+            Recording r=dynamic_cast<Recording>(notes[i]);
+            stream.writeStartElement("Task");
+            stream.writeTextElement("id",r.getId());
+            stream.writeTextElement("title",r.getTitle());
+            stream.writeTextElement("c_date",r.getCreation_date());
+            stream.writeTextElement("lm_date",r.getLastmodif_date());
+            if(r.getIsArchive()) stream.writeTextElement("isArchive","true");
+            else stream.writeTextElement("isArchive","false");
+            if(r.getIsDeleted()) stream.writeTextElement("isDeleted","true");
+            else stream.writeTextElement("isDeleted","false");
+            stream.writeTextElement("description",r.getDescription());
+            stream.writeTextElement("type",r.getType());
+            stream.writeTextElement("link",r.getLink());
+            stream.writeEndElement();
+        }
     }
     stream.writeEndElement();
     stream.writeEndDocument();
     newfile.close();
-}*/
+}
 
 /*void NotesManager::load() {
     QFile fin(filename);

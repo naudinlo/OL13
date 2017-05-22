@@ -9,6 +9,7 @@ HEADERS += \
     relations.h
 
 QT += widgets
+QT += xml
 
 SOURCES += \
     interface.cpp \
