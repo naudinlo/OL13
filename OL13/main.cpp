@@ -13,7 +13,7 @@
 #include "interface.h"
 
 
-void test1(){
+/*void test1(){
     std::cout << "Hello, World!\n";
 
 
@@ -105,8 +105,8 @@ void test1(){
     std::cout<<endl;
     std::cout<<endl;
 
-}
-/*
+}*/
+
 int test2(int argc,char *argv[])
 {
     // UTF-8 Encoding
@@ -119,10 +119,10 @@ int test2(int argc,char *argv[])
     return app.exec();
 
 }
-*/
+
 
 int main(int argc, char * argv[]) {
-    test1();
-    //test2(argc,argv);
+    //test1();
+    test2(argc,argv);
     return 0;
 }

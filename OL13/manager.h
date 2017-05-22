@@ -57,7 +57,7 @@ public:
     void editNote(QString& id);
     void setFilename(string f){filename=f;}
     string getFilename()const {return filename;}
-    void load(const QString& f);
+    void load();
     void save() const;
 
     static NotesManager* getInstance();
@@ -75,7 +75,7 @@ public:
     */
 };
 
-class ArchiveManager {
+/*class ArchiveManager {
 private:
     Note** notes;
     unsigned int nbNotes;
@@ -104,13 +104,6 @@ public:
     static ArchiveManager& getInstance();
     static void libererInstance();
 
-    /*Autres méthodes singleton:
-        static NotesManager& getInstance(){
-        //crée et donne accès à l'unique instance
-        static NotesManager instance;
-        return instance;
-    }
-    */
 };
 
 class TrashManager {
@@ -142,14 +135,8 @@ public:
     static TrashManager& getInstance();
     static void libererInstance();
 
-    /*Autres méthodes singleton:
-        static NotesManager& getInstance(){
-        //crée et donne accès à l'unique instance
-        static NotesManager instance;
-        return instance;
-    }
-    */
-};
+
+};*/
 
 
 
