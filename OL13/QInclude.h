@@ -35,6 +35,7 @@
 #include "QTextDocument"
 #include <QtXml>
 #include <QFile>
+#include <typeinfo>
 
 #include <QStandardItemModel>
 #include <QHeaderView>

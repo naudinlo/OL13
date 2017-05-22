@@ -163,6 +163,8 @@ public:
     Relation &getRelation(const QString& title);
     void deleteRelation(const Relation& r);
 
+    unsigned int getNbRelations() const{return nbRelations;}
+
     static RelationManager& getInstance();
     static void libererInstance();
 

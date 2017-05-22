@@ -34,8 +34,10 @@
 		<isDeleted> </isDeleted>
 		<description> </description>
 		<type> </type>
-		<fichier> </fichier>
+		<Link> </Link>
 	</recording>
+
+	...
 </notes>
 
 <relationmanager>
@@ -49,6 +51,10 @@
 				<label> </label>
 				<symetric> </symetric>
 			</couple>
+
+			...
 		</notecouple>
+	</relation>
 		
+	...
 </relationmanager>
