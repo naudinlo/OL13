@@ -5,8 +5,8 @@
 #include "notes.h"
 #include "relations.h"
 #include "QInclude.h"
-using namespace std;
 
+using namespace std;
 
 /*class Manager{
 private:

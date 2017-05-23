@@ -39,6 +39,24 @@ public:
     void removeCoupleRelation(Note* n1, Note* n2);
     void removeNoteRelation(Note* n1);
 
+    //Iterator
+    class Iterator{
+    private:
+        NotesCouple** tab;  //adresse du tableau de pointeur
+        unsigned int nb;        //nb élément dans le tableau
+        unsigned int index;     //indice courant
+        Iterator(NotesCouple** t, unsigned int n):tab(t), nb(n), index(0){}
+        friend class Relation;
+    public:
+        void next(){
+            if (index==nb) throw NotesException("incrémentation invalide");
+            index++;
+        }
+        bool isDone()const {return nb==index;}
+        NotesCouple& current() const {return *tab[index];}
+    };
+    Iterator getIterator(){
+        return Iterator(relations, nbCouple);
 
 //    std::string toStringRel(Note *n1, Note *n2)const;
 //    void displayRel(Note *n1, Note *n2, std::ostream& f=std::cout) const{
