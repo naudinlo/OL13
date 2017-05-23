@@ -37,7 +37,7 @@ void Relation::addCoupleRelation(NotesCouple* nc){
     }
     relations[nbCouple]=nc;
     nbCouple++;
-};
+}
 
 NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2) const {
     for(unsigned int i=0; i<nbCouple; i++){
@@ -47,7 +47,7 @@ NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2) const {
     }
     return nullptr;
     throw NotesException("erreur, relation de notes inexistante");
-};
+}
 
 void Relation::displayRelation(Note *n1, Note *n2)const{
     const NotesCouple* nc=getCoupleRelation(n1,n2);
@@ -65,7 +65,7 @@ void Relation::displayRelation(Note *n1, Note *n2)const{
     else{
         std::cout<<"\n Erreur : Il n'existe pas de relation entre "<<n1->getTitle().toStdString()<<" et "<<n2->getTitle().toStdString()<<std::endl;;
     }
-};
+}
 
 
 

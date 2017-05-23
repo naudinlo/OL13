@@ -6,6 +6,7 @@
 #include "relations.h"
 #include "QInclude.h"
 
+
 using namespace std;
 
 /*class Manager{

@@ -57,6 +57,7 @@ public:
     };
     Iterator getIterator(){
         return Iterator(relations, nbCouple);
+    }
 
 //    std::string toStringRel(Note *n1, Note *n2)const;
 //    void displayRel(Note *n1, Note *n2, std::ostream& f=std::cout) const{

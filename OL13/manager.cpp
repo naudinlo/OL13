@@ -120,9 +120,9 @@ void NotesManager::save() const {
         stream.writeStartElement("notecouple");
         Relation::Iterator it2=it.current().getIterator();
         while (!it2.isDone()) {
-            stream.writeStartElement(couple);
-            stream.writeTextElement("notex",it2.current().getCoupleNoteX());
-            stream.writeTextElement("notey",it2.current().getCoupleNoteY());
+            stream.writeStartElement("couple");
+            stream.writeTextElement("notex",it2.current().getCoupleNoteX()->getId());
+            stream.writeTextElement("notey",it2.current().getCoupleNoteY()->getId());
             stream.writeTextElement("label",it2.current().getLabel());
             if(it2.current().getSymetric()) stream.writeTextElement("symetric","true");//est-ce utile ? (les deux couples seront marqué donc on s'en fiche)
             else stream.writeTextElement("symetric","false");
