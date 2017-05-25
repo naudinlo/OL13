@@ -21,34 +21,34 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
 
     QAction *ActionQuitter =new QAction("&Quitter", this);
     ActionQuitter->setShortcut(QKeySequence("ctrl+Q"));
-    ActionQuitter->setIcon(QIcon("LOGOUT.png"));
+//    ActionQuitter->setIcon(QIcon("LOGOUT.png"));
     connect(ActionQuitter,SIGNAL(triggered(bool)),qApp,SLOT(quit()));
     MenuFichier->addAction(ActionQuitter);
 
     QAction *ActionOuvrir=new QAction("&Ouvrir",this);
     connect(ActionOuvrir,SIGNAL(triggered(bool)),this,SLOT(OuvrirFichier()));
     ActionOuvrir->setShortcut(QKeySequence("ctrl+O"));
-    ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
+//    ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
     QToolBar *toolBarFichier =addToolBar("fichier");
     toolBarFichier->addAction(ActionOuvrir);
     MenuFichier->addAction(ActionOuvrir);
 
 
-    QAction *ActionNouveau=new QAction("&Nouvelle Note",this);
-    ActionNouveau->setIcon(QIcon("new.png"));
+    QAction *ActionNouveau=new QAction("&Nouvelle note",this);
+//    ActionNouveau->setIcon(QIcon("new.png"));
     ActionNouveau->setShortcut(QKeySequence("ctrl+N"));
     connect(ActionNouveau,SIGNAL(triggered(bool)),this,SLOT(CreerNote()));
     toolBarFichier->addAction(ActionNouveau);
     MenuFichier->addAction(ActionNouveau);
 
     QAction *ActionSave=new QAction("&Sauvegarder",this);
-    ActionSave->setIcon(QIcon("save.png"));
+//    ActionSave->setIcon(QIcon("save.png"));
     ActionSave->setShortcut(QKeySequence("ctrl+S"));
     connect(ActionSave,SIGNAL(triggered(bool)),this,SLOT(save()));
     toolBarFichier->addAction(ActionSave);
     MenuFichier->addAction(ActionSave);
 
-    QLabel *text = new QLabel("selectionner une Note à afficher");
+    QLabel *text = new QLabel("Sélectionner une note à afficher");
     text->setEnabled(false);
     QHBoxLayout *layout=new QHBoxLayout;
     layout->addStretch();
@@ -63,9 +63,18 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
     setCentralWidget(ZoneCentrale);
 }
 
+void interface::CreateDock_edited_Note(){
+    dock_editer_note=new QDockWidget("Editer Document",this);
+    dock_editer_note->setAllowedAreas(Qt::TopDockWidgetArea);
+    dock_editer_note->setWidget(&(note_page->getdock()));
+    addDockWidget(Qt::TopDockWidgetArea,dock_editer_note);
+    MenuEd->addAction(dock_editer_note->toggleViewAction());
+
+}
+
 void interface::CreateDock_selected_Note(){
     listNote=new selection_note();
-    dock_selected_Note=new QDockWidget("Selectionner Une Note",this);
+    dock_selected_Note=new QDockWidget("Sélectionner une note",this);
     dock_selected_Note->setAllowedAreas(Qt::LeftDockWidgetArea );
     dock_selected_Note->setWidget(listNote);
     addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
@@ -80,14 +89,14 @@ void interface::Destruct_selected_Note(){
 
 void interface::OuvrirFichier(){
     //QString fichier = QFileDialog::getOpenFileName(this,"Ouvrir un fichier",QString());
-    QFileDialog openfile(this,"ouvrir un fichier",QString());
+    QFileDialog openfile(this,"Ouvrir un fichier",QString());
     QString fichier=openfile.getOpenFileName();
     if(fichier != 0)
     {
         Destruct_selected_Note();
-        QMessageBox::information(this,"Fichier","vous avez sélèctionnée:"+fichier);
+        QMessageBox::information(this,"Fichier","Vous avez sélectionné:"+fichier);
         CreateDock_selected_Note(); //prendre en compte le changement de vue
-        note_manager->setFilename(fichier.toStdString());
+        note_manager->setFilename(fichier);
         //note_manager->load();
     }
     else if(!openfile.close())
@@ -95,12 +104,12 @@ void interface::OuvrirFichier(){
 
 }
 void interface::save(){
-    if(note_manager->getFilename().empty())
+    if(note_manager->getFilename().isEmpty())
     {
-        QMessageBox::information(this,"sauvegarde","selectionner un ficher");
+        QMessageBox::information(this,"Sauvegarde","Sélectionner un ficher");
         OuvrirFichier();
     }
-    note_manager->save();
+    //note_manager->save();
 }
 
 void interface::CreerNote(){
@@ -117,7 +126,9 @@ void interface::addNewNote(Note* n){
 
 
     std::stringstream f;
-    f<<n->getCreation_date();
+    //QDateTime dt=n->getCreation_date();`
+    QString string_dt=(n->getCreation_date()).toString("dd.MM.yyyy");
+    f<<string_dt.toStdString();
     QList< QStandardItem* > items;
     items.append(new QStandardItem(n->getTitle()));
     items.append(new QStandardItem (f.str().c_str()));
@@ -173,8 +184,11 @@ void selection_note::emit_selection(QModelIndex i){
 
 void interface::afficher_note(QString id){
     try{
-    Note& current=note_manager->getNote(id.toStdString());
+    Note& current=note_manager->getNote(id);
     QMessageBox::information(this,current.getId(),current.getTitle());
+    note_page=new page_notes;
+    CreateDock_edited_Note();
+    setCentralWidget(note_page);
     }
     catch(NotesException e)
     {

@@ -3,17 +3,21 @@ HEADERS += \
     Creation_Note.h \
     include.h \
     notes.h \
-    timing.h \
     QInclude.h \
-    function.h \
-    manager.h
+    manager.h \
+    undoredo.h \
+    relations.h \
+    aff_notes.h
 
 QT += widgets
+QT += xml
 
 SOURCES += \
     interface.cpp \
     main.cpp \
     Creation_Note.cpp \
     notes.cpp \
-    timing.cpp \
-    manager.cpp
+    manager.cpp \
+    undoredo.cpp \
+    relations.cpp \
+    aff_notes.cpp

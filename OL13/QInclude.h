@@ -28,12 +28,14 @@
 #include <QHBoxLayout>
 #include <QTreeView>
 #include <QString>
-#include <QFileDialog>
 #include <QMessageBox>
 #include <QGroupBox>
 #include <QWidget>
 #include <QFormLayout>
 #include "QTextDocument"
+#include <QtXml>
+#include <QFile>
+#include <typeinfo>
 
 #include <QStandardItemModel>
 #include <QHeaderView>

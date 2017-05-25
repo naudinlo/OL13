@@ -5,8 +5,10 @@
 #include "Creation_Note.h"
 #include <QDockWidget>
 #include "manager.h"
+#include "aff_notes.h"
 #include "sstream"
 #include <QList>
+#include <QDate>
 #include <QStandardItemModel>
 #include <typeinfo>
 class selection_note;
@@ -35,16 +37,20 @@ class interface:public QMainWindow
     Q_OBJECT
     Creation_Note fen_creerNote;
     selection_note* listNote;
+    page_notes* note_page;
     QMenu *MenuFichier;
     QMenu *MenuEd;
     QMenu *MenuAff;
     QMenu *fichiersRecents;
+
     QDockWidget* dock_selected_Note;
+    QDockWidget* dock_editer_note;
     NotesManager* note_manager;
 
 public:
     interface();
     void CreateDock_selected_Note();//doit prendre un fichier est chargé la liste
+    void CreateDock_edited_Note();
     void Destruct_selected_Note();
     ~interface(){
         NotesManager::libererInstance();
