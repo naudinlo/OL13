@@ -4,7 +4,7 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
 {
     note_manager=NotesManager::getInstance();
 
-    QWidget *ZoneCentrale = new QWidget(this);
+    ZoneCentrale = new QWidget(this);
     MenuFichier =menuBar()->addMenu("&fichier");
     MenuEd =menuBar()->addMenu("&Edition");
     MenuAff =menuBar()->addMenu("&Affichage");
@@ -77,6 +77,7 @@ void interface::CreateDock_selected_Note(){
     dock_selected_Note=new QDockWidget("Sélectionner une note",this);
     dock_selected_Note->setAllowedAreas(Qt::LeftDockWidgetArea );
     dock_selected_Note->setWidget(listNote);
+    //dock_selected_Note->setMaximumSize(QSize(20));
     addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
     MenuAff->addAction(dock_selected_Note->toggleViewAction());
     connect(listNote,SIGNAL(selection(QString)),this,SLOT(afficher_note(QString)));
@@ -186,9 +187,10 @@ void interface::afficher_note(QString id){
     try{
     Note& current=note_manager->getNote(id);
     QMessageBox::information(this,current.getId(),current.getTitle());
-    note_page=new page_notes;
-    CreateDock_edited_Note();
+    note_page=new page_Task(dynamic_cast<Task&> (current));
     setCentralWidget(note_page);
+    CreateDock_edited_Note();
+
     }
     catch(NotesException e)
     {
