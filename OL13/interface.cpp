@@ -123,7 +123,7 @@ void interface::addNewNote(Note* n){
     note_manager->createNote(n);
     QList< QStandardItem* > note;
     note.append(new QStandardItem (n->getTitle()));
-    note.append(new QStandardItem(QString(n->getType()).remove(0,1)));
+    note.append(new QStandardItem(QString(n->getType())));
 
 
     std::stringstream f;
@@ -187,7 +187,7 @@ void interface::afficher_note(QString id){
     try{
     Note& current=note_manager->getNote(id);
     QMessageBox::information(this,current.getId(),current.getTitle());
-    note_page=new page_Task(dynamic_cast<Task&> (current));
+    note_page=new page_notes(current);
     setCentralWidget(note_page);
     CreateDock_edited_Note();
 

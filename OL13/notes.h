@@ -68,7 +68,7 @@ public:
     void setIsArchive(bool a){isArchive=a;}
     void setIsDeleted(bool d){isDeleted=d;}
 
-    QString getType()const {return QString(typeid(*this).name());}
+    QString getType()const {return QString(typeid(*this).name()).remove(0,1);}
     Note(const QString& i, const QString& ti);
 
     void setTitle(const QString& t){title=t;}
@@ -106,7 +106,7 @@ class Article : public Note{
 private:
     QTextDocument text;
 public:
-    QTextDocument& getText() {return text;}  //Hug: je retire le const à y réfléchir
+    QTextDocument& getText(){return text;}  //Hug: je retire le const à y réfléchir
     void setText(const QString& t){text.setPlainText(t);}
 
     Article(const QString& i, const QString& ti, const QString& te);
@@ -133,7 +133,7 @@ public:
     void setStatus(const ENUM::StatusType& s) {status=s;}
     int getPriority() const {return priority;}
     void setPriority(unsigned int p) {priority=p;}
-    const QDateTime getDueDate() const{return dueDate;}
+    const QDateTime& getDueDate() const{return dueDate;}
     void setDueDate(const QDateTime d){dueDate=d;}
 
     //Constructeurs

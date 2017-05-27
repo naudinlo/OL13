@@ -1,11 +1,7 @@
 #ifndef Creation_Note_H
 #define Creation_Note_H
 
-//#include "include.h"
-#include "QInclude.h"
-#include "notes.h"
-class QNote;
-
+#include "qnote.h"
 class Creation_Note: public QDialog
 {
      Q_OBJECT
@@ -64,77 +60,6 @@ signals:
     void activer_Creer(){
         Creer->setEnabled(E_title_not_null && E_note_not_null);
         }
-};
-class QNote:public QWidget{
-    Q_OBJECT
-protected:
-    QGridLayout* grid;
-public:
-    virtual Note* get_note(QString id,QString title)=0;
-    QNote():QWidget(){}
-public slots:
-    virtual void check_creer()=0;
-signals:
-   void checked_creer(bool);
-};
-
-class QArticle: public QNote{
-    Q_OBJECT
-    QLabel* text;
-    QTextEdit* E_text;
-    QGridLayout* grid;
-    Note* get_note(QString id, QString title);
-public:
-    QArticle();
-public slots:
-    void check_creer();
-
-signals:
-    void checked_creer(bool);
-};
-
-class QTask: public QNote{
-    Q_OBJECT
-    QGroupBox* duedate;
-    QHBoxLayout* optional_duedate;
-    QVBoxLayout* fen;
-    QLabel* action;
-    QLineEdit* E_action;
-    QGroupBox* priority;
-    QHBoxLayout* optional_priority;
-    QSpinBox* E_priority;
-
-    //QLabel* duedate;
-    QDateTimeEdit* E_duedate;
-    QLabel* status;
-    QComboBox* E_status;
-    QGridLayout* grid;
-    Note* get_note(QString id, QString title);
-public:
-    QTask();
-signals:
-    void checked_creer(bool);
-public slots:
-    void check_creer();
-};
-
-class QRecording: public QNote{
-    Q_OBJECT
-    QLabel* description;
-    QTextEdit* E_description;
-    QLabel* type;
-    QComboBox* E_type;
-    QLineEdit* E_link;
-    QPushButton* link;
-    QGridLayout* grid;
-    Note* get_note(QString id, QString title);
-public:
-    QRecording();
-public slots:
-    QString OuvrirFichier();
-    void check_creer();
-signals:
-    void checked_creer(bool);
 };
 
 #endif // Creation_Note_H
