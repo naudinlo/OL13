@@ -19,6 +19,8 @@ void creation(){
     NotesManager* m1=NotesManager::getInstance();
 
     Article& a1=m1->getNewArticle("article_1","a_title_1","a_text_1");
+    Article& a2=m1->getNewArticle("article_2","a_title_2","a_text_2");
+
     Task& t1=m1->getNewTask("task_1","tasktitle1","action1",ENUM::Pending,5);
     Task& t2=m1->getNewTask("task_2", "tasktitle2","action2",ENUM::Pending);
     t2.setPriority(10);
@@ -35,9 +37,8 @@ void affiche(){
 
     //Bug ici
     for(NotesManager::Iterator it=m->getIterator(); !it.isDone(); it.next()){
-        std::cout<<"++";
 //        std::cout<<it.current()<<"\n";
-        it.current().display(std::cout);
+        it.current().display();
     };
 }
 
@@ -64,17 +65,17 @@ void relation(){
     rel1.displayRelation(&t1,&t2);
 
     rel2.getNewCoupleRelation(&r1,&r2, "relation de recording");
-    rel2.displayRelation(&r1,&r2);
+//    rel2.displayRelation(&r1,&r2);
 
     rel1.getNewCoupleRelation(&t1,&r2,"relation Sym",true);
     rel2.getNewCoupleRelation(&t1,&r2,"relation 2 Sym",true);
 
-    rel1.displayRelation(&t1,&r2);
-    rel2.displayRelation(&t1,&r2);
+//    rel1.displayRelation(&t1,&r2);
+//    rel2.displayRelation(&t1,&r2);
 
     rel1.removeCoupleRelation(&t1,&t2);
-    const QString& st1=t1.getId();
-    nm->deleteNote(st1);
+//    const QString& st1=t1.getId();
+//    nm->deleteNote(st1);
     rel1.displayRelation(&t1,&r2);
 
     t1.setNewRef(&t2);
@@ -87,13 +88,13 @@ void relation(){
 
     t1.setIsArchive(true);
     t1.display();
-    nm->deleteNote("task_1");
+//    nm->deleteNote("task_1");
 
-    nm->emptyTrash();
+//    nm->emptyTrash();
 
     std::cout<<"\n OK note supprimée \n";
 
-    affiche();
+    //affiche();
 
 //    Note& nt1=nm->getNote("task_1");
 //    nt1.display();
@@ -115,8 +116,9 @@ int PROGRAMME(int argc,char *argv[])
 int main(int argc, char * argv[]) {
     try {
             creation(); // cette ligne peut Ítre mise en commentaire aprËs la 1Ëre exÈcution
-//            affiche();
+            affiche();
             relation();
+            affiche();
         }
         catch(NotesException& e){
             std::cout<<e.getinfo().toStdString()<<"\n";
