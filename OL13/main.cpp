@@ -44,7 +44,7 @@ void displayAllNote(){
 //exemple quand deleteNote ou empty trash
 //Quand relation tout juste supprimée, l'affiche quand meme
 void displayAllRelation(){
-    std::cout<<"\n=== ALL RELATIONS ===\n";
+    std::cout<<"\n*=== ALL RELATIONS ===*\n";
     RelationManager& rm=RelationManager::getInstance();
     for(RelationManager::Iterator it=rm.getIterator(); !it.isDone(); it.next()){
 //        std::cout<<it.current()<<"\n";
