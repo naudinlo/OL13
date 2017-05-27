@@ -363,9 +363,7 @@ void NotesManager::deleteNote(const QString& id){
                 for(RelationManager::Iterator it= m.getIterator(); !it.isDone(); it.next()){
                     it.current().removeNoteRelation(n);
                 }
-//                std::cout<<"bug1\n";
-//                if(n->getNbRef()!=0) n->deleteAllReference();
-//                std::cout<<"bug2\n";
+                if(n->getNbRef()!=0) n->deleteAllReference();
                 n->setIsDeleted(true);
             }
         }
@@ -378,10 +376,8 @@ void NotesManager::emptyTrash(){
             notes[i]->setNbRef(0);
             delete notes[i];
             notes[i]=notes[--nbNotes];
-            return;
         }
     }
-    throw NotesException("error, impossible to empty trash, no notes in trash");
 }
 
 

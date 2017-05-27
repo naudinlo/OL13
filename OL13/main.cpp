@@ -33,7 +33,7 @@ void creation(){
 
 //Cette fonction ne marche pas bien (exemple quand deleteNote ou empty trash)
 void displayAllNote(){
-    std::cout<<"\n=== ALL NOTES ===\n";
+    std::cout<<"\n*=== ALL NOTES ===*\n";
     NotesManager* m=NotesManager::getInstance();
 
     for(NotesManager::Iterator it=m->getIterator(); !it.isDone(); it.next()){
@@ -62,13 +62,14 @@ void relation(){
     Relation& rel1=rm.getNewRelation("titreRelation1", "descriptionRelation1");
     Relation& rel2=rm.getNewRelation("tRelation2", "dRelation2");
 
-    displayAllRelation();
+//    displayAllRelation();
 
     Note& t1=nm->getNote("task_1");
     Note& t2=nm->getNote("task_2");
     Note& r1=nm->getNote("r1");
     Note& r2=nm->getNote("r2");
 
+/*
     rel1.getNewCoupleRelation(&t1,&t2, "relation de tache");
     rel2.getNewCoupleRelation(&t1,&t2, "relation 2 de tache");
     rel2.getNewCoupleRelation(&r1,&r2, "relation de recording");
@@ -78,10 +79,10 @@ void relation(){
 
     rel1.removeCoupleRelation(&t1,&t2);
     displayAllRelation();
-
+*/
     const QString& st1=t1.getId();
     nm->deleteNote(st1);
-    displayAllRelation();
+/*    displayAllRelation();
 
     rm.deleteRelation("tRelation2");
     displayAllRelation();
@@ -90,30 +91,32 @@ void relation(){
     rel3.getNewCoupleRelation(&r1,&t2, "relation 3 de tache");
     rel3.getNewCoupleRelation(&r1,&r2, "relation 3 de recording");
     displayAllRelation();
+*/
 
     t2.setNewRef(&r1);
     r1.setNewRef(&r2);
+
+    nm->deleteNote("article_1");
+    nm->deleteNote("article_2");
     displayAllNote();
 
+    nm->emptyTrash();
+
+    //ATTENTION : IL FAUT FREE LE TABLEAU DE REF
     nm->deleteNote("task_2");
+
+    nm->deleteNote("r1");
+    nm->deleteNote("r2");
+
+    displayAllNote();
+
+    //Refuse de vider task 2. Pq ?
     nm->emptyTrash();
     displayAllNote();
 
-/*
-    t1.setNewRef(&t2);
-    r1.setNewRef(&r2);
-
-    t1.setIsArchive(true);
-    t1.display();
-//    nm->deleteNote("task_1");
-
-//    nm->emptyTrash();
-
-    std::cout<<"\n OK note supprimée \n";
-
-//    Note& nt1=nm->getNote("task_1");
-//    nt1.display();
-*/
+    //Vider task 2 seulement ici. Pq ?
+    nm->emptyTrash();
+    displayAllNote();
 }
 
 int PROGRAMME(int argc,char *argv[])

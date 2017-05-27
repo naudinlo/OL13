@@ -279,6 +279,8 @@ Note& Note::getReferenceInt(unsigned int i) const{
 void Note::deleteReference(const QString& id){
     for(unsigned int i=0; i<nbRef; i++){
         if (references[i]->getId()==id)
+        references[i]->setNbIsRef(references[i]->getNbIsRef()-1);
+        //Faut il delete les reference ? Pas de risque de supprimer les notes derrières ?
         delete references[i];
         references[i]=references[--nbRef];
     }
@@ -287,9 +289,16 @@ void Note::deleteReference(const QString& id){
 
 void Note::deleteAllReference(){
     for(unsigned int i=0; i<nbRef; i++){
-        delete references[i];
+        references[i]->setNbIsRef(references[i]->getNbIsRef()-1);
+        //Faut il delete les reference ? Pas de risque de supprimer les notes derrières ?
+//        delete references[i];
+        references[i]=references[--nbRef];
+        i--;
+//        deleteReference(references[i]->getId());
     }
     delete[] references;
+//    Note** newtab=references;
+//    references=newtab;
 }
 
 
