@@ -4,17 +4,39 @@
 #include "QInclude.h"
 
 
+
 /**************NotesManager********************/
+//void NotesManager::createNote(const QString &id){
+//    for(unsigned int i=0; i<nbNotes; i++){
+//        if (notes[i]->getId()==id->getId()) {
+////            std::cout<<"\n erreur dans le throw \n";
+//            throw NotesException("error, creation of an already existent note");
+//        }
+//    }
+//    if (nbNotes==nbMaxNotes){
+//        Note** newNotes= new Note*[nbMaxNotes+5];
+//        for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
+//        Note** oldNotes=notes;
+//        notes=newNotes;
+//        nbMaxNotes+=5;
+//        if (oldNotes) delete[] oldNotes;
+//    }
+//    notes[nbNotes++]=id;
+//}
 
 Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const QString& te){
+    std::cout<<"1";
     Article* n=new Article(id,ti,te);
+    std::cout<<"2";
     for(unsigned int i=0; i<nbNotes; i++){
         if (notes[i]->getId()==id){
+            std::cout<<"3";
             throw NotesException("error, creation of an already existent note");
 //            return dynamic_cast<Article&>(*notes[i]);
             return (Article&)*notes[i];
         }
     }
+    std::cout<<"4";
     if (nbNotes==nbMaxNotes){
         Note** newNotes= new Note*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
@@ -23,6 +45,7 @@ Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const 
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
     }
+    std::cout<<"5";
     int i=nbNotes;
     notes[nbNotes++]=n;
     //            return dynamic_cast<Article&>(*notes[i]);
@@ -145,12 +168,30 @@ Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,co
     return (Recording&)*notes[i];
 }
 
+//Si l'on ne créé uniquement un getNewNote alors comment définir s'il s'agit d'un article, d'une tache ou d'un recording?
+//void NotesManager::getNewNote(const QString& id, const QString& ti){
+//    Note* n=new Note(id,ti);
+//    for(unsigned int i=0; i<nbNotes; i++){
+//        if (notes[i]->getId()==id) throw NotesException("error, creation of an already existent note");
+//    }
+//    if (nbNotes==nbMaxNotes){
+//        Note** newNotes= new Note*[nbMaxNotes+5];
+//        for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
+//        Note** oldNotes=notes;
+//        notes=newNotes;
+//        nbMaxNotes+=5;
+//        if (oldNotes) delete[] oldNotes;
+//    }
+//    notes[nbNotes++]=n;
+//}
+
 //ATTENTION : faire une fonction pour chaque type ? Ou un dynamic cast ?
 Note& NotesManager::getNote(const QString& id){
     for(unsigned int i=0; i<nbNotes; i++){
         if (notes[i]->getId()==id) return *notes[i];
     }
     throw NotesException("error, non existent note");
+
 }
 
 NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0){}
@@ -357,12 +398,12 @@ void NotesManager::deleteNote(const QString& id){
             }
             else{
                 //Relation manager applique removeNoteRelation sur toutes les relations
+                //removeNoteRelation(n);
                 RelationManager& m=RelationManager::getInstance();
                 //Supprimer toutes les présences d'une note dans l'ensemble des relations
                 for(RelationManager::Iterator it= m.getIterator(); !it.isDone(); it.next()){
                     it.current().removeNoteRelation(n);
                 }
-                if(n->getNbRef()!=0) n->deleteAllReference();
                 n->setIsDeleted(true);
             }
         }
@@ -374,7 +415,6 @@ void NotesManager::emptyTrash(){
         if (notes[i]->getIsDeleted()){
             notes[i]->setNbRef(0);
             delete notes[i];
-            notes[i]=notes[--nbNotes];
         }
     }
 }
@@ -384,7 +424,7 @@ void NotesManager::editNote(QString& id){
     unsigned int i=0;
     while(i<nbNotes && notes[i]->getId()!=id) i++;
     if (i==nbNotes){
-        throw NotesException("error, impossible to edit note, non existent note");
+        throw NotesException("error, non existent note");
     }
     else{
         Note* ncopy(notes[i]);   //last modif date automatiquement mis à jour dans la copie
@@ -404,16 +444,138 @@ void NotesManager::restoreNoteTrash(const QString& id){
 }
 
 
-/*************RelationManager*******************/
 
+/*************ArchiveManager*******************/
 
-RelationManager::RelationManager():tabrelations(0),nbRelations(0),nbMaxRelations(0){}
-
-RelationManager::~RelationManager(){
-//    save();
-    for(unsigned int i=0; i<nbRelations; i++) delete tabrelations[i];
-    delete[] tabrelations;
+/*void ArchiveManager::addNote(Note* n){
+    for(unsigned int i=0; i<nbNotes; i++){
+        if (notes[i]->getId()==n->getId()) throw NotesException("error, creation of an already existent note");
+    }
+    if (nbNotes==nbMaxNotes){
+        Note** newNotes= new Note*[nbMaxNotes+5];
+        for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
+        Note** oldNotes=notes;
+        notes=newNotes;
+        nbMaxNotes+=5;
+        if (oldNotes) delete[] oldNotes;
+    }
+    notes[nbNotes++]=n;
 }
+
+Note& ArchiveManager::getArchive(const QString& id){
+    for(unsigned int i=0; i<nbNotes; i++){
+        if (notes[i]->getId()==id) return *notes[i];
+    }
+    throw NotesException("error, non existent note");
+
+}
+
+ArchiveManager::ArchiveManager():notes(0),nbNotes(0),nbMaxNotes(0){}
+
+ArchiveManager::~ArchiveManager(){
+    save();
+    for(unsigned int i=0; i<nbNotes; i++) delete notes[i];
+    delete[] notes;
+}
+
+void ArchiveManager::save() const {
+    ofstream fout(filename.c_str());
+    for(unsigned int i=0; i<nbNotes; i++){
+        fout<<*notes[i];
+    }
+    fout.close();
+}
+
+void ArchiveManager::deleteArchive(const Note& n){
+    for(unsigned int i=0; i<nbNotes; i++){
+        if (notes[i]->getId()==n.getId()) delete notes[i];//comportement précis à définir
+    }
+}
+
+void ArchiveManager::restoreArchive(const QString& id){
+    //à définir
+}
+
+ArchiveManager::Handler ArchiveManager::handler=ArchiveManager::Handler();
+
+ArchiveManager& ArchiveManager::getInstance(){
+    //if (instanceUnique==0)
+        //instanceUnique=new NotesManager;
+    if(handler.instance==0) handler.instance=new ArchiveManager;
+    return *handler.instance;
+}
+
+void ArchiveManager::libererInstance(){
+    delete handler.instance;
+    handler.instance=0;
+}*/
+
+/*************TrashManager*******************/
+
+/*void TrashManager::addNote(Note* n){
+    for(unsigned int i=0; i<nbNotes; i++){
+        if (notes[i]->getId()==n->getId()) throw NotesException("error, creation of an already existent note");
+    }
+    if (nbNotes==nbMaxNotes){
+        Note** newNotes= new Note*[nbMaxNotes+5];
+        for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
+        Note** oldNotes=notes;
+        notes=newNotes;
+        nbMaxNotes+=5;
+        if (oldNotes) delete[] oldNotes;
+    }
+    notes[nbNotes++]=n;
+}
+
+Note& TrashManager::getTrash(const QString& id){
+    for(unsigned int i=0; i<nbNotes; i++){
+        if (notes[i]->getId()==id) return *notes[i];
+    }
+    throw NotesException("error, non existent note");
+
+}
+
+TrashManager::TrashManager():notes(0),nbNotes(0),nbMaxNotes(0){}
+
+TrashManager::~TrashManager(){
+    save();
+    for(unsigned int i=0; i<nbNotes; i++) delete notes[i];
+    delete[] notes;
+}
+
+void TrashManager::save() const {
+    ofstream fout(filename.c_str());
+    for(unsigned int i=0; i<nbNotes; i++){
+        fout<<*notes[i];
+    }
+    fout.close();
+}
+
+void TrashManager::emptyTrash(){
+    for(unsigned int i=0; i<nbNotes; i++){
+        delete notes[i];
+    }
+}
+
+void TrashManager::restoreTrash(const QString& id){
+    //à définir
+}
+
+TrashManager::Handler TrashManager::handler=TrashManager::Handler();
+
+TrashManager& TrashManager::getInstance(){
+    //if (instanceUnique==0)
+        //instanceUnique=new NotesManager;
+    if(handler.instance==0) handler.instance=new TrashManager;
+    return *handler.instance;
+}
+
+void TrashManager::libererInstance(){
+    delete handler.instance;
+    handler.instance=0;
+}*/
+
+/*************RelationManager*******************/
 
 Relation& RelationManager::getNewRelation(const QString& title,const QString& desc){
     Relation* n=new Relation(title,desc);
@@ -438,18 +600,15 @@ Relation& RelationManager::getRelation(const QString& title){
     for(unsigned int i=0; i<nbRelations; i++){
         if (tabrelations[i]->getTitle()==title) return *tabrelations[i];
     }
-    throw NotesException("error, impossible to get relation, non existent relation");
+    throw NotesException("error, non existent relation");
 }
 
 void RelationManager::deleteRelation(const QString &title){
     for(unsigned int i=0; i<nbRelations; i++){
         if (tabrelations[i]->getTitle()==title){
             delete tabrelations[i];
-            tabrelations[i]=tabrelations[--nbRelations];
-            return;
         }
     }
-    throw NotesException ("error, impossible to delete, non existent relation");
 }
 
 RelationManager::Handler RelationManager::handler=RelationManager::Handler();
@@ -463,4 +622,19 @@ void RelationManager::libererInstance(){
     handler.instance=0;
 }
 
+
+//void RelationManager::createRelation(Relation* r){
+//    for(unsigned int i=0; i<nbRelations; i++){
+//        if (tabrelations[i]->getTitle()==r->getTitle()) throw NotesException("error, creation of an already existent relation");
+//    }
+//    if (nbRelations==nbMaxRelations){
+//        Relation** newTab= new Relation*[nbMaxRelations+5];
+//        for(unsigned int i=0; i<nbRelations; i++) newTab[i]=tabrelations[i];
+//        Relation** oldTab=tabrelations;
+//        tabrelations=newTab;
+//        nbMaxRelations+=5;
+//        if (oldTab) delete[] oldTab;
+//    }
+//    tabrelations[nbRelations++]=r;
+//}
 

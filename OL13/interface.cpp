@@ -120,7 +120,8 @@ void interface::CreerNote(){
 }
 
 void interface::addNewNote(Note* n){
-    note_manager->createNote(n);
+    //ATTENTION : ici il faut changer et créer une fonction addNewArticle, addNewTask, addNewRecording car le manager a été modifié
+//    note_manager->createNote(n);
     QList< QStandardItem* > note;
     note.append(new QStandardItem (n->getTitle()));
     note.append(new QStandardItem(QString(n->getType())));

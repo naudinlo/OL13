@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<notes>
+	<article>
+		<id> </id>
+		<title> </title>
+		<c_date> </c_date>
+		<lm_date> </lm_date>
+		<isArchived> </isArchived>
+		<isDeleted> </isDeleted>
+		<text> </text>
+	</article>
+
+
+	<task>
+		<id> </id>
+		<title> </title>
+		<c_date> </c_date>
+		<lm_date> </lm_date>
+		<isArchived> </isArchived>
+		<isDeleted> </isDeleted>
+		<action> </action>
+		<priority> </priority>
+		<d_date> </d_date>
+		<status> </status>
+	</task>
+
+
+	<recording>
+		<id> </id>
+		<title> </title>
+		<c_date> </c_date>
+		<lm_date> </lm_date>
+		<isArchived> </isArchived>
+		<isDeleted> </isDeleted>
+		<description> </description>
+		<type> </type>
+		<Link> </Link>
+	</recording>
+
+	...
+</notes>
+
+<relationmanager>
+	<relation>
+		<title> </title>
+		<description> </description>
+		<notecouple>
+			<couple>
+				<notex> </notex>
+				<notey> </notey>
+				<label> </label>
+				<symetric> </symetric>
+			</couple>
+
+			...
+		</notecouple>
+	</relation>
+		
+	...
+</relationmanager>

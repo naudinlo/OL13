@@ -2,6 +2,21 @@
 #include "sstream"
 
 
+<<<<<<< HEAD
+=======
+//A FAIRE
+void Relation::displayRelation(){
+//    RelationManager& rm=RelationManager::getInstance();
+    for(Relation::Iterator it=this->getIterator(); !it.isDone(); it.next()){
+        std::cout<<"  - Note "<<it.current().getCoupleNoteX()->getId().toStdString();
+        std::cout<<" vers Note "<<it.current().getCoupleNoteY()->getId().toStdString();
+        if (it.current().getSymetric()) std::cout<<"  de façon symétrique.";
+        if (it.current().getLabel()!=0) std::cout<<"\n    Label : "<<it.current().getLabel().toStdString();
+        std::cout<<std::endl;
+    };
+}
+
+>>>>>>> b2efeeba907cad7ede9256fc15b773fbc405764b
 
 NotesCouple &Relation::getNewCoupleRelation(Note* n1,  Note* n2, QString label, bool s) {
 //    if (n1!=n2){
@@ -45,6 +60,7 @@ NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2) const {
             return (relations[i]);
         }
     }
+<<<<<<< HEAD
     return 0;
     throw NotesException("erreur, relation de notes inexistante");
 }
@@ -52,6 +68,15 @@ NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2) const {
 void Relation::displayRelation(Note *n1, Note *n2)const{
     const NotesCouple* nc=getCoupleRelation(n1,n2);
     if (nc!=0){
+=======
+    return nullptr;
+    throw NotesException("erreur, impossible to the relation from this couple, relation de notes inexistante");
+}
+
+void Relation::displayCoupleRelation(Note *n1, Note *n2)const{
+    const NotesCouple* nc=getCoupleRelation(n1,n2);
+    if (nc!=nullptr){
+>>>>>>> b2efeeba907cad7ede9256fc15b773fbc405764b
         std::cout<<"\n=== RELATION "<<this->getTitle().toStdString()<<" ===\n";
         std::cout<<"\n - Description : "<<this->getDescription().toStdString();
         std::cout<<"\n - Note "<<nc->getCoupleNoteX()->getTitle().toStdString();
@@ -69,7 +94,10 @@ void Relation::displayRelation(Note *n1, Note *n2)const{
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b2efeeba907cad7ede9256fc15b773fbc405764b
 void Relation::removeCoupleRelation(Note* n1, Note* n2){
     unsigned int i=0;
     while(i<nbCouple && relations[i]->getCoupleNoteX()->getId()!=n1->getId() && relations[i]->getCoupleNoteY()->getId()!=n2->getId()){
@@ -96,6 +124,10 @@ void Relation::removeNoteRelation(Note* n1){
         if (relations[i]->getCoupleNoteX()->getId()==n1->getId() || relations[i]->getCoupleNoteY()->getId()==n1->getId()){
             delete relations[i];
             relations[i]=relations[--nbCouple];
+<<<<<<< HEAD
+=======
+            i--;
+>>>>>>> b2efeeba907cad7ede9256fc15b773fbc405764b
         }
     }
 }
