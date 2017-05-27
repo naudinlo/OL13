@@ -39,6 +39,8 @@ public:
     void removeCoupleRelation(Note* n1, Note* n2);
     void removeNoteRelation(Note* n1);
 
+    void displayRelation();
+
     //Iterator
     class Iterator{
     private:
@@ -63,7 +65,7 @@ public:
 //    void displayRel(Note *n1, Note *n2, std::ostream& f=std::cout) const{
 //        f<<toStringRel(n1,n2);
 //    }
-    void displayRelation(Note *n1, Note *n2)const;
+    void displayCoupleRelation(Note *n1, Note *n2)const;
 };
 
 
