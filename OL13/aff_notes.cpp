@@ -1,17 +1,33 @@
 #include "aff_notes.h"
 
-page_notes::page_notes()
+page_notes::page_notes(Note& n)
 {
     create_dock();
     layout_p=new QVBoxLayout(this);
     layout_titre=new QHBoxLayout;
-    titre=new QLineEdit("Titre de la note");
-    titre->setEnabled(false);
+    titre=new QLabel(n.getTitle());
+    info=new QLabel("Cette note est un :"+n.getType()+" Créer le :"+n.getCreation_date().toString()+" Dernière modification le :"+n.getLastmodif_date().toString());
     layout_titre->addStretch();
     layout_titre->addWidget(titre);
     layout_titre->addStretch();
     layout_p->addLayout(layout_titre);
+    if(n.getType()=="Recording")
+    {
+        note=new QRecording;
 
+    }
+    else if(n.getType()=="Task")
+    {
+        note=new QTask;
+    }
+    else{
+        note=new QArticle;
+    }
+    note->load_note(n);
+
+    layout_p->addWidget(note);
+    layout_p->addStretch();
+    layout_p->addWidget(info);
 }
 void page_notes::create_dock(){
     dock=new QWidget;

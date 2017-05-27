@@ -38,6 +38,7 @@ class interface:public QMainWindow
     Creation_Note fen_creerNote;
     selection_note* listNote;
     page_notes* note_page;
+    QWidget* ZoneCentrale;
     QMenu *MenuFichier;
     QMenu *MenuEd;
     QMenu *MenuAff;
