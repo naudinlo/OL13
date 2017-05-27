@@ -375,8 +375,10 @@ void NotesManager::emptyTrash(){
         if (notes[i]->getIsDeleted()){
             notes[i]->setNbRef(0);
             delete notes[i];
+            return;
         }
     }
+    throw NotesException("error, impossible to empty trash, no notes in trash");
 }
 
 
@@ -384,7 +386,7 @@ void NotesManager::editNote(QString& id){
     unsigned int i=0;
     while(i<nbNotes && notes[i]->getId()!=id) i++;
     if (i==nbNotes){
-        throw NotesException("error, non existent note");
+        throw NotesException("error, impossible to edit note, non existent note");
     }
     else{
         Note* ncopy(notes[i]);   //last modif date automatiquement mis à jour dans la copie
@@ -438,15 +440,19 @@ Relation& RelationManager::getRelation(const QString& title){
     for(unsigned int i=0; i<nbRelations; i++){
         if (tabrelations[i]->getTitle()==title) return *tabrelations[i];
     }
-    throw NotesException("error, non existent relation");
+    throw NotesException("error, impossible to get relation, non existent relation");
 }
 
 void RelationManager::deleteRelation(const QString &title){
+//    std::cout<<"nbrelation = "<<nbRelations<<"\n";
     for(unsigned int i=0; i<nbRelations; i++){
+//        std::cout<<"nom relation = "<<tabrelations[i]->getTitle().toStdString()<<"\n";
         if (tabrelations[i]->getTitle()==title){
-            delete tabrelations[i];
+            //delete tabrelations[i];
+            return;
         }
     }
+    throw NotesException ("error, impossible to delete, non existent relation");
 }
 
 RelationManager::Handler RelationManager::handler=RelationManager::Handler();

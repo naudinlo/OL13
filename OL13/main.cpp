@@ -31,14 +31,23 @@ void creation(){
 
 }
 
-//Cette fonction ne marche pas bien
-void affiche(){
+//Cette fonction ne marche pas bien (exemple quand deleteNote ou empty trash)
+void afficheNote(){
     NotesManager* m=NotesManager::getInstance();
 
-    //Bug ici
     for(NotesManager::Iterator it=m->getIterator(); !it.isDone(); it.next()){
-//        std::cout<<it.current()<<"\n";
         it.current().display();
+    };
+}
+
+//Cette fonction ne marche pas bien (exemple quand deleteNote ou empty trash)
+//Quand relation tout juste supprimée, l'affiche quand meme
+void afficheRelation(){
+    RelationManager& rm=RelationManager::getInstance();
+    for(RelationManager::Iterator it=rm.getIterator(); !it.isDone(); it.next()){
+//        std::cout<<it.current()<<"\n";
+        std::cout<<it.current().getTitle().toStdString()<<std::endl;
+        std::cout<<it.current().getDescription().toStdString()<<std::endl;
     };
 }
 
@@ -50,14 +59,12 @@ void relation(){
     Relation& rel1=rm.getNewRelation("titreRelation1", "descriptionRelation1");
     Relation& rel2=rm.getNewRelation("tRelation2", "dRelation2");
 
+    afficheRelation();
+
     Note& t1=nm->getNote("task_1");
-//    t1.display();
     Note& t2=nm->getNote("task_2");
-//    t2.display();
     Note& r1=nm->getNote("r1");
-//    r1.display();
     Note& r2=nm->getNote("r2");
-//    r2.display();
 
     rel1.getNewCoupleRelation(&t1,&t2, "relation de tache");
     rel2.getNewCoupleRelation(&t1,&t2, "relation 2 de tache");
@@ -73,18 +80,17 @@ void relation(){
 //    rel1.displayRelation(&t1,&r2);
 //    rel2.displayRelation(&t1,&r2);
 
-    rel1.removeCoupleRelation(&t1,&t2);
+//    rel1.removeCoupleRelation(&t1,&t2);
+    rm.deleteRelation("tRelation2");
 //    const QString& st1=t1.getId();
 //    nm->deleteNote(st1);
-    rel1.displayRelation(&t1,&r2);
+//    rel1.displayRelation(&t1,&t2);
 
+    afficheRelation();
+
+/*
     t1.setNewRef(&t2);
     r1.setNewRef(&r2);
-
-    t1.display();
-    t2.display();
-    r1.display();
-    r2.display();
 
     t1.setIsArchive(true);
     t1.display();
@@ -94,10 +100,9 @@ void relation(){
 
     std::cout<<"\n OK note supprimée \n";
 
-    //affiche();
-
 //    Note& nt1=nm->getNote("task_1");
 //    nt1.display();
+*/
 }
 
 int PROGRAMME(int argc,char *argv[])
@@ -116,9 +121,10 @@ int PROGRAMME(int argc,char *argv[])
 int main(int argc, char * argv[]) {
     try {
             creation(); // cette ligne peut Ítre mise en commentaire aprËs la 1Ëre exÈcution
-            affiche();
+//            affiche();
             relation();
-            affiche();
+            afficheNote();
+            afficheRelation();
         }
         catch(NotesException& e){
             std::cout<<e.getinfo().toStdString()<<"\n";
