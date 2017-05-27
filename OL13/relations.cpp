@@ -2,6 +2,15 @@
 #include "sstream"
 
 
+//A FAIRE
+void Relation::afficheRelation(){
+//    RelationManager& rm=RelationManager::getInstance();
+    for(Relation::Iterator it=this->getIterator(); !it.isDone(); it.next()){
+        std::cout<<"  - Note "<<it.current().getCoupleNoteX()->getId().toStdString();
+        std::cout<<" vers Note "<<it.current().getCoupleNoteY()->getId().toStdString()<<std::endl;
+    };
+}
+
 
 NotesCouple &Relation::getNewCoupleRelation(Note* n1,  Note* n2, QString label, bool s) {
 //    if (n1!=n2){

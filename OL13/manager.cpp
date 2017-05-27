@@ -444,11 +444,9 @@ Relation& RelationManager::getRelation(const QString& title){
 }
 
 void RelationManager::deleteRelation(const QString &title){
-//    std::cout<<"nbrelation = "<<nbRelations<<"\n";
     for(unsigned int i=0; i<nbRelations; i++){
-//        std::cout<<"nom relation = "<<tabrelations[i]->getTitle().toStdString()<<"\n";
         if (tabrelations[i]->getTitle()==title){
-            //delete tabrelations[i];
+            delete tabrelations[i];
             return;
         }
     }

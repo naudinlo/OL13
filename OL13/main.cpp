@@ -33,6 +33,7 @@ void creation(){
 
 //Cette fonction ne marche pas bien (exemple quand deleteNote ou empty trash)
 void afficheNote(){
+    std::cout<<"\n=== ALL NOTES ===\n";
     NotesManager* m=NotesManager::getInstance();
 
     for(NotesManager::Iterator it=m->getIterator(); !it.isDone(); it.next()){
@@ -40,14 +41,16 @@ void afficheNote(){
     };
 }
 
-//Cette fonction ne marche pas bien (exemple quand deleteNote ou empty trash)
+//exemple quand deleteNote ou empty trash
 //Quand relation tout juste supprimée, l'affiche quand meme
 void afficheRelation(){
+    std::cout<<"\n=== ALL RELATIONS ===\n";
     RelationManager& rm=RelationManager::getInstance();
     for(RelationManager::Iterator it=rm.getIterator(); !it.isDone(); it.next()){
 //        std::cout<<it.current()<<"\n";
-        std::cout<<it.current().getTitle().toStdString()<<std::endl;
-        std::cout<<it.current().getDescription().toStdString()<<std::endl;
+        std::cout<<"\n- "<<it.current().getTitle().toStdString();
+        std::cout<<" description : "<<it.current().getDescription().toStdString()<<std::endl;
+        it.current().afficheRelation();
     };
 }
 
