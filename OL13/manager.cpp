@@ -358,12 +358,14 @@ void NotesManager::deleteNote(const QString& id){
             }
             else{
                 //Relation manager applique removeNoteRelation sur toutes les relations
-                //removeNoteRelation(n);
                 RelationManager& m=RelationManager::getInstance();
                 //Supprimer toutes les présences d'une note dans l'ensemble des relations
                 for(RelationManager::Iterator it= m.getIterator(); !it.isDone(); it.next()){
                     it.current().removeNoteRelation(n);
                 }
+//                std::cout<<"bug1\n";
+//                if(n->getNbRef()!=0) n->deleteAllReference();
+//                std::cout<<"bug2\n";
                 n->setIsDeleted(true);
             }
         }
@@ -375,6 +377,7 @@ void NotesManager::emptyTrash(){
         if (notes[i]->getIsDeleted()){
             notes[i]->setNbRef(0);
             delete notes[i];
+            notes[i]=notes[--nbNotes];
             return;
         }
     }
@@ -447,6 +450,7 @@ void RelationManager::deleteRelation(const QString &title){
     for(unsigned int i=0; i<nbRelations; i++){
         if (tabrelations[i]->getTitle()==title){
             delete tabrelations[i];
+            tabrelations[i]=tabrelations[--nbRelations];
             return;
         }
     }

@@ -3,11 +3,14 @@
 
 
 //A FAIRE
-void Relation::afficheRelation(){
+void Relation::displayRelation(){
 //    RelationManager& rm=RelationManager::getInstance();
     for(Relation::Iterator it=this->getIterator(); !it.isDone(); it.next()){
         std::cout<<"  - Note "<<it.current().getCoupleNoteX()->getId().toStdString();
-        std::cout<<" vers Note "<<it.current().getCoupleNoteY()->getId().toStdString()<<std::endl;
+        std::cout<<" vers Note "<<it.current().getCoupleNoteY()->getId().toStdString();
+        if (it.current().getSymetric()) std::cout<<"  de façon symétrique.";
+        if (it.current().getLabel()!=0) std::cout<<"\n    Label : "<<it.current().getLabel().toStdString();
+        std::cout<<std::endl;
     };
 }
 
@@ -55,10 +58,10 @@ NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2) const {
         }
     }
     return nullptr;
-    throw NotesException("erreur, relation de notes inexistante");
+    throw NotesException("erreur, impossible to the relation from this couple, relation de notes inexistante");
 }
 
-void Relation::displayRelation(Note *n1, Note *n2)const{
+void Relation::displayCoupleRelation(Note *n1, Note *n2)const{
     const NotesCouple* nc=getCoupleRelation(n1,n2);
     if (nc!=nullptr){
         std::cout<<"\n=== RELATION "<<this->getTitle().toStdString()<<" ===\n";
@@ -75,7 +78,6 @@ void Relation::displayRelation(Note *n1, Note *n2)const{
         std::cout<<"\n Erreur : Il n'existe pas de relation entre "<<n1->getTitle().toStdString()<<" et "<<n2->getTitle().toStdString()<<std::endl;;
     }
 }
-
 
 
 
@@ -105,6 +107,7 @@ void Relation::removeNoteRelation(Note* n1){
         if (relations[i]->getCoupleNoteX()->getId()==n1->getId() || relations[i]->getCoupleNoteY()->getId()==n1->getId()){
             delete relations[i];
             relations[i]=relations[--nbCouple];
+            i--;
         }
     }
 }

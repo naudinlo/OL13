@@ -88,11 +88,14 @@ public:
 //    void addReference(Note* n);
     Note& setNewRef(Note* n);
 
-    Note& getReference(Note *n) const;
+    Note& getReference(const QString &id) const;
     Note& getReferenceInt(unsigned int i) const;
     unsigned int getNbRef() const{return nbRef;}
     unsigned int getNbMaxRef() const{return nbMaxRef;}
     void setNbRef(unsigned int n){ nbRef=n;}
+    void deleteReference(const QString& id);
+    void deleteAllReference();
+
 
     void setNbIsRef(unsigned int n){nbIsRef=n;}
     unsigned int getNbIsRef()const{return nbIsRef;}

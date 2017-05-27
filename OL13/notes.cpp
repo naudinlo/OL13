@@ -262,9 +262,9 @@ void Note::addReference(Note* n){
     nbRef++;
 };
 
-Note& Note::getReference(Note* n)const{
+Note& Note::getReference(const QString& id)const{
     for(unsigned int i=0; i<nbRef; i++){
-        if (references[i]->getId()==n->id){
+        if (references[i]->getId()==id){
             return (*references[i]);
         }
     }
@@ -275,4 +275,21 @@ Note& Note::getReference(Note* n)const{
 Note& Note::getReferenceInt(unsigned int i) const{
   return (*references[i]);
 };
+
+void Note::deleteReference(const QString& id){
+    for(unsigned int i=0; i<nbRef; i++){
+        if (references[i]->getId()==id)
+        delete references[i];
+        references[i]=references[--nbRef];
+    }
+}
+
+
+void Note::deleteAllReference(){
+    for(unsigned int i=0; i<nbRef; i++){
+        delete references[i];
+    }
+    delete[] references;
+}
+
 
