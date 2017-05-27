@@ -13,101 +13,93 @@
 #include "interface.h"
 
 
-/*void test1(){
-    std::cout << "Hello, World!\n";
+void creation(){
+//    NotesManager manager;
+//    NotesManager& manager=NotesManager::getInstance();
+    NotesManager* m1=NotesManager::getInstance();
 
-
-    Article a1("a1","articletitle1","text1");
-    std::cout<<a1;
-
-    Task t1("t1","tasktitle1","action1",ENUM::Pending);
-    Task t2("t2","tasktitle2","action2",ENUM::Pending, 5);
-
-    QDate d;
-    d.addDays(10);
-    d.addMonths(4);
-    d.addYears(2010);
-    const QDate dt(d);
-//    Task t3("t3","tasktitle3","action3",ENUM::OnGoing, d);
-//    Task t4("t4","tasktitle4","action4",ENUM::Completed, 5, d);
-
-    std::cout<<t1;
-    std::cout<<t2;
-//    std::cout<<t3;
-//    std::cout<<t4;
+    Article& a1=m1->getNewArticle("article_1","a_title_1","a_text_1");
+    Task& t1=m1->getNewTask("task_1","tasktitle1","action1",ENUM::Pending,5);
+    Task& t2=m1->getNewTask("task_2", "tasktitle2","action2",ENUM::Pending);
+    t2.setPriority(10);
 
     QString link("newlink");
-    Recording r1("r1", "recordingtitle1", "description1", ENUM::Audio, link);
-    Recording r2("r2", "recordingtitle2", "description2", ENUM::Image, link);
+    Recording& r1=m1->getNewRecording("r1", "recordingtitle1", "description1", ENUM::Audio, link);
+    Recording& r2=m1->getNewRecording("r2", "recordingtitle2", "description2", ENUM::Image, link);
 
-//    Task q1("t1","tasktitle1","action1",0);
-//    Task q2("t2","tasktitle2","action2",1, 5);
+}
 
-    Task& pt1=t1;
-    Task& pt2=t2;
-    Recording& pr1=r1;
-    Recording& pr2=r2;
+//Cette fonction ne marche pas bien
+void affiche(){
+    NotesManager* m=NotesManager::getInstance();
 
-    std::cout<<r1;
-    std::cout<<r2;
+    //Bug ici
+    for(NotesManager::Iterator it=m->getIterator(); !it.isDone(); it.next()){
+        std::cout<<"++";
+//        std::cout<<it.current()<<"\n";
+        it.current().display(std::cout);
+    };
+}
 
-    std::cout<<std::endl;
 
-    NotesCouple nc1(&pt1,&pt2, "anotherNewRel");
+void relation(){
+    RelationManager& rm=RelationManager::getInstance();
+    NotesManager* nm=NotesManager::getInstance();
 
-    std::cout<<"NC1 : ";
-    nc1.getCoupleNoteX()->display();
-    nc1.getCoupleNoteY()->display();
+    Relation& rel1=rm.getNewRelation("titreRelation1", "descriptionRelation1");
+    Relation& rel2=rm.getNewRelation("tRelation2", "dRelation2");
 
-    std::cout<<endl;
+    Note& t1=nm->getNote("task_1");
+//    t1.display();
+    Note& t2=nm->getNote("task_2");
+//    t2.display();
+    Note& r1=nm->getNote("r1");
+//    r1.display();
+    Note& r2=nm->getNote("r2");
+//    r2.display();
 
-    NotesCouple nc2(&pr1,&pr2, "newREl");
-
-    std::cout<<"NC2 : ";
-    nc2.getCoupleNoteX()->display();
-    nc2.getCoupleNoteY()->display();
-
-    Relation rel("titreRelation","descriptionRelation");
-    rel.getNewCoupleRelation(&pt1,&pt2, "relation de tache");
-
+    rel1.getNewCoupleRelation(&t1,&t2, "relation de tache");
+    rel2.getNewCoupleRelation(&t1,&t2, "relation 2 de tache");
     std::cout<<"\n RELATION : ";
-    //rel.displayRelation(&pt1,&pt2);
+    rel1.displayRelation(&t1,&t2);
 
-    rel.getNewCoupleRelation(&pr1,&pr2, "relation de recording");
-    //rel.displayRelation(&pr1,&pr2);
+    rel2.getNewCoupleRelation(&r1,&r2, "relation de recording");
+    rel2.displayRelation(&r1,&r2);
 
-    rel.getNewCoupleRelation(&pt1,&pr2,"relation Sym",true);
-    rel.displayRelation(&pt1,&pr2);
+    rel1.getNewCoupleRelation(&t1,&r2,"relation Sym",true);
+    rel2.getNewCoupleRelation(&t1,&r2,"relation 2 Sym",true);
 
-//    rel.removeCoupleRelation(&pt1,&pr2);
-//    rel.displayRelation(&pt1,&pr2); //Pourquoi ne supprime pas directement les deux ?
+    rel1.displayRelation(&t1,&r2);
+    rel2.displayRelation(&t1,&r2);
 
-//    rel.removeCoupleRelation(&pt1,&pt2);
-    //rel.displayRelation(&pt1,&pr2);
-    rel.displayRelation(&pt1,&pt2);
+    rel1.removeCoupleRelation(&t1,&t2);
+    const QString& st1=t1.getId();
+    nm->deleteNote(st1);
+    rel1.displayRelation(&t1,&r2);
 
-    pt1.setNewRef(&pt2);
-    pr1.setNewRef(&pr2);
+    t1.setNewRef(&t2);
+    r1.setNewRef(&r2);
 
-//    pt1.display();
-//    pr1.display();
+    t1.display();
+    t2.display();
+    r1.display();
+    r2.display();
 
-//    pt2.display();
-//    pr2.display();
+    t1.setIsArchive(true);
+    t1.display();
+    nm->deleteNote("task_1");
 
-    //Il faut un relation manager
-    rel.removeNoteRelation(&pt1);
-    rel.displayRelation(&pt1,&pt2);
+    nm->emptyTrash();
 
-    pt1.setIsArchive(true);
-    pt1.display();
+    std::cout<<"\n OK note supprimée \n";
 
-    std::cout<<endl;
-    std::cout<<endl;
+    affiche();
 
-}*/
+//    Note& nt1=nm->getNote("task_1");
+//    nt1.display();
+}
 
-int test2(int argc,char *argv[])
+int PROGRAMME(int argc,char *argv[])
 {
     // UTF-8 Encoding
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
@@ -117,12 +109,19 @@ int test2(int argc,char *argv[])
     Fenprincipale.showMaximized();
 
     return app.exec();
-
 }
 
 
 int main(int argc, char * argv[]) {
-    //test1();
-    test2(argc,argv);
+    try {
+            creation(); // cette ligne peut Ítre mise en commentaire aprËs la 1Ëre exÈcution
+//            affiche();
+            relation();
+        }
+        catch(NotesException& e){
+            std::cout<<e.getinfo().toStdString()<<"\n";
+        }
+
+    //PROGRAMME(argc,argv);
     return 0;
 }
