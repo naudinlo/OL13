@@ -201,12 +201,15 @@ void NotesManager::save() const {
             stream.writeTextElement("action",t.getAction());
             stream.writeTextElement("priority",QString::number(t.getPriority()));
             stream.writeTextElement("d_date",t.getDueDate().toString());
-            if(t.getStatus()==ENUM::StatusType::Pending)
-            stream.writeTextElement("status","Pending");
-            if(t.getStatus()==ENUM::StatusType::OnGoing)
-            stream.writeTextElement("status","OnGoing");
-            if(t.getStatus()==ENUM::StatusType::Completed)
-            stream.writeTextElement("status","Completed");
+            //if(t.getStatus()==ENUM::StatusType::Pending)
+            if(t.getStatus()==0)
+                stream.writeTextElement("status","Pending");
+            //if(t.getStatus()==ENUM::StatusType::OnGoing)
+            if(t.getStatus()==1)
+                stream.writeTextElement("status","OnGoing");
+            //if(t.getStatus()==ENUM::StatusType::Completed)
+            if(t.getStatus()==2)
+                stream.writeTextElement("status","Completed");
             stream.writeEndElement();
         }
 
