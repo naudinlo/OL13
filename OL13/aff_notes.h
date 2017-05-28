@@ -16,15 +16,7 @@ protected:
 
 public:
     page_notes(Note &n);
-    ~page_notes(){
-        emit(supp_dock_editer());  // c'est qq d'autre qui gère la supp du dock
-        delete layout_titre;
-        delete titre;
-        delete info;
-        delete layout_p;
-        delete note;
-    }
-
+    ~page_notes();
     void create_dock();
     QWidget& getdock(){
         return *dock;

@@ -30,6 +30,14 @@ page_notes::page_notes(Note& n)
     layout_p->addWidget(info);
 
 }
+page_notes::~page_notes(){
+    emit(supp_dock_editer());  // c'est qq d'autre qui gère la supp du dock
+    delete layout_titre;
+    delete titre;
+    delete info;
+    delete layout_p;
+    delete note;
+}
 void page_notes::create_dock(){
     dock=new QWidget;
     QHBoxLayout*layout=new QHBoxLayout(dock);
