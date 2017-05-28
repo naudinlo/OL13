@@ -5,6 +5,7 @@
 #include "qnote.h"
 class page_notes: public QWidget
 {
+    Q_OBJECT
 protected:
     QWidget* dock;
     QHBoxLayout* layout_titre;
@@ -18,6 +19,14 @@ public:
     void create_dock();
     QWidget& getdock(){
         return *dock;
+    }
+signals:
+    void supp_dock_editer();
+public slots:
+    void editer_note(bool status){
+        note->readOnly(status);
+        delete dock;
+        emit(supp_dock_editer());
     }
 };
 

@@ -92,27 +92,27 @@ QString QRecording::OuvrirFichier(){
 }
 
 
-Note *QArticle::get_note(QString id,QString title){
-   return new Article(id,title,E_text->document()->toPlainText());
+Note& QArticle::get_note(QString id,QString title){
+
+    return NotesManager::getInstance()->getNewArticle(id,title,E_text->document()->toPlainText());
 }
 
-Note *QTask::get_note(QString id, QString title){
+Note& QTask::get_note(QString id, QString title){
     ENUM::StatusType etat=static_cast<ENUM::StatusType>(E_status->currentIndex());
     if(priority->isChecked() && duedate->isChecked())
     {
-        QMessageBox::warning(this,"pas encore fait","gérer la date");
-        return new Task(id,title,E_action->text(),etat,E_priority->value(),E_duedate->dateTime());
+        return NotesManager::getInstance()->getNewTask(id,title,E_action->text(),etat,E_priority->value(),E_duedate->dateTime());
     }
     else if(priority->isChecked())
-        return new Task(id,title,E_action->text(),etat,E_priority->value());
+        return NotesManager::getInstance()->getNewTask(id,title,E_action->text(),etat,E_priority->value());
     else if(duedate->isChecked())
-        return new Task(id,title,E_action->text(),etat,E_duedate->dateTime());
-    return new Task(id,title,E_action->text(),etat);
+        return NotesManager::getInstance()->getNewTask(id,title,E_action->text(),etat,E_duedate->dateTime());
+    return NotesManager::getInstance()->getNewTask(id,title,E_action->text(),etat);
 }
 
-Note *QRecording::get_note(QString id, QString title){
+Note& QRecording::get_note(QString id, QString title){
     ENUM::RecordingType t=static_cast<ENUM::RecordingType>(E_type->currentIndex());
-    return new Recording(id,title,E_description->document()->toPlainText(),t,E_link->text());
+    return NotesManager::getInstance()->getNewRecording(id,title,E_description->document()->toPlainText(),t,E_link->text());
 }
 
 
@@ -140,7 +140,7 @@ void QTask::check_creer(){
 
 void QArticle::load_note(Note &N){
     Article& n= dynamic_cast<Article&>(N);
-    E_text->setDocument(dynamic_cast<QTextDocument*> (&(n.getText())));
+    E_text->setDocument(n.getText().clone());
     E_text->setReadOnly(true);
 }
 
@@ -160,4 +160,25 @@ void QTask::load_note(Note& N){
     optional_duedate->addWidget(E_duedate);
     E_priority->setValue(n.getPriority());
     E_priority->setReadOnly(true);
+}
+
+void QNote::readOnly(bool status){
+    E_titre->setReadOnly(status);
+}
+
+void QArticle::readOnly(bool status){
+    this->QNote::readOnly(status);
+    E_text->setReadOnly(status);
+}
+
+void QRecording::readOnly(bool status){
+    this->QNote::readOnly(status);
+}
+void QTask::readOnly(bool status){
+    this->QNote::readOnly(status);
+    E_action->setReadOnly(status);
+    E_duedate->setReadOnly(status);
+    E_priority->setReadOnly(status);
+
+
 }

@@ -99,15 +99,15 @@ void Creation_Note::select_type(int type){
 }
 
 void Creation_Note::Creer_Note(){
-    //gérer l'id
-    QString id("xxx");
+    QString id(E_title->text()+"_00");
     try{
-    Note* essai=note->get_note(id,E_title->text());
-    QMessageBox::information(this,E_title->text(),QString::fromStdString(essai->toString()));
+    Note& essai=note->get_note(id,E_title->text());
+    QMessageBox::information(this,E_title->text(),QString::fromStdString(essai.toString()));
     emit(newNote(essai));
     }
     catch(NotesException e)
     {
         QMessageBox::warning(this,"echec création de note", e.getinfo());
     }
+    this->close();
 }

@@ -44,6 +44,7 @@ public:
     QString getFilename()const {return filename;}
     void load();
     void save() const;
+    QString updateId(QString Id2)const;
 
     static NotesManager* getInstance();
     static void libererInstance();

@@ -109,7 +109,7 @@ class Article : public Note{
 private:
     QTextDocument text;
 public:
-    QTextDocument& getText(){return text;}  //Hug: je retire le const à y réfléchir
+    const QTextDocument& getText()const {return text;}
     void setText(const QString& t){text.setPlainText(t);}
 
     Article(const QString& i, const QString& ti, const QString& te);

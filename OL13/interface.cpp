@@ -1,8 +1,9 @@
 #include "interface.h"
 
-interface::interface(): QMainWindow(), fen_creerNote(this)
+interface::interface(): QMainWindow()
 {
     note_manager=NotesManager::getInstance();
+    note_page=0;
 
     ZoneCentrale = new QWidget(this);
     MenuFichier =menuBar()->addMenu("&fichier");
@@ -21,28 +22,28 @@ interface::interface(): QMainWindow(), fen_creerNote(this)
 
     QAction *ActionQuitter =new QAction("&Quitter", this);
     ActionQuitter->setShortcut(QKeySequence("ctrl+Q"));
-//    ActionQuitter->setIcon(QIcon("LOGOUT.png"));
+    ActionQuitter->setIcon(QIcon("LOGOUT.png"));
     connect(ActionQuitter,SIGNAL(triggered(bool)),qApp,SLOT(quit()));
     MenuFichier->addAction(ActionQuitter);
 
     QAction *ActionOuvrir=new QAction("&Ouvrir",this);
     connect(ActionOuvrir,SIGNAL(triggered(bool)),this,SLOT(OuvrirFichier()));
     ActionOuvrir->setShortcut(QKeySequence("ctrl+O"));
-//    ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
+    ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
     QToolBar *toolBarFichier =addToolBar("fichier");
     toolBarFichier->addAction(ActionOuvrir);
     MenuFichier->addAction(ActionOuvrir);
 
 
     QAction *ActionNouveau=new QAction("&Nouvelle note",this);
-//    ActionNouveau->setIcon(QIcon("new.png"));
+    ActionNouveau->setIcon(QIcon("new.png"));
     ActionNouveau->setShortcut(QKeySequence("ctrl+N"));
     connect(ActionNouveau,SIGNAL(triggered(bool)),this,SLOT(CreerNote()));
     toolBarFichier->addAction(ActionNouveau);
     MenuFichier->addAction(ActionNouveau);
 
     QAction *ActionSave=new QAction("&Sauvegarder",this);
-//    ActionSave->setIcon(QIcon("save.png"));
+    ActionSave->setIcon(QIcon("save.png"));
     ActionSave->setShortcut(QKeySequence("ctrl+S"));
     connect(ActionSave,SIGNAL(triggered(bool)),this,SLOT(save()));
     toolBarFichier->addAction(ActionSave);
@@ -69,6 +70,7 @@ void interface::CreateDock_edited_Note(){
     dock_editer_note->setWidget(&(note_page->getdock()));
     addDockWidget(Qt::TopDockWidgetArea,dock_editer_note);
     MenuEd->addAction(dock_editer_note->toggleViewAction());
+    connect(note_page,SIGNAL(supp_dock_editer()),this,SLOT(supp_dock_editer()));
 
 }
 
@@ -114,28 +116,26 @@ void interface::save(){
 }
 
 void interface::CreerNote(){
-
-    fen_creerNote.show();
-    connect(&fen_creerNote,SIGNAL(newNote(Note* )),this,SLOT(addNewNote(Note*)));
+    fen_creerNote= new Creation_Note(this);
+    fen_creerNote->show();
+    connect(fen_creerNote,SIGNAL(newNote(Note& )),this,SLOT(addNewNote(Note&)));
 }
 
-void interface::addNewNote(Note* n){
-    //ATTENTION : ici il faut changer et créer une fonction addNewArticle, addNewTask, addNewRecording car le manager a été modifié
-//    note_manager->createNote(n);
+void interface::addNewNote(Note& n){
     QList< QStandardItem* > note;
-    note.append(new QStandardItem (n->getTitle()));
-    note.append(new QStandardItem(QString(n->getType())));
+    note.append(new QStandardItem (n.getTitle()));
+    note.append(new QStandardItem(QString(n.getType())));
 
 
     std::stringstream f;
-    //QDateTime dt=n->getCreation_date();`
-    QString string_dt=(n->getCreation_date()).toString("dd.MM.yyyy");
+    //QDateTime dt=n.getCreation_date();`
+    QString string_dt=(n.getCreation_date()).toString("dd.MM.yyyy");
     f<<string_dt.toStdString();
     QList< QStandardItem* > items;
-    items.append(new QStandardItem(n->getTitle()));
+    items.append(new QStandardItem(n.getTitle()));
     items.append(new QStandardItem (f.str().c_str()));
     note.at(0)->appendRow(items);
-    items.at(0)->setWhatsThis(n->getId());;
+    items.at(0)->setWhatsThis(n.getId());;
     listNote->getModel()->appendRow(note);
 
     listNote->getVue()->setModel(listNote->getModel());
@@ -185,7 +185,10 @@ void selection_note::emit_selection(QModelIndex i){
 }
 
 void interface::afficher_note(QString id){
+    if(note_page!=0)
+        note_page->close();
     try{
+        QMessageBox::warning(this,"selection", id);
     Note& current=note_manager->getNote(id);
     QMessageBox::information(this,current.getId(),current.getTitle());
     note_page=new page_notes(current);

@@ -35,7 +35,7 @@ public slots:
 class interface:public QMainWindow
 {
     Q_OBJECT
-    Creation_Note fen_creerNote;
+    Creation_Note* fen_creerNote;
     selection_note* listNote;
     page_notes* note_page;
     QWidget* ZoneCentrale;
@@ -62,8 +62,14 @@ public slots:
    void CreerNote();
    void test(){
    }
-   void addNewNote(Note* n);
+   void addNewNote(Note &n);
    void afficher_note(QString id);
+   void supp_dock_editer(){
+
+       MenuEd->removeAction(dock_selected_Note->toggleViewAction());
+       delete dock_editer_note;
+   }
+
    void save();
 };
 

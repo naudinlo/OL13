@@ -43,7 +43,7 @@ public:
     Creation_Note(QWidget* parent);
 signals:
     void change_Creer();
-    void newNote(Note* n);
+    void newNote(Note& n);
 
  public slots:
     void Creer_Note();

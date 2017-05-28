@@ -2,6 +2,7 @@
 #define QNote_H
 #include "QInclude.h"
 #include "notes.h"
+#include "manager.h"
 class QNote: public QWidget{
     Q_OBJECT
     QLabel* titre;
@@ -9,7 +10,8 @@ class QNote: public QWidget{
 protected:
     QGridLayout* grid;
 public:
-    virtual Note* get_note(QString id,QString title)=0;
+    virtual Note& get_note(QString id,QString title)=0;
+    virtual void readOnly(bool status);
     QNote();
     virtual void load_note(Note& n)=0;
 public slots:
@@ -23,10 +25,11 @@ class QArticle: public QNote{
     QLabel* text;
     QTextEdit* E_text;
     QGridLayout* grid;
-    Note* get_note(QString id, QString title);
+    Note& get_note(QString id, QString title);
 public:
     QArticle();
     void load_note(Note &N);
+    void readOnly(bool status);
 public slots:
     void check_creer();
 signals:
@@ -48,10 +51,11 @@ class QTask: public QNote{
     QLabel* status;
     QComboBox* E_status;
     QGridLayout* grid;
-    Note* get_note(QString id, QString title);
+    Note &get_note(QString id, QString title);
 public:
     QTask();
     void load_note(Note &N);
+    void readOnly(bool status);
 signals:
     void checked_creer(bool);
 public slots:
@@ -67,10 +71,11 @@ class QRecording: public QNote{
     QLineEdit* E_link;
     QPushButton* link;
     QGridLayout* grid;
-    Note* get_note(QString id, QString title);
+    Note& get_note(QString id, QString title);
 public:
     QRecording();
     virtual void load_note(Note& N);
+    void readOnly(bool status);
 public slots:
     QString OuvrirFichier();
     void check_creer();

@@ -145,7 +145,7 @@ Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,co
     return (Recording&)*notes[i];
 }
 
-//ATTENTION : faire une fonction pour chaque type ? Ou un dynamic cast ?
+//ATTENTION : faire une fonction pour chaque type ? Ou un dynamic cast ? // Rep: non laisse comme cela on fera des casts
 Note& NotesManager::getNote(const QString& id){
     for(unsigned int i=0; i<nbNotes; i++){
         if (notes[i]->getId()==id) return *notes[i];
@@ -466,4 +466,19 @@ void RelationManager::libererInstance(){
     handler.instance=0;
 }
 
-
+QString NotesManager::updateId(QString Id2)const {
+    QString Id=Id2;
+    int i=Id.length()-1;
+    if(Id[i]=='9')
+    {
+        QChar c(Id[i-1].toAscii()+1);
+        Id[i-1]=c;
+        Id[i]='0';
+    }
+    else
+    {
+        QChar c(Id[i].toAscii()+1);
+        Id[i]=c;
+    }
+    return Id;
+}

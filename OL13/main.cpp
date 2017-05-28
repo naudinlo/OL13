@@ -133,7 +133,7 @@ int PROGRAMME(int argc,char *argv[])
 
 
 int main(int argc, char * argv[]) {
-    try {
+  /*  try {
             creation(); // cette ligne peut Ítre mise en commentaire aprËs la 1Ëre exÈcution
 //            displayAllNote();
             relation();
@@ -143,7 +143,9 @@ int main(int argc, char * argv[]) {
         catch(NotesException& e){
             std::cout<<e.getinfo().toStdString()<<"\n";
         }
+*/
 
-    //PROGRAMME(argc,argv);
+    //std::cout<<NotesManager::getInstance()->updateId("hugues_59").toStdString();
+    PROGRAMME(argc,argv);
     return 0;
 }

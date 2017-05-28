@@ -37,4 +37,5 @@ void page_notes::create_dock(){
     layout->addStretch();
     layout->addWidget(lecture_seul);
     layout->addWidget(editer);
+    connect(editer,SIGNAL(clicked(bool)),this,SLOT(editer_note(bool)));
 }
