@@ -39,7 +39,8 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
 
     B_comm=new(QGroupBox)("Ajouter des relations",this);
     B_comm->setLayout(L_comm);
-    B_comm->setCheckable(false);
+    B_comm->setCheckable(true);
+    B_comm->setChecked(false);
 
 
     B_type=new(QGroupBox)("Article",this);

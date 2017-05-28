@@ -188,9 +188,7 @@ void interface::afficher_note(QString id){
     if(note_page!=0)
         note_page->close();
     try{
-        QMessageBox::warning(this,"Sélection", id);
-    Note& current=note_manager->getNote(id);
-    QMessageBox::information(this,current.getId(),current.getTitle());
+        Note& current=note_manager->getNote(id);
     note_page=new page_notes(current);
     setCentralWidget(note_page);
     CreateDock_edited_Note();

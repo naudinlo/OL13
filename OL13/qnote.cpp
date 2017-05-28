@@ -151,7 +151,6 @@ void QRecording::load_note(Note &N){
 
 void QTask::load_note(Note& N){
     Task& n= dynamic_cast<Task&>(N);
-    QMessageBox::warning(this,"dg","ddfsdf");
     E_action->setText(n.getAction());
     E_action->setReadOnly(true);
     delete E_duedate;
