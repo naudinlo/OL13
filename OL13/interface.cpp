@@ -5,7 +5,6 @@ interface::interface(): QMainWindow()
     note_manager=NotesManager::getInstance();
     note_page=0;
 
-    ZoneCentrale = new QWidget(this);
     MenuFichier =menuBar()->addMenu("&Fichier");
     MenuEd =menuBar()->addMenu("&Edition");
     MenuAff =menuBar()->addMenu("&Affichage");
@@ -49,17 +48,7 @@ interface::interface(): QMainWindow()
     toolBarFichier->addAction(ActionSave);
     MenuFichier->addAction(ActionSave);
 
-    QLabel *text = new QLabel("Sélectionner une note à afficher");
-    text->setEnabled(false);
-    QHBoxLayout *layout=new QHBoxLayout;
-    layout->addStretch();
-    layout->addWidget(text);
-    layout->addStretch();
-
-    ZoneCentrale->setEnabled(false);
-    ZoneCentrale->setFont(QFont("grey0"));
-    ZoneCentrale->setLayout(layout);
-
+    ZoneCentrale=new page_vide();
     CreateDock_selected_Note();
     setCentralWidget(ZoneCentrale);
 }
@@ -79,7 +68,7 @@ void interface::CreateDock_selected_Note(){
     dock_selected_Note=new QDockWidget("Sélectionner une note",this);
     dock_selected_Note->setAllowedAreas(Qt::LeftDockWidgetArea );
     dock_selected_Note->setWidget(listNote);
-    //dock_selected_Note->setMaximumSize(QSize(20));
+    dock_selected_Note->setMaximumWidth(300);
     addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
     MenuAff->addAction(dock_selected_Note->toggleViewAction());
     connect(listNote,SIGNAL(selection(QString)),this,SLOT(afficher_note(QString)));
@@ -186,18 +175,23 @@ void selection_note::emit_selection(QModelIndex i){
 
 void interface::afficher_note(QString id){
     if(note_page!=0)
-        note_page->close();
+    {
+        //note_page->close();
+        delete note_page;
+        ZoneCentrale=new page_vide();
+    }
     try{
         Note& current=note_manager->getNote(id);
-    note_page=new page_notes(current);
-    setCentralWidget(note_page);
-    CreateDock_edited_Note();
+        note_page=new page_notes(current);
+
+        ZoneCentrale=note_page;
+        CreateDock_edited_Note();
 
     }
     catch(NotesException e)
     {
         QMessageBox::warning(this,"Error",e.getinfo());
     }
-
+    setCentralWidget(ZoneCentrale);
 }
 

@@ -28,6 +28,7 @@ page_notes::page_notes(Note& n)
     layout_p->addWidget(note);
     layout_p->addStretch();
     layout_p->addWidget(info);
+
 }
 void page_notes::create_dock(){
     dock=new QWidget;
@@ -38,4 +39,18 @@ void page_notes::create_dock(){
     layout->addWidget(lecture_seul);
     layout->addWidget(editer);
     connect(editer,SIGNAL(clicked(bool)),this,SLOT(editer_note(bool)));
+}
+
+page_vide::page_vide():QWidget(){
+    QLabel *text = new QLabel("Sélectionner une note à afficher");
+    text->setEnabled(false);
+    QHBoxLayout *layout=new QHBoxLayout;
+    layout->addStretch();
+    layout->addWidget(text);
+    layout->addStretch();
+
+    this->setEnabled(false);
+    this->setFont(QFont("grey0"));
+    this->setLayout(layout);
+
 }
