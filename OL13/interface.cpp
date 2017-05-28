@@ -6,10 +6,10 @@ interface::interface(): QMainWindow()
     note_page=0;
 
     ZoneCentrale = new QWidget(this);
-    MenuFichier =menuBar()->addMenu("&fichier");
+    MenuFichier =menuBar()->addMenu("&Fichier");
     MenuEd =menuBar()->addMenu("&Edition");
     MenuAff =menuBar()->addMenu("&Affichage");
-    fichiersRecents=MenuFichier->addMenu("Ficher &récents");
+    fichiersRecents=MenuFichier->addMenu("Fichers &récents");
     fichiersRecents->addAction("Fichier bidon 1.txt");
 
     fichiersRecents->addAction("Fichier bidon 2.txt");
@@ -22,28 +22,28 @@ interface::interface(): QMainWindow()
 
     QAction *ActionQuitter =new QAction("&Quitter", this);
     ActionQuitter->setShortcut(QKeySequence("ctrl+Q"));
-    ActionQuitter->setIcon(QIcon("LOGOUT.png"));
+//    ActionQuitter->setIcon(QIcon("LOGOUT.png"));
     connect(ActionQuitter,SIGNAL(triggered(bool)),qApp,SLOT(quit()));
     MenuFichier->addAction(ActionQuitter);
 
     QAction *ActionOuvrir=new QAction("&Ouvrir",this);
     connect(ActionOuvrir,SIGNAL(triggered(bool)),this,SLOT(OuvrirFichier()));
     ActionOuvrir->setShortcut(QKeySequence("ctrl+O"));
-    ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
-    QToolBar *toolBarFichier =addToolBar("fichier");
+//    ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
+    QToolBar *toolBarFichier =addToolBar("Fichier");
     toolBarFichier->addAction(ActionOuvrir);
     MenuFichier->addAction(ActionOuvrir);
 
 
     QAction *ActionNouveau=new QAction("&Nouvelle note",this);
-    ActionNouveau->setIcon(QIcon("new.png"));
+//    ActionNouveau->setIcon(QIcon("new.png"));
     ActionNouveau->setShortcut(QKeySequence("ctrl+N"));
     connect(ActionNouveau,SIGNAL(triggered(bool)),this,SLOT(CreerNote()));
     toolBarFichier->addAction(ActionNouveau);
     MenuFichier->addAction(ActionNouveau);
 
     QAction *ActionSave=new QAction("&Sauvegarder",this);
-    ActionSave->setIcon(QIcon("save.png"));
+//    ActionSave->setIcon(QIcon("save.png"));
     ActionSave->setShortcut(QKeySequence("ctrl+S"));
     connect(ActionSave,SIGNAL(triggered(bool)),this,SLOT(save()));
     toolBarFichier->addAction(ActionSave);
@@ -146,8 +146,8 @@ selection_note::selection_note():QWidget(){
 
     layout= new QVBoxLayout(this);
     model= new QStandardItemModel;
-    QStandardItem *item = new QStandardItem("article bidule");
-    QStandardItem *item2 = new QStandardItem("type");
+    QStandardItem *item = new QStandardItem("Article Bidule");
+    QStandardItem *item2 = new QStandardItem("Type");
     QList< QStandardItem* >  items;
     items.append(item);
     items.append(item2);
@@ -188,7 +188,7 @@ void interface::afficher_note(QString id){
     if(note_page!=0)
         note_page->close();
     try{
-        QMessageBox::warning(this,"selection", id);
+        QMessageBox::warning(this,"Sélection", id);
     Note& current=note_manager->getNote(id);
     QMessageBox::information(this,current.getId(),current.getTitle());
     note_page=new page_notes(current);
@@ -198,7 +198,7 @@ void interface::afficher_note(QString id){
     }
     catch(NotesException e)
     {
-        QMessageBox::warning(this,"error",e.getinfo());
+        QMessageBox::warning(this,"Error",e.getinfo());
     }
 
 }

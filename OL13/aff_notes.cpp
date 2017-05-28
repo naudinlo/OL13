@@ -6,7 +6,7 @@ page_notes::page_notes(Note& n)
     layout_p=new QVBoxLayout(this);
     layout_titre=new QHBoxLayout;
     titre=new QLabel(n.getTitle());
-    info=new QLabel("Cette note est un :"+n.getType()+" Créer le :"+n.getCreation_date().toString()+" Dernière modification le :"+n.getLastmodif_date().toString());
+    info=new QLabel("Cette note est un "+n.getType()+" créée le :"+n.getCreation_date().toString()+". Dernière modification le :"+n.getLastmodif_date().toString());
     layout_titre->addStretch();
     layout_titre->addWidget(titre);
     layout_titre->addStretch();
@@ -32,8 +32,8 @@ page_notes::page_notes(Note& n)
 void page_notes::create_dock(){
     dock=new QWidget;
     QHBoxLayout*layout=new QHBoxLayout(dock);
-    QLabel* lecture_seul=new QLabel ("Ce documment est ouvert en lecture seul");
-    QPushButton* editer=new QPushButton ("Edité");
+    QLabel* lecture_seul=new QLabel ("Ce document est ouvert en lecture seule");
+    QPushButton* editer=new QPushButton ("Editer");
     layout->addStretch();
     layout->addWidget(lecture_seul);
     layout->addWidget(editer);

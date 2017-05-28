@@ -471,13 +471,15 @@ QString NotesManager::updateId(QString Id2)const {
     int i=Id.length()-1;
     if(Id[i]=='9')
     {
-        QChar c(Id[i-1].toAscii()+1);
+//        QChar c(Id[i-1].toAscii()+1);
+        QChar c(Id[i-1].toLatin1()+1);
         Id[i-1]=c;
         Id[i]='0';
     }
     else
     {
-        QChar c(Id[i].toAscii()+1);
+//        QChar c(Id[i].toAscii()+1);
+        QChar c(Id[i].toLatin1()+1);
         Id[i]=c;
     }
     return Id;

@@ -37,7 +37,7 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
     L_bouton->addWidget(quitter);
     L_bouton->addWidget(Creer);
 
-    B_comm=new(QGroupBox)("Ajouter des Reference",this);
+    B_comm=new(QGroupBox)("Ajouter des relations",this);
     B_comm->setLayout(L_comm);
     B_comm->setCheckable(true);
 
@@ -107,7 +107,7 @@ void Creation_Note::Creer_Note(){
     }
     catch(NotesException e)
     {
-        QMessageBox::warning(this,"echec création de note", e.getinfo());
+        QMessageBox::warning(this,"Echec lors de la création d'une note", e.getinfo());
     }
     this->close();
 }
