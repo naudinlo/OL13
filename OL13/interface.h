@@ -65,9 +65,8 @@ public slots:
    void addNewNote(Note &n);
    void afficher_note(QString id);
    void supp_dock_editer(){
-
        MenuEd->removeAction(dock_selected_Note->toggleViewAction());
-       delete dock_editer_note;
+       dock_editer_note->close();
    }
 
    void save();
