@@ -6,7 +6,7 @@ page_notes::page_notes(Note& n)
     layout_p=new QVBoxLayout(this);
     layout_titre=new QHBoxLayout;
     titre=new QLabel(n.getTitle());
-    info=new QLabel("Cette note est un "+n.getType()+" créée le :"+n.getCreation_date().toString()+". Dernière modification le :"+n.getLastmodif_date().toString());
+    info=new QLabel("Cette note est un "+n.getType()+"\nCréation le "+n.getCreation_date().toString("dd.MM.yyyy hh:mm")+"\nDernière modification le "+n.getLastmodif_date().toString("dd.MM.yyyy hh:mm"));
     layout_titre->addStretch();
     layout_titre->addWidget(titre);
     layout_titre->addStretch();
