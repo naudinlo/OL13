@@ -11,7 +11,7 @@
 #include "notes.h"
 #include "relations.h"
 #include "interface.h"
-
+#include <list>
 
 void creation(){
 //    NotesManager manager;
@@ -131,6 +131,14 @@ int PROGRAMME(int argc,char *argv[])
     return app.exec();
 }
 
+void test_list()
+{
+   list<int> a;
+   a.push_front(13);
+   a.push_front(14);
+   list<int>::iterator it;
+   for(it=a.begin(); it!=a.end(); it++) cout<<*it;
+}
 
 int main(int argc, char * argv[]) {
   /*  try {
@@ -146,6 +154,14 @@ int main(int argc, char * argv[]) {
 */
 
     //std::cout<<NotesManager::getInstance()->updateId("hugues_59").toStdString();
-    PROGRAMME(argc,argv);
+    //PROGRAMME(argc,argv);
+    //test_list();
+    list<int> a;
+    a.push_front(15);
+    a.push_front(1);
+    a.push_back(2);
+    list<int>::iterator it;
+    for(it=a.begin(); it!=a.end(); it++) cout<<*it<<endl;
+
     return 0;
 }

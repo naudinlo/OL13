@@ -8,147 +8,155 @@
 
 Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const QString& te){
     Article* n=new Article(id,ti,te);
-    for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getId()==id){
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone()){
+        if (it.current().getId()==id){
             throw NotesException("error, creation of an already existent note");
 //            return dynamic_cast<Article&>(*notes[i]);
-            return (Article&)*notes[i];
+            return (Article&)it.current();
         }
+        it.next();
     }
     if (nbNotes==nbMaxNotes){
-        Note** newNotes= new Note*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        Note** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
     }
     int i=nbNotes;
-    notes[nbNotes++]=n;
-    //            return dynamic_cast<Article&>(*notes[i]);
+    *(*notes[nbNotes++]).begin()=*n;
+            //            return dynamic_cast<Article&>(*notes[i]);
     return (Article&)*notes[i];
 }
 
 
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d){
     Task* n=new Task(id,ti,a,s,p,d);
-    for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getId()==id){
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone()){
+        if (it.current().getId()==id){
             throw NotesException("error, creation of an already existent note");
 //            return dynamic_cast<Task&>(*notes[i]);
-            return (Task&)*notes[i];
+            return (Task&)it.current();
         }
     }
     if (nbNotes==nbMaxNotes){
-        Note** newNotes= new Note*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        Note** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
     }
     int i=nbNotes;
-    notes[nbNotes++]=n;
+    *(*notes[nbNotes++]).begin()=*n;
     //            return dynamic_cast<Task&>(*notes[i]);
     return (Task&)*notes[i];
 }
 
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p){
     Task* n=new Task(id,ti,a,s,p);
-    for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getId()==id){
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone()){
+        if (it.current().getId()==id){
             throw NotesException("error, creation of an already existent note");
 //            return dynamic_cast<Task&>(*notes[i]);
-            return (Task&)*notes[i];
+            return (Task&)it.current();
         }
     }
     if (nbNotes==nbMaxNotes){
-        Note** newNotes= new Note*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        Note** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
     }
     int i=nbNotes;
-    notes[nbNotes++]=n;
+    *(*notes[nbNotes++]).begin()=*n;
     //            return dynamic_cast<Task&>(*notes[i]);
     return (Task&)*notes[i];
 }
 
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, const QDateTime d){
     Task* n=new Task(id,ti,a,s,d);
-    for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getId()==id){
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone()){
+        if (it.current().getId()==id){
             throw NotesException("error, creation of an already existent note");
 //            return dynamic_cast<Task&>(*notes[i]);
-            return (Task&)*notes[i];
+            return (Task&)it.current();
         }
     }
     if (nbNotes==nbMaxNotes){
-        Note** newNotes= new Note*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        Note** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
     }
     int i=nbNotes;
-    notes[nbNotes++]=n;
+    *(*notes[nbNotes++]).begin()=*n;
     //            return dynamic_cast<Task&>(*notes[i]);
     return (Task&)*notes[i];
 }
 
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s){
     Task* n=new Task(id,ti,a,s);
-    for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getId()==id){
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone()){
+        if (it.current().getId()==id){
             throw NotesException("error, creation of an already existent note");
 //            return dynamic_cast<Task&>(*notes[i]);
-            return (Task&)*notes[i];
+            return (Task&)it.current();
         }
     }
     if (nbNotes==nbMaxNotes){
-        Note** newNotes= new Note*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        Note** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
     }
     int i=nbNotes;
-    notes[nbNotes++]=n;
+    *(*notes[nbNotes++]).begin()=*n;
     //            return dynamic_cast<Task&>(*notes[i]);
     return (Task&)*notes[i];
 }
 
 Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,const QString& d, ENUM::RecordingType r, QString l){
     Recording* n=new Recording(id,ti,d,r,l);
-    for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getId()==id){
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone()){
+        if (it.current().getId()==id){
             throw NotesException("error, creation of an already existent note");
 //            return dynamic_cast<Recording&>(*notes[i]);
-            return (Recording&)*notes[i];
+            return (Recording&)it.current();
         }
     }
     if (nbNotes==nbMaxNotes){
-        Note** newNotes= new Note*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        Note** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
     }
     int i=nbNotes;
-    notes[nbNotes++]=n;
+    *(*notes[nbNotes++]).begin()=*n;
     //            return dynamic_cast<Recording&>(*notes[i]);
     return (Recording&)*notes[i];
 }
 
 //ATTENTION : faire une fonction pour chaque type ? Ou un dynamic cast ? // Rep: non laisse comme cela on fera des casts
 Note& NotesManager::getNote(const QString& id){
-    for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getId()==id) return *notes[i];
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone()){
+        if (it.current().getId()==id) return it.current();
     }
     throw NotesException("error, non existent note");
 }
@@ -161,7 +169,7 @@ NotesManager::~NotesManager(){
     delete[] notes;
 }
 
-void NotesManager::save() const {
+/*void NotesManager::save() const {
     QFile newfile(filename);
     if (!newfile.open(QIODevice::WriteOnly | QIODevice::Text))
         throw NotesException(QString("erreur sauvegarde notes : ouverture fichier xml"));
@@ -257,6 +265,7 @@ void NotesManager::save() const {
     stream.writeEndDocument();
     newfile.close();
 }
+*/
 
 /*void NotesManager::load() {
     QFile fin(filename);
@@ -348,9 +357,10 @@ void NotesManager::libererInstance(){
 
 
 void NotesManager::deleteNote(const QString& id){
-    for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getId()==id){
-            Note* n=notes[i];
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone()){
+        if (it.current().getId()==id){
+            Note* n=&it.current();
             if (n->getNbIsRef()!=0){
                 std::cout<<"La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.";
                 QMessageBox msgBox;
@@ -373,11 +383,14 @@ void NotesManager::deleteNote(const QString& id){
 }
 
 void NotesManager::emptyTrash(){
-    for(unsigned int i=0; i<nbNotes; i++){
-        if (notes[i]->getIsDeleted()){
-            notes[i]->setNbRef(0);
-            delete notes[i];
+    NotesManager::Iterator it=NotesManager::getIterator();
+    int i=0;
+    while(!it.isDone()){
+        if (it.current().getIsDeleted()){
+            it.current().setNbRef(0);
+            delete &it.current();
             notes[i]=notes[--nbNotes];
+            i++;
         }
     }
 }

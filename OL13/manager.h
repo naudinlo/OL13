@@ -12,7 +12,7 @@ using namespace std;
 
 class NotesManager {
 private:
-    Note** notes;
+    list<Note>** notes;
     unsigned int nbNotes;
     unsigned int nbMaxNotes;
     mutable QString filename;
@@ -56,11 +56,11 @@ public:
 
     class Iterator{
         private:
-            Note** tab;  //adresse du tableau de pointeur
+            list<Note>** tab;  //adresse du tableau de pointeur
             unsigned int nb;        //nb élément dans le tableau
             unsigned int index;     //indice courant
             //Dans la partie privée
-            Iterator(Note** t, unsigned int n):tab(t), nb(n), index(0){}
+            Iterator(list<Note>** t, unsigned int n):tab(t), nb(n), index(0){}
             friend class NotesManager;
         public:
             void next(){
@@ -71,7 +71,8 @@ public:
                 index++;
             }
             bool isDone()const {return nb==index;}
-            Note& current() const {return *tab[index];}
+            Note& current() const {return *(*tab[index]).begin();}
+            list<Note> liste() const {return *tab[index];}
         };
         Iterator getIterator(){
             return Iterator(notes, nbNotes);
