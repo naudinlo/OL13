@@ -164,7 +164,7 @@ Note& NotesManager::getNote(const QString& id){
 NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0){}
 
 NotesManager::~NotesManager(){
-    save();
+    //save();
     for(unsigned int i=0; i<nbNotes; i++) delete notes[i];
     delete[] notes;
 }
@@ -397,25 +397,25 @@ void NotesManager::emptyTrash(){
 
 
 void NotesManager::editNote(QString& id){
-    unsigned int i=0;
-    while(i<nbNotes && notes[i]->getId()!=id) i++;
-    if (i==nbNotes){
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone() && it.current().getId()!=id) it.next();
+    if (it.isDone()){
         throw NotesException("error, impossible to edit note, non existent note");
     }
     else{
-        Note* ncopy(notes[i]);   //last modif date automatiquement mis à jour dans la copie
+        Note* ncopy(&it.current());   //last modif date automatiquement mis à jour dans la copie
         //a definir avec l'interface
     }
 }
 
 void NotesManager::restoreNoteTrash(const QString& id){
-    unsigned int i=0;
-    while(i<nbNotes && notes[i]->getId()!=id) i++;
-    if (i==nbNotes){
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone() && it.current().getId()!=id) it.next();
+    if (it.isDone()){
         throw NotesException("error, non existent note");
     }
     else{
-        if (notes[i]->getIsDeleted()) notes[i]->setIsDeleted(false);
+        if (it.current().getIsDeleted()) it.current().setIsDeleted(false);
     }
 }
 
