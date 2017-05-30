@@ -43,6 +43,7 @@ class interface:public QMainWindow
     QMenu *MenuEd;
     QMenu *MenuAff;
     QMenu *fichiersRecents;
+    Edit_relation* ref;
 
     QDockWidget* dock_selected_Note;
     QDockWidget* dock_editer_note;
@@ -58,6 +59,13 @@ public:
     }
 
 public slots:
+   void E_relation(){
+       QMessageBox::warning(this,"","new ref");
+       ref = new Edit_relation(listNote->getModel(),this);
+       ref->show();
+
+   }
+
    void OuvrirFichier();
    void CreerNote();
    void test(){

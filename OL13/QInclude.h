@@ -39,3 +39,4 @@
 
 #include <QStandardItemModel>
 #include <QHeaderView>
+#include <QTableView>

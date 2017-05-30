@@ -10,7 +10,7 @@ class Creation_Note: public QDialog
 
     QGroupBox* B_type;
     QGroupBox* B_defNote;
-    QGroupBox* B_comm;
+    QGroupBox* B_ref;
     QVBoxLayout* L_fen;
     QHBoxLayout* L_bouton;
     QGridLayout* L_type;
@@ -44,6 +44,7 @@ public:
 signals:
     void change_Creer();
     void newNote(Note& n);
+    void newRef();
 
  public slots:
     void Creer_Note();
@@ -60,6 +61,18 @@ signals:
     void activer_Creer(){
         Creer->setEnabled(E_title_not_null && E_note_not_null);
         }
+};
+
+class Edit_relation:public QDialog{
+
+    QGridLayout* L_fen;
+    QLabel* Label_from;
+    QLabel* Label_to;
+    QStandardItemModel* model;
+    QTableView* ref_from;
+    QTableView* ref_to;
+public:
+    Edit_relation(QStandardItemModel* m, QWidget *parent);
 };
 
 #endif // Creation_Note_H

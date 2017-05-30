@@ -3,6 +3,7 @@
 #include "QInclude.h"
 #include "notes.h"
 #include "manager.h"
+//#include <QMediaPlayer>
 class QNote: public QWidget{
     Q_OBJECT
     QLabel* titre;

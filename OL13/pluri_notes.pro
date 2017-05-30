@@ -12,7 +12,6 @@ HEADERS += \
 
 QT += widgets
 QT += xml
-
 SOURCES += \
     interface.cpp \
     main.cpp \

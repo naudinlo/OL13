@@ -108,6 +108,7 @@ void interface::CreerNote(){
     fen_creerNote= new Creation_Note(this);
     fen_creerNote->show();
     connect(fen_creerNote,SIGNAL(newNote(Note& )),this,SLOT(addNewNote(Note&)));
+    connect(fen_creerNote,SIGNAL(newRef()),this,SLOT(E_relation()));
 }
 
 void interface::addNewNote(Note& n){
