@@ -18,6 +18,7 @@ list<Note>::iterator itVer=it.liste() itVer sera l'itération de version de la n
 Les méthodes:
 
 itVer++ incrémentation
+
 itVer-- décrémentation
 itVer!=a différent
 itVer==a égal
