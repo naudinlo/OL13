@@ -137,7 +137,7 @@ void test_list()
    a.push_front(13);
    a.push_front(14);
    list<int>::iterator it;
-   for(it=a.begin(); it!=a.end(); it++) cout<<*it;
+   for(it=a.begin(); it!=a.end(); it++) cout<<*it<<endl;
 }
 
 int main(int argc, char * argv[]) {
@@ -154,14 +154,8 @@ int main(int argc, char * argv[]) {
 */
 
     //std::cout<<NotesManager::getInstance()->updateId("hugues_59").toStdString();
-    //PROGRAMME(argc,argv);
-    //test_list();
-    list<int> a;
-    a.push_front(15);
-    a.push_front(1);
-    a.push_back(2);
-    list<int>::iterator it;
-    for(it=a.begin(); it!=a.end(); it++) cout<<*it<<endl;
+    PROGRAMME(argc,argv);
+    test_list();
 
     return 0;
 }

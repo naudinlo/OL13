@@ -73,6 +73,9 @@ public:
             bool isDone()const {return nb==index;}
             Note& current() const {return *(*tab[index]).begin();}
             list<Note> liste() const {return *tab[index];}
+            list<Note>::iterator getIteratorVersions(){
+                return liste().begin();
+            }
         };
         Iterator getIterator(){
             return Iterator(notes, nbNotes);
