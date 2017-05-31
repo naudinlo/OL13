@@ -66,14 +66,22 @@ QRecording::QRecording():QNote(){
     type=new QLabel("Type d'enregistrement");
     E_link=new QLineEdit;
     E_link->setEnabled(false);
+    read=new QPushButton("Lire Enregistrement");
+    stop=new QPushButton("Fermer");
+    read->setEnabled(false);
+    stop->setEnabled(true);
     link=new QPushButton("Selectionner enregistrement");
     E_type=new QComboBox;
     E_type->addItem("Image");
     E_type->addItem("Audio");
     E_type->addItem("Video");
+
+    connect(read,SIGNAL(clicked(bool)),this,SLOT(read_record()));
+    connect(stop,SIGNAL(clicked(bool)),this,SLOT(stop_record()));
     connect(link,SIGNAL(clicked(bool)),this,SLOT(OuvrirFichier()));
     connect(E_link,SIGNAL(textChanged(QString)),this,SLOT(check_creer()));
     connect(E_description,SIGNAL(textChanged()),this,SLOT(check_creer()));
+    connect(this,SIGNAL(destroyed(QObject*)),this,SLOT(read_record()));
     grid->addWidget(description,0,0);
     grid->addWidget(E_description,1,0,1,2);
     grid->addWidget(type,2,0);
@@ -83,10 +91,49 @@ QRecording::QRecording():QNote(){
 
 }
 
+void QRecording::read_record(){
+    read->setEnabled(false);
+    stop->setEnabled(true);
+    grid->addWidget(stop,5,1);
+    player=new QMediaPlayer(this);
+    player->setMedia(QUrl::fromLocalFile(E_link->text()));
+    player->setVolume(50);
+
+
+    if(E_type->currentIndex()==1){
+        player->play();
+
+    }
+    else{
+        videoWidget = new QVideoWidget;
+        grid->addWidget(videoWidget,10,0,15,2);
+        player->setVideoOutput(videoWidget);
+        videoWidget->show();
+        if(E_type->currentIndex()==2){
+            player->play();
+        }
+
+    }
+}
+
+void QRecording::stop_record(){
+    if(stop->isEnabled()==true){
+        stop->setEnabled(false);
+        if(E_type->currentText()!=1)
+            videoWidget->close();
+        player->stop();
+        read->setEnabled(true);
+    }
+}
+
+
 QString QRecording::OuvrirFichier(){
     QString fichier = QFileDialog::getOpenFileName(this,"Selectionner un enregistrement",QString());
-    if(fichier != 0)
+    if(fichier != 0){
             E_link->setText(fichier);
+            read->setEnabled(true);
+            grid->addWidget(read,5,0);
+    }
     return fichier;
 
 }
