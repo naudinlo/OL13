@@ -160,6 +160,7 @@ Note& QTask::get_note(QString id, QString title){
 Note& QRecording::get_note(QString id, QString title){
     ENUM::RecordingType t=static_cast<ENUM::RecordingType>(E_type->currentIndex());
     return NotesManager::getInstance()->getNewRecording(id,title,E_description->document()->toPlainText(),t,E_link->text());
+
 }
 
 
@@ -193,6 +194,11 @@ void QArticle::load_note(Note &N){
 
 void QRecording::load_note(Note &N){
     Recording& n= dynamic_cast<Recording&>(N);
+    E_link->setText(n.getLink());
+    E_type->setCurrentIndex(n.getType());
+    E_description->setDocument(n.getDescription().clone());
+    read->setEnabled(true);
+    grid->addWidget(read,5,0);
 
 }
 
