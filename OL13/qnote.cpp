@@ -128,7 +128,21 @@ void QRecording::stop_record(){
 
 
 QString QRecording::OuvrirFichier(){
-    QString fichier = QFileDialog::getOpenFileName(this,"Selectionner un enregistrement",QString());
+    QString Filtre;
+    switch(E_type->currentIndex()){
+    case 0:
+        Filtre="Images (*.png *.gif *.jpg *.jpeg *.JPG)";
+        break;
+    case 1:
+        Filtre="Audio (*.mp3 *.waw)";
+       break;
+    case 2:
+        Filtre="Video (*.mp4 *.avi)";
+        break;
+    }
+
+
+    QString fichier = QFileDialog::getOpenFileName(this,"Selectionner un enregistrement",QString(),Filtre);
     if(fichier != 0){
             E_link->setText(fichier);
             read->setEnabled(true);
