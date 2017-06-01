@@ -3,15 +3,17 @@
 
 
 //A FAIRE
-void Relation::displayRelation(){
+std::string Relation::displayRelation(){
 //    RelationManager& rm=RelationManager::getInstance();
+    std::stringstream f;
     for(Relation::Iterator it=this->getIterator(); !it.isDone(); it.next()){
-        std::cout<<"  - Note "<<it.current().getCoupleNoteX()->getId().toStdString();
-        std::cout<<" vers Note "<<it.current().getCoupleNoteY()->getId().toStdString();
-        if (it.current().getSymetric()) std::cout<<"  de façon symétrique.";
-        if (it.current().getLabel()!=0) std::cout<<"\n    Label : "<<it.current().getLabel().toStdString();
-        std::cout<<std::endl;
+        f<<"  - Note "<<it.current().getCoupleNoteX()->getId().toStdString();
+        f<<" vers Note "<<it.current().getCoupleNoteY()->getId().toStdString();
+        if (it.current().getSymetric()) f<<"  de façon symétrique.";
+        if (it.current().getLabel()!=0) f<<"\n    Label : "<<it.current().getLabel().toStdString();
+        f<<std::endl;
     };
+    return f.str();
 }
 
 

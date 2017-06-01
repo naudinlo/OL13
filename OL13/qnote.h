@@ -3,6 +3,7 @@
 #include "QInclude.h"
 #include "notes.h"
 #include "manager.h"
+#include "relations.h"
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 #include <QVideoWidget>

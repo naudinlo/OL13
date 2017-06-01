@@ -37,10 +37,6 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
     L_bouton->addWidget(quitter);
     L_bouton->addWidget(Creer);
 
-    B_ref=new(QGroupBox)("Ajouter des relations",this);
-    B_ref->setLayout(L_comm);
-    B_ref->setCheckable(true);
-    B_ref->setChecked(false);
 
 
     B_type=new(QGroupBox)("Article",this);
@@ -54,7 +50,6 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
 
     L_fen->addWidget(B_defNote);
     L_fen->addWidget(B_type);
-    L_fen->addWidget(B_ref);
     L_fen->addLayout(L_bouton);
 
 }
@@ -104,8 +99,6 @@ void Creation_Note::Creer_Note(){
     try{
     Note& essai=note->get_note(id,E_title->text());
     QMessageBox::information(this,E_title->text(),QString::fromStdString(essai.toString()));
-    if(B_ref->isChecked())
-        emit(newRef());
     emit(newNote(essai));
     }
     catch(NotesException e)
@@ -113,33 +106,4 @@ void Creation_Note::Creer_Note(){
         QMessageBox::warning(this,"Echec lors de la création d'une note", e.getinfo());
     }
     this->close();
-}
-
-Edit_relation::Edit_relation(QStandardItemModel *m, QWidget* parent):model(m),QDialog(parent){
-    this->setWindowTitle("Ajouter Référence");
-
-    L_fen=new QGridLayout(this);
-
-    Label_from=new QLabel("Définer des références venant de :");
-    ref_from=new QTableView;
-    ref_from->setAlternatingRowColors(true);
-    ref_from->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ref_from->setModel(model);
-    ref_from->setDisabled(false);
-    ref_from->horizontalHeader()->hide();
-    ref_from->setSelectionMode(QAbstractItemView::ExtendedSelection);
-
-
-    Label_to=new QLabel("Définer des références vers :");
-    ref_to=new QTableView;
-    ref_to->setAlternatingRowColors(true);
-    ref_to->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ref_to->setModel(model);
-    ref_to->setDisabled(false);
-    ref_to->horizontalHeader()->hide();
-    ref_to->setSelectionMode(QAbstractItemView::ExtendedSelection);
-    L_fen->addWidget(Label_from,0,0);
-    L_fen->addWidget(ref_from,1,0);
-    L_fen->addWidget(Label_to,2,0);
-    L_fen->addWidget(ref_to,3,0);
 }

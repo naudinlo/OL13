@@ -1,6 +1,6 @@
 #include "interface.h"
 
-interface::interface(): QMainWindow()
+interface::interface(): QMainWindow(), indexNote()
 {
     note_manager=NotesManager::getInstance();
     note_page=0;
@@ -34,6 +34,13 @@ interface::interface(): QMainWindow()
     MenuFichier->addAction(ActionOuvrir);
 
 
+    ActionRef=new QAction("Editer de nouvelles relations ",this);
+    ActionRef->setShortcut(QKeySequence("ctrl+R"));
+    connect(ActionRef,SIGNAL(triggered(bool)),this,SLOT(E_relation()));
+    toolBarRef=addToolBar("Edition");
+    toolBarRef->addAction(ActionRef);
+    toolBarRef->setHidden(true);
+
     QAction *ActionNouveau=new QAction("&Nouvelle note",this);
 //    ActionNouveau->setIcon(QIcon("new.png"));
     ActionNouveau->setShortcut(QKeySequence("ctrl+N"));
@@ -51,6 +58,14 @@ interface::interface(): QMainWindow()
     ZoneCentrale=new page_vide();
     CreateDock_selected_Note();
     setCentralWidget(ZoneCentrale);
+
+
+}
+void interface::addAction_ref(){
+
+    MenuEd->addAction(ActionRef);
+    toolBarRef->setHidden(false);
+
 }
 
 void interface::CreateDock_edited_Note(){
@@ -71,7 +86,7 @@ void interface::CreateDock_selected_Note(){
     dock_selected_Note->setMaximumWidth(300);
     addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
     MenuAff->addAction(dock_selected_Note->toggleViewAction());
-    connect(listNote,SIGNAL(selection(QString)),this,SLOT(afficher_note(QString)));
+    connect(listNote,SIGNAL(selection(QString,QModelIndex)),this,SLOT(afficher_note(QString,QModelIndex)));
 }
 void interface::Destruct_selected_Note(){
     delete listNote;
@@ -108,7 +123,6 @@ void interface::CreerNote(){
     fen_creerNote= new Creation_Note(this);
     fen_creerNote->show();
     connect(fen_creerNote,SIGNAL(newNote(Note& )),this,SLOT(addNewNote(Note&)));
-    connect(fen_creerNote,SIGNAL(newRef()),this,SLOT(E_relation()));
 }
 
 void interface::addNewNote(Note& n){
@@ -154,7 +168,6 @@ selection_note::selection_note():QWidget(){
     layout->addWidget(vue);
     setLayout(layout);
     connect(vue,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
-
 }
 void selection_note::emit_selection(QModelIndex i){
     QModelIndex index;
@@ -171,21 +184,28 @@ void selection_note::emit_selection(QModelIndex i){
         current_note=model->item(i.parent().row(),0);
         current_versions=current_note->child(i.row(),0);
     }
-  emit selection(current_versions->whatsThis());
+  emit selection(current_versions->whatsThis(),i);
 }
 
-void interface::afficher_note(QString id){
+void interface::afficher_note(QString id, QModelIndex index){
     if(note_page!=0)
     {
-        //note_page->close();
+        if(MenuEd->actions().contains(ActionRef)){
+            MenuEd->removeAction(ActionRef);
+            toolBarRef->hide();
+        }
         delete note_page;
+        note_page=0;
         ZoneCentrale=new page_vide();
     }
     try{
         Note& current=note_manager->getNote(id);
         note_page=new page_notes(current);
-
+        indexNote=index.row();
+        note_id=id;
         ZoneCentrale=note_page;
+
+        connect(note_page,SIGNAL(add_ActionRef()),this,SLOT(addAction_ref()));
         CreateDock_edited_Note();
 
     }

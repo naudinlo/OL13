@@ -9,7 +9,7 @@ QArticle::QArticle(): QNote(){
     grid=new QGridLayout(this);
     text=new QLabel("Saisir Texte");
     E_text=new QTextEdit();
-    grid->addWidget(E_text,0,1,0,2);
+    grid->addWidget(E_text,0,1,0,5);
     grid->addWidget(text,0,0);
 }
 
@@ -199,7 +199,6 @@ void QTask::check_creer(){
 
     }
 
-
 void QArticle::load_note(Note &N){
     Article& n= dynamic_cast<Article&>(N);
     E_text->setDocument(n.getText().clone());
@@ -213,19 +212,26 @@ void QRecording::load_note(Note &N){
     E_description->setDocument(n.getDescription().clone());
     read->setEnabled(true);
     grid->addWidget(read,5,0);
+    readOnly(true);
 
 }
 
 void QTask::load_note(Note& N){
     Task& n= dynamic_cast<Task&>(N);
     E_action->setText(n.getAction());
-    E_action->setReadOnly(true);
+    E_status->setCurrentIndex(n.getStatus());
     delete E_duedate;
     E_duedate=new QDateTimeEdit (n.getDueDate());
-    E_duedate->setReadOnly(true);
+    E_duedate->setCalendarPopup(true);
+    if(n.getDueDate()==QDateTime()){
+        duedate->setChecked(false);
+        E_duedate->setDateTime(QDateTime::currentDateTime());
+    }
     optional_duedate->addWidget(E_duedate);
+    if(n.getPriority()==-1)
+        priority->setChecked(false);
     E_priority->setValue(n.getPriority());
-    E_priority->setReadOnly(true);
+    readOnly(true);
 }
 
 void QNote::readOnly(bool status){
@@ -239,12 +245,19 @@ void QArticle::readOnly(bool status){
 
 void QRecording::readOnly(bool status){
     this->QNote::readOnly(status);
+    E_description->setReadOnly(status);
+    E_type->setEnabled(!status);
+    link->setEnabled(!status);
 }
 void QTask::readOnly(bool status){
     this->QNote::readOnly(status);
     E_action->setReadOnly(status);
+    E_status->setDisabled(status);
+    duedate->setEnabled(!status);
     E_duedate->setReadOnly(status);
+    priority->setEnabled(!status);
     E_priority->setReadOnly(status);
+    E_action->setReadOnly(status);
 
 
 }

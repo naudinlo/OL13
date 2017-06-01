@@ -9,7 +9,7 @@ class page_notes: public QWidget
 protected:
     QWidget* dock;
     QHBoxLayout* layout_titre;
-    QLabel* titre;
+    QLineEdit* titre;
     QLabel* info;
     QVBoxLayout* layout_p;
     QNote* note;
@@ -23,11 +23,14 @@ public:
     }
 signals:
     void supp_dock_editer();
+    void add_ActionRef();
 public slots:
     void editer_note(bool status){
+        titre->setReadOnly(status);
         note->readOnly(status);
         delete dock;
         emit(supp_dock_editer());
+        emit(add_ActionRef());
     }
 };
 
