@@ -154,18 +154,8 @@ int main(int argc, char * argv[]) {
 */
 
     //std::cout<<NotesManager::getInstance()->updateId("hugues_59").toStdString();
-    //PROGRAMME(argc,argv);
-    NotesManager* m=NotesManager::getInstance();
-    m->getNewArticle("test","test1","test de l'itérator");
-    m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
-    m->getNewArticle("test2","test2","test2 de l'itérator");
-
-    NotesManager::Iterator it=m->getIterator();
-    while(!it.isDone()){
-        it.current().display();
-        it.next();
-    }
-
+    PROGRAMME(argc,argv);
+    test_list();
 
     return 0;
 }

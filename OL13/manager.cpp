@@ -18,9 +18,9 @@ Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const 
         it.next();
     }
     if (nbNotes==nbMaxNotes){
-        QList<Note>** newNotes= new QList<Note>*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        QList<Note>** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
@@ -43,9 +43,9 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
         }
     }
     if (nbNotes==nbMaxNotes){
-        QList<Note>** newNotes= new QList<Note>*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        QList<Note>** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
@@ -67,9 +67,9 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
         }
     }
     if (nbNotes==nbMaxNotes){
-        QList<Note>** newNotes= new QList<Note>*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        QList<Note>** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
@@ -91,9 +91,9 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
         }
     }
     if (nbNotes==nbMaxNotes){
-        QList<Note>** newNotes= new QList<Note>*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        QList<Note>** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
@@ -115,9 +115,9 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
         }
     }
     if (nbNotes==nbMaxNotes){
-        QList<Note>** newNotes= new QList<Note>*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        QList<Note>** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
@@ -139,9 +139,9 @@ Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,co
         }
     }
     if (nbNotes==nbMaxNotes){
-        QList<Note>** newNotes= new QList<Note>*[nbMaxNotes+5];
+        list<Note>** newNotes= new list<Note>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-        QList<Note>** oldNotes=notes;
+        list<Note>** oldNotes=notes;
         notes=newNotes;
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
