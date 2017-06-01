@@ -3,7 +3,9 @@
 #include "QInclude.h"
 #include "notes.h"
 #include "manager.h"
-//#include <QMediaPlayer>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+#include <QVideoWidget>
 class QNote: public QWidget{
     Q_OBJECT
     QLabel* titre;
@@ -63,7 +65,7 @@ public slots:
     void check_creer();
 };
 
-class QRecording: public QNote{
+class QRecording: public QNote {
     Q_OBJECT
     QLabel* description;
     QTextEdit* E_description;
@@ -71,8 +73,16 @@ class QRecording: public QNote{
     QComboBox* E_type;
     QLineEdit* E_link;
     QPushButton* link;
+    QPushButton* read;
+    QPushButton* stop;
+
+
     QGridLayout* grid;
     Note& get_note(QString id, QString title);
+    QMediaPlayer* player;
+    QVideoWidget* videoWidget;
+    QMediaPlaylist* playlist;
+
 public:
     QRecording();
     virtual void load_note(Note& N);
@@ -80,8 +90,11 @@ public:
 public slots:
     QString OuvrirFichier();
     void check_creer();
+    void read_record();
+    void stop_record();
 signals:
     void checked_creer(bool);
+    void recording_ready();
 };
 
 #endif // QNote_H
