@@ -62,7 +62,12 @@ void Edit_relation::addNoteToR(Relation R){
     for (int i = 0 ; i < listeSelections.size() ; i++)
     {
         QString current_id=model->itemFromIndex(listeSelections[i])->child(0,0)->whatsThis();
+        try{
         R.getNewCoupleRelation(&(manager->getNote(current_id)),&note);
+        }
+        catch(NotesException e){
+            QMessageBox::warning(this,"Error relation",e.getinfo());
+        }
       }
 
     QItemSelectionModel* selection2 = ref_to->selectionModel();
@@ -70,7 +75,12 @@ void Edit_relation::addNoteToR(Relation R){
     for (int i = 0 ; i < listeSelections.size() ; i++)
     {
         QString current_id=model->itemFromIndex(listeSelections[i])->child(0,0)->whatsThis();
+        try{
         R.getNewCoupleRelation(&note,&(manager->getNote(current_id)));
+        }
+        catch(NotesException e){
+            QMessageBox::warning(this,"Error relation",e.getinfo());
+        }
       }
     QMessageBox::information(this,"relation",QString::fromStdString(R.displayRelation()));
 
