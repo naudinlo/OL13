@@ -3,10 +3,11 @@
 
 Edit_relation::Edit_relation(QStandardItemModel* m,int index,QString id, QWidget* parent):
     model(m),note(NotesManager::getInstance()->getNote(id)),QDialog(parent){
-    this->setWindowTitle("Ajouter Référence");
+    this->setWindowTitle("Ajouter Relation");
     L_fen=new QGridLayout(this);
     titre= new QLabel("Titre de la relation");
     E_titre = new QLineEdit;
+    connect(E_titre,SIGNAL(textChanged(QString)),this,SLOT(enabledAppend()));
     L_description=new QHBoxLayout;
     description=new QGroupBox();
     description->setTitle("description :");
@@ -14,8 +15,8 @@ Edit_relation::Edit_relation(QStandardItemModel* m,int index,QString id, QWidget
     description->setLayout(L_description);
     E_description= new QTextEdit;
     L_description->addWidget(E_description);
-
-    Label_from=new QLabel("Définer des références venant de :");
+    connect(E_description,SIGNAL(textChanged()),this,SLOT(enabledAppend()));
+    Label_from=new QLabel("Définer une Relation venant de :");
     ref_from=new QListView;
     ref_from->setAlternatingRowColors(true);
     ref_from->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -25,7 +26,7 @@ Edit_relation::Edit_relation(QStandardItemModel* m,int index,QString id, QWidget
     ref_from->setSelectionMode(QAbstractItemView::ExtendedSelection);
     ref_from->setRowHidden(index,true);
 
-    Label_to=new QLabel("Définer des références vers :");
+    Label_to=new QLabel("Définer une Relation vers :");
     ref_to=new QListView;
     ref_to->setAlternatingRowColors(true);
     ref_to->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -36,6 +37,7 @@ Edit_relation::Edit_relation(QStandardItemModel* m,int index,QString id, QWidget
     ref_to->setRowHidden(index,true);
 
     append=new QPushButton("Ajouter");
+    append->setEnabled(false);
     connect(append,SIGNAL(clicked(bool)),this,SLOT(clicSelection()));
 
     L_fen->addWidget(titre,0,0);
@@ -66,7 +68,7 @@ void Edit_relation::addNoteToR(Relation R){
         R.getNewCoupleRelation(&(manager->getNote(current_id)),&note);
         }
         catch(NotesException e){
-            QMessageBox::warning(this,"Error relation",e.getinfo());
+            QMessageBox::warning(this,"Error relation from",e.getinfo());
         }
       }
 
@@ -79,7 +81,7 @@ void Edit_relation::addNoteToR(Relation R){
         R.getNewCoupleRelation(&note,&(manager->getNote(current_id)));
         }
         catch(NotesException e){
-            QMessageBox::warning(this,"Error relation",e.getinfo());
+            QMessageBox::warning(this,"Error relation to",e.getinfo());
         }
       }
     QMessageBox::information(this,"relation",QString::fromStdString(R.displayRelation()));

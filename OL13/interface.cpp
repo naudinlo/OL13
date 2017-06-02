@@ -127,12 +127,11 @@ void interface::CreerNote(){
 
 void interface::addNewNote(Note& n){
     QList< QStandardItem* > note;
-    note.append(new QStandardItem (n.getTitle()));
+    note.append(new QStandardItem (n.getId()));
     note.append(new QStandardItem(QString(n.getType())));
 
 
     std::stringstream f;
-    //QDateTime dt=n.getCreation_date();`
     QString string_dt=(n.getCreation_date()).toString("dd.MM.yyyy");
     f<<string_dt.toStdString();
     QList< QStandardItem* > items;
@@ -150,6 +149,7 @@ selection_note::selection_note():QWidget(){
 
     layout= new QVBoxLayout(this);
     model= new QStandardItemModel;
+    /*
     QStandardItem *item = new QStandardItem("Article Bidule");
     QStandardItem *item2 = new QStandardItem("Type");
     QList< QStandardItem* >  items;
@@ -158,7 +158,7 @@ selection_note::selection_note():QWidget(){
 
     model->appendRow(items);
     item->appendRow(new QStandardItem("1 version"));
-
+    */
     vue=new QTreeView(this);
     vue->setAlternatingRowColors(true);
     vue->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -168,6 +168,7 @@ selection_note::selection_note():QWidget(){
     layout->addWidget(vue);
     setLayout(layout);
     connect(vue,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
+    connect(vue,SIGNAL(activated(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
 }
 void selection_note::emit_selection(QModelIndex i){
     QModelIndex index;

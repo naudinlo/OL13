@@ -46,7 +46,7 @@ class interface:public QMainWindow
     QMenu *fichiersRecents;
     QAction* ActionRef;
     QToolBar* toolBarRef;
-    Edit_relation* ref;
+    Edit_relation* relation;
 
     QDockWidget* dock_selected_Note;
     QDockWidget* dock_editer_note;
@@ -69,9 +69,8 @@ public:
 
 public slots:
    void E_relation(){
-       QMessageBox::warning(this,"","new ref");
-       ref = new Edit_relation(listNote->getModel(),indexNote,note_id,this);
-       ref->show();
+       relation = new Edit_relation(listNote->getModel(),indexNote,note_id,this);
+       relation->show();
 
    }
    void addAction_ref();

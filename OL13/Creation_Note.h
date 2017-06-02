@@ -7,7 +7,6 @@ class Creation_Note: public QDialog
      Q_OBJECT
 
     QNote* note;
-
     QGroupBox* B_type;
     QGroupBox* B_defNote;
     QVBoxLayout* L_fen;
@@ -17,16 +16,14 @@ class Creation_Note: public QDialog
     QGridLayout* L_comm;
 
     QLineEdit* E_title;
-    QLineEdit* E_Auteur;
-    QTextEdit* E_commentaire;
+    QLineEdit* E_id;
 
     QLabel* title;
+    QLabel* id;
     QLabel* type;
 
     QComboBox* typeBox;
 
-    QLabel* auteur;
-    QLabel* desc_class;
 
 
     QPushButton* Creer;
@@ -34,6 +31,7 @@ class Creation_Note: public QDialog
 
     bool E_title_not_null;
     bool E_note_not_null;
+    bool E_id_not_null;
     void edit_article();
     void edit_tache();
     void edit_enregistrement();
@@ -58,6 +56,10 @@ signals:
     }
     void activer_E_note_not_null(bool status){
         E_note_not_null=status;
+        emit change_Creer();
+    }
+    void activer_E_id_not_null(){
+        E_id_not_null=!E_id->text().isEmpty();
         emit change_Creer();
     }
 

@@ -32,6 +32,12 @@ public:
     Edit_relation(QStandardItemModel* m, int index, QString id, QWidget *parent);
 public slots:
     void clicSelection();
+    void enabledAppend(){
+        if(!(E_titre->text().isEmpty() || E_description->document()->toPlainText().isEmpty()))
+            append->setEnabled(true);
+        else
+            append->setEnabled(false);
+    }
 
 };
 
