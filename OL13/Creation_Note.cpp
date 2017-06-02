@@ -27,7 +27,7 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
     Creer=new(QPushButton) ("Créer",this);
     Creer->setEnabled(false);
     quitter=new(QPushButton) ("Quitter", this);
-    QObject::connect(quitter,SIGNAL(clicked(bool)),this,SLOT(close()));
+    QObject::connect(quitter,SIGNAL(clicked(bool)),this,SLOT(fenclose()));
     QObject::connect(Creer,SIGNAL(clicked(bool)),this,SLOT(Creer_Note()));
     QObject::connect(Creer,SIGNAL(clicked(bool)),this,SLOT(close()));
     B_defNote=new(QGroupBox)("Note:",this);
@@ -105,5 +105,4 @@ void Creation_Note::Creer_Note(){
     {
         QMessageBox::warning(this,"Echec lors de la création d'une note", e.getinfo());
     }
-    this->close();
 }

@@ -143,7 +143,7 @@ void interface::addNewNote(Note& n){
     listNote->getModel()->appendRow(note);
 
     listNote->getVue()->setModel(listNote->getModel());
-
+    delete fen_creerNote;
 }
 
 selection_note::selection_note():QWidget(){

@@ -48,6 +48,9 @@ signals:
  public slots:
     void Creer_Note();
     void select_type(int type);
+    void fenclose(){
+        delete this;
+    }
 
     void activer_E_title_not_null(){
         E_title_not_null=!E_title->text().isEmpty();
