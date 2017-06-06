@@ -13,6 +13,7 @@ HEADERS += \
 QT += widgets
 QT += xml
 QT += multimedia
+QT += core
 
 SOURCES += \
     interface.cpp \
