@@ -167,7 +167,6 @@ selection_note::selection_note():QWidget(){
     vue->setDisabled(false);
     layout->addWidget(vue);
     setLayout(layout);
-    connect(vue,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
     connect(vue,SIGNAL(activated(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
 }
 void selection_note::emit_selection(QModelIndex i){

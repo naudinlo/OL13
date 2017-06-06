@@ -43,6 +43,7 @@ void page_notes::create_dock(){
     QHBoxLayout*layout=new QHBoxLayout(dock);
     QLabel* lecture_seul=new QLabel ("Ce document est ouvert en lecture seule");
     QPushButton* editer=new QPushButton ("Editer");
+    editer->setShortcut(QKeySequence("ctrl+E"));
     layout->addStretch();
     layout->addWidget(lecture_seul);
     layout->addWidget(editer);
