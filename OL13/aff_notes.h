@@ -23,14 +23,14 @@ public:
     }
 signals:
     void supp_dock_editer();
-    void add_ActionRef();
+    void add_Action_new_relation();
 public slots:
     void editer_note(bool status){
         titre->setReadOnly(status);
         note->readOnly(status);
         delete dock;
         emit(supp_dock_editer());
-        emit(add_ActionRef());
+        emit(add_Action_new_relation());
     }
 };
 

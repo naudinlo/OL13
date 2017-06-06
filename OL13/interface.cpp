@@ -34,11 +34,11 @@ interface::interface(): QMainWindow(), indexNote()
     MenuFichier->addAction(ActionOuvrir);
 
 
-    ActionRef=new QAction("Editer de nouvelles relations ",this);
-    ActionRef->setShortcut(QKeySequence("ctrl+R"));
-    connect(ActionRef,SIGNAL(triggered(bool)),this,SLOT(E_relation()));
+    Action_new_relation=new QAction("Editer de nouvelles relations ",this);
+    Action_new_relation->setShortcut(QKeySequence("ctrl+R"));
+    connect(Action_new_relation,SIGNAL(triggered(bool)),this,SLOT(E_relation()));
     toolBarRef=addToolBar("Edition");
-    toolBarRef->addAction(ActionRef);
+    toolBarRef->addAction(Action_new_relation);
     toolBarRef->setHidden(true);
 
     QAction *ActionNouveau=new QAction("&Nouvelle note",this);
@@ -63,7 +63,7 @@ interface::interface(): QMainWindow(), indexNote()
 }
 void interface::addAction_ref(){
 
-    MenuEd->addAction(ActionRef);
+    MenuEd->addAction(Action_new_relation);
     toolBarRef->setHidden(false);
 
 }
@@ -190,8 +190,8 @@ void selection_note::emit_selection(QModelIndex i){
 void interface::afficher_note(QString id, QModelIndex index){
     if(note_page!=0)
     {
-        if(MenuEd->actions().contains(ActionRef)){
-            MenuEd->removeAction(ActionRef);
+        if(MenuEd->actions().contains(Action_new_relation)){
+            MenuEd->removeAction(Action_new_relation);
             toolBarRef->hide();
         }
         delete note_page;
@@ -205,7 +205,7 @@ void interface::afficher_note(QString id, QModelIndex index){
         note_id=id;
         ZoneCentrale=note_page;
 
-        connect(note_page,SIGNAL(add_ActionRef()),this,SLOT(addAction_ref()));
+        connect(note_page,SIGNAL(add_Action_new_relation()),this,SLOT(addAction_ref()));
         CreateDock_edited_Note();
 
     }

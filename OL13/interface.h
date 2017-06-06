@@ -12,8 +12,6 @@
 #include <QDate>
 #include <QStandardItemModel>
 #include <typeinfo>
-class selection_note;
-
 
 class selection_note: public QWidget{
     Q_OBJECT
@@ -44,7 +42,7 @@ class interface:public QMainWindow
     QMenu *MenuEd;
     QMenu *MenuAff;
     QMenu *fichiersRecents;
-    QAction* ActionRef;
+    QAction* Action_new_relation;
     QToolBar* toolBarRef;
     Edit_relation* relation;
 
