@@ -167,58 +167,65 @@ void test_list()
    for(it=a.begin(); it!=a.end(); it++) cout<<*it<<endl;
 }
 
-int main(int argc, char * argv[]) {
+
+void fct(){
     /*
-     * try {
-            creation(); // cette ligne peut Ítre mise en commentaire aprËs la 1Ëre exÈcution
+    * try {
+           creation(); // cette ligne peut Ítre mise en commentaire aprËs la 1Ëre exÈcution
 //            displayAllNote();
-            relation();
+           relation();
 //            displayAllNote();
 //            displayAllRelation();
-        }
-        catch(NotesException& e){
-            std::cout<<e.getinfo().toStdString()<<"\n";
-        }
-    */
+       }
+       catch(NotesException& e){
+           std::cout<<e.getinfo().toStdString()<<"\n";
+       }
+   */
 //    capture_ref_essai();
 
-    //std::cout<<NotesManager::getInstance()->updateId("hugues_59").toStdString();
-    //PROGRAMME(argc,argv);
-    /*Article* a= new Article("test","test","test");
-    Article* b= new Article("test2","test2","test2");
-    Task* c= new Task("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
-    Note* n2=a;
-    Note* n3=b;
-    Note* n4=c;
-    n2->display();
+   //std::cout<<NotesManager::getInstance()->updateId("hugues_59").toStdString();
+   //PROGRAMME(argc,argv);
+   /*Article* a= new Article("test","test","test");
+   Article* b= new Article("test2","test2","test2");
+   Task* c= new Task("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
+   Note* n2=a;
+   Note* n3=b;
+   Note* n4=c;
+   n2->display();
 
-    QList<Note*>* liste= new QList<Note*>;
-    (*liste).push_front(n2);
-    (*liste).push_front(n3);
-    (*liste).push_back(n4);
+   QList<Note*>* liste= new QList<Note*>;
+   (*liste).push_front(n2);
+   (*liste).push_front(n3);
+   (*liste).push_back(n4);
 
-    QList<Note*>::iterator it2;
+   QList<Note*>::iterator it2;
 
-    for(it2=liste->begin();it2!=liste->end();it2++) it2.operator *()->display();*/
-
-
-
-    NotesManager* m=NotesManager::getInstance();
-    m->getNewArticle("test","test1","test de l'itérator");
-    m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
-    m->getNewArticle("test2","test2","test2 de l'itérator");
-
-    NotesManager::Iterator it=m->getIterator();
-    cout<<it.current();
-    while(!it.isDone()){
-        QList<Note*>::iterator it3=(it.liste())->begin();
-        it3.operator *()->display();
-        it.next();
-    }
+   for(it2=liste->begin();it2!=liste->end();it2++) it2.operator *()->display();*/
 
 
 
+   NotesManager* m=NotesManager::getInstance();
+   m->getNewArticle("test","test1","test de l'itérator");
+   m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
+   m->getNewArticle("test2","test2","test2 de l'itérator");
 
+   NotesManager::Iterator it=m->getIterator();
+   cout<<it.current();
+   while(!it.isDone()){
+       QList<Note*>::iterator it3=(it.liste())->begin();
+       it3.operator *()->display();
+       it.next();
+   }
+
+
+
+
+
+}
+
+int main(int argc, char * argv[]) {
+
+    //fct();
 
     return 0;
 }
