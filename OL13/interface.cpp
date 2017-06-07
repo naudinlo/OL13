@@ -2,72 +2,67 @@
 
 interface::interface(): QMainWindow(), indexNote()
 {
-    note_manager=NotesManager::getInstance();
-    note_page=0;
+    /*** Initialisation des attributs ***/
+        note_manager=NotesManager::getInstance();
+        note_page=0;
+        ZoneCentrale=new page_vide();
 
-    MenuFichier =menuBar()->addMenu("&Fichier");
-    MenuEd =menuBar()->addMenu("&Edition");
-    MenuAff =menuBar()->addMenu("&Affichage");
-    fichiersRecents=MenuFichier->addMenu("Fichers &récents");
-    fichiersRecents->addAction("Fichier bidon 1.txt");
-
-    fichiersRecents->addAction("Fichier bidon 2.txt");
-
-    fichiersRecents->addAction("Fichier bidon 3.txt");
-    QAction *Actiongras=new QAction("&Gras",this);
-    Actiongras->setCheckable(true);
-    Actiongras->setShortcut(QKeySequence("ctrl+G"));
-    MenuEd->addAction(Actiongras);
-
-    QAction *ActionQuitter =new QAction("&Quitter", this);
-    ActionQuitter->setShortcut(QKeySequence("ctrl+Q"));
-//    ActionQuitter->setIcon(QIcon("LOGOUT.png"));
-    connect(ActionQuitter,SIGNAL(triggered(bool)),qApp,SLOT(quit()));
-    MenuFichier->addAction(ActionQuitter);
-
-    QAction *ActionOuvrir=new QAction("&Ouvrir",this);
-    connect(ActionOuvrir,SIGNAL(triggered(bool)),this,SLOT(OuvrirFichier()));
-    ActionOuvrir->setShortcut(QKeySequence("ctrl+O"));
-//    ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
-    QToolBar *toolBarFichier =addToolBar("Fichier");
-    toolBarFichier->addAction(ActionOuvrir);
-    MenuFichier->addAction(ActionOuvrir);
-
-    Action_new_relation=new QAction("Editer de nouvelles relations ",this);
-    Action_new_relation->setShortcut(QKeySequence("ctrl+R"));
-    connect(Action_new_relation,SIGNAL(triggered(bool)),this,SLOT(E_relation()));
-    toolBar_new_Rel=addToolBar("Edition");
-    toolBar_new_Rel->addAction(Action_new_relation);
-    toolBar_new_Rel->setHidden(true);
-
-
-
-    QAction *ActionNouveau=new QAction("&Nouvelle note",this);
-//    ActionNouveau->setIcon(QIcon("new.png"));
-    ActionNouveau->setShortcut(QKeySequence("ctrl+N"));
-    connect(ActionNouveau,SIGNAL(triggered(bool)),this,SLOT(CreerNote()));
-    toolBarFichier->addAction(ActionNouveau);
-    MenuFichier->addAction(ActionNouveau);
-
-    //TODO : supprimer note ! Créer slot supprimer_note
-    QAction *ActionSupprimer=new QAction("&Supprimer note",this);
-//    connect(ActionSupprimer,SIGNAL(triggered(bool)),this,SLOT(supprimer_note(QString &id)));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
-    toolBarFichier->addAction(ActionSupprimer);
-    MenuFichier->addAction(ActionSupprimer);
+    /****Fenetre Principale***/
+    // Menu:
+        MenuFichier =menuBar()->addMenu("&Fichier");
+        MenuEd =menuBar()->addMenu("&Edition");
+        MenuAff =menuBar()->addMenu("&Affichage");
+        fichiersRecents=MenuFichier->addMenu("Fichers &récents");
+        fichiersRecents->addAction("Fichier bidon 1.txt");
+        fichiersRecents->addAction("Fichier bidon 2.txt");
+        fichiersRecents->addAction("Fichier bidon 3.txt");
+        QAction *Actiongras=new QAction("&Gras",this);
+        Actiongras->setCheckable(true);
+        Actiongras->setShortcut(QKeySequence("ctrl+G"));
+        MenuEd->addAction(Actiongras);
+        QAction *ActionQuitter =new QAction("&Quitter", this);
+        ActionQuitter->setShortcut(QKeySequence("ctrl+Q"));
+    //    ActionQuitter->setIcon(QIcon("LOGOUT.png"));
+        connect(ActionQuitter,SIGNAL(triggered(bool)),qApp,SLOT(quit()));
+        MenuFichier->addAction(ActionQuitter);
+        QAction *ActionOuvrir=new QAction("&Ouvrir",this);
+        connect(ActionOuvrir,SIGNAL(triggered(bool)),this,SLOT(OuvrirFichier()));
+        ActionOuvrir->setShortcut(QKeySequence("ctrl+O"));
+    //    ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
+        QToolBar *toolBarFichier =addToolBar("Fichier");
+        toolBarFichier->addAction(ActionOuvrir);
+        MenuFichier->addAction(ActionOuvrir);
+        QAction *ActionNouveau=new QAction("&Nouvelle note",this);
+    //    ActionNouveau->setIcon(QIcon("new.png"));
+        ActionNouveau->setShortcut(QKeySequence("ctrl+N"));
+        connect(ActionNouveau,SIGNAL(triggered(bool)),this,SLOT(CreerNote()));
+        toolBarFichier->addAction(ActionNouveau);
+        MenuFichier->addAction(ActionNouveau);
+        QAction *ActionSave=new QAction("&Sauvegarder",this);
+    //    ActionSave->setIcon(QIcon("save.png"));
+        ActionSave->setShortcut(QKeySequence("ctrl+S"));
+        connect(ActionSave,SIGNAL(triggered(bool)),this,SLOT(save()));
+        toolBarFichier->addAction(ActionSave);
+        MenuFichier->addAction(ActionSave);
 
 
-    QAction *ActionSave=new QAction("&Sauvegarder",this);
-//    ActionSave->setIcon(QIcon("save.png"));
-    ActionSave->setShortcut(QKeySequence("ctrl+S"));
-    connect(ActionSave,SIGNAL(triggered(bool)),this,SLOT(save()));
-    toolBarFichier->addAction(ActionSave);
-    MenuFichier->addAction(ActionSave);
+    //Action: ajouter des relation
+        Action_new_relation=new QAction("Editer de nouvelles relations ",this);
+        Action_new_relation->setShortcut(QKeySequence("ctrl+R"));
+        connect(Action_new_relation,SIGNAL(triggered(bool)),this,SLOT(E_relation()));
+        toolBar_new_Rel=addToolBar("Edition");
+        toolBar_new_Rel->addAction(Action_new_relation);
+        toolBar_new_Rel->setHidden(true);
 
-    ZoneCentrale=new page_vide();
+    //Action: supprimer une note
+        //TODO : supprimer note ! Créer slot supprimer_note
+        QAction *ActionSupprimer=new QAction("&Supprimer note",this);
+    //    connect(ActionSupprimer,SIGNAL(triggered(bool)),this,SLOT(supprimer_note(QString &id)));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
+        toolBarFichier->addAction(ActionSupprimer);
+        MenuFichier->addAction(ActionSupprimer);
+
     CreateDock_selected_Note();
     setCentralWidget(ZoneCentrale);
-
-
 }
 void interface::addAction_new_rel(){
 
@@ -163,6 +158,9 @@ selection_note::selection_note():QWidget(){
 
     layout= new QVBoxLayout(this);
     model= new QStandardItemModel;
+
+//Partie à modifier quand on aura load
+
     /*
     QStandardItem *item = new QStandardItem("Article Bidule");
     QStandardItem *item2 = new QStandardItem("Type");
@@ -202,13 +200,13 @@ void selection_note::emit_selection(QModelIndex i){
 }
 
 void interface::afficher_note(QString id, QModelIndex index){
-    if(note_page!=0)
+    if(note_page!=0) //Si à dejà ouvert une note avant, il faut
     {
-        if(MenuEd->actions().contains(Action_new_relation)){
+        if(MenuEd->actions().contains(Action_new_relation)){ //Fermer les docks restants (ex: editer note)
             MenuEd->removeAction(Action_new_relation);
             toolBar_new_Rel->hide();
         }
-        delete note_page;
+        delete note_page; //Fermer la note
         note_page=0;
         ZoneCentrale=new page_vide();
     }

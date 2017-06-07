@@ -42,9 +42,9 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
         L_fen->addWidget(B_type);
         L_fen->addLayout(L_bouton);
 
-    QObject::connect(quitter,SIGNAL(clicked(bool)),this,SLOT(fenclose()));
-    QObject::connect(Creer,SIGNAL(clicked(bool)),this,SLOT(Creer_Note()));
-    QObject::connect(Creer,SIGNAL(clicked(bool)),this,SLOT(close()));
+    connect(quitter,SIGNAL(clicked(bool)),this,SLOT(fenclose()));
+    connect(Creer,SIGNAL(clicked(bool)),this,SLOT(Creer_Note()));
+    connect(Creer,SIGNAL(clicked(bool)),this,SLOT(close()));
     connect(E_title,SIGNAL(textChanged(QString)),this,SLOT(activer_E_title_not_null()));
     connect(this,SIGNAL(change_Creer()),this,SLOT(activer_Creer()));
 

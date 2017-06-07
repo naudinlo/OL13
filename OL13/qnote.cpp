@@ -17,9 +17,6 @@ QTask::QTask():QNote(){
 
     action=new QLabel ("Action");
     E_action=new QLineEdit;
-    connect(E_action,SIGNAL(textEdited(QString)),SLOT(check_creer()));
-
-
     duedate=new QGroupBox ();
     duedate->setCheckable(true);
     duedate->setTitle("Date de réalisation :");
@@ -57,6 +54,8 @@ QTask::QTask():QNote(){
     fen=new QVBoxLayout (this);
     fen->addLayout(grid);
 
+    connect(E_action,SIGNAL(textEdited(QString)),SLOT(check_creer()));
+
 }
 
 QRecording::QRecording():QNote(){
@@ -75,13 +74,6 @@ QRecording::QRecording():QNote(){
     E_type->addItem("Image");
     E_type->addItem("Audio");
     E_type->addItem("Video");
-
-    connect(read,SIGNAL(clicked(bool)),this,SLOT(read_record()));
-    connect(stop,SIGNAL(clicked(bool)),this,SLOT(stop_record()));
-    connect(link,SIGNAL(clicked(bool)),this,SLOT(OuvrirFichier()));
-    connect(E_link,SIGNAL(textChanged(QString)),this,SLOT(check_creer()));
-    connect(E_description,SIGNAL(textChanged()),this,SLOT(check_creer()));
-    connect(this,SIGNAL(destroyed(QObject*)),this,SLOT(read_record()));
     grid->addWidget(description,0,0);
     grid->addWidget(E_description,1,0,1,2);
     grid->addWidget(type,2,0);
@@ -89,6 +81,13 @@ QRecording::QRecording():QNote(){
     grid->addWidget(link,3,0);
     grid->addWidget(E_link,3,1);
 
+
+    connect(read,SIGNAL(clicked(bool)),this,SLOT(read_record()));
+    connect(stop,SIGNAL(clicked(bool)),this,SLOT(stop_record()));
+    connect(link,SIGNAL(clicked(bool)),this,SLOT(OuvrirFichier()));
+    connect(E_link,SIGNAL(textChanged(QString)),this,SLOT(check_creer()));
+    connect(E_description,SIGNAL(textChanged()),this,SLOT(check_creer()));
+    connect(this,SIGNAL(destroyed(QObject*)),this,SLOT(read_record()));
 }
 
 void QRecording::read_record(){

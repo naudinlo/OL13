@@ -6,20 +6,21 @@
 class page_notes: public QWidget
 {
     Q_OBJECT
+
 protected:
+    QNote* note;
+
     QWidget* dock_editer;
     QWidget* dock_rel;
     QHBoxLayout* layout_titre;
     QLineEdit* titre;
     QLabel* info;
     QVBoxLayout* layout_p;
-    QNote* note;
     QWidget* dock; //à vérifier
 
 public:
     page_notes(Note &n);
     ~page_notes();
-    void create_dock();
     QWidget& getdock_editer(){
         return *dock_editer;
     }
