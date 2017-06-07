@@ -78,6 +78,7 @@ public slots:
    void test(){
    }
    void addNewNote(Note &n);
+//   void supprimer_note(QString id); //TODO : Supprimer une note
    void afficher_note(QString id,QModelIndex index);
    void supp_dock_editer(){
        MenuEd->removeAction(dock_editer_note->toggleViewAction());

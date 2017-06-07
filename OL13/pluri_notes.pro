@@ -26,4 +26,5 @@ SOURCES += \
     relations.cpp \
     aff_notes.cpp \
     qnote.cpp \
-    qrelations.cpp
+    qrelations.cpp \
+    loubrouillon.cpp

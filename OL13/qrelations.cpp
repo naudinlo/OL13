@@ -57,6 +57,7 @@ void Edit_relation::clicSelection()
     addNoteToR();
     this->close();
 }
+
 void Edit_relation::addNoteToR(){
     QItemSelectionModel *selection_from = ref_from->selectionModel();
     QModelIndexList listeSelections_from = selection_from->selectedIndexes();
@@ -70,10 +71,10 @@ void Edit_relation::addNoteToR(){
     for(int i=0;i<listeSelections_from.size();i++){
         QString current_id=model->itemFromIndex(listeSelections_from[i])->child(0,0)->whatsThis();
         if(selection_to->isSelected(listeSelections_from[i])){
-            C= new Edit_NotesCouple(&(manager->getNote(current_id)),&note,this,true); //couple symétric
+            C= new Edit_NotesCouple(&(manager->getNote(current_id)),&note,this,true); //couple symétrique
         }
         else{
-            C= new Edit_NotesCouple(&(manager->getNote(current_id)),&note,this); //non symétric
+            C= new Edit_NotesCouple(&(manager->getNote(current_id)),&note,this); //non symétrique
         }
         connect(C,SIGNAL(newCouple(Note*,Note*,QString,bool)),this,SLOT(addCouple(Note*,Note*,QString,bool)));
         C->exec();
@@ -88,7 +89,7 @@ void Edit_relation::addNoteToR(){
         C->exec();
         }
     }
-    QMessageBox::information(this,"relation",QString::fromStdString(R->displayRelation()));
+    QMessageBox::information(this,"Relation",QString::fromStdString(R->displayRelation()));
 
 }
 
@@ -97,10 +98,10 @@ Edit_NotesCouple::Edit_NotesCouple(Note *na, Note *nb, QWidget* parent, bool s):
     L_fen=new QVBoxLayout(this);
     Label=new QLabel;
     if(symitric){
-        Label->setText("souhaitez vous saisir un Label entre le couple :"+ n1->getId()+" <-> "+n2->getId() );
+        Label->setText("Souhaitez-vous saisir un Label entre le couple :"+ n1->getId()+" <-> "+n2->getId() );
     }
     else{
-            Label->setText("souhaitez vous saisir un Label entre le couple :"+ n1->getId()+" -> "+n2->getId() );
+            Label->setText("Souhaitez-vous saisir un Label entre le couple :"+ n1->getId()+" -> "+n2->getId() );
 }
     choix =new QGroupBox;
     L_yes=new QHBoxLayout;

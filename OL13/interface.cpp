@@ -48,6 +48,13 @@ interface::interface(): QMainWindow(), indexNote()
     toolBarFichier->addAction(ActionNouveau);
     MenuFichier->addAction(ActionNouveau);
 
+    //TODO : supprimer note ! Créer slot supprimer_note
+    QAction *ActionSupprimer=new QAction("&Supprimer note",this);
+//    connect(ActionSupprimer,SIGNAL(triggered(bool)),this,SLOT(supprimer_note(QString &id)));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
+    toolBarFichier->addAction(ActionSupprimer);
+    MenuFichier->addAction(ActionSupprimer);
+
+
     QAction *ActionSave=new QAction("&Sauvegarder",this);
 //    ActionSave->setIcon(QIcon("save.png"));
     ActionSave->setShortcut(QKeySequence("ctrl+S"));

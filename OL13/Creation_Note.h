@@ -38,12 +38,13 @@ class Creation_Note: public QDialog
 
 public:
     Creation_Note(QWidget* parent);
+
 signals:
     void change_Creer();
     void newNote(Note& n);
     void newRef();
 
- public slots:
+public slots:
     void Creer_Note();
     void select_type(int type);
     void fenclose(){
@@ -66,6 +67,8 @@ signals:
     void activer_Creer(){
         Creer->setEnabled(E_title_not_null && E_note_not_null);
         }
+
+
 };
 
 

@@ -26,11 +26,23 @@ signals:
     void add_Action_new_relation();
 public slots:
     void editer_note(bool status){
+        //TODO : FAIRE EN SORTE QUE LA FONCTION MARCHE!!!
         titre->setReadOnly(status);
         note->readOnly(status);
         delete dock;
         emit(supp_dock_editer());
         emit(add_Action_new_relation());
+    }
+    void supprimer_note(bool status){
+        //TODO : Supprimer la note à partir du note manager
+        //TOUT EST FAUX MAIS C'EST POUR AVOIR LA STRUCTURE EN GROS.
+         /*
+//      NotesManager* m=NotesManager::getTnstance();
+        note(NotesManager::getInstance()->getNote(id));
+//        QString& id=id;
+//        m->getNote(&id);
+//        m->deleteNote(&n);
+        */
     }
 };
 

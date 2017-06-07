@@ -42,8 +42,6 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
     L_bouton->addWidget(quitter);
     L_bouton->addWidget(Creer);
 
-
-
     B_type=new(QGroupBox)("Article",this);
 
     note=new QArticle();
@@ -109,4 +107,7 @@ void Creation_Note::Creer_Note(){
     {
         QMessageBox::warning(this,"Echec lors de la création d'une note", e.getinfo());
     }
+
 }
+
+
