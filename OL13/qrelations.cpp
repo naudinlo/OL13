@@ -63,6 +63,7 @@ void Edit_relation::clicSelection()
     addNoteToR(); //se charge d'ajouter les couples dans la relation définie précedement
     this->close();
 }
+
 void Edit_relation::addNoteToR(){
     /***
      * Recupération des notes définisant les nouveaux couples
@@ -80,7 +81,6 @@ void Edit_relation::addNoteToR(){
 
         QString current_id=model->itemFromIndex(listeSelections_from[i])->child(0,0)->whatsThis();
         if(selection_to->isSelected(listeSelections_from[i])){
-
             C= new Edit_NotesCouple(&(manager->getNote(current_id)),&note,this,true); //configuration :couple symétric
         }
         else{
@@ -99,9 +99,7 @@ void Edit_relation::addNoteToR(){
         C->exec();
         }
     }
-
             QMessageBox::information(this,"relation",QString::fromStdString(R->displayRelation()));
-
 }
 
 Edit_NotesCouple::Edit_NotesCouple(Note *na, Note *nb, QWidget* parent, bool s):QDialog(parent),n1(na),n2(nb),symetric(s){

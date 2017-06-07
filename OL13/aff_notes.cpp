@@ -53,6 +53,19 @@ page_notes::~page_notes(){
     delete note;
 }
 void page_notes::create_dock(){
+    dock=new QWidget;
+    QHBoxLayout*layout=new QHBoxLayout(dock);
+    QLabel* lecture_seul=new QLabel ("Ce document est ouvert en lecture seule");
+    QPushButton* editer=new QPushButton ("Editer");
+    editer->setShortcut(QKeySequence("ctrl+E"));
+    QPushButton* supprimer=new QPushButton ("Supprimer");
+    layout->addStretch();
+    layout->addWidget(lecture_seul);
+    layout->addWidget(editer);
+    layout->addWidget(supprimer);
+    connect(editer,SIGNAL(clicked(bool)),this,SLOT(editer_note(bool)));
+    //NEW LNA
+    connect(supprimer,SIGNAL(clicked(bool)),this,SLOT(supprimer_note(bool)));
 }
 
 page_vide::page_vide():QWidget(){

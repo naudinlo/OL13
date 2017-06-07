@@ -14,6 +14,7 @@ protected:
     QLabel* info;
     QVBoxLayout* layout_p;
     QNote* note;
+    QWidget* dock; //à vérifier
 
 public:
     page_notes(Note &n);
@@ -26,10 +27,22 @@ signals:
     void supp_dock_editer();
 public slots:
     void editer_note(bool status){
+        //TODO : FAIRE EN SORTE QUE LA FONCTION MARCHE!!!
         titre->setReadOnly(status);
         note->readOnly(status);
         delete dock_editer;
         emit(supp_dock_editer());
+    }
+    void supprimer_note(bool status){
+        //TODO : Supprimer la note à partir du note manager
+        //TOUT EST FAUX MAIS C'EST POUR AVOIR LA STRUCTURE EN GROS.
+         /*
+//      NotesManager* m=NotesManager::getTnstance();
+        note(NotesManager::getInstance()->getNote(id));
+//        QString& id=id;
+//        m->getNote(&id);
+//        m->deleteNote(&n);
+        */
     }
 };
 

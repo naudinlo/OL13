@@ -99,7 +99,13 @@ Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::
 
 //====METHODE ET SURCHARGE
 
-
+//toString pour display Note
+std::string Note::toString()const {
+    std::stringstream f;
+    f<<"ID: "<<getId().toStdString()<<" ===\n";
+    f<<"ID : "<<getId().toStdString()<<"\n - Title : "<<getTitle().toStdString()<<"\n";
+    return f.str();
+}
 
 //toString pour display Article
 std::string Article::toString()const {
@@ -198,6 +204,7 @@ std::string Recording::toString() const {
     f<<"\n";
     return f.str();
 }
+
 
 //Surcharge opérateur <<
 std::ostream& operator<<(std::ostream& f, const Article& a){

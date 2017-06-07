@@ -11,7 +11,7 @@
 #include "notes.h"
 #include "relations.h"
 #include "interface.h"
-
+#include <list>
 
 void creation(){
 //    NotesManager manager;
@@ -55,6 +55,30 @@ void displayAllRelation(){
 }
 
 
+void capture_ref_essai(){
+//    QRegExp rx("(\\d+)");
+//    REGEX : \\ref\{\w+\}
+    QRegExp rx("\\w+");
+//    QRegExp rx("\\\\ref\{\\w+\}");
+//    QString str = "Offsets: 12 14 99 231 7";
+    QString str = "coucou c'est que \ref{a1} et une autre ref vers \ref{supertache112} ";
+    QStringList list;
+    int pos = 0;
+    cout<<"coucou\n";
+
+    while ((pos = rx.indexIn(str, pos)) != -1) {
+        list << rx.cap(1);
+        cout<<rx.cap(1).toStdString()<<"\n";
+        pos += rx.matchedLength();
+        cout<<pos<<"\n";
+        cout<<" +1 \n";
+    }
+    // list: ["12", "14", "99", "231", "7"]
+//    for (unsigned int i=0; i<list.length(); i++){
+//        cout<<list(i);
+//    }
+}
+
 void relation(){
     RelationManager& rm=RelationManager::getInstance();
     NotesManager* nm=NotesManager::getInstance();
@@ -68,6 +92,9 @@ void relation(){
     Note& t2=nm->getNote("task_2");
     Note& r1=nm->getNote("r1");
     Note& r2=nm->getNote("r2");
+
+//    QString str="mon super titre de \ref{r1}";
+//    capture_ref(str);
 
 /*
     rel1.getNewCoupleRelation(&t1,&t2, "relation de tache");
@@ -131,9 +158,18 @@ int PROGRAMME(int argc,char *argv[])
     return app.exec();
 }
 
+void test_list()
+{
+   list<int> a;
+   a.push_front(13);
+   a.push_front(14);
+   list<int>::iterator it;
+   for(it=a.begin(); it!=a.end(); it++) cout<<*it<<endl;
+}
 
 int main(int argc, char * argv[]) {
-  /*  try {
+    /*
+     * try {
             creation(); // cette ligne peut Ítre mise en commentaire aprËs la 1Ëre exÈcution
 //            displayAllNote();
             relation();
@@ -143,9 +179,46 @@ int main(int argc, char * argv[]) {
         catch(NotesException& e){
             std::cout<<e.getinfo().toStdString()<<"\n";
         }
-*/
+    */
+//    capture_ref_essai();
 
     //std::cout<<NotesManager::getInstance()->updateId("hugues_59").toStdString();
-    PROGRAMME(argc,argv);
+    //PROGRAMME(argc,argv);
+    /*Article* a= new Article("test","test","test");
+    Article* b= new Article("test2","test2","test2");
+    Task* c= new Task("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
+    Note* n2=a;
+    Note* n3=b;
+    Note* n4=c;
+    n2->display();
+
+    QList<Note*>* liste= new QList<Note*>;
+    (*liste).push_front(n2);
+    (*liste).push_front(n3);
+    (*liste).push_back(n4);
+
+    QList<Note*>::iterator it2;
+
+    for(it2=liste->begin();it2!=liste->end();it2++) it2.operator *()->display();*/
+
+
+
+    NotesManager* m=NotesManager::getInstance();
+    m->getNewArticle("test","test1","test de l'itérator");
+    m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
+    m->getNewArticle("test2","test2","test2 de l'itérator");
+
+    NotesManager::Iterator it=m->getIterator();
+    cout<<it.current();
+    while(!it.isDone()){
+        QList<Note*>::iterator it3=(it.liste())->begin();
+        it3.operator *()->display();
+        it.next();
+    }
+
+
+
+
+
     return 0;
 }

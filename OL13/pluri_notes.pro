@@ -14,6 +14,7 @@ HEADERS += \
 QT += widgets
 QT += xml
 QT += multimedia
+QT += core
 QT += multimediawidgets
 
 SOURCES += \
@@ -26,4 +27,5 @@ SOURCES += \
     relations.cpp \
     aff_notes.cpp \
     qnote.cpp \
-    qrelations.cpp
+    qrelations.cpp \
+    loubrouillon.cpp
