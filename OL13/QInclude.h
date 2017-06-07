@@ -37,6 +37,8 @@
 #include <QFile>
 #include <typeinfo>
 #include <QList>
-
+#include <QRadioButton>
 #include <QStandardItemModel>
 #include <QHeaderView>
+#include <QTableView>
+#include <QListView>

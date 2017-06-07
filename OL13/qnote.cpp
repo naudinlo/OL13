@@ -9,7 +9,7 @@ QArticle::QArticle(): QNote(){
     grid=new QGridLayout(this);
     text=new QLabel("Saisir Texte");
     E_text=new QTextEdit();
-    grid->addWidget(E_text,0,1,0,2);
+    grid->addWidget(E_text,0,1,0,5);
     grid->addWidget(text,0,0);
 }
 
@@ -66,14 +66,22 @@ QRecording::QRecording():QNote(){
     type=new QLabel("Type d'enregistrement");
     E_link=new QLineEdit;
     E_link->setEnabled(false);
+    read=new QPushButton("Lire Enregistrement");
+    stop=new QPushButton("Fermer");
+    read->setEnabled(false);
+    stop->setEnabled(true);
     link=new QPushButton("Selectionner enregistrement");
     E_type=new QComboBox;
     E_type->addItem("Image");
     E_type->addItem("Audio");
     E_type->addItem("Video");
+
+    connect(read,SIGNAL(clicked(bool)),this,SLOT(read_record()));
+    connect(stop,SIGNAL(clicked(bool)),this,SLOT(stop_record()));
     connect(link,SIGNAL(clicked(bool)),this,SLOT(OuvrirFichier()));
     connect(E_link,SIGNAL(textChanged(QString)),this,SLOT(check_creer()));
     connect(E_description,SIGNAL(textChanged()),this,SLOT(check_creer()));
+    connect(this,SIGNAL(destroyed(QObject*)),this,SLOT(read_record()));
     grid->addWidget(description,0,0);
     grid->addWidget(E_description,1,0,1,2);
     grid->addWidget(type,2,0);
@@ -83,10 +91,63 @@ QRecording::QRecording():QNote(){
 
 }
 
+void QRecording::read_record(){
+    read->setEnabled(false);
+    stop->setEnabled(true);
+    grid->addWidget(stop,5,1);
+    player=new QMediaPlayer(this);
+    player->setMedia(QUrl::fromLocalFile(E_link->text()));
+    player->setVolume(50);
+
+
+    if(E_type->currentIndex()==1){
+        player->play();
+
+    }
+    else{
+        videoWidget = new QVideoWidget;
+        grid->addWidget(videoWidget,10,0,15,2);
+        player->setVideoOutput(videoWidget);
+        videoWidget->show();
+        if(E_type->currentIndex()==2){
+            player->play();
+        }
+
+    }
+}
+
+void QRecording::stop_record(){
+    if(stop->isEnabled()==true){
+        stop->setEnabled(false);
+        if(E_type->currentText()!=1)
+            videoWidget->close();
+        player->stop();
+        read->setEnabled(true);
+    }
+}
+
+
 QString QRecording::OuvrirFichier(){
-    QString fichier = QFileDialog::getOpenFileName(this,"Selectionner un enregistrement",QString());
-    if(fichier != 0)
+    QString Filtre;
+    switch(E_type->currentIndex()){
+    case 0:
+        Filtre="Images (*.png *.gif *.jpg *.jpeg *.JPG)";
+        break;
+    case 1:
+        Filtre="Audio (*.mp3 *.waw)";
+       break;
+    case 2:
+        Filtre="Video (*.mp4 *.avi)";
+        break;
+    }
+
+
+    QString fichier = QFileDialog::getOpenFileName(this,"Selectionner un enregistrement",QString(),Filtre);
+    if(fichier != 0){
             E_link->setText(fichier);
+            read->setEnabled(true);
+            grid->addWidget(read,5,0);
+    }
     return fichier;
 
 }
@@ -113,6 +174,7 @@ Note& QTask::get_note(QString id, QString title){
 Note& QRecording::get_note(QString id, QString title){
     ENUM::RecordingType t=static_cast<ENUM::RecordingType>(E_type->currentIndex());
     return NotesManager::getInstance()->getNewRecording(id,title,E_description->document()->toPlainText(),t,E_link->text());
+
 }
 
 
@@ -137,7 +199,6 @@ void QTask::check_creer(){
 
     }
 
-
 void QArticle::load_note(Note &N){
     Article& n= dynamic_cast<Article&>(N);
     E_text->setDocument(n.getText().clone());
@@ -146,19 +207,31 @@ void QArticle::load_note(Note &N){
 
 void QRecording::load_note(Note &N){
     Recording& n= dynamic_cast<Recording&>(N);
+    E_link->setText(n.getLink());
+    E_type->setCurrentIndex(n.getType());
+    E_description->setDocument(n.getDescription().clone());
+    read->setEnabled(true);
+    grid->addWidget(read,5,0);
+    readOnly(true);
 
 }
 
 void QTask::load_note(Note& N){
     Task& n= dynamic_cast<Task&>(N);
     E_action->setText(n.getAction());
-    E_action->setReadOnly(true);
+    E_status->setCurrentIndex(n.getStatus());
     delete E_duedate;
     E_duedate=new QDateTimeEdit (n.getDueDate());
-    E_duedate->setReadOnly(true);
+    E_duedate->setCalendarPopup(true);
+    if(n.getDueDate()==QDateTime()){
+        duedate->setChecked(false);
+        E_duedate->setDateTime(QDateTime::currentDateTime());
+    }
     optional_duedate->addWidget(E_duedate);
+    if(n.getPriority()==-1)
+        priority->setChecked(false);
     E_priority->setValue(n.getPriority());
-    E_priority->setReadOnly(true);
+    readOnly(true);
 }
 
 void QNote::readOnly(bool status){
@@ -172,12 +245,19 @@ void QArticle::readOnly(bool status){
 
 void QRecording::readOnly(bool status){
     this->QNote::readOnly(status);
+    E_description->setReadOnly(status);
+    E_type->setEnabled(!status);
+    link->setEnabled(!status);
 }
 void QTask::readOnly(bool status){
     this->QNote::readOnly(status);
     E_action->setReadOnly(status);
+    E_status->setDisabled(status);
+    duedate->setEnabled(!status);
     E_duedate->setReadOnly(status);
+    priority->setEnabled(!status);
     E_priority->setReadOnly(status);
+    E_action->setReadOnly(status);
 
 
 }

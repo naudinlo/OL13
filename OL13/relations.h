@@ -39,7 +39,7 @@ public:
     void removeCoupleRelation(Note* n1, Note* n2);
     void removeNoteRelation(Note* n1);
 
-    void displayRelation();
+    std::string displayRelation();
 
     //Iterator
     class Iterator{

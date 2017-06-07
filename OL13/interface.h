@@ -6,13 +6,12 @@
 #include <QDockWidget>
 #include "manager.h"
 #include "aff_notes.h"
+#include "qrelations.h"
 #include "sstream"
 #include <QList>
 #include <QDate>
 #include <QStandardItemModel>
 #include <typeinfo>
-class selection_note;
-
 
 class selection_note: public QWidget{
     Q_OBJECT
@@ -25,7 +24,7 @@ public:
     QStandardItemModel* getModel()const {return model;}
     QTreeView* getVue(){return vue;}
 signals:
-    void selection(QString);
+    void selection(QString, QModelIndex);
 public slots:
     void emit_selection(QModelIndex i);
 };
@@ -43,29 +42,46 @@ class interface:public QMainWindow
     QMenu *MenuEd;
     QMenu *MenuAff;
     QMenu *fichiersRecents;
+    QAction* Action_new_relation;
+    QToolBar* toolBarRef;
+    Edit_relation* relation;
 
     QDockWidget* dock_selected_Note;
     QDockWidget* dock_editer_note;
     NotesManager* note_manager;
 
-public:
-    interface();
+    //A modifier
+    int indexNote;
+    QString note_id;
+
     void CreateDock_selected_Note();//doit prendre un fichier est chargé la liste
     void CreateDock_edited_Note();
     void Destruct_selected_Note();
+
+public:
+    interface();
+
     ~interface(){
         NotesManager::libererInstance();
     }
 
 public slots:
+   void E_relation(){
+       relation = new Edit_relation(listNote->getModel(),indexNote,note_id,this);
+       relation->show();
+
+   }
+   void addAction_ref();
+
    void OuvrirFichier();
    void CreerNote();
    void test(){
    }
    void addNewNote(Note &n);
-   void afficher_note(QString id);
+//   void supprimer_note(QString id); //TODO : Supprimer une note
+   void afficher_note(QString id,QModelIndex index);
    void supp_dock_editer(){
-       MenuEd->removeAction(dock_selected_Note->toggleViewAction());
+       MenuEd->removeAction(dock_editer_note->toggleViewAction());
        dock_editer_note->close();
    }
 

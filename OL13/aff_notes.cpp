@@ -5,12 +5,9 @@ page_notes::page_notes(Note& n)
     create_dock();
     layout_p=new QVBoxLayout(this);
     layout_titre=new QHBoxLayout;
-    titre=new QLabel(n.getTitle());
+    titre=new QLineEdit (n.getTitle());
+    titre->setReadOnly(true);
     info=new QLabel("Cette note est un "+n.getType()+"\nCréation le "+n.getCreation_date().toString("dd.MM.yyyy hh:mm")+"\nDernière modification le "+n.getLastmodif_date().toString("dd.MM.yyyy hh:mm"));
-    layout_titre->addStretch();
-    layout_titre->addWidget(titre);
-    layout_titre->addStretch();
-    layout_p->addLayout(layout_titre);
     if(n.getType()=="Recording")
     {
         note=new QRecording;
@@ -24,6 +21,10 @@ page_notes::page_notes(Note& n)
         note=new QArticle;
     }
     note->load_note(n);
+    layout_titre->addStretch();
+    layout_titre->addWidget(titre);
+    layout_titre->addStretch();
+    layout_p->addLayout(layout_titre);
 
     layout_p->addWidget(note);
     layout_p->addStretch();
@@ -31,9 +32,8 @@ page_notes::page_notes(Note& n)
 
 }
 page_notes::~page_notes(){
-    emit(supp_dock_editer());  // c'est qq d'autre qui gère la supp du dock
+    emit(supp_dock_editer());  // c'est l'interface qui gère la supp du dock
     delete layout_titre;
-    delete titre;
     delete info;
     delete layout_p;
     delete note;
@@ -43,10 +43,15 @@ void page_notes::create_dock(){
     QHBoxLayout*layout=new QHBoxLayout(dock);
     QLabel* lecture_seul=new QLabel ("Ce document est ouvert en lecture seule");
     QPushButton* editer=new QPushButton ("Editer");
+    editer->setShortcut(QKeySequence("ctrl+E"));
+    QPushButton* supprimer=new QPushButton ("Supprimer");
     layout->addStretch();
     layout->addWidget(lecture_seul);
     layout->addWidget(editer);
+    layout->addWidget(supprimer);
     connect(editer,SIGNAL(clicked(bool)),this,SLOT(editer_note(bool)));
+    //NEW LNA
+    connect(supprimer,SIGNAL(clicked(bool)),this,SLOT(supprimer_note(bool)));
 }
 
 page_vide::page_vide():QWidget(){

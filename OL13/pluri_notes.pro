@@ -8,12 +8,14 @@ HEADERS += \
     undoredo.h \
     relations.h \
     aff_notes.h \
-    qnote.h
+    qnote.h \
+    qrelations.h
 
 QT += widgets
 QT += xml
 QT += multimedia
 QT += core
+QT += multimediawidgets
 
 SOURCES += \
     interface.cpp \
@@ -24,4 +26,6 @@ SOURCES += \
     undoredo.cpp \
     relations.cpp \
     aff_notes.cpp \
-    qnote.cpp
+    qnote.cpp \
+    qrelations.cpp \
+    loubrouillon.cpp

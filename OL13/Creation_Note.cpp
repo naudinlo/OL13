@@ -12,6 +12,9 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
     E_title=new(QLineEdit) ();
     title=new(QLabel)("Titre");
     title->setFrameStyle(QFrame::Panel |QFrame::Raised);
+    E_id=new QLineEdit;
+    id=new QLabel("Identifiant de la note");
+
     type=new(QLabel)("Type de Note :");
 
     typeBox=new(QComboBox);
@@ -19,15 +22,17 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
     typeBox->addItem("Tache");
     typeBox->addItem("Enregistrement");
     connect(typeBox,SIGNAL(currentIndexChanged(int)),this,SLOT(select_type(int)));
-    L_defClass->addWidget(title, 0,0);
-    L_defClass->addWidget(E_title, 0,1);
-    L_defClass->addWidget(type, 1,0);
-    L_defClass->addWidget(typeBox, 1,1);
+    L_defClass->addWidget(id,0,0);
+    L_defClass->addWidget(E_id,0,1);
+    L_defClass->addWidget(title, 1,0);
+    L_defClass->addWidget(E_title, 1,1);
+    L_defClass->addWidget(type, 2,0);
+    L_defClass->addWidget(typeBox, 2,1);
 
     Creer=new(QPushButton) ("Créer",this);
     Creer->setEnabled(false);
     quitter=new(QPushButton) ("Quitter", this);
-    QObject::connect(quitter,SIGNAL(clicked(bool)),this,SLOT(close()));
+    QObject::connect(quitter,SIGNAL(clicked(bool)),this,SLOT(fenclose()));
     QObject::connect(Creer,SIGNAL(clicked(bool)),this,SLOT(Creer_Note()));
     QObject::connect(Creer,SIGNAL(clicked(bool)),this,SLOT(close()));
     B_defNote=new(QGroupBox)("Note:",this);
@@ -36,12 +41,6 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
 
     L_bouton->addWidget(quitter);
     L_bouton->addWidget(Creer);
-
-    B_comm=new(QGroupBox)("Ajouter des relations",this);
-    B_comm->setLayout(L_comm);
-    B_comm->setCheckable(true);
-    B_comm->setChecked(false);
-
 
     B_type=new(QGroupBox)("Article",this);
 
@@ -54,7 +53,6 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
 
     L_fen->addWidget(B_defNote);
     L_fen->addWidget(B_type);
-    L_fen->addWidget(B_comm);
     L_fen->addLayout(L_bouton);
 
 }
@@ -100,9 +98,8 @@ void Creation_Note::select_type(int type){
 }
 
 void Creation_Note::Creer_Note(){
-    QString id(E_title->text()+"_00");
     try{
-    Note& essai=note->get_note(id,E_title->text());
+    Note& essai=note->get_note(E_id->text(),E_title->text());
     QMessageBox::information(this,E_title->text(),QString::fromStdString(essai.toString()));
     emit(newNote(essai));
     }
@@ -110,5 +107,7 @@ void Creation_Note::Creer_Note(){
     {
         QMessageBox::warning(this,"Echec lors de la création d'une note", e.getinfo());
     }
-    this->close();
+
 }
+
+

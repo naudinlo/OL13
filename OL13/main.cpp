@@ -55,6 +55,30 @@ void displayAllRelation(){
 }
 
 
+void capture_ref_essai(){
+//    QRegExp rx("(\\d+)");
+//    REGEX : \\ref\{\w+\}
+    QRegExp rx("\\w+");
+//    QRegExp rx("\\\\ref\{\\w+\}");
+//    QString str = "Offsets: 12 14 99 231 7";
+    QString str = "coucou c'est que \ref{a1} et une autre ref vers \ref{supertache112} ";
+    QStringList list;
+    int pos = 0;
+    cout<<"coucou\n";
+
+    while ((pos = rx.indexIn(str, pos)) != -1) {
+        list << rx.cap(1);
+        cout<<rx.cap(1).toStdString()<<"\n";
+        pos += rx.matchedLength();
+        cout<<pos<<"\n";
+        cout<<" +1 \n";
+    }
+    // list: ["12", "14", "99", "231", "7"]
+//    for (unsigned int i=0; i<list.length(); i++){
+//        cout<<list(i);
+//    }
+}
+
 void relation(){
     RelationManager& rm=RelationManager::getInstance();
     NotesManager* nm=NotesManager::getInstance();
@@ -68,6 +92,9 @@ void relation(){
     Note& t2=nm->getNote("task_2");
     Note& r1=nm->getNote("r1");
     Note& r2=nm->getNote("r2");
+
+//    QString str="mon super titre de \ref{r1}";
+//    capture_ref(str);
 
 /*
     rel1.getNewCoupleRelation(&t1,&t2, "relation de tache");
@@ -141,7 +168,8 @@ void test_list()
 }
 
 int main(int argc, char * argv[]) {
-  /*  try {
+    /*
+     * try {
             creation(); // cette ligne peut Ítre mise en commentaire aprËs la 1Ëre exÈcution
 //            displayAllNote();
             relation();
@@ -151,7 +179,8 @@ int main(int argc, char * argv[]) {
         catch(NotesException& e){
             std::cout<<e.getinfo().toStdString()<<"\n";
         }
-*/
+    */
+//    capture_ref_essai();
 
     //std::cout<<NotesManager::getInstance()->updateId("hugues_59").toStdString();
     //PROGRAMME(argc,argv);
