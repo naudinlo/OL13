@@ -25,12 +25,12 @@ Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const 
         nbMaxNotes+=5;
         if (oldNotes) delete[] oldNotes;
     }
-    int i=++nbNotes;
+    int i=nbNotes;
 
     //*(*notes[nbNotes++]).begin()=*n;
     notes[nbNotes]= new QList<Note*>;
-    QList<Note*> liste=*(notes[nbNotes]);
-    liste.push_front(n);
+    QList<Note*>* liste=notes[nbNotes++];
+    (*liste).push_front(n);
             //            return dynamic_cast<Article&>(*notes[i]);
     return (Article&)*notes[i];
 }
@@ -45,6 +45,7 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
 //            return dynamic_cast<Task&>(*notes[i]);
             return (Task&)it.current();
         }
+        it.next();
     }
     if (nbNotes==nbMaxNotes){
         QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
@@ -57,8 +58,8 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     int i=nbNotes;
     //*(*notes[nbNotes++]).begin()=*n;
     notes[nbNotes]= new QList<Note*>;
-    QList<Note*> liste=*(notes[nbNotes]);
-    liste.push_front(n);
+    QList<Note*>* liste=notes[nbNotes++];
+    (*liste).push_front(n);
     //            return dynamic_cast<Task&>(*notes[i]);
     return (Task&)*notes[i];
 }
@@ -72,6 +73,7 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
 //            return dynamic_cast<Task&>(*notes[i]);
             return (Task&)it.current();
         }
+        it.next();
     }
     if (nbNotes==nbMaxNotes){
         QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
@@ -84,8 +86,8 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     int i=nbNotes;
     //*(*notes[nbNotes++]).begin()=*n;
     notes[nbNotes]= new QList<Note*>;
-    QList<Note*> liste=*(notes[nbNotes]);
-    liste.push_front(n);
+    QList<Note*>* liste=notes[nbNotes++];
+    (*liste).push_front(n);
     //            return dynamic_cast<Task&>(*notes[i]);
     return (Task&)*notes[i];
 }
@@ -99,6 +101,7 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
 //            return dynamic_cast<Task&>(*notes[i]);
             return (Task&)it.current();
         }
+        it.next();
     }
     if (nbNotes==nbMaxNotes){
         QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
@@ -111,8 +114,8 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     int i=nbNotes;
     //*(*notes[nbNotes++]).begin()=*n;
     notes[nbNotes]= new QList<Note*>;
-    QList<Note*> liste=*(notes[nbNotes]);
-    liste.push_front(n);
+    QList<Note*>* liste=notes[nbNotes++];
+    (*liste).push_front(n);
     //            return dynamic_cast<Task&>(*notes[i]);
     return (Task&)*notes[i];
 }
@@ -126,6 +129,7 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
 //            return dynamic_cast<Task&>(*notes[i]);
             return (Task&)it.current();
         }
+        it.next();
     }
     if (nbNotes==nbMaxNotes){
         QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
@@ -138,8 +142,8 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     int i=nbNotes;
     //*(*notes[nbNotes++]).begin()=*n;
     notes[nbNotes]= new QList<Note*>;
-    QList<Note*> liste=*(notes[nbNotes]);
-    liste.push_front(n);
+    QList<Note*>* liste=notes[nbNotes++];
+    (*liste).push_front(n);
     //            return dynamic_cast<Task&>(*notes[i]);
     return (Task&)*notes[i];
 }
@@ -165,8 +169,8 @@ Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,co
     int i=nbNotes;
     //*(*notes[nbNotes++]).begin()=*n;
     notes[nbNotes]= new QList<Note*>;
-    QList<Note*> liste=*(notes[nbNotes]);
-    liste.push_front(n);
+    QList<Note*>* liste=notes[nbNotes++];
+    (*liste).push_front(n);
     //            return dynamic_cast<Recording&>(*notes[i]);
     return (Recording&)*notes[i];
 }
