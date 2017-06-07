@@ -142,7 +142,7 @@ void interface::CreerNote(){
 void interface::addNewNote(Note& n){
     QList< QStandardItem* > note;
     note.append(new QStandardItem (n.getId()));
-    note.append(new QStandardItem(QString(n.getType())));
+    //note.append(new QStandardItem(QString(n.getType())));
 
 
     std::stringstream f;

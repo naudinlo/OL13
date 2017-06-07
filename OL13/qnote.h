@@ -14,7 +14,7 @@ class QNote: public QWidget{
 protected:
     QGridLayout* grid;
 public:
-    virtual Note& get_note(QString id,QString title)=0;
+    virtual Note& get_note(QString id,QString title)=0; //fct qui fait appelle au constructeur des notes
     virtual void readOnly(bool status);
     QNote();
     virtual void load_note(Note& n)=0;

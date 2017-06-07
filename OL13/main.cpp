@@ -26,8 +26,10 @@ void creation(){
     t2.setPriority(10);
 
     QString link("newlink");
-    Recording& r1=m1->getNewRecording("r1", "recordingtitle1", "description1", ENUM::Audio, link);
-    Recording& r2=m1->getNewRecording("r2", "recordingtitle2", "description2", ENUM::Image, link);
+    //Recording& r1=m1->getNewRecording("r1", "recordingtitle1", "description1", ENUM::Audio, link);
+    //Recording& r2=m1->getNewRecording("r2", "recordingtitle2", "description2", ENUM::Image, link);
+
+    //a1.display(std::cout);
 
 }
 
@@ -217,15 +219,13 @@ void fct(){
        it.next();
    }
 
-
-
-
-
 }
+
 
 int main(int argc, char * argv[]) {
 
     //fct();
-
+    PROGRAMME(argc,argv);
+    //creation();
     return 0;
 }

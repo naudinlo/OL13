@@ -52,8 +52,6 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
 void Creation_Note::edit_article(){
     B_type->setTitle("Article");
     note=new QArticle();
-
-
 }
 void Creation_Note::edit_tache(){
     B_type->setTitle("Tache");
@@ -93,7 +91,7 @@ void Creation_Note::select_type(int type){
 void Creation_Note::Creer_Note(){
     try{
     Note& essai=note->get_note(E_id->text(),E_title->text());
-    QMessageBox::information(this,E_title->text(),QString::fromStdString(essai.toString()));
+    //QMessageBox::information(this,E_title->text(),QString::fromStdString(essai.toString()));
     emit(newNote(essai));
     }
     catch(NotesException e)

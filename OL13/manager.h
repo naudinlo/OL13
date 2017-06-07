@@ -29,7 +29,7 @@ private:
     static Handler handler;
 public:
 //    Note& getNewNote(const QString& id, const QString& ti); //Revoir pour la déclaration suivant le type de note
-    Article& getNewArticle(const QString& id, const QString& ti,const QString& te); //Revoir pour la déclaration suivant le type de note
+    Article &getNewArticle(const QString& id, const QString& ti,const QString& te); //Revoir pour la déclaration suivant le type de note
     Task& getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d);
     Task& getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p);
     Task& getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, const QDateTime d);

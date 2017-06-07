@@ -32,7 +32,7 @@ Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const 
     QList<Note*>* liste=notes[nbNotes++];
     (*liste).push_front(n);
             //            return dynamic_cast<Article&>(*notes[i]);
-    return (Article&)*notes[i];
+    return *n;
 }
 
 
@@ -61,7 +61,7 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     QList<Note*>* liste=notes[nbNotes++];
     (*liste).push_front(n);
     //            return dynamic_cast<Task&>(*notes[i]);
-    return (Task&)*notes[i];
+    return *n;
 }
 
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p){
@@ -89,7 +89,7 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     QList<Note*>* liste=notes[nbNotes++];
     (*liste).push_front(n);
     //            return dynamic_cast<Task&>(*notes[i]);
-    return (Task&)*notes[i];
+    return *n;
 }
 
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, const QDateTime d){
@@ -117,7 +117,7 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     QList<Note*>* liste=notes[nbNotes++];
     (*liste).push_front(n);
     //            return dynamic_cast<Task&>(*notes[i]);
-    return (Task&)*notes[i];
+    return *n;
 }
 
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s){
@@ -145,7 +145,7 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     QList<Note*>* liste=notes[nbNotes++];
     (*liste).push_front(n);
     //            return dynamic_cast<Task&>(*notes[i]);
-    return (Task&)*notes[i];
+    return *n;
 }
 
 Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,const QString& d, ENUM::RecordingType r, QString l){
@@ -157,6 +157,7 @@ Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,co
 //            return dynamic_cast<Recording&>(*notes[i]);
             return (Recording&)it.current();
         }
+        it.next();
     }
     if (nbNotes==nbMaxNotes){
         QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
@@ -172,7 +173,7 @@ Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,co
     QList<Note*>* liste=notes[nbNotes++];
     (*liste).push_front(n);
     //            return dynamic_cast<Recording&>(*notes[i]);
-    return (Recording&)*notes[i];
+    return *n;
 }
 
 //ATTENTION : faire une fonction pour chaque type ? Ou un dynamic cast ? // Rep: non laisse comme cela on fera des casts
@@ -180,8 +181,10 @@ Note& NotesManager::getNote(const QString& id){
     NotesManager::Iterator it=NotesManager::getIterator();
     while(!it.isDone()){
         if (it.current().getId()==id) return it.current();
+        it.next();
     }
     throw NotesException("error, non existent note");
+
 }
 
 NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0){}
