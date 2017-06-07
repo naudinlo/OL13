@@ -22,11 +22,25 @@ public:
 
 class Qrelations
 {
+    Relation& R; //Relation Courante
 public:
-    Qrelations(){}
+    Qrelations(QString t, QString d);
+    void getNewCoupleRelation(Note* n1,Note* n2,QString l=0,bool s=false)
+    {
+        R.getNewCoupleRelation(n1,n2,l,s);
+    }
+    string displayRelation(){
+        return R.displayRelation();
+    }
 };
 
 class Edit_NotesCouple: public QDialog{
+
+    // a voir :
+    Note* n1;
+    Note* n2;
+    bool symetric;
+
     Q_OBJECT
     QVBoxLayout* L_fen;
     QLabel* Label;
@@ -38,22 +52,21 @@ class Edit_NotesCouple: public QDialog{
     QVBoxLayout *cbox;
     QPushButton* quit;
 
-    // a voir :
-    Note* n1;
-    Note* n2;
-    bool symitric;
 public:
     Edit_NotesCouple(Note* n1, Note* n2, QWidget* parent=nullptr,bool s=false);
 signals:
-    void newCouple(Note*, Note*,QString,bool);
+    void newCouple(Note*, Note*,QString,bool); //message récuperer par Edit_relation
+    //representant la demande d'ajout d'un nouveau couple à une relation
+    //signal emis par fermer()
 public slots:
     void fermer(){
+        //envoi un signal pour créer un nouveau couple selon la config choisie
         if(yes->isChecked()){
-        emit newCouple(n1,n2,E_Label->text(),symitric);
+            emit newCouple(n1,n2,E_Label->text(),symetric);
         }
         else
         {
-            emit newCouple(n1,n2,"",symitric);
+            emit newCouple(n1,n2,"",symetric);
         }
         this->close();
     }
@@ -74,6 +87,8 @@ public slots:
 };
 
 class Edit_relation:public QDialog{
+    Note& note; //note courante
+    Qrelations* R; //Relation en cours d'édition
 
     Q_OBJECT
     QGridLayout* L_fen;
@@ -88,8 +103,6 @@ class Edit_relation:public QDialog{
     QListView* ref_from;
     QListView* ref_to;
     QPushButton* append;
-    Note& note;
-    Relation* R;
     void addNoteToR();
 
 public:

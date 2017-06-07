@@ -33,13 +33,14 @@ interface::interface(): QMainWindow(), indexNote()
     toolBarFichier->addAction(ActionOuvrir);
     MenuFichier->addAction(ActionOuvrir);
 
-
     Action_new_relation=new QAction("Editer de nouvelles relations ",this);
     Action_new_relation->setShortcut(QKeySequence("ctrl+R"));
     connect(Action_new_relation,SIGNAL(triggered(bool)),this,SLOT(E_relation()));
-    toolBarRef=addToolBar("Edition");
-    toolBarRef->addAction(Action_new_relation);
-    toolBarRef->setHidden(true);
+    toolBar_new_Rel=addToolBar("Edition");
+    toolBar_new_Rel->addAction(Action_new_relation);
+    toolBar_new_Rel->setHidden(true);
+
+
 
     QAction *ActionNouveau=new QAction("&Nouvelle note",this);
 //    ActionNouveau->setIcon(QIcon("new.png"));
@@ -61,23 +62,29 @@ interface::interface(): QMainWindow(), indexNote()
 
 
 }
-void interface::addAction_ref(){
+void interface::addAction_new_rel(){
 
     MenuEd->addAction(Action_new_relation);
-    toolBarRef->setHidden(false);
+    toolBar_new_Rel->setHidden(false);
 
 }
 
 void interface::CreateDock_edited_Note(){
     dock_editer_note=new QDockWidget("Editer Document",this);
     dock_editer_note->setAllowedAreas(Qt::TopDockWidgetArea);
-    dock_editer_note->setWidget(&(note_page->getdock()));
+    dock_editer_note->setWidget(&(note_page->getdock_editer()));
     addDockWidget(Qt::TopDockWidgetArea,dock_editer_note);
     MenuEd->addAction(dock_editer_note->toggleViewAction());
     connect(note_page,SIGNAL(supp_dock_editer()),this,SLOT(supp_dock_editer()));
 
 }
-
+/*
+void interface::CreateDock_aff_Relation(){
+    dock_aff_Relation=new QDockWidget("Afficher les relation liès à cette Note",this);
+    dock_aff_Relation->setAllowedAreas(Qt::RightDockWidgetArea);
+    //dock_aff_Relation->setWidget();
+}
+*/
 void interface::CreateDock_selected_Note(){
     listNote=new selection_note();
     dock_selected_Note=new QDockWidget("Sélectionner une note",this);
@@ -192,7 +199,7 @@ void interface::afficher_note(QString id, QModelIndex index){
     {
         if(MenuEd->actions().contains(Action_new_relation)){
             MenuEd->removeAction(Action_new_relation);
-            toolBarRef->hide();
+            toolBar_new_Rel->hide();
         }
         delete note_page;
         note_page=0;
@@ -204,9 +211,8 @@ void interface::afficher_note(QString id, QModelIndex index){
         indexNote=index.row();
         note_id=id;
         ZoneCentrale=note_page;
-
-        connect(note_page,SIGNAL(add_Action_new_relation()),this,SLOT(addAction_ref()));
         CreateDock_edited_Note();
+        addAction_new_rel();
 
     }
     catch(NotesException e)

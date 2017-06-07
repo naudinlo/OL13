@@ -34,21 +34,24 @@ public slots:
 class interface:public QMainWindow
 {
     Q_OBJECT
-    Creation_Note* fen_creerNote;
-    selection_note* listNote;
-    page_notes* note_page;
+    //Attribut
+    Creation_Note* fen_creerNote; //fenetre pour créer une note
+    selection_note* listNote; //liste des notes
+    page_notes* note_page;    //affichage d'une note
+    Edit_relation* relation; //fenetre d'ajout de relation
+    NotesManager* note_manager;
+
     QWidget* ZoneCentrale;
     QMenu *MenuFichier;
     QMenu *MenuEd;
     QMenu *MenuAff;
     QMenu *fichiersRecents;
     QAction* Action_new_relation;
-    QToolBar* toolBarRef;
-    Edit_relation* relation;
+    QToolBar* toolBar_new_Rel;
 
     QDockWidget* dock_selected_Note;
     QDockWidget* dock_editer_note;
-    NotesManager* note_manager;
+    //QDockWidget* dock_aff_Relation;
 
     //A modifier
     int indexNote;
@@ -57,6 +60,7 @@ class interface:public QMainWindow
     void CreateDock_selected_Note();//doit prendre un fichier est chargé la liste
     void CreateDock_edited_Note();
     void Destruct_selected_Note();
+    //void CreateDock_aff_Relation();
 
 public:
     interface();
@@ -71,12 +75,10 @@ public slots:
        relation->show();
 
    }
-   void addAction_ref();
 
+   void addAction_new_rel();
    void OuvrirFichier();
    void CreerNote();
-   void test(){
-   }
    void addNewNote(Note &n);
    void afficher_note(QString id,QModelIndex index);
    void supp_dock_editer(){

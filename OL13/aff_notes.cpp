@@ -2,7 +2,6 @@
 
 page_notes::page_notes(Note& n)
 {
-    create_dock();
     layout_p=new QVBoxLayout(this);
     layout_titre=new QHBoxLayout;
     titre=new QLineEdit (n.getTitle());
@@ -30,6 +29,21 @@ page_notes::page_notes(Note& n)
     layout_p->addStretch();
     layout_p->addWidget(info);
 
+    // Creation des dock relatif à l'aff d'une Note
+    dock_editer=new QWidget;
+    QHBoxLayout*layout_editer=new QHBoxLayout(dock_editer);
+    QLabel* lecture_seul=new QLabel ("Ce document est ouvert en lecture seule");
+    QPushButton* editer=new QPushButton ("Editer");
+    editer->setShortcut(QKeySequence("ctrl+E"));
+    layout_editer->addStretch();
+    layout_editer->addWidget(lecture_seul);
+    layout_editer->addWidget(editer);
+    connect(editer,SIGNAL(clicked(bool)),this,SLOT(editer_note(bool)));
+
+    dock_rel=new QWidget;
+    QVBoxLayout * layout_aff_rel=new QVBoxLayout(dock_rel);
+    QLabel* aff_relation =new QLabel("aff relation");
+    layout_aff_rel->addWidget(aff_relation);
 }
 page_notes::~page_notes(){
     emit(supp_dock_editer());  // c'est l'interface qui gère la supp du dock
@@ -39,15 +53,6 @@ page_notes::~page_notes(){
     delete note;
 }
 void page_notes::create_dock(){
-    dock=new QWidget;
-    QHBoxLayout*layout=new QHBoxLayout(dock);
-    QLabel* lecture_seul=new QLabel ("Ce document est ouvert en lecture seule");
-    QPushButton* editer=new QPushButton ("Editer");
-    editer->setShortcut(QKeySequence("ctrl+E"));
-    layout->addStretch();
-    layout->addWidget(lecture_seul);
-    layout->addWidget(editer);
-    connect(editer,SIGNAL(clicked(bool)),this,SLOT(editer_note(bool)));
 }
 
 page_vide::page_vide():QWidget(){

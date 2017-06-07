@@ -7,7 +7,8 @@ class page_notes: public QWidget
 {
     Q_OBJECT
 protected:
-    QWidget* dock;
+    QWidget* dock_editer;
+    QWidget* dock_rel;
     QHBoxLayout* layout_titre;
     QLineEdit* titre;
     QLabel* info;
@@ -18,19 +19,17 @@ public:
     page_notes(Note &n);
     ~page_notes();
     void create_dock();
-    QWidget& getdock(){
-        return *dock;
+    QWidget& getdock_editer(){
+        return *dock_editer;
     }
 signals:
     void supp_dock_editer();
-    void add_Action_new_relation();
 public slots:
     void editer_note(bool status){
         titre->setReadOnly(status);
         note->readOnly(status);
-        delete dock;
+        delete dock_editer;
         emit(supp_dock_editer());
-        emit(add_Action_new_relation());
     }
 };
 
