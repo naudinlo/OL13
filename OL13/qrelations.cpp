@@ -79,7 +79,7 @@ void Edit_relation::addNoteToR(){
 
     for(int i=0;i<listeSelections_from.size();i++){
 
-        QString current_id=model->itemFromIndex(listeSelections_from[i])->child(0,0)->whatsThis();
+        QString current_id=model->itemFromIndex(listeSelections_from[i])->whatsThis();
         if(selection_to->isSelected(listeSelections_from[i])){
             C= new Edit_NotesCouple(&(manager->getNote(current_id)),&note,this,true); //configuration :couple symétric
         }
@@ -93,7 +93,7 @@ void Edit_relation::addNoteToR(){
     {
         if(!(selection_from->isSelected(listeSelections_to[i]))){
             // ce couple n'a pas encore été traité
-        QString current_id=model->itemFromIndex(listeSelections_to[i])->child(0,0)->whatsThis();
+        QString current_id=model->itemFromIndex(listeSelections_to[i])->whatsThis();
         C= new Edit_NotesCouple(&note,&(manager->getNote(current_id)),this);
         connect(C,SIGNAL(newCouple(Note*,Note*,QString,bool)),this,SLOT(addCouple(Note*,Note*,QString,bool)));
         C->exec();
