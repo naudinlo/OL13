@@ -204,28 +204,50 @@ void fct(){
 
    for(it2=liste->begin();it2!=liste->end();it2++) it2.operator *()->display();*/
 
-
-
+try{
    NotesManager* m=NotesManager::getInstance();
    m->getNewArticle("test","test1","test de l'itérator");
    m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
    m->getNewArticle("test2","test2","test2 de l'itérator");
 
+
+   m->editArticle("test","test1v2","test des versions editées");
+   m->editTask("testTask","testTask2","testTask version edit",ENUM::Completed);
+   /*QList<Note*>* l=m->getListeVersions("test");
+   QList<Note*>::iterator it2=l->begin();
+   while(it2!=l->end()){
+       it2.operator *()->display();
+       it2++;
+   }*/
+
    NotesManager::Iterator it=m->getIterator();
    cout<<it.current();
    while(!it.isDone()){
+       cout<<endl<<endl<<"Note"<<endl<<"================"<<endl;
        QList<Note*>::iterator it3=(it.liste())->begin();
-       it3.operator *()->display();
+       while (it3!=it.liste()->end()) {
+            it3.operator *()->display();
+            it3++;
+       }
        it.next();
    }
+
+   //cout<<"test du getNote"<<endl<<"======================================="<<endl;
+   //m->getNote("test").display();
+   //m->getNote("test2").display();
+   //m->getNote("testTask").display();
+    }
+    catch(NotesException& e){
+        std::cout<<e.getinfo().toStdString()<<"\n";
+    }
 
 }
 
 
 int main(int argc, char * argv[]) {
 
-    //fct();
-    PROGRAMME(argc,argv);
+    fct();
+    //PROGRAMME(argc,argv);
     //creation();
     return 0;
 }
