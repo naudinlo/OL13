@@ -82,48 +82,41 @@ void capture_ref_essai(){
 }
 
 void relation(){
-    RelationManager& rm=RelationManager::getInstance();
     NotesManager* nm=NotesManager::getInstance();
+
+    Article& a1=nm->getNewArticle("article_1","a_title_1","a_text_1");
+    Article& a2=nm->getNewArticle("article_2","a_title_2","a_text_2");
+
+    Task& t1=nm->getNewTask("task_1","tasktitle1","action1",ENUM::Pending,5);
+    Task& t2=nm->getNewTask("task_2", "tasktitle2","action2",ENUM::Pending);
+    t2.setPriority(10);
+
+    displayAllNote();
+
+    RelationManager& rm=RelationManager::getInstance();
 
     Relation& rel1=rm.getNewRelation("titreRelation1", "descriptionRelation1");
     Relation& rel2=rm.getNewRelation("tRelation2", "dRelation2");
 
-//    displayAllRelation();
+//    Note& r1cpy=nm->editNote("r1");
+//    r1cpy.setTitle("COPYrecording1");
 
-    Note& t1=nm->getNote("task_1");
-    Note& t2=nm->getNote("task_2");
-    Note& r1=nm->getNote("r1");
-    Note& r2=nm->getNote("r2");
-
-//    QString str="mon super titre de \ref{r1}";
-//    capture_ref(str);
-
-/*
-    rel1.getNewCoupleRelation(&t1,&t2, "relation de tache");
-    rel2.getNewCoupleRelation(&t1,&t2, "relation 2 de tache");
-    rel2.getNewCoupleRelation(&r1,&r2, "relation de recording");
-
-    rel1.getNewCoupleRelation(&t1,&r2,"relation Sym",true);
-    rel2.getNewCoupleRelation(&t1,&r2,"relation 2 Sym",true);
-
-    rel1.removeCoupleRelation(&t1,&t2);
     displayAllRelation();
-*/
+
+    //BUG ICI
+
+    Note& n1=nm->getNote("task_1");
+    Note& n2=nm->getNote("task_2");
+    Note& n3=nm->getNote("article_1");
+    Note& n4=nm->getNote("article_2");
+
+    std::cout<<"je suis là5\n";
+
     const QString& st1=t1.getId();
     nm->deleteNote(st1);
-/*    displayAllRelation();
 
-    rm.deleteRelation("tRelation2");
-    displayAllRelation();
-
-    Relation& rel3=rm.getNewRelation("tRelation3", "dRelation3");
-    rel3.getNewCoupleRelation(&r1,&t2, "relation 3 de tache");
-    rel3.getNewCoupleRelation(&r1,&r2, "relation 3 de recording");
-    displayAllRelation();
-*/
-
-    t2.setNewRef(&r1);
-    r1.setNewRef(&r2);
+    n2.setNewRef(&n1);
+    n1.setNewRef(&n2);
 
     nm->deleteNote("article_1");
     nm->deleteNote("article_2");
@@ -134,7 +127,7 @@ void relation(){
     //ATTENTION : IL FAUT FREE LE TABLEAU DE REF
     nm->deleteNote("task_2");
 
-    nm->deleteNote("r1");
+//    nm->deleteNote("r1");
     nm->deleteNote("r2");
 
     displayAllNote();
@@ -224,8 +217,23 @@ void fct(){
 
 int main(int argc, char * argv[]) {
 
+    try {
+//           creation(); // cette ligne peut Ítre mise en commentaire aprËs la 1Ëre exÈcution
+//           displayAllNote();
+           relation();
+           displayAllNote();
+           displayAllRelation();
+       }
+       catch(NotesException& e){
+           std::cout<<e.getinfo().toStdString()<<"\n";
+       }
+
+
+
     //fct();
-    PROGRAMME(argc,argv);
+//    UndoRedo();
+
+//    PROGRAMME(argc,argv);
     //creation();
     return 0;
 }
