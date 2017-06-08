@@ -233,7 +233,11 @@ try{
        it.next();
    }
    cout<<endl<<l->length()<<endl;
-   m->getNoteVersion("test",2).display();
+
+   cout<<"test du getNote"<<endl<<"======================================="<<endl;
+   m->getNote("test").display();
+   m->getNote("test2").display();
+   m->getNote("testTask").display();
     }
     catch(NotesException& e){
         std::cout<<e.getinfo().toStdString()<<"\n";
