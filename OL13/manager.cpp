@@ -422,7 +422,7 @@ void NotesManager::emptyTrash(){
 }
 
 
-void NotesManager::editNote(QString& id){
+void NotesManager::editNote(const QString &id){
     NotesManager::Iterator it=NotesManager::getIterator();
     while(!it.isDone() && it.current().getId()!=id) it.next();
     if (it.isDone()){

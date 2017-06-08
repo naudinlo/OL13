@@ -39,7 +39,7 @@ public:
     Note& getNote(const QString& id);
     void deleteNote(const QString& id);
     void createNote(const QString& id); //je l'ai déplacé en privé pour pourvoir ajouté une note créer par interface
-    void editNote(QString& id);
+    void editNote(const QString& id);
     void setFilename(const QString f){filename=f;}
     QString getFilename()const {return filename;}
     void load();

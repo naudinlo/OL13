@@ -3,6 +3,11 @@
 QNote::QNote(){
     titre=new QLabel("titre");
     E_titre=new QLineEdit;
+    layout_titre = new QVBoxLayout;
+    layout_titre->addStretch();
+    layout_titre->addWidget(E_titre);
+    layout_titre->addStretch();;
+
 }
 
 QArticle::QArticle(): QNote(){
@@ -198,13 +203,19 @@ void QTask::check_creer(){
 
     }
 
+void QNote::load_note(Note &n){
+    E_titre->setText(n.getTitle());
+}
+
 void QArticle::load_note(Note &N){
+    QNote::load_note(N);
     Article& n= dynamic_cast<Article&>(N);
     E_text->setDocument(n.getText().clone());
     E_text->setReadOnly(true);
 }
 
 void QRecording::load_note(Note &N){
+    QNote::load_note(N);
     Recording& n= dynamic_cast<Recording&>(N);
     E_link->setText(n.getLink());
     E_type->setCurrentIndex(n.getType());
@@ -216,6 +227,7 @@ void QRecording::load_note(Note &N){
 }
 
 void QTask::load_note(Note& N){
+    QNote::load_note(N);
     Task& n= dynamic_cast<Task&>(N);
     E_action->setText(n.getAction());
     E_status->setCurrentIndex(n.getStatus());
@@ -238,18 +250,18 @@ void QNote::readOnly(bool status){
 }
 
 void QArticle::readOnly(bool status){
-    this->QNote::readOnly(status);
+    QNote::readOnly(status);
     E_text->setReadOnly(status);
 }
 
 void QRecording::readOnly(bool status){
-    this->QNote::readOnly(status);
+    QNote::readOnly(status);
     E_description->setReadOnly(status);
     E_type->setEnabled(!status);
     link->setEnabled(!status);
 }
 void QTask::readOnly(bool status){
-    this->QNote::readOnly(status);
+    QNote::readOnly(status);
     E_action->setReadOnly(status);
     E_status->setDisabled(status);
     duedate->setEnabled(!status);
@@ -257,6 +269,34 @@ void QTask::readOnly(bool status){
     priority->setEnabled(!status);
     E_priority->setReadOnly(status);
     E_action->setReadOnly(status);
+}
 
+void QNote::saveNote(Note &n){
+    QMessageBox::information(this,"QNote::saveNote",E_titre->text());
+    n.setTitle(E_titre->text());
+    n.setLastmodif_date(QDateTime::currentDateTime());
 
+    QMessageBox::information(this,"QNote::saveNote",n.getTitle());
+}
+void QArticle::saveNote(Note &N){
+    QNote::saveNote(N);
+    Article& n= dynamic_cast<Article&>(N);
+    n.setText(E_text->document()->toPlainText());
+}
+void QTask::saveNote(Note &N){
+    QNote::saveNote(N);
+    ENUM::StatusType s=static_cast<ENUM::StatusType>(E_status->currentIndex());
+    Task& n= dynamic_cast<Task&>(N);
+    n.setAction(E_action->text());
+    n.setDueDate(E_duedate->dateTime());
+    n.setPriority(E_priority->value());
+    n.setStatus(s);
+}
+void QRecording::saveNote(Note &N){
+    QNote::saveNote(N);
+    ENUM::RecordingType t=static_cast<ENUM::RecordingType>(E_type->currentIndex());
+    Recording& n= dynamic_cast<Recording&>(N);
+    n.setDescription(E_description->document()->toPlainText());
+    n.setLink(E_link->text());
+    n.setType(t);
 }

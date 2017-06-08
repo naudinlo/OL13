@@ -11,15 +11,18 @@ class QNote: public QWidget{
     Q_OBJECT
     QLabel* titre;
     QLineEdit* E_titre;
+    QVBoxLayout* layout_titre;
 protected:
     QGridLayout* grid;
 public:
     virtual Note& get_note(QString id,QString title)=0; //fct qui fait appelle au constructeur des notes
     virtual void readOnly(bool status);
     QNote();
-    virtual void load_note(Note& n)=0;
+    virtual void load_note(Note& n);
+    QVBoxLayout* getLayout_titre(){return layout_titre;}
 public slots:
-    virtual void check_creer()=0;
+    virtual void check_creer()=0;    
+    virtual void saveNote(Note& n);
 signals:
    void checked_creer(bool);
 };
@@ -34,6 +37,7 @@ public:
     QArticle();
     void load_note(Note &N);
     void readOnly(bool status);
+    void saveNote(Note &N);
 public slots:
     void check_creer();
 signals:
@@ -60,6 +64,7 @@ public:
     QTask();
     void load_note(Note &N);
     void readOnly(bool status);
+    void saveNote(Note& N);
 signals:
     void checked_creer(bool);
 public slots:
@@ -93,6 +98,7 @@ public slots:
     void check_creer();
     void read_record();
     void stop_record();
+    void saveNote(Note& n);
 signals:
     void checked_creer(bool);
     void recording_ready();

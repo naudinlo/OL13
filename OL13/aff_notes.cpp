@@ -1,14 +1,12 @@
 #include "aff_notes.h"
 
-page_notes::page_notes(Note& n)
+page_notes::page_notes(Note& N):n(N)
 {
     /** Window fenetre principale:
      *
 ***/
         layout_p=new QVBoxLayout(this);
         layout_titre=new QHBoxLayout;
-        titre=new QLineEdit (n.getTitle());
-        titre->setReadOnly(true);
         info=new QLabel("Cette note est un "+n.getType()+"\nCréation le "+n.getCreation_date().toString("dd.MM.yyyy hh:mm")+"\nDernière modification le "+n.getLastmodif_date().toString("dd.MM.yyyy hh:mm"));
 
         //On recuperer l'affichage d'une note particulière
@@ -25,10 +23,7 @@ page_notes::page_notes(Note& n)
             note=new QArticle;
         }
         note->load_note(n);
-        layout_titre->addStretch();
-        layout_titre->addWidget(titre);
-        layout_titre->addStretch();
-        layout_p->addLayout(layout_titre);
+        layout_p->addLayout(note->getLayout_titre());
         layout_p->addWidget(note);
         layout_p->addStretch();
         layout_p->addWidget(info);
@@ -41,7 +36,6 @@ page_notes::page_notes(Note& n)
         QLabel* lecture_seul=new QLabel ("Ce document est ouvert en lecture seule");
         QPushButton* editer=new QPushButton ("Editer");
         editer->setShortcut(QKeySequence("ctrl+E"));
-        QPushButton* supprimer=new QPushButton ("Supprimer");
         layout_editer->addStretch();
         layout_editer->addWidget(lecture_seul);
         layout_editer->addWidget(editer);
@@ -58,6 +52,7 @@ page_notes::page_notes(Note& n)
 
 }
 page_notes::~page_notes(){
+    note->saveNote(n);
     emit(supp_dock_editer());  // c'est l'interface qui gère la supp du dock
     delete layout_titre;
     delete info;

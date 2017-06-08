@@ -3,23 +3,24 @@
 #include "QInclude.h"
 #include "notes.h"
 #include "qnote.h"
+#include "manager.h"
 class page_notes: public QWidget
 {
     Q_OBJECT
 
 protected:
     QNote* note;
+    Note& n;
 
     QWidget* dock_editer;
     QWidget* dock_rel;
     QHBoxLayout* layout_titre;
-    QLineEdit* titre;
+    //QLineEdit* titre;
     QLabel* info;
     QVBoxLayout* layout_p;
     QWidget* dock; //à vérifier
-
 public:
-    page_notes(Note &n);
+    page_notes(Note &N);
     ~page_notes();
     QWidget& getdock_editer(){
         return *dock_editer;
@@ -29,10 +30,10 @@ signals:
 public slots:
     void editer_note(bool status){
         //TODO : FAIRE EN SORTE QUE LA FONCTION MARCHE!!!
-        titre->setReadOnly(status);
         note->readOnly(status);
         delete dock_editer;
         emit(supp_dock_editer());
+        NotesManager::getInstance()->editNote(n.getId());
     }
 };
 

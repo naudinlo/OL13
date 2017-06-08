@@ -162,11 +162,11 @@ private:
     //Fichier image a ajouter
 public:
     const QTextDocument& getDescription() const {return description;}
-    void setDescription(const QString& d) {description.setPlainText(d);}
     ENUM::RecordingType getType() const {return type;}
-    void setType(const ENUM::RecordingType& r) {type=r;}
     const QString getLink() const {return link;} //voir si on garde cette structure pour les images
-
+    void setDescription(const QString& d) {description.setPlainText(d);}
+    void setType(const ENUM::RecordingType& r) {type=r;}
+    void setLink(const QString& l){link=l;}
     Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l);
 
     //PRIVATE ?
