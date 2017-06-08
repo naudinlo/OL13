@@ -12,7 +12,7 @@
 #include <QDate>
 #include <QStandardItemModel>
 #include <typeinfo>
-
+#include "supp_note.h"
 class selection_note: public QWidget{
     Q_OBJECT
     QVBoxLayout* layout;
@@ -33,14 +33,15 @@ public slots:
 
 class interface:public QMainWindow
 {
-    Q_OBJECT
     //Attribut
     Creation_Note* fen_creerNote; //fenetre pour créer une note
     selection_note* listNote; //liste des notes
     page_notes* note_page;    //affichage d'une note
     Edit_relation* relation; //fenetre d'ajout de relation
     NotesManager* note_manager;
+    supp_note* fen_supp;
 
+    Q_OBJECT
     QWidget* ZoneCentrale;
     QMenu *MenuFichier;
     QMenu *MenuEd;
@@ -48,7 +49,7 @@ class interface:public QMainWindow
     QMenu *fichiersRecents;
     QAction* Action_new_relation;
     QToolBar* toolBar_new_Rel;
-
+    QToolBar* toolBar_supp_note;
     QDockWidget* dock_selected_Note;
     QDockWidget* dock_editer_note;
     //QDockWidget* dock_aff_Relation;
@@ -85,6 +86,11 @@ public slots:
    void supp_dock_editer(){
        MenuEd->removeAction(dock_editer_note->toggleViewAction());
        dock_editer_note->close();
+   }
+   void supprimer_note(){
+       fen_supp = new supp_note(listNote->getModel(),this);
+       fen_supp->show();
+       //Recharger le Model dans la liste des Notes;
    }
 
    void save();

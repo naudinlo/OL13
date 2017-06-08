@@ -9,7 +9,8 @@ HEADERS += \
     relations.h \
     aff_notes.h \
     qnote.h \
-    qrelations.h
+    qrelations.h \
+    supp_note.h
 
 QT += widgets
 QT += xml
@@ -28,4 +29,5 @@ SOURCES += \
     aff_notes.cpp \
     qnote.cpp \
     qrelations.cpp \
-    loubrouillon.cpp
+    loubrouillon.cpp \
+    supp_note.cpp

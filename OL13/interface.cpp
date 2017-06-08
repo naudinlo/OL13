@@ -57,9 +57,9 @@ interface::interface(): QMainWindow(), indexNote()
     //Action: supprimer une note
         //TODO : supprimer note ! Créer slot supprimer_note
         QAction *ActionSupprimer=new QAction("&Supprimer note",this);
-    //    connect(ActionSupprimer,SIGNAL(triggered(bool)),this,SLOT(supprimer_note(QString &id)));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
-        toolBarFichier->addAction(ActionSupprimer);
-        MenuFichier->addAction(ActionSupprimer);
+        connect(ActionSupprimer,SIGNAL(triggered(bool)),this,SLOT(supprimer_note()));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
+        toolBar_supp_note=addToolBar("Edition");
+        toolBar_supp_note->addAction(ActionSupprimer);
 
     CreateDock_selected_Note();
     setCentralWidget(ZoneCentrale);

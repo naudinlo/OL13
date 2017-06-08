@@ -39,7 +39,7 @@ signals:
 //signal emis par
  public slots:
     void Creer_Note(); //slot interessant
-    //void newRef();
+
     void select_type(int type);
     void fenclose(){
         delete this;

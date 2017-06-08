@@ -34,17 +34,6 @@ public slots:
         delete dock_editer;
         emit(supp_dock_editer());
     }
-    void supprimer_note(bool status){
-        //TODO : Supprimer la note à partir du note manager
-        //TOUT EST FAUX MAIS C'EST POUR AVOIR LA STRUCTURE EN GROS.
-         /*
-//      NotesManager* m=NotesManager::getTnstance();
-        note(NotesManager::getInstance()->getNote(id));
-//        QString& id=id;
-//        m->getNote(&id);
-//        m->deleteNote(&n);
-        */
-    }
 };
 
 class page_vide: public QWidget{

@@ -54,7 +54,7 @@ page_notes::page_notes(Note& n)
    //connect
         connect(editer,SIGNAL(clicked(bool)),this,SLOT(editer_note(bool)));
    //NEW LNA
-        connect(supprimer,SIGNAL(clicked(bool)),this,SLOT(supprimer_note(bool)));
+   //     connect(supprimer,SIGNAL(clicked(bool)),this,SLOT(supprimer_note(bool)));
 
 }
 page_notes::~page_notes(){
