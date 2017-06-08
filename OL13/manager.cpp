@@ -284,78 +284,32 @@ NotesManager::~NotesManager(){
     delete[] notes;
 }
 
-/*void NotesManager::save() const {
+void NotesManager::save() const {
     QFile newfile(filename);
     if (!newfile.open(QIODevice::WriteOnly | QIODevice::Text))
         throw NotesException(QString("erreur sauvegarde notes : ouverture fichier xml"));
+    NotesManager* m=NotesManager::getInstance();
     QXmlStreamWriter stream(&newfile);
     stream.setAutoFormatting(true);
     stream.writeStartDocument();
 
-    stream.writeStartElement("notes");
-    for(unsigned int i=0; i<nbNotes; i++){
+    stream.writeStartElement("NoteSManager");
 
-        if(notes[i]->getType()=="Article"){
-            Article& a=dynamic_cast<Article&>(*notes[i]);
-            stream.writeStartElement("article");
-            stream.writeTextElement("id",a.getId());
-            stream.writeTextElement("title",a.getTitle());
-            stream.writeTextElement("c_date",a.getCreation_date().toString());
-            stream.writeTextElement("lm_date",a.getLastmodif_date().toString());
-            if(a.getIsArchive()) stream.writeTextElement("isArchive","true");
-            else stream.writeTextElement("isArchive","false");
-            if(a.getIsDeleted()) stream.writeTextElement("isDeleted","true");
-            else stream.writeTextElement("isDeleted","false");
-            stream.writeTextElement("text",a.getText().toPlainText());
-            stream.writeEndElement();
-        }
+    for(NotesManager::Iterator it=m->getIterator(); !it.isDone(); it.next()){
 
-        if(notes[i]->getType()=="Task"){
-            Task& t=dynamic_cast<Task&>(*notes[i]);
-            stream.writeStartElement("Task");
-            stream.writeTextElement("id",t.getId());
-            stream.writeTextElement("title",t.getTitle());
-            stream.writeTextElement("c_date",t.getCreation_date().toString());
-            stream.writeTextElement("lm_date",t.getLastmodif_date().toString());
-            if(t.getIsArchive()) stream.writeTextElement("isArchive","true");
-            else stream.writeTextElement("isArchive","false");
-            if(t.getIsDeleted()) stream.writeTextElement("isDeleted","true");
-            else stream.writeTextElement("isDeleted","false");
-            stream.writeTextElement("action",t.getAction());
-            stream.writeTextElement("priority",QString::number(t.getPriority()));
-            stream.writeTextElement("d_date",t.getDueDate().toString());
-            //if(t.getStatus()==ENUM::StatusType::Pending)
-            if(t.getStatus()==0)
-                stream.writeTextElement("status","Pending");
-            //if(t.getStatus()==ENUM::StatusType::OnGoing)
-            if(t.getStatus()==1)
-                stream.writeTextElement("status","OnGoing");
-            //if(t.getStatus()==ENUM::StatusType::Completed)
-            if(t.getStatus()==2)
-                stream.writeTextElement("status","Completed");
-            stream.writeEndElement();
+        stream.writeStartElement("NoteVersions");
+        //stream.writeTextElement("test","test");// en ajoutant cette ligne le save fonctionne correctement
+        for(QList<Note*>::iterator it2=it.getIteratorVersions(); it2!=it.liste()->end(); it2++){
+            it2.operator *()->saveNote(&newfile);
         }
-
-        if(notes[i]->getType()=="Recording"){
-            Recording& r=dynamic_cast<Recording&>(*notes[i]);
-            stream.writeStartElement("Task");
-            stream.writeTextElement("id",r.getId());
-            stream.writeTextElement("title",r.getTitle());
-            stream.writeTextElement("c_date",r.getCreation_date().toString());
-            stream.writeTextElement("lm_date",r.getLastmodif_date().toString());
-            if(r.getIsArchive()) stream.writeTextElement("isArchive","true");
-            else stream.writeTextElement("isArchive","false");
-            if(r.getIsDeleted()) stream.writeTextElement("isDeleted","true");
-            else stream.writeTextElement("isDeleted","false");
-            stream.writeTextElement("description",r.getDescription().toPlainText());
-            //stream.writeTextElement("type",r.getType()); //à gérer suivant la façon de stocker l'image
-            stream.writeTextElement("link",r.getLink());
-            stream.writeEndElement();
-        }
+        stream.writeEndElement();
     }
     stream.writeEndElement();
 
-    stream.writeStartElement("relationmanager");
+
+
+    //Partie Relation
+    /*stream.writeStartElement("relationmanager");
     RelationManager::Iterator it=RelationManager::getInstance().getIterator();
     while(!it.isDone()){
         stream.writeStartElement("relation");
@@ -376,11 +330,13 @@ NotesManager::~NotesManager(){
         stream.writeEndElement();
         it.next();
     }
-    stream.writeEndElement();
+    stream.writeEndElement();*/
+
     stream.writeEndDocument();
     newfile.close();
+    cout<<endl<<"Save effectuee"<<endl;
 }
-*/
+
 
 /*void NotesManager::load() {
     QFile fin(filename);

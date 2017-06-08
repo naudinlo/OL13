@@ -248,6 +248,21 @@ try{
        it2++;
    }*/
 
+
+   NotesManager::Iterator it=m->getIterator();
+   cout<<it.current();
+   while(!it.isDone()){
+       cout<<endl<<endl<<"Note"<<endl<<"================"<<endl;
+       QList<Note*>::iterator it3=(it.liste())->begin();
+       while (it3!=it.liste()->end()) {
+            it3.operator *()->display();
+            it3++;
+       }
+       it.next();
+   }
+    m->setFilename("test_save.xml");
+    m->save();
+
    displayAllVersion();
 
    cout<<endl<<endl<<"================"<<endl;

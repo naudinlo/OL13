@@ -13,7 +13,7 @@
 #include <QDate>
 #include <typeinfo>
 #include <iostream>
-//#include "include.h"
+#include "QInclude.h"
 
 class NotesException;
 class Article;
@@ -83,6 +83,7 @@ public:
     void display(std::ostream& f=std::cout) const{
         f<<toString();
     }
+    virtual void saveNote(QFile *file);
 
     //Les notes que this reference
 //    void addReference(Note* n);
@@ -120,6 +121,7 @@ public:
     //~Note();
 
     std::string toString() const;
+    void saveNote(QFile *file);
 };
 
 
@@ -151,6 +153,7 @@ public:
     //~Note();
 
     std::string toString() const;
+    void saveNote(QFile *file);
 };
 
 
@@ -175,6 +178,7 @@ public:
     //~Note();
 
     std::string toString() const;
+    void saveNote(QFile *file);
 };
 
 //Surcharge affichage avec polymorphisme

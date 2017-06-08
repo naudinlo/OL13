@@ -8,7 +8,7 @@
 
 #include "notes.h"
 #include "sstream"
-//#include "include.h"
+#include "QInclude.h"
 
 
 
@@ -309,5 +309,67 @@ void Note::deleteAllReference(){
     delete[] references;
 //    Note** newtab=references;
 //    references=newtab;
+}
+
+void Note::saveNote(QFile* file){}
+
+
+void Article::saveNote(QFile* file){
+    QXmlStreamWriter stream(file);
+    stream.writeStartElement("article");
+    stream.writeTextElement("id",getId());
+    stream.writeTextElement("title",getTitle());
+    stream.writeTextElement("c_date",getCreation_date().toString());
+    stream.writeTextElement("lm_date",getLastmodif_date().toString());
+    if(getIsArchive()) stream.writeTextElement("isArchive","true");
+    else stream.writeTextElement("isArchive","false");
+    if(getIsDeleted()) stream.writeTextElement("isDeleted","true");
+    else stream.writeTextElement("isDeleted","false");
+    stream.writeTextElement("text",getText().toPlainText());
+    stream.writeEndElement();
+}
+
+
+void Task::saveNote(QFile* file){
+    QXmlStreamWriter stream(file);
+    stream.writeStartElement("Task");
+    stream.writeTextElement("id",getId());
+    stream.writeTextElement("title",getTitle());
+    stream.writeTextElement("c_date",getCreation_date().toString());
+    stream.writeTextElement("lm_date",getLastmodif_date().toString());
+    if(getIsArchive()) stream.writeTextElement("isArchive","true");
+    else stream.writeTextElement("isArchive","false");
+    if(getIsDeleted()) stream.writeTextElement("isDeleted","true");
+    else stream.writeTextElement("isDeleted","false");
+    stream.writeTextElement("action",getAction());
+    stream.writeTextElement("priority",QString::number(getPriority()));
+    stream.writeTextElement("d_date",getDueDate().toString());
+    //if(t.getStatus()==ENUM::StatusType::Pending)
+    if(getStatus()==0)
+        stream.writeTextElement("status","Pending");
+    //if(t.getStatus()==ENUM::StatusType::OnGoing)
+    if(getStatus()==1)
+        stream.writeTextElement("status","OnGoing");
+    //if(t.getStatus()==ENUM::StatusType::Completed)
+    if(getStatus()==2)
+        stream.writeTextElement("status","Completed");
+    stream.writeEndElement();
+}
+
+
+void Recording::saveNote(QFile* file){
+    QXmlStreamWriter stream(file);
+    stream.writeStartElement("Recording");
+    stream.writeTextElement("id",getId());
+    stream.writeTextElement("title",getTitle());
+    stream.writeTextElement("c_date",getCreation_date().toString());
+    stream.writeTextElement("lm_date",getLastmodif_date().toString());
+    if(getIsArchive()) stream.writeTextElement("isArchive","true");
+    else stream.writeTextElement("isArchive","false");
+    if(getIsDeleted()) stream.writeTextElement("isDeleted","true");
+    else stream.writeTextElement("isDeleted","false");
+    stream.writeTextElement("description",getDescription().toPlainText());
+    stream.writeTextElement("link",getLink());
+    stream.writeEndElement();
 }
 
