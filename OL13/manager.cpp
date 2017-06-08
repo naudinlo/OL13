@@ -187,6 +187,25 @@ Note& NotesManager::getNote(const QString& id){
 
 }
 
+Note& NotesManager::getNoteVersion(const QString& id, int indice){
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone()){
+        if (it.current().getId()==id && it.liste()->length()>indice) return *(it.liste()->at(indice));
+        it.next();
+    }
+    throw NotesException("error, non existent note version");
+}
+
+QList<Note*>* NotesManager::getListeVersions(const QString& id){
+    NotesManager::Iterator it=NotesManager::getIterator();
+    while(!it.isDone()){
+        if (it.current().getId()==id) return it.liste();
+        it.next();
+    }
+    throw NotesException("error, non existent note");
+}
+
+
 NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0){}
 
 NotesManager::~NotesManager(){

@@ -37,6 +37,8 @@ public:
     Recording& getNewRecording(const QString& id, const QString& ti,const QString& d, ENUM::RecordingType r, QString l);
 
     Note& getNote(const QString& id);
+    Note& getNoteVersion(const QString& id, int indice);
+    QList<Note*>* getListeVersions(const QString& id);
     void deleteNote(const QString& id);
     void createNote(const QString& id); //je l'ai déplacé en privé pour pourvoir ajouté une note créer par interface
     void editNote(QString& id);
