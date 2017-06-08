@@ -248,6 +248,34 @@ QList<Note*>* NotesManager::getListeVersions(const QString& id){
 }
 
 
+//ERREUR ICI : il faut un getRelation ou quelque chose pour accéder à l'ensemble des couples relation d'une relation
+//Ou un manager de relation de relation ?
+/*
+ * QList<Note*>* getListAscendants(const QString& id){
+    RelationManager& rm=RelationManager::getInstance();
+    QList<Note*>* listAscendants;
+    for(RelationManager::Iterator it=rm.getIterator(); !it.isDone(); it.next()){
+        if (it.current()->getCoupleNoteX()->getId()==id){
+            Note& n=NotesManager::getInstance()->getNote(id);
+            listAscendants->push_front(n);
+        }
+    }
+}
+
+QList<Note*>* getListDescendants(const QString& id){
+    RelationManager& rm=RelationManager::getInstance();
+    QList<Note*>* listDescendants;
+    for(RelationManager::Iterator it=rm.getIterator(); !it.isDone(); it.next()){
+        if (relations[i]->getCoupleNoteY()->getId()==id){
+            Note& n=NotesManager::getInstance()->getNote(id);
+            listDescendants->push_front(n);
+        }
+    }
+}
+*/
+
+
+
 NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0){}
 
 NotesManager::~NotesManager(){

@@ -59,6 +59,10 @@ public:
     void save() const;
     QString updateId(QString Id2)const;
 
+    QList<Note*>* getListAscendants(const QString& id);
+    QList<Note*>* getListDescendants(const QString& id);
+
+
     static NotesManager* getInstance();
     static void libererInstance();
 
