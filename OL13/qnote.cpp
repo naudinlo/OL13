@@ -3,6 +3,7 @@
 QNote::QNote(){
     titre=new QLabel("titre");
     E_titre=new QLineEdit;
+    E_titre->setReadOnly(true);
     layout_titre = new QVBoxLayout;
     layout_titre->addStretch();
     layout_titre->addWidget(E_titre);
@@ -272,11 +273,8 @@ void QTask::readOnly(bool status){
 }
 
 void QNote::saveNote(Note &n){
-    QMessageBox::information(this,"QNote::saveNote",E_titre->text());
     n.setTitle(E_titre->text());
     n.setLastmodif_date(QDateTime::currentDateTime());
-
-    QMessageBox::information(this,"QNote::saveNote",n.getTitle());
 }
 void QArticle::saveNote(Note &N){
     QNote::saveNote(N);

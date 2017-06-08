@@ -179,7 +179,7 @@ void selection_note::update_model(){
         model->clear();
         NotesManager* m =NotesManager::getInstance();
 
-        QMessageBox::warning(this,"nbNote",QString::number(m->getnbNote()));
+
         for(NotesManager::Iterator it= m->getIterator();!it.isDone();it.next()){
             QList< QStandardItem* >  items;
 
@@ -233,20 +233,16 @@ void interface::afficher_note(QString id, QModelIndex index,int i){
         ZoneCentrale=new page_vide();
     }
     try{
-        if(i){
-            Note& current=note_manager->getNote(id);
-            note_page=new page_notes(current);
-        }
-        else{
-            Note& current=note_manager->getNote(id);
+            Note& current=note_manager->getNoteVersion(id,i);
 
-            note_page=new page_notes(current);
-        }
+
+        note_page = new page_notes(current);
         indexNote=index.row();
         note_id=id;
         ZoneCentrale=note_page;
         CreateDock_edited_Note();
         addAction_new_rel();
+        connect(note_page,SIGNAL(update_model()),listNote,SLOT(update_model()));
 
     }
     catch(NotesException e)

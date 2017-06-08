@@ -19,13 +19,11 @@ supp_note::supp_note(QStandardItemModel* m, QWidget* parent):QDialog(parent),mod
 }
 
 void supp_note::supp_selection_note(){
-    QMessageBox::warning(this,"bdgfh","fddfg");
     QItemSelectionModel *selection = vue->selectionModel();
     QModelIndexList listeSelections = selection->selectedIndexes();
     NotesManager* manager=NotesManager::getInstance();
     for (int i = 0 ; i < listeSelections.size() ; i++)
     {
-        QMessageBox::warning(this,"dans la liste",QString::number(i));
         QString current_id;
         if(!listeSelections[i].parent().isValid())
         {

@@ -27,13 +27,23 @@ public:
     }
 signals:
     void supp_dock_editer();
+    void update_model();
 public slots:
     void editer_note(bool status){
         //TODO : FAIRE EN SORTE QUE LA FONCTION MARCHE!!!
         note->readOnly(status);
         delete dock_editer;
         emit(supp_dock_editer());
-        NotesManager::getInstance()->editNote(n.getId());
+        if(n.getType()=="Article"){
+            n =NotesManager::getInstance()->editArticle(dynamic_cast<Article&>(n));
+        }
+        else if(n.getType()=="Recording"){
+            n =NotesManager::getInstance()->editRecording(dynamic_cast<Recording&>(n));
+        }
+        else
+        {
+            n =NotesManager::getInstance()->editTask(dynamic_cast<Task&>(n));
+        }
     }
 };
 

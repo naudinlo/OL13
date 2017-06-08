@@ -53,6 +53,7 @@ page_notes::page_notes(Note& N):n(N)
 }
 page_notes::~page_notes(){
     note->saveNote(n);
+    emit(update_model());
     emit(supp_dock_editer());  // c'est l'interface qui gère la supp du dock
     delete layout_titre;
     delete info;
