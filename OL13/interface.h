@@ -81,7 +81,6 @@ public slots:
    void OuvrirFichier();
    void CreerNote();
    void addNewNote(Note &n);
-//   void supprimer_note(QString id); //TODO : Supprimer une note
    void afficher_note(QString id,QModelIndex index);
    void supp_dock_editer(){
        MenuEd->removeAction(dock_editer_note->toggleViewAction());
@@ -90,7 +89,7 @@ public slots:
    void supprimer_note(){
        fen_supp = new supp_note(listNote->getModel(),this);
        fen_supp->show();
-       //Recharger le Model dans la liste des Notes;
+       //Recharger le Model dans la liste des Notes;s
    }
 
    void save();
