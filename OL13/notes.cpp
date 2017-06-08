@@ -12,18 +12,21 @@
 
 
 
-//====OPERATEUR AFFECATION, CONSTRUCTEUR DE RECOPIE
+//====OPERATEUR AFFECTATION, CONSTRUCTEUR DE RECOPIE
 
 //Surcharge la méthode constructeur dans le cas nouvelle note B(A);
-Note::Note(const Note& n):id(n.id+lastmodif_date.toString("dd.MM")),title(n.title),lastmodif_date(QDateTime::currentDateTime()){
+//Note::Note(const Note& n):id(n.id),title(n.title),lastmodif_date(QDateTime::currentDateTime()){
+//};
+Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::currentDateTime()){
 };
+////TEST MAUVAISE DATE DE MODIF
+//Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::fromString("M1d1y9800:01:02",
+//};
 
 //Surcharge de l'opérateur = dans le cas nouvelle note B=A;
 Note& Note::operator=(const Note& n){
     if (this!=&n){  //empecher l'auto-affectation
         title=n.title;
-        //LNA ERREUR ICI
-        //id=n.id+"_bis";
     }
     return *this;
 };

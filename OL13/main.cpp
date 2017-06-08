@@ -33,6 +33,7 @@ void creation(){
 
 }
 
+//AFFICHE LES DERNIÈRES VERSIONS DE TOUTES LES NOTES
 //Cette fonction ne marche pas bien (exemple quand deleteNote ou empty trash)
 void displayAllNote(){
     std::cout<<"\n*=== ALL NOTES ===*\n";
@@ -42,6 +43,25 @@ void displayAllNote(){
         it.current().display();
     };
 }
+
+
+void displayAllVersion(){
+    NotesManager* m=NotesManager::getInstance();
+    std::cout<<"\n*=== ALL VERSIONS ALL NOTES ===*\n";
+    NotesManager::Iterator itNote=m->getIterator();
+    while(!itNote.isDone()){
+        cout<<endl<<"// Versions de la note : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
+        QList<Note*>::iterator itVersion=(itNote.liste())->begin();
+        unsigned int i=0;
+        while (itVersion!=itNote.liste()->end()) {
+            cout<<endl<<"--- Version "<<i++<<" ---";
+            itVersion.operator *()->display();
+            itVersion++;
+        }
+        itNote.next();
+    }
+}
+
 
 //exemple quand deleteNote ou empty trash
 //Quand relation tout juste supprimée, l'affiche quand meme
@@ -206,13 +226,21 @@ void fct(){
 
 try{
    NotesManager* m=NotesManager::getInstance();
-   m->getNewArticle("test","test1","test de l'itérator");
-   m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
+//   m->getNewArticle("test","test1","test de l'itérator");
+   Article& a1=m->getNewArticle("test","test1","test de l'itérator");
+//   m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
+   Task& t1=m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
    m->getNewArticle("test2","test2","test2 de l'itérator");
 
 
-   m->editArticle("test","test1v2","test des versions editées");
-   m->editTask("testTask","testTask2","testTask version edit",ENUM::Completed);
+//   m->editArticle("test","test1v2","test des versions editées");
+   m->editArticle(a1);
+   a1.setTitle("test1v2");
+   a1.setText("test des versions editées");
+
+//   m->editTask("testTask","testTask2","testTask version edit",ENUM::Completed);
+   m->editTask(t1);
+
    /*QList<Note*>* l=m->getListeVersions("test");
    QList<Note*>::iterator it2=l->begin();
    while(it2!=l->end()){
@@ -220,17 +248,23 @@ try{
        it2++;
    }*/
 
-   NotesManager::Iterator it=m->getIterator();
-   cout<<it.current();
-   while(!it.isDone()){
-       cout<<endl<<endl<<"Note"<<endl<<"================"<<endl;
-       QList<Note*>::iterator it3=(it.liste())->begin();
-       while (it3!=it.liste()->end()) {
-            it3.operator *()->display();
-            it3++;
-       }
-       it.next();
-   }
+//   NotesManager::Iterator it=m->getIterator();
+//   cout<<it.current();
+//   while(!it.isDone()){
+//       cout<<endl<<endl<<"Note"<<endl<<"================"<<endl;
+//       QList<Note*>::iterator it3=(it.liste())->begin();
+//       while (it3!=it.liste()->end()) {
+//            it3.operator *()->display();
+//            it3++;
+//       }
+//       it.next();
+//   }
+
+   displayAllVersion();
+
+//   displayAllNote();
+
+   cout<<endl<<endl<<"================"<<endl;
 
    //cout<<"test du getNote"<<endl<<"======================================="<<endl;
    //m->getNote("test").display();

@@ -29,5 +29,4 @@ SOURCES += \
     aff_notes.cpp \
     qnote.cpp \
     qrelations.cpp \
-    loubrouillon.cpp \
     supp_note.cpp

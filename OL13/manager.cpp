@@ -151,13 +151,36 @@ Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,co
     return *n;
 }
 
+
+Article& NotesManager::editArticle(Article& A){
+    Article* n=new Article(A);
+    QList<Note*>* liste=getListeVersions(n->getId());
+    liste->push_front(n);
+    return *n;
+}
+
+Task& NotesManager::editTask(Task& T){
+    Task* n=new Task(T);
+    QList<Note*>* liste=getListeVersions(n->getId());
+    liste->push_front(n);
+    return *n;
+}
+
+Recording& NotesManager::editRecording(Recording& R){
+    Recording* n=new Recording(R);
+    QList<Note*>* liste=getListeVersions(n->getId());
+    liste->push_front(n);
+    return *n;
+}
+
+//ANCIEN editArticle, ... qui prenait en compte des QString id, title, etc.
+/*
 Article& NotesManager::editArticle(const QString& id, const QString& ti,const QString& te){
     Article* n=new Article(id,ti,te);
     QList<Note*>* liste=getListeVersions(id);
     liste->push_front(n);
     return *n;
 }
-
 
 Task& NotesManager::editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d){
     Task* n=new Task(id,ti,a,s,p,d);
@@ -193,6 +216,7 @@ Recording& NotesManager::editRecording(const QString& id, const QString& ti,cons
     liste->push_front(n);
     return *n;
 }
+*/
 
 //ATTENTION : faire une fonction pour chaque type ? Ou un dynamic cast ? // Rep: non laisse comme cela on fera des casts
 Note& NotesManager::getNote(const QString& id){
