@@ -151,13 +151,36 @@ Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,co
     return *n;
 }
 
+
+Article& NotesManager::editArticle(Article& A){
+    Article* n=new Article(A);
+    QList<Note*>* liste=getListeVersions(n->getId());
+    liste->push_front(n);
+    return *n;
+}
+
+Task& NotesManager::editTask(Task& T){
+    Task* n=new Task(T);
+    QList<Note*>* liste=getListeVersions(n->getId());
+    liste->push_front(n);
+    return *n;
+}
+
+Recording& NotesManager::editRecording(Recording& R){
+    Recording* n=new Recording(R);
+    QList<Note*>* liste=getListeVersions(n->getId());
+    liste->push_front(n);
+    return *n;
+}
+
+//ANCIEN editArticle, ... qui prenait en compte des QString id, title, etc.
+/*
 Article& NotesManager::editArticle(const QString& id, const QString& ti,const QString& te){
     Article* n=new Article(id,ti,te);
     QList<Note*>* liste=getListeVersions(id);
     liste->push_front(n);
     return *n;
 }
-
 
 Task& NotesManager::editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d){
     Task* n=new Task(id,ti,a,s,p,d);
@@ -193,6 +216,7 @@ Recording& NotesManager::editRecording(const QString& id, const QString& ti,cons
     liste->push_front(n);
     return *n;
 }
+*/
 
 //ATTENTION : faire une fonction pour chaque type ? Ou un dynamic cast ? // Rep: non laisse comme cela on fera des casts
 Note& NotesManager::getNote(const QString& id){
@@ -222,6 +246,34 @@ QList<Note*>* NotesManager::getListeVersions(const QString& id){
     }
     throw NotesException("error, non existent note");
 }
+
+
+//ERREUR ICI : il faut un getRelation ou quelque chose pour accéder à l'ensemble des couples relation d'une relation
+//Ou un manager de relation de relation ?
+/*
+ * QList<Note*>* getListAscendants(const QString& id){
+    RelationManager& rm=RelationManager::getInstance();
+    QList<Note*>* listAscendants;
+    for(RelationManager::Iterator it=rm.getIterator(); !it.isDone(); it.next()){
+        if (it.current()->getCoupleNoteX()->getId()==id){
+            Note& n=NotesManager::getInstance()->getNote(id);
+            listAscendants->push_front(n);
+        }
+    }
+}
+
+QList<Note*>* getListDescendants(const QString& id){
+    RelationManager& rm=RelationManager::getInstance();
+    QList<Note*>* listDescendants;
+    for(RelationManager::Iterator it=rm.getIterator(); !it.isDone(); it.next()){
+        if (relations[i]->getCoupleNoteY()->getId()==id){
+            Note& n=NotesManager::getInstance()->getNote(id);
+            listDescendants->push_front(n);
+        }
+    }
+}
+*/
+
 
 
 NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0){}
