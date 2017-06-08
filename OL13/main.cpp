@@ -231,7 +231,8 @@ try{
        }
        it.next();
    }
-
+    m->setFilename("test_save.xml");
+    m->save();
    //cout<<"test du getNote"<<endl<<"======================================="<<endl;
    //m->getNote("test").display();
    //m->getNote("test2").display();
