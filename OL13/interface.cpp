@@ -95,7 +95,8 @@ void interface::CreateDock_selected_Note(){
     dock_selected_Note->setMaximumWidth(300);
     addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
     MenuAff->addAction(dock_selected_Note->toggleViewAction());
-    connect(listNote,SIGNAL(selection(QString,QModelIndex)),this,SLOT(afficher_note(QString,QModelIndex)));
+    connect(listNote,SIGNAL(selection(QString,QModelIndex,int)),this,SLOT(afficher_note(QString,QModelIndex,int)));
+    connect(this,SIGNAL(update_model()),listNote,SLOT(update_model()));
 }
 void interface::Destruct_selected_Note(){
     delete listNote;
@@ -111,7 +112,8 @@ void interface::OuvrirFichier(){
     {
         Destruct_selected_Note();
         QMessageBox::information(this,"Fichier","Vous avez sélectionné:"+fichier);
-        CreateDock_selected_Note(); //prendre en compte le changement de vue
+        //CreateDock_selected_Note(); //prendre en compte le changement de vue
+        emit(update_model());
         note_manager->setFilename(fichier);
         //note_manager->load();
     }
@@ -135,6 +137,7 @@ void interface::CreerNote(){
 }
 
 void interface::addNewNote(Note& n){
+    /*
     QList< QStandardItem* > note;
     note.append(new QStandardItem (n.getId()));
     //note.append(new QStandardItem(QString(n.getType())));
@@ -151,6 +154,8 @@ void interface::addNewNote(Note& n){
     listNote->getModel()->appendRow(note);
 
     listNote->getVue()->setModel(listNote->getModel());
+    */
+    emit(update_model());
     delete fen_creerNote;
 }
 
@@ -158,19 +163,7 @@ selection_note::selection_note():QWidget(){
 
     layout= new QVBoxLayout(this);
     model= new QStandardItemModel;
-
-//Partie à modifier quand on aura load
-
-    /*
-    QStandardItem *item = new QStandardItem("Article Bidule");
-    QStandardItem *item2 = new QStandardItem("Type");
-    QList< QStandardItem* >  items;
-    items.append(item);
-    items.append(item2);
-
-    model->appendRow(items);
-    item->appendRow(new QStandardItem("1 version"));
-    */
+    update_model();
     vue=new QTreeView(this);
     vue->setAlternatingRowColors(true);
     vue->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -181,6 +174,33 @@ selection_note::selection_note():QWidget(){
     setLayout(layout);
     connect(vue,SIGNAL(activated(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
 }
+void selection_note::update_model(){
+    //Partie à modifier quand on aura load
+        model->clear();
+        NotesManager* m =NotesManager::getInstance();
+
+        QMessageBox::warning(this,"nbNote",QString::number(m->getnbNote()));
+        for(NotesManager::Iterator it= m->getIterator();!it.isDone();it.next()){
+            QList< QStandardItem* >  items;
+
+                items.append(new QStandardItem(it.current().getId()));
+                items.append(new QStandardItem(it.current().getType()));
+                items.at(0)->setWhatsThis(it.current().getId());
+                model->appendRow(items);
+
+                for(QList<Note*>::iterator j=it.getIteratorVersions();j !=it.liste()->end();j++)
+                {
+                    QList< QStandardItem* > item2;
+                    item2.append(new QStandardItem((*j)->getTitle()));
+                    item2.append(new QStandardItem ((*j)->getLastmodif_date().toString()));
+                    items.at(0)->appendRow(item2);
+                }
+
+        }
+        //items.at(0)->setWhatsThis(n.getId());;
+
+}
+
 void selection_note::emit_selection(QModelIndex i){
     QModelIndex index;
     QStandardItem* current_note;
@@ -188,18 +208,20 @@ void selection_note::emit_selection(QModelIndex i){
 
     if(!i.parent().isValid())
     {
-        current_note=model->item(i.row(),0);
-        current_versions=current_note->child(0,0); //on selection la plus récente version si on a pas select de versions
+
+        current_versions=model->item(i.row(),0);
+        emit selection(current_versions->whatsThis(),i,0);
     }
     else
     {
         current_note=model->item(i.parent().row(),0);
-        current_versions=current_note->child(i.row(),0);
+        //current_versions=current_note->child(i.row(),0);
+        emit selection(current_note->whatsThis(),i.parent(),i.row());
+
     }
-  emit selection(current_versions->whatsThis(),i);
 }
 
-void interface::afficher_note(QString id, QModelIndex index){
+void interface::afficher_note(QString id, QModelIndex index,int i){
     if(note_page!=0) //Si à dejà ouvert une note avant, il faut
     {
         if(MenuEd->actions().contains(Action_new_relation)){ //Fermer les docks restants (ex: editer note)
@@ -211,8 +233,15 @@ void interface::afficher_note(QString id, QModelIndex index){
         ZoneCentrale=new page_vide();
     }
     try{
-        Note& current=note_manager->getNote(id);
-        note_page=new page_notes(current);
+        if(i){
+            Note& current=note_manager->getNote(id);
+            note_page=new page_notes(current);
+        }
+        else{
+            Note& current=note_manager->getNote(id);
+
+            note_page=new page_notes(current);
+        }
         indexNote=index.row();
         note_id=id;
         ZoneCentrale=note_page;

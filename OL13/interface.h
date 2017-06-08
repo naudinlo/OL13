@@ -24,9 +24,10 @@ public:
     QStandardItemModel* getModel()const {return model;}
     QTreeView* getVue(){return vue;}
 signals:
-    void selection(QString, QModelIndex);
+    void selection(QString, QModelIndex, int);
 public slots:
     void emit_selection(QModelIndex i);
+    void update_model();
 };
 
 
@@ -69,6 +70,8 @@ public:
     ~interface(){
         NotesManager::libererInstance();
     }
+signals:
+    void update_model();
 
 public slots:
    void E_relation(){
@@ -81,7 +84,7 @@ public slots:
    void OuvrirFichier();
    void CreerNote();
    void addNewNote(Note &n);
-   void afficher_note(QString id,QModelIndex index);
+   void afficher_note(QString id, QModelIndex index, int i);
    void supp_dock_editer(){
        MenuEd->removeAction(dock_editer_note->toggleViewAction());
        dock_editer_note->close();

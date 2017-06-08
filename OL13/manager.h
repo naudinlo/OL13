@@ -53,6 +53,7 @@ public:
     void emptyTrash();
     void restoreNoteTrash(const QString& id);
 
+    int getnbNote(){return nbNotes;}
 
     class Iterator{
         private:

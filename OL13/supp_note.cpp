@@ -25,15 +25,34 @@ void supp_note::supp_selection_note(){
     NotesManager* manager=NotesManager::getInstance();
     for (int i = 0 ; i < listeSelections.size() ; i++)
     {
-        QMessageBox::warning(this,"dans la liste","ici");
-        QString current_id=model->itemFromIndex(listeSelections[i])->child(0,0)->whatsThis();
-        try
+        QMessageBox::warning(this,"dans la liste",QString::number(i));
+        QString current_id;
+        if(!listeSelections[i].parent().isValid())
         {
-            //manager->deleteNote(current_id);
+
+            current_id=model->item(listeSelections[i].row(),0)->whatsThis();
+            try
+            {
+                //manager->deleteNote(current_id);
+            }
+            catch(NotesException e){
+                QMessageBox::warning(this,'Impossibe de supprimer '+current_id,e.getinfo());
+            }
         }
-        catch(NotesException e){
-            QMessageBox::warning(this,'Impossibe de supprimer '+current_id,e.getinfo());
+        else
+        {
+            current_id=model->item(listeSelections[i].parent().row(),0)->whatsThis();
+
+            try
+            {
+                //manager->deleteNote(current_id,i.row());
+            }
+            catch(NotesException e){
+                QMessageBox::warning(this,'Impossibe de supprimer '+current_id,e.getinfo());
+            }
+
         }
+
     }
     this->close();
 
