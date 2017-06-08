@@ -211,11 +211,10 @@ try{
    m->getNewArticle("test2","test2","test2 de l'itérator");
 
 
-   Article* b= new Article("test","test1v2","test des versions");
-   QList<Note*>* l=m->getListeVersions("test");
-   cout<<endl<<"Taille de la liste="<<l->length()<<endl;
-   l->push_front(b);
-   /*QList<Note*>::iterator it2=l->begin();
+   m->editArticle("test","test1v2","test des versions editées");
+   m->editTask("testTask","testTask2","testTask version edit",ENUM::Completed);
+   /*QList<Note*>* l=m->getListeVersions("test");
+   QList<Note*>::iterator it2=l->begin();
    while(it2!=l->end()){
        it2.operator *()->display();
        it2++;
@@ -232,12 +231,11 @@ try{
        }
        it.next();
    }
-   cout<<endl<<l->length()<<endl;
 
-   cout<<"test du getNote"<<endl<<"======================================="<<endl;
-   m->getNote("test").display();
-   m->getNote("test2").display();
-   m->getNote("testTask").display();
+   //cout<<"test du getNote"<<endl<<"======================================="<<endl;
+   //m->getNote("test").display();
+   //m->getNote("test2").display();
+   //m->getNote("testTask").display();
     }
     catch(NotesException& e){
         std::cout<<e.getinfo().toStdString()<<"\n";

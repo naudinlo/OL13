@@ -29,12 +29,19 @@ private:
     static Handler handler;
 public:
 //    Note& getNewNote(const QString& id, const QString& ti); //Revoir pour la déclaration suivant le type de note
-    Article &getNewArticle(const QString& id, const QString& ti,const QString& te); //Revoir pour la déclaration suivant le type de note
+    Article& getNewArticle(const QString& id, const QString& ti,const QString& te); //Revoir pour la déclaration suivant le type de note
     Task& getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d);
     Task& getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p);
     Task& getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, const QDateTime d);
     Task& getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s);
     Recording& getNewRecording(const QString& id, const QString& ti,const QString& d, ENUM::RecordingType r, QString l);
+
+    Article& editArticle(const QString& id, const QString& ti,const QString& te);
+    Task& editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d);
+    Task& editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p);
+    Task& editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, const QDateTime d);
+    Task& editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s);
+    Recording& editRecording(const QString& id, const QString& ti,const QString& d, ENUM::RecordingType r, QString l);
 
     Note& getNote(const QString& id);
     Note& getNoteVersion(const QString& id, int indice);
