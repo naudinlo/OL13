@@ -142,8 +142,8 @@ void relation(){
     displayAllRelation();
 */
 
-    t2.setNewRef(&r1);
-    r1.setNewRef(&r2);
+//    t2.setNewRef(&r1);
+//    r1.setNewRef(&r2);
 
     nm->deleteNote("article_1");
     nm->deleteNote("article_2");
@@ -230,40 +230,60 @@ try{
    Article& a1=m->getNewArticle("test","test1","test de l'itérator");
 //   m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
    Task& t1=m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
-   m->getNewArticle("test2","test2","test2 de l'itérator");
+   Article& ar1=m->getNewArticle("test2","test2","test2 de l'itérator");
+
+   Article& a2=m->editArticle(a1);
+   a2.setTitle("test1v2");
+   a2.setText("test des versions editées");
+
+   Task& t2=m->editTask(t1);
+   t2.setTitle("testTaskv2");
+   t2.setAction("URGENT edition");
 
 
-//   m->editArticle("test","test1v2","test des versions editées");
-   m->editArticle(a1);
-   a1.setTitle("test1v2");
-   a1.setText("test des versions editées");
+//   NotesManager::Iterator it=m->getIterator();
+//   cout<<it.current();
+//   while(!it.isDone()){
+//       cout<<endl<<endl<<"Note"<<endl<<"================"<<endl;
+//       QList<Note*>::iterator it3=(it.liste())->begin();
+//       while (it3!=it.liste()->end()) {
+//            it3.operator *()->display();
+//            it3++;
+//       }
+//       it.next();
+//   }
+//    m->setFilename("test_save.xml");
+//    m->save();
 
-//   m->editTask("testTask","testTask2","testTask version edit",ENUM::Completed);
-   m->editTask(t1);
+//   displayAllVersion();
 
-   /*QList<Note*>* l=m->getListeVersions("test");
-   QList<Note*>::iterator it2=l->begin();
-   while(it2!=l->end()){
-       it2.operator *()->display();
-       it2++;
-   }*/
+   cout<<"\n\n===== PARTIE TEST DELETE VERSION + EMPTY TRASH =====\n";
 
+   m->deleteNote("test");
+   m->deleteNote("test2");
+//   displayAllVersion();
 
-   NotesManager::Iterator it=m->getIterator();
-   cout<<it.current();
-   while(!it.isDone()){
-       cout<<endl<<endl<<"Note"<<endl<<"================"<<endl;
-       QList<Note*>::iterator it3=(it.liste())->begin();
-       while (it3!=it.liste()->end()) {
-            it3.operator *()->display();
-            it3++;
-       }
-       it.next();
-   }
-    m->setFilename("test_save.xml");
-    m->save();
+    //LNA emptyTrash ne marche pas
+//   m->emptyTrash();
 
-   displayAllVersion();
+   cout<<"\n\n===== PARTIE TEST RELATION ET VERSION =====\n";
+
+   RelationManager& rm=RelationManager::getInstance();
+   Relation& rel1=rm.getNewRelation("titreRelation1", "descriptionRelation1");
+   Relation& rel2=rm.getNewRelation("titreRelation2", "descriptionRelation2");
+   rel1.getNewCoupleRelation(&a2,&t2);
+   rel1.getNewCoupleRelation(&ar1,&t2);
+   rel1.getNewCoupleRelation(&a2,&ar1);
+   rel2.getNewCoupleRelation(&a2,&ar1);
+//   displayAllRelation();
+//   cout<<rel1.displayRelation();
+   cout<<rel2.displayRelation();
+//   rel1.removeNoteRelation(&a2);
+   cout<<rel1.displayRelation();
+
+//   rel1.noteRelAsc(&a2);
+   m->getListAscendants("test");
+   m->getListDescendants("test2");
 
    cout<<endl<<endl<<"================"<<endl;
 
@@ -281,8 +301,8 @@ try{
 
 int main(int argc, char * argv[]) {
 
-    //fct();
-    PROGRAMME(argc,argv);
+    fct();
+    //PROGRAMME(argc,argv);
     //creation();
     return 0;
 }

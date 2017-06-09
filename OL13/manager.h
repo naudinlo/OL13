@@ -59,8 +59,10 @@ public:
     void save() const;
     QString updateId(QString Id2)const;
 
-    QList<Note*>* getListAscendants(const QString& id);
-    QList<Note*>* getListDescendants(const QString& id);
+    void getListAscendants(const QString& id);
+    void getListDescendants(const QString& id);
+//    QList<Note*>* getListAscendants(const QString& id);
+//    QList<Note*>* getListDescendants(const QString& id);
 
 
     static NotesManager* getInstance();
@@ -145,6 +147,15 @@ public:
         }
         bool isDone()const {return nb==index;}
         Relation& current() const {return *tab[index];}
+//        NotesCouple& relationCouple() {return tabrelations[index];}
+        Relation* listeRel() {return tab[index];}
+//        Relation::Iterator getIteratorRelation(){
+//            return (*listeRel()).begin();
+//        }
+//        QList<Note*>* liste() {return tab[index];}
+//        QList<Note*>::iterator getIteratorVersions(){
+//            return (*liste()).begin();
+//        }
     };
     Iterator getIterator(){
         return Iterator(tabrelations, nbRelations);

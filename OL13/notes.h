@@ -45,18 +45,14 @@ private:
     bool isArchive; //Si jamais on l'archive alors elle devient const
     bool isDeleted; //Si jamais on la met dans la corbeille
 
+    // LNA test ref 09.06
     Note ** references;
     unsigned int nbRef;
     unsigned int nbMaxRef;
 
     unsigned int nbIsRef;
 
-//    Note ** isreferenced;
-//    unsigned int nbIsRef;
-//    unsigned int nbMaxIsRef;
-
     void addReference(Note* n);
-    //    void addIsReferenced(Note* n);
 
 public:
     const QString getId() const {return id;}
@@ -86,7 +82,6 @@ public:
     virtual void saveNote(QFile *file);
 
     //Les notes que this reference
-//    void addReference(Note* n);
     Note& setNewRef(Note* n);
 
     Note& getReference(const QString &id) const;
@@ -101,8 +96,6 @@ public:
     void setNbIsRef(unsigned int n){nbIsRef=n;}
     unsigned int getNbIsRef()const{return nbIsRef;}
 
-//    //Les notes qui référence la note this
-//    Note& getIsReferenced(Note *n) const;
 };
 
 

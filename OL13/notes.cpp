@@ -17,7 +17,11 @@
 //Surcharge la méthode constructeur dans le cas nouvelle note B(A);
 //Note::Note(const Note& n):id(n.id),title(n.title),lastmodif_date(QDateTime::currentDateTime()){
 //};
-Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::currentDateTime()){
+Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::currentDateTime()),nbRef(n.nbIsRef),nbMaxRef(n.nbMaxRef),nbIsRef(n.nbIsRef){
+    Note** references(new Note*[n.nbMaxRef]);
+    for(unsigned int i=0; i<n.nbRef; i++){
+        this->references[i]=n.references[i];
+    }
 };
 ////TEST MAUVAISE DATE DE MODIF
 //Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::fromString("M1d1y9800:01:02",
@@ -75,13 +79,9 @@ Recording& Recording::operator=(const Recording& r){
 
 
 //====CONSTRUCTEUR
-
+// LNA test ref 09.06
 Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false), references(new Note*[5]), nbRef(0), nbMaxRef(5),nbIsRef(0){
-//    time_t theTime = time(NULL);
-//    struct tm *aTime = localtime(&theTime);
-//    TIME::Date t0(aTime->tm_mday,aTime->tm_mon + 1,aTime->tm_year + 1900);
-//    creation_date=t0;
-//    lastmodif_date=t0;
+//Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false), nbRef(0), nbMaxRef(5),nbIsRef(0){
     creation_date=QDateTime::currentDateTime();
     lastmodif_date=creation_date;
 }
@@ -116,7 +116,8 @@ std::string Article::toString()const {
     f<<"\n=== ARTICLE "<<getId().toStdString()<<" ===\n";
     f<<"ID : "<<getId().toStdString()<<"\n - Title : "<<getTitle().toStdString()<<"\n - Text : "<<text.toPlainText().toStdString()<<"\n - Creation date : "<<getCreation_date().toString("dd.MM.yyyy").toStdString()<<"\n - Last modification date : "<<getLastmodif_date().toString("dd.MM.yyyy").toStdString()<<"\n";
 
-    //Affichage des references
+    // LNA test ref 09.06
+//    Affichage des references
     f<<"\n - Reference :";
     if(getNbRef()==0) f<<" none";
     for(unsigned int i=0; i<getNbRef(); i++){
@@ -158,7 +159,7 @@ std::string Task::toString() const {
     if(dueDate.isNull()){f<<"\n - No due date.";}
     else {f<<"\n - Due date : "<<dueDate.toString("dd.MM.yyyy").toStdString();}
 
-
+    // LNA test ref 09.06
     //Affichage des references
     f<<"\n - Reference :";
     if(getNbRef()==0) f<<" none";
@@ -193,6 +194,7 @@ std::string Recording::toString() const {
         break;
     }
 
+    // LNA test ref 09.06
     //Affichage des references
     f<<"\n - Reference :";
     if(getNbRef()==0) f<<" none";
@@ -239,7 +241,7 @@ QString getRecordingtoStr(ENUM::StatusType recording) {
     return recordingName[recording];
 }
 
-
+// LNA test ref 09.06
 
 //====REFERENCE
 
@@ -310,6 +312,8 @@ void Note::deleteAllReference(){
 //    Note** newtab=references;
 //    references=newtab;
 }
+
+
 
 void Note::saveNote(QFile* file){}
 
