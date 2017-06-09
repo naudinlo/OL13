@@ -1,10 +1,37 @@
-//
-//  notes.hpp
-//  OL12PROJET
-//
-//  Created by Louise Naudin on 11/05/2017.
-//  Copyright © 2017 LNA. All rights reserved.
-//
+/**
+ * \file      note.h
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     Définit le type note et ses types dérivés
+ *
+ * \details   Classes présentes :
+ *                  - NotesException
+ *                      Gère les exceptions relatives aux notes.
+
+ *                  - Note
+ *                      Classe mère abstraite définissant l'ensemble des attributs et comportement des notes.
+ *
+ *                      Possède un attribut Note ** references permettant d'accéder aux références de la note.
+ *                      Possède deux attributs booléens isArchived et isDeleted permettant de spécifier
+ *                        si une note est supprimée ou non.
+ *
+ *                      Les méthodes toString et display sont virtuelles : redéfinies dans les sous classes,
+ *                        elles permettent un affichage personnalisé des différents typs de notes.
+ *
+ *                  - Article
+ *                      Classe article, dérivant de la classe Note, avec en plus l'attribut text.
+ *
+ *                  - Task
+ *                      Classe task, dérivant de la classe Note, avec en plus les attributs action, status,
+ *                        et les attributs optionnels dueDate et priority.
+ *
+ *                  - Recording
+ *                      Classe recording, dérivant de la classe Note, avec en plus les attributs descriptions,
+ *                        type et un link vers un fichier image, audio ou video.
+
+ */
+
 
 #ifndef notes_h
 #define notes_h
@@ -16,6 +43,7 @@
 #include "QInclude.h"
 
 class NotesException;
+class Note;
 class Article;
 class Task;
 class Recording;

@@ -149,7 +149,7 @@ void relation(){
     nm->deleteNote("article_2");
     displayAllNote();
 
-    nm->emptyTrash();
+//    nm->emptyTrash();
 
     //ATTENTION : IL FAUT FREE LE TABLEAU DE REF
     nm->deleteNote("task_2");

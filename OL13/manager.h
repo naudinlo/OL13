@@ -1,3 +1,28 @@
+/**
+ * \file      manager.h
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     Regroupe les manager nécessaires pour la gestion des notes et des relations
+ *
+ * \details   Classes présentes :
+ *                  - NotesManager
+ *                      Un manager sur l'ensemble des notes, qu'elles soient articles, taches, enregistrement.
+ *                      Qu'elles soient archivées ou supprimées.
+ *                      Manager multi-fonction qui permet de traiter l'ensemble des notes depuis d'un seul élément.
+ *
+ *                      Possède un attribut QList<Note*>** notes qui regroupe l'ensemble des notes et de leurs versions.
+ *
+ *                  - RelationManager
+ *                      Un manager sur l'ensemble des relations.
+ *                      Possède un Handler pour assurer l'unité de l'accès aux données.
+ *                      Possède un Iterator pour faciliter la manipulation des relations.
+ *
+ *                      Possède un attribut Relation** tabrelations permettant d'accéder à chaque relation
+ *                      et à l'ensemble de ses couples de notes associé.
+ */
+
+
 #ifndef MANAGER_H
 #define MANAGER_H
 #include <string>
