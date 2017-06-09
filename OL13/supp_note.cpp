@@ -1,3 +1,15 @@
+/**
+ * \file      supp_note.cpp
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     //Bref
+ *
+ * \details  //Détail
+ *
+ */
+
+
 #include "supp_note.h"
 
 supp_note::supp_note(QStandardItemModel* m, QWidget* parent):QDialog(parent),model(m)
