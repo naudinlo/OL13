@@ -110,6 +110,11 @@ public slots:
        MenuEd->removeAction(dock_editer_note->toggleViewAction());
        dock_editer_note->close();
    }
+   void supp_dock_aff_rel(){
+       MenuEd->removeAction(dock_aff_Relation->toggleViewAction());
+       dock_aff_Relation->close();
+   }
+
    void supprimer_note(){
        fen_supp = new supp_note(listNote->getModel(),this);
        fen_supp->show();

@@ -30,25 +30,25 @@ protected:
     Note& n;
 
     QWidget* dock_editer;
-    QWidget* dock_rel;
+    QDockRelation* dock_aff_Rel;
     QHBoxLayout* layout_titre;
     //QLineEdit* titre;
     QLabel* info;
     QVBoxLayout* layout_p;
-    Qrelations* dock_aff_Rel; //à vérifier
 public:
     page_notes(Note &N);
     ~page_notes();
     QWidget& getdock_editer(){
         return *dock_editer;
     }
-    Qrelations& getdock_aff_rel(){
-        return *dock_aff_Rel;
+    QDockRelation* getdock_aff_rel(){
+        return dock_aff_Rel;
     }
 
 signals:
     void supp_dock_editer();
     void update_model();
+    void supp_dock_aff_rel();
 public slots:
     void editer_note(bool status){
         //TODO : FAIRE EN SORTE QUE LA FONCTION MARCHE!!!

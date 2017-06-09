@@ -69,14 +69,14 @@ interface::interface(): QMainWindow(), indexNote()
         toolBar_new_Rel=addToolBar("Edition");
         toolBar_new_Rel->addAction(Action_new_relation);
         toolBar_new_Rel->setHidden(true);
-
+     /*
         Action_aff_relation=new QAction("Afficher les relations ",this);
         Action_aff_relation->setShortcut(QKeySequence("ctrl+A"));
         connect(Action_aff_relation,SIGNAL(triggered(bool)),this,SLOT(Aff_relation()));
         toolBar_new_Rel=addToolBar("Edition");
         toolBar_new_Rel->addAction(Action_aff_relation);
         toolBar_new_Rel->setHidden(true);
-
+    */
     //Action: supprimer une note
         //TODO : supprimer note ! Créer slot supprimer_note
         QAction *ActionSupprimer=new QAction("&Supprimer note",this);
@@ -103,9 +103,11 @@ void interface::CreateDock_edited_Note(){
     connect(note_page,SIGNAL(supp_dock_editer()),this,SLOT(supp_dock_editer()));
 
     dock_aff_Relation=new QDockWidget("Afficher les relations",this);
-    dock_aff_Relation->setAllowedAreas(Qt::LeftDockWidgetArea);
-    dock_aff_Relation->setWidget(&(note_page->getdock_aff_rel()));
+    dock_aff_Relation->setAllowedAreas(Qt::RightDockWidgetArea);
+    addDockWidget(Qt::RightDockWidgetArea,dock_aff_Relation);
+    dock_aff_Relation->setWidget(note_page->getdock_aff_rel());
     MenuEd->addAction(dock_aff_Relation->toggleViewAction());
+    connect(note_page,SIGNAL(supp_dock_aff_rel()),this,SLOT(supp_dock_aff_rel()));
 }
 
 
@@ -253,10 +255,11 @@ void selection_note::emit_selection(QModelIndex i){
 void interface::afficher_note(QString id, QModelIndex index,int i){
     if(note_page!=0) //Si à dejà ouvert une note avant, il faut
     {
-        if(MenuEd->actions().contains(Action_new_relation)){ //Fermer les docks restants (ex: editer note)
+        if(MenuEd->actions().contains(Action_new_relation)){ //Caché le bouton d'ajout de relation
             MenuEd->removeAction(Action_new_relation);
             toolBar_new_Rel->hide();
         }
+
         delete note_page; //Fermer la note
         note_page=0;
         ZoneCentrale=new page_vide();

@@ -1,14 +1,3 @@
-/**
- * \file      qrelation.h
- * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
- * \version   1.0
- * \date      14 Juin 2017
- * \brief     //Bref
- *
- * \details  //Détail
- *
- */
-
 #ifndef QRELATIONS_H
 #define QRELATIONS_H
 
@@ -31,25 +20,24 @@ public:
 
 };
 
-class Qrelations: public QWidget
-{
-    Relation& R; //Relation Courante
-
+class QDockRelation:public QWidget{
     QGridLayout* L_fen;
-    QLabel* titre;
-    QGroupBox* description;
-    QHBoxLayout* L_description;
-    QLineEdit* E_titre;
-    QTextEdit* E_description;
     QLabel* Label_from;
     QLabel* Label_to;
-    QStandardItemModel* model;
-    QListView* ref_from;
-    QListView* ref_to;
-    QPushButton* append;
-
+    QStandardItemModel* model_from;
+    QStandardItemModel* model_to;
+    QListView* rel_from;
+    QListView* rel_to;
 public:
-    Qrelations(QString id);
+    QDockRelation(const QString &id);
+};
+
+
+class Qrelations
+{
+    Relation& R; //Relation Courante
+public:
+    Qrelations(QString t, QString d);
     void getNewCoupleRelation(Note* n1,Note* n2,QString l=0,bool s=false)
     {
         R.getNewCoupleRelation(n1,n2,l,s);

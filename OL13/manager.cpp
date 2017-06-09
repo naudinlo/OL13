@@ -582,9 +582,6 @@ Relation& RelationManager::getRelation(const QString& title){
     }
     throw NotesException("error, impossible to get relation, non existent relation");
 }
-QList<Relation&>* RelationManager::getRelation(const QString& id){
-
-}
 
 void RelationManager::deleteRelation(const QString &title){
     for(unsigned int i=0; i<nbRelations; i++){

@@ -1,56 +1,74 @@
-/**
- * \file      qrelations.cpp
- * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
- * \version   1.0
- * \date      14 Juin 2017
- * \brief     //Bref
- *
- * \details  //Détail
- *
- */
-
 #include "qrelations.h"
 
-Qrelations::Qrelations(QString ):R(RelationManager::getInstance().{
-    L_fen=new QGridLayout(this);
-    titre= new QLabel("Titre de la relation");
-    E_titre = new QLineEdit;
-    connect(E_titre,SIGNAL(textChanged(QString)),this,SLOT(enabledAppend()));
-    L_description=new QHBoxLayout;
-    description=new QGroupBox();
-    description->setTitle("description :");
-    description->setCheckable(false);
-    description->setLayout(L_description);
-    E_description= new QTextEdit;
-    L_description->addWidget(E_description);
-    connect(E_description,SIGNAL(textChanged()),this,SLOT(enabledAppend()));
-    Label_from=new QLabel("Définer une Relation venant de :");
-    ref_from=new QListView;
-    ref_from->setAlternatingRowColors(true);
-    ref_from->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ref_from->setModel(model);
-    ref_from->setDisabled(false);
-    ref_from->setSelectionMode(QAbstractItemView::ExtendedSelection);
-    //ref_from->setRowHidden(index,true);
-    Label_to=new QLabel("Définer une Relation vers :");
-    ref_to=new QListView;
-    ref_to->setAlternatingRowColors(true);
-    ref_to->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ref_to->setModel(model);
-    ref_to->setDisabled(false);
-    //ref_to->horizontalHeader()->hide();
-    ref_to->setSelectionMode(QAbstractItemView::ExtendedSelection);
-    ref_to->setRowHidden(index,true);
-    append=new QPushButton("Ajouter");
-    append->setEnabled(false);
-    L_fen->addWidget(titre,0,0);
-    L_fen->addWidget(E_titre,0,1);
-    L_fen->addWidget(description,1,0,1,2);
-    L_fen->addWidget(Label_from,2,0,1,2);
-    L_fen->addWidget(ref_from,3,0,1,2);
-    L_fen->addWidget(Label_to,4,0);
-    L_fen->addWidget(ref_to,5,0,1,2);
-    L_fen->addWidget(append,6,1);
+Qrelations::Qrelations(QString t, QString d):R(RelationManager::getInstance().getNewRelation(t,d)){
+
+}
+QDockRelation::QDockRelation(const QString& id){
+
+       NotesManager* m=NotesManager::getInstance();
+      m->getListAscendants(id);
+       model_from =new QStandardItemModel;
+       for(unsigned int i=0;i<m->getListAscendants(id).length();i++){
+           Note* current_note=m->getListAscendants(id).at(i);
+           QList< QStandardItem* > item;
+                   item.append(new QStandardItem (current_note->getId()));
+                   item.append(new QStandardItem(current_note->getTitle()));
+
+                   item.at(0)->setWhatsThis(current_note->getId());
+                   model_from->appendRow(item);
+       }
+
+       model_to =new QStandardItemModel;
+       for(unsigned int i=0;i<m->getListDescendants(id).length();i++){
+           Note* current_note=m->getListDescendants(id).at(i);
+           QList< QStandardItem* > item;
+                   item.append(new QStandardItem (current_note->getId()));
+                   item.append(new QStandardItem(current_note->getTitle()));
+
+                   item.at(0)->setWhatsThis(current_note->getId());
+                   model_to->appendRow(item);
+       }
+       /*
+       for(QList<Note*>::iterator j=m->getListAscendants(id).begin();j !=m->getListAscendants(id).end();j++)
+       {
+            QMessageBox::warning(this,"QRelation", QString::number( m->getListAscendants(id).length()));
+           QList< QStandardItem* > item;
+                    item.append(new QStandardItem ((*j)->getId()));
+                    //item.append(new QStandardItem((*j)->getTitle()));
+
+                    item.at(0)->setWhatsThis((*j)->getId());
+                    model_from->appendRow(item);
+       }
+       *//*
+       model_to =new QStandardItemModel;
+       for(QList<Note*>::iterator j=m->getListDescendants(id).begin();j !=m->getListDescendants(id).end();j++)
+       {
+           QList< QStandardItem* > item;
+           QMessageBox::warning(this,"QRelation", QString::number( m->getListAscendants(id).length()));
+           item.append(new QStandardItem ((*j)->getId()));
+           //item.append(new QStandardItem((*j)->getTitle()));
+           item.at(0)->setWhatsThis((*j)->getId());
+           model_to->appendRow(item);
+       }*/
+       L_fen=new QGridLayout(this);
+       Label_from=new QLabel("Relation depuis :") ;
+       Label_to=new QLabel("Relation vers :");
+
+       rel_from=new QListView;
+       rel_from->setModel(model_from);
+       rel_to=new QListView;
+       rel_to->setModel(model_to);
+
+       L_fen->addWidget(Label_to);
+       L_fen->addWidget(rel_from);
+       L_fen->addWidget(Label_from);
+       L_fen->addWidget(rel_to);
+
+       //vue->header()->hide();
+       //vue->setDisabled(false);
+       //layout->addWidget(vue);
+       //connect(vue,SIGNAL(activated(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
+
 }
 
 
