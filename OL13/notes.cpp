@@ -11,6 +11,16 @@
 #include "QInclude.h"
 
 
+//====DESTRUCTEUR
+
+Note::~Note(){
+//    save();
+    for(unsigned int i=0; i<nbRef; i++) delete references[i];
+    delete[] references;
+}
+
+
+
 
 //====OPERATEUR AFFECTATION, CONSTRUCTEUR DE RECOPIE
 
@@ -24,7 +34,7 @@ Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date)
     }
 };
 ////TEST MAUVAISE DATE DE MODIF
-//Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::fromString("M1d1y9800:01:02",
+//Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::fromString("M1d1y9800:01:02")),
 //};
 
 //Surcharge de l'opérateur = dans le cas nouvelle note B=A;
@@ -34,7 +44,6 @@ Note& Note::operator=(const Note& n){
     }
     return *this;
 };
-
 
 //Surcharge la méthode constructeur dans le cas nouvel article Article B(A);
 Article::Article(const Article& a):Note(a), text(a.text.toPlainText()){};

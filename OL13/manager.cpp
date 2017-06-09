@@ -404,6 +404,7 @@ void NotesManager::deleteNote(const QString& id){
     //Suppression de la dernière version
     //Faut il modifier pour mettre CHAQUE version d'une note à isDeleted ?
     //Voir comment naviguer dans les relations avec displayAllVersion
+    std::cout<<id.toStdString()<<" : id en cours a supprimer\n";
     Note& n=getNote(id);
     if (n.getNbIsRef()!=0){
         std::cout<<"La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.\n";
@@ -419,6 +420,7 @@ void NotesManager::deleteNote(const QString& id){
         for(RelationManager::Iterator it= m.getIterator(); !it.isDone(); it.next()){
             it.current().removeNoteRelation(&n);
         }
+        std::cout<<"toutes les relations sont supprimées\n";
         if(n.getNbRef()!=0) n.deleteAllReference();
         n.setIsDeleted(true);
     }
@@ -466,6 +468,7 @@ void NotesManager::deleteNote(const QString& id){
 //}
 
 
+
 void NotesManager::emptyTrash(){
     NotesManager* m=NotesManager::getInstance();
     std::cout<<"\nEMPTY TRASH DEMANDE\n";
@@ -473,17 +476,35 @@ void NotesManager::emptyTrash(){
     while(!itNote.isDone()){
         if (itNote.current().getIsDeleted()){
             Note& n=NotesManager::getNote(itNote.current().getId());
-            cout<<endl<<"// Note : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
+            cout<<endl<<"// Notre en cours de suppression : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
             //===V1
-//            QList<Note*>* liste=getListeVersions(n.getId());
-//            liste->clear();
+            std::cout<<"get the ListeVersion\n";
+            QList<Note*>* listVersion=getListeVersions(n.getId());
+            /*
+            std::cout<<"qDeleteALl\n";
+            qDeleteAll(listVersion->begin(),listVersion->end());
+            std::cout<<"Clear\n";
+            listVersion->clear();
+            std::cout<<"done\n";
+            */
+
             //===V2
+            /*
             QList<Note*>::iterator itVersion=(itNote.liste())->begin();
             while (itVersion!=itNote.liste()->end()) {
                 //TODO : il faut supprimer chaque version de note de la liste courrante
+                itVersion.operator *()->removeAt();
                 itVersion++;
             }
-            //TODO : il faut supprimer la liste entière de cette note.
+            TODO : il faut supprimer la liste entière de cette note.
+            */
+
+            //== V3
+            /*
+            std::cout<<"while isEmpty\n";
+            while (!listVersion->isEmpty())
+                delete listVersion->takeFirst();
+            */
         }
         itNote.next();
     }

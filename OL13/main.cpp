@@ -257,15 +257,6 @@ try{
 
 //   displayAllVersion();
 
-   cout<<"\n\n===== PARTIE TEST DELETE VERSION + EMPTY TRASH =====\n";
-
-   m->deleteNote("test");
-   m->deleteNote("test2");
-//   displayAllVersion();
-
-    //LNA emptyTrash ne marche pas
-//   m->emptyTrash();
-
    cout<<"\n\n===== PARTIE TEST RELATION ET VERSION =====\n";
 
    RelationManager& rm=RelationManager::getInstance();
@@ -292,6 +283,17 @@ try{
       std::cout<<"\nLes relations descendantes de test2 sont :\n";
       for (i = listDescendants.begin(); i != listDescendants.end(); ++i)
           cout << " - "<<(*i)->getId().toStdString() << endl;
+
+      cout<<"\n\n===== PARTIE TEST DELETE VERSION + EMPTY TRASH =====\n";
+
+      m->deleteNote("test");
+      m->deleteNote("test2");
+      displayAllVersion();
+
+      m->emptyTrash();
+//      displayAllVersion();
+
+
 
    cout<<endl<<endl<<"================"<<endl;
 
