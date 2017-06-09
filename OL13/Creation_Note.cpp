@@ -1,3 +1,15 @@
+/**
+ * \file      Creation_Note.cpp
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     //Bref
+ *
+ * \details  //Détail
+ *
+ */
+
+
 #include "Creation_Note.h"
 
 Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null(false), E_note_not_null(true){

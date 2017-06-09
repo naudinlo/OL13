@@ -1,3 +1,14 @@
+/**
+ * \file      manager.cpp
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     Définitions des fonctions déclarées dans le manager.h
+ *
+ * \details  //Détail
+ *
+ */
+
 #include "manager.h"
 #include<fstream>
 #include <QMessageBox>

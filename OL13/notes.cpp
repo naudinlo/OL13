@@ -1,43 +1,44 @@
-//
-//  notes.cpp
-//  OL12PROJET
-//
-//  Created by Louise Naudin on 11/05/2017.
-//  Copyright © 2017 LNA. All rights reserved.
-//
+/**
+ * \file      notes.cpp
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     Définitions des fonctions déclarées dans le notes.h
+ *
+ * \details  Domaines des méthodes comprises dans ce fichier :
+ *              - Opérateur d'affectation et constructeur de recopie
+ *              - Constructeur
+ *              - Destructeur
+ *              - Affichage
+ *              - Référencement de notes
+ *           Le détail est donné dans la suite du fichier.
+ *
+ *
+ */
 
 #include "notes.h"
 #include "sstream"
 #include "QInclude.h"
 
 
-//====DESTRUCTEUR
-
-Note::~Note(){
-//    save();
-    for(unsigned int i=0; i<nbRef; i++) delete references[i];
-    delete[] references;
-}
-
-
-
-
 //====OPERATEUR AFFECTATION, CONSTRUCTEUR DE RECOPIE
 
-//Surcharge la méthode constructeur dans le cas nouvelle note B(A);
-//Note::Note(const Note& n):id(n.id),title(n.title),lastmodif_date(QDateTime::currentDateTime()){
-//};
-Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::currentDateTime()),nbRef(n.nbIsRef),nbMaxRef(n.nbMaxRef),nbIsRef(n.nbIsRef){
+/**
+ * \brief     Constructeur de recopie
+ * \details   Recopie l'ensemble des informations d'une note
+ *            Mets à jour la date de dernière modification avec currentDateTime.
+ * \param    const Note& n         La note a recopier.
+ */
+Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::currentDateTime()),nbRef(n.nbIsRef),nbMaxRef(n.nbMaxRef),nbIsRef(n.nbIsRef),isDeleted(false),isArchive(false){
     Note** references(new Note*[n.nbMaxRef]);
     for(unsigned int i=0; i<n.nbRef; i++){
         this->references[i]=n.references[i];
     }
 };
-////TEST MAUVAISE DATE DE MODIF
-//Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::fromString("M1d1y9800:01:02")),
-//};
 
-//Surcharge de l'opérateur = dans le cas nouvelle note B=A;
+/**
+ * \brief    Surcharge de l'opérateur = dans le cas nouvelle note B=A
+ */
 Note& Note::operator=(const Note& n){
     if (this!=&n){  //empecher l'auto-affectation
         title=n.title;
@@ -45,10 +46,14 @@ Note& Note::operator=(const Note& n){
     return *this;
 };
 
-//Surcharge la méthode constructeur dans le cas nouvel article Article B(A);
+/**
+ * \brief    Surcharge la méthode constructeur dans le cas nouvel article Article B(A)
+ */
 Article::Article(const Article& a):Note(a), text(a.text.toPlainText()){};
 
-//Surcharge de l'opérateur = dans le cas nouvel article Article B=A;
+/**
+ * \brief    Surcharge de l'opérateur = dans le cas nouvel article Article B=A
+ */
 Article& Article::operator=(const Article& a){
     if (this!=&a){  //empecher l'auto-affectation
         Note::operator=(a);
@@ -58,10 +63,14 @@ Article& Article::operator=(const Article& a){
 };
 
 
-//Surcharge la méthode constructeur dans le cas nouvelle task B(A);
+/**
+ * \brief    Surcharge la méthode constructeur dans le cas nouvelle task B(A)
+ */
 Task::Task(const Task& t):Note(t), action(t.action),status(t.status),priority(t.priority),dueDate(t.dueDate){};
 
-//Surcharge de l'opérateur = dans le cas nouvelle task B=A;
+/**
+ * \brief    Surcharge de l'opérateur = dans le cas nouvelle task B=A
+ */
 Task& Task::operator=(const Task& t){
     if (this!=&t){  //empecher l'auto-affectation
         Note::operator=(t);
@@ -73,10 +82,14 @@ Task& Task::operator=(const Task& t){
     return *this;
 };
 
-//Surcharge la méthode constructeur dans le cas nouveau recording B(A);
+/**
+ * \brief    Surcharge de l'opérateur = dans le cas nouveau recording B(A)
+ */
 Recording::Recording(const Recording& r):Note(r),description(r.description.toPlainText()),type(r.type){};
 
-//Surcharge de l'opérateur = dans le cas nouveau recording B=A;
+/**
+ * \brief    Surcharge de l'opérateur = dans le cas nouveau recording B=A
+ */
 Recording& Recording::operator=(const Recording& r){
     if (this!=&r){  //empecher l'auto-affectation
         Recording::operator=(r);
@@ -88,6 +101,11 @@ Recording& Recording::operator=(const Recording& r){
 
 
 //====CONSTRUCTEUR
+/**
+ * \brief       Constructeur des classes notes, articles task et recording
+ * \details     Les classes dérivées Article, Task, Recording utilise en premier lieu le constructeur de Note.
+ *              Dans le constructeur de Note, la date de création et de dernière modification sont mises à jours avec la date courrante.
+ */
 // LNA test ref 09.06
 Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false), references(new Note*[5]), nbRef(0), nbMaxRef(5),nbIsRef(0){
 //Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false), nbRef(0), nbMaxRef(5),nbIsRef(0){
@@ -96,22 +114,47 @@ Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(fals
 }
 
 
+/**
+ * \brief       Constructeur de la classe Article
+ * \details     La classe dérivé Article utilise en premier lieu le constructeur de Note.
+ */
 Article::Article(const QString& i, const QString& ti, const QString &te):Note(i,ti), text(te){}
 
-
+/**
+ * \brief       Constructeur de la classe task
+ * \details     La classe dérivé Task utilise en premier lieu le constructeur de Note.
+ *              Task possède 4 constructeurs différents car deux de ses attributs sont optionnels.
+ */
 Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s):Note(i, ti), action(a), status(s), priority(-1){};  //Premier type de constructeur : les deux optionels oubliés
 Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p):Note(i, ti), action(a), status(s), priority(p){}; //Deuxième type de constructeur : priorité ajoutée
 Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const QDateTime d):Note(i, ti), action(a), status(s), priority(-1), dueDate(d){};  //Troisième type : dueDate ajoutée
 Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d):Note(i, ti), action(a), status(s), priority(p), dueDate(d){} //Quatrième type : prio et dueDate ajoutés
 
-
+/**
+ * \brief       Constructeur de la classe Recording
+ * \details     La classe dérivé Recording utilise en premier lieu le constructeur de Note.
+ */
 Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l):Note(i, ti), description(d), type(r), link(l){};
 
 
 
+//====DESTRUCTEUR
+
+/**
+ * \brief     Destructeur de la classe Note
+ */
+Note::~Note(){
+//    save();
+//    for(unsigned int i=0; i<nbRef; i++) delete references[i];
+//    delete[] references;
+}
+
 //====METHODE ET SURCHARGE
 
-//toString pour display Note
+/**
+ * \brief       Transforme une note en un flux ostream a afficher
+ * \return    Le flux ostream
+ */
 std::string Note::toString()const {
     std::stringstream f;
     f<<"ID: "<<getId().toStdString()<<" ===\n";
@@ -119,7 +162,10 @@ std::string Note::toString()const {
     return f.str();
 }
 
-//toString pour display Article
+/**
+ * \brief     Transforme un article en un flux ostream a afficher
+ * \return    Le flux ostream
+ */
 std::string Article::toString()const {
     std::stringstream f;
     f<<"\n=== ARTICLE "<<getId().toStdString()<<" ===\n";
@@ -141,7 +187,10 @@ std::string Article::toString()const {
     return f.str();
 }
 
-//toString pour display Task
+/**
+ * \brief     Transforme une task en un flux ostream a afficher
+ * \return    Le flux ostream
+ */
 std::string Task::toString() const {
     std::stringstream f;
     f<<"\n=== TASK "<<getId().toStdString()<<" ===\n";
@@ -185,7 +234,10 @@ std::string Task::toString() const {
     return f.str();
 }
 
-//toString pour display Recording
+/**
+ * \brief     Transforme un recording en un flux ostream a afficher
+ * \return    Le flux ostream
+ */
 std::string Recording::toString() const {
     std::stringstream f;
     f<<"\n=== RECORDING "<<getId().toStdString()<<" ===\n";
@@ -219,20 +271,20 @@ std::string Recording::toString() const {
     return f.str();
 }
 
-
-//Surcharge opérateur <<
+/**
+* \brief     Surcharge opérateur <<
+* \details   Version personnalisée pour le type article, task et recording.
+*/
 std::ostream& operator<<(std::ostream& f, const Article& a){
     a.display(f);
     return f;
 }
 
-//Surcharge opérateur <<
 std::ostream& operator<<(std::ostream& f, const Task& t){
     t.display(f);
     return f;
 }
 
-//Surcharge opérateur <<
 std::ostream& operator<<(std::ostream& f, const Recording& r){
     r.display(f);
     return f;
@@ -250,10 +302,19 @@ QString getRecordingtoStr(ENUM::StatusType recording) {
     return recordingName[recording];
 }
 
+
+
+
+
 // LNA test ref 09.06
 
 //====REFERENCE
-
+/**
+ * \brief     Définie une note comme référence d'une autre
+ * \details   Lorsqu'une note prend comme référence une autre, cette autre note augmente son attribut
+ *              nbIsRef lui permettant de connaître le nombre de notes qui la référencent.
+ * \param    Note* n         La note référencée.
+ */
 Note& Note::setNewRef(Note* n){
     for(unsigned int i=0; i<nbRef; i++){
         if (references[i]->getId()==n->getId()){
@@ -266,6 +327,10 @@ Note& Note::setNewRef(Note* n){
     return *n;
 };
 
+/**
+ * \brief     Ajoute une note au tableau des références d'une note
+ * \param    Note* n         La note a ajouté au tableau référence.
+ */
 void Note::addReference(Note* n){
     if (nbRef==nbMaxRef){
         //besoin en grandissement
@@ -283,6 +348,10 @@ void Note::addReference(Note* n){
     nbRef++;
 };
 
+/**
+ * \brief     Retourne une note référencée par une autre
+ * \param    const QString& id         L'ID de la note référencée.
+ */
 Note& Note::getReference(const QString& id)const{
     for(unsigned int i=0; i<nbRef; i++){
         if (references[i]->getId()==id){
@@ -297,6 +366,10 @@ Note& Note::getReferenceInt(unsigned int i) const{
   return (*references[i]);
 };
 
+/**
+ * \brief     Supprime la référence sur une note spécifiée par son ID
+ * \param    const QString& id         L'ID de la note référencée a supprimer.
+ */
 void Note::deleteReference(const QString& id){
     for(unsigned int i=0; i<nbRef; i++){
         if (references[i]->getId()==id)
@@ -307,7 +380,11 @@ void Note::deleteReference(const QString& id){
     }
 }
 
-
+/**
+ * \brief     Supprime l'ensemble des références d'une note
+ * \details   À chaque suppression, les notes anciennement référencées par cette note diminuent
+ *              le nombre de notes qui les références.
+ */
 void Note::deleteAllReference(){
     for(unsigned int i=0; i<nbRef; i++){
         references[i]->setNbIsRef(references[i]->getNbIsRef()-1);

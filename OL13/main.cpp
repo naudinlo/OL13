@@ -1,10 +1,14 @@
-//
-//  main.cpp
-//  OL12P
-//
-//  Created by Louise Naudin on 11/05/2017.
-//  Copyright © 2017 LNA. All rights reserved.
-//
+/**
+ * \file      main.cpp
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     //Bref
+ *
+ * \details  //Détail
+ *
+ */
+
 
 #include "QInclude.h"
 //#include "include.h"
