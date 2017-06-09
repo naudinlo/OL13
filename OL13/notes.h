@@ -29,7 +29,8 @@
  *                  - Recording
  *                      Classe recording, dérivant de la classe Note, avec en plus les attributs descriptions,
  *                        type et un link vers un fichier image, audio ou video.
-
+ *
+ *              Détail des méthodes donné dans le .cpp.
  */
 
 
