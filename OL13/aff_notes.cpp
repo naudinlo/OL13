@@ -5,6 +5,7 @@ page_notes::page_notes(Note& N):n(N)
     /** Window fenetre principale:
      *
 ***/
+        QMessageBox::information(this,"nbRef Note",QString::number(n.getNbRef()));
         layout_p=new QVBoxLayout(this);
         layout_titre=new QHBoxLayout;
         info=new QLabel("Cette note est un "+n.getType()+"\nCréation le "+n.getCreation_date().toString("dd.MM.yyyy hh:mm")+"\nDernière modification le "+n.getLastmodif_date().toString("dd.MM.yyyy hh:mm"));

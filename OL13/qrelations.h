@@ -6,6 +6,16 @@
 #include "manager.h"
 #include "notes.h"
 
+class QManager_relation{
+
+    //Qrelations* currentR;
+public:
+    QManager_relation();
+};
+
+
+
+
 class QNotesCouple: public QWidget {
 private:
     Note* notex;

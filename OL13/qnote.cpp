@@ -298,3 +298,4 @@ void QRecording::saveNote(Note &N){
     n.setLink(E_link->text());
     n.setType(t);
 }
+

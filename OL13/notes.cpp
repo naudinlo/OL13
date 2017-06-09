@@ -9,7 +9,8 @@
 #include "notes.h"
 #include "sstream"
 #include "QInclude.h"
-
+#include "string"
+#include "manager.h"
 
 
 //====OPERATEUR AFFECTATION, CONSTRUCTEUR DE RECOPIE
@@ -242,6 +243,28 @@ QString getRecordingtoStr(ENUM::StatusType recording) {
 
 
 //====REFERENCE
+void Note::check_newRef(QString str){
+    int j,it;
+    while ((j =str.indexOf("\ref{",j))!=-1) {
+        //on a trouver une nouvelle ref à la position j
+        //on va devoir récuper le non de l'id qui se trouve entre {  }
+        j+=QString("\ref{").length();
+        int i=str.indexOf("}",j);
+        //maintenant on recuperer l'id situé entre les deux indices
+        QString id;
+        for(it=j;it<i;it++){
+            id.append(str[it]);
+        }
+        //try{
+            setNewRef(&(NotesManager::getInstance()->getNote(id)));
+        //}
+        //catch(NotesException e){
+                QMessageBox::warning(0,"\ref{ }", "e.getinfo()");
+        //}
+    }
+}
+
+
 
 Note& Note::setNewRef(Note* n){
     for(unsigned int i=0; i<nbRef; i++){

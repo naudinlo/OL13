@@ -61,6 +61,8 @@ interface::interface(): QMainWindow(), indexNote()
         toolBar_supp_note=addToolBar("Edition");
         toolBar_supp_note->addAction(ActionSupprimer);
 
+    //Action: afficher les relation
+
     CreateDock_selected_Note();
     setCentralWidget(ZoneCentrale);
 }

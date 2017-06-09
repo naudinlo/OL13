@@ -54,7 +54,7 @@ private:
 //    Note ** isreferenced;
 //    unsigned int nbIsRef;
 //    unsigned int nbMaxIsRef;
-
+    void check_newRef(QString str);
     void addReference(Note* n);
     //    void addIsReferenced(Note* n);
 
@@ -71,7 +71,7 @@ public:
     QString getType()const {return QString(typeid(*this).name()).remove(0,1);}
     Note(const QString& i, const QString& ti);
 
-    void setTitle(const QString& t){title=t;}
+    void setTitle(const QString& t){check_newRef(t); title=t;}
     void setLastmodif_date(const QDateTime& d){lastmodif_date=d;}
 
     //PRIVATE ?
