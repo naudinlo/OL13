@@ -38,7 +38,7 @@ class interface:public QMainWindow
     Creation_Note* fen_creerNote; //fenetre pour créer une note
     selection_note* listNote; //liste des notes
     page_notes* note_page;    //affichage d'une note
-    Edit_relation* relation; //fenetre d'ajout de relation
+    Edit_relation* new_relation; //fenetre d'ajout de relation
     NotesManager* note_manager;
     supp_note* fen_supp;
 
@@ -49,11 +49,14 @@ class interface:public QMainWindow
     QMenu *MenuAff;
     QMenu *fichiersRecents;
     QAction* Action_new_relation;
+    QAction* Action_aff_relation;
     QToolBar* toolBar_new_Rel;
     QToolBar* toolBar_supp_note;
+    QToolBar* toolBar_save_note;
+    QToolBar* toolBar_aff_Rel;
     QDockWidget* dock_selected_Note;
     QDockWidget* dock_editer_note;
-    //QDockWidget* dock_aff_Relation;
+    QDockWidget* dock_aff_Relation;
 
     //A modifier
     int indexNote;
@@ -75,8 +78,11 @@ signals:
 
 public slots:
    void E_relation(){
-       relation = new Edit_relation(listNote->getModel(),indexNote,note_id,this);
-       relation->show();
+       new_relation = new Edit_relation(listNote->getModel(),indexNote,note_id,this);
+       new_relation->show();
+
+   }
+   void Aff_relation(){
 
    }
 

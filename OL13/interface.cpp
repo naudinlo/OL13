@@ -54,6 +54,13 @@ interface::interface(): QMainWindow(), indexNote()
         toolBar_new_Rel->addAction(Action_new_relation);
         toolBar_new_Rel->setHidden(true);
 
+        Action_aff_relation=new QAction("Afficher les relations ",this);
+        Action_aff_relation->setShortcut(QKeySequence("ctrl+A"));
+        connect(Action_aff_relation,SIGNAL(triggered(bool)),this,SLOT(Aff_relation()));
+        toolBar_new_Rel=addToolBar("Edition");
+        toolBar_new_Rel->addAction(Action_aff_relation);
+        toolBar_new_Rel->setHidden(true);
+
     //Action: supprimer une note
         //TODO : supprimer note ! Créer slot supprimer_note
         QAction *ActionSupprimer=new QAction("&Supprimer note",this);
@@ -79,7 +86,13 @@ void interface::CreateDock_edited_Note(){
     MenuEd->addAction(dock_editer_note->toggleViewAction());
     connect(note_page,SIGNAL(supp_dock_editer()),this,SLOT(supp_dock_editer()));
 
+    dock_aff_Relation=new QDockWidget("Afficher les relations",this);
+    dock_aff_Relation->setAllowedAreas(Qt::LeftDockWidgetArea);
+    dock_aff_Relation->setWidget(&(note_page->getdock_aff_rel()));
+    MenuEd->addAction(dock_aff_Relation->toggleViewAction());
 }
+
+
 /*
 void interface::CreateDock_aff_Relation(){
     dock_aff_Relation=new QDockWidget("Afficher les relation liès à cette Note",this);

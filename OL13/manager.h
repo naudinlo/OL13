@@ -123,6 +123,7 @@ private:
 public:
     Relation &getNewRelation(const QString& title,const QString& desc);
     Relation &getRelation(const QString& title);
+    QList<Relation&>* &getRelation(const QString& id); //fct renvoyant tous les relations d'une note
     void deleteRelation(const QString& title);
 
     unsigned int getNbRelations() const{return nbRelations;}

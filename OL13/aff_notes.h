@@ -4,6 +4,7 @@
 #include "notes.h"
 #include "qnote.h"
 #include "manager.h"
+#include "qrelations.h"
 class page_notes: public QWidget
 {
     Q_OBJECT
@@ -18,13 +19,17 @@ protected:
     //QLineEdit* titre;
     QLabel* info;
     QVBoxLayout* layout_p;
-    QWidget* dock; //à vérifier
+    Qrelations* dock_aff_Rel; //à vérifier
 public:
     page_notes(Note &N);
     ~page_notes();
     QWidget& getdock_editer(){
         return *dock_editer;
     }
+    Qrelations& getdock_aff_rel(){
+        return *dock_aff_Rel;
+    }
+
 signals:
     void supp_dock_editer();
     void update_model();

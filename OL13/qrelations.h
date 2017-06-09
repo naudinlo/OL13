@@ -20,11 +20,25 @@ public:
 
 };
 
-class Qrelations
+class Qrelations: public QWidget
 {
     Relation& R; //Relation Courante
+
+    QGridLayout* L_fen;
+    QLabel* titre;
+    QGroupBox* description;
+    QHBoxLayout* L_description;
+    QLineEdit* E_titre;
+    QTextEdit* E_description;
+    QLabel* Label_from;
+    QLabel* Label_to;
+    QStandardItemModel* model;
+    QListView* ref_from;
+    QListView* ref_to;
+    QPushButton* append;
+
 public:
-    Qrelations(QString t, QString d);
+    Qrelations(QString id);
     void getNewCoupleRelation(Note* n1,Note* n2,QString l=0,bool s=false)
     {
         R.getNewCoupleRelation(n1,n2,l,s);
