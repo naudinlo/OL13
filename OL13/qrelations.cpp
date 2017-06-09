@@ -56,8 +56,12 @@ QDockRelation::QDockRelation(const QString& id){
 
        rel_from=new QListView;
        rel_from->setModel(model_from);
+       rel_from->setEditTriggers(QAbstractItemView::NoEditTriggers);
+       connect(rel_from,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_From_selection(QModelIndex)));
        rel_to=new QListView;
        rel_to->setModel(model_to);
+       rel_to->setEditTriggers(QAbstractItemView::NoEditTriggers);
+       connect(rel_to,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_to_selection(QModelIndex)));
 
        L_fen->addWidget(Label_to);
        L_fen->addWidget(rel_from);
@@ -70,9 +74,14 @@ QDockRelation::QDockRelation(const QString& id){
        //connect(vue,SIGNAL(activated(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
 
 }
+void QDockRelation::emit_From_selection(QModelIndex i){
 
+    emit(selection(model_from->itemFromIndex(i)->whatsThis(),i,0));
+}
+void QDockRelation::emit_to_selection(QModelIndex i){
 
-
+    emit(selection(model_to->itemFromIndex(i)->whatsThis(),i,0));
+}
 Edit_relation::Edit_relation(QStandardItemModel* m,int index,QString id, QWidget* parent): QDialog(parent),
     model(m),note(NotesManager::getInstance()->getNote(id)){
     /*** Window: Permettant de chosir le titre, la descp de la relation, et les notes faisant

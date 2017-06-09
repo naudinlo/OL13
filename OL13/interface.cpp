@@ -108,6 +108,7 @@ void interface::CreateDock_edited_Note(){
     dock_aff_Relation->setWidget(note_page->getdock_aff_rel());
     MenuEd->addAction(dock_aff_Relation->toggleViewAction());
     connect(note_page,SIGNAL(supp_dock_aff_rel()),this,SLOT(supp_dock_aff_rel()));
+    connect(note_page->getdock_aff_rel(),SIGNAL(selection(QString,QModelIndex,int)),this,SLOT(afficher_note(QString,QModelIndex,int)));
 }
 
 

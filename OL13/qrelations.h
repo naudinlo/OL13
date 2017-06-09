@@ -21,6 +21,7 @@ public:
 };
 
 class QDockRelation:public QWidget{
+    Q_OBJECT
     QGridLayout* L_fen;
     QLabel* Label_from;
     QLabel* Label_to;
@@ -30,6 +31,11 @@ class QDockRelation:public QWidget{
     QListView* rel_to;
 public:
     QDockRelation(const QString &id);
+public slots:
+    void emit_From_selection(QModelIndex i);
+    void emit_to_selection(QModelIndex i);
+signals:
+    void selection(QString, QModelIndex, int);
 };
 
 
