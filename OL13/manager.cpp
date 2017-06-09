@@ -248,88 +248,6 @@ QList<Note*>* NotesManager::getListeVersions(const QString& id){
 }
 
 
-//ERREUR ICI : il faut un getRelation ou quelque chose pour accéder à l'ensemble des couples relation d'une relation
-//Ou un manager de relation de relation ?
-
-// QList<Note*>* getListAscendants(const QString& id){
-//    RelationManager& rm=RelationManager::getInstance();
-//    QList<Note*>* listAscendants;
-//    //    for(RelationManager::Iterator it=rm.getIterator(); !it.isDone(); it.next()){
-//    for(RelationManager::Iterator itManager=rm.getIterator(); !itManager.isDone(); itManager.next()){
-//        Relation& r=itManager.current();
-//        std::cout<<"Relation retrouvée "<<r.getTitle().toStdString()<<"\n";
-////        for(Relation::Iterator itRel=r.getIterator(); !itRel.isDone(); itRel.next()){
-////            if (itRel.current().getCoupleNoteX()->getId()==id){
-////                Note& n=NotesManager::getInstance()->getNote(id);
-////                std::cout<<" NOTE TROUVÉE "<<n.getId().toStdString()<<"\n";
-//////                listAscendants->push_front(&n);
-////            }
-////        }
-//    }
-//}
-
-
-//QList<Note*>* getListAscendants(const QString& id){
-void NotesManager::getListAscendants(const QString& id){
-    std::cout<<"\nLes relations ascendantes de "<<id.toStdString()<<" sont :\n";
-   RelationManager& rm=RelationManager::getInstance();
-   QList<Note*>* listAscendants;
-   for(RelationManager::Iterator itManager=rm.getIterator(); !itManager.isDone(); itManager.next()){
-       Relation& r=itManager.current();
-        for(Relation::Iterator itRel=r.getIterator(); !itRel.isDone(); itRel.next()){
-            if (itRel.current().getCoupleNoteX()->getId()==id){
-                Note& ny=NotesManager::getInstance()->getNote(itRel.current().getCoupleNoteY()->getId());
-                std::cout<<"  - "<<ny.getId().toStdString()<<"\n";
-//                listAscendants->push_front(ny);
-//                listAscendants->append(&ny);
-            }
-        }
-   }
-}
-
-void NotesManager::getListDescendants(const QString& id){
-    std::cout<<"\nLes relations descendantes de "<<id.toStdString()<<" sont :\n";
-   RelationManager& rm=RelationManager::getInstance();
-   QList<Note*>* listDescendants;
-   for(RelationManager::Iterator itManager=rm.getIterator(); !itManager.isDone(); itManager.next()){
-       Relation& r=itManager.current();
-        for(Relation::Iterator itRel=r.getIterator(); !itRel.isDone(); itRel.next()){
-            if (itRel.current().getCoupleNoteY()->getId()==id){
-                Note& nx=NotesManager::getInstance()->getNote(itRel.current().getCoupleNoteX()->getId());
-                std::cout<<"  - "<<nx.getId().toStdString()<<"\n";
-//                listDescendants->push_front(nx);
-//                listDescendants->append(&nx);
-            }
-        }
-   }
-}
-
-// QList<Note*>* getListAscendants(const QString& id){
-//     QList<Note*>* listAscendants;
-//     RelationManager& m=RelationManager::getInstance();
-//     Note& n=NotesManager::getInstance()->getNote(id);
-//     //Recherche la présence d'une note dans l'ensemble des relations
-//     for(RelationManager::Iterator it= m.getIterator(); !it.isDone(); it.next()){
-//         listAscendants=it.current().addNoteAscendant(&n,listAscendants);
-//     }
-//    return listAscendants;
-// }
-
-
-//QList<Note*>* getListDescendants(const QString& id){
-//    RelationManager& rm=RelationManager::getInstance();
-//    QList<Note*>* listDescendants;
-//    for(RelationManager::Iterator it=rm.getIterator(); !it.isDone(); it.next()){
-//        if (relations[i]->getCoupleNoteY()->getId()==id){
-//            Note& n=NotesManager::getInstance()->getNote(id);
-//            listDescendants->push_front(n);
-//        }
-//    }
-//}
-
-
-
-
 NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0){}
 
 NotesManager::~NotesManager(){
@@ -643,6 +561,51 @@ void RelationManager::deleteRelation(const QString &title){
     }
     throw NotesException ("error, impossible to delete, non existent relation");
 }
+
+
+//QList<Note*> getListAscendants(const QString& id){
+void NotesManager::getListAscendants(const QString& id){
+   std::cout<<"\nLes relations ascendantes de "<<id.toStdString()<<" sont :\n";
+   RelationManager& rm=RelationManager::getInstance();
+//   QList<Note*>* listAsc;
+   QList<Note*> listAscendants;
+   for(RelationManager::Iterator itManager=rm.getIterator(); !itManager.isDone(); itManager.next()){
+       Relation& r=itManager.current();
+        for(Relation::Iterator itRel=r.getIterator(); !itRel.isDone(); itRel.next()){
+            if (itRel.current().getCoupleNoteX()->getId()==id){
+                Note& ny=NotesManager::getInstance()->getNote(itRel.current().getCoupleNoteY()->getId());
+                std::cout<<"  - "<<ny.getId().toStdString()<<"\n";
+//                listAsc->push_front(ny);
+//                listAsc->append(&ny);
+                  listAscendants.append(&ny);
+            }
+        }
+   }
+//   return listAscendants;
+//   //Test pour voir si la liste retourne bien les bonnes choses
+//   QList<Note*>::iterator i;
+//   for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
+//       cout << (*i)->getId().toStdString() << endl;
+}
+
+void NotesManager::getListDescendants(const QString& id){
+   std::cout<<"\nLes relations descendantes de "<<id.toStdString()<<" sont :\n";
+   RelationManager& rm=RelationManager::getInstance();
+   QList<Note*>* listDescendants;
+   for(RelationManager::Iterator itManager=rm.getIterator(); !itManager.isDone(); itManager.next()){
+       Relation& r=itManager.current();
+        for(Relation::Iterator itRel=r.getIterator(); !itRel.isDone(); itRel.next()){
+            if (itRel.current().getCoupleNoteY()->getId()==id){
+                Note& nx=NotesManager::getInstance()->getNote(itRel.current().getCoupleNoteX()->getId());
+                std::cout<<"  - "<<nx.getId().toStdString()<<"\n";
+//                listDescendants->push_front(nx);
+//                listDescendants->append(&nx);
+            }
+        }
+   }
+}
+
+
 
 RelationManager::Handler RelationManager::handler=RelationManager::Handler();
 
