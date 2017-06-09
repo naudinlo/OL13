@@ -10,9 +10,11 @@ Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const 
     Article* n=new Article(id,ti,te);
     NotesManager::Iterator it=NotesManager::getIterator();
     while(!it.isDone()){
-        if (it.current().getId()==id){
-            throw NotesException("error, creation of an already existent note");
-            return (Article&)it.current();
+        if(!it.liste()->isEmpty()){
+            if (it.current().getId()==id){
+                throw NotesException("error, creation of an already existent note");
+                return (Article&)it.current();
+            }
         }
         it.next();
     }
@@ -475,18 +477,16 @@ void NotesManager::emptyTrash(){
     NotesManager::Iterator itNote=m->getIterator();
     while(!itNote.isDone()){
         if (itNote.current().getIsDeleted()){
-            Note& n=NotesManager::getNote(itNote.current().getId());
-            cout<<endl<<"// Notre en cours de suppression : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
+            //Note& n=NotesManager::getNote(itNote.current().getId());
+            cout<<endl<<"// Note en cours de suppression : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
             //===V1
-            std::cout<<"get the ListeVersion\n";
-            QList<Note*>* listVersion=getListeVersions(n.getId());
-            /*
+            //std::cout<<"get the ListeVersion\n";
+            //QList<Note*>* listVersion=getListeVersions(itNote.current().getId());
             std::cout<<"qDeleteALl\n";
-            qDeleteAll(listVersion->begin(),listVersion->end());
+            qDeleteAll(itNote.liste()->begin(),itNote.liste()->end());
             std::cout<<"Clear\n";
-            listVersion->clear();
+            itNote.liste()->clear();
             std::cout<<"done\n";
-            */
 
             //===V2
             /*

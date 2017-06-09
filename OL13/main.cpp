@@ -50,13 +50,15 @@ void displayAllVersion(){
     std::cout<<"\n*=== ALL VERSIONS ALL NOTES ===*\n";
     NotesManager::Iterator itNote=m->getIterator();
     while(!itNote.isDone()){
-        cout<<endl<<"// Versions de la note : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
-        QList<Note*>::iterator itVersion=(itNote.liste())->begin();
-        unsigned int i=0;
-        while (itVersion!=itNote.liste()->end()) {
-            cout<<endl<<"--- Version "<<i++<<" ---";
-            itVersion.operator *()->display();
-            itVersion++;
+        if(!itNote.liste()->isEmpty()){
+            cout<<endl<<"// Versions de la note : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
+            QList<Note*>::iterator itVersion=(itNote.liste())->begin();
+            unsigned int i=0;
+            while (itVersion!=itNote.liste()->end()) {
+                cout<<endl<<"--- Version "<<i++<<" ---";
+                itVersion.operator *()->display();
+                itVersion++;
+            }
         }
         itNote.next();
     }
@@ -291,7 +293,12 @@ try{
       displayAllVersion();
 
       m->emptyTrash();
-//      displayAllVersion();
+      NotesManager::Iterator it=m->getIterator();
+      it.next();
+      it.current().display();
+      displayAllVersion();
+
+      m->getNewArticle("TestReinsertion","TestReins","Test de la reinsertion d'une note apres une suppression");
 
 
 
