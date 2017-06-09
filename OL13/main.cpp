@@ -1,10 +1,14 @@
-//
-//  main.cpp
-//  OL12P
-//
-//  Created by Louise Naudin on 11/05/2017.
-//  Copyright © 2017 LNA. All rights reserved.
-//
+/**
+ * \file      main.cpp
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     //Bref
+ *
+ * \details  //Détail
+ *
+ */
+
 
 #include "QInclude.h"
 //#include "include.h"
@@ -50,13 +54,15 @@ void displayAllVersion(){
     std::cout<<"\n*=== ALL VERSIONS ALL NOTES ===*\n";
     NotesManager::Iterator itNote=m->getIterator();
     while(!itNote.isDone()){
-        cout<<endl<<"// Versions de la note : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
-        QList<Note*>::iterator itVersion=(itNote.liste())->begin();
-        unsigned int i=0;
-        while (itVersion!=itNote.liste()->end()) {
-            cout<<endl<<"--- Version "<<i++<<" ---";
-            itVersion.operator *()->display();
-            itVersion++;
+        if(!itNote.liste()->isEmpty()){
+            cout<<endl<<"// Versions de la note : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
+            QList<Note*>::iterator itVersion=(itNote.liste())->begin();
+            unsigned int i=0;
+            while (itVersion!=itNote.liste()->end()) {
+                cout<<endl<<"--- Version "<<i++<<" ---";
+                itVersion.operator *()->display();
+                itVersion++;
+            }
         }
         itNote.next();
     }
@@ -142,14 +148,14 @@ void relation(){
     displayAllRelation();
 */
 
-    t2.setNewRef(&r1);
-    r1.setNewRef(&r2);
+//    t2.setNewRef(&r1);
+//    r1.setNewRef(&r2);
 
     nm->deleteNote("article_1");
     nm->deleteNote("article_2");
     displayAllNote();
 
-    nm->emptyTrash();
+//    nm->emptyTrash();
 
     //ATTENTION : IL FAUT FREE LE TABLEAU DE REF
     nm->deleteNote("task_2");
@@ -230,47 +236,78 @@ try{
    Article& a1=m->getNewArticle("test","test1","test de l'itérator");
 //   m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
    Task& t1=m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
-   m->getNewArticle("test2","test2","test2 de l'itérator");
+   Article& ar1=m->getNewArticle("test2","test2","test2 de l'itérator");
+
+   Article& a2=m->editArticle(a1);
+   a2.setTitle("test1v2");
+   a2.setText("test des versions editées");
+
+   Task& t2=m->editTask(t1);
+   t2.setTitle("testTaskv2");
+   t2.setAction("URGENT edition");
 
 
-//   m->editArticle("test","test1v2","test des versions editées");
-   m->editArticle(a1);
-   a1.setTitle("test1v2");
-   a1.setText("test des versions editées");
+//   NotesManager::Iterator it=m->getIterator();
+//   cout<<it.current();
+//   while(!it.isDone()){
+//       cout<<endl<<endl<<"Note"<<endl<<"================"<<endl;
+//       QList<Note*>::iterator it3=(it.liste())->begin();
+//       while (it3!=it.liste()->end()) {
+//            it3.operator *()->display();
+//            it3++;
+//       }
+//       it.next();
+//   }
+//    m->setFilename("test_save.xml");
+//    m->save();
 
-//   m->editTask("testTask","testTask2","testTask version edit",ENUM::Completed);
-   m->editTask(t1);
+//   displayAllVersion();
 
-   /*QList<Note*>* l=m->getListeVersions("test");
-   QList<Note*>::iterator it2=l->begin();
-   while(it2!=l->end()){
-       it2.operator *()->display();
-       it2++;
-   }*/
+   cout<<"\n\n===== PARTIE TEST RELATION ET VERSION =====\n";
+
+   RelationManager& rm=RelationManager::getInstance();
+   Relation& rel1=rm.getNewRelation("titreRelation1", "descriptionRelation1");
+   Relation& rel2=rm.getNewRelation("titreRelation2", "descriptionRelation2");
+   rel1.getNewCoupleRelation(&a2,&t2);
+   rel1.getNewCoupleRelation(&ar1,&t2);
+   rel1.getNewCoupleRelation(&a2,&ar1);
+   rel2.getNewCoupleRelation(&a2,&ar1);
+//   displayAllRelation();
+//   cout<<rel1.displayRelation();
+   cout<<rel2.displayRelation();
+//   rel1.removeNoteRelation(&a2);
+   cout<<rel1.displayRelation();
+
+   QList<Note*> listAscendants=m->getListAscendants("test");
+   QList<Note*> listDescendants=m->getListDescendants("test2");
+
+      //Test pour voir si la liste retourne bien les bonnes choses
+      QList<Note*>::iterator i;
+      std::cout<<"\nLes relations ascendantes de test sont :\n";
+      for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
+          cout << " - "<<(*i)->getId().toStdString() << endl;
+      std::cout<<"\nLes relations descendantes de test2 sont :\n";
+      for (i = listDescendants.begin(); i != listDescendants.end(); ++i)
+          cout << " - "<<(*i)->getId().toStdString() << endl;
+
+      cout<<"\n\n===== PARTIE TEST DELETE VERSION + EMPTY TRASH =====\n";
+
+      m->deleteNote("test");
+      m->deleteNote("test2");
+      displayAllVersion();
+
+      m->emptyTrash();
+      NotesManager::Iterator it=m->getIterator();
+      it.next();
+      it.current().display();
+      displayAllVersion();
+
+      m->getNewArticle("TestReinsertion","TestReins","Test de la reinsertion d'une note apres une suppression");
 
 
-   NotesManager::Iterator it=m->getIterator();
-   cout<<it.current();
-   while(!it.isDone()){
-       cout<<endl<<endl<<"Note"<<endl<<"================"<<endl;
-       QList<Note*>::iterator it3=(it.liste())->begin();
-       while (it3!=it.liste()->end()) {
-            it3.operator *()->display();
-            it3++;
-       }
-       it.next();
-   }
-    m->setFilename("test_save.xml");
-    m->save();
-
-   displayAllVersion();
 
    cout<<endl<<endl<<"================"<<endl;
 
-   //cout<<"test du getNote"<<endl<<"======================================="<<endl;
-   //m->getNote("test").display();
-   //m->getNote("test2").display();
-   //m->getNote("testTask").display();
     }
     catch(NotesException& e){
         std::cout<<e.getinfo().toStdString()<<"\n";
@@ -281,8 +318,8 @@ try{
 
 int main(int argc, char * argv[]) {
 
-    //fct();
-    PROGRAMME(argc,argv);
+    fct();
+    //PROGRAMME(argc,argv);
     //creation();
     return 0;
 }

@@ -1,10 +1,12 @@
-//
-//  include.h
-//  OL12PROJET
-//
-//  Created by Louise Naudin on 11/05/2017.
-//  Copyright © 2017 LNA. All rights reserved.
-//
+/**
+ * \file      include.h
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     Regroupe l'ensemble des includes nécessaires au projet
+ *
+ */
+
 
 #ifndef include_h
 #define include_h

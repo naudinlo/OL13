@@ -1,3 +1,19 @@
+/**
+ * \file      aff_notes.h
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     //Expliquer brievement à quoi sert ce fichier.
+ *              //EX : Définit les modèles de voiture et leur particularités.
+ *
+ * \details    //Expliquer en détail.
+ *              //EX :Cette classe surcharge les accesseurs standards du module_voiture pour
+ *                  convenir aux spécificités des différents modèles possibles.
+ */
+
+
+
+
 #ifndef AFF_NOTES_H
 #define AFF_NOTES_H
 #include "QInclude.h"

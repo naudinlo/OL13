@@ -1,18 +1,30 @@
+/**
+ * \file      relations.cpp
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     Définitions des fonctions déclarées dans le relations.h
+ *
+ * \details  //Détail
+ *
+ */
+
+
 #include "relations.h"
 #include "sstream"
 
 
-//A FAIRE
 std::string Relation::displayRelation(){
 //    RelationManager& rm=RelationManager::getInstance();
     std::stringstream f;
+    f<<"\n"<<this->getTitle().toStdString()<<" "<<this->getDescription().toStdString()<<endl;
     for(Relation::Iterator it=this->getIterator(); !it.isDone(); it.next()){
-        f<<"  - Note "<<it.current().getCoupleNoteX()->getId().toStdString();
+        f<<"\n  - Note "<<it.current().getCoupleNoteX()->getId().toStdString();
         f<<" vers Note "<<it.current().getCoupleNoteY()->getId().toStdString();
         if (it.current().getSymetric()) f<<"  de façon symétrique.";
         if (it.current().getLabel()!=0) f<<"\n    Label : "<<it.current().getLabel().toStdString();
-        f<<std::endl;
     };
+    f<<std::endl;
     return f.str();
 }
 
@@ -68,8 +80,8 @@ void Relation::displayCoupleRelation(Note *n1, Note *n2)const{
     if (nc!=0){
         std::cout<<"\n=== RELATION "<<this->getTitle().toStdString()<<" ===\n";
         std::cout<<"\n - Description : "<<this->getDescription().toStdString();
-        std::cout<<"\n - Note "<<nc->getCoupleNoteX()->getTitle().toStdString();
-        std::cout<<" est en relation avec Note "<<nc->getCoupleNoteY()->getTitle().toStdString();
+        std::cout<<"\n - Note "<<nc->getCoupleNoteX()->getId().toStdString();
+        std::cout<<" est en relation avec Note "<<nc->getCoupleNoteY()->getId().toStdString();
         if (nc->getLabel()!=0) std::cout<<"\n - Label : "<<nc->getLabel().toStdString();
         std::cout<<"\n - Relation symétrique : ";
         if (nc->getSymetric()) std::cout<<"Yes";
@@ -114,6 +126,31 @@ void Relation::removeNoteRelation(Note* n1){
     }
 }
 
+
+//QList<Note*>* Relation::addNoteAscendant(Note * n, QList<Note*>* listAscendants){
+//    for(unsigned int i=0; i<nbCouple; i++){
+//        if (relations[i]->getCoupleNoteX()->getId()==n->getId()){
+////            Note& ny=NotesManager::getInstance()->getNote(relations[i]->getCoupleNoteY()->getId());
+//            Note* ny=relations[i]->getCoupleNoteY();
+//            listAscendants->push_front(ny);
+//        }
+//    }
+//    return listAscendants;
+//}
+
+//Note** Relation::noteRelAsc(Note * n){
+//    Note ** tabNoteAsc[5];
+//    unsigned int nbNoteAsc=0;
+//    for(unsigned int i=0; i<nbCouple; i++){
+//        if (relations[i]->getCoupleNoteX()->getId()==n->getId()){
+////            Note& ny=NotesManager::getInstance()->getNote(relations[i]->getCoupleNoteY()->getId());
+//            Note* ny=relations[i]->getCoupleNoteY();
+//            std::cout<<"une trouve : "<<ny->getId().toStdString();
+//            tabNoteAsc[nbNoteAsc++]=*ny;
+//        }
+//    }
+//    return tabNoteAsc;
+//}
 
 
 

@@ -1,3 +1,14 @@
+/**
+ * \file      manager.cpp
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     Définitions des fonctions déclarées dans le manager.h
+ *
+ * \details  //Détail
+ *
+ */
+
 #include "manager.h"
 #include<fstream>
 #include <QMessageBox>
@@ -10,9 +21,11 @@ Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const 
     Article* n=new Article(id,ti,te);
     NotesManager::Iterator it=NotesManager::getIterator();
     while(!it.isDone()){
-        if (it.current().getId()==id){
-            throw NotesException("error, creation of an already existent note");
-            return (Article&)it.current();
+        if(!it.liste()->isEmpty()){
+            if (it.current().getId()==id){
+                throw NotesException("error, creation of an already existent note");
+                return (Article&)it.current();
+            }
         }
         it.next();
     }
@@ -248,34 +261,6 @@ QList<Note*>* NotesManager::getListeVersions(const QString& id){
 }
 
 
-//ERREUR ICI : il faut un getRelation ou quelque chose pour accéder à l'ensemble des couples relation d'une relation
-//Ou un manager de relation de relation ?
-/*
- * QList<Note*>* getListAscendants(const QString& id){
-    RelationManager& rm=RelationManager::getInstance();
-    QList<Note*>* listAscendants;
-    for(RelationManager::Iterator it=rm.getIterator(); !it.isDone(); it.next()){
-        if (it.current()->getCoupleNoteX()->getId()==id){
-            Note& n=NotesManager::getInstance()->getNote(id);
-            listAscendants->push_front(n);
-        }
-    }
-}
-
-QList<Note*>* getListDescendants(const QString& id){
-    RelationManager& rm=RelationManager::getInstance();
-    QList<Note*>* listDescendants;
-    for(RelationManager::Iterator it=rm.getIterator(); !it.isDone(); it.next()){
-        if (relations[i]->getCoupleNoteY()->getId()==id){
-            Note& n=NotesManager::getInstance()->getNote(id);
-            listDescendants->push_front(n);
-        }
-    }
-}
-*/
-
-
-
 NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0){}
 
 NotesManager::~NotesManager(){
@@ -429,40 +414,110 @@ void NotesManager::libererInstance(){
 
 void NotesManager::deleteNote(const QString& id){
     NotesManager::Iterator it=NotesManager::getIterator();
-    while(!it.isDone()){
-        if (it.current().getId()==id){
-            Note* n=&it.current();
-            if (n->getNbIsRef()!=0){
-                std::cout<<"La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.";
-                QMessageBox msgBox;
-                msgBox.setText("La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée");
-                msgBox.exec();
-                n->setIsArchive(true);
-            }
-            else{
-                //Relation manager applique removeNoteRelation sur toutes les relations
-                RelationManager& m=RelationManager::getInstance();
-                //Supprimer toutes les présences d'une note dans l'ensemble des relations
-                for(RelationManager::Iterator it= m.getIterator(); !it.isDone(); it.next()){
-                    it.current().removeNoteRelation(n);
-                }
-                if(n->getNbRef()!=0) n->deleteAllReference();
-                n->setIsDeleted(true);
-            }
+    //Suppression de la dernière version
+    //Faut il modifier pour mettre CHAQUE version d'une note à isDeleted ?
+    //Voir comment naviguer dans les relations avec displayAllVersion
+    std::cout<<id.toStdString()<<" : id en cours a supprimer\n";
+    Note& n=getNote(id);
+    if (n.getNbIsRef()!=0){
+        std::cout<<"La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.\n";
+        QMessageBox msgBox;
+        msgBox.setText("La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.\n");
+        msgBox.exec();
+        n.setIsArchive(true);
+    }
+    else{
+        //Relation manager applique removeNoteRelation sur toutes les relations
+        RelationManager& m=RelationManager::getInstance();
+        //Supprimer toutes les présences d'une note dans l'ensemble des relations
+        for(RelationManager::Iterator it= m.getIterator(); !it.isDone(); it.next()){
+            it.current().removeNoteRelation(&n);
         }
+        std::cout<<"toutes les relations sont supprimées\n";
+        if(n.getNbRef()!=0) n.deleteAllReference();
+        n.setIsDeleted(true);
     }
 }
 
+//DECHETS DE DELETENOTE
+//    while(!it.isDone()){
+//        cout<<"etape 2 "<<id.toStdString()<<" it.current().getId() "<<it.current().getId().toStdString()<<"\n";
+//        if (it.current().getId()==id){
+//            cout<<"etape 3\n";
+//            Note* n=&it.current();
+//            cout<<"etape 4 : n->getNbIsRef"<<n->getNbIsRef()<<"\n";
+//            if (n->getNbIsRef()!=0){
+//                std::cout<<"La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.";
+//                QMessageBox msgBox;
+//                msgBox.setText("La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée");
+//                msgBox.exec();
+//                n->setIsArchive(true);
+//            }
+//            else{
+//                //Relation manager applique removeNoteRelation sur toutes les relations
+//                RelationManager& m=RelationManager::getInstance();
+//                //Supprimer toutes les présences d'une note dans l'ensemble des relations
+//                for(RelationManager::Iterator it= m.getIterator(); !it.isDone(); it.next()){
+//                    it.current().removeNoteRelation(n);
+//                }
+//                if(n->getNbRef()!=0) n->deleteAllReference();
+//                n->setIsDeleted(true);
+//            }
+//        }
+//    }
+//}
+
+//void NotesManager::emptyTrash(){
+//    NotesManager::Iterator it=NotesManager::getIterator();
+//    int i=0;
+//    while(!it.isDone()){
+//        if (it.current().getIsDeleted()){
+//            it.current().setNbRef(0);
+//            delete &it.current();
+//            notes[i]=notes[--nbNotes];
+//            i++;
+//        }
+//    }
+//}
+
+
+
 void NotesManager::emptyTrash(){
-    NotesManager::Iterator it=NotesManager::getIterator();
-    int i=0;
-    while(!it.isDone()){
-        if (it.current().getIsDeleted()){
-            it.current().setNbRef(0);
-            delete &it.current();
-            notes[i]=notes[--nbNotes];
-            i++;
+    NotesManager* m=NotesManager::getInstance();
+    std::cout<<"\nEMPTY TRASH DEMANDE\n";
+    NotesManager::Iterator itNote=m->getIterator();
+    while(!itNote.isDone()){
+        if (itNote.current().getIsDeleted()){
+            //Note& n=NotesManager::getNote(itNote.current().getId());
+            cout<<endl<<"// Note en cours de suppression : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
+            //===V1
+            //std::cout<<"get the ListeVersion\n";
+            //QList<Note*>* listVersion=getListeVersions(itNote.current().getId());
+            std::cout<<"qDeleteALl\n";
+            qDeleteAll(itNote.liste()->begin(),itNote.liste()->end());
+            std::cout<<"Clear\n";
+            itNote.liste()->clear();
+            std::cout<<"done\n";
+
+            //===V2
+            /*
+            QList<Note*>::iterator itVersion=(itNote.liste())->begin();
+            while (itVersion!=itNote.liste()->end()) {
+                //TODO : il faut supprimer chaque version de note de la liste courrante
+                itVersion.operator *()->removeAt();
+                itVersion++;
+            }
+            TODO : il faut supprimer la liste entière de cette note.
+            */
+
+            //== V3
+            /*
+            std::cout<<"while isEmpty\n";
+            while (!listVersion->isEmpty())
+                delete listVersion->takeFirst();
+            */
         }
+        itNote.next();
     }
 }
 
@@ -541,6 +596,58 @@ void RelationManager::deleteRelation(const QString &title){
     }
     throw NotesException ("error, impossible to delete, non existent relation");
 }
+
+
+QList<Note*> NotesManager::getListAscendants(const QString& id){
+//void NotesManager::getListAscendants(const QString& id){
+//   std::cout<<"\nLes relations ascendantes de "<<id.toStdString()<<" sont :\n";
+   RelationManager& rm=RelationManager::getInstance();
+//   QList<Note*>* listAsc;
+   QList<Note*> listAscendants;
+   for(RelationManager::Iterator itManager=rm.getIterator(); !itManager.isDone(); itManager.next()){
+       Relation& r=itManager.current();
+        for(Relation::Iterator itRel=r.getIterator(); !itRel.isDone(); itRel.next()){
+            if (itRel.current().getCoupleNoteX()->getId()==id){
+                Note& ny=NotesManager::getInstance()->getNote(itRel.current().getCoupleNoteY()->getId());
+//                std::cout<<"  - "<<ny.getId().toStdString()<<"\n";
+                  listAscendants.append(&ny);
+            }
+        }
+   }
+   return listAscendants;
+}
+
+QList<Note*> NotesManager::getListDescendants(const QString& id){
+//void NotesManager::getListDescendants(const QString& id){
+//   std::cout<<"\nLes relations descendantes de "<<id.toStdString()<<" sont :\n";
+   RelationManager& rm=RelationManager::getInstance();
+   QList<Note*> listDescendants;
+   for(RelationManager::Iterator itManager=rm.getIterator(); !itManager.isDone(); itManager.next()){
+       Relation& r=itManager.current();
+        for(Relation::Iterator itRel=r.getIterator(); !itRel.isDone(); itRel.next()){
+            if (itRel.current().getCoupleNoteY()->getId()==id){
+                Note& nx=NotesManager::getInstance()->getNote(itRel.current().getCoupleNoteX()->getId());
+//                std::cout<<"  - "<<nx.getId().toStdString()<<"\n";
+                listDescendants.append(&nx);
+            }
+        }
+   }
+   return listDescendants;
+}
+
+//void NotesManager::displayRelAscDesc(const QString id){
+//    QList<Note*> listAscendants=m->getListAscendants("test");
+//    QList<Note*> listDescendants=m->getListDescendants("test");
+
+//    QList<Note*>::iterator i;
+//    std::cout<<"\nLes relations ascendantes de "<<id.toStdString()<<" sont :\n";
+//    for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
+//        cout << " - "<<(*i)->getId().toStdString() << endl;
+//    std::cout<<"\nLes relations descendantes de "<<id.toStdString()<<" sont :\n";
+//    for (i = listDescendants.begin(); i != listDescendants.end(); ++i)
+//        cout << " - "<<(*i)->getId().toStdString() << endl;
+//}
+
 
 RelationManager::Handler RelationManager::handler=RelationManager::Handler();
 

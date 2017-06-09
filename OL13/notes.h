@@ -1,10 +1,38 @@
-//
-//  notes.hpp
-//  OL12PROJET
-//
-//  Created by Louise Naudin on 11/05/2017.
-//  Copyright © 2017 LNA. All rights reserved.
-//
+/**
+ * \file      note.h
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     Définit le type note et ses types dérivés
+ *
+ * \details   Classes présentes :
+ *                  - NotesException
+ *                      Gère les exceptions relatives aux notes.
+
+ *                  - Note
+ *                      Classe mère abstraite définissant l'ensemble des attributs et comportement des notes.
+ *
+ *                      Possède un attribut Note ** references permettant d'accéder aux références de la note.
+ *                      Possède deux attributs booléens isArchived et isDeleted permettant de spécifier
+ *                        si une note est supprimée ou non.
+ *
+ *                      Les méthodes toString et display sont virtuelles : redéfinies dans les sous classes,
+ *                        elles permettent un affichage personnalisé des différents typs de notes.
+ *
+ *                  - Article
+ *                      Classe article, dérivant de la classe Note, avec en plus l'attribut text.
+ *
+ *                  - Task
+ *                      Classe task, dérivant de la classe Note, avec en plus les attributs action, status,
+ *                        et les attributs optionnels dueDate et priority.
+ *
+ *                  - Recording
+ *                      Classe recording, dérivant de la classe Note, avec en plus les attributs descriptions,
+ *                        type et un link vers un fichier image, audio ou video.
+ *
+ *              Détail des méthodes donné dans le .cpp.
+ */
+
 
 #ifndef notes_h
 #define notes_h
@@ -16,6 +44,7 @@
 #include "QInclude.h"
 
 class NotesException;
+class Note;
 class Article;
 class Task;
 class Recording;
@@ -45,18 +74,14 @@ private:
     bool isArchive; //Si jamais on l'archive alors elle devient const
     bool isDeleted; //Si jamais on la met dans la corbeille
 
+    // LNA test ref 09.06
     Note ** references;
     unsigned int nbRef;
     unsigned int nbMaxRef;
 
     unsigned int nbIsRef;
 
-//    Note ** isreferenced;
-//    unsigned int nbIsRef;
-//    unsigned int nbMaxIsRef;
-
     void addReference(Note* n);
-    //    void addIsReferenced(Note* n);
 
 public:
     const QString getId() const {return id;}
@@ -77,7 +102,7 @@ public:
     //PRIVATE ?
     Note(const Note& n); //constructeur de recopie private pour le handler
     Note& operator=(const Note& n);   //operateur d'affectation private pour le handler
-    virtual ~Note(){}
+    virtual ~Note();
 
     virtual std::string toString() const;
     void display(std::ostream& f=std::cout) const{
@@ -86,7 +111,6 @@ public:
     virtual void saveNote(QFile *file);
 
     //Les notes que this reference
-//    void addReference(Note* n);
     Note& setNewRef(Note* n);
 
     Note& getReference(const QString &id) const;
@@ -101,8 +125,6 @@ public:
     void setNbIsRef(unsigned int n){nbIsRef=n;}
     unsigned int getNbIsRef()const{return nbIsRef;}
 
-//    //Les notes qui référence la note this
-//    Note& getIsReferenced(Note *n) const;
 };
 
 
@@ -162,7 +184,6 @@ private:
     QTextDocument description;
     ENUM::RecordingType type;
     QString link;
-    //Fichier image a ajouter
 public:
     const QTextDocument& getDescription() const {return description;}
     ENUM::RecordingType getType() const {return type;}
@@ -181,12 +202,16 @@ public:
     void saveNote(QFile *file);
 };
 
-//Surcharge affichage avec polymorphisme
+/**
+ * \brief     Surcharge affichage avec polymorphisme
+ */
 std::ostream& operator<<(std::ostream& f, const Article& a);
 std::ostream& operator<<(std::ostream& f, const Task& t);
 std::ostream& operator<<(std::ostream& f, const Recording& t);
 
-//Retourner directement le statut de int à stringQ
+/**
+ * \brief     Retourne directement le statut de int à stringQ
+ */
 QString getStatustoStr(ENUM::StatusType status);
 QString getRecordingtoStr(ENUM::StatusType recording);
 

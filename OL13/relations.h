@@ -1,3 +1,15 @@
+/**
+ * \file      relation.h
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     //Bref
+ *
+ * \details  //Détail
+ *
+ */
+
+
 #ifndef RELATION_H
 #define RELATION_H
 
@@ -39,7 +51,14 @@ public:
     void removeCoupleRelation(Note* n1, Note* n2);
     void removeNoteRelation(Note* n1);
 
+//    QList<Note*>* addNoteAscendant(Note * n, QList<Note*>* listAscendants);
+//    Note** noteRelAsc(Note * n);
+
     std::string displayRelation();
+//    std::string toString() const;
+//    void display(std::ostream& f=std::cout) const{
+//        f<<displayRelation();
+//    }
 
     //Iterator
     class Iterator{
