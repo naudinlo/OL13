@@ -184,7 +184,6 @@ private:
     QTextDocument description;
     ENUM::RecordingType type;
     QString link;
-    //Fichier image a ajouter
 public:
     const QTextDocument& getDescription() const {return description;}
     ENUM::RecordingType getType() const {return type;}
@@ -203,12 +202,16 @@ public:
     void saveNote(QFile *file);
 };
 
-//Surcharge affichage avec polymorphisme
+/**
+ * \brief     Surcharge affichage avec polymorphisme
+ */
 std::ostream& operator<<(std::ostream& f, const Article& a);
 std::ostream& operator<<(std::ostream& f, const Task& t);
 std::ostream& operator<<(std::ostream& f, const Recording& t);
 
-//Retourner directement le statut de int à stringQ
+/**
+ * \brief     Retourne directement le statut de int à stringQ
+ */
 QString getStatustoStr(ENUM::StatusType status);
 QString getRecordingtoStr(ENUM::StatusType recording);
 
