@@ -563,9 +563,9 @@ void RelationManager::deleteRelation(const QString &title){
 }
 
 
-//QList<Note*> getListAscendants(const QString& id){
-void NotesManager::getListAscendants(const QString& id){
-   std::cout<<"\nLes relations ascendantes de "<<id.toStdString()<<" sont :\n";
+QList<Note*> NotesManager::getListAscendants(const QString& id){
+//void NotesManager::getListAscendants(const QString& id){
+//   std::cout<<"\nLes relations ascendantes de "<<id.toStdString()<<" sont :\n";
    RelationManager& rm=RelationManager::getInstance();
 //   QList<Note*>* listAsc;
    QList<Note*> listAscendants;
@@ -574,37 +574,44 @@ void NotesManager::getListAscendants(const QString& id){
         for(Relation::Iterator itRel=r.getIterator(); !itRel.isDone(); itRel.next()){
             if (itRel.current().getCoupleNoteX()->getId()==id){
                 Note& ny=NotesManager::getInstance()->getNote(itRel.current().getCoupleNoteY()->getId());
-                std::cout<<"  - "<<ny.getId().toStdString()<<"\n";
-//                listAsc->push_front(ny);
-//                listAsc->append(&ny);
+//                std::cout<<"  - "<<ny.getId().toStdString()<<"\n";
                   listAscendants.append(&ny);
             }
         }
    }
-//   return listAscendants;
-//   //Test pour voir si la liste retourne bien les bonnes choses
-//   QList<Note*>::iterator i;
-//   for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
-//       cout << (*i)->getId().toStdString() << endl;
+   return listAscendants;
 }
 
-void NotesManager::getListDescendants(const QString& id){
-   std::cout<<"\nLes relations descendantes de "<<id.toStdString()<<" sont :\n";
+QList<Note*> NotesManager::getListDescendants(const QString& id){
+//void NotesManager::getListDescendants(const QString& id){
+//   std::cout<<"\nLes relations descendantes de "<<id.toStdString()<<" sont :\n";
    RelationManager& rm=RelationManager::getInstance();
-   QList<Note*>* listDescendants;
+   QList<Note*> listDescendants;
    for(RelationManager::Iterator itManager=rm.getIterator(); !itManager.isDone(); itManager.next()){
        Relation& r=itManager.current();
         for(Relation::Iterator itRel=r.getIterator(); !itRel.isDone(); itRel.next()){
             if (itRel.current().getCoupleNoteY()->getId()==id){
                 Note& nx=NotesManager::getInstance()->getNote(itRel.current().getCoupleNoteX()->getId());
-                std::cout<<"  - "<<nx.getId().toStdString()<<"\n";
-//                listDescendants->push_front(nx);
-//                listDescendants->append(&nx);
+//                std::cout<<"  - "<<nx.getId().toStdString()<<"\n";
+                listDescendants.append(&nx);
             }
         }
    }
+   return listDescendants;
 }
 
+//void NotesManager::displayRelAscDesc(const QString id){
+//    QList<Note*> listAscendants=m->getListAscendants("test");
+//    QList<Note*> listDescendants=m->getListDescendants("test");
+
+//    QList<Note*>::iterator i;
+//    std::cout<<"\nLes relations ascendantes de "<<id.toStdString()<<" sont :\n";
+//    for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
+//        cout << " - "<<(*i)->getId().toStdString() << endl;
+//    std::cout<<"\nLes relations descendantes de "<<id.toStdString()<<" sont :\n";
+//    for (i = listDescendants.begin(); i != listDescendants.end(); ++i)
+//        cout << " - "<<(*i)->getId().toStdString() << endl;
+//}
 
 
 RelationManager::Handler RelationManager::handler=RelationManager::Handler();

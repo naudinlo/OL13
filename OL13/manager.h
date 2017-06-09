@@ -59,11 +59,11 @@ public:
     void save() const;
     QString updateId(QString Id2)const;
 
-    void getListAscendants(const QString& id);
-    void getListDescendants(const QString& id);
-//    QList<Note*>* getListAscendants(const QString& id);
-//    QList<Note*>* getListDescendants(const QString& id);
-
+//    void getListAscendants(const QString& id);
+//    void getListDescendants(const QString& id);
+    QList<Note*> getListAscendants(const QString& id);
+    QList<Note*> getListDescendants(const QString& id);
+//    void displayRelAscDesc(const QString id);
 
     static NotesManager* getInstance();
     static void libererInstance();

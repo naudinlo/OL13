@@ -281,16 +281,20 @@ try{
 //   rel1.removeNoteRelation(&a2);
    cout<<rel1.displayRelation();
 
-//   rel1.noteRelAsc(&a2);
-   m->getListAscendants("test");
-   m->getListDescendants("test2");
+   QList<Note*> listAscendants=m->getListAscendants("test");
+   QList<Note*> listDescendants=m->getListDescendants("test2");
+
+      //Test pour voir si la liste retourne bien les bonnes choses
+      QList<Note*>::iterator i;
+      std::cout<<"\nLes relations ascendantes de test sont :\n";
+      for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
+          cout << " - "<<(*i)->getId().toStdString() << endl;
+      std::cout<<"\nLes relations descendantes de test2 sont :\n";
+      for (i = listDescendants.begin(); i != listDescendants.end(); ++i)
+          cout << " - "<<(*i)->getId().toStdString() << endl;
 
    cout<<endl<<endl<<"================"<<endl;
 
-   //cout<<"test du getNote"<<endl<<"======================================="<<endl;
-   //m->getNote("test").display();
-   //m->getNote("test2").display();
-   //m->getNote("testTask").display();
     }
     catch(NotesException& e){
         std::cout<<e.getinfo().toStdString()<<"\n";
