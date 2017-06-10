@@ -44,6 +44,7 @@ void supp_note::supp_selection_note(){
             try
             {
                 manager->deleteNote(current_id);
+                QMessageBox::information(this,current_id,"Note supprimée");
             }
             catch(NotesException e){
                 QMessageBox::warning(this,'Impossibe de supprimer '+current_id,e.getinfo());
@@ -64,6 +65,7 @@ void supp_note::supp_selection_note(){
         }
 
     }
+    emit(close_note());
     this->close();
 
 }

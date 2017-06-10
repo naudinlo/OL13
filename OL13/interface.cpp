@@ -219,16 +219,16 @@ void selection_note::update_model(){
                 items.append(new QStandardItem(it.current().getType()));
                 items.at(0)->setWhatsThis(it.current().getId());
                 model->appendRow(items);
-                for(QList<Note*>::iterator j=it.getIteratorVersions();j !=it.liste()->end();j++)
+                for(QList<Note*>::iterator j=it.liste()->begin();j !=it.liste()->end();j++)
                 {
                     QList< QStandardItem* > item2;
                     //item2.push_back(new QStandardItem((*j)->getTitle()));
                     //item2.push_back(new QStandardItem((*j)->getLastmodif_date().toString()));
                     item2.append(new QStandardItem((*j)->getTitle()));
                     item2.append(new QStandardItem ((*j)->getLastmodif_date().toString()));
-                    //items.at(0)->appendRow(item2);
-                    items.at(0)->insertRow(0,item2);
+                    items.at(0)->appendRow(item2);
                 }
+
         }
 
 }
@@ -286,3 +286,17 @@ void interface::afficher_note(QString id, int i){
     setCentralWidget(ZoneCentrale);
 }
 
+void interface::close_page_note(){
+    if(note_page!=0) //Si à dejà ouvert une note avant, il faut
+    {
+        if(MenuEd->actions().contains(Action_new_relation)){ //Caché le bouton d'ajout de relation
+            MenuEd->removeAction(Action_new_relation);
+            toolBar_new_Rel->hide();
+        }
+
+        delete note_page; //Fermer la note
+        note_page=0;
+        ZoneCentrale=new page_vide();
+        setCentralWidget(ZoneCentrale);
+    }
+}
