@@ -1,22 +1,87 @@
-/**
- * \file      qrelations.cpp
- * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
- * \version   1.0
- * \date      14 Juin 2017
- * \brief     //Bref
- *
- * \details  //Détail
- *
- */
-
 #include "qrelations.h"
 
 Qrelations::Qrelations(QString t, QString d):R(RelationManager::getInstance().getNewRelation(t,d)){
 
 }
+QDockRelation::QDockRelation(const QString& id){
 
+       NotesManager* m=NotesManager::getInstance();
+      m->getListAscendants(id);
+       model_from =new QStandardItemModel;
+       for(unsigned int i=0;i<m->getListAscendants(id).length();i++){
+           Note* current_note=m->getListAscendants(id).at(i);
+           QList< QStandardItem* > item;
+                   item.append(new QStandardItem (current_note->getId()));
+                   item.append(new QStandardItem(current_note->getTitle()));
 
+                   item.at(0)->setWhatsThis(current_note->getId());
+                   model_from->appendRow(item);
+       }
 
+       model_to =new QStandardItemModel;
+       for(unsigned int i=0;i<m->getListDescendants(id).length();i++){
+           Note* current_note=m->getListDescendants(id).at(i);
+           QList< QStandardItem* > item;
+                   item.append(new QStandardItem (current_note->getId()));
+                   item.append(new QStandardItem(current_note->getTitle()));
+
+                   item.at(0)->setWhatsThis(current_note->getId());
+                   model_to->appendRow(item);
+       }
+       /*
+       for(QList<Note*>::iterator j=m->getListAscendants(id).begin();j !=m->getListAscendants(id).end();j++)
+       {
+            QMessageBox::warning(this,"QRelation", QString::number( m->getListAscendants(id).length()));
+           QList< QStandardItem* > item;
+                    item.append(new QStandardItem ((*j)->getId()));
+                    //item.append(new QStandardItem((*j)->getTitle()));
+
+                    item.at(0)->setWhatsThis((*j)->getId());
+                    model_from->appendRow(item);
+       }
+       *//*
+       model_to =new QStandardItemModel;
+       for(QList<Note*>::iterator j=m->getListDescendants(id).begin();j !=m->getListDescendants(id).end();j++)
+       {
+           QList< QStandardItem* > item;
+           QMessageBox::warning(this,"QRelation", QString::number( m->getListAscendants(id).length()));
+           item.append(new QStandardItem ((*j)->getId()));
+           //item.append(new QStandardItem((*j)->getTitle()));
+           item.at(0)->setWhatsThis((*j)->getId());
+           model_to->appendRow(item);
+       }*/
+       L_fen=new QGridLayout(this);
+       Label_from=new QLabel("Relation depuis :") ;
+       Label_to=new QLabel("Relation vers :");
+
+       rel_from=new QListView;
+       rel_from->setModel(model_from);
+       rel_from->setEditTriggers(QAbstractItemView::NoEditTriggers);
+       connect(rel_from,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_From_selection(QModelIndex)));
+       rel_to=new QListView;
+       rel_to->setModel(model_to);
+       rel_to->setEditTriggers(QAbstractItemView::NoEditTriggers);
+       connect(rel_to,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_to_selection(QModelIndex)));
+
+       L_fen->addWidget(Label_to);
+       L_fen->addWidget(rel_from);
+       L_fen->addWidget(Label_from);
+       L_fen->addWidget(rel_to);
+
+       //vue->header()->hide();
+       //vue->setDisabled(false);
+       //layout->addWidget(vue);
+       //connect(vue,SIGNAL(activated(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
+
+}
+void QDockRelation::emit_From_selection(QModelIndex i){
+
+    emit(selection(model_from->itemFromIndex(i)->whatsThis(),i,0));
+}
+void QDockRelation::emit_to_selection(QModelIndex i){
+
+    emit(selection(model_to->itemFromIndex(i)->whatsThis(),i,0));
+}
 Edit_relation::Edit_relation(QStandardItemModel* m,int index,QString id, QWidget* parent): QDialog(parent),
     model(m),note(NotesManager::getInstance()->getNote(id)){
     /*** Window: Permettant de chosir le titre, la descp de la relation, et les notes faisant

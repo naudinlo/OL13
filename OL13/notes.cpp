@@ -22,6 +22,7 @@
 
 //====OPERATEUR AFFECTATION, CONSTRUCTEUR DE RECOPIE
 
+
 /**
  * \fn        Note::Note(const Note& n)
  * \brief     Constructeur de recopie
@@ -29,6 +30,7 @@
  *            Mets à jour la date de dernière modification avec currentDateTime.
  * \param    const Note& n         La note a recopier.
  */
+
 Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::currentDateTime()),nbRef(n.nbIsRef),nbMaxRef(n.nbMaxRef),nbIsRef(n.nbIsRef),isDeleted(false),isArchive(false){
     Note** references(new Note*[n.nbMaxRef]);
     for(unsigned int i=0; i<n.nbRef; i++){

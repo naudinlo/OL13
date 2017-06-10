@@ -1,14 +1,3 @@
-/**
- * \file      qrelation.h
- * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
- * \version   1.0
- * \date      14 Juin 2017
- * \brief     //Bref
- *
- * \details  //Détail
- *
- */
-
 #ifndef QRELATIONS_H
 #define QRELATIONS_H
 
@@ -30,6 +19,25 @@ public:
     //void add_Label(QString id1, QString id2);
 
 };
+
+class QDockRelation:public QWidget{
+    Q_OBJECT
+    QGridLayout* L_fen;
+    QLabel* Label_from;
+    QLabel* Label_to;
+    QStandardItemModel* model_from;
+    QStandardItemModel* model_to;
+    QListView* rel_from;
+    QListView* rel_to;
+public:
+    QDockRelation(const QString &id);
+public slots:
+    void emit_From_selection(QModelIndex i);
+    void emit_to_selection(QModelIndex i);
+signals:
+    void selection(QString, QModelIndex, int);
+};
+
 
 class Qrelations
 {

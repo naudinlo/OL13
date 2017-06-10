@@ -53,10 +53,16 @@ page_notes::page_notes(Note& N):n(N)
         layout_editer->addWidget(editer);
 
     //Dock aff relatio
+
+        dock_aff_Rel=new QDockRelation(n.getId());
+
+        /*
+
         dock_rel=new QWidget;
         QVBoxLayout * layout_aff_rel=new QVBoxLayout(dock_rel);
         QLabel* aff_relation =new QLabel("aff relation");
         layout_aff_rel->addWidget(aff_relation);
+        */
    //connect
         connect(editer,SIGNAL(clicked(bool)),this,SLOT(editer_note(bool)));
    //NEW LNA
@@ -67,6 +73,7 @@ page_notes::~page_notes(){
     note->saveNote(n);
     emit(update_model());
     emit(supp_dock_editer());  // c'est l'interface qui gère la supp du dock
+    emit(supp_dock_aff_rel());
     delete layout_titre;
     delete info;
     delete layout_p;
