@@ -117,8 +117,10 @@ public slots:
    void supprimer_note(){
        fen_supp = new supp_note(listNote->getModel(),this);
        fen_supp->show();
+       connect(fen_supp,SIGNAL(close_note()),this,SLOT(close_page_note()));
        //Recharger le Model dans la liste des Notes;s
    }
+   void close_page_note();
 
    void save();
 };

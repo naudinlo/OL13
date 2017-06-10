@@ -26,6 +26,8 @@ public:
     supp_note(QStandardItemModel* m, QWidget *parent);
 public slots:
     void supp_selection_note();
+signals:
+    void close_note();
 };
 
 #endif // SUPP_NOTE_H
