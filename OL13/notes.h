@@ -97,6 +97,7 @@ public:
     Note(const QString& i, const QString& ti);
 
     void setTitle(const QString& t){title=t;}
+    void setCreation_date(const QDateTime& d){creation_date=d;}
     void setLastmodif_date(const QDateTime& d){lastmodif_date=d;}
 
     //PRIVATE ?

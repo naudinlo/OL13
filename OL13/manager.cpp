@@ -330,7 +330,7 @@ void NotesManager::save() const {
 }
 
 
-/*void NotesManager::load() {
+void NotesManager::load() {
     QFile fin(filename);
     // If we can't open it, let's show an error message.
     if (!fin.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -348,7 +348,7 @@ void NotesManager::save() const {
         // If token is StartElement, we'll see if we can read it.
         if(token == QXmlStreamReader::StartElement) {
             // If it's named taches, we'll go to the next.
-            if(xml.name() == "notes") continue;
+            if(xml.name() == "NoteManager") continue;
             // If it's named tache, we'll dig the information from there.
             if(xml.name() == "article") {
                 qDebug()<<"new article\n";
@@ -383,7 +383,7 @@ void NotesManager::save() const {
                     xml.readNext();
                 }
                 qDebug()<<"ajout note "<<identificateur<<"\n";
-                addArticle(identificateur,titre,text);
+                //addArticle(identificateur,titre,text);
             }
         }
     }
@@ -394,7 +394,7 @@ void NotesManager::save() const {
     // Removes any device() or data from the reader * and resets its internal state to the initial state.
     xml.clear();
     qDebug()<<"fin load\n";
-}*/
+}
 
 
 ostream& operator<<(ostream& f, const Note& n){
