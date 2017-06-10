@@ -69,6 +69,14 @@ interface::interface(): QMainWindow()
         toolBar_new_Rel=addToolBar("Edition");
         toolBar_new_Rel->addAction(Action_new_relation);
         toolBar_new_Rel->setHidden(true);
+
+
+        Action_Fermer_Note=new QAction("Fermer la note",this);
+        Action_Fermer_Note->setShortcut(QKeySequence("ctrl+alt+Q"));
+        connect(Action_Fermer_Note,SIGNAL(triggered(bool)),this,SLOT(close_page_note()));
+        toolBar_new_Rel=addToolBar("Edition");
+        toolBar_new_Rel->addAction(Action_Fermer_Note);
+        toolBar_new_Rel->setHidden(true);
      /*
         Action_aff_relation=new QAction("Afficher les relations ",this);
         Action_aff_relation->setShortcut(QKeySequence("ctrl+A"));

@@ -65,6 +65,7 @@ class interface:public QMainWindow
     QMenu *fichiersRecents;
     QAction* Action_new_relation;
     QAction* Action_aff_relation;
+    QAction* Action_Fermer_Note;
     QToolBar* toolBar_new_Rel;
     QToolBar* toolBar_supp_note;
     QToolBar* toolBar_save_note;
