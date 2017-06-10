@@ -16,7 +16,7 @@
 
 #include "interface.h"
 
-interface::interface(): QMainWindow(), indexNote()
+interface::interface(): QMainWindow()
 {
     /*** Initialisation des attributs ***/
         note_manager=NotesManager::getInstance();
@@ -108,7 +108,7 @@ void interface::CreateDock_edited_Note(){
     dock_aff_Relation->setWidget(note_page->getdock_aff_rel());
     MenuEd->addAction(dock_aff_Relation->toggleViewAction());
     connect(note_page,SIGNAL(supp_dock_aff_rel()),this,SLOT(supp_dock_aff_rel()));
-    connect(note_page->getdock_aff_rel(),SIGNAL(selection(QString,QModelIndex,int)),this,SLOT(afficher_note(QString,QModelIndex,int)));
+    connect(note_page->getdock_aff_rel(),SIGNAL(selection(QString,int)),this,SLOT(afficher_note(QString,int)));
 }
 
 
@@ -127,7 +127,7 @@ void interface::CreateDock_selected_Note(){
     dock_selected_Note->setMaximumWidth(300);
     addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
     MenuAff->addAction(dock_selected_Note->toggleViewAction());
-    connect(listNote,SIGNAL(selection(QString,QModelIndex,int)),this,SLOT(afficher_note(QString,QModelIndex,int)));
+    connect(listNote,SIGNAL(selection(QString,int)),this,SLOT(afficher_note(QString,int)));
     connect(this,SIGNAL(update_model()),listNote,SLOT(update_model()));
 }
 void interface::Destruct_selected_Note(){
@@ -219,17 +219,17 @@ void selection_note::update_model(){
                 items.append(new QStandardItem(it.current().getType()));
                 items.at(0)->setWhatsThis(it.current().getId());
                 model->appendRow(items);
-
                 for(QList<Note*>::iterator j=it.getIteratorVersions();j !=it.liste()->end();j++)
                 {
                     QList< QStandardItem* > item2;
+                    //item2.push_back(new QStandardItem((*j)->getTitle()));
+                    //item2.push_back(new QStandardItem((*j)->getLastmodif_date().toString()));
                     item2.append(new QStandardItem((*j)->getTitle()));
                     item2.append(new QStandardItem ((*j)->getLastmodif_date().toString()));
-                    items.at(0)->appendRow(item2);
+                    //items.at(0)->appendRow(item2);
+                    items.at(0)->insertRow(0,item2);
                 }
-
         }
-        //items.at(0)->setWhatsThis(n.getId());;
 
 }
 
@@ -240,20 +240,22 @@ void selection_note::emit_selection(QModelIndex i){
 
     if(!i.parent().isValid())
     {
-
+        QMessageBox::warning(this,"clique","père");
         current_versions=model->item(i.row(),0);
-        emit selection(current_versions->whatsThis(),i,0);
+        emit selection(current_versions->whatsThis(),0);
     }
     else
     {
+        QMessageBox::warning(this,"clique fils",QString::number(i.row()));
+
         current_note=model->item(i.parent().row(),0);
         //current_versions=current_note->child(i.row(),0);
-        emit selection(current_note->whatsThis(),i.parent(),i.row());
+        emit selection(current_note->whatsThis(),i.row());
 
     }
 }
 
-void interface::afficher_note(QString id, QModelIndex index,int i){
+void interface::afficher_note(QString id, int i){
     if(note_page!=0) //Si à dejà ouvert une note avant, il faut
     {
         if(MenuEd->actions().contains(Action_new_relation)){ //Caché le bouton d'ajout de relation
@@ -270,7 +272,6 @@ void interface::afficher_note(QString id, QModelIndex index,int i){
 
 
         note_page = new page_notes(current);
-        indexNote=index.row();
         note_id=id;
         ZoneCentrale=note_page;
         CreateDock_edited_Note();

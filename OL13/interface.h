@@ -39,7 +39,7 @@ public:
     QStandardItemModel* getModel()const {return model;}
     QTreeView* getVue(){return vue;}
 signals:
-    void selection(QString, QModelIndex, int);
+    void selection(QString, int);
 public slots:
     void emit_selection(QModelIndex i);
     void update_model();
@@ -74,7 +74,6 @@ class interface:public QMainWindow
     QDockWidget* dock_aff_Relation;
 
     //A modifier
-    int indexNote;
     QString note_id;
 
     void CreateDock_selected_Note();//doit prendre un fichier est chargé la liste
@@ -93,7 +92,7 @@ signals:
 
 public slots:
    void E_relation(){
-       new_relation = new Edit_relation(listNote->getModel(),indexNote,note_id,this);
+       new_relation = new Edit_relation(listNote->getModel(),note_id,this);
        new_relation->show();
 
    }
@@ -105,7 +104,7 @@ public slots:
    void OuvrirFichier();
    void CreerNote();
    void addNewNote(Note &n);
-   void afficher_note(QString id, QModelIndex index, int i);
+   void afficher_note(QString id, int i);
    void supp_dock_editer(){
        MenuEd->removeAction(dock_editer_note->toggleViewAction());
        dock_editer_note->close();

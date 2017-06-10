@@ -76,16 +76,20 @@ QDockRelation::QDockRelation(const QString& id){
 }
 void QDockRelation::emit_From_selection(QModelIndex i){
 
-    emit(selection(model_from->itemFromIndex(i)->whatsThis(),i,0));
+    emit(selection(model_from->itemFromIndex(i)->whatsThis(),0));
 }
 void QDockRelation::emit_to_selection(QModelIndex i){
 
-    emit(selection(model_to->itemFromIndex(i)->whatsThis(),i,0));
+    emit(selection(model_to->itemFromIndex(i)->whatsThis(),0));
 }
-Edit_relation::Edit_relation(QStandardItemModel* m,int index,QString id, QWidget* parent): QDialog(parent),
+Edit_relation::Edit_relation(QStandardItemModel* m,QString id, QWidget* parent): QDialog(parent),
     model(m),note(NotesManager::getInstance()->getNote(id)){
     /*** Window: Permettant de chosir le titre, la descp de la relation, et les notes faisant
                  parties des couples de la relation***/
+        int index=0; //on récupère l'index de la note courant, pour empécher de faire des auto relation
+        while(index < model->rowCount() && id !=model->item(index)->whatsThis()){
+            index++;
+        }
         this->setWindowTitle("Ajouter Relation");
         L_fen=new QGridLayout(this);
         titre= new QLabel("Titre de la relation");

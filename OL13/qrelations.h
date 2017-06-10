@@ -35,7 +35,7 @@ public slots:
     void emit_From_selection(QModelIndex i);
     void emit_to_selection(QModelIndex i);
 signals:
-    void selection(QString, QModelIndex, int);
+    void selection(QString, int);
 };
 
 
@@ -125,7 +125,7 @@ class Edit_relation:public QDialog{
     void addNoteToR();
 
 public:
-    Edit_relation(QStandardItemModel* m, int index, QString id, QWidget *parent);
+    Edit_relation(QStandardItemModel* m, QString id, QWidget *parent);
 public slots:
     void clicSelection();
     void enabledAppend(){

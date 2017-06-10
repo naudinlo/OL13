@@ -43,7 +43,7 @@ void supp_note::supp_selection_note(){
             current_id=model->item(listeSelections[i].row(),0)->whatsThis();
             try
             {
-                //manager->deleteNote(current_id);
+                manager->deleteNote(current_id);
             }
             catch(NotesException e){
                 QMessageBox::warning(this,'Impossibe de supprimer '+current_id,e.getinfo());
