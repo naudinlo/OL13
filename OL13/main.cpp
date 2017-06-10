@@ -56,12 +56,10 @@ void displayAllVersion(){
     while(!itNote.isDone()){
         if(!itNote.liste()->isEmpty()){
             cout<<endl<<"// Versions de la note : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
-            QList<Note*>::iterator itVersion=(itNote.liste())->begin();
             unsigned int i=0;
-            while (itVersion!=itNote.liste()->end()) {
+            for(QList<Note*>::iterator itVersion=(itNote.liste())->begin();itVersion!=itNote.liste()->end();itVersion++){
                 cout<<endl<<"--- Version "<<i++<<" ---";
                 itVersion.operator *()->display();
-                itVersion++;
             }
         }
         itNote.next();
@@ -242,10 +240,27 @@ try{
    a2.setTitle("test1v2");
    a2.setText("test des versions editées");
 
+   Article& a3=m->editArticle(a2);
+   a3.setTitle("test1v3");
+   a3.setText("test des versions editées");
+
+   Article& a4=m->editArticle(a3);
+   a4.setTitle("test1v4");
+   a4.setText("test des versions editées");
+
    Task& t2=m->editTask(t1);
    t2.setTitle("testTaskv2");
    t2.setAction("URGENT edition");
 
+   Task& t3=m->editTask(t2);
+   t3.setTitle("testTaskv3");
+   t3.setAction("U");
+
+   Task& t4=m->editTask(t3);
+   t4.setTitle("testTaskv4");
+   t4.setAction("Alors?");
+
+   //displayAllVersion();
 
 //   NotesManager::Iterator it=m->getIterator();
 //   cout<<it.current();
@@ -258,8 +273,8 @@ try{
 //       }
 //       it.next();
 //   }
-//    m->setFilename("test_save.xml");
-//    m->save();
+    m->setFilename("test_save.xml");
+    m->save();
 
 //   displayAllVersion();
 
@@ -297,10 +312,10 @@ try{
       displayAllVersion();
 
       m->emptyTrash();
-      NotesManager::Iterator it=m->getIterator();
-      it.next();
-      it.current().display();
-      displayAllVersion();
+      //NotesManager::Iterator it=m->getIterator();
+      //it.next();
+      //it.current().display();
+      m->getNoteVersion("testTask",0).display();
 
       m->getNewArticle("TestReinsertion","TestReins","Test de la reinsertion d'une note apres une suppression");
 
@@ -318,8 +333,8 @@ try{
 
 int main(int argc, char * argv[]) {
 
-    //fct();
-    PROGRAMME(argc,argv);
+    fct();
+    //PROGRAMME(argc,argv);
     //creation();
     return 0;
 }

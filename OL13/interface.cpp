@@ -219,7 +219,7 @@ void selection_note::update_model(){
                 items.append(new QStandardItem(it.current().getType()));
                 items.at(0)->setWhatsThis(it.current().getId());
                 model->appendRow(items);
-                for(QList<Note*>::iterator j=it.getIteratorVersions();j !=it.liste()->end();j++)
+                for(QList<Note*>::iterator j=it.liste()->begin();j !=it.liste()->end();j++)
                 {
                     QList< QStandardItem* > item2;
                     //item2.push_back(new QStandardItem((*j)->getTitle()));
@@ -228,6 +228,8 @@ void selection_note::update_model(){
                     item2.append(new QStandardItem ((*j)->getLastmodif_date().toString()));
                     //items.at(0)->appendRow(item2);
                     items.at(0)->insertRow(0,item2);
+                    QMessageBox::information(this,"titre",(*j)->getTitle());
+
                 }
         }
 
