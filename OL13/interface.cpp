@@ -74,9 +74,9 @@ interface::interface(): QMainWindow()
         Action_Fermer_Note=new QAction("Fermer la note",this);
         Action_Fermer_Note->setShortcut(QKeySequence("ctrl+alt+Q"));
         connect(Action_Fermer_Note,SIGNAL(triggered(bool)),this,SLOT(close_page_note()));
-        toolBar_new_Rel=addToolBar("Edition");
-        toolBar_new_Rel->addAction(Action_Fermer_Note);
-        toolBar_new_Rel->setHidden(true);
+        toolBar_close=addToolBar("Edition");
+        toolBar_close->addAction(Action_Fermer_Note);
+        toolBar_close->setHidden(true);
      /*
         Action_aff_relation=new QAction("Afficher les relations ",this);
         Action_aff_relation->setShortcut(QKeySequence("ctrl+A"));
@@ -91,6 +91,11 @@ interface::interface(): QMainWindow()
         connect(ActionSupprimer,SIGNAL(triggered(bool)),this,SLOT(supprimer_note()));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
         toolBar_supp_note=addToolBar("Edition");
         toolBar_supp_note->addAction(ActionSupprimer);
+        MenuFichier->addAction(ActionSupprimer);
+
+        QAction *ActionViderCorbeille=new QAction("&Vider la corbeille",this);
+        connect(ActionViderCorbeille,SIGNAL(triggered(bool)),this,SLOT(ViderCorbeille()));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
+        MenuFichier->addAction(ActionViderCorbeille);
 
     CreateDock_selected_Note();
     setCentralWidget(ZoneCentrale);
@@ -99,6 +104,7 @@ void interface::addAction_new_rel(){
 
     MenuEd->addAction(Action_new_relation);
     toolBar_new_Rel->setHidden(false);
+    toolBar_close->setHidden(false);
 
 }
 

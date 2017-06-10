@@ -333,8 +333,8 @@ try{
 
 int main(int argc, char * argv[]) {
 
-    fct();
-    //PROGRAMME(argc,argv);
+    //fct();
+    PROGRAMME(argc,argv);
     //creation();
     return 0;
 }

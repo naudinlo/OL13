@@ -67,6 +67,7 @@ class interface:public QMainWindow
     QAction* Action_aff_relation;
     QAction* Action_Fermer_Note;
     QToolBar* toolBar_new_Rel;
+    QToolBar* toolBar_close;
     QToolBar* toolBar_supp_note;
     QToolBar* toolBar_save_note;
     QToolBar* toolBar_aff_Rel;
