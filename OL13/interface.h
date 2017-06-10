@@ -101,6 +101,17 @@ public slots:
    void Aff_relation(){
 
    }
+   void ViderCorbeille(){
+       close_page_note();
+       try{
+           NotesManager::getInstance()->emptyTrash();
+       QMessageBox::information(this,"Corbeille ","Corbeille vider");
+       }
+       catch (NotesException e){
+           QMessageBox::warning(this,"Erreur corbeille", e.getinfo());
+       }
+      emit(update_model());
+   }
 
    void addAction_new_rel();
    void OuvrirFichier();

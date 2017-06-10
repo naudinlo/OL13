@@ -15,11 +15,10 @@
 supp_note::supp_note(QStandardItemModel* m, QWidget* parent):QDialog(parent),model(m)
 {
     layout =new QVBoxLayout;
-    vue=new QTreeView(this);
+    vue=new QListView(this);
     vue->setAlternatingRowColors(true);
     vue->setEditTriggers(QAbstractItemView::NoEditTriggers);
     vue->setModel(model);
-    vue->header()->hide();
     vue->setDisabled(false);
     vue->setSelectionMode(QAbstractItemView::ExtendedSelection);
 

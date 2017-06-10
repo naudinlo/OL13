@@ -54,6 +54,12 @@ public slots:
         //TODO : FAIRE EN SORTE QUE LA FONCTION MARCHE!!!
         note->readOnly(status);
         delete dock_editer;
+        if(n.getIsDeleted() ){
+            n.setIsDeleted(false);
+        }
+        else if(n.getIsArchive()){
+            n.setIsArchive(false);
+        }
         emit(supp_dock_editer());
         if(n.getType()=="Article"){
             n =NotesManager::getInstance()->editArticle(dynamic_cast<Article&>(n));

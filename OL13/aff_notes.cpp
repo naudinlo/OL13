@@ -49,12 +49,12 @@ page_notes::page_notes(Note& N):n(N)
         QLabel* lecture_seul=new QLabel ("Ce document est ouvert en lecture seule");
         if(n.getIsDeleted()){
             lecture_seul->setText("Ce document est supprimé, il ne peut être éditer");
-            editer->setEnabled(false);
+            editer->setText("Restaurer la note");
         }
         else if(n.getIsArchive()){
             lecture_seul->setText("Ce document est archivé"
                                   ", il ne peut être éditer");
-            editer->setEnabled(false);
+            editer->setText("Restaurer la note");
         }
         editer->setShortcut(QKeySequence("ctrl+E"));
         layout_editer->addStretch();

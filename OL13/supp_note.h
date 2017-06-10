@@ -19,7 +19,7 @@ class supp_note: public QDialog
 {
     Q_OBJECT
     QVBoxLayout* layout;
-    QTreeView* vue;
+    QListView* vue;
     QStandardItemModel* model;
     QPushButton* supp;
 public:
