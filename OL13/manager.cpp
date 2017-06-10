@@ -166,6 +166,8 @@ Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,co
 
 
 Article& NotesManager::editArticle(Article& A){
+    if (A.getIsDeleted())
+        throw NotesException("Impossible d'éditer, la note est actuellement dans la corbeille");
     Article* n=new Article(A);
     QList<Note*>* liste=getListeVersions(n->getId());
     liste->push_front(n);
@@ -173,6 +175,8 @@ Article& NotesManager::editArticle(Article& A){
 }
 
 Task& NotesManager::editTask(Task& T){
+    if (T.getIsDeleted())
+        throw NotesException("Impossible d'éditer, la note est actuellement dans la corbeille");
     Task* n=new Task(T);
     QList<Note*>* liste=getListeVersions(n->getId());
     liste->push_front(n);
@@ -180,6 +184,8 @@ Task& NotesManager::editTask(Task& T){
 }
 
 Recording& NotesManager::editRecording(Recording& R){
+    if (R.getIsDeleted())
+        throw NotesException("Impossible d'éditer, la note est actuellement dans la corbeille");
     Recording* n=new Recording(R);
     QList<Note*>* liste=getListeVersions(n->getId());
     liste->push_front(n);
