@@ -251,7 +251,8 @@ Note& NotesManager::getNote(const QString& id){
 Note& NotesManager::getNoteVersion(const QString& id, int indice){
     NotesManager::Iterator it=NotesManager::getIterator();
     while(!it.isDone()){
-        if (it.current().getId()==id && it.liste()->length()>indice) return *(it.liste()->at(indice));
+        if (!it.liste()->isEmpty())
+            if (it.current().getId()==id && it.liste()->length()>indice) return *(it.liste()->at(indice));
         it.next();
     }
     throw NotesException("error, non existent note version");
@@ -284,12 +285,12 @@ void NotesManager::save() const {
     stream.setAutoFormatting(true);
     stream.writeStartDocument();
 
-    stream.writeStartElement("NoteSManager");
+    stream.writeStartElement("NoteManager");
 
     for(NotesManager::Iterator it=m->getIterator(); !it.isDone(); it.next()){
 
         stream.writeStartElement("NoteVersions");
-        //stream.writeTextElement("test","test");// en ajoutant cette ligne le save fonctionne correctement
+        stream.writeTextElement("T","");// en ajoutant cette ligne le save fonctionne correctement
         for(QList<Note*>::iterator it2=it.getIteratorVersions(); it2!=it.liste()->end(); it2++){
             it2.operator *()->saveNote(&newfile);
         }
