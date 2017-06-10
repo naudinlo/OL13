@@ -72,6 +72,11 @@ public slots:
             n =NotesManager::getInstance()->editTask(dynamic_cast<Task&>(n));
         }
     }
+    void Archiver_page_note(){
+        n.setIsArchive(true);
+        emit(update_model());
+        close();
+    }
 };
 
 class page_vide: public QWidget{

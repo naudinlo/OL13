@@ -66,6 +66,7 @@ class interface:public QMainWindow
     QAction* Action_new_relation;
     QAction* Action_aff_relation;
     QAction* Action_Fermer_Note;
+    QAction* Action_Archiver_Note;
     QToolBar* toolBar_new_Rel;
     QToolBar* toolBar_close;
     QToolBar* toolBar_supp_note;
@@ -101,6 +102,8 @@ public slots:
    void Aff_relation(){
 
    }
+
+
    void ViderCorbeille(){
        close_page_note();
        try{

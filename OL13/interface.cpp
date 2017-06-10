@@ -77,6 +77,11 @@ interface::interface(): QMainWindow()
         toolBar_close=addToolBar("Edition");
         toolBar_close->addAction(Action_Fermer_Note);
         toolBar_close->setHidden(true);
+
+        Action_Archiver_Note=new QAction("Archivé la note",this);
+        Action_Archiver_Note->setShortcut(QKeySequence("ctrl+alt+A"));
+        toolBar_new_Rel->addAction(Action_Archiver_Note);
+
      /*
         Action_aff_relation=new QAction("Afficher les relations ",this);
         Action_aff_relation->setShortcut(QKeySequence("ctrl+A"));
@@ -104,6 +109,7 @@ void interface::addAction_new_rel(){
 
     MenuEd->addAction(Action_new_relation);
     toolBar_new_Rel->setHidden(false);
+    connect(Action_Archiver_Note,SIGNAL(triggered(bool)),note_page,SLOT(Archiver_page_note()));
     toolBar_close->setHidden(false);
 
 }
