@@ -17,6 +17,14 @@
 
 /**************NotesManager********************/
 
+/**
+ * \fn        Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const QString& te)
+ * \brief     Créer une nouvelle note de type article
+ *              La première version de cette note est ajoutée à la liste des versions d'une note
+ * \param     const QString& id         ID de la note à créer
+ *            const QString& ti         Titre de l'article à créer
+ *            const QString& de         Text de l'article a créer
+ */
 Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const QString& te){
     Article* n=new Article(id,ti,te);
     NotesManager::Iterator it=NotesManager::getIterator();
@@ -43,7 +51,17 @@ Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const 
     return *n;
 }
 
-
+/**
+ * \fn        Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s)
+ * \brief     Créer une nouvelle note de type task
+ *              La première version de cette note est ajoutée à la liste des versions d'une note
+ * \param     const QString& id         ID de la note à créer
+ *            const QString& ti         Titre de la tache à créer
+ *            const QString& a          Action de la tache à créer
+ *            ENUM::StatusType s     Status de la tache à créer
+ *            unsigned int p            Priority de la tache à créer
+ *            const QDateTime d         Date limite de la tache à créer
+ */
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d){
     Task* n=new Task(id,ti,a,s,p,d);
     NotesManager::Iterator it=NotesManager::getIterator();
@@ -67,7 +85,16 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     (*liste).push_front(n);
     return *n;
 }
-
+/**
+ * \fn        Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s)
+ * \brief     Créer une nouvelle note de type task
+ *              La première version de cette note est ajoutée à la liste des versions d'une note
+ * \param     const QString& id         ID de la note a créer
+ *            const QString& ti         Titre de la tache a créer
+ *            const QString& a          Action de la tache a créer
+ *            ENUM::StatusType s     Status de la tache a créer
+ *            unsigned int p            Priority de la tache à créer
+ */
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p){
     Task* n=new Task(id,ti,a,s,p);
     NotesManager::Iterator it=NotesManager::getIterator();
@@ -91,7 +118,16 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     (*liste).push_front(n);
     return *n;
 }
-
+/**
+ * \fn        Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s)
+ * \brief     Créer une nouvelle note de type task
+ *              La première version de cette note est ajoutée à la liste des versions d'une note
+ * \param     const QString& id         ID de la note a créer
+ *            const QString& ti         Titre de la tache a créer
+ *            const QString& a          Action de la tache a créer
+ *            ENUM::StatusType s     Status de la tache a créer
+ *            const QDateTime d         Date limite de la tache à créer
+ */
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, const QDateTime d){
     Task* n=new Task(id,ti,a,s,d);
     NotesManager::Iterator it=NotesManager::getIterator();
@@ -116,6 +152,15 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     return *n;
 }
 
+/**
+ * \fn        Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s)
+ * \brief     Créer une nouvelle note de type task
+ *              La première version de cette note est ajoutée à la liste des versions d'une note
+ * \param     const QString& id         ID de la note a créer
+ *            const QString& ti         Titre de la tache a créer
+ *            const QString& a          Action de la tache a créer
+ *            ENUM::StatusType s     Status de la tache a créer
+ */
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s){
     Task* n=new Task(id,ti,a,s);
     NotesManager::Iterator it=NotesManager::getIterator();
@@ -140,6 +185,16 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
     return *n;
 }
 
+/**
+ * \fn        Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,const QString& d, ENUM::RecordingType r, QString l)
+ * \brief     Créé une nouvelle note de type recording
+ *              La première version de cette note est ajoutée à la liste des versions d'une note
+ * \param     const QString& id         ID de la note a créer
+ *            const QString& ti         Titre du recording a créer
+ *            const QString& d          Description du recording a créer
+ *            ENUM::RecordingType r     Type du recording a créer
+ *            QString l                 Link du recording a créer
+ */
 Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,const QString& d, ENUM::RecordingType r, QString l){
     Recording* n=new Recording(id,ti,d,r,l);
     NotesManager::Iterator it=NotesManager::getIterator();
@@ -164,7 +219,13 @@ Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,co
     return *n;
 }
 
-
+/**
+ * \fn        Article& NotesManager::editArticle(Article& A)
+ * \brief     Créé une nouvelle instance d'un article passé en paramètre
+ * \details   Recopie une note passée en paramètre en modifiant sa date de dernière mise à jour
+ *              et l'insère en première position dans la liste des versions d'une note
+ * \param     Article& A          Référence sur l'article a éditer
+ */
 Article& NotesManager::editArticle(Article& A){
     if (A.getIsDeleted())
         throw NotesException("Impossible d'éditer, la note est actuellement dans la corbeille");
@@ -174,6 +235,13 @@ Article& NotesManager::editArticle(Article& A){
     return *n;
 }
 
+/**
+ * \fn        Task& NotesManager::editTask(Task& T)
+ * \brief     Créé une nouvelle instance d'une task passée en paramètre
+ * \details   Recopie une note passée en paramètre en modifiant sa date de dernière mise à jour
+ *              et l'insère en première position dans la liste des versions d'une note
+ * \param     Task& T          Référence sur la tache a éditer
+ */
 Task& NotesManager::editTask(Task& T){
     if (T.getIsDeleted())
         throw NotesException("Impossible d'éditer, la note est actuellement dans la corbeille");
@@ -183,6 +251,13 @@ Task& NotesManager::editTask(Task& T){
     return *n;
 }
 
+/**
+ * \fn        Recording& NotesManager::editRecording(Recording& R)
+ * \brief     Créé une nouvelle instance d'un recording passé en paramètre
+ * \details   Recopie une note passée en paramètre en modifiant sa date de dernière mise à jour
+ *              et l'insère en première position dans la liste des versions d'une note
+ * \param     Recording& R          Référence sur le recording a éditer
+ */
 Recording& NotesManager::editRecording(Recording& R){
     if (R.getIsDeleted())
         throw NotesException("Impossible d'éditer, la note est actuellement dans la corbeille");
@@ -192,52 +267,11 @@ Recording& NotesManager::editRecording(Recording& R){
     return *n;
 }
 
-//ANCIEN editArticle, ... qui prenait en compte des QString id, title, etc.
-/*
-Article& NotesManager::editArticle(const QString& id, const QString& ti,const QString& te){
-    Article* n=new Article(id,ti,te);
-    QList<Note*>* liste=getListeVersions(id);
-    liste->push_front(n);
-    return *n;
-}
-
-Task& NotesManager::editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d){
-    Task* n=new Task(id,ti,a,s,p,d);
-    QList<Note*>* liste=getListeVersions(id);
-    liste->push_front(n);
-    return *n;
-}
-
-Task& NotesManager::editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p){
-    Task* n=new Task(id,ti,a,s,p);
-    QList<Note*>* liste=getListeVersions(id);
-    liste->push_front(n);
-    return *n;
-}
-
-Task& NotesManager::editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, const QDateTime d){
-    Task* n=new Task(id,ti,a,s,d);
-    QList<Note*>* liste=getListeVersions(id);
-    liste->push_front(n);
-    return *n;
-}
-
-Task& NotesManager::editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s){
-    Task* n=new Task(id,ti,a,s);
-    QList<Note*>* liste=getListeVersions(id);
-    liste->push_front(n);
-    return *n;
-}
-
-Recording& NotesManager::editRecording(const QString& id, const QString& ti,const QString& d, ENUM::RecordingType r, QString l){
-    Recording* n=new Recording(id,ti,d,r,l);
-    QList<Note*>* liste=getListeVersions(id);
-    liste->push_front(n);
-    return *n;
-}
-*/
-
-//ATTENTION : faire une fonction pour chaque type ? Ou un dynamic cast ? // Rep: non laisse comme cela on fera des casts
+/**
+ * \fn        Note& NotesManager::getNote(const QString& id)
+ * \brief     Retourne une réfèrence sur l'ID d'une note spécifiée en paramètre
+ * \param     const QString& id         ID de la note a retourner
+ */
 Note& NotesManager::getNote(const QString& id){
     NotesManager::Iterator it=NotesManager::getIterator();
     while(!it.isDone()){
@@ -248,6 +282,12 @@ Note& NotesManager::getNote(const QString& id){
 
 }
 
+/**
+ * \fn        Note& NotesManager::getNoteVersion(const QString& id, int indice)
+ * \brief     Retourne la i-ième versions d'une note spécifiée en paramètre
+ * \param     const QString& id         ID de la note concernée
+ *            int indice                Numéro de la version à retourner
+ */
 Note& NotesManager::getNoteVersion(const QString& id, int indice){
     NotesManager::Iterator it=NotesManager::getIterator();
     while(!it.isDone()){
@@ -258,6 +298,11 @@ Note& NotesManager::getNoteVersion(const QString& id, int indice){
     throw NotesException("error, non existent note version");
 }
 
+/**
+ * \fn        QList<Note*>* NotesManager::getListeVersions(const QString& id)
+ * \brief     Retourne la liste des versions d'une note spécifiée en paramètre
+ * \param     const QString& id         ID de la note dont les versions doivent être retournée
+ */
 QList<Note*>* NotesManager::getListeVersions(const QString& id){
     NotesManager::Iterator it=NotesManager::getIterator();
     while(!it.isDone()){
@@ -267,9 +312,16 @@ QList<Note*>* NotesManager::getListeVersions(const QString& id){
     throw NotesException("error, non existent note");
 }
 
-
+/**
+ * \fn        NotesManager::NotesManager()
+ * \brief     Constructeur de la classe NotesManager
+ */
 NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0){}
 
+/**
+ * \fn        NotesManager::~NotesManager()
+ * \brief     Destructeur de la classe NotesManager
+ */
 NotesManager::~NotesManager(){
     //save();
     for(unsigned int i=0; i<nbNotes; i++) delete notes[i];
@@ -397,13 +449,22 @@ void NotesManager::load() {
 }
 
 
+/**
+ * \fn        ostream& operator<<(ostream& f, const Note& n)
+ * \brief     Surcharge de l'opérateur << d'affichage d'une note
+ */
 ostream& operator<<(ostream& f, const Note& n){
     f<<n.getId().toStdString()<<"\n";
     f<<n.getTitle().toStdString()<<"\n";
     return f;
 }
 
-
+/**
+ * \fn        NotesManager::Handler NotesManager::handler=NotesManager::Handler()
+ *              NotesManager *NotesManager::getInstance()
+ *              void NotesManager::libererInstance()
+ * \brief     Fonctions relatives au Design Pattern Singleton sur le NotesManager
+ */
 NotesManager::Handler NotesManager::handler=NotesManager::Handler();
 
 NotesManager *NotesManager::getInstance(){
@@ -418,7 +479,16 @@ void NotesManager::libererInstance(){
     handler.instance=0;
 }
 
-
+/**
+ * \fn        void NotesManager::deleteNote(const QString& id)
+ * \brief     Action de suppression d'une note spécifiée en paramètre
+ * \details   Lorsque la suppression d'une note est demandée,
+ *              celle ci est archivée si elle est référencée par d'autres notes (l'attribut isArchive est mis à true).
+ *              Sinon, supprime sa présence dans l'ensemble des relations,
+ *                  puis supprime l'ensemble des références qu'à cette note,
+ *                  puis déplace la note dans la corbeille (l'attribut siDeleted est mis à true).
+ * \param    const QString& id          ID de la note a supprimer
+ */
 void NotesManager::deleteNote(const QString& id){
     NotesManager::Iterator it=NotesManager::getIterator();
     //Suppression de la dernière version
@@ -488,7 +558,13 @@ void NotesManager::deleteNote(const QString& id){
 //}
 
 
-
+/**
+ * \fn        void NotesManager::emptyTrash()
+ * \brief     Supprime définitivement l'ensemble des notes déclarées comme supprimées
+ * \details   Parcourt l'ensemble des notes,
+ *              lorsqu'une note est reconnue comme supprimée chaque version de cette note est supprimée
+ *              puis la liste des versions elle-même est vidée et supprimée
+ */
 void NotesManager::emptyTrash(){
     NotesManager* m=NotesManager::getInstance();
     std::cout<<"\nEMPTY TRASH DEMANDE\n";
@@ -529,18 +605,24 @@ void NotesManager::emptyTrash(){
 }
 
 
-void NotesManager::editNote(const QString &id){
-    NotesManager::Iterator it=NotesManager::getIterator();
-    while(!it.isDone() && it.current().getId()!=id) it.next();
-    if (it.isDone()){
-        throw NotesException("error, impossible to edit note, non existent note");
-    }
-    else{
-        Note* ncopy(&it.current());   //last modif date automatiquement mis à jour dans la copie
-        //a definir avec l'interface
-    }
-}
+//void NotesManager::editNote(const QString &id){
+//    NotesManager::Iterator it=NotesManager::getIterator();
+//    while(!it.isDone() && it.current().getId()!=id) it.next();
+//    if (it.isDone()){
+//        throw NotesException("error, impossible to edit note, non existent note");
+//    }
+//    else{
+//        Note* ncopy(&it.current());   //last modif date automatiquement mis à jour dans la copie
+//        //a definir avec l'interface
+//    }
+//}
 
+
+/**
+ * \fn        void NotesManager::restoreNoteTrash(const QString& id)
+ * \brief     Restaure une note supprimée en passant à false son attribut isDeleted
+ * \param     const QString& id             ID de la note supprimée à restaurer
+ */
 void NotesManager::restoreNoteTrash(const QString& id){
     NotesManager::Iterator it=NotesManager::getIterator();
     while(!it.isDone() && it.current().getId()!=id) it.next();
@@ -555,15 +637,30 @@ void NotesManager::restoreNoteTrash(const QString& id){
 
 /*************RelationManager*******************/
 
-
+/**
+ * \fn        RelationManager::RelationManager()
+ * \brief     Constructeur de la classe RelationManager
+ */
 RelationManager::RelationManager():tabrelations(0),nbRelations(0),nbMaxRelations(0){}
 
+/**
+ * \fn        RelationManager::~RelationManager()
+ * \brief     Destructeur de la classe RelationManager
+ * \details   Détruit chaque élément relation avant de les désallouer.
+ */
 RelationManager::~RelationManager(){
 //    save();
     for(unsigned int i=0; i<nbRelations; i++) delete tabrelations[i];
     delete[] tabrelations;
 }
 
+/**
+ * \fn        Relation& RelationManager::getNewRelation(const QString& title,const QString& desc)
+ * \brief     Créé une nouvelle relation à partir d'un titre et d'une description
+ *              si une autre relation du même titre n'existe pas déjà
+ * \param    const QString& title         Titre de la nouvelle relation à créer
+ *           const QString& desc          Description de la nouvelle relation à créer
+ */
 Relation& RelationManager::getNewRelation(const QString& title,const QString& desc){
     Relation* n=new Relation(title,desc);
     for(unsigned int i=0; i<nbRelations; i++){
@@ -582,7 +679,11 @@ Relation& RelationManager::getNewRelation(const QString& title,const QString& de
     return *tabrelations[i];
 }
 
-
+/**
+ * \fn        Relation& RelationManager::getRelation(const QString& title)
+ * \brief     Retourne une référence sur une relation dont le titre est donné en paramètre
+ * \param    const QString& title         Titre de la relation a retourner
+ */
 Relation& RelationManager::getRelation(const QString& title){
     for(unsigned int i=0; i<nbRelations; i++){
         if (tabrelations[i]->getTitle()==title) return *tabrelations[i];
@@ -590,6 +691,11 @@ Relation& RelationManager::getRelation(const QString& title){
     throw NotesException("error, impossible to get relation, non existent relation");
 }
 
+/**
+ * \fn        void RelationManager::deleteRelation(const QString &title)
+ * \brief     Supprime une relation dont le titre est passé en paramètre
+ * \param    const QString& title         Titre de la relation a supprimer
+ */
 void RelationManager::deleteRelation(const QString &title){
     for(unsigned int i=0; i<nbRelations; i++){
         if (tabrelations[i]->getTitle()==title){
@@ -602,18 +708,19 @@ void RelationManager::deleteRelation(const QString &title){
 }
 
 
+/**
+ * \fn        QList<Note*> NotesManager::getListAscendants(const QString& id)
+ * \brief     Retourne la liste des notes en relation ascendant avec une note specifiée en paramètre
+ * \param    const QString& id         ID de la note dont il faut trouver les notes en relation ascendante.
+ */
 QList<Note*> NotesManager::getListAscendants(const QString& id){
-//void NotesManager::getListAscendants(const QString& id){
-//   std::cout<<"\nLes relations ascendantes de "<<id.toStdString()<<" sont :\n";
    RelationManager& rm=RelationManager::getInstance();
-//   QList<Note*>* listAsc;
    QList<Note*> listAscendants;
    for(RelationManager::Iterator itManager=rm.getIterator(); !itManager.isDone(); itManager.next()){
        Relation& r=itManager.current();
         for(Relation::Iterator itRel=r.getIterator(); !itRel.isDone(); itRel.next()){
             if (itRel.current().getCoupleNoteX()->getId()==id){
                 Note& ny=NotesManager::getInstance()->getNote(itRel.current().getCoupleNoteY()->getId());
-//                std::cout<<"  - "<<ny.getId().toStdString()<<"\n";
                   listAscendants.append(&ny);
             }
         }
@@ -621,9 +728,12 @@ QList<Note*> NotesManager::getListAscendants(const QString& id){
    return listAscendants;
 }
 
+/**
+ * \fn        QList<Note*> NotesManager::getListDescendants(const QString& id)
+ * \brief     Retourne la liste des notes en relation descendante avec une note specifiée en paramètre
+ * \param    const QString& id         ID de la note dont il faut trouver les notes en relation descendante.
+ */
 QList<Note*> NotesManager::getListDescendants(const QString& id){
-//void NotesManager::getListDescendants(const QString& id){
-//   std::cout<<"\nLes relations descendantes de "<<id.toStdString()<<" sont :\n";
    RelationManager& rm=RelationManager::getInstance();
    QList<Note*> listDescendants;
    for(RelationManager::Iterator itManager=rm.getIterator(); !itManager.isDone(); itManager.next()){
@@ -631,7 +741,6 @@ QList<Note*> NotesManager::getListDescendants(const QString& id){
         for(Relation::Iterator itRel=r.getIterator(); !itRel.isDone(); itRel.next()){
             if (itRel.current().getCoupleNoteY()->getId()==id){
                 Note& nx=NotesManager::getInstance()->getNote(itRel.current().getCoupleNoteX()->getId());
-//                std::cout<<"  - "<<nx.getId().toStdString()<<"\n";
                 listDescendants.append(&nx);
             }
         }
@@ -639,20 +748,11 @@ QList<Note*> NotesManager::getListDescendants(const QString& id){
    return listDescendants;
 }
 
-//void NotesManager::displayRelAscDesc(const QString id){
-//    QList<Note*> listAscendants=m->getListAscendants("test");
-//    QList<Note*> listDescendants=m->getListDescendants("test");
-
-//    QList<Note*>::iterator i;
-//    std::cout<<"\nLes relations ascendantes de "<<id.toStdString()<<" sont :\n";
-//    for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
-//        cout << " - "<<(*i)->getId().toStdString() << endl;
-//    std::cout<<"\nLes relations descendantes de "<<id.toStdString()<<" sont :\n";
-//    for (i = listDescendants.begin(); i != listDescendants.end(); ++i)
-//        cout << " - "<<(*i)->getId().toStdString() << endl;
-//}
-
-
+/**
+ * \fn        RelationManager::Handler RelationManager::handler=RelationManager::Handler();
+                void RelationManager::libererInstance(){
+ * \brief     Fonctions relatives au Design Pattern Singleton sur le RelationManager
+ */
 RelationManager::Handler RelationManager::handler=RelationManager::Handler();
 
  RelationManager& RelationManager::getInstance(){
