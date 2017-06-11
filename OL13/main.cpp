@@ -333,8 +333,13 @@ try{
 
 int main(int argc, char * argv[]) {
 
+    NotesManager* m=NotesManager::getInstance();
+    m->setFilename("test_save.xml");
+    m->load();
+    displayAllVersion();
     //fct();
-    PROGRAMME(argc,argv);
+    //PROGRAMME(argc,argv);
     //creation();
+
     return 0;
 }

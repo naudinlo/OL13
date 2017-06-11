@@ -450,7 +450,7 @@ void Article::saveNote(QFile* file){
 
 void Task::saveNote(QFile* file){
     QXmlStreamWriter stream(file);
-    stream.writeStartElement("Task");
+    stream.writeStartElement("task");
     stream.writeTextElement("id",getId());
     stream.writeTextElement("title",getTitle());
     stream.writeTextElement("c_date",getCreation_date().toString());
@@ -477,7 +477,7 @@ void Task::saveNote(QFile* file){
 
 void Recording::saveNote(QFile* file){
     QXmlStreamWriter stream(file);
-    stream.writeStartElement("Recording");
+    stream.writeStartElement("recording");
     stream.writeTextElement("id",getId());
     stream.writeTextElement("title",getTitle());
     stream.writeTextElement("c_date",getCreation_date().toString());
