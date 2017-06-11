@@ -55,6 +55,7 @@ public:
 //    Note** noteRelAsc(Note * n);
 
     std::string displayRelation();
+    void saveRelation(QFile* file);
 //    std::string toString() const;
 //    void display(std::ostream& f=std::cout) const{
 //        f<<displayRelation();

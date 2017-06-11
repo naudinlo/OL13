@@ -301,15 +301,14 @@ void NotesManager::save() const {
 
 
     //Partie Relation
-    /*stream.writeStartElement("relationmanager");
+    stream.writeStartElement("relationmanager");
     RelationManager::Iterator it=RelationManager::getInstance().getIterator();
     while(!it.isDone()){
         stream.writeStartElement("relation");
         stream.writeTextElement("title", it.current().getTitle());
         stream.writeTextElement("description",it.current().getDescription());
         stream.writeStartElement("notecouple");
-        Relation::Iterator it2=it.current().getIterator();
-        while (!it2.isDone()) {
+        for(Relation::Iterator it2=it.current().getIterator(); !it2.isDone(); it2.next()){
             stream.writeStartElement("couple");
             stream.writeTextElement("notex",it2.current().getCoupleNoteX()->getId());
             stream.writeTextElement("notey",it2.current().getCoupleNoteY()->getId());
@@ -322,7 +321,7 @@ void NotesManager::save() const {
         stream.writeEndElement();
         it.next();
     }
-    stream.writeEndElement();*/
+    stream.writeEndElement();
 
     stream.writeEndDocument();
     newfile.close();
