@@ -45,15 +45,15 @@ page_notes::page_notes(Note& N):n(N)
             **/
         dock_editer=new QWidget;
         QHBoxLayout*layout_editer=new QHBoxLayout(dock_editer);
-        QPushButton* editer=new QPushButton ("Editer");
+        QPushButton* editer=new QPushButton ("Éditer");
         QLabel* lecture_seul=new QLabel ("Ce document est ouvert en lecture seule");
         if(n.getIsDeleted()){
-            lecture_seul->setText("Ce document est supprimé, il ne peut être éditer");
+            lecture_seul->setText("Ce document est supprimé, édition impossible");
             editer->setText("Restaurer la note");
         }
         else if(n.getIsArchive()){
             lecture_seul->setText("Ce document est archivé"
-                                  ", il ne peut être éditer");
+                                  ", édition impossible");
             editer->setText("Restaurer la note");
         }
         editer->setShortcut(QKeySequence("ctrl+E"));

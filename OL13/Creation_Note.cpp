@@ -108,7 +108,7 @@ void Creation_Note::Creer_Note(){
     }
     catch(NotesException e)
     {
-        QMessageBox::warning(this,"Echec lors de la création d'une note", e.getinfo());
+        QMessageBox::warning(this,"Échec lors de la création d'une note", e.getinfo());
     }
 
 }

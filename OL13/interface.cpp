@@ -78,7 +78,7 @@ interface::interface(): QMainWindow()
         toolBar_close->addAction(Action_Fermer_Note);
         toolBar_close->setHidden(true);
 
-        Action_Archiver_Note=new QAction("Archivé la note",this);
+        Action_Archiver_Note=new QAction("Archiver la note",this);
         Action_Archiver_Note->setShortcut(QKeySequence("ctrl+alt+A"));
         toolBar_new_Rel->addAction(Action_Archiver_Note);
 

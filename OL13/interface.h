@@ -108,7 +108,7 @@ public slots:
        close_page_note();
        try{
            NotesManager::getInstance()->emptyTrash();
-       QMessageBox::information(this,"Corbeille ","Corbeille vider");
+       QMessageBox::information(this,"Corbeille ","Vider la Corbeille");
        }
        catch (NotesException e){
            QMessageBox::warning(this,"Erreur corbeille", e.getinfo());

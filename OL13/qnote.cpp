@@ -24,7 +24,7 @@ QNote::QNote(){
 
 QArticle::QArticle(): QNote(){
     grid=new QGridLayout(this);
-    text=new QLabel("Saisir Texte");
+    text=new QLabel("Saisir le texte");
     E_text=new QTextEdit();
     grid->addWidget(E_text,0,1,0,5);
     grid->addWidget(text,0,0);
@@ -47,14 +47,14 @@ QTask::QTask():QNote(){
     duedate->setLayout(optional_duedate);
     priority=new QGroupBox ();
     priority->setCheckable(true);
-    priority->setTitle("priorité :");
+    priority->setTitle("Priorité :");
     optional_priority=new QHBoxLayout;
     priority->setLayout(optional_priority);
     E_priority=new QSpinBox();
     optional_priority->addStretch();
     optional_priority->addWidget(E_priority);
 
-    status=new QLabel("Etat");
+    status=new QLabel("État");
     E_status=new QComboBox;
     E_status->addItem("En cours");
     E_status->addItem("En attente");
@@ -77,16 +77,16 @@ QTask::QTask():QNote(){
 
 QRecording::QRecording():QNote(){
     grid=new QGridLayout(this);
-    description=new QLabel("Descrition:");
+    description=new QLabel("Description:");
     E_description=new QTextEdit;
     type=new QLabel("Type d'enregistrement");
     E_link=new QLineEdit;
     E_link->setEnabled(false);
-    read=new QPushButton("Lire Enregistrement");
+    read=new QPushButton("Lire l'enregistrement");
     stop=new QPushButton("Fermer");
     read->setEnabled(false);
     stop->setEnabled(true);
-    link=new QPushButton("Selectionner enregistrement");
+    link=new QPushButton("Sélectionner un enregistrement");
     E_type=new QComboBox;
     E_type->addItem("Image");
     E_type->addItem("Audio");
@@ -158,7 +158,7 @@ QString QRecording::OuvrirFichier(){
     }
 
 
-    QString fichier = QFileDialog::getOpenFileName(this,"Selectionner un enregistrement",QString(),Filtre);
+    QString fichier = QFileDialog::getOpenFileName(this,"Sélectionner un enregistrement",QString(),Filtre);
     if(fichier != 0){
             E_link->setText(fichier);
             read->setEnabled(true);

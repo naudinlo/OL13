@@ -51,8 +51,8 @@ QDockRelation::QDockRelation(const QString& id){
            model_to->appendRow(item);
        }*/
        L_fen=new QGridLayout(this);
-       Label_from=new QLabel("Relation depuis :") ;
-       Label_to=new QLabel("Relation vers :");
+       Label_from=new QLabel("Relation depuis : ") ;
+       Label_to=new QLabel("Relation vers : ");
 
        rel_from=new QListView;
        rel_from->setModel(model_from);
@@ -90,20 +90,20 @@ Edit_relation::Edit_relation(QStandardItemModel* m,QString id, QWidget* parent):
         while(index < model->rowCount() && id !=model->item(index)->whatsThis()){
             index++;
         }
-        this->setWindowTitle("Ajouter Relation");
+        this->setWindowTitle("Ajouter une relation");
         L_fen=new QGridLayout(this);
         titre= new QLabel("Titre de la relation");
         E_titre = new QLineEdit;
         connect(E_titre,SIGNAL(textChanged(QString)),this,SLOT(enabledAppend()));
         L_description=new QHBoxLayout;
         description=new QGroupBox();
-        description->setTitle("description :");
+        description->setTitle("Description : ");
         description->setCheckable(false);
         description->setLayout(L_description);
         E_description= new QTextEdit;
         L_description->addWidget(E_description);
         connect(E_description,SIGNAL(textChanged()),this,SLOT(enabledAppend()));
-        Label_from=new QLabel("Définer une Relation venant de :");
+        Label_from=new QLabel("Définer une Relation venant de : ");
         ref_from=new QListView;
         ref_from->setAlternatingRowColors(true);
         ref_from->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -111,7 +111,7 @@ Edit_relation::Edit_relation(QStandardItemModel* m,QString id, QWidget* parent):
         ref_from->setDisabled(false);
         ref_from->setSelectionMode(QAbstractItemView::ExtendedSelection);
         ref_from->setRowHidden(index,true);
-        Label_to=new QLabel("Définer une Relation vers :");
+        Label_to=new QLabel("Définer une Relation vers : ");
         ref_to=new QListView;
         ref_to->setAlternatingRowColors(true);
         ref_to->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -189,10 +189,10 @@ Edit_NotesCouple::Edit_NotesCouple(Note *na, Note *nb, QWidget* parent, bool s):
         L_fen=new QVBoxLayout(this);
         Label=new QLabel;
         if(symetric){
-            Label->setText("souhaitez vous saisir un Label entre le couple :"+ n1->getId()+" <-> "+n2->getId() );
+            Label->setText("Souhaitez vous saisir un Label pour le couple symétrique : "+ n1->getId()+" <-> "+n2->getId() );
         }
         else{
-                Label->setText("souhaitez vous saisir un Label entre le couple :"+ n1->getId()+" -> "+n2->getId() );
+                Label->setText("Souhaitez vous saisir un Label pour le couple : "+ n1->getId()+" -> "+n2->getId() );
     }
         choix =new QGroupBox;
         L_yes=new QHBoxLayout;

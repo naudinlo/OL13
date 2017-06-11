@@ -24,7 +24,7 @@ supp_note::supp_note(QStandardItemModel* m, QWidget* parent):QDialog(parent),mod
 
     layout->addWidget(vue);
     setLayout(layout);
-    supp=new QPushButton("supprimer les notes selectionnées");
+    supp=new QPushButton("Supprimer la ou les notes selectionnées");
     layout->addWidget(supp);
     connect(supp,SIGNAL(clicked(bool)),this,SLOT(supp_selection_note()));
 }

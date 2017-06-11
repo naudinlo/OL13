@@ -440,7 +440,7 @@ void NotesManager::deleteNote(const QString& id){
         for(RelationManager::Iterator it= m.getIterator(); !it.isDone(); it.next()){
             it.current().removeNoteRelation(&n);
         }
-        std::cout<<"toutes les relations sont supprimées\n";
+        std::cout<<"Toutes les relations sont supprimées\n";
         if(n.getNbRef()!=0) n.deleteAllReference();
         n.setIsDeleted(true);
     }
