@@ -293,15 +293,15 @@ try{
 //   rel1.removeNoteRelation(&a2);
    cout<<rel1.displayRelation();
 
-   QList<Note*> listAscendants=m->getListAscendants("test");
+   //QList<Note*> listAscendants=m->getListAscendants("test");
    QList<Note*> listDescendants=m->getListDescendants("test2");
 
       //Test pour voir si la liste retourne bien les bonnes choses
       QList<Note*>::iterator i;
       std::cout<<"\nLes relations ascendantes de test sont :\n";
-      for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
+      /*for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
           cout << " - "<<(*i)->getId().toStdString() << endl;
-      std::cout<<"\nLes relations descendantes de test2 sont :\n";
+      */std::cout<<"\nLes relations descendantes de test2 sont :\n";
       for (i = listDescendants.begin(); i != listDescendants.end(); ++i)
           cout << " - "<<(*i)->getId().toStdString() << endl;
 

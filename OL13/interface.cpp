@@ -260,13 +260,11 @@ void selection_note::emit_selection(QModelIndex i){
 
     if(!i.parent().isValid())
     {
-        QMessageBox::warning(this,"clique","père");
         current_versions=model->item(i.row(),0);
         emit selection(current_versions->whatsThis(),0);
     }
     else
     {
-        QMessageBox::warning(this,"clique fils",QString::number(i.row()));
 
         current_note=model->item(i.parent().row(),0);
         //current_versions=current_note->child(i.row(),0);

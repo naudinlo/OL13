@@ -23,6 +23,7 @@ QDockRelation::QDockRelation(const QString& id){
            Note* current_note=m->getListDescendants(id).at(i);
            QList< QStandardItem* > item;
                    item.append(new QStandardItem (current_note->getId()));
+                   item.append(new QStandardItem m->getCouple);
                    item.append(new QStandardItem(current_note->getTitle()));
 
                    item.at(0)->setWhatsThis(current_note->getId());
@@ -53,12 +54,13 @@ QDockRelation::QDockRelation(const QString& id){
        L_fen=new QGridLayout(this);
        Label_from=new QLabel("Relation depuis :") ;
        Label_to=new QLabel("Relation vers :");
-
-       rel_from=new QListView;
+       QStringList listeHeader;
+       listeHeader << "Id Note" << "Titre Relation";
+       rel_from=new QTableView();
        rel_from->setModel(model_from);
        rel_from->setEditTriggers(QAbstractItemView::NoEditTriggers);
        connect(rel_from,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_From_selection(QModelIndex)));
-       rel_to=new QListView;
+       rel_to=new QTableView;
        rel_to->setModel(model_to);
        rel_to->setEditTriggers(QAbstractItemView::NoEditTriggers);
        connect(rel_to,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_to_selection(QModelIndex)));

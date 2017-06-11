@@ -27,8 +27,8 @@ class QDockRelation:public QWidget{
     QLabel* Label_to;
     QStandardItemModel* model_from;
     QStandardItemModel* model_to;
-    QListView* rel_from;
-    QListView* rel_to;
+    QTableView* rel_from;
+    QTableView* rel_to;
 public:
     QDockRelation(const QString &id);
 public slots:

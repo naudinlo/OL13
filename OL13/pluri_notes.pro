@@ -10,7 +10,8 @@ HEADERS += \
     aff_notes.h \
     qnote.h \
     qrelations.h \
-    supp_note.h
+    supp_note.h \
+    form.h
 
 QT += widgets
 QT += xml
@@ -29,4 +30,8 @@ SOURCES += \
     aff_notes.cpp \
     qnote.cpp \
     qrelations.cpp \
-    supp_note.cpp
+    supp_note.cpp \
+    form.cpp
+
+FORMS += \
+    form.ui

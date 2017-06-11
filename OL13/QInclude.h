@@ -53,3 +53,4 @@
 #include <QHeaderView>
 #include <QTableView>
 #include <QListView>
+#include <QColumnView>
