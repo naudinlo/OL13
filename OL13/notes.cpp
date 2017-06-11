@@ -487,6 +487,12 @@ void Recording::saveNote(QFile* file){
     if(getIsDeleted()) stream.writeTextElement("isDeleted","true");
     else stream.writeTextElement("isDeleted","false");
     stream.writeTextElement("description",getDescription().toPlainText());
+    if(getType()==0)
+        stream.writeTextElement("type","Image");
+    if(getType()==1)
+        stream.writeTextElement("type","Audio");
+    if(getType()==2)
+        stream.writeTextElement("type","Video");
     stream.writeTextElement("link",getLink());
     stream.writeEndElement();
 }
