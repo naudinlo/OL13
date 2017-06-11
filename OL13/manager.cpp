@@ -349,312 +349,307 @@ void NotesManager::load() {
         // If token is StartElement, we'll see if we can read it.
         if(token == QXmlStreamReader::StartElement) {
             // If it's named taches, we'll go to the next.
-            if(xml.name() == "NoteManager") {
+            if(xml.name() == "NoteManager") continue;
+            // If it's named tache, we'll dig the information from there.
+            if(xml.name() == "NoteVersions") {
                 xml.readNext();
-                while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "NoteManager")) {
-                // If it's named tache, we'll dig the information from there.
-                if(xml.name() == "NoteVersions") {
-                    xml.readNext();
-                    while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "NoteVersions")) {
-                        if (xml.name()=="T") xml.readNextStartElement();
-                        unsigned int flag=0;
-                        QString identificateur;
-                        QString titre;
-                        QDateTime creation_date;
-                        QDateTime lastmodif_date;
-                        bool isArchive;
-                        bool isDeleted;
-                        if(xml.name() == "article") {
-                            qDebug()<<"new article\n";
-                            QString text;
-                            QXmlStreamAttributes attributes = xml.attributes();
+                while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "NoteVersions")) {
+                    if (xml.name()=="T") xml.readNextStartElement();
+                    unsigned int flag=0;
+                    QString identificateur;
+                    QString titre;
+                    QDateTime creation_date;
+                    QDateTime lastmodif_date;
+                    bool isArchive;
+                    bool isDeleted;
+                    if(xml.name() == "article") {
+                        qDebug()<<"new article\n";
+                        QString text;
+                        QXmlStreamAttributes attributes = xml.attributes();
+                        xml.readNext();
+                        //We're going to loop over the things because the order might change.
+                        //We'll continue the loop until we hit an EndElement named article.
+                        while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "article")) {
+                            if(xml.tokenType() == QXmlStreamReader::StartElement) {
+                                // We've found identificteur.
+                                if(xml.name() == "id") {
+                                    xml.readNext(); identificateur=xml.text().toString();
+                                    qDebug()<<"id="<<identificateur<<"\n";
+                                }
+
+                                // We've found titre.
+                                if(xml.name() == "title") {
+                                    xml.readNext(); titre=xml.text().toString();
+                                    qDebug()<<"titre="<<titre<<"\n";
+                                }
+
+                                //We've found creation_date
+                                if(xml.name() == "c_date") {
+                                    xml.readNext(); creation_date=QDateTime::fromString(xml.text().toString());
+                                    qDebug()<<"creation_date="<<creation_date.toString()<<"\n";
+                                }
+
+                                //We've found lastmodif_date
+                                if(xml.name() == "lm_date") {
+                                    xml.readNext(); lastmodif_date=QDateTime::fromString(xml.text().toString());
+                                    qDebug()<<"lastmodif_date="<<lastmodif_date.toString()<<"\n";
+                                }
+
+                                //We've found isArchive
+                                if(xml.name() == "isArchive") {
+                                    xml.readNext(); if (xml.text() == "false") isArchive=false; else isArchive=true;
+                                    qDebug()<<"isArchive="<<isArchive<<"\n";
+                                }
+
+                                //We've found isDeleted
+                                if(xml.name() == "isDeleted") {
+                                    xml.readNext(); if (xml.text() == "false") isDeleted=false; else isDeleted=true;
+                                    qDebug()<<"isDeleted="<<isDeleted<<"\n";
+                                }
+
+                                // We've found text
+                                if(xml.name() == "text") {
+                                    xml.readNext();
+                                    text=xml.text().toString();
+                                    qDebug()<<"text="<<text<<"\n";
+                                }
+                            }
+                            // ...and next...
                             xml.readNext();
-                            //We're going to loop over the things because the order might change.
-                            //We'll continue the loop until we hit an EndElement named article.
-                            while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "article")) {
-                                if(xml.tokenType() == QXmlStreamReader::StartElement) {
-                                    // We've found identificteur.
-                                    if(xml.name() == "id") {
-                                        xml.readNext(); identificateur=xml.text().toString();
-                                        qDebug()<<"id="<<identificateur<<"\n";
-                                    }
-
-                                    // We've found titre.
-                                    if(xml.name() == "title") {
-                                        xml.readNext(); titre=xml.text().toString();
-                                        qDebug()<<"titre="<<titre<<"\n";
-                                    }
-
-                                    //We've found creation_date
-                                    if(xml.name() == "c_date") {
-                                        xml.readNext(); creation_date=QDateTime::fromString(xml.text().toString());
-                                        qDebug()<<"creation_date="<<creation_date.toString()<<"\n";
-                                    }
-
-                                    //We've found lastmodif_date
-                                    if(xml.name() == "lm_date") {
-                                        xml.readNext(); lastmodif_date=QDateTime::fromString(xml.text().toString());
-                                        qDebug()<<"lastmodif_date="<<lastmodif_date.toString()<<"\n";
-                                    }
-
-                                    //We've found isArchive
-                                    if(xml.name() == "isArchive") {
-                                        xml.readNext(); if (xml.text() == "false") isArchive=false; else isArchive=true;
-                                        qDebug()<<"isArchive="<<isArchive<<"\n";
-                                    }
-
-                                    //We've found isDeleted
-                                    if(xml.name() == "isDeleted") {
-                                        xml.readNext(); if (xml.text() == "false") isDeleted=false; else isDeleted=true;
-                                        qDebug()<<"isDeleted="<<isDeleted<<"\n";
-                                    }
-
-                                    // We've found text
-                                    if(xml.name() == "text") {
-                                        xml.readNext();
-                                        text=xml.text().toString();
-                                        qDebug()<<"text="<<text<<"\n";
-                                    }
-                                }
-                                // ...and next...
-                                xml.readNext();
-                            }
-                            qDebug()<<"ajout article "<<identificateur<<"\n";
-                            Article* n=new Article(identificateur,titre,creation_date,lastmodif_date,isArchive,isDeleted,text);
-                            NotesManager::Iterator it=NotesManager::getIterator();
-                            while(!it.isDone()){
-                                if (it.current().getId()==identificateur){
-                                    it.liste()->push_back(n);
-                                    flag=1;
-                                }
-                                it.next();
-                            }
-                            if (nbNotes==nbMaxNotes){
-                                QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
-                                for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-                                QList<Note*>** oldNotes=notes;
-                                notes=newNotes;
-                                nbMaxNotes+=5;
-                                if (oldNotes) delete[] oldNotes;
-                            }
-                            if (flag==0){
-                                notes[nbNotes]= new QList<Note*>;
-                                QList<Note*>* liste=notes[nbNotes++];
-                                (*liste).push_front(n);
-                            }
                         }
-
-                        if(xml.name() == "task") {
-                            qDebug()<<"new task\n";
-                            QString action;
-                            ENUM::StatusType status;
-                            unsigned int priority;
-                            QDateTime dueDate;
-                            QXmlStreamAttributes attributes = xml.attributes();
-                            xml.readNext();
-                            //We're going to loop over the things because the order might change.
-                            //We'll continue the loop until we hit an EndElement named article.
-                            while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "task")) {
-                                if(xml.tokenType() == QXmlStreamReader::StartElement) {
-                                    // We've found identificteur.
-                                    if(xml.name() == "id") {
-                                        xml.readNext(); identificateur=xml.text().toString();
-                                        qDebug()<<"id="<<identificateur<<"\n";
-                                    }
-
-                                    // We've found titre.
-                                    if(xml.name() == "title") {
-                                        xml.readNext(); titre=xml.text().toString();
-                                        qDebug()<<"titre="<<titre<<"\n";
-                                    }
-
-                                    //We've found creation_date
-                                    if(xml.name() == "c_date") {
-                                        xml.readNext(); creation_date=QDateTime::fromString(xml.text().toString());
-                                        qDebug()<<"creation_date="<<creation_date.toString()<<"\n";
-                                    }
-
-                                    //We've found lastmodif_date
-                                    if(xml.name() == "lm_date") {
-                                        xml.readNext(); lastmodif_date=QDateTime::fromString(xml.text().toString());
-                                        qDebug()<<"lastmodif_date="<<lastmodif_date.toString()<<"\n";
-                                    }
-
-                                    //We've found isArchive
-                                    if(xml.name() == "isArchive") {
-                                        xml.readNext(); if (xml.text() == "false") isArchive=false; else isArchive=true;
-                                        qDebug()<<"isArchive="<<isArchive<<"\n";
-                                    }
-
-                                    //We've found isDeleted
-                                    if(xml.name() == "isDeleted") {
-                                        xml.readNext(); if (xml.text() == "false") isDeleted=false; else isDeleted=true;
-                                        qDebug()<<"isDeleted="<<isDeleted<<"\n";
-                                    }
-
-                                    // We've found action
-                                    if(xml.name() == "action") {
-                                        xml.readNext();
-                                        action=xml.text().toString();
-                                        qDebug()<<"action="<<action<<"\n";
-                                    }
-
-                                    // We've found priority
-                                    if(xml.name() == "priority") {
-                                        xml.readNext();
-                                        priority=xml.text().toUInt();
-                                        qDebug()<<"priority="<<priority<<"\n";
-                                    }
-
-                                    // We've found dueDate
-                                    if(xml.name() == "d_date") {
-                                        xml.readNext();
-                                        dueDate=QDateTime::fromString(xml.text().toString());
-                                        qDebug()<<"action="<<action<<"\n";
-                                    }
-
-                                    // We've found status
-                                    if(xml.name() == "status") {
-                                        xml.readNext();
-                                        if (xml.text().toString() == "OnGoing") status=ENUM::OnGoing;
-                                        if (xml.text().toString() == "Completed") status=ENUM::Completed;
-                                        if (xml.text().toString() == "Pending") status=ENUM::Pending;
-                                        qDebug()<<"priority="<<priority<<"\n";
-                                    }
-                                }
-                                // ...and next...
-                                xml.readNext();
+                        qDebug()<<"ajout article "<<identificateur<<"\n";
+                        Article* n=new Article(identificateur,titre,creation_date,lastmodif_date,isArchive,isDeleted,text);
+                        NotesManager::Iterator it=NotesManager::getIterator();
+                        while(!it.isDone()){
+                            if (it.current().getId()==identificateur){
+                                it.liste()->push_back(n);
+                                flag=1;
                             }
-                            qDebug()<<"ajout note "<<identificateur<<"\n";
-                            Task* n=new Task(identificateur,titre,creation_date,lastmodif_date,isArchive,isDeleted,action,status,priority,dueDate);
-                            NotesManager::Iterator it=NotesManager::getIterator();
-                            while(!it.isDone()){
-                                if (it.current().getId()==identificateur){
-                                    it.liste()->push_back(n);
-                                    flag=1;
-                                }
-                                it.next();
-                            }
-                            if (nbNotes==nbMaxNotes){
-                                QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
-                                for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-                                QList<Note*>** oldNotes=notes;
-                                notes=newNotes;
-                                nbMaxNotes+=5;
-                                if (oldNotes) delete[] oldNotes;
-                            }
-                            if (flag==0){
-                                notes[nbNotes]= new QList<Note*>;
-                                QList<Note*>* liste=notes[nbNotes++];
-                                (*liste).push_front(n);
-                            }
+                            it.next();
                         }
-
-                        if(xml.name() == "recording") {
-                            qDebug()<<"new recording\n";
-                            QString description;
-                            ENUM::RecordingType type;
-                            QString link;
-                            QXmlStreamAttributes attributes = xml.attributes();
-                            xml.readNext();
-                            //We're going to loop over the things because the order might change.
-                            //We'll continue the loop until we hit an EndElement named article.
-                            while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "task")) {
-                                if(xml.tokenType() == QXmlStreamReader::StartElement) {
-                                    // We've found identificteur.
-                                    if(xml.name() == "id") {
-                                        xml.readNext(); identificateur=xml.text().toString();
-                                        qDebug()<<"id="<<identificateur<<"\n";
-                                    }
-
-                                    // We've found titre.
-                                    if(xml.name() == "title") {
-                                        xml.readNext(); titre=xml.text().toString();
-                                        qDebug()<<"titre="<<titre<<"\n";
-                                    }
-
-                                    //We've found creation_date
-                                    if(xml.name() == "c_date") {
-                                        xml.readNext(); creation_date=QDateTime::fromString(xml.text().toString());
-                                        qDebug()<<"creation_date="<<creation_date.toString()<<"\n";
-                                    }
-
-                                    //We've found lastmodif_date
-                                    if(xml.name() == "lm_date") {
-                                        xml.readNext(); lastmodif_date=QDateTime::fromString(xml.text().toString());
-                                        qDebug()<<"lastmodif_date="<<lastmodif_date.toString()<<"\n";
-                                    }
-
-                                    //We've found isArchive
-                                    if(xml.name() == "isArchive") {
-                                        xml.readNext(); if (xml.text() == "false") isArchive=false; else isArchive=true;
-                                        qDebug()<<"isArchive="<<isArchive<<"\n";
-                                    }
-
-                                    //We've found isDeleted
-                                    if(xml.name() == "isDeleted") {
-                                        xml.readNext(); if (xml.text() == "false") isDeleted=false; else isDeleted=true;
-                                        qDebug()<<"isDeleted="<<isDeleted<<"\n";
-                                    }
-
-                                    // We've found description
-                                    if(xml.name() == "description") {
-                                        xml.readNext();
-                                        description=xml.text().toString();
-                                        qDebug()<<"description="<<description<<"\n";
-                                    }
-
-                                    // We've found type
-                                    if(xml.name() == "type") {
-                                        xml.readNext();
-                                        if (xml.text().toString() == "Audio") type=ENUM::Audio;
-                                        if (xml.text().toString() == "Video") type=ENUM::Video;
-                                        if (xml.text().toString() == "Image") type=ENUM::Image;
-                                        qDebug()<<"type="<<type<<"\n";
-                                    }
-
-                                    // We've found link
-                                    if(xml.name() == "link") {
-                                        xml.readNext();
-                                        link=xml.text().toString();
-                                        qDebug()<<"link="<<link<<"\n";
-                                    }
-                                }
-                                // ...and next...
-                                xml.readNext();
-                            }
-                            qDebug()<<"ajout recording "<<identificateur<<"\n";
-                            Recording* n=new Recording(identificateur,titre,creation_date,lastmodif_date,isArchive,isDeleted,description,type,link);
-                            NotesManager::Iterator it=NotesManager::getIterator();
-                            while(!it.isDone()){
-                                if (it.current().getId()==identificateur){
-                                    it.liste()->push_back(n);
-                                    flag=1;
-                                }
-                                it.next();
-                            }
-                            if (nbNotes==nbMaxNotes){
-                                QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
-                                for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
-                                QList<Note*>** oldNotes=notes;
-                                notes=newNotes;
-                                nbMaxNotes+=5;
-                                if (oldNotes) delete[] oldNotes;
-                            }
-                            if (flag==0){
-                                notes[nbNotes]= new QList<Note*>;
-                                QList<Note*>* liste=notes[nbNotes++];
-                                (*liste).push_front(n);
-                            }
+                        if (nbNotes==nbMaxNotes){
+                            QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
+                            for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
+                            QList<Note*>** oldNotes=notes;
+                            notes=newNotes;
+                            nbMaxNotes+=5;
+                            if (oldNotes) delete[] oldNotes;
                         }
-                        xml.readNextStartElement();
+                        if (flag==0){
+                            notes[nbNotes]= new QList<Note*>;
+                            QList<Note*>* liste=notes[nbNotes++];
+                            (*liste).push_front(n);
+                        }
                     }
+
+                    if(xml.name() == "task") {
+                        qDebug()<<"new task\n";
+                        QString action;
+                        ENUM::StatusType status;
+                        unsigned int priority;
+                        QDateTime dueDate;
+                        QXmlStreamAttributes attributes = xml.attributes();
+                        xml.readNext();
+                        //We're going to loop over the things because the order might change.
+                        //We'll continue the loop until we hit an EndElement named article.
+                        while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "task")) {
+                            if(xml.tokenType() == QXmlStreamReader::StartElement) {
+                                // We've found identificteur.
+                                if(xml.name() == "id") {
+                                    xml.readNext(); identificateur=xml.text().toString();
+                                    qDebug()<<"id="<<identificateur<<"\n";
+                                }
+
+                                // We've found titre.
+                                if(xml.name() == "title") {
+                                    xml.readNext(); titre=xml.text().toString();
+                                    qDebug()<<"titre="<<titre<<"\n";
+                                }
+
+                                //We've found creation_date
+                                if(xml.name() == "c_date") {
+                                    xml.readNext(); creation_date=QDateTime::fromString(xml.text().toString());
+                                    qDebug()<<"creation_date="<<creation_date.toString()<<"\n";
+                                }
+
+                                //We've found lastmodif_date
+                                if(xml.name() == "lm_date") {
+                                    xml.readNext(); lastmodif_date=QDateTime::fromString(xml.text().toString());
+                                    qDebug()<<"lastmodif_date="<<lastmodif_date.toString()<<"\n";
+                                }
+
+                                //We've found isArchive
+                                if(xml.name() == "isArchive") {
+                                    xml.readNext(); if (xml.text() == "false") isArchive=false; else isArchive=true;
+                                    qDebug()<<"isArchive="<<isArchive<<"\n";
+                                }
+
+                                //We've found isDeleted
+                                if(xml.name() == "isDeleted") {
+                                    xml.readNext(); if (xml.text() == "false") isDeleted=false; else isDeleted=true;
+                                    qDebug()<<"isDeleted="<<isDeleted<<"\n";
+                                }
+
+                                // We've found action
+                                if(xml.name() == "action") {
+                                    xml.readNext();
+                                    action=xml.text().toString();
+                                    qDebug()<<"action="<<action<<"\n";
+                                }
+
+                                // We've found priority
+                                if(xml.name() == "priority") {
+                                    xml.readNext();
+                                    priority=xml.text().toUInt();
+                                    qDebug()<<"priority="<<priority<<"\n";
+                                }
+
+                                // We've found dueDate
+                                if(xml.name() == "d_date") {
+                                    xml.readNext();
+                                    dueDate=QDateTime::fromString(xml.text().toString());
+                                    qDebug()<<"action="<<action<<"\n";
+                                }
+
+                                // We've found status
+                                if(xml.name() == "status") {
+                                    xml.readNext();
+                                    if (xml.text().toString() == "OnGoing") status=ENUM::OnGoing;
+                                    if (xml.text().toString() == "Completed") status=ENUM::Completed;
+                                    if (xml.text().toString() == "Pending") status=ENUM::Pending;
+                                    qDebug()<<"priority="<<priority<<"\n";
+                                }
+                            }
+                            // ...and next...
+                            xml.readNext();
+                        }
+                        qDebug()<<"ajout note "<<identificateur<<"\n";
+                        Task* n=new Task(identificateur,titre,creation_date,lastmodif_date,isArchive,isDeleted,action,status,priority,dueDate);
+                        NotesManager::Iterator it=NotesManager::getIterator();
+                        while(!it.isDone()){
+                            if (it.current().getId()==identificateur){
+                                it.liste()->push_back(n);
+                                flag=1;
+                            }
+                            it.next();
+                        }
+                        if (nbNotes==nbMaxNotes){
+                            QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
+                            for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
+                            QList<Note*>** oldNotes=notes;
+                            notes=newNotes;
+                            nbMaxNotes+=5;
+                            if (oldNotes) delete[] oldNotes;
+                        }
+                        if (flag==0){
+                            notes[nbNotes]= new QList<Note*>;
+                            QList<Note*>* liste=notes[nbNotes++];
+                            (*liste).push_front(n);
+                        }
+                    }
+
+                    if(xml.name() == "recording") {
+                        qDebug()<<"new recording\n";
+                        QString description;
+                        ENUM::RecordingType type;
+                        QString link;
+                        QXmlStreamAttributes attributes = xml.attributes();
+                        xml.readNext();
+                        //We're going to loop over the things because the order might change.
+                        //We'll continue the loop until we hit an EndElement named article.
+                        while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "task")) {
+                            if(xml.tokenType() == QXmlStreamReader::StartElement) {
+                                // We've found identificteur.
+                                if(xml.name() == "id") {
+                                    xml.readNext(); identificateur=xml.text().toString();
+                                    qDebug()<<"id="<<identificateur<<"\n";
+                                }
+
+                                // We've found titre.
+                                if(xml.name() == "title") {
+                                    xml.readNext(); titre=xml.text().toString();
+                                    qDebug()<<"titre="<<titre<<"\n";
+                                }
+
+                                //We've found creation_date
+                                if(xml.name() == "c_date") {
+                                    xml.readNext(); creation_date=QDateTime::fromString(xml.text().toString());
+                                    qDebug()<<"creation_date="<<creation_date.toString()<<"\n";
+                                }
+
+                                //We've found lastmodif_date
+                                if(xml.name() == "lm_date") {
+                                    xml.readNext(); lastmodif_date=QDateTime::fromString(xml.text().toString());
+                                    qDebug()<<"lastmodif_date="<<lastmodif_date.toString()<<"\n";
+                                }
+
+                                //We've found isArchive
+                                if(xml.name() == "isArchive") {
+                                    xml.readNext(); if (xml.text() == "false") isArchive=false; else isArchive=true;
+                                    qDebug()<<"isArchive="<<isArchive<<"\n";
+                                }
+
+                                //We've found isDeleted
+                                if(xml.name() == "isDeleted") {
+                                    xml.readNext(); if (xml.text() == "false") isDeleted=false; else isDeleted=true;
+                                    qDebug()<<"isDeleted="<<isDeleted<<"\n";
+                                }
+
+                                // We've found description
+                                if(xml.name() == "description") {
+                                    xml.readNext();
+                                    description=xml.text().toString();
+                                    qDebug()<<"description="<<description<<"\n";
+                                }
+
+                                // We've found type
+                                if(xml.name() == "type") {
+                                    xml.readNext();
+                                    if (xml.text().toString() == "Audio") type=ENUM::Audio;
+                                    if (xml.text().toString() == "Video") type=ENUM::Video;
+                                    if (xml.text().toString() == "Image") type=ENUM::Image;
+                                    qDebug()<<"type="<<type<<"\n";
+                                }
+
+                                // We've found link
+                                if(xml.name() == "link") {
+                                    xml.readNext();
+                                    link=xml.text().toString();
+                                    qDebug()<<"link="<<link<<"\n";
+                                }
+                            }
+                            // ...and next...
+                            xml.readNext();
+                        }
+                        qDebug()<<"ajout recording "<<identificateur<<"\n";
+                        Recording* n=new Recording(identificateur,titre,creation_date,lastmodif_date,isArchive,isDeleted,description,type,link);
+                        NotesManager::Iterator it=NotesManager::getIterator();
+                        while(!it.isDone()){
+                            if (it.current().getId()==identificateur){
+                                it.liste()->push_back(n);
+                                flag=1;
+                            }
+                            it.next();
+                        }
+                        if (nbNotes==nbMaxNotes){
+                            QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
+                            for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
+                            QList<Note*>** oldNotes=notes;
+                            notes=newNotes;
+                            nbMaxNotes+=5;
+                            if (oldNotes) delete[] oldNotes;
+                        }
+                        if (flag==0){
+                            notes[nbNotes]= new QList<Note*>;
+                            QList<Note*>* liste=notes[nbNotes++];
+                            (*liste).push_front(n);
+                        }
+                    }
+                    xml.readNextStartElement();
                 }
-                xml.readNextStartElement();
             }
-            }
-            /*if(xml.name() == "relationmanager"){
-                if(xml.name() == "relation") {
+            if(xml.name() == "relationmanager") continue;
+            if(xml.name() == "relation") {
                 xml.readNext();
                 QString titre;
                 QString description;
@@ -713,9 +708,8 @@ void NotesManager::load() {
                         R.getNewCoupleRelation(&getNote(notex),&getNote(notey),label,symetric);
                     }
                 }
+                xml.readNextStartElement();
             }
-            }
-            //xml.readNextStartElement();*/
         }
     }
     // Error handling.
