@@ -28,28 +28,6 @@ std::string Relation::displayRelation(){
     return f.str();
 }
 
-void Relation::saveRelation(QFile* file){
-    QXmlStreamWriter stream(file);
-    stream.writeStartElement("relation");
-    stream.writeTextElement("title", getTitle());
-    stream.writeTextElement("description",getDescription());
-    stream.writeStartElement("notecouple");
-    Relation::Iterator it=this->getIterator();
-    while (!it.isDone()) {
-        stream.writeStartElement("couple");
-        stream.writeTextElement("notex",it.current().getCoupleNoteX()->getId());
-        stream.writeTextElement("notey",it.current().getCoupleNoteY()->getId());
-        stream.writeTextElement("label",it.current().getLabel());
-        if(it.current().getSymetric()) stream.writeTextElement("symetric","true");//est-ce utile ? (les deux couples seront marqué donc on s'en fiche)
-        else stream.writeTextElement("symetric","false");
-        stream.writeEndElement();
-        it.next();
-    }
-    stream.writeEndElement();
-    stream.writeEndElement();
-}
-
-
 NotesCouple &Relation::getNewCoupleRelation(Note* n1,  Note* n2, QString label, bool s) {
 //    if (n1!=n2){
         NotesCouple* nc= new NotesCouple(n1,n2,label,s);
