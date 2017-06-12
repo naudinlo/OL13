@@ -517,7 +517,7 @@ void Article::saveNote(QFile* file){
 
 void Task::saveNote(QFile* file){
     QXmlStreamWriter stream(file);
-    stream.writeStartElement("Task");
+    stream.writeStartElement("task");
     stream.writeTextElement("id",getId());
     stream.writeTextElement("title",getTitle());
     stream.writeTextElement("c_date",getCreation_date().toString());
@@ -544,7 +544,7 @@ void Task::saveNote(QFile* file){
 
 void Recording::saveNote(QFile* file){
     QXmlStreamWriter stream(file);
-    stream.writeStartElement("Recording");
+    stream.writeStartElement("recording");
     stream.writeTextElement("id",getId());
     stream.writeTextElement("title",getTitle());
     stream.writeTextElement("c_date",getCreation_date().toString());
@@ -554,6 +554,12 @@ void Recording::saveNote(QFile* file){
     if(getIsDeleted()) stream.writeTextElement("isDeleted","true");
     else stream.writeTextElement("isDeleted","false");
     stream.writeTextElement("description",getDescription().toPlainText());
+    if(getType()==0)
+        stream.writeTextElement("type","Image");
+    if(getType()==1)
+        stream.writeTextElement("type","Audio");
+    if(getType()==2)
+        stream.writeTextElement("type","Video");
     stream.writeTextElement("link",getLink());
     stream.writeEndElement();
 }

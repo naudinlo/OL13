@@ -96,6 +96,10 @@ public:
 
     QString getType()const {return QString(typeid(*this).name()).remove(0,1);}
     Note(const QString& i, const QString& ti);
+//    Note(const QString&i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD):
+//        id(i),title(ti),creation_date(cd),lastmodif_date(lmd),isArchive(iA),isDeleted(iD), references(new Note*[5]), nbRef(0), nbMaxRef(5),nbIsRef(0){}
+    Note(const QString&i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD):
+        id(i),title(ti),creation_date(cd),lastmodif_date(lmd),isArchive(iA),isDeleted(iD), nbIsRef(0){}
 
     void setTitle(const QString& t){title=t;}
     void setCreation_date(const QDateTime& d){creation_date=d;}
@@ -142,6 +146,8 @@ public:
     void setText(const QString& t){text.setPlainText(t);}
 
     Article(const QString& i, const QString& ti, const QString& te);
+    Article(const QString& i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD, const QString& te):
+        Note(i,ti,cd,lmd,iA,iD), text(te){}
 
     //PRIVATE ?
     Article(const Article& a); //constructeur de recopie private pour le handler
@@ -174,6 +180,8 @@ public:
     Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p); //Deuxième type de constructeur : priorité ajoutée
     Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const QDateTime d);  //Troisième type : dueDate ajoutée
     Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d);    //Quatrième type : priorité et dueDate ajoutés
+    Task(const QString& i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD, const QString a, ENUM::StatusType s, unsigned int p, const QDateTime dD):
+        Note(i,ti,cd,lmd,iA,iD), action(a),status(s),priority(p),dueDate(dD){}
 
     //PRIVATE ?
     Task(const Task& t); //constructeur de recopie private pour le handler
@@ -198,6 +206,8 @@ public:
     void setType(const ENUM::RecordingType& r) {type=r;}
     void setLink(const QString& l){link=l;}
     Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l);
+    Recording(const QString& i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD, const QString& d, ENUM::RecordingType ty, const QString& li):
+        Note(i,ti,cd,lmd,iA,iD), description(d), type(ty), link(li){}
 
     //PRIVATE ?
     Recording(const Recording& r); //constructeur de recopie private pour le handler

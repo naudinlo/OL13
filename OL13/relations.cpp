@@ -28,7 +28,6 @@ std::string Relation::displayRelation(){
     return f.str();
 }
 
-
 NotesCouple &Relation::getNewCoupleRelation(Note* n1,  Note* n2, QString label, bool s) {
 //    if (n1!=n2){
         NotesCouple* nc= new NotesCouple(n1,n2,label,s);
