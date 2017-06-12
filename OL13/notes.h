@@ -101,7 +101,7 @@ public:
     Note(const QString&i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD):
         id(i),title(ti),creation_date(cd),lastmodif_date(lmd),isArchive(iA),isDeleted(iD), nbIsRef(0){}
 
-    void setTitle(const QString& t){title=t;}
+    void setTitle(const QString& t){generateRef(t); title=t;}
     void setCreation_date(const QDateTime& d){creation_date=d;}
     void setLastmodif_date(const QDateTime& d){lastmodif_date=d;}
 
@@ -135,6 +135,8 @@ public:
     Note& getReference(const QString &id) const;
     Note& getReferenceInt(unsigned int i) const;
 
+    void generateRef(const QString& champTexte);
+
 };
 
 
@@ -167,7 +169,7 @@ private:
     QDateTime dueDate;
 public:
     const QString getAction() const {return action;}
-    void setAction(const QString& a) {action=a;}
+    void setAction(const QString& a) {generateRef(a); action=a;}
     ENUM::StatusType getStatus() const {return status;}
     void setStatus(const ENUM::StatusType& s) {status=s;}
     int getPriority() const {return priority;}
@@ -202,7 +204,7 @@ public:
     const QTextDocument& getDescription() const {return description;}
     ENUM::RecordingType getType() const {return type;}
     const QString getLink() const {return link;} //voir si on garde cette structure pour les images
-    void setDescription(const QString& d) {description.setPlainText(d);}
+    void setDescription(const QString& d) {generateRef(d);description.setPlainText(d);}
     void setType(const ENUM::RecordingType& r) {type=r;}
     void setLink(const QString& l){link=l;}
     Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l);

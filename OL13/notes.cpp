@@ -19,6 +19,7 @@
 #include "sstream"
 #include "manager.h"
 #include "QInclude.h"
+#include "QString"
 
 
 //====OPERATEUR AFFECTATION, CONSTRUCTEUR DE RECOPIE
@@ -127,6 +128,8 @@ Recording& Recording::operator=(const Recording& r){
 Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false),nbIsRef(0){
     creation_date=QDateTime::currentDateTime();
     lastmodif_date=creation_date;
+    this->generateRef(i);
+    this->generateRef(ti);
 }
 
 
@@ -135,7 +138,9 @@ Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(fals
  * \brief       Constructeur de la classe Article
  * \details     La classe dérivé Article utilise en premier lieu le constructeur de Note.
  */
-Article::Article(const QString& i, const QString& ti, const QString &te):Note(i,ti), text(te){}
+Article::Article(const QString& i, const QString& ti, const QString &te):Note(i,ti), text(te){
+    this->generateRef(te);
+}
 
 /**
  * \fn          Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d)
@@ -143,17 +148,27 @@ Article::Article(const QString& i, const QString& ti, const QString &te):Note(i,
  * \details     La classe dérivé Task utilise en premier lieu le constructeur de Note.
  *              Task possède 4 constructeurs différents car deux de ses attributs sont optionnels.
  */
-Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s):Note(i, ti), action(a), status(s), priority(-1){};  //Premier type de constructeur : les deux optionels oubliés
-Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p):Note(i, ti), action(a), status(s), priority(p){}; //Deuxième type de constructeur : priorité ajoutée
-Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const QDateTime d):Note(i, ti), action(a), status(s), priority(-1), dueDate(d){};  //Troisième type : dueDate ajoutée
-Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d):Note(i, ti), action(a), status(s), priority(p), dueDate(d){} //Quatrième type : prio et dueDate ajoutés
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s):Note(i, ti), action(a), status(s), priority(-1){
+    this->generateRef(a);
+};  //Premier type de constructeur : les deux optionels oubliés
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p):Note(i, ti), action(a), status(s), priority(p){
+    this->generateRef(a);
+}; //Deuxième type de constructeur : priorité ajoutée
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, const QDateTime d):Note(i, ti), action(a), status(s), priority(-1), dueDate(d){
+    this->generateRef(a);
+};  //Troisième type : dueDate ajoutée
+Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d):Note(i, ti), action(a), status(s), priority(p), dueDate(d){
+    this->generateRef(a);
+} //Quatrième type : prio et dueDate ajoutés
 
 /**
  * \fn          Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l)
  * \brief       Constructeur de la classe Recording
  * \details     La classe dérivé Recording utilise en premier lieu le constructeur de Note.
  */
-Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l):Note(i, ti), description(d), type(r), link(l){};
+Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l):Note(i, ti), description(d), type(r), link(l){
+    this->generateRef(d);
+};
 
 
 
@@ -563,4 +578,82 @@ void Recording::saveNote(QFile* file){
     stream.writeTextElement("link",getLink());
     stream.writeEndElement();
 }
+
+//void Note::generateRef(const QString& champTexte){
+//    // définition expression regulière pour capturer reference
+//        QRegExp rx("\\\\ref\\{(.+)\\}");
+//        rx.setMinimal(true); // setMinimal : true
+
+//        std::cout<<" in generate\n";
+
+//        // récupération liste id notes actives
+//        QList<Note*> listNotes;
+//        NotesManager::Iterator it=NotesManager::getInstance()->getIterator();
+//        while(!it.isDone()){
+//            if(!it.current().getIsDeleted()){
+//                listNotes.append(&it.current());
+//                std::cout<<" liste courant : "<<it.current().getId().toStdString()<<endl;
+//            }
+//            it.next();
+//        }
+
+//        // intialisation position pour parcours des resultats capturés
+//        QStringList list;
+//        int pos = 0;
+
+//        // parcours de toutes les ref capturées, dans QString id= rx.cap(1)
+//        while ((pos = rx.indexIn(champTexte, pos)) != -1){
+//            QString id = rx.cap(1);
+//            std::cout<<" id ? "<<id.toStdString()<<"\n";
+//            // id = note active ou archive, on ajoute la référence
+//            Note& n=NotesManager::getInstance()->getNote(id);
+//            std::cout<<n.getId().toStdString()<<endl;
+//            if(listNotes.contains(&n)){
+//                std::cout<<" ajout de "<<this->getId().toStdString()<<endl;
+//                this->setNewRef(id);
+//                // sinon, on supprime le \ref{} du texte
+//            }
+//            // sinon on supprime le \ref du texte !
+////            else{
+////                champTexte=champTexte.replace(QString("\\ref{"+id+"}"), "<<Reference incorrecte>>");
+////            }
+//            pos += rx.matchedLength();
+//        }
+//}
+
+
+void Note::generateRef(const QString& champTexte){
+    // définition expression regulière pour capturer reference
+        QRegExp rx("\\\\ref\\{(.+)\\}");
+        rx.setMinimal(true); // setMinimal : true
+
+        // récupération liste id notes actives
+        QList<QString> listNotes;
+        NotesManager::Iterator it=NotesManager::getInstance()->getIterator();
+        while(!it.isDone()){
+            if(!it.current().getIsDeleted()){
+                listNotes.append(it.current().getId());
+            }
+            it.next();
+        }
+
+        // intialisation position pour parcours des resultats capturés
+        QStringList list;
+        int pos = 0;
+
+        // parcourt de toutes les ref capturées, dans QString id= rx.cap(1)
+        while ((pos = rx.indexIn(champTexte, pos)) != -1){
+            QString id = rx.cap(1);
+            if(listNotes.contains(id)){
+                this->setNewRef(id);
+//                champTexte.replace(QRegExp("\\ref{"+id+"}"),id);
+            }
+            // sinon on supprime le \ref du texte
+//            else{
+//                champTexte.replace(QRegExp("\\ref{"+id+"}"),"<<Reference incorrecte>>");
+//            }
+            pos += rx.matchedLength();
+        }
+}
+
 

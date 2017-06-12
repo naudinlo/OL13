@@ -232,13 +232,22 @@ try{
    NotesManager* m=NotesManager::getInstance();
 //   m->getNewArticle("test","test1","test de l'itérator");
    Article& a1=m->getNewArticle("test","test1","test de l'itérator");
+   Article& p=m->getNewArticle("refTest","test1 \\ref{test}","test de l'itérator");
 //   m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
    Task& t1=m->getNewTask("testTask","testTask1","testTask de l'itérator",ENUM::OnGoing);
-   Article& ar1=m->getNewArticle("test2","test2","test2 de l'itérator");
+   Article& ar1=m->getNewArticle("test2","test2","test2 \\ref{test} de l'itérator");
 
    Article& a2=m->editArticle(a1);
    a2.setTitle("test1v2");
-   a2.setText("test des versions editées");
+   a2.setText("\\ref{test2} et encore \\ref{testTask}");
+
+   a2.display();
+   std::cout<<"\n";
+   p.display();
+   std::cout<<"\n";
+   ar1.display();
+   std::cout<<"\n";
+
 
    Article& a3=m->editArticle(a2);
    a3.setTitle("test1v3");
@@ -281,95 +290,92 @@ try{
     Note& g=NotesManager::getInstance()->getNote(t2.getId());
     std::cout<<"nombre de tache referencant t2 "<<g.getNbIsRef()<<endl;
 
-//   a4.display();
-//   t4.display();
+//    m->deleteNote(a1.getId());
+//    m->deleteNote(t4.getId());
 
-    m->deleteNote(a1.getId());
-    m->deleteNote(t4.getId());
+//    QList<Note*> listDeleted=m->getListDeleted();
+//    QList<Note*> listArchive=m->getListArchive();
 
-    QList<Note*> listDeleted=m->getListDeleted();
-    QList<Note*> listArchive=m->getListArchive();
+// //   cout<<rel1.getRelationFromCouple("test","test2").getTitle().toStdString();
 
- //   cout<<rel1.getRelationFromCouple("test","test2").getTitle().toStdString();
-
-    std::cout<<"nombre de notes supprimées "<<listDeleted.size()<<endl;
-    std::cout<<"nombre de notes archivées "<<listArchive.size()<<endl;
+//    std::cout<<"nombre de notes supprimées "<<listDeleted.size()<<endl;
+//    std::cout<<"nombre de notes archivées "<<listArchive.size()<<endl;
 
 
-    //Test pour voir si la liste retourne bien les bonnes choses
-       QList<Note*>::iterator i;
-       std::cout<<"\nLes notes supprimée sont :\n";
-       for (i = listDeleted.begin(); i != listDeleted.end(); ++i)
-           cout << " - "<<(*i)->getId().toStdString() << endl;
-       std::cout<<"\nLes notes archivées sont :\n";
-       for (i = listArchive.begin(); i != listArchive.end(); ++i)
-           cout << " - "<<(*i)->getId().toStdString() << endl;
+//    //Test pour voir si la liste retourne bien les bonnes choses
+//       QList<Note*>::iterator i;
+//       std::cout<<"\nLes notes supprimée sont :\n";
+//       for (i = listDeleted.begin(); i != listDeleted.end(); ++i)
+//           cout << " - "<<(*i)->getId().toStdString() << endl;
+//       std::cout<<"\nLes notes archivées sont :\n";
+//       for (i = listArchive.begin(); i != listArchive.end(); ++i)
+//           cout << " - "<<(*i)->getId().toStdString() << endl;
 
 
 
-//   displayAllVersion();
+////   displayAllVersion();
 
-//   NotesManager::Iterator it=m->getIterator();
-//   cout<<it.current();
-//   while(!it.isDone()){
-//       cout<<endl<<endl<<"Note"<<endl<<"================"<<endl;
-//       QList<Note*>::iterator it3=(it.liste())->begin();
-//       while (it3!=it.liste()->end()) {
-//            it3.operator *()->display();
-//            it3++;
-//       }
-//       it.next();
-//   }
+////   NotesManager::Iterator it=m->getIterator();
+////   cout<<it.current();
+////   while(!it.isDone()){
+////       cout<<endl<<endl<<"Note"<<endl<<"================"<<endl;
+////       QList<Note*>::iterator it3=(it.liste())->begin();
+////       while (it3!=it.liste()->end()) {
+////            it3.operator *()->display();
+////            it3++;
+////       }
+////       it.next();
+////   }
 
 
-//   displayAllVersion();
+////   displayAllVersion();
 
-   cout<<"\n\n===== PARTIE TEST RELATION ET VERSION =====\n";
+//   cout<<"\n\n===== PARTIE TEST RELATION ET VERSION =====\n";
 
-   RelationManager& rm=RelationManager::getInstance();
-   Relation& rel1=rm.getNewRelation("titreRelation1", "descriptionRelation1");
-   Relation& rel2=rm.getNewRelation("titreRelation2", "descriptionRelation2");
-   rel1.getNewCoupleRelation(&a2,&t2);
-   rel1.getNewCoupleRelation(&ar1,&t2);
-   rel1.getNewCoupleRelation(&a2,&ar1);
-   rel2.getNewCoupleRelation(&a2,&ar1);
+//   RelationManager& rm=RelationManager::getInstance();
+//   Relation& rel1=rm.getNewRelation("titreRelation1", "descriptionRelation1");
+//   Relation& rel2=rm.getNewRelation("titreRelation2", "descriptionRelation2");
+//   rel1.getNewCoupleRelation(&a2,&t2);
+//   rel1.getNewCoupleRelation(&ar1,&t2);
+//   rel1.getNewCoupleRelation(&a2,&ar1);
+//   rel2.getNewCoupleRelation(&a2,&ar1);
 
-   m->setFilename("test_save.xml");
-   m->save();
-//   displayAllRelation();
+//   m->setFilename("test_save.xml");
+//   m->save();
+////   displayAllRelation();
+////   cout<<rel1.displayRelation();
+//   cout<<rel2.displayRelation();
+////   rel1.removeNoteRelation(&a2);
 //   cout<<rel1.displayRelation();
-   cout<<rel2.displayRelation();
-//   rel1.removeNoteRelation(&a2);
-   cout<<rel1.displayRelation();
 
-   //QList<Note*> listAscendants=m->getListAscendants("test");
-   QList<Note*> listDescendants=m->getListDescendants("test2");
+//   //QList<Note*> listAscendants=m->getListAscendants("test");
+//   QList<Note*> listDescendants=m->getListDescendants("test2");
 
-//   cout<<rel1.getRelationFromCouple("test","test2").getTitle().toStdString();
+////   cout<<rel1.getRelationFromCouple("test","test2").getTitle().toStdString();
 
- /*
-   //Test pour voir si la liste retourne bien les bonnes choses
-      QList<Note*>::iterator i;
-      std::cout<<"\nLes relations ascendantes de test sont :\n";
-      /*for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
-          cout << " - "<<(*i)->getId().toStdString() << endl;
-      */std::cout<<"\nLes relations descendantes de test2 sont :\n";
-      for (i = listDescendants.begin(); i != listDescendants.end(); ++i)
-          cout << " - "<<(*i)->getId().toStdString() << endl;
+// /*
+//   //Test pour voir si la liste retourne bien les bonnes choses
+//      QList<Note*>::iterator i;
+//      std::cout<<"\nLes relations ascendantes de test sont :\n";
+//      /*for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
+//          cout << " - "<<(*i)->getId().toStdString() << endl;
+//      */std::cout<<"\nLes relations descendantes de test2 sont :\n";
+//      for (i = listDescendants.begin(); i != listDescendants.end(); ++i)
+//          cout << " - "<<(*i)->getId().toStdString() << endl;
 
-      cout<<"\n\n===== PARTIE TEST DELETE VERSION + EMPTY TRASH =====\n";
+//      cout<<"\n\n===== PARTIE TEST DELETE VERSION + EMPTY TRASH =====\n";
 
-      m->deleteNote("test");
-      m->deleteNote("test2");
-      displayAllVersion();
+//      m->deleteNote("test");
+//      m->deleteNote("test2");
+//      displayAllVersion();
 
-      m->emptyTrash();
-      //NotesManager::Iterator it=m->getIterator();
-      //it.next();
-      //it.current().display();
-      m->getNoteVersion("testTask",0).display();
+//      m->emptyTrash();
+//      //NotesManager::Iterator it=m->getIterator();
+//      //it.next();
+//      //it.current().display();
+//      m->getNoteVersion("testTask",0).display();
 
-      m->getNewArticle("TestReinsertion","TestReins","Test de la reinsertion d'une note apres une suppression");
+//      m->getNewArticle("TestReinsertion","TestReins","Test de la reinsertion d'une note apres une suppression");
 
 
    cout<<endl<<endl<<"================"<<endl;
@@ -390,7 +396,7 @@ int main(int argc, char * argv[]) {
 //    m->setFilename("test_save.xml");
 //    m->load();
 //    displayAllVersion();
-    //fct();
+//    fct();
     PROGRAMME(argc,argv);
     //creation();
 
