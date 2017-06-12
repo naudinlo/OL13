@@ -15,6 +15,7 @@ HEADERS += \
     qmanagerelation.h \
     couplemodel.h \
     addcouple.h
+    deletednote.h
 
 QT += widgets
 QT += xml
@@ -38,8 +39,10 @@ SOURCES += \
     qmanagerelation.cpp \
     couplemodel.cpp \
     addcouple.cpp
+    deletednote.cpp
 
 FORMS += \
     quirelation.ui \
     qmanagerelation.ui \
     addcouple.ui
+    deletednote.ui
