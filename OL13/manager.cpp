@@ -296,13 +296,11 @@ void NotesManager::save() const {
         }
         stream.writeEndElement();
     }
-    stream.writeEndElement();
 
 
 
     //Partie Relation
-    stream.writeStartElement("relationmanager");
-    RelationManager::Iterator it=RelationManager::getInstance().getIterator();
+    /*RelationManager::Iterator it=RelationManager::getInstance().getIterator();
     while(!it.isDone()){
         stream.writeStartElement("relation");
         stream.writeTextElement("title", it.current().getTitle());
@@ -323,7 +321,7 @@ void NotesManager::save() const {
         stream.writeEndElement();
         it.next();
     }
-    stream.writeEndElement();
+    stream.writeEndElement();*/
 
     stream.writeEndDocument();
     newfile.close();
@@ -350,7 +348,71 @@ void NotesManager::load() {
         if(token == QXmlStreamReader::StartElement) {
             // If it's named taches, we'll go to the next.
             if(xml.name() == "NoteManager") continue;
+            //if(xml.name()=="relationmanager") continue;
             // If it's named tache, we'll dig the information from there.
+            /*if(xml.name() == "relation") {
+                qDebug()<<"relation xml.tokenString="<<xml.tokenString();
+                xml.readNext();
+                QString titre;
+                QString description;
+                while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "relation")) {
+                    qDebug()<<"boucle relation";
+
+                    // We've found titre
+                    if(xml.name() == "title") {
+                        xml.readNext(); titre=xml.text().toString();
+                        qDebug()<<"titre="<<titre<<"\n";
+                    }
+
+                    // We've found description
+                    if(xml.name() == "description") {
+                        xml.readNext(); description=xml.text().toString();
+                        qDebug()<<"description="<<description<<"\n";
+                    }
+
+                    if(xml.name() == "notecouple") continue;
+                    if(xml.name() =="couple"){
+                        xml.readNext();
+                        QString notex;
+                        QString notey;
+                        QString label;
+                        bool symetric;
+                        while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "couple")) {
+                            if(xml.tokenType() == QXmlStreamReader::StartElement){
+
+                                // We've found notex
+                                if(xml.name() == "notex") {
+                                    xml.readNext(); notex=xml.text().toString();
+                                    qDebug()<<"notex="<<notex<<"\n";
+                                }
+
+                                // We've found notey
+                                if(xml.name() == "notey") {
+                                    xml.readNext(); notey=xml.text().toString();
+                                    qDebug()<<"notey="<<notey<<"\n";
+                                }
+
+                                // We've found label
+                                if(xml.name() == "label") {
+                                    xml.readNext(); label=xml.text().toString();
+                                    qDebug()<<"label="<<label<<"\n";
+                                }
+
+                                // We've found symetric
+                                if(xml.name() == "symetric") {
+                                    xml.readNext(); if(xml.text().toString()=="false") symetric=false; else symetric=true;
+                                    qDebug()<<"symetric="<<symetric<<"\n";
+                                }
+                            }
+                            xml.readNext();
+                        }
+                        RelationManager& rm=RelationManager::getInstance();
+                        Relation& R=rm.getNewRelation(titre,description);
+                        R.getNewCoupleRelation(&getNote(notex),&getNote(notey),label,symetric);
+                    }
+                }
+                xml.readNext();
+            }*/
             if(xml.name() == "NoteVersions") {
                 xml.readNext();
                 while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "NoteVersions")) {
@@ -648,69 +710,9 @@ void NotesManager::load() {
                     xml.readNextStartElement();
                 }
             }
-            if(xml.name() == "relationmanager") continue;
-            if(xml.name() == "relation") {
-                xml.readNext();
-                QString titre;
-                QString description;
-                while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "relation")) {
 
-                    // We've found titre
-                    if(xml.name() == "title") {
-                        xml.readNext(); titre=xml.text().toString();
-                        qDebug()<<"titre="<<titre<<"\n";
-                    }
-
-                    // We've found description
-                    if(xml.name() == "description") {
-                        xml.readNext(); description=xml.text().toString();
-                        qDebug()<<"description="<<description<<"\n";
-                    }
-
-                    if(xml.name() == "notecouple") continue;
-                    if(xml.name() =="couple"){
-                        xml.readNext();
-                        QString notex;
-                        QString notey;
-                        QString label;
-                        bool symetric;
-                        while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "couple")) {
-                            if(xml.tokenType() == QXmlStreamReader::StartElement){
-
-                                // We've found notex
-                                if(xml.name() == "notex") {
-                                    xml.readNext(); notex=xml.text().toString();
-                                    qDebug()<<"notex="<<notex<<"\n";
-                                }
-
-                                // We've found notey
-                                if(xml.name() == "notey") {
-                                    xml.readNext(); notey=xml.text().toString();
-                                    qDebug()<<"notey="<<notey<<"\n";
-                                }
-
-                                // We've found label
-                                if(xml.name() == "label") {
-                                    xml.readNext(); label=xml.text().toString();
-                                    qDebug()<<"label="<<label<<"\n";
-                                }
-
-                                // We've found symetric
-                                if(xml.name() == "symetric") {
-                                    xml.readNext(); if(xml.text().toString()=="false") symetric=false; else symetric=true;
-                                    qDebug()<<"symetric="<<symetric<<"\n";
-                                }
-                            }
-                            xml.readNext();
-                        }
-                        RelationManager& rm=RelationManager::getInstance();
-                        Relation& R=rm.getNewRelation(titre,description);
-                        R.getNewCoupleRelation(&getNote(notex),&getNote(notey),label,symetric);
-                    }
-                }
-                xml.readNextStartElement();
-            }
         }
+
     }
     // Error handling.
     if(xml.hasError()) {

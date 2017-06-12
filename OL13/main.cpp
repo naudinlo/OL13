@@ -341,7 +341,7 @@ int main(int argc, char * argv[]) {
     m->setFilename("test_save.xml");
     m->load();
     displayAllVersion();
-    fct();
+    //fct();
     //PROGRAMME(argc,argv);
     //creation();
 
