@@ -28,6 +28,8 @@
 #include <QStandardItemModel>
 #include <typeinfo>
 #include "supp_note.h"
+#include "quirelation.h"
+#include "qmanagerelation.h"
 class selection_note: public QWidget{
     Q_OBJECT
     QVBoxLayout* layout;
@@ -100,7 +102,8 @@ public slots:
 
    }
    void Aff_relation(){
-
+        QManageRelation affR(this);
+        affR.exec();
    }
 
 
@@ -108,7 +111,7 @@ public slots:
        close_page_note();
        try{
            NotesManager::getInstance()->emptyTrash();
-       QMessageBox::information(this,"Corbeille ","Corbeille vider");
+       QMessageBox::information(this,"Corbeille ","Vider la Corbeille");
        }
        catch (NotesException e){
            QMessageBox::warning(this,"Erreur corbeille", e.getinfo());

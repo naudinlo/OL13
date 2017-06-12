@@ -11,7 +11,9 @@ HEADERS += \
     qnote.h \
     qrelations.h \
     supp_note.h \
-    form.h
+    form.h \
+    quirelation.h \
+    qmanagerelation.h
 
 QT += widgets
 QT += xml
@@ -31,7 +33,10 @@ SOURCES += \
     qnote.cpp \
     qrelations.cpp \
     supp_note.cpp \
-    form.cpp
+    form.cpp \
+    quirelation.cpp \
+    qmanagerelation.cpp
 
 FORMS += \
-    form.ui
+    quirelation.ui \
+    qmanagerelation.ui

@@ -3,30 +3,33 @@
 Qrelations::Qrelations(QString t, QString d):R(RelationManager::getInstance().getNewRelation(t,d)){
 
 }
+
 QDockRelation::QDockRelation(const QString& id){
 
        NotesManager* m=NotesManager::getInstance();
       m->getListAscendants(id);
        model_from =new QStandardItemModel;
-       for(unsigned int i=0;i<m->getListAscendants(id).length();i++){
-           Note* current_note=m->getListAscendants(id).at(i);
-           QList< QStandardItem* > item;
-                   item.append(new QStandardItem (current_note->getId()));
-                   item.append(new QStandardItem(current_note->getTitle()));
 
-                   item.at(0)->setWhatsThis(current_note->getId());
+       for(unsigned int i=0;i<m->getListTupleAscendants(id).length();i++){
+           TupleNote_Relation* current=m->getListTupleAscendants(id).at(i);
+           QList< QStandardItem* > item;
+                   item.append(new QStandardItem (current->getNote().getId()));
+                   item.append(new QStandardItem(current->getRelation().getTitle()));
+
+                   item.at(0)->setWhatsThis(current->getNote().getId());
+                   item.at(1)->setWhatsThis(current->getRelation().getTitle());
                    model_from->appendRow(item);
        }
 
        model_to =new QStandardItemModel;
        for(unsigned int i=0;i<m->getListDescendants(id).length();i++){
-           Note* current_note=m->getListDescendants(id).at(i);
+           TupleNote_Relation* current=m->getListTupleDescendants(id).at(i);
            QList< QStandardItem* > item;
-                   item.append(new QStandardItem (current_note->getId()));
-                   item.append(new QStandardItem m->getCouple);
-                   item.append(new QStandardItem(current_note->getTitle()));
+                   item.append(new QStandardItem (current->getNote().getId()));
+                   item.append(new QStandardItem(current->getRelation().getTitle()));
 
-                   item.at(0)->setWhatsThis(current_note->getId());
+                   item.at(0)->setWhatsThis(current->getNote().getId());
+                   item.at(1)->setWhatsThis(current->getRelation().getTitle());
                    model_to->appendRow(item);
        }
        /*
@@ -51,16 +54,17 @@ QDockRelation::QDockRelation(const QString& id){
            item.at(0)->setWhatsThis((*j)->getId());
            model_to->appendRow(item);
        }*/
+
        L_fen=new QGridLayout(this);
        Label_from=new QLabel("Relation depuis :") ;
        Label_to=new QLabel("Relation vers :");
-       QStringList listeHeader;
-       listeHeader << "Id Note" << "Titre Relation";
        rel_from=new QTableView();
+       rel_from->horizontalHeader()->hide();
        rel_from->setModel(model_from);
        rel_from->setEditTriggers(QAbstractItemView::NoEditTriggers);
        connect(rel_from,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_From_selection(QModelIndex)));
        rel_to=new QTableView;
+       rel_to->horizontalHeader()->hide();
        rel_to->setModel(model_to);
        rel_to->setEditTriggers(QAbstractItemView::NoEditTriggers);
        connect(rel_to,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(emit_to_selection(QModelIndex)));
@@ -77,12 +81,24 @@ QDockRelation::QDockRelation(const QString& id){
 
 }
 void QDockRelation::emit_From_selection(QModelIndex i){
+    if(i.column()==0){
+        emit(selectionNote(model_from->itemFromIndex(i)->whatsThis(),0));
+    }
+    else
+    {
+        emit(selectionRelation(model_from->itemFromIndex(i)->whatsThis()));
+    }
 
-    emit(selection(model_from->itemFromIndex(i)->whatsThis(),0));
 }
 void QDockRelation::emit_to_selection(QModelIndex i){
+    if(i.column()==0){
+        emit(selectionNote(model_to->itemFromIndex(i)->whatsThis(),0));
+    }
+    else
+    {
+        emit(selectionRelation(model_to->itemFromIndex(i)->whatsThis()));
+    }
 
-    emit(selection(model_to->itemFromIndex(i)->whatsThis(),0));
 }
 Edit_relation::Edit_relation(QStandardItemModel* m,QString id, QWidget* parent): QDialog(parent),
     model(m),note(NotesManager::getInstance()->getNote(id)){
@@ -92,20 +108,20 @@ Edit_relation::Edit_relation(QStandardItemModel* m,QString id, QWidget* parent):
         while(index < model->rowCount() && id !=model->item(index)->whatsThis()){
             index++;
         }
-        this->setWindowTitle("Ajouter Relation");
+        this->setWindowTitle("Ajouter une relation");
         L_fen=new QGridLayout(this);
         titre= new QLabel("Titre de la relation");
         E_titre = new QLineEdit;
         connect(E_titre,SIGNAL(textChanged(QString)),this,SLOT(enabledAppend()));
         L_description=new QHBoxLayout;
         description=new QGroupBox();
-        description->setTitle("description :");
+        description->setTitle("Description : ");
         description->setCheckable(false);
         description->setLayout(L_description);
         E_description= new QTextEdit;
         L_description->addWidget(E_description);
         connect(E_description,SIGNAL(textChanged()),this,SLOT(enabledAppend()));
-        Label_from=new QLabel("Définer une Relation venant de :");
+        Label_from=new QLabel("Définer une Relation venant de : ");
         ref_from=new QListView;
         ref_from->setAlternatingRowColors(true);
         ref_from->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -113,7 +129,7 @@ Edit_relation::Edit_relation(QStandardItemModel* m,QString id, QWidget* parent):
         ref_from->setDisabled(false);
         ref_from->setSelectionMode(QAbstractItemView::ExtendedSelection);
         ref_from->setRowHidden(index,true);
-        Label_to=new QLabel("Définer une Relation vers :");
+        Label_to=new QLabel("Définer une Relation vers : ");
         ref_to=new QListView;
         ref_to->setAlternatingRowColors(true);
         ref_to->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -191,10 +207,10 @@ Edit_NotesCouple::Edit_NotesCouple(Note *na, Note *nb, QWidget* parent, bool s):
         L_fen=new QVBoxLayout(this);
         Label=new QLabel;
         if(symetric){
-            Label->setText("souhaitez vous saisir un Label entre le couple :"+ n1->getId()+" <-> "+n2->getId() );
+            Label->setText("Souhaitez vous saisir un Label pour le couple symétrique : "+ n1->getId()+" <-> "+n2->getId() );
         }
         else{
-                Label->setText("souhaitez vous saisir un Label entre le couple :"+ n1->getId()+" -> "+n2->getId() );
+                Label->setText("Souhaitez vous saisir un Label pour le couple : "+ n1->getId()+" -> "+n2->getId() );
     }
         choix =new QGroupBox;
         L_yes=new QHBoxLayout;

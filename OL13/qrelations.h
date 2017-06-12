@@ -20,6 +20,7 @@ public:
 
 };
 
+
 class QDockRelation:public QWidget{
     Q_OBJECT
     QGridLayout* L_fen;
@@ -35,7 +36,8 @@ public slots:
     void emit_From_selection(QModelIndex i);
     void emit_to_selection(QModelIndex i);
 signals:
-    void selection(QString, int);
+    void selectionNote(QString, int);
+    void selectionRelation(QString titre);
 };
 
 

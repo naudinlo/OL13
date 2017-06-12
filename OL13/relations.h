@@ -46,6 +46,8 @@ public:
     NotesCouple* getCoupleRelation(Note* n1, Note* n2);
     Relation(QString t, QString d):title(t), description(d),relations(new NotesCouple*[5]), nbCouple(0), nbMaxCouple(5){}
     const QString getTitle() const{return title;}
+    void setTitle(QString t){title=t;}
+    void setDescription(QString d){description=d;}
     const QString getDescription() const{return description;}
     NotesCouple* getCoupleRelation(Note* n1, Note* n2)const;
     void removeCoupleRelation(Note* n1, Note* n2);

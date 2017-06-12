@@ -34,6 +34,16 @@
 
 using namespace std;
 
+class TupleNote_Relation{
+    Note& n;
+    Relation& r;
+public:
+    Note& getNote(){return n;}
+    Relation& getRelation(){return r;}
+    TupleNote_Relation(Note& N, Relation& R):n(N),r(R){}
+
+};
+
 
 class NotesManager {
 private:
@@ -77,7 +87,7 @@ public:
     QList<Note*>* getListeVersions(const QString& id);
     void deleteNote(const QString& id);
     void createNote(const QString& id); //je l'ai déplacé en privé pour pourvoir ajouté une note créer par interface
-    void editNote(const QString& id);
+//    void editNote(const QString& id);
     void setFilename(const QString f){filename=f;}
     QString getFilename()const {return filename;}
     void load();
@@ -86,6 +96,9 @@ public:
 
 //    void getListAscendants(const QString& id);
 //    void getListDescendants(const QString& id);
+
+    QList<TupleNote_Relation*> getListTupleAscendants(const QString& id);
+    QList<TupleNote_Relation*> getListTupleDescendants(const QString& id);
     QList<Note*> getListAscendants(const QString& id);
     QList<Note*> getListDescendants(const QString& id);
 //    void displayRelAscDesc(const QString id);

@@ -78,25 +78,24 @@ interface::interface(): QMainWindow()
         toolBar_close->addAction(Action_Fermer_Note);
         toolBar_close->setHidden(true);
 
-        Action_Archiver_Note=new QAction("Archivé la note",this);
+        Action_Archiver_Note=new QAction("Archiver la note",this);
         Action_Archiver_Note->setShortcut(QKeySequence("ctrl+alt+A"));
         toolBar_new_Rel->addAction(Action_Archiver_Note);
 
-     /*
+        //Action: supprimer une note
+            //TODO : supprimer note ! Créer slot supprimer_note
+            QAction *ActionSupprimer=new QAction("&Supprimer note",this);
+            connect(ActionSupprimer,SIGNAL(triggered(bool)),this,SLOT(supprimer_note()));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
+            toolBar_supp_note=addToolBar("Edition");
+            toolBar_supp_note->addAction(ActionSupprimer);
+            MenuFichier->addAction(ActionSupprimer);
+
+
         Action_aff_relation=new QAction("Afficher les relations ",this);
         Action_aff_relation->setShortcut(QKeySequence("ctrl+A"));
         connect(Action_aff_relation,SIGNAL(triggered(bool)),this,SLOT(Aff_relation()));
-        toolBar_new_Rel=addToolBar("Edition");
-        toolBar_new_Rel->addAction(Action_aff_relation);
-        toolBar_new_Rel->setHidden(true);
-    */
-    //Action: supprimer une note
-        //TODO : supprimer note ! Créer slot supprimer_note
-        QAction *ActionSupprimer=new QAction("&Supprimer note",this);
-        connect(ActionSupprimer,SIGNAL(triggered(bool)),this,SLOT(supprimer_note()));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
-        toolBar_supp_note=addToolBar("Edition");
-        toolBar_supp_note->addAction(ActionSupprimer);
-        MenuFichier->addAction(ActionSupprimer);
+        toolBar_supp_note->addAction(Action_aff_relation);
+
 
         QAction *ActionViderCorbeille=new QAction("&Vider la corbeille",this);
         connect(ActionViderCorbeille,SIGNAL(triggered(bool)),this,SLOT(ViderCorbeille()));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
@@ -128,7 +127,7 @@ void interface::CreateDock_edited_Note(){
     dock_aff_Relation->setWidget(note_page->getdock_aff_rel());
     MenuEd->addAction(dock_aff_Relation->toggleViewAction());
     connect(note_page,SIGNAL(supp_dock_aff_rel()),this,SLOT(supp_dock_aff_rel()));
-    connect(note_page->getdock_aff_rel(),SIGNAL(selection(QString,int)),this,SLOT(afficher_note(QString,int)));
+    connect(note_page->getdock_aff_rel(),SIGNAL(selectionNote(QString,int)),this,SLOT(afficher_note(QString,int)));
 }
 
 
