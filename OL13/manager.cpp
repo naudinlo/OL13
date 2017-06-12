@@ -28,15 +28,14 @@
 Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const QString& te){
     Article* n=new Article(id,ti,te);
     NotesManager::Iterator it=NotesManager::getIterator();
-    while(!it.isDone()){
-        if(!it.liste()->isEmpty()){
+    while(!(it.isDone() || it.liste()->isEmpty())){
             if (it.current().getId()==id){
                 throw NotesException("error, creation of an already existent note");
                 return (Article&)it.current();
             }
-        }
         it.next();
     }
+    if (!it.isDone()){it.liste()->push_front(n); return *n;}
     if (nbNotes==nbMaxNotes){
         QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
@@ -65,13 +64,14 @@ Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const 
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d){
     Task* n=new Task(id,ti,a,s,p,d);
     NotesManager::Iterator it=NotesManager::getIterator();
-    while(!it.isDone()){
+    while(!(it.isDone()||it.liste()->isEmpty())){
         if (it.current().getId()==id){
             throw NotesException("error, creation of an already existent note");
             return (Task&)it.current();
         }
         it.next();
     }
+    if (!it.isDone()){it.liste()->push_front(n); return *n;}
     if (nbNotes==nbMaxNotes){
         QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
@@ -98,13 +98,14 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p){
     Task* n=new Task(id,ti,a,s,p);
     NotesManager::Iterator it=NotesManager::getIterator();
-    while(!it.isDone()){
+    while(!(it.isDone()||it.liste()->isEmpty())){
         if (it.current().getId()==id){
             throw NotesException("error, creation of an already existent note");
             return (Task&)it.current();
         }
         it.next();
     }
+    if (!it.isDone()){it.liste()->push_front(n); return *n;}
     if (nbNotes==nbMaxNotes){
         QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
@@ -131,13 +132,14 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, const QDateTime d){
     Task* n=new Task(id,ti,a,s,d);
     NotesManager::Iterator it=NotesManager::getIterator();
-    while(!it.isDone()){
+    while(!(it.isDone()||it.liste()->isEmpty())){
         if (it.current().getId()==id){
             throw NotesException("error, creation of an already existent note");
             return (Task&)it.current();
         }
         it.next();
     }
+    if (!it.isDone()){it.liste()->push_front(n); return *n;}
     if (nbNotes==nbMaxNotes){
         QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
@@ -164,13 +166,14 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s){
     Task* n=new Task(id,ti,a,s);
     NotesManager::Iterator it=NotesManager::getIterator();
-    while(!it.isDone()){
+    while(!(it.isDone()||it.liste()->isEmpty())){
         if ((*it.liste()->begin())->getId()==id){
             throw NotesException("error, creation of an already existent note");
             return (Task&)it.current();
         }
         it.next();
     }
+    if (!it.isDone()){it.liste()->push_front(n); return *n;}
     if (nbNotes==nbMaxNotes){
         QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
@@ -198,13 +201,14 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
 Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,const QString& d, ENUM::RecordingType r, QString l){
     Recording* n=new Recording(id,ti,d,r,l);
     NotesManager::Iterator it=NotesManager::getIterator();
-    while(!it.isDone()){
+    while(!(it.isDone()||it.liste()->isEmpty())){
         if (it.current().getId()==id){
             throw NotesException("error, creation of an already existent note");
             return (Recording&)it.current();
         }
         it.next();
     }
+    if (!it.isDone()){it.liste()->push_front(n); return *n;}
     if (nbNotes==nbMaxNotes){
         QList<Note*>** newNotes= new QList<Note*>*[nbMaxNotes+5];
         for(unsigned int i=0; i<nbNotes; i++) newNotes[i]=notes[i];
