@@ -273,8 +273,7 @@ try{
 //       }
 //       it.next();
 //   }
-    m->setFilename("test_save.xml");
-    m->save();
+
 
 //   displayAllVersion();
 
@@ -287,6 +286,9 @@ try{
    rel1.getNewCoupleRelation(&ar1,&t2);
    rel1.getNewCoupleRelation(&a2,&ar1);
    rel2.getNewCoupleRelation(&a2,&ar1);
+
+   m->setFilename("test_save.xml");
+   m->save();
 //   displayAllRelation();
 //   cout<<rel1.displayRelation();
    cout<<rel2.displayRelation();
@@ -322,6 +324,8 @@ try{
 
 
    cout<<endl<<endl<<"================"<<endl;
+   displayAllRelation();
+
 
     }
     catch(NotesException& e){
@@ -333,8 +337,13 @@ try{
 
 int main(int argc, char * argv[]) {
 
+    NotesManager* m=NotesManager::getInstance();
+    m->setFilename("test_save.xml");
+    m->load();
+    displayAllVersion();
     //fct();
-    PROGRAMME(argc,argv);
+    //PROGRAMME(argc,argv);
     //creation();
+
     return 0;
 }
