@@ -29,7 +29,7 @@ class page_notes: public QWidget
 protected:
     QNote* note;
     Note& n;
-
+    Note* newNote;
     QWidget* dock_editer;
     QDockRelation* dock_aff_Rel;
     QHBoxLayout* layout_titre;
@@ -63,7 +63,7 @@ public slots:
         }
         emit(supp_dock_editer());
         if(n.getType()=="Article"){
-            n =NotesManager::getInstance()->editArticle(dynamic_cast<Article&>(n));
+            newNote =&(NotesManager::getInstance()->editArticle(dynamic_cast<Article&>(n)));
         }
         else if(n.getType()=="Recording"){
             n =NotesManager::getInstance()->editRecording(dynamic_cast<Recording&>(n));
