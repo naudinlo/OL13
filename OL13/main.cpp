@@ -311,7 +311,7 @@ try{
 
       m->deleteNote("test");
       m->deleteNote("test2");
-      displayAllVersion();
+      //displayAllVersion();
 
       m->emptyTrash();
       //NotesManager::Iterator it=m->getIterator();
@@ -321,10 +321,11 @@ try{
 
       m->getNewArticle("TestReinsertion","TestReins","Test de la reinsertion d'une note apres une suppression");
 
+      displayAllVersion();
 
 
    cout<<endl<<endl<<"================"<<endl;
-   displayAllRelation();
+   //displayAllRelation();
 
 
     }

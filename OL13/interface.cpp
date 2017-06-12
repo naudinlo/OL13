@@ -232,21 +232,23 @@ void selection_note::update_model(){
 
 
         for(NotesManager::Iterator it= m->getIterator();!it.isDone();it.next()){
-            QList< QStandardItem* >  items;
+            if(!it.liste()->isEmpty()){
+                QList< QStandardItem* >  items;
 
-                items.append(new QStandardItem(it.current().getId()));
-                items.append(new QStandardItem(it.current().getType()));
-                items.at(0)->setWhatsThis(it.current().getId());
-                model->appendRow(items);
-                for(QList<Note*>::iterator j=it.liste()->begin();j !=it.liste()->end();j++)
-                {
-                    QList< QStandardItem* > item2;
-                    //item2.push_back(new QStandardItem((*j)->getTitle()));
-                    //item2.push_back(new QStandardItem((*j)->getLastmodif_date().toString()));
-                    item2.append(new QStandardItem((*j)->getTitle()));
-                    item2.append(new QStandardItem ((*j)->getLastmodif_date().toString()));
-                    items.at(0)->appendRow(item2);
-                }
+                    items.append(new QStandardItem(it.current().getId()));
+                    items.append(new QStandardItem(it.current().getType()));
+                    items.at(0)->setWhatsThis(it.current().getId());
+                    model->appendRow(items);
+                    for(QList<Note*>::iterator j=it.liste()->begin();j !=it.liste()->end();j++)
+                    {
+                        QList< QStandardItem* > item2;
+                        //item2.push_back(new QStandardItem((*j)->getTitle()));
+                        //item2.push_back(new QStandardItem((*j)->getLastmodif_date().toString()));
+                        item2.append(new QStandardItem((*j)->getTitle()));
+                        item2.append(new QStandardItem ((*j)->getLastmodif_date().toString()));
+                        items.at(0)->appendRow(item2);
+                    }
+            }
 
         }
 
