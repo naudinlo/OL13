@@ -11,7 +11,6 @@ HEADERS += \
     qnote.h \
     qrelations.h \
     supp_note.h \
-    form.h \
     quirelation.h \
     qmanagerelation.h
 
@@ -33,7 +32,6 @@ SOURCES += \
     qnote.cpp \
     qrelations.cpp \
     supp_note.cpp \
-    form.cpp \
     quirelation.cpp \
     qmanagerelation.cpp
 
