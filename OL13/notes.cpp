@@ -17,6 +17,7 @@
 
 #include "notes.h"
 #include "sstream"
+#include "manager.h"
 #include "QInclude.h"
 
 
@@ -194,6 +195,13 @@ std::string Article::toString()const {
     for(unsigned int i=0; i<getNbRef(); i++){
         f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
     }
+//    f<<"\n - ReferenceQ :";
+//    if(referencesQ.size()==0) f<<" none";
+//    for(unsigned int i=0; i<referencesQ.size(); i++){
+////        QString s=referencesQ.at(i);
+////        f<<"\n   - "<<s.toStdString();
+//        f<<"\n   - "<<this->referencesQ.at(i).toStdString();
+//    }
     f<<"\n - Article reférencé par "<<getNbIsRef()<<" note(s).";
 
     if (getIsArchive()) f<<"\n - Note Archivée.";
@@ -241,6 +249,13 @@ std::string Task::toString() const {
     for(unsigned int i=0; i<getNbRef(); i++){
         f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
     }
+//    f<<"\n - ReferenceQ :";
+//    if(referencesQ.size()==0) f<<" none";
+//    for(unsigned int i=0; i<referencesQ.size(); i++){
+////        QString s=referencesQ.at(i);
+////        f<<"\n   - "<<s.toStdString();
+//        f<<"\n   - "<<this->referencesQ.at(i).toStdString();
+//    }
     f<<"\n - Tâche reférencée par "<<getNbIsRef()<<" note(s).";
 
 
@@ -280,6 +295,13 @@ std::string Recording::toString() const {
     for(unsigned int i=0; i<getNbRef(); i++){
         f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
     }
+//    f<<"\n - ReferenceQ :";
+//    if(referencesQ.size()==0) f<<" none";
+//    for(unsigned int i=0; i<referencesQ.size(); i++){
+////        QString s=referencesQ.at(i);
+////        f<<"\n   - "<<s.toStdString();
+//        f<<"\n   - "<<this->referencesQ.at(i).toStdString();
+//    }
     f<<"\n - Enregistrement reférencé par "<<getNbIsRef()<<" note(s).";
 
     if (getIsArchive()) f<<"\n - Note Archivée.";
@@ -350,6 +372,18 @@ Note& Note::setNewRef(Note* n){
     n->setNbIsRef(n->getNbIsRef()+1);
     return *n;
 };
+//void Note::setNewRefQ(const QString& id){
+//    for(unsigned int i=0; i<referencesQ.size(); i++){
+//        if (referencesQ.at(i)==id){
+//            throw NotesException("erreur, ID déjà existant");
+//        }
+//    }
+//    referencesQ.append(id);
+//    nbRef++;
+//    //Incrémente de un le nombre de note qui référence this
+//    Note& nRef=NotesManager::getInstance()->getNote(id);
+//    nRef.setNbIsRef(nRef.getNbIsRef()+1);
+//};
 
 /**
  * \fn       void Note::addReference(Note* n)
@@ -386,11 +420,25 @@ Note& Note::getReference(const QString& id)const{
     }
     throw NotesException("erreur, ID inexistant");
 };
+//Note& Note::getReferenceQ(const QString& id)const{
+//    for(unsigned int i=0; i<referencesQ.size(); i++){
+//        if (referencesQ.at(i)==id){
+//            Note& nRef=NotesManager::getInstance()->getNote(id);
+//            return nRef;
+//        }
+//    }
+//    throw NotesException("erreur, ID inexistant");
+//};
 
 
 Note& Note::getReferenceInt(unsigned int i) const{
-  return (*references[i]);
+    return (*references[i]);
 };
+//Note& Note::getReferenceIntQ(unsigned int i) const{
+//    Note& nRef=NotesManager::getInstance()->getNote(referencesQ.at(i));
+//    return nRef;
+//};
+
 
 /**
  * \fn        void Note::deleteReference(const QString& id)
@@ -406,6 +454,17 @@ void Note::deleteReference(const QString& id){
         references[i]=references[--nbRef];
     }
 }
+//void Note::deleteReferenceQ(const QString& id){
+//    for(unsigned int i=0; i<referencesQ.size(); i++){
+//        if (referencesQ.at(i)==id){
+//            Note& nRef=NotesManager::getInstance()->getNote(referencesQ.at(i));
+//            nRef.setNbIsRef(nRef.getNbIsRef()-1);
+//            referencesQ.removeAt(i);
+//        }
+//    }
+//    this->setNbRef(this->getNbRef()-1);
+//}
+
 
 /**
  * \fn        void Note::deleteAllReference()
@@ -427,6 +486,14 @@ void Note::deleteAllReference(){
 //    references=newtab;
 }
 
+//void Note::deleteAllReferenceQ(){
+//    for(unsigned int i=0; i<referencesQ.size(); i++){
+//        Note& nRef=NotesManager::getInstance()->getNote(referencesQ[i]);
+//        nRef.setNbIsRef(nRef.getNbIsRef()-1);
+//    }
+//    this->referencesQ.clear();
+//    this->setNbRef(0);
+//}
 
 
 void Note::saveNote(QFile* file){}

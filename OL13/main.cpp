@@ -260,7 +260,18 @@ try{
    t4.setTitle("testTaskv4");
    t4.setAction("Alors?");
 
-   //displayAllVersion();
+//   t2.setNewRefQ(a4.getId());
+//   a3.setNewRefQ(ar1.getId());
+//   a3.setNewRefQ(t2.getId());
+
+//   std::cout<<"nombre de ref de t2 "<<t2.referencesQ.size()<<endl;
+//   std::cout<<"nombre de ref de a3 "<<a3.referencesQ.size()<<endl;
+
+//   std::cout<<t2.referencesQ.at(0).toStdString()<<endl;
+//   std::cout<<a3.referencesQ.at(0).toStdString()<<endl;
+//   std::cout<<a3.referencesQ.at(1).toStdString()<<endl;
+
+   displayAllVersion();
 
 //   NotesManager::Iterator it=m->getIterator();
 //   cout<<it.current();
@@ -296,7 +307,10 @@ try{
    QList<Note*> listAscendants=m->getListAscendants("test");
    QList<Note*> listDescendants=m->getListDescendants("test2");
 
-      //Test pour voir si la liste retourne bien les bonnes choses
+//   cout<<rel1.getRelationFromCouple("test","test2").getTitle().toStdString();
+
+ /*
+   //Test pour voir si la liste retourne bien les bonnes choses
       QList<Note*>::iterator i;
       std::cout<<"\nLes relations ascendantes de test sont :\n";
       for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
@@ -319,7 +333,7 @@ try{
 
       m->getNewArticle("TestReinsertion","TestReins","Test de la reinsertion d'une note apres une suppression");
 
-
+*/
 
    cout<<endl<<endl<<"================"<<endl;
 
@@ -333,7 +347,7 @@ try{
 
 int main(int argc, char * argv[]) {
 
-    //fct();
+//    fct();
     PROGRAMME(argc,argv);
     //creation();
     return 0;

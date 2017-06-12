@@ -30,7 +30,7 @@
  *                      Classe recording, dérivant de la classe Note, avec en plus les attributs descriptions,
  *                        type et un link vers un fichier image, audio ou video.
  *
- *              Détail des méthodes donné dans le .cpp.
+ *              L'ensemble des méthodes définies dans ce fichier sont explicitées dans le fichier .cpp associé.
  */
 
 
@@ -76,13 +76,14 @@ private:
 
     // LNA test ref 09.06
     Note ** references;
+//    QList<QString> referencesQ;
     unsigned int nbRef;
     unsigned int nbMaxRef;
 
     unsigned int nbIsRef;
 
     void addReference(Note* n);
-
+    void addReferenceQ(const QString& id);
 public:
     const QString getId() const {return id;}
     const QString getTitle() const {return title;}
@@ -100,7 +101,6 @@ public:
     void setCreation_date(const QDateTime& d){creation_date=d;}
     void setLastmodif_date(const QDateTime& d){lastmodif_date=d;}
 
-    //PRIVATE ?
     Note(const Note& n); //constructeur de recopie private pour le handler
     Note& operator=(const Note& n);   //operateur d'affectation private pour le handler
     virtual ~Note();
@@ -112,19 +112,26 @@ public:
     virtual void saveNote(QFile *file);
 
     //Les notes que this reference
-    Note& setNewRef(Note* n);
-
-    Note& getReference(const QString &id) const;
-    Note& getReferenceInt(unsigned int i) const;
     unsigned int getNbRef() const{return nbRef;}
     unsigned int getNbMaxRef() const{return nbMaxRef;}
     void setNbRef(unsigned int n){ nbRef=n;}
-    void deleteReference(const QString& id);
-    void deleteAllReference();
-
-
     void setNbIsRef(unsigned int n){nbIsRef=n;}
     unsigned int getNbIsRef()const{return nbIsRef;}
+
+    void deleteReference(const QString& id);
+    void deleteAllReference();
+    Note& setNewRef(Note* n);
+    Note& getReference(const QString &id) const;
+    Note& getReferenceInt(unsigned int i) const;
+
+//    QList<QString> referencesQ;
+//    void deleteReferenceQ(const QString& id);
+//    void deleteAllReferenceQ();
+//    void setNewRefQ(const QString& id);
+//    Note& getReferenceQ(const QString &id) const;
+//    Note& getReferenceIntQ(unsigned int i) const;
+
+
 
 };
 
