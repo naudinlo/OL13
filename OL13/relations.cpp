@@ -28,7 +28,6 @@ std::string Relation::displayRelation(){
     return f.str();
 }
 
-
 NotesCouple &Relation::getNewCoupleRelation(Note* n1,  Note* n2, QString label, bool s) {
 //    if (n1!=n2){
         NotesCouple* nc= new NotesCouple(n1,n2,label,s);
@@ -74,6 +73,16 @@ NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2)const{
     return 0;
     throw NotesException("erreur, impossible to the relation from this couple, relation de notes inexistante");
 }
+
+//Relation& Relation::getRelationFromCouple(const QString& id1, const QString& id2) const {
+//    for(unsigned int i=0; i<nbCouple; i++){
+//        if (relations[i]->getCoupleNoteX()->getId()==id1 && relations[i]->getCoupleNoteY()->getId()==id2){
+//            return this;
+//        }
+//    }
+//    return 0;
+//    throw NotesException("erreur, impossible to the relation from this couple, relation de notes inexistante");
+//}
 
 void Relation::displayCoupleRelation(Note *n1, Note *n2)const{
     const NotesCouple* nc=getCoupleRelation(n1,n2);

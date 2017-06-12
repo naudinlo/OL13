@@ -260,7 +260,54 @@ try{
    t4.setTitle("testTaskv4");
    t4.setAction("Alors?");
 
-   //displayAllVersion();
+   t4.setNewRef(a4.getId());
+   a4.setNewRef(ar1.getId());
+   a4.setNewRef(t2.getId());
+
+   std::cout<<"nombre de ref de t4 "<<t4.getId().toStdString()<<"  "<<t4.references.size()<<endl;
+   std::cout<<"nombre de ref de a4 "<<a4.getId().toStdString()<<"  "<<a4.references.size()<<endl;
+
+   std::cout<<t4.references.at(0).toStdString()<<endl;
+   std::cout<<a4.references.at(0).toStdString()<<endl;
+   std::cout<<a4.references.at(1).toStdString()<<endl;
+
+   t4.deleteAllReference();
+
+   std::cout<<"nombre de ref de t4 "<<t4.references.size()<<endl;
+
+    a1.deleteReference(ar1.getId());
+
+    std::cout<<"nombre de ref de a4 "<<a4.references.size()<<endl;
+    Note& g=NotesManager::getInstance()->getNote(t2.getId());
+    std::cout<<"nombre de tache referencant t2 "<<g.getNbIsRef()<<endl;
+
+//   a4.display();
+//   t4.display();
+
+    m->deleteNote(a1.getId());
+    m->deleteNote(t4.getId());
+
+    QList<Note*> listDeleted=m->getListDeleted();
+    QList<Note*> listArchive=m->getListArchive();
+
+ //   cout<<rel1.getRelationFromCouple("test","test2").getTitle().toStdString();
+
+    std::cout<<"nombre de notes supprimées "<<listDeleted.size()<<endl;
+    std::cout<<"nombre de notes archivées "<<listArchive.size()<<endl;
+
+
+    //Test pour voir si la liste retourne bien les bonnes choses
+       QList<Note*>::iterator i;
+       std::cout<<"\nLes notes supprimée sont :\n";
+       for (i = listDeleted.begin(); i != listDeleted.end(); ++i)
+           cout << " - "<<(*i)->getId().toStdString() << endl;
+       std::cout<<"\nLes notes archivées sont :\n";
+       for (i = listArchive.begin(); i != listArchive.end(); ++i)
+           cout << " - "<<(*i)->getId().toStdString() << endl;
+
+
+
+//   displayAllVersion();
 
 //   NotesManager::Iterator it=m->getIterator();
 //   cout<<it.current();
@@ -273,8 +320,7 @@ try{
 //       }
 //       it.next();
 //   }
-    m->setFilename("test_save.xml");
-    m->save();
+
 
 //   displayAllVersion();
 
@@ -287,6 +333,9 @@ try{
    rel1.getNewCoupleRelation(&ar1,&t2);
    rel1.getNewCoupleRelation(&a2,&ar1);
    rel2.getNewCoupleRelation(&a2,&ar1);
+
+   m->setFilename("test_save.xml");
+   m->save();
 //   displayAllRelation();
 //   cout<<rel1.displayRelation();
    cout<<rel2.displayRelation();
@@ -296,7 +345,10 @@ try{
    //QList<Note*> listAscendants=m->getListAscendants("test");
    QList<Note*> listDescendants=m->getListDescendants("test2");
 
-      //Test pour voir si la liste retourne bien les bonnes choses
+//   cout<<rel1.getRelationFromCouple("test","test2").getTitle().toStdString();
+
+ /*
+   //Test pour voir si la liste retourne bien les bonnes choses
       QList<Note*>::iterator i;
       std::cout<<"\nLes relations ascendantes de test sont :\n";
       /*for (i = listAscendants.begin(); i != listAscendants.end(); ++i)
@@ -320,8 +372,9 @@ try{
       m->getNewArticle("TestReinsertion","TestReins","Test de la reinsertion d'une note apres une suppression");
 
 
-
    cout<<endl<<endl<<"================"<<endl;
+   displayAllRelation();
+
 
     }
     catch(NotesException& e){
@@ -333,8 +386,13 @@ try{
 
 int main(int argc, char * argv[]) {
 
+//    NotesManager* m=NotesManager::getInstance();
+//    m->setFilename("test_save.xml");
+//    m->load();
+//    displayAllVersion();
     //fct();
     PROGRAMME(argc,argv);
     //creation();
+
     return 0;
 }

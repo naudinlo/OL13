@@ -51,6 +51,7 @@ public:
     NotesCouple* getCoupleRelation(Note* n1, Note* n2)const;
     void removeCoupleRelation(Note* n1, Note* n2);
     void removeNoteRelation(Note* n1);
+//    Relation& getRelationFromCouple(const QString& id1, const QString& id2) const;
 
 //    QList<Note*>* addNoteAscendant(Note * n, QList<Note*>* listAscendants);
 //    Note** noteRelAsc(Note * n);
