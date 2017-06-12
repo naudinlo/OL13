@@ -21,6 +21,7 @@
 #include "qnote.h"
 #include "manager.h"
 #include "qrelations.h"
+#include "quirelation.h"
 class page_notes: public QWidget
 {
     Q_OBJECT
@@ -76,6 +77,12 @@ public slots:
         n.setIsArchive(true);
         emit(update_model());
         close();
+    }
+    void aff_Relation(QString titre){ //permet d'afficher une relation depuis le dock
+        QUiRelation showR(RelationManager::getInstance().getRelation(titre),this);
+        connect(&showR,SIGNAL(newCouple()),this->getdock_aff_rel(),SLOT(updateModels()));
+        showR.exec();
+
     }
 };
 

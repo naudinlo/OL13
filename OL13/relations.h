@@ -43,7 +43,6 @@ private:
     void addCoupleRelation(NotesCouple* nc);
 public:
     NotesCouple& getNewCoupleRelation(Note* n1, Note* n2, QString label=0, bool s=false);
-    NotesCouple* getCoupleRelation(Note* n1, Note* n2);
     Relation(QString t, QString d):title(t), description(d),relations(new NotesCouple*[5]), nbCouple(0), nbMaxCouple(5){}
     const QString getTitle() const{return title;}
     void setTitle(QString t){title=t;}

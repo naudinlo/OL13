@@ -14,6 +14,7 @@ QManageRelation::QManageRelation(QWidget *parent) :
 
 }
 void QManageRelation::UpdateModel(){
+    model->clear();
     for(RelationManager::Iterator it=RelationManager::getInstance().getIterator() ;!it.isDone();it.next()){
         QList< QStandardItem* > item;
                 item.append(new QStandardItem(it.current().getTitle()));

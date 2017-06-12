@@ -4,57 +4,11 @@ Qrelations::Qrelations(QString t, QString d):R(RelationManager::getInstance().ge
 
 }
 
-QDockRelation::QDockRelation(const QString& id){
+QDockRelation::QDockRelation(const QString& ID):id(ID){
 
-       NotesManager* m=NotesManager::getInstance();
-      m->getListAscendants(id);
-       model_from =new QStandardItemModel;
-
-       for(unsigned int i=0;i<m->getListTupleAscendants(id).length();i++){
-           TupleNote_Relation* current=m->getListTupleAscendants(id).at(i);
-           QList< QStandardItem* > item;
-                   item.append(new QStandardItem (current->getNote().getId()));
-                   item.append(new QStandardItem(current->getRelation().getTitle()));
-
-                   item.at(0)->setWhatsThis(current->getNote().getId());
-                   item.at(1)->setWhatsThis(current->getRelation().getTitle());
-                   model_from->appendRow(item);
-       }
-
-       model_to =new QStandardItemModel;
-       for(unsigned int i=0;i<m->getListDescendants(id).length();i++){
-           TupleNote_Relation* current=m->getListTupleDescendants(id).at(i);
-           QList< QStandardItem* > item;
-                   item.append(new QStandardItem (current->getNote().getId()));
-                   item.append(new QStandardItem(current->getRelation().getTitle()));
-
-                   item.at(0)->setWhatsThis(current->getNote().getId());
-                   item.at(1)->setWhatsThis(current->getRelation().getTitle());
-                   model_to->appendRow(item);
-       }
-       /*
-       for(QList<Note*>::iterator j=m->getListAscendants(id).begin();j !=m->getListAscendants(id).end();j++)
-       {
-            QMessageBox::warning(this,"QRelation", QString::number( m->getListAscendants(id).length()));
-           QList< QStandardItem* > item;
-                    item.append(new QStandardItem ((*j)->getId()));
-                    //item.append(new QStandardItem((*j)->getTitle()));
-
-                    item.at(0)->setWhatsThis((*j)->getId());
-                    model_from->appendRow(item);
-       }
-       *//*
-       model_to =new QStandardItemModel;
-       for(QList<Note*>::iterator j=m->getListDescendants(id).begin();j !=m->getListDescendants(id).end();j++)
-       {
-           QList< QStandardItem* > item;
-           QMessageBox::warning(this,"QRelation", QString::number( m->getListAscendants(id).length()));
-           item.append(new QStandardItem ((*j)->getId()));
-           //item.append(new QStandardItem((*j)->getTitle()));
-           item.at(0)->setWhatsThis((*j)->getId());
-           model_to->appendRow(item);
-       }*/
-
+      model_from =new QStandardItemModel;
+      model_to =new QStandardItemModel;
+       updateModels();
        L_fen=new QGridLayout(this);
        Label_from=new QLabel("Relation depuis :") ;
        Label_to=new QLabel("Relation vers :");
@@ -80,6 +34,37 @@ QDockRelation::QDockRelation(const QString& id){
        //connect(vue,SIGNAL(activated(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
 
 }
+void QDockRelation::updateModels(){
+    model_from->clear();
+    model_to->clear();
+
+    NotesManager* m=NotesManager::getInstance();
+    m->getListAscendants(id);
+     for(unsigned int i=0;i<m->getListTupleAscendants(id).length();i++){
+         TupleNote_Relation* current=m->getListTupleAscendants(id).at(i);
+         QList< QStandardItem* > item;
+                 item.append(new QStandardItem (current->getNote().getId()));
+                 item.append(new QStandardItem(current->getRelation().getTitle()));
+
+                 item.at(0)->setWhatsThis(current->getNote().getId());
+                 item.at(1)->setWhatsThis(current->getRelation().getTitle());
+                 model_from->appendRow(item);
+     }
+
+     for(unsigned int i=0;i<m->getListDescendants(id).length();i++){
+         TupleNote_Relation* current=m->getListTupleDescendants(id).at(i);
+         QList< QStandardItem* > item;
+                 item.append(new QStandardItem (current->getNote().getId()));
+                 item.append(new QStandardItem(current->getRelation().getTitle()));
+
+                 item.at(0)->setWhatsThis(current->getNote().getId());
+                 item.at(1)->setWhatsThis(current->getRelation().getTitle());
+                 model_to->appendRow(item);
+     }
+
+
+}
+
 void QDockRelation::emit_From_selection(QModelIndex i){
     if(i.column()==0){
         emit(selectionNote(model_from->itemFromIndex(i)->whatsThis(),0));

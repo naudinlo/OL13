@@ -64,7 +64,7 @@ page_notes::page_notes(Note& N):n(N)
     //Dock aff relatio
 
         dock_aff_Rel=new QDockRelation(n.getId());
-
+        connect(dock_aff_Rel,SIGNAL(selectionRelation(QString)),this,SLOT(aff_Relation(QString)));
         /*
 
         dock_rel=new QWidget;

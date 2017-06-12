@@ -65,7 +65,7 @@ void Relation::addCoupleRelation(NotesCouple* nc){
     nbCouple++;
 }
 
-NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2) const {
+NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2)const{
     for(unsigned int i=0; i<nbCouple; i++){
         if (relations[i]->getCoupleNoteX()->getId()==n1->getId() && relations[i]->getCoupleNoteY()->getId()==n2->getId()){
             return (relations[i]);

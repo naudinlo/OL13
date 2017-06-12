@@ -58,6 +58,7 @@ class interface:public QMainWindow
     Edit_relation* new_relation; //fenetre d'ajout de relation
     NotesManager* note_manager;
     supp_note* fen_supp;
+    QManageRelation* affR;
 
     Q_OBJECT
     QWidget* ZoneCentrale;
@@ -98,12 +99,14 @@ signals:
 public slots:
    void E_relation(){
        new_relation = new Edit_relation(listNote->getModel(),note_id,this);
+       connect(new_relation,SIGNAL(newRelation()),note_page->getdock_aff_rel(),SLOT(updateModels()));
        new_relation->show();
 
    }
    void Aff_relation(){
-        QManageRelation affR(this);
-        affR.exec();
+        affR= new QManageRelation (this);
+        connect(affR->getSelectedR(),SIGNAL(newCouple()),note_page->getdock_aff_rel(),SLOT(updateModels()));
+        affR->exec();
    }
 
 
