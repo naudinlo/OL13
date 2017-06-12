@@ -82,6 +82,10 @@ public:
     QList<Note*> getListAscendants(const QString& id);
     QList<Note*> getListDescendants(const QString& id);
 
+    QList<Note*> getListArchive();
+    QList<Note*> getListDeleted();
+
+
     static NotesManager* getInstance();
     static void libererInstance();
 

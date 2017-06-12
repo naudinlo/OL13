@@ -316,6 +316,36 @@ QList<Note*>* NotesManager::getListeVersions(const QString& id){
 }
 
 /**
+ * \fn        QList<Note*> NotesManager::getListDeleted()
+ * \brief     Retourne la liste des notes supprimée
+ */
+QList<Note*> NotesManager::getListDeleted(){
+   QList<Note*> listDeleted;
+   NotesManager::Iterator it=NotesManager::getIterator();
+   while(!it.isDone()){
+       if(it.current().getIsDeleted()) listDeleted.append(&it.current());
+       it.next();
+   }
+   return listDeleted;
+}
+
+
+/**
+ * \fn        QList<Note*> NotesManager::getListArchive()
+ * \brief     Retourne la liste des notes archivée
+ */
+QList<Note*> NotesManager::getListArchive(){
+   QList<Note*> listArchive;
+   NotesManager::Iterator it=NotesManager::getIterator();
+   while(!it.isDone()){
+       if(it.current().getIsArchive()) listArchive.append(&it.current());
+       it.next();
+   }
+   return listArchive;
+}
+
+
+/**
  * \fn        NotesManager::NotesManager()
  * \brief     Constructeur de la classe NotesManager
  */
@@ -499,9 +529,9 @@ void NotesManager::deleteNote(const QString& id){
     Note& n=getNote(id);
     if (n.getNbIsRef()!=0){
         std::cout<<"La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.\n";
-        QMessageBox msgBox;
-        msgBox.setText("La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.\n");
-        msgBox.exec();
+//        QMessageBox msgBox;
+//        msgBox.setText("La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.\n");
+//        msgBox.exec();
         n.setIsArchive(true);
     }
     else{
@@ -512,7 +542,8 @@ void NotesManager::deleteNote(const QString& id){
             it.current().removeNoteRelation(&n);
         }
         std::cout<<"Toutes les relations sont supprimées\n";
-        if(n.getNbRef()!=0) n.deleteAllReference();
+//        if(n.getNbRef()!=0) n.deleteAllReferenceOLD();
+        if(n.references.size()!=0) n.deleteAllReference();
         n.setIsDeleted(true);
     }
 }
@@ -679,7 +710,6 @@ void RelationManager::deleteRelation(const QString &title){
     }
     throw NotesException ("error, impossible to delete, non existent relation");
 }
-
 
 /**
  * \fn        QList<Note*> NotesManager::getListAscendants(const QString& id)

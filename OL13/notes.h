@@ -75,15 +75,15 @@ private:
     bool isDeleted; //Si jamais on la met dans la corbeille
 
     // LNA test ref 09.06
-    Note ** references;
+//    Note ** referencesOLD;
 //    QList<QString> referencesQ;
-    unsigned int nbRef;
-    unsigned int nbMaxRef;
+//    unsigned int nbRefOLD;
+//    unsigned int nbMaxRefOLD;
 
     unsigned int nbIsRef;
 
-    void addReference(Note* n);
-    void addReferenceQ(const QString& id);
+//    void addReferenceOLD(Note* n);
+//    void addReferenceQ(const QString& id);
 public:
     const QString getId() const {return id;}
     const QString getTitle() const {return title;}
@@ -112,26 +112,24 @@ public:
     virtual void saveNote(QFile *file);
 
     //Les notes que this reference
-    unsigned int getNbRef() const{return nbRef;}
-    unsigned int getNbMaxRef() const{return nbMaxRef;}
-    void setNbRef(unsigned int n){ nbRef=n;}
+//    unsigned int getNbRefOLD() const{return nbRef;}
+//    unsigned int getNbMaxRefOLD() const{return nbMaxRef;}
+//    void setNbRefOLD(unsigned int n){ nbRef=n;}
     void setNbIsRef(unsigned int n){nbIsRef=n;}
     unsigned int getNbIsRef()const{return nbIsRef;}
 
+//    void deleteReferenceOLD(const QString& id);
+//    void deleteAllReferenceOLD();
+//    Note& setNewRefOLD(Note* n);
+//    Note& getReferenceOLD(const QString &id) const;
+//    Note& getReferenceIntOLD(unsigned int i) const;
+
+    QList<QString> references;
     void deleteReference(const QString& id);
     void deleteAllReference();
-    Note& setNewRef(Note* n);
+    void setNewRef(const QString& id);
     Note& getReference(const QString &id) const;
     Note& getReferenceInt(unsigned int i) const;
-
-//    QList<QString> referencesQ;
-//    void deleteReferenceQ(const QString& id);
-//    void deleteAllReferenceQ();
-//    void setNewRefQ(const QString& id);
-//    Note& getReferenceQ(const QString &id) const;
-//    Note& getReferenceIntQ(unsigned int i) const;
-
-
 
 };
 
