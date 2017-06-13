@@ -137,8 +137,7 @@ public slots:
    void addAction_new_rel();
    void OuvrirFichier();
    void CreerNote();
-   void addNewNote();
-   void afficher_note(QString id, int i);
+  void afficher_note(QString id, int i);
    void supp_dock_editer(){
        MenuEd->removeAction(dock_editer_note->toggleViewAction());
        dock_editer_note->close();
@@ -152,7 +151,8 @@ public slots:
        fen_supp = new supp_note(listNote->getModel(),this);
        fen_supp->show();
        connect(fen_supp,SIGNAL(close_note()),this,SLOT(close_page_note()));
-       //Recharger le Model dans la liste des Notes;s
+       update_model();
+       //Recharger le Model dans la liste des Notes;
    }
    void close_page_note();
 

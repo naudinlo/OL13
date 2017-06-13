@@ -10,7 +10,10 @@
  */
 
 #include "qnote.h"
-
+/**
+ * \fn QNote::QNote
+ * \brief Constructueur de la clase QNote
+ */
 QNote::QNote(){
     titre=new QLabel("titre");
     E_titre=new QLineEdit;
@@ -21,7 +24,10 @@ QNote::QNote(){
     layout_titre->addStretch();;
 
 }
-
+/**
+ * \fn QNote::QNote
+ * \brief Constructueur de la clase QArticle
+ */
 QArticle::QArticle(): QNote(){
     grid=new QGridLayout(this);
     text=new QLabel("Saisir le texte");
@@ -29,7 +35,10 @@ QArticle::QArticle(): QNote(){
     grid->addWidget(E_text,0,1,0,5);
     grid->addWidget(text,0,0);
 }
-
+/**
+ * \fn QNote::QNote
+ * \brief Constructueur de la clase QTask
+ */
 QTask::QTask():QNote(){
 
     action=new QLabel ("Action");
@@ -74,7 +83,10 @@ QTask::QTask():QNote(){
     connect(E_action,SIGNAL(textEdited(QString)),SLOT(check_creer()));
 
 }
-
+/**
+ * \fn QNote::QNote
+ * \brief Constructueur de la clase QRecording
+ */
 QRecording::QRecording():QNote(){
     grid=new QGridLayout(this);
     description=new QLabel("Description:");

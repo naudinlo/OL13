@@ -15,6 +15,16 @@
 
 
 #include "interface.h"
+/**
+ * \fn        interface::interface(): QMainWindow()
+ * \brief     Constructeur de la classe interface
+ *              Fenêtre principale de l'application, gére tous
+ *              les docks, effectue la liason entre les docks, les
+ *             widget, et les boites de dialogues.
+ *
+ * \param
+ */
+
 
 interface::interface(): QMainWindow()
 {
@@ -29,7 +39,6 @@ interface::interface(): QMainWindow()
         MenuEd =menuBar()->addMenu("&Edition");
         MenuAff =menuBar()->addMenu("&Affichage");
         fichiersRecents=MenuFichier->addMenu("Fichers &récents");
-        fichiersRecents->addAction("Fichier bidon 1.txt");
         fichiersRecents->addAction("Fichier bidon 2.txt");
         fichiersRecents->addAction("Fichier bidon 3.txt");
         QAction *Actiongras=new QAction("&Gras",this);
@@ -106,6 +115,13 @@ interface::interface(): QMainWindow()
     CreateDock_selected_Note();
     setCentralWidget(ZoneCentrale);
 }
+
+/**
+ * \brief fonction outils, permettant de connecter, afficher l'action d'achiver une note
+ * a la page courante.
+ *
+*/
+
 void interface::addAction_new_rel(){
 
     MenuEd->addAction(Action_new_relation);
@@ -114,6 +130,11 @@ void interface::addAction_new_rel(){
     toolBar_close->setHidden(false);
 
 }
+/**
+ * \brief Création dese docks : Editer_note, et Afficher_Relation
+ * affiché lors de l'ouverture d'une note
+ *
+*/
 
 void interface::CreateDock_edited_Note(){
     dock_editer_note=new QDockWidget("Editer Document",this);
@@ -131,15 +152,9 @@ void interface::CreateDock_edited_Note(){
     connect(note_page,SIGNAL(supp_dock_aff_rel()),this,SLOT(supp_dock_aff_rel()));
     connect(note_page->getdock_aff_rel(),SIGNAL(selectionNote(QString,int)),this,SLOT(afficher_note(QString,int)));
 }
-
-
-/*
-void interface::CreateDock_aff_Relation(){
-    dock_aff_Relation=new QDockWidget("Afficher les relation liès à cette Note",this);
-    dock_aff_Relation->setAllowedAreas(Qt::RightDockWidgetArea);
-    //dock_aff_Relation->setWidget();
-}
-*/
+/**
+ * @brief Création des docks de selection de Note (panneu gauche)
+ */
 void interface::CreateDock_selected_Note(){
     listNote=new selection_note();
     dock_selected_Note=new QDockWidget("Sélectionner une note",this);
@@ -164,67 +179,89 @@ void interface::CreateDock_selected_Note(){
     connect(this,SIGNAL(S_update_model()),dock_aff_removed_Note,SLOT(update_archNoteModel()));
     connect(dock_aff_removed_Note,SIGNAL(update_removeDock()),this,SLOT(update_model()));
 }
+
+/**
+ * @brief interface::Destruct_selected_Note
+ */
 void interface::Destruct_selected_Note(){
     delete listNote;
     MenuAff->removeAction(dock_selected_Note->toggleViewAction());
     delete dock_selected_Note;
 }
-
+/**
+ * @brief Fenêtre permettant de selectionner/chargé un fichier de sauvegarde
+ * Met à jour le manager de note et les docks
+ * \param
+ */
 void interface::OuvrirFichier(){
-    //QString fichier = QFileDialog::getOpenFileName(this,"Ouvrir un fichier",QString());
-    QFileDialog openfile(this,"Ouvrir un fichier",QString());
+    QString Filtre("Fichier (*.xml)");
+    QFileDialog openfile(this,"Ouvrir un fichier",QString(),Filtre);
     QString fichier=openfile.getOpenFileName();
     if(fichier != 0)
     {
-        Destruct_selected_Note();
-        QMessageBox::information(this,"Fichier","Vous avez sélectionné:"+fichier);
-        //CreateDock_selected_Note(); //prendre en compte le changement de vue
+        //QMessageBox::information(this,"Fichier","Vous avez sélectionné:"+fichier);
         update_model();
         note_manager->setFilename(fichier);
-        //note_manager->load();
+        fichiersRecents->addAction(fichier);
+        note_manager->load();
     }
     else if(!openfile.close())
         QMessageBox::warning(this,"Fichier","Impossible d'ouvrir le fichier"+fichier);
-
 }
+/**
+ * @brief Permet de choisir un fichier de sauvegarde.
+ * \param
+ */
 void interface::save(){
-    if(note_manager->getFilename().isEmpty())
-    {
-        QMessageBox::information(this,"Sauvegarde","Sélectionner un ficher");
-        OuvrirFichier();
-    }
-    //note_manager->save();
-}
+        int reponse =QMessageBox::question(this,"Sauvegarde","Créer un nouveau fichier de sauvegarde",QMessageBox::No|QMessageBox::Yes);
+        if(reponse ==QMessageBox::Yes){
+            QString fichier = QFileDialog::getSaveFileName(this, "Créer un fichier", QString(), "File (*.xml)");
+            note_manager->setFilename(fichier);
+        }
+        else if(note_manager->getFilename().isEmpty()){
+            int reponse =QMessageBox::question(this,"Sauvegarde","Vous n'avez pas de fichier de sauvegarde en cours, voulez vous un nouveau fichier",QMessageBox::Yes|QMessageBox::No);
+            if(reponse ==QMessageBox::Yes){
+                QString fichier = QFileDialog::getSaveFileName(this, "Créer un fichier", QString(), "File (*.xml)");
+                note_manager->setFilename(fichier);
+            }
+            else{
 
+            QString fichier = QFileDialog::getOpenFileName(this, "Ouvrir un fichier", QString(), "File (*.xml)");
+            note_manager->setFilename(fichier);
+        }
+
+      }
+
+        if(!(note_manager->getFilename().isEmpty()))
+        {
+            note_manager->save();
+            fichiersRecents->addAction(note_manager->getFilename());
+            QMessageBox::information(this,"Sauvegarde","Sauvegarde Reussi");
+        }
+        else{
+            QMessageBox::critical(this,"Sauvegarde","Pas de fichier de sauvegarde");
+        }
+
+
+    }
+
+
+/**
+ * @brief Ouvre une fenetre de dialogue de type Creation_Note, pour
+ * permettre la création d'une note. Connecte cette fennetre au docks
+ *
+ * \param
+ */
 void interface::CreerNote(){
     fen_creerNote= new Creation_Note(this);
-    fen_creerNote->show();
-    connect(fen_creerNote,SIGNAL(newNote(Note& )),this,SLOT(addNewNote()));
-}
-
-void interface::addNewNote(){
-    /*
-    QList< QStandardItem* > note;
-    note.append(new QStandardItem (n.getId()));
-    //note.append(new QStandardItem(QString(n.getType())));
-
-
-    std::stringstream f;
-    QString string_dt=(n.getCreation_date()).toString("dd.MM.yyyy");
-    f<<string_dt.toStdString();
-    QList< QStandardItem* > items;
-    items.append(new QStandardItem(n.getTitle()));
-    items.append(new QStandardItem (f.str().c_str()));
-    note.at(0)->appendRow(items);
-    items.at(0)->setWhatsThis(n.getId());;
-    listNote->getModel()->appendRow(note);
-
-    listNote->getVue()->setModel(listNote->getModel());
-    */
+    fen_creerNote->exec();
     emit(L_update_model());
     delete fen_creerNote;
-}
 
+}
+/**
+ * @brief création de la widget de selection de note
+ */
 selection_note::selection_note():QWidget(){
 
     layout= new QVBoxLayout(this);
@@ -240,6 +277,10 @@ selection_note::selection_note():QWidget(){
     setLayout(layout);
     connect(vue,SIGNAL(activated(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
 }
+/**
+ * @brief Etablie/Met à jours le model contennant tous les Notes actifs, en appellant Le
+ * Note Manager
+ */
 void selection_note::update_model(){
     //Partie à modifier quand on aura load
         model->clear();
@@ -271,7 +312,10 @@ void selection_note::update_model(){
 
 
 }
-
+/**
+ * @brief Identifie la note/versions que l'utilisateur souhaité affiché
+ * @param i
+ */
 void selection_note::emit_selection(QModelIndex i){
     QModelIndex index;
     QStandardItem* current_note;
@@ -286,12 +330,15 @@ void selection_note::emit_selection(QModelIndex i){
     {
 
         current_note=model->item(i.parent().row(),0);
-        //current_versions=current_note->child(i.row(),0);
         emit selection(current_note->whatsThis(),i.row());
 
     }
 }
-
+/**
+ * @brief interface::afficher_note
+ * @param id
+ * @param i
+ */
 void interface::afficher_note(QString id, int i){
     if(note_page!=0) //Si à dejà ouvert une note avant, il faut
     {
@@ -324,7 +371,9 @@ void interface::afficher_note(QString id, int i){
     setCentralWidget(ZoneCentrale);
 }
 
-
+/**
+ * @brief Ferme la note en cours, si elle est bien encore ouverte
+ */
 void interface::close_page_note(){
     if(note_page!=0) //Si à dejà ouvert une note avant, il faut
     {
