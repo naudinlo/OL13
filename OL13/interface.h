@@ -97,6 +97,8 @@ public:
 
     ~interface(){
         NotesManager::libererInstance();
+        ViderCorbeille();
+        save();
     }
 signals:
     void S_update_model();
