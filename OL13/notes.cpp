@@ -395,20 +395,23 @@ QString getRecordingtoStr(ENUM::StatusType recording) {
 //    return *n;
 //};
 void Note::setNewRef(const QString& id){
+    bool alreadyInRef=false;
     if (this->getId()!=id){
         for(unsigned int i=0; i<references.size(); i++){
-            if (references.at(i)==id){
-                throw NotesException("erreur, ID déjà existant");
+            if (references.at(i)==id){ alreadyInRef=true;
+//                throw NotesException("erreur, ID déjà existant");
             }
         }
-        references.append(id);
-        //Incrémente de un le nombre de note qui référence this
-        Note& nRef=NotesManager::getInstance()->getNote(id);
-        nRef.setNbIsRef(nRef.getNbIsRef()+1);
+        if (!alreadyInRef){
+            references.append(id);
+            //Incrémente de un le nombre de note qui référence this
+            Note& nRef=NotesManager::getInstance()->getNote(id);
+            nRef.setNbIsRef(nRef.getNbIsRef()+1);
+        }
     }
-    else {
-        throw NotesException("Vous ne pouvez pas créer une référence sur votre propre note");
-    }
+//    else {
+//        throw NotesException("Vous ne pouvez pas créer une référence sur votre propre note");
+//    }
 };
 
 /**
