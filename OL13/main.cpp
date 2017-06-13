@@ -44,7 +44,7 @@ void displayAllNote(){
     NotesManager* m=NotesManager::getInstance();
 
     for(NotesManager::Iterator it=m->getIterator(); !it.isDone(); it.next()){
-        it.current().display();
+        if(!it.liste()->isEmpty()) it.current().display();
     };
 }
 
