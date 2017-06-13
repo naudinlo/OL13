@@ -81,6 +81,8 @@ interface::interface(): QMainWindow()
         Action_Archiver_Note=new QAction("Archiver la note",this);
         Action_Archiver_Note->setShortcut(QKeySequence("ctrl+alt+A"));
         toolBar_new_Rel->addAction(Action_Archiver_Note);
+        connect(Action_Fermer_Note,SIGNAL(triggered(bool)),this,SLOT(close_page_note()));
+
 
         //Action: supprimer une note
             //TODO : supprimer note ! Créer slot supprimer_note
@@ -144,10 +146,23 @@ void interface::CreateDock_selected_Note(){
     dock_selected_Note->setAllowedAreas(Qt::LeftDockWidgetArea );
     dock_selected_Note->setWidget(listNote);
     dock_selected_Note->setMaximumWidth(300);
+    dock_selected_Note->setMaximumHeight(200);
     addDockWidget(Qt::LeftDockWidgetArea, dock_selected_Note);
     MenuAff->addAction(dock_selected_Note->toggleViewAction());
     connect(listNote,SIGNAL(selection(QString,int)),this,SLOT(afficher_note(QString,int)));
-    connect(this,SIGNAL(update_model()),listNote,SLOT(update_model()));
+    connect(this,SIGNAL(L_update_model()),listNote,SLOT(update_model()));
+
+    dock_aff_archived_Note= new DockArchived(this);
+    addDockWidget(Qt::LeftDockWidgetArea, dock_aff_archived_Note);
+    connect(dock_aff_archived_Note,SIGNAL(selection(QString,int)),this,SLOT(afficher_note(QString,int)));
+    connect(this,SIGNAL(A_update_model()),dock_aff_archived_Note,SLOT(update_archNoteModel()));
+    connect(dock_aff_archived_Note,SIGNAL(update_removeDock()),this,SLOT(update_model()));
+
+    dock_aff_removed_Note= new DockRemove(this);
+    addDockWidget(Qt::LeftDockWidgetArea, dock_aff_removed_Note);
+    connect(dock_aff_removed_Note,SIGNAL(selection(QString,int)),this,SLOT(afficher_note(QString,int)));
+    connect(this,SIGNAL(S_update_model()),dock_aff_removed_Note,SLOT(update_archNoteModel()));
+    connect(dock_aff_removed_Note,SIGNAL(update_removeDock()),this,SLOT(update_model()));
 }
 void interface::Destruct_selected_Note(){
     delete listNote;
@@ -164,7 +179,7 @@ void interface::OuvrirFichier(){
         Destruct_selected_Note();
         QMessageBox::information(this,"Fichier","Vous avez sélectionné:"+fichier);
         //CreateDock_selected_Note(); //prendre en compte le changement de vue
-        emit(update_model());
+        update_model();
         note_manager->setFilename(fichier);
         //note_manager->load();
     }
@@ -184,10 +199,10 @@ void interface::save(){
 void interface::CreerNote(){
     fen_creerNote= new Creation_Note(this);
     fen_creerNote->show();
-    connect(fen_creerNote,SIGNAL(newNote(Note& )),this,SLOT(addNewNote(Note&)));
+    connect(fen_creerNote,SIGNAL(newNote(Note& )),this,SLOT(addNewNote()));
 }
 
-void interface::addNewNote(Note& n){
+void interface::addNewNote(){
     /*
     QList< QStandardItem* > note;
     note.append(new QStandardItem (n.getId()));
@@ -206,7 +221,7 @@ void interface::addNewNote(Note& n){
 
     listNote->getVue()->setModel(listNote->getModel());
     */
-    emit(update_model());
+    emit(L_update_model());
     delete fen_creerNote;
 }
 
@@ -233,24 +248,31 @@ void selection_note::update_model(){
 
         for(NotesManager::Iterator it= m->getIterator();!it.isDone();it.next()){
             if(!it.liste()->isEmpty()){
-                QList< QStandardItem* >  items;
+              if(!(it.current().getIsArchive() || it.current().getIsDeleted()))
+                  {
 
-                    items.append(new QStandardItem(it.current().getId()));
-                    items.append(new QStandardItem(it.current().getType()));
-                    items.at(0)->setWhatsThis(it.current().getId());
-                    model->appendRow(items);
-                    for(QList<Note*>::iterator j=it.liste()->begin();j !=it.liste()->end();j++)
-                    {
-                        QList< QStandardItem* > item2;
-                        //item2.push_back(new QStandardItem((*j)->getTitle()));
-                        //item2.push_back(new QStandardItem((*j)->getLastmodif_date().toString()));
-                        item2.append(new QStandardItem((*j)->getTitle()));
-                        item2.append(new QStandardItem ((*j)->getLastmodif_date().toString()));
-                        items.at(0)->appendRow(item2);
-                    }
+
+                  QList< QStandardItem* >  items;
+
+                      items.append(new QStandardItem(it.current().getId()));
+                      items.append(new QStandardItem(it.current().getType()));
+                      items.at(0)->setWhatsThis(it.current().getId());
+                      model->appendRow(items);
+                      for(QList<Note*>::iterator j=it.liste()->begin();j !=it.liste()->end();j++)
+                      {
+                          QList< QStandardItem* > item2;
+                          //item2.push_back(new QStandardItem((*j)->getTitle()));
+                          //item2.push_back(new QStandardItem((*j)->getLastmodif_date().toString()));
+                          item2.append(new QStandardItem((*j)->getTitle()));
+                          item2.append(new QStandardItem ((*j)->getLastmodif_date().toString()));
+                          items.at(0)->appendRow(item2);
+                      }
+              }
+
+
             }
-
         }
+
 
 }
 
@@ -295,7 +317,8 @@ void interface::afficher_note(QString id, int i){
         ZoneCentrale=note_page;
         CreateDock_edited_Note();
         addAction_new_rel();
-        connect(note_page,SIGNAL(update_model()),listNote,SLOT(update_model()));
+        connect(note_page,SIGNAL(update_model()),this,SLOT(update_model()));
+        connect(note_page,SIGNAL(close_page()),this,SLOT(close_page_note()));
 
     }
     catch(NotesException e)
@@ -304,6 +327,7 @@ void interface::afficher_note(QString id, int i){
     }
     setCentralWidget(ZoneCentrale);
 }
+
 
 void interface::close_page_note(){
     if(note_page!=0) //Si à dejà ouvert une note avant, il faut
@@ -315,6 +339,7 @@ void interface::close_page_note(){
 
         delete note_page; //Fermer la note
         note_page=0;
+        toolBar_close->setHidden(true);
         ZoneCentrale=new page_vide();
         setCentralWidget(ZoneCentrale);
     }

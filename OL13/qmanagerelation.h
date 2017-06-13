@@ -15,17 +15,22 @@ class QManageRelation : public QDialog
 public:
     explicit QManageRelation(QWidget *parent = 0);
     ~QManageRelation();
+    QUiRelation* getSelectedR(){
+        return selectedR;
+    }
 
 private:
     Ui::QManageRelation *ui;
+    QUiRelation* selectedR;
     QStandardItemModel* model;
     QString currentR;
     void UpdateModel();
 public slots:
     void on_show_clicked(){
         try{
-            QUiRelation selectedR(RelationManager::getInstance().getRelation( currentR),this);
-            selectedR.exec();
+            selectedR =new QUiRelation (RelationManager::getInstance().getRelation( currentR),this);
+            selectedR->exec();
+            UpdateModel();
         }
         catch(NotesException e){
             QMessageBox::warning(this,"Show Relation",e.getinfo());

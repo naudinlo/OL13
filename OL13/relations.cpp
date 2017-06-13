@@ -64,7 +64,7 @@ void Relation::addCoupleRelation(NotesCouple* nc){
     nbCouple++;
 }
 
-NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2) const {
+NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2)const{
     for(unsigned int i=0; i<nbCouple; i++){
         if (relations[i]->getCoupleNoteX()->getId()==n1->getId() && relations[i]->getCoupleNoteY()->getId()==n2->getId()){
             return (relations[i]);
@@ -73,6 +73,16 @@ NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2) const {
     return 0;
     throw NotesException("erreur, impossible to the relation from this couple, relation de notes inexistante");
 }
+
+//Relation& Relation::getRelationFromCouple(const QString& id1, const QString& id2) const {
+//    for(unsigned int i=0; i<nbCouple; i++){
+//        if (relations[i]->getCoupleNoteX()->getId()==id1 && relations[i]->getCoupleNoteY()->getId()==id2){
+//            return this;
+//        }
+//    }
+//    return 0;
+//    throw NotesException("erreur, impossible to the relation from this couple, relation de notes inexistante");
+//}
 
 void Relation::displayCoupleRelation(Note *n1, Note *n2)const{
     const NotesCouple* nc=getCoupleRelation(n1,n2);

@@ -12,7 +12,11 @@ HEADERS += \
     qrelations.h \
     supp_note.h \
     quirelation.h \
-    qmanagerelation.h
+    qmanagerelation.h \
+    couplemodel.h \
+    addcouple.h \
+    dockarchived.h
+    deletednote.h
 
 QT += widgets
 QT += xml
@@ -33,8 +37,16 @@ SOURCES += \
     qrelations.cpp \
     supp_note.cpp \
     quirelation.cpp \
-    qmanagerelation.cpp
+    qmanagerelation.cpp \
+    couplemodel.cpp \
+    addcouple.cpp \
+    dockarchived.cpp
+    deletednote.cpp
 
 FORMS += \
     quirelation.ui \
-    qmanagerelation.ui
+    qmanagerelation.ui \
+    addcouple.ui \
+    dockarchived.ui
+    addcouple.ui
+    deletednote.ui

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>438</width>
-    <height>347</height>
+    <width>455</width>
+    <height>502</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,55 +16,27 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>20</y>
-     <width>381</width>
-     <height>301</height>
+     <x>10</x>
+     <y>0</y>
+     <width>421</width>
+     <height>493</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" alignment="Qt::AlignLeft">
-     <widget class="QLabel" name="titre">
-      <property name="text">
-       <string>Titre de la relation</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="ETitre"/>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="Description">
-      <property name="text">
-       <string>Description :</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QPushButton" name="remove">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>Supprimer un couple</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="show">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>Editer un couple</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0" colspan="2">
+    <item row="2" column="0">
      <widget class="QPlainTextEdit" name="EDesciption"/>
     </item>
     <item row="4" column="0" colspan="2">
      <widget class="QTableView" name="RelationView">
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
       <property name="selectionMode">
        <enum>QAbstractItemView::SingleSelection</enum>
       </property>
@@ -80,6 +52,50 @@
       <attribute name="verticalHeaderVisible">
        <bool>false</bool>
       </attribute>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="ETitre"/>
+    </item>
+    <item row="0" column="0" alignment="Qt::AlignLeft">
+     <widget class="QLabel" name="titre">
+      <property name="text">
+       <string>Titre de la relation</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="remove">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Supprimer un couple</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="addCouple">
+      <property name="text">
+       <string>Ajouter un couple</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="Description">
+      <property name="text">
+       <string>Description :</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="show">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Editer un couple</string>
+      </property>
      </widget>
     </item>
    </layout>

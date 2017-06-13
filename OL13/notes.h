@@ -30,7 +30,7 @@
  *                      Classe recording, dérivant de la classe Note, avec en plus les attributs descriptions,
  *                        type et un link vers un fichier image, audio ou video.
  *
- *              Détail des méthodes donné dans le .cpp.
+ *              L'ensemble des méthodes définies dans ce fichier sont explicitées dans le fichier .cpp associé.
  */
 
 
@@ -75,14 +75,15 @@ private:
     bool isDeleted; //Si jamais on la met dans la corbeille
 
     // LNA test ref 09.06
-    Note ** references;
-    unsigned int nbRef;
-    unsigned int nbMaxRef;
+//    Note ** referencesOLD;
+//    QList<QString> referencesQ;
+//    unsigned int nbRefOLD;
+//    unsigned int nbMaxRefOLD;
 
     unsigned int nbIsRef;
 
-    void addReference(Note* n);
-
+//    void addReferenceOLD(Note* n);
+//    void addReferenceQ(const QString& id);
 public:
     const QString getId() const {return id;}
     const QString getTitle() const {return title;}
@@ -95,14 +96,15 @@ public:
 
     QString getType()const {return QString(typeid(*this).name()).remove(0,1);}
     Note(const QString& i, const QString& ti);
+//    Note(const QString&i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD):
+//        id(i),title(ti),creation_date(cd),lastmodif_date(lmd),isArchive(iA),isDeleted(iD), references(new Note*[5]), nbRef(0), nbMaxRef(5),nbIsRef(0){}
     Note(const QString&i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD):
-        id(i),title(ti),creation_date(cd),lastmodif_date(lmd),isArchive(iA),isDeleted(iD), references(new Note*[5]), nbRef(0), nbMaxRef(5),nbIsRef(0){}
+        id(i),title(ti),creation_date(cd),lastmodif_date(lmd),isArchive(iA),isDeleted(iD), nbIsRef(0){}
 
-    void setTitle(const QString& t){title=t;}
+    void setTitle(const QString& t){generateRef(t); title=t;}
     void setCreation_date(const QDateTime& d){creation_date=d;}
     void setLastmodif_date(const QDateTime& d){lastmodif_date=d;}
 
-    //PRIVATE ?
     Note(const Note& n); //constructeur de recopie private pour le handler
     Note& operator=(const Note& n);   //operateur d'affectation private pour le handler
     virtual ~Note();
@@ -114,19 +116,26 @@ public:
     virtual void saveNote(QFile *file);
 
     //Les notes que this reference
-    Note& setNewRef(Note* n);
-
-    Note& getReference(const QString &id) const;
-    Note& getReferenceInt(unsigned int i) const;
-    unsigned int getNbRef() const{return nbRef;}
-    unsigned int getNbMaxRef() const{return nbMaxRef;}
-    void setNbRef(unsigned int n){ nbRef=n;}
-    void deleteReference(const QString& id);
-    void deleteAllReference();
-
-
+//    unsigned int getNbRefOLD() const{return nbRef;}
+//    unsigned int getNbMaxRefOLD() const{return nbMaxRef;}
+//    void setNbRefOLD(unsigned int n){ nbRef=n;}
     void setNbIsRef(unsigned int n){nbIsRef=n;}
     unsigned int getNbIsRef()const{return nbIsRef;}
+
+//    void deleteReferenceOLD(const QString& id);
+//    void deleteAllReferenceOLD();
+//    Note& setNewRefOLD(Note* n);
+//    Note& getReferenceOLD(const QString &id) const;
+//    Note& getReferenceIntOLD(unsigned int i) const;
+
+    QList<QString> references;
+    void deleteReference(const QString& id);
+    void deleteAllReference();
+    void setNewRef(const QString& id);
+    Note& getReference(const QString &id) const;
+    Note& getReferenceInt(unsigned int i) const;
+
+    void generateRef(const QString& champTexte);
 
 };
 
@@ -160,7 +169,7 @@ private:
     QDateTime dueDate;
 public:
     const QString getAction() const {return action;}
-    void setAction(const QString& a) {action=a;}
+    void setAction(const QString& a) {generateRef(a); action=a;}
     ENUM::StatusType getStatus() const {return status;}
     void setStatus(const ENUM::StatusType& s) {status=s;}
     int getPriority() const {return priority;}
@@ -195,7 +204,7 @@ public:
     const QTextDocument& getDescription() const {return description;}
     ENUM::RecordingType getType() const {return type;}
     const QString getLink() const {return link;} //voir si on garde cette structure pour les images
-    void setDescription(const QString& d) {description.setPlainText(d);}
+    void setDescription(const QString& d) {generateRef(d);description.setPlainText(d);}
     void setType(const ENUM::RecordingType& r) {type=r;}
     void setLink(const QString& l){link=l;}
     Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l);

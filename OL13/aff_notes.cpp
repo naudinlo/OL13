@@ -12,7 +12,7 @@
 
 #include "aff_notes.h"
 
-page_notes::page_notes(Note& N):n(N)
+page_notes::page_notes(Note& N):n(N),newNote(nullptr)
 {
     /** Window fenetre principale:
      *
@@ -64,7 +64,7 @@ page_notes::page_notes(Note& N):n(N)
     //Dock aff relatio
 
         dock_aff_Rel=new QDockRelation(n.getId());
-
+        connect(dock_aff_Rel,SIGNAL(selectionRelation(QString)),this,SLOT(aff_Relation(QString)));
         /*
 
         dock_rel=new QWidget;
@@ -79,7 +79,9 @@ page_notes::page_notes(Note& N):n(N)
 
 }
 page_notes::~page_notes(){
-    note->saveNote(n);
+    if(newNote !=nullptr){
+        note->saveNote(*newNote);
+    }
     emit(update_model());
     emit(supp_dock_editer());  // c'est l'interface qui gère la supp du dock
     emit(supp_dock_aff_rel());

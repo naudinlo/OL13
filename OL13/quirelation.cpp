@@ -7,6 +7,7 @@ QUiRelation::QUiRelation(Relation &r, QWidget *parent) :QDialog(parent),R(r),
     ui->setupUi(this);
     ui->ETitre->setText(r.getTitle());
     ui->EDesciption->document()->setPlainText(r.getDescription());
+    model = new QStandardItemModel;
     create_model();
 
 }
@@ -17,20 +18,27 @@ QUiRelation::~QUiRelation()
 }
 
 void QUiRelation::create_model(){
-    model = new QStandardItemModel;
+    model->clear();
+    QList<QString> presentNote;
     for(Relation::Iterator it=R.getIterator();!it.isDone();it.next()){
-        QList< QStandardItem* > item;
-                item.append(new QStandardItem(it.current().getCoupleNoteX()->getId()));
-                if(it.current().getSymetric()){
-                    item.append(new QStandardItem("<->"));
-                }
-                else{
-                    item.append(new QStandardItem("->"));
-                }
-                item.append(new QStandardItem(it.current().getCoupleNoteY()->getId()));
-                item.append(new QStandardItem(it.current().getLabel()));
+        if(! presentNote.contains(it.current().getCoupleNoteX()->getId())){
+                //on n'affiche qu'une fois les notes symétriques
+            QList< QStandardItem* > item;
+                    item.append(new QStandardItem(it.current().getCoupleNoteX()->getId()));
+                    if(it.current().getSymetric()){
+                        item.append(new QStandardItem("<->"));
+                        presentNote.push_front(it.current().getCoupleNoteY()->getId());
 
-           model->appendRow(item);
+                    }
+                    else{
+                        item.append(new QStandardItem("->"));
+                    }
+                    item.append(new QStandardItem(it.current().getCoupleNoteY()->getId()));
+                    item.append(new QStandardItem(it.current().getLabel()));
+
+               model->appendRow(item);
+
+        }
     }
     ui->RelationView->setModel(model);
 }
@@ -41,7 +49,7 @@ void QUiRelation::on_RelationView_doubleClicked(QModelIndex index){
         try{
            Note* n1 =&(m->getNote(model->item(index.row(),0)->text()));
            Note* n2= &(m->getNote(model->item(index.row(),2)->text()));
-           //c=R.getCoupleRelation(n1,n2);
+           c =R.getCoupleRelation(n1,n2);
             ui->remove->setEnabled(true);
             ui->show->setEnabled(true);
         }
@@ -55,7 +63,4 @@ void QUiRelation::on_EDesciption_textChanged(){
 }
 void QUiRelation::on_ETitre_textChanged(QString t){
     R.setTitle(t);
-}
-void QUiRelation::on_RelationView_objectNameChanged(QString t){
-   QMessageBox::information(this,"edit",t);
 }

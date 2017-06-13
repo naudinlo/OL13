@@ -20,6 +20,8 @@
  *
  *                      Possède un attribut Relation** tabrelations permettant d'accéder à chaque relation
  *                      et à l'ensemble de ses couples de notes associé.
+ *
+ *             L'ensemble des méthodes définies dans ce fichier sont explicitées dans le fichier .cpp associé.
  */
 
 
@@ -74,14 +76,7 @@ public:
     Article& editArticle(Article& A);
     Task& editTask(Task& T);
     Recording& editRecording(Recording& R);
-/*
-    Article& editArticle(const QString& id, const QString& ti,const QString& te);
-    Task& editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d);
-    Task& editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p);
-    Task& editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, const QDateTime d);
-    Task& editTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s);
-    Recording& editRecording(const QString& id, const QString& ti,const QString& d, ENUM::RecordingType r, QString l);
-*/
+
     Note& getNote(const QString& id);
     Note& getNoteVersion(const QString& id, int indice);
     QList<Note*>* getListeVersions(const QString& id);
@@ -94,19 +89,19 @@ public:
     void save() const;
     QString updateId(QString Id2)const;
 
-//    void getListAscendants(const QString& id);
-//    void getListDescendants(const QString& id);
-
     QList<TupleNote_Relation*> getListTupleAscendants(const QString& id);
     QList<TupleNote_Relation*> getListTupleDescendants(const QString& id);
+
     QList<Note*> getListAscendants(const QString& id);
     QList<Note*> getListDescendants(const QString& id);
-//    void displayRelAscDesc(const QString id);
+
+    QList<Note*> getListArchive();
+    QList<Note*> getListDeleted();
+
 
     static NotesManager* getInstance();
     static void libererInstance();
 
-    //Utile de faire un manager de trash ?
     void emptyTrash();
     void restoreNoteTrash(const QString& id);
 
@@ -164,6 +159,7 @@ public:
     Relation &getNewRelation(const QString& title,const QString& desc);
     Relation &getRelation(const QString& title);
     void deleteRelation(const QString& title);
+//    const QString& getTitleRelfromCouple(const QString& id1,const QString& id2);
 
     unsigned int getNbRelations() const{return nbRelations;}
 

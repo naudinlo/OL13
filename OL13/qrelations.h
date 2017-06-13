@@ -30,11 +30,13 @@ class QDockRelation:public QWidget{
     QStandardItemModel* model_to;
     QTableView* rel_from;
     QTableView* rel_to;
+    QString id;
 public:
     QDockRelation(const QString &id);
 public slots:
     void emit_From_selection(QModelIndex i);
     void emit_to_selection(QModelIndex i);
+    void updateModels();
 signals:
     void selectionNote(QString, int);
     void selectionRelation(QString titre);
@@ -79,11 +81,15 @@ signals:
     void newCouple(Note*, Note*,QString,bool); //message récuperer par Edit_relation
     //representant la demande d'ajout d'un nouveau couple à une relation
     //signal emis par fermer()
+    void setCouple(QString); //message récuper par l'affichage d'une relation
+
 public slots:
     void fermer(){
         //envoi un signal pour créer un nouveau couple selon la config choisie
         if(yes->isChecked()){
             emit newCouple(n1,n2,E_Label->text(),symetric);
+
+            emit setCouple(E_Label->text());
         }
         else
         {
@@ -128,6 +134,8 @@ class Edit_relation:public QDialog{
 
 public:
     Edit_relation(QStandardItemModel* m, QString id, QWidget *parent);
+signals:
+    void newRelation();
 public slots:
     void clicSelection();
     void enabledAppend(){
@@ -143,6 +151,7 @@ public slots:
             else{
                 R->getNewCoupleRelation(n1,n2,label,s);
            }
+            emit(newRelation());
         }
      catch(NotesException e){
                 QMessageBox::warning(this,"Error Couple",e.getinfo());
