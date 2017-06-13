@@ -324,6 +324,7 @@ void interface::afficher_note(QString id, int i){
     setCentralWidget(ZoneCentrale);
 }
 
+
 void interface::close_page_note(){
     if(note_page!=0) //Si à dejà ouvert une note avant, il faut
     {
