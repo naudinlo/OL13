@@ -392,7 +392,6 @@ try{
 
 
 int main(int argc, char * argv[]) {
-  
     //fct();
     PROGRAMME(argc,argv);
     //creation();
