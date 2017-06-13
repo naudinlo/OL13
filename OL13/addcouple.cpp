@@ -15,9 +15,11 @@ addCouple::addCouple(QWidget *parent) :
 
     NotesManager* m=NotesManager::getInstance();
     for(NotesManager::Iterator it=m->getIterator();!it.isDone();it.next()){
-        QStandardItem* item=new QStandardItem(it.current().getId());
-        item->setWhatsThis(it.current().getId());
-        modelfrom->appendRow(item);
+        if (!it.liste()->isEmpty()){
+            QStandardItem* item=new QStandardItem(it.current().getId());
+            item->setWhatsThis(it.current().getId());
+            modelfrom->appendRow(item);
+        }
     }
     ui->From->setModel(modelfrom);
     ui->toView->setModel(modelto);
@@ -27,11 +29,13 @@ void addCouple::updateModel_to(QModelIndex index){
     i1=index;
     NotesManager* m=NotesManager::getInstance();
     for(NotesManager::Iterator it=m->getIterator();!it.isDone();it.next()){
-        if(it.current().getId()!= modelfrom->itemFromIndex(index)->whatsThis())
-        {
-            QStandardItem* item=new QStandardItem(it.current().getId());
-            item->setWhatsThis(it.current().getId());
-            modelto->appendRow(item);
+        if(!it.liste()->isEmpty()){
+            if(it.current().getId()!= modelfrom->itemFromIndex(index)->whatsThis())
+            {
+                QStandardItem* item=new QStandardItem(it.current().getId());
+                item->setWhatsThis(it.current().getId());
+                modelto->appendRow(item);
+            }
         }
     }
 }
