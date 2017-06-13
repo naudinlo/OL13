@@ -947,7 +947,13 @@ void NotesManager::emptyTrash(){
  */
 void NotesManager::restoreNoteTrash(const QString& id){
     NotesManager::Iterator it=NotesManager::getIterator();
-    while(!it.isDone() && it.current().getId()!=id) it.next(); //revoir cette fonction pour tester it.liste()->isEmpty()
+    while(!it.isDone()) {
+        if(!it.liste()->isEmpty()){
+            if(it.current().getId()!=id) it.next();
+            else break;
+        }
+        else it.next();
+    }
     if (it.isDone()){
         throw NotesException("error, non existent note");
     }

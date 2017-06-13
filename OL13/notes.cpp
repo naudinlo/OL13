@@ -589,6 +589,7 @@ void Note::generateRef(const QString& champTexte){
         QList<QString> listNotes;
         NotesManager::Iterator it=NotesManager::getInstance()->getIterator();
         while(!it.isDone()){
+            if(!it.liste()->isEmpty())
             if(!it.current().getIsDeleted()){
                 listNotes.append(it.current().getId());
             }
