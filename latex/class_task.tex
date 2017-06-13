@@ -1,0 +1,115 @@
+\hypertarget{class_task}{}\section{Task Class Reference}
+\label{class_task}\index{Task@{Task}}
+Inheritance diagram for Task\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_task}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_task_a96c7968f19216f99d2be8258379276f8}\label{class_task_a96c7968f19216f99d2be8258379276f8}} 
+const Q\+String {\bfseries get\+Action} () const
+\item 
+\mbox{\Hypertarget{class_task_ab46558546f384adf2fb713a65d38c075}\label{class_task_ab46558546f384adf2fb713a65d38c075}} 
+void {\bfseries set\+Action} (const Q\+String \&a)
+\item 
+\mbox{\Hypertarget{class_task_aad7d467ac985d8244ac86d1359652056}\label{class_task_aad7d467ac985d8244ac86d1359652056}} 
+E\+N\+U\+M\+::\+Status\+Type {\bfseries get\+Status} () const
+\item 
+\mbox{\Hypertarget{class_task_a16849e80ace9effc32551461b4cc9633}\label{class_task_a16849e80ace9effc32551461b4cc9633}} 
+void {\bfseries set\+Status} (const E\+N\+U\+M\+::\+Status\+Type \&s)
+\item 
+\mbox{\Hypertarget{class_task_adf87b0c5cebcf623ecf56cea17c6fede}\label{class_task_adf87b0c5cebcf623ecf56cea17c6fede}} 
+int {\bfseries get\+Priority} () const
+\item 
+\mbox{\Hypertarget{class_task_ada0cc34c125efd9fc373d3ca25be6013}\label{class_task_ada0cc34c125efd9fc373d3ca25be6013}} 
+void {\bfseries set\+Priority} (unsigned int p)
+\item 
+\mbox{\Hypertarget{class_task_aebc4bcb056771f66180b3cffe91d17c3}\label{class_task_aebc4bcb056771f66180b3cffe91d17c3}} 
+const Q\+Date\+Time \& {\bfseries get\+Due\+Date} () const
+\item 
+\mbox{\Hypertarget{class_task_a8867a97698ad38810e3d53a924b4c1b3}\label{class_task_a8867a97698ad38810e3d53a924b4c1b3}} 
+void {\bfseries set\+Due\+Date} (const Q\+Date\+Time d)
+\item 
+\mbox{\Hypertarget{class_task_a78d0578c5477a26b89dc2db1dd4752e2}\label{class_task_a78d0578c5477a26b89dc2db1dd4752e2}} 
+{\bfseries Task} (const Q\+String \&i, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s)
+\item 
+\mbox{\Hypertarget{class_task_ac2c486f798fcdc263a77420448f9e276}\label{class_task_ac2c486f798fcdc263a77420448f9e276}} 
+{\bfseries Task} (const Q\+String \&i, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s, unsigned int p)
+\item 
+\mbox{\Hypertarget{class_task_a95bb17f3748a1195967d92e73bba8c7c}\label{class_task_a95bb17f3748a1195967d92e73bba8c7c}} 
+{\bfseries Task} (const Q\+String \&i, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s, const Q\+Date\+Time d)
+\item 
+\hyperlink{class_task_a08a0f57803d8ef35f687f23f759e9f0c}{Task} (const Q\+String \&i, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s, unsigned int p, const Q\+Date\+Time d)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe task. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_task_a5e397a4f57e750bd8624debc2dba5f4a}\label{class_task_a5e397a4f57e750bd8624debc2dba5f4a}} 
+{\bfseries Task} (const Q\+String \&i, const Q\+String \&ti, const Q\+Date\+Time \&cd, const Q\+Date\+Time \&lmd, bool iA, bool iD, const Q\+String a, E\+N\+U\+M\+::\+Status\+Type s, unsigned int p, const Q\+Date\+Time dD)
+\item 
+\mbox{\Hypertarget{class_task_a0aec5018915f11c96398b75f969a3220}\label{class_task_a0aec5018915f11c96398b75f969a3220}} 
+\hyperlink{class_task_a0aec5018915f11c96398b75f969a3220}{Task} (const \hyperlink{class_task}{Task} \&t)
+\begin{DoxyCompactList}\small\item\em Surcharge la méthode constructeur dans le cas nouvelle task B(\+A) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_task_a2430b942d050bf32c771821daa31493f}\label{class_task_a2430b942d050bf32c771821daa31493f}} 
+\hyperlink{class_task}{Task} \& \hyperlink{class_task_a2430b942d050bf32c771821daa31493f}{operator=} (const \hyperlink{class_task}{Task} \&a)
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur = dans le cas nouvelle task B=A. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_task_a7fe5cb7b57a21693e7abfea2f9618563}{to\+String} () const
+\begin{DoxyCompactList}\small\item\em Transforme une task en un flux ostream a afficher. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_task_a313eb342d047e8e5cab91bf51609a2f3}\label{class_task_a313eb342d047e8e5cab91bf51609a2f3}} 
+void {\bfseries save\+Note} (Q\+File $\ast$file)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 164 of file notes.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_task_a08a0f57803d8ef35f687f23f759e9f0c}\label{class_task_a08a0f57803d8ef35f687f23f759e9f0c}} 
+\index{Task@{Task}!Task@{Task}}
+\index{Task@{Task}!Task@{Task}}
+\subsubsection{\texorpdfstring{Task()}{Task()}}
+{\footnotesize\ttfamily Task\+::\+Task (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{i,  }\item[{const Q\+String \&}]{ti,  }\item[{const Q\+String \&}]{a,  }\item[{E\+N\+U\+M\+::\+Status\+Type}]{s,  }\item[{unsigned int}]{p,  }\item[{const Q\+Date\+Time}]{d }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe task. 
+
+La classe dérivé \hyperlink{class_task}{Task} utilise en premier lieu le constructeur de \hyperlink{class_note}{Note}. \hyperlink{class_task}{Task} possède 4 constructeurs différents car deux de ses attributs sont optionnels. 
+
+Definition at line 160 of file notes.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_task_a7fe5cb7b57a21693e7abfea2f9618563}\label{class_task_a7fe5cb7b57a21693e7abfea2f9618563}} 
+\index{Task@{Task}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Task@{Task}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::string Task\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Transforme une task en un flux ostream a afficher. 
+
+\begin{DoxyReturn}{Returns}
+Le flux ostream 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_note_a1bd4acfbde0b71d05fd7d4ca889bca2b}{Note}.
+
+
+
+Definition at line 237 of file notes.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+notes.\+h\item 
+\hyperlink{notes_8cpp}{notes.\+cpp}\end{DoxyCompactItemize}

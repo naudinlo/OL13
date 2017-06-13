@@ -1,0 +1,72 @@
+\hypertarget{class_article}{}\section{Article Class Reference}
+\label{class_article}\index{Article@{Article}}
+Inheritance diagram for Article\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_article}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_article_a6620c09453a87251bf312d1c7b9e4112}\label{class_article_a6620c09453a87251bf312d1c7b9e4112}} 
+const Q\+Text\+Document \& {\bfseries get\+Text} () const
+\item 
+\mbox{\Hypertarget{class_article_a7144942027b1761cfcbd21761dd5cee8}\label{class_article_a7144942027b1761cfcbd21761dd5cee8}} 
+void {\bfseries set\+Text} (const Q\+String \&t)
+\item 
+\mbox{\Hypertarget{class_article_af3f6b98ba3cc46aaa5625a17266eb67f}\label{class_article_af3f6b98ba3cc46aaa5625a17266eb67f}} 
+{\bfseries Article} (const Q\+String \&i, const Q\+String \&ti, const Q\+String \&te)
+\item 
+\mbox{\Hypertarget{class_article_a067e635213e9ff6b93fd8f88e471652f}\label{class_article_a067e635213e9ff6b93fd8f88e471652f}} 
+{\bfseries Article} (const Q\+String \&i, const Q\+String \&ti, const Q\+Date\+Time \&cd, const Q\+Date\+Time \&lmd, bool iA, bool iD, const Q\+String \&te)
+\item 
+\mbox{\Hypertarget{class_article_a77eaa1a87e24eec7788f438a30ff162f}\label{class_article_a77eaa1a87e24eec7788f438a30ff162f}} 
+{\bfseries Article} (const \hyperlink{class_article}{Article} \&a)
+\item 
+\mbox{\Hypertarget{class_article_ae4059abc035598ff3faf554fd74a1492}\label{class_article_ae4059abc035598ff3faf554fd74a1492}} 
+\hyperlink{class_article}{Article} \& \hyperlink{class_article_ae4059abc035598ff3faf554fd74a1492}{operator=} (const \hyperlink{class_article}{Article} \&a)
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur = dans le cas nouvel article \hyperlink{class_article}{Article} B=A. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_article_ae40d268ecffbaaa549968a81ea609ba4}{to\+String} () const
+\begin{DoxyCompactList}\small\item\em Transforme un article en un flux ostream a afficher. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_article_a83c6688e4886b871938b9dca34e78041}\label{class_article_a83c6688e4886b871938b9dca34e78041}} 
+void {\bfseries save\+Note} (Q\+File $\ast$file)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 143 of file notes.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_article_ae40d268ecffbaaa549968a81ea609ba4}\label{class_article_ae40d268ecffbaaa549968a81ea609ba4}} 
+\index{Article@{Article}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Article@{Article}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::string Article\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Transforme un article en un flux ostream a afficher. 
+
+\begin{DoxyReturn}{Returns}
+Le flux ostream 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_note_a1bd4acfbde0b71d05fd7d4ca889bca2b}{Note}.
+
+
+
+Definition at line 206 of file notes.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+notes.\+h\item 
+\hyperlink{notes_8cpp}{notes.\+cpp}\end{DoxyCompactItemize}

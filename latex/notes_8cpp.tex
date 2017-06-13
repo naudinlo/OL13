@@ -1,0 +1,82 @@
+\hypertarget{notes_8cpp}{}\section{notes.\+cpp File Reference}
+\label{notes_8cpp}\index{notes.\+cpp@{notes.\+cpp}}
+
+
+Définitions des fonctions déclarées dans le \hyperlink{notes_8h_source}{notes.\+h}.  
+
+
+{\ttfamily \#include \char`\"{}notes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sstream\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Q\+Include.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Q\+String\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{notes_8cpp_af4393c1ef6628fa330eb9468177d22f6}{operator$<$$<$} (std\+::ostream \&f, const \hyperlink{class_article}{Article} \&a)
+\begin{DoxyCompactList}\small\item\em Surcharge opérateur $<$$<$. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{notes_8cpp_a92387c2f3832da4b2d85106ac2763f6f}\label{notes_8cpp_a92387c2f3832da4b2d85106ac2763f6f}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&f, const \hyperlink{class_task}{Task} \&t)
+\item 
+\mbox{\Hypertarget{notes_8cpp_a3ed22d588b93c08dbe0dffdf0e396463}\label{notes_8cpp_a3ed22d588b93c08dbe0dffdf0e396463}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&f, const \hyperlink{class_recording}{Recording} \&r)
+\item 
+Q\+String \hyperlink{notes_8cpp_a2d3681150acecf4a009747b830644ce4}{get\+Statusto\+Str} (E\+N\+U\+M\+::\+Status\+Type status)
+\begin{DoxyCompactList}\small\item\em Retourner directement le statut de int à string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{notes_8cpp_aa6165ba06daabc993e9ad2631272e29a}\label{notes_8cpp_aa6165ba06daabc993e9ad2631272e29a}} 
+Q\+String \hyperlink{notes_8cpp_aa6165ba06daabc993e9ad2631272e29a}{get\+Recordingto\+Str} (E\+N\+U\+M\+::\+Status\+Type recording)
+\begin{DoxyCompactList}\small\item\em Retourner directement le recording de int à string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Définitions des fonctions déclarées dans le \hyperlink{notes_8h_source}{notes.\+h}. 
+
+\begin{DoxyAuthor}{Author}
+Garnier Maxime, Naudin Louise, Pépin Hugues 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14 Juin 2017
+\end{DoxyDate}
+Domaines des méthodes comprises dans ce fichier \+:
+\begin{DoxyItemize}
+\item Opérateur d\textquotesingle{}affectation et constructeur de recopie
+\item Constructeur
+\item Destructeur
+\item Affichage
+\item Référencement de notes Le détail est donné dans la suite du fichier. 
+\end{DoxyItemize}
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{notes_8cpp_a2d3681150acecf4a009747b830644ce4}\label{notes_8cpp_a2d3681150acecf4a009747b830644ce4}} 
+\index{notes.\+cpp@{notes.\+cpp}!get\+Statusto\+Str@{get\+Statusto\+Str}}
+\index{get\+Statusto\+Str@{get\+Statusto\+Str}!notes.\+cpp@{notes.\+cpp}}
+\subsubsection{\texorpdfstring{get\+Statusto\+Str()}{getStatustoStr()}}
+{\footnotesize\ttfamily Q\+String get\+Statusto\+Str (\begin{DoxyParamCaption}\item[{E\+N\+U\+M\+::\+Status\+Type}]{status }\end{DoxyParamCaption})}
+
+
+
+Retourner directement le statut de int à string. 
+
+Retourne directement le statut de int à stringQ. 
+
+Definition at line 352 of file notes.\+cpp.
+
+\mbox{\Hypertarget{notes_8cpp_af4393c1ef6628fa330eb9468177d22f6}\label{notes_8cpp_af4393c1ef6628fa330eb9468177d22f6}} 
+\index{notes.\+cpp@{notes.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!notes.\+cpp@{notes.\+cpp}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{f,  }\item[{const \hyperlink{class_article}{Article} \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Surcharge opérateur $<$$<$. 
+
+Surcharge affichage avec polymorphisme.
+
+Version personnalisée pour le type article, task et recording. 
+
+Definition at line 333 of file notes.\+cpp.
+

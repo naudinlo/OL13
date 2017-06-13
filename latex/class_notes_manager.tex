@@ -1,0 +1,443 @@
+\hypertarget{class_notes_manager}{}\section{Notes\+Manager Class Reference}
+\label{class_notes_manager}\index{Notes\+Manager@{Notes\+Manager}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_notes_manager_1_1_iterator}{Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_article}{Article} \& \hyperlink{class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923}{get\+New\+Article} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&te)
+\begin{DoxyCompactList}\small\item\em Créer une nouvelle note de type article La première version de cette note est ajoutée à la liste des versions d\textquotesingle{}une note. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_notes_manager_a33c72b86b61bd62c4816ae1eca30da58}\label{class_notes_manager_a33c72b86b61bd62c4816ae1eca30da58}} 
+\hyperlink{class_task}{Task} \& {\bfseries get\+New\+Task} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s, unsigned int p, const Q\+Date\+Time d)
+\item 
+\mbox{\Hypertarget{class_notes_manager_ab312c383347a12123deec4769949e6b7}\label{class_notes_manager_ab312c383347a12123deec4769949e6b7}} 
+\hyperlink{class_task}{Task} \& {\bfseries get\+New\+Task} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s, unsigned int p)
+\item 
+\mbox{\Hypertarget{class_notes_manager_ad6f9ba1dfaf507ca78669997f90fc615}\label{class_notes_manager_ad6f9ba1dfaf507ca78669997f90fc615}} 
+\hyperlink{class_task}{Task} \& {\bfseries get\+New\+Task} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s, const Q\+Date\+Time d)
+\item 
+\hyperlink{class_task}{Task} \& \hyperlink{class_notes_manager_a39562bf5aef0d7a113317c1421d578fd}{get\+New\+Task} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s)
+\begin{DoxyCompactList}\small\item\em Créer une nouvelle note de type task La première version de cette note est ajoutée à la liste des versions d\textquotesingle{}une note. \end{DoxyCompactList}\item 
+\hyperlink{class_recording}{Recording} \& \hyperlink{class_notes_manager_a71d0bc2e2716a4e558705ea76e3ad491}{get\+New\+Recording} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&d, E\+N\+U\+M\+::\+Recording\+Type r, Q\+String l)
+\begin{DoxyCompactList}\small\item\em Créé une nouvelle note de type recording La première version de cette note est ajoutée à la liste des versions d\textquotesingle{}une note. \end{DoxyCompactList}\item 
+\hyperlink{class_article}{Article} \& \hyperlink{class_notes_manager_a3259c7aa22b5f2eee6f7bceddc707b1d}{edit\+Article} (\hyperlink{class_article}{Article} \&A)
+\begin{DoxyCompactList}\small\item\em Créé une nouvelle instance d\textquotesingle{}un article passé en paramètre. \end{DoxyCompactList}\item 
+\hyperlink{class_task}{Task} \& \hyperlink{class_notes_manager_a8f8f2b6aaa8c7d41356f9e4be7da2da5}{edit\+Task} (\hyperlink{class_task}{Task} \&T)
+\begin{DoxyCompactList}\small\item\em Créé une nouvelle instance d\textquotesingle{}une task passée en paramètre. \end{DoxyCompactList}\item 
+\hyperlink{class_recording}{Recording} \& \hyperlink{class_notes_manager_a1c4cfa021a12b6416c4e800d643b5e0a}{edit\+Recording} (\hyperlink{class_recording}{Recording} \&R)
+\begin{DoxyCompactList}\small\item\em Créé une nouvelle instance d\textquotesingle{}un recording passé en paramètre. \end{DoxyCompactList}\item 
+\hyperlink{class_note}{Note} \& \hyperlink{class_notes_manager_a9c401bfe7c91ab37a7c8c4db398e92ff}{get\+Note} (const Q\+String \&id)
+\begin{DoxyCompactList}\small\item\em Retourne une réfèrence sur l\textquotesingle{}ID d\textquotesingle{}une note spécifiée en paramètre. \end{DoxyCompactList}\item 
+\hyperlink{class_note}{Note} \& \hyperlink{class_notes_manager_a0461145357fe17bf07c3b09c665b95db}{get\+Note\+Version} (const Q\+String \&id, int indice)
+\begin{DoxyCompactList}\small\item\em Retourne la i-\/ième versions d\textquotesingle{}une note spécifiée en paramètre. \end{DoxyCompactList}\item 
+Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$ $\ast$ \hyperlink{class_notes_manager_ae3af78108c46b9816207e66fcde64c5b}{get\+Liste\+Versions} (const Q\+String \&id)
+\begin{DoxyCompactList}\small\item\em Retourne la liste des versions d\textquotesingle{}une note spécifiée en paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{class_notes_manager_a989429244c36c35ef68204f6ae2a0a5f}{delete\+Note} (const Q\+String \&id)
+\begin{DoxyCompactList}\small\item\em Action de suppression d\textquotesingle{}une note spécifiée en paramètre. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_notes_manager_a5a47d17ce4add155db4715f027a7ea4f}\label{class_notes_manager_a5a47d17ce4add155db4715f027a7ea4f}} 
+void {\bfseries create\+Note} (const Q\+String \&id)
+\item 
+\mbox{\Hypertarget{class_notes_manager_a797d858176de3f5e64aa8194797909fb}\label{class_notes_manager_a797d858176de3f5e64aa8194797909fb}} 
+void {\bfseries set\+Filename} (const Q\+String f)
+\item 
+\mbox{\Hypertarget{class_notes_manager_a566cbb0dd7b606ec34629a2aa8010b73}\label{class_notes_manager_a566cbb0dd7b606ec34629a2aa8010b73}} 
+Q\+String {\bfseries get\+Filename} () const
+\item 
+\mbox{\Hypertarget{class_notes_manager_ad4fb2de50633dd25b71024343341cd64}\label{class_notes_manager_ad4fb2de50633dd25b71024343341cd64}} 
+void {\bfseries load} ()
+\item 
+\mbox{\Hypertarget{class_notes_manager_ad271bd7f8079b01b04a32b886b498bac}\label{class_notes_manager_ad271bd7f8079b01b04a32b886b498bac}} 
+void {\bfseries save} () const
+\item 
+Q\+String \hyperlink{class_notes_manager_a2a8aba4f2f40239fce1b541a10b92a7e}{update\+Id} (Q\+String Id2) const
+\item 
+\mbox{\Hypertarget{class_notes_manager_a9f2c72d67d67c89a61f77a9b1a0ae390}\label{class_notes_manager_a9f2c72d67d67c89a61f77a9b1a0ae390}} 
+Q\+List$<$ \hyperlink{class_tuple_note___relation}{Tuple\+Note\+\_\+\+Relation} $\ast$ $>$ {\bfseries get\+List\+Tuple\+Ascendants} (const Q\+String \&id)
+\item 
+\mbox{\Hypertarget{class_notes_manager_a4b8636fd8bc9d750d778585d3e4372cf}\label{class_notes_manager_a4b8636fd8bc9d750d778585d3e4372cf}} 
+Q\+List$<$ \hyperlink{class_tuple_note___relation}{Tuple\+Note\+\_\+\+Relation} $\ast$ $>$ {\bfseries get\+List\+Tuple\+Descendants} (const Q\+String \&id)
+\item 
+Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$ \hyperlink{class_notes_manager_ac85019776c1e8653665e24abc9d8001d}{get\+List\+Ascendants} (const Q\+String \&id)
+\begin{DoxyCompactList}\small\item\em Retourne la liste des notes en relation ascendant avec une note specifiée en paramètre. \end{DoxyCompactList}\item 
+Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$ \hyperlink{class_notes_manager_a2ed035544b433b9cddfc83fb4c081a65}{get\+List\+Descendants} (const Q\+String \&id)
+\begin{DoxyCompactList}\small\item\em Retourne la liste des notes en relation descendante avec une note specifiée en paramètre. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_notes_manager_a81aee1d57c39232f870199acb356fc57}\label{class_notes_manager_a81aee1d57c39232f870199acb356fc57}} 
+Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$ \hyperlink{class_notes_manager_a81aee1d57c39232f870199acb356fc57}{get\+List\+Archive} ()
+\begin{DoxyCompactList}\small\item\em Retourne la liste des notes archivée. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_notes_manager_ae6b144ba1bc14b895be36b194a2e768e}\label{class_notes_manager_ae6b144ba1bc14b895be36b194a2e768e}} 
+Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$ \hyperlink{class_notes_manager_ae6b144ba1bc14b895be36b194a2e768e}{get\+List\+Deleted} ()
+\begin{DoxyCompactList}\small\item\em Retourne la liste des notes supprimée. \end{DoxyCompactList}\item 
+void \hyperlink{class_notes_manager_a84e962ad7fa999cbb687fb43c1b3bab4}{empty\+Trash} ()
+\begin{DoxyCompactList}\small\item\em Supprime définitivement l\textquotesingle{}ensemble des notes déclarées comme supprimées. \end{DoxyCompactList}\item 
+void \hyperlink{class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348}{restore\+Note\+Trash} (const Q\+String \&id)
+\begin{DoxyCompactList}\small\item\em Restaure une note supprimée en passant à false son attribut is\+Deleted. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_notes_manager_a9cab39a524fd23c6523f895e81f75028}\label{class_notes_manager_a9cab39a524fd23c6523f895e81f75028}} 
+int {\bfseries getnb\+Note} ()
+\item 
+\mbox{\Hypertarget{class_notes_manager_a4907351a20cc85b1fe0327ac1b15c7da}\label{class_notes_manager_a4907351a20cc85b1fe0327ac1b15c7da}} 
+\hyperlink{class_notes_manager_1_1_iterator}{Iterator} {\bfseries get\+Iterator} ()
+\item 
+\mbox{\Hypertarget{class_notes_manager_afa44d5b479d01362a21a0aa5021cd340}\label{class_notes_manager_afa44d5b479d01362a21a0aa5021cd340}} 
+\hyperlink{class_article}{Article} \& {\bfseries get\+New\+Article} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&te)
+\item 
+\mbox{\Hypertarget{class_notes_manager_a44cca3e307d7f7453b2d3080d7cb42be}\label{class_notes_manager_a44cca3e307d7f7453b2d3080d7cb42be}} 
+\hyperlink{class_task}{Task} \& {\bfseries get\+New\+Task} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s, unsigned int p, const Q\+Date\+Time d)
+\item 
+\mbox{\Hypertarget{class_notes_manager_aad0991ce10ef7e3329986d6b76ff4667}\label{class_notes_manager_aad0991ce10ef7e3329986d6b76ff4667}} 
+\hyperlink{class_task}{Task} \& {\bfseries get\+New\+Task} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s, unsigned int p)
+\item 
+\mbox{\Hypertarget{class_notes_manager_ade9ba3a4fb0090079d30a83faf47855c}\label{class_notes_manager_ade9ba3a4fb0090079d30a83faf47855c}} 
+\hyperlink{class_task}{Task} \& {\bfseries get\+New\+Task} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s, const Q\+Date\+Time d)
+\item 
+\mbox{\Hypertarget{class_notes_manager_a9d7f624981c238451a2cecb4a443da57}\label{class_notes_manager_a9d7f624981c238451a2cecb4a443da57}} 
+\hyperlink{class_task}{Task} \& {\bfseries get\+New\+Task} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&a, E\+N\+U\+M\+::\+Status\+Type s)
+\item 
+\mbox{\Hypertarget{class_notes_manager_aa2d502c467aa99f8b3c0e93f1ca8d2a2}\label{class_notes_manager_aa2d502c467aa99f8b3c0e93f1ca8d2a2}} 
+\hyperlink{class_recording}{Recording} \& {\bfseries get\+New\+Recording} (const Q\+String \&id, const Q\+String \&ti, const Q\+String \&d, E\+N\+U\+M\+::\+Recording\+Type r, Q\+String l)
+\item 
+\mbox{\Hypertarget{class_notes_manager_ab5f91202dd3f49047a721bb2149f3f49}\label{class_notes_manager_ab5f91202dd3f49047a721bb2149f3f49}} 
+\hyperlink{class_note}{Note} \& {\bfseries get\+Note} (const Q\+String \&id)
+\item 
+\mbox{\Hypertarget{class_notes_manager_a989429244c36c35ef68204f6ae2a0a5f}\label{class_notes_manager_a989429244c36c35ef68204f6ae2a0a5f}} 
+void {\bfseries delete\+Note} (const Q\+String \&id)
+\item 
+\mbox{\Hypertarget{class_notes_manager_a5a47d17ce4add155db4715f027a7ea4f}\label{class_notes_manager_a5a47d17ce4add155db4715f027a7ea4f}} 
+void {\bfseries create\+Note} (const Q\+String \&id)
+\item 
+\mbox{\Hypertarget{class_notes_manager_a7a08ec1cfdd1b619141887166becbe8d}\label{class_notes_manager_a7a08ec1cfdd1b619141887166becbe8d}} 
+void {\bfseries edit\+Note} (Q\+String \&id)
+\item 
+\mbox{\Hypertarget{class_notes_manager_a797d858176de3f5e64aa8194797909fb}\label{class_notes_manager_a797d858176de3f5e64aa8194797909fb}} 
+void {\bfseries set\+Filename} (const Q\+String f)
+\item 
+\mbox{\Hypertarget{class_notes_manager_a566cbb0dd7b606ec34629a2aa8010b73}\label{class_notes_manager_a566cbb0dd7b606ec34629a2aa8010b73}} 
+Q\+String {\bfseries get\+Filename} () const
+\item 
+\mbox{\Hypertarget{class_notes_manager_ad4fb2de50633dd25b71024343341cd64}\label{class_notes_manager_ad4fb2de50633dd25b71024343341cd64}} 
+void {\bfseries load} ()
+\item 
+\mbox{\Hypertarget{class_notes_manager_ad271bd7f8079b01b04a32b886b498bac}\label{class_notes_manager_ad271bd7f8079b01b04a32b886b498bac}} 
+void {\bfseries save} () const
+\item 
+\mbox{\Hypertarget{class_notes_manager_a84e962ad7fa999cbb687fb43c1b3bab4}\label{class_notes_manager_a84e962ad7fa999cbb687fb43c1b3bab4}} 
+void {\bfseries empty\+Trash} ()
+\item 
+\mbox{\Hypertarget{class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348}\label{class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348}} 
+void {\bfseries restore\+Note\+Trash} (const Q\+String \&id)
+\item 
+\mbox{\Hypertarget{class_notes_manager_a4907351a20cc85b1fe0327ac1b15c7da}\label{class_notes_manager_a4907351a20cc85b1fe0327ac1b15c7da}} 
+\hyperlink{class_notes_manager_1_1_iterator}{Iterator} {\bfseries get\+Iterator} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_notes_manager_ad1a91e51ba8506c7ae7cd60d06bd075f}\label{class_notes_manager_ad1a91e51ba8506c7ae7cd60d06bd075f}} 
+static \hyperlink{class_notes_manager}{Notes\+Manager} $\ast$ {\bfseries get\+Instance} ()
+\item 
+\mbox{\Hypertarget{class_notes_manager_abd12bae3c990a408e9ef55aa0d93b675}\label{class_notes_manager_abd12bae3c990a408e9ef55aa0d93b675}} 
+static void {\bfseries liberer\+Instance} ()
+\item 
+\mbox{\Hypertarget{class_notes_manager_affdf4def67ae5f74f019a29a0b7d9b19}\label{class_notes_manager_affdf4def67ae5f74f019a29a0b7d9b19}} 
+static \hyperlink{class_notes_manager}{Notes\+Manager} $\ast$ {\bfseries get\+Instance} ()
+\item 
+\mbox{\Hypertarget{class_notes_manager_a0bc9bbb0fc833106ea703b292c80307f}\label{class_notes_manager_a0bc9bbb0fc833106ea703b292c80307f}} 
+static void {\bfseries liberer\+Instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 50 of file manager.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_notes_manager_a989429244c36c35ef68204f6ae2a0a5f}\label{class_notes_manager_a989429244c36c35ef68204f6ae2a0a5f}} 
+\index{Notes\+Manager@{Notes\+Manager}!delete\+Note@{delete\+Note}}
+\index{delete\+Note@{delete\+Note}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{delete\+Note()}{deleteNote()}}
+{\footnotesize\ttfamily void Notes\+Manager\+::delete\+Note (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Action de suppression d\textquotesingle{}une note spécifiée en paramètre. 
+
+Lorsque la suppression d\textquotesingle{}une note est demandée, celle ci est archivée si elle est référencée par d\textquotesingle{}autres notes (l\textquotesingle{}attribut is\+Archive est mis à true). Sinon, supprime sa présence dans l\textquotesingle{}ensemble des relations, puis supprime l\textquotesingle{}ensemble des références qu\textquotesingle{}à cette note, puis déplace la note dans la corbeille (l\textquotesingle{}attribut si\+Deleted est mis à true). 
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& id ID de la note a supprimer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 852 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_a3259c7aa22b5f2eee6f7bceddc707b1d}\label{class_notes_manager_a3259c7aa22b5f2eee6f7bceddc707b1d}} 
+\index{Notes\+Manager@{Notes\+Manager}!edit\+Article@{edit\+Article}}
+\index{edit\+Article@{edit\+Article}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{edit\+Article()}{editArticle()}}
+{\footnotesize\ttfamily \hyperlink{class_article}{Article} \& Notes\+Manager\+::edit\+Article (\begin{DoxyParamCaption}\item[{\hyperlink{class_article}{Article} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Créé une nouvelle instance d\textquotesingle{}un article passé en paramètre. 
+
+Recopie une note passée en paramètre en modifiant sa date de dernière mise à jour et l\textquotesingle{}insère en première position dans la liste des versions d\textquotesingle{}une note 
+\begin{DoxyParams}{Parameters}
+{\em Article\&} & A Référence sur l\textquotesingle{}article a éditer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 232 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_a1c4cfa021a12b6416c4e800d643b5e0a}\label{class_notes_manager_a1c4cfa021a12b6416c4e800d643b5e0a}} 
+\index{Notes\+Manager@{Notes\+Manager}!edit\+Recording@{edit\+Recording}}
+\index{edit\+Recording@{edit\+Recording}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{edit\+Recording()}{editRecording()}}
+{\footnotesize\ttfamily \hyperlink{class_recording}{Recording} \& Notes\+Manager\+::edit\+Recording (\begin{DoxyParamCaption}\item[{\hyperlink{class_recording}{Recording} \&}]{R }\end{DoxyParamCaption})}
+
+
+
+Créé une nouvelle instance d\textquotesingle{}un recording passé en paramètre. 
+
+Recopie une note passée en paramètre en modifiant sa date de dernière mise à jour et l\textquotesingle{}insère en première position dans la liste des versions d\textquotesingle{}une note 
+\begin{DoxyParams}{Parameters}
+{\em Recording\&} & R Référence sur le recording a éditer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 264 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_a8f8f2b6aaa8c7d41356f9e4be7da2da5}\label{class_notes_manager_a8f8f2b6aaa8c7d41356f9e4be7da2da5}} 
+\index{Notes\+Manager@{Notes\+Manager}!edit\+Task@{edit\+Task}}
+\index{edit\+Task@{edit\+Task}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{edit\+Task()}{editTask()}}
+{\footnotesize\ttfamily \hyperlink{class_task}{Task} \& Notes\+Manager\+::edit\+Task (\begin{DoxyParamCaption}\item[{\hyperlink{class_task}{Task} \&}]{T }\end{DoxyParamCaption})}
+
+
+
+Créé une nouvelle instance d\textquotesingle{}une task passée en paramètre. 
+
+Recopie une note passée en paramètre en modifiant sa date de dernière mise à jour et l\textquotesingle{}insère en première position dans la liste des versions d\textquotesingle{}une note 
+\begin{DoxyParams}{Parameters}
+{\em Task\&} & T Référence sur la tache a éditer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 248 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_a84e962ad7fa999cbb687fb43c1b3bab4}\label{class_notes_manager_a84e962ad7fa999cbb687fb43c1b3bab4}} 
+\index{Notes\+Manager@{Notes\+Manager}!empty\+Trash@{empty\+Trash}}
+\index{empty\+Trash@{empty\+Trash}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{empty\+Trash()}{emptyTrash()}}
+{\footnotesize\ttfamily void Notes\+Manager\+::empty\+Trash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Supprime définitivement l\textquotesingle{}ensemble des notes déclarées comme supprimées. 
+
+Parcourt l\textquotesingle{}ensemble des notes, lorsqu\textquotesingle{}une note est reconnue comme supprimée chaque version de cette note est supprimée puis la liste des versions elle-\/même est vidée et supprimée 
+
+Definition at line 899 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_ac85019776c1e8653665e24abc9d8001d}\label{class_notes_manager_ac85019776c1e8653665e24abc9d8001d}} 
+\index{Notes\+Manager@{Notes\+Manager}!get\+List\+Ascendants@{get\+List\+Ascendants}}
+\index{get\+List\+Ascendants@{get\+List\+Ascendants}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{get\+List\+Ascendants()}{getListAscendants()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$ Notes\+Manager\+::get\+List\+Ascendants (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Retourne la liste des notes en relation ascendant avec une note specifiée en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& id ID de la note dont il faut trouver les notes en relation ascendante. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1046 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_a2ed035544b433b9cddfc83fb4c081a65}\label{class_notes_manager_a2ed035544b433b9cddfc83fb4c081a65}} 
+\index{Notes\+Manager@{Notes\+Manager}!get\+List\+Descendants@{get\+List\+Descendants}}
+\index{get\+List\+Descendants@{get\+List\+Descendants}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{get\+List\+Descendants()}{getListDescendants()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$ Notes\+Manager\+::get\+List\+Descendants (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Retourne la liste des notes en relation descendante avec une note specifiée en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& id ID de la note dont il faut trouver les notes en relation descendante. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1079 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_ae3af78108c46b9816207e66fcde64c5b}\label{class_notes_manager_ae3af78108c46b9816207e66fcde64c5b}} 
+\index{Notes\+Manager@{Notes\+Manager}!get\+Liste\+Versions@{get\+Liste\+Versions}}
+\index{get\+Liste\+Versions@{get\+Liste\+Versions}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{get\+Liste\+Versions()}{getListeVersions()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$ $\ast$ Notes\+Manager\+::get\+Liste\+Versions (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Retourne la liste des versions d\textquotesingle{}une note spécifiée en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& id ID de la note dont les versions doivent être retournée \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 309 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923}\label{class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923}} 
+\index{Notes\+Manager@{Notes\+Manager}!get\+New\+Article@{get\+New\+Article}}
+\index{get\+New\+Article@{get\+New\+Article}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{get\+New\+Article()}{getNewArticle()}}
+{\footnotesize\ttfamily \hyperlink{class_article}{Article} \& Notes\+Manager\+::get\+New\+Article (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{id,  }\item[{const Q\+String \&}]{ti,  }\item[{const Q\+String \&}]{te }\end{DoxyParamCaption})}
+
+
+
+Créer une nouvelle note de type article La première version de cette note est ajoutée à la liste des versions d\textquotesingle{}une note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& id ID de la note à créer const Q\+String\& ti Titre de l\textquotesingle{}article à créer const Q\+String\& de Text de l\textquotesingle{}article a créer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_a71d0bc2e2716a4e558705ea76e3ad491}\label{class_notes_manager_a71d0bc2e2716a4e558705ea76e3ad491}} 
+\index{Notes\+Manager@{Notes\+Manager}!get\+New\+Recording@{get\+New\+Recording}}
+\index{get\+New\+Recording@{get\+New\+Recording}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{get\+New\+Recording()}{getNewRecording()}}
+{\footnotesize\ttfamily \hyperlink{class_recording}{Recording} \& Notes\+Manager\+::get\+New\+Recording (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{id,  }\item[{const Q\+String \&}]{ti,  }\item[{const Q\+String \&}]{d,  }\item[{E\+N\+U\+M\+::\+Recording\+Type}]{r,  }\item[{Q\+String}]{l }\end{DoxyParamCaption})}
+
+
+
+Créé une nouvelle note de type recording La première version de cette note est ajoutée à la liste des versions d\textquotesingle{}une note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& id ID de la note a créer const Q\+String\& ti Titre du recording a créer const Q\+String\& d Description du recording a créer E\+N\+U\+M\+::\+Recording\+Type r Type du recording a créer Q\+String l Link du recording a créer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 201 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_a39562bf5aef0d7a113317c1421d578fd}\label{class_notes_manager_a39562bf5aef0d7a113317c1421d578fd}} 
+\index{Notes\+Manager@{Notes\+Manager}!get\+New\+Task@{get\+New\+Task}}
+\index{get\+New\+Task@{get\+New\+Task}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{get\+New\+Task()}{getNewTask()}}
+{\footnotesize\ttfamily \hyperlink{class_task}{Task} \& Notes\+Manager\+::get\+New\+Task (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{id,  }\item[{const Q\+String \&}]{ti,  }\item[{const Q\+String \&}]{a,  }\item[{E\+N\+U\+M\+::\+Status\+Type}]{s }\end{DoxyParamCaption})}
+
+
+
+Créer une nouvelle note de type task La première version de cette note est ajoutée à la liste des versions d\textquotesingle{}une note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& id ID de la note à créer const Q\+String\& ti Titre de la tache à créer const Q\+String\& a Action de la tache à créer E\+N\+U\+M\+::\+Status\+Type s Status de la tache à créer unsigned int p Priority de la tache à créer const Q\+Date\+Time d Date limite de la tache à créer\\
+\hline
+{\em const} & Q\+String\& id ID de la note a créer const Q\+String\& ti Titre de la tache a créer const Q\+String\& a Action de la tache a créer E\+N\+U\+M\+::\+Status\+Type s Status de la tache a créer unsigned int p Priority de la tache à créer\\
+\hline
+{\em const} & Q\+String\& id ID de la note a créer const Q\+String\& ti Titre de la tache a créer const Q\+String\& a Action de la tache a créer E\+N\+U\+M\+::\+Status\+Type s Status de la tache a créer const Q\+Date\+Time d Date limite de la tache à créer\\
+\hline
+{\em const} & Q\+String\& id ID de la note a créer const Q\+String\& ti Titre de la tache a créer const Q\+String\& a Action de la tache a créer E\+N\+U\+M\+::\+Status\+Type s Status de la tache a créer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_a9c401bfe7c91ab37a7c8c4db398e92ff}\label{class_notes_manager_a9c401bfe7c91ab37a7c8c4db398e92ff}} 
+\index{Notes\+Manager@{Notes\+Manager}!get\+Note@{get\+Note}}
+\index{get\+Note@{get\+Note}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{get\+Note()}{getNote()}}
+{\footnotesize\ttfamily \hyperlink{class_note}{Note} \& Notes\+Manager\+::get\+Note (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Retourne une réfèrence sur l\textquotesingle{}ID d\textquotesingle{}une note spécifiée en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& id ID de la note a retourner \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 278 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_a0461145357fe17bf07c3b09c665b95db}\label{class_notes_manager_a0461145357fe17bf07c3b09c665b95db}} 
+\index{Notes\+Manager@{Notes\+Manager}!get\+Note\+Version@{get\+Note\+Version}}
+\index{get\+Note\+Version@{get\+Note\+Version}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{get\+Note\+Version()}{getNoteVersion()}}
+{\footnotesize\ttfamily \hyperlink{class_note}{Note} \& Notes\+Manager\+::get\+Note\+Version (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{id,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+
+
+
+Retourne la i-\/ième versions d\textquotesingle{}une note spécifiée en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& id ID de la note concernée int indice Numéro de la version à retourner \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 294 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348}\label{class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348}} 
+\index{Notes\+Manager@{Notes\+Manager}!restore\+Note\+Trash@{restore\+Note\+Trash}}
+\index{restore\+Note\+Trash@{restore\+Note\+Trash}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{restore\+Note\+Trash()}{restoreNoteTrash()}}
+{\footnotesize\ttfamily void Notes\+Manager\+::restore\+Note\+Trash (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Restaure une note supprimée en passant à false son attribut is\+Deleted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& id ID de la note supprimée à restaurer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 957 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_notes_manager_a2a8aba4f2f40239fce1b541a10b92a7e}\label{class_notes_manager_a2a8aba4f2f40239fce1b541a10b92a7e}} 
+\index{Notes\+Manager@{Notes\+Manager}!update\+Id@{update\+Id}}
+\index{update\+Id@{update\+Id}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{update\+Id()}{updateId()}}
+{\footnotesize\ttfamily Q\+String Notes\+Manager\+::update\+Id (\begin{DoxyParamCaption}\item[{Q\+String}]{Id2 }\end{DoxyParamCaption}) const}
+
+A C\+O\+M\+P\+LÉ\+T\+ER 
+
+Definition at line 1138 of file manager.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{manager_8h}{manager.\+h}\item 
+manager\+\_\+old.\+h\item 
+\hyperlink{manager_8cpp}{manager.\+cpp}\item 
+manager\+\_\+old.\+cpp\end{DoxyCompactItemize}
