@@ -19,9 +19,9 @@ page_notes::page_notes(Note& N):n(N),newNote(nullptr)
 ***/
         layout_p=new QVBoxLayout(this);
         layout_info=new QHBoxLayout;
-        layout_titre=new QHBoxLayout;
         info=new QLabel("Cette note est un "+n.getType()+"\nCréation le "+n.getCreation_date().toString("dd.MM.yyyy hh:mm")+"\nDernière modification le "+n.getLastmodif_date().toString("dd.MM.yyyy hh:mm"));
-
+        savebutton =new QPushButton("Sauvegarder");
+        savebutton->setHidden(true);
         //On recuperer l'affichage d'une note particulière
         if(n.getType()=="Recording")
         {
@@ -76,10 +76,12 @@ page_notes::page_notes(Note& N):n(N),newNote(nullptr)
         connect(editer,SIGNAL(clicked(bool)),this,SLOT(editer_note(bool)));
    //NEW LNA
    //     connect(supprimer,SIGNAL(clicked(bool)),this,SLOT(supprimer_note(bool)));
+        connect(savebutton,SIGNAL(clicked(bool)),this,SLOT(on_savebutton_clicked()));
 
-
-
-        layout_p->addLayout(note->getLayout_titre());
+        L_titre=new QVBoxLayout;
+        L_titre->addWidget(savebutton);
+        L_titre->addLayout(note->getLayout_titre());
+        layout_p->addLayout(L_titre);
         layout_p->addWidget(note);
         layout_p->addStretch();
         layout_info->addWidget(info);
@@ -93,7 +95,7 @@ page_notes::~page_notes(){
     emit(update_model());
     emit(supp_dock_editer());  // c'est l'interface qui gère la supp du dock
     emit(supp_dock_aff_rel());
-    delete layout_titre;
+    delete L_titre;
     delete info;
     delete layout_p;
     delete note;

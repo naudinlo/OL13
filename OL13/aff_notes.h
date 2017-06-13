@@ -33,12 +33,13 @@ protected:
     Note* newNote;
     QWidget* dock_editer;
     QDockRelation* dock_aff_Rel;
-    QHBoxLayout* layout_titre;
+    QPushButton* savebutton;
     Qreference* widget_ref;
     //QLineEdit* titre;
     QLabel* info;
     QHBoxLayout* layout_info;
     QVBoxLayout* layout_p;
+    QVBoxLayout* L_titre;
 public:
     page_notes(Note &N);
     ~page_notes();
@@ -55,6 +56,12 @@ signals:
     void supp_dock_aff_rel();
     void close_page();
 public slots:
+    void on_savebutton_clicked(){
+        note->saveNote(*newNote);
+        emit(update_model());
+        widget_ref->update_model();
+    }
+
     void editer_note(bool status){
         //TODO : FAIRE EN SORTE QUE LA FONCTION MARCHE!!!
         note->readOnly(status);
@@ -76,6 +83,7 @@ public slots:
         {
             newNote =&NotesManager::getInstance()->editTask(dynamic_cast<Task&>(n));
         }
+        savebutton->setHidden(false);
         emit(update_model());
     }
     void Archiver_page_note(){
