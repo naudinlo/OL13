@@ -50,6 +50,7 @@ signals:
     void supp_dock_editer();
     void update_model();
     void supp_dock_aff_rel();
+    void close_page();
 public slots:
     void editer_note(bool status){
         //TODO : FAIRE EN SORTE QUE LA FONCTION MARCHE!!!
@@ -66,17 +67,18 @@ public slots:
             newNote =&(NotesManager::getInstance()->editArticle(dynamic_cast<Article&>(n)));
         }
         else if(n.getType()=="Recording"){
-            n =NotesManager::getInstance()->editRecording(dynamic_cast<Recording&>(n));
+            newNote =&NotesManager::getInstance()->editRecording(dynamic_cast<Recording&>(n));
         }
         else
         {
-            n =NotesManager::getInstance()->editTask(dynamic_cast<Task&>(n));
+            newNote =&NotesManager::getInstance()->editTask(dynamic_cast<Task&>(n));
         }
+        emit(update_model());
     }
     void Archiver_page_note(){
         n.setIsArchive(true);
         emit(update_model());
-        close();
+        emit(close_page());
     }
     void aff_Relation(QString titre){ //permet d'afficher une relation depuis le dock
         QUiRelation showR(RelationManager::getInstance().getRelation(titre),this);

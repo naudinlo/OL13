@@ -14,7 +14,8 @@ HEADERS += \
     quirelation.h \
     qmanagerelation.h \
     couplemodel.h \
-    addcouple.h
+    addcouple.h \
+    dockarchived.h
 
 QT += widgets
 QT += xml
@@ -37,9 +38,11 @@ SOURCES += \
     quirelation.cpp \
     qmanagerelation.cpp \
     couplemodel.cpp \
-    addcouple.cpp
+    addcouple.cpp \
+    dockarchived.cpp
 
 FORMS += \
     quirelation.ui \
     qmanagerelation.ui \
-    addcouple.ui
+    addcouple.ui \
+    dockarchived.ui

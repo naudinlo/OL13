@@ -30,6 +30,7 @@
 #include "supp_note.h"
 #include "quirelation.h"
 #include "qmanagerelation.h"
+#include "dockarchived.h"
 class selection_note: public QWidget{
     Q_OBJECT
     QVBoxLayout* layout;
@@ -59,6 +60,9 @@ class interface:public QMainWindow
     NotesManager* note_manager;
     supp_note* fen_supp;
     QManageRelation* affR;
+    DockArchived* dock_aff_archived_Note;
+    DockRemove* dock_aff_removed_Note;
+
 
     Q_OBJECT
     QWidget* ZoneCentrale;
@@ -85,6 +89,7 @@ class interface:public QMainWindow
     void CreateDock_selected_Note();//doit prendre un fichier est chargé la liste
     void CreateDock_edited_Note();
     void Destruct_selected_Note();
+
     //void CreateDock_aff_Relation();
 
 public:
@@ -94,9 +99,16 @@ public:
         NotesManager::libererInstance();
     }
 signals:
-    void update_model();
+    void S_update_model();
+    void L_update_model();
+    void A_update_model();
 
 public slots:
+    void update_model(){
+        emit(S_update_model());
+        emit(L_update_model());
+        emit(A_update_model());
+           }
    void E_relation(){
        new_relation = new Edit_relation(listNote->getModel(),note_id,this);
        connect(new_relation,SIGNAL(newRelation()),note_page->getdock_aff_rel(),SLOT(updateModels()));
@@ -119,13 +131,13 @@ public slots:
        catch (NotesException e){
            QMessageBox::warning(this,"Erreur corbeille", e.getinfo());
        }
-      emit(update_model());
+      update_model();
    }
 
    void addAction_new_rel();
    void OuvrirFichier();
    void CreerNote();
-   void addNewNote(Note &n);
+   void addNewNote();
    void afficher_note(QString id, int i);
    void supp_dock_editer(){
        MenuEd->removeAction(dock_editer_note->toggleViewAction());
@@ -145,6 +157,8 @@ public slots:
    void close_page_note();
 
    void save();
+
+
 };
 
 
