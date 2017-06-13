@@ -131,7 +131,16 @@ Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(fals
     this->generateRef(i);
     this->generateRef(ti);
 }
-
+//Note::Note(const QString& i, const QString& ti):id(i){
+//    this->generateRef(i);
+//    this->generateRef(ti);
+//    this->setTitle(ti);
+//    this->setIsArchive(false);
+//    this->setIsDeleted(false);
+//    this->setNbIsRef(0);
+//    creation_date=QDateTime::currentDateTime();
+//    lastmodif_date=creation_date;
+//}
 
 /**
  * \fn          Article(const QString& i, const QString& ti, const QString &te)
@@ -451,10 +460,10 @@ Note& Note::getReference(const QString& id)const{
 //Note& Note::getReferenceIntOLD(unsigned int i) const{
 //    return (*references[i]);
 //};
-Note& Note::getReferenceInt(unsigned int i) const{
-    Note& nRef=NotesManager::getInstance()->getNote(references.at(i));
-    return nRef;
-};
+//Note& Note::getReferenceInt(unsigned int i) const{
+//    Note& nRef=NotesManager::getInstance()->getNote(references.at(i));
+//    return nRef;
+//};
 
 
 /**

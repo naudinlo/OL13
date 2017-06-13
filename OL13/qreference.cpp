@@ -19,8 +19,9 @@ Qreference::~Qreference()
 void Qreference::update_model(){
     model_ref->clear();
     QList<QStandardItem* >item;
-    for(unsigned int i=0;i<note.getNbIsRef();i++){
-        item.append(new QStandardItem(note.getReferenceInt(i).getId()));
+    for(unsigned int i=0;i<note.references.size();i++){
+        item.append(new QStandardItem(note.references.at(i)));
+//        item.append(new QStandardItem(note.getReferenceInt(i).getId()));
     }
     model_ref->appendRow(item);
 

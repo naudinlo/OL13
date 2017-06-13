@@ -133,7 +133,7 @@ public:
     void deleteAllReference();
     void setNewRef(const QString& id);
     Note& getReference(const QString &id) const;
-    Note& getReferenceInt(unsigned int i) const;
+//    Note& getReferenceInt(unsigned int i) const;
 
     void generateRef(const QString& champTexte);
 
@@ -145,7 +145,7 @@ private:
     QTextDocument text;
 public:
     const QTextDocument& getText()const {return text;}
-    void setText(const QString& t){text.setPlainText(t);}
+    void setText(const QString& t){generateRef(t); text.setPlainText(t);}
 
     Article(const QString& i, const QString& ti, const QString& te);
     Article(const QString& i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD, const QString& te):
