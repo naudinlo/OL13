@@ -22,6 +22,7 @@
 #include "manager.h"
 #include "qrelations.h"
 #include "quirelation.h"
+#include "qreference.h"
 class page_notes: public QWidget
 {
     Q_OBJECT
@@ -33,8 +34,10 @@ protected:
     QWidget* dock_editer;
     QDockRelation* dock_aff_Rel;
     QHBoxLayout* layout_titre;
+    Qreference* widget_ref;
     //QLineEdit* titre;
     QLabel* info;
+    QHBoxLayout* layout_info;
     QVBoxLayout* layout_p;
 public:
     page_notes(Note &N);

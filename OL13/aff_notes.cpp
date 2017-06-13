@@ -18,6 +18,7 @@ page_notes::page_notes(Note& N):n(N),newNote(nullptr)
      *
 ***/
         layout_p=new QVBoxLayout(this);
+        layout_info=new QHBoxLayout;
         layout_titre=new QHBoxLayout;
         info=new QLabel("Cette note est un "+n.getType()+"\nCréation le "+n.getCreation_date().toString("dd.MM.yyyy hh:mm")+"\nDernière modification le "+n.getLastmodif_date().toString("dd.MM.yyyy hh:mm"));
 
@@ -35,10 +36,6 @@ page_notes::page_notes(Note& N):n(N),newNote(nullptr)
             note=new QArticle;
         }
         note->load_note(n);
-        layout_p->addLayout(note->getLayout_titre());
-        layout_p->addWidget(note);
-        layout_p->addStretch();
-        layout_p->addWidget(info);
 
     /** Création des docks
         * Dock editer
@@ -72,11 +69,22 @@ page_notes::page_notes(Note& N):n(N),newNote(nullptr)
         QLabel* aff_relation =new QLabel("aff relation");
         layout_aff_rel->addWidget(aff_relation);
         */
+    //Widget Reférence
+        widget_ref = new Qreference(n);
+
    //connect
         connect(editer,SIGNAL(clicked(bool)),this,SLOT(editer_note(bool)));
    //NEW LNA
    //     connect(supprimer,SIGNAL(clicked(bool)),this,SLOT(supprimer_note(bool)));
 
+
+
+        layout_p->addLayout(note->getLayout_titre());
+        layout_p->addWidget(note);
+        layout_p->addStretch();
+        layout_info->addWidget(info);
+        layout_info->addWidget(widget_ref);
+        layout_p->addLayout(layout_info);
 }
 page_notes::~page_notes(){
     if(newNote !=nullptr){
