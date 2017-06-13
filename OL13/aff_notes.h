@@ -57,7 +57,9 @@ signals:
     void close_page();
 public slots:
     void on_savebutton_clicked(){
-        note->saveNote(*newNote);
+        if(newNote!=nullptr){ //normalement impossible
+            note->saveNote(*newNote);
+        }
         emit(update_model());
         widget_ref->update_model();
     }
@@ -88,6 +90,7 @@ public slots:
     }
     void Archiver_page_note(){
         n.setIsArchive(true);
+        n.setIsDeleted(false);
         emit(update_model());
         emit(close_page());
     }

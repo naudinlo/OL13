@@ -80,7 +80,17 @@ page_notes::page_notes(Note& N):n(N),newNote(nullptr)
 
         L_titre=new QVBoxLayout;
         L_titre->addWidget(savebutton);
-        L_titre->addLayout(note->getLayout_titre());
+        QGridLayout* HL_titre=new QGridLayout();
+        L_titre->addLayout(HL_titre);
+        QLineEdit* id=new QLineEdit();
+        id->setEnabled(false);
+        QLabel* idLabel=new QLabel("Identifiant de la note:");
+        QLabel* titreLabel=new QLabel("Titre :");
+        HL_titre->addWidget(idLabel,0,0);
+        HL_titre->addWidget(titreLabel,0,1);
+        HL_titre->addWidget(id,1,0);
+        id->setText(n.getId());
+        HL_titre->addLayout(note->getLayout_titre(),1,1);
         layout_p->addLayout(L_titre);
         layout_p->addWidget(note);
         layout_p->addStretch();

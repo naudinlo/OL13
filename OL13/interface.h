@@ -96,9 +96,32 @@ public:
     interface();
 
     ~interface(){
-        NotesManager::libererInstance();
         ViderCorbeille();
-        save();
+        if(note_manager->getFilename().isEmpty()){
+                    int reponse =QMessageBox::question(this,"Sauvegarde","Vous n'avez pas de fichier de sauvegarde en cours, voulez vous un nouveau fichier",QMessageBox::Yes|QMessageBox::No);
+                    if(reponse ==QMessageBox::Yes){
+                        QString fichier = QFileDialog::getSaveFileName(this, "Créer un fichier", QString(), "File (*.xml)");
+                        note_manager->setFilename(fichier);
+                    }
+                    else{
+
+                    QString fichier = QFileDialog::getOpenFileName(this, "Ouvrir un fichier", QString(), "File (*.xml)");
+                    note_manager->setFilename(fichier);
+                }
+
+              }
+
+                if(!(note_manager->getFilename().isEmpty()))
+                {
+                    note_manager->save();
+                    fichiersRecents->addAction(note_manager->getFilename());
+                    QMessageBox::information(this,"Sauvegarde","Sauvegarde Reussi");
+                }
+                else{
+                    QMessageBox::critical(this,"Sauvegarde","Pas de fichier de sauvegarde");
+                }
+        NotesManager::libererInstance();
+
     }
 signals:
     void S_update_model();

@@ -194,19 +194,20 @@ void interface::Destruct_selected_Note(){
  * \param
  */
 void interface::OuvrirFichier(){
-    QString Filtre("Fichier (*.xml)");
-    QFileDialog openfile(this,"Ouvrir un fichier",QString(),Filtre);
-    QString fichier=openfile.getOpenFileName();
+    QString fichier = QFileDialog::getOpenFileName(this, "Créer un fichier", QString(), "File (*.xml)");
     if(fichier != 0)
     {
         //QMessageBox::information(this,"Fichier","Vous avez sélectionné:"+fichier);
-        update_model();
-        note_manager->setFilename(fichier);
+
         fichiersRecents->addAction(fichier);
+        note_manager->setFilename(fichier);
         note_manager->load();
+        update_model();
+
     }
-    else if(!openfile.close())
-        QMessageBox::warning(this,"Fichier","Impossible d'ouvrir le fichier"+fichier);
+    else{
+        QMessageBox::warning(this,"Fichier","Impossible d'ouvrir le fichier");
+    }
 }
 /**
  * @brief Permet de choisir un fichier de sauvegarde.
