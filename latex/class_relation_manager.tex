@@ -1,0 +1,127 @@
+\hypertarget{class_relation_manager}{}\section{Relation\+Manager Class Reference}
+\label{class_relation_manager}\index{Relation\+Manager@{Relation\+Manager}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_relation_manager_1_1_iterator}{Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_relation}{Relation} \& \hyperlink{class_relation_manager_a1f9d556e0505105205e1fdb4905c4a80}{get\+New\+Relation} (const Q\+String \&title, const Q\+String \&desc)
+\begin{DoxyCompactList}\small\item\em Créé une nouvelle relation à partir d\textquotesingle{}un titre et d\textquotesingle{}une description si une autre relation du même titre n\textquotesingle{}existe pas déjà \end{DoxyCompactList}\item 
+\hyperlink{class_relation}{Relation} \& \hyperlink{class_relation_manager_ad9ffbaba761149560d915f081d379ecc}{get\+Relation} (const Q\+String \&title)
+\begin{DoxyCompactList}\small\item\em Retourne une référence sur une relation dont le titre est donné en paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{class_relation_manager_a074413b3ed72a1342821e911c1fa3587}{delete\+Relation} (const Q\+String \&title)
+\begin{DoxyCompactList}\small\item\em Supprime une relation dont le titre est passé en paramètre. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_relation_manager_a52a7eb1d368bf881c5acaf45650e45b0}\label{class_relation_manager_a52a7eb1d368bf881c5acaf45650e45b0}} 
+unsigned int {\bfseries get\+Nb\+Relations} () const
+\item 
+\mbox{\Hypertarget{class_relation_manager_aefe037f480e43c5c7e786cb13b3f1084}\label{class_relation_manager_aefe037f480e43c5c7e786cb13b3f1084}} 
+\hyperlink{class_relation_manager_1_1_iterator}{Iterator} {\bfseries get\+Iterator} ()
+\item 
+\mbox{\Hypertarget{class_relation_manager_a6d758195fc82d8bc0fff5622a675e7ce}\label{class_relation_manager_a6d758195fc82d8bc0fff5622a675e7ce}} 
+\hyperlink{class_relation}{Relation} \& {\bfseries get\+New\+Relation} (const Q\+String \&title, const Q\+String \&desc)
+\item 
+\mbox{\Hypertarget{class_relation_manager_a93e61e07638f39ccf0985cd876e5f285}\label{class_relation_manager_a93e61e07638f39ccf0985cd876e5f285}} 
+\hyperlink{class_relation}{Relation} \& {\bfseries get\+Relation} (const Q\+String \&title)
+\item 
+\mbox{\Hypertarget{class_relation_manager_a074413b3ed72a1342821e911c1fa3587}\label{class_relation_manager_a074413b3ed72a1342821e911c1fa3587}} 
+void {\bfseries delete\+Relation} (const Q\+String \&title)
+\item 
+\mbox{\Hypertarget{class_relation_manager_a52a7eb1d368bf881c5acaf45650e45b0}\label{class_relation_manager_a52a7eb1d368bf881c5acaf45650e45b0}} 
+unsigned int {\bfseries get\+Nb\+Relations} () const
+\item 
+\mbox{\Hypertarget{class_relation_manager_aefe037f480e43c5c7e786cb13b3f1084}\label{class_relation_manager_aefe037f480e43c5c7e786cb13b3f1084}} 
+\hyperlink{class_relation_manager_1_1_iterator}{Iterator} {\bfseries get\+Iterator} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_relation_manager_a35c3622f29ccfbda84be848503041396}\label{class_relation_manager_a35c3622f29ccfbda84be848503041396}} 
+static \hyperlink{class_relation_manager}{Relation\+Manager} \& {\bfseries get\+Instance} ()
+\item 
+\mbox{\Hypertarget{class_relation_manager_a64126ecfdd2046d9c9797e80427bcba3}\label{class_relation_manager_a64126ecfdd2046d9c9797e80427bcba3}} 
+static void {\bfseries liberer\+Instance} ()
+\item 
+\mbox{\Hypertarget{class_relation_manager_a373c5b354fd5f0b3f4b7884913a6c11a}\label{class_relation_manager_a373c5b354fd5f0b3f4b7884913a6c11a}} 
+static \hyperlink{class_relation_manager}{Relation\+Manager} \& {\bfseries get\+Instance} ()
+\item 
+\mbox{\Hypertarget{class_relation_manager_a68eedd5e60e4ec92891061c3dbe61fc4}\label{class_relation_manager_a68eedd5e60e4ec92891061c3dbe61fc4}} 
+static void {\bfseries liberer\+Instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 140 of file manager.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_relation_manager_a074413b3ed72a1342821e911c1fa3587}\label{class_relation_manager_a074413b3ed72a1342821e911c1fa3587}} 
+\index{Relation\+Manager@{Relation\+Manager}!delete\+Relation@{delete\+Relation}}
+\index{delete\+Relation@{delete\+Relation}!Relation\+Manager@{Relation\+Manager}}
+\subsubsection{\texorpdfstring{delete\+Relation()}{deleteRelation()}}
+{\footnotesize\ttfamily void Relation\+Manager\+::delete\+Relation (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{title }\end{DoxyParamCaption})}
+
+
+
+Supprime une relation dont le titre est passé en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& title Titre de la relation a supprimer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1030 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_relation_manager_a1f9d556e0505105205e1fdb4905c4a80}\label{class_relation_manager_a1f9d556e0505105205e1fdb4905c4a80}} 
+\index{Relation\+Manager@{Relation\+Manager}!get\+New\+Relation@{get\+New\+Relation}}
+\index{get\+New\+Relation@{get\+New\+Relation}!Relation\+Manager@{Relation\+Manager}}
+\subsubsection{\texorpdfstring{get\+New\+Relation()}{getNewRelation()}}
+{\footnotesize\ttfamily \hyperlink{class_relation}{Relation} \& Relation\+Manager\+::get\+New\+Relation (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{title,  }\item[{const Q\+String \&}]{desc }\end{DoxyParamCaption})}
+
+
+
+Créé une nouvelle relation à partir d\textquotesingle{}un titre et d\textquotesingle{}une description si une autre relation du même titre n\textquotesingle{}existe pas déjà 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& title Titre de la nouvelle relation à créer const Q\+String\& desc Description de la nouvelle relation à créer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 995 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_relation_manager_ad9ffbaba761149560d915f081d379ecc}\label{class_relation_manager_ad9ffbaba761149560d915f081d379ecc}} 
+\index{Relation\+Manager@{Relation\+Manager}!get\+Relation@{get\+Relation}}
+\index{get\+Relation@{get\+Relation}!Relation\+Manager@{Relation\+Manager}}
+\subsubsection{\texorpdfstring{get\+Relation()}{getRelation()}}
+{\footnotesize\ttfamily \hyperlink{class_relation}{Relation} \& Relation\+Manager\+::get\+Relation (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{title }\end{DoxyParamCaption})}
+
+
+
+Retourne une référence sur une relation dont le titre est donné en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& title Titre de la relation a retourner \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1018 of file manager.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{manager_8h}{manager.\+h}\item 
+manager\+\_\+old.\+h\item 
+\hyperlink{manager_8cpp}{manager.\+cpp}\item 
+manager\+\_\+old.\+cpp\end{DoxyCompactItemize}

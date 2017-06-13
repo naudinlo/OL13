@@ -1,0 +1,84 @@
+\hypertarget{class_recording}{}\section{Recording Class Reference}
+\label{class_recording}\index{Recording@{Recording}}
+Inheritance diagram for Recording\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_recording}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_recording_a4e0e357b15bf6409148f44ddb8ecd19b}\label{class_recording_a4e0e357b15bf6409148f44ddb8ecd19b}} 
+const Q\+Text\+Document \& {\bfseries get\+Description} () const
+\item 
+\mbox{\Hypertarget{class_recording_a60a269e2cb74dd0b1e3781580d22bdcc}\label{class_recording_a60a269e2cb74dd0b1e3781580d22bdcc}} 
+E\+N\+U\+M\+::\+Recording\+Type {\bfseries get\+Type} () const
+\item 
+\mbox{\Hypertarget{class_recording_afccf7d9ec99810c4b4a7f348069e5760}\label{class_recording_afccf7d9ec99810c4b4a7f348069e5760}} 
+const Q\+String {\bfseries get\+Link} () const
+\item 
+\mbox{\Hypertarget{class_recording_ac00ad5d97ab59f489bcb20ea68316fa4}\label{class_recording_ac00ad5d97ab59f489bcb20ea68316fa4}} 
+void {\bfseries set\+Description} (const Q\+String \&d)
+\item 
+\mbox{\Hypertarget{class_recording_a4c2d04de136f59e122bc05c8c581a550}\label{class_recording_a4c2d04de136f59e122bc05c8c581a550}} 
+void {\bfseries set\+Type} (const E\+N\+U\+M\+::\+Recording\+Type \&r)
+\item 
+\mbox{\Hypertarget{class_recording_aa8c715e910a52614d836a4ea8572bd20}\label{class_recording_aa8c715e910a52614d836a4ea8572bd20}} 
+void {\bfseries set\+Link} (const Q\+String \&l)
+\item 
+\mbox{\Hypertarget{class_recording_a2e3359660cd7573807fb46c15daf4e78}\label{class_recording_a2e3359660cd7573807fb46c15daf4e78}} 
+{\bfseries Recording} (const Q\+String i, const Q\+String \&ti, const Q\+String d, E\+N\+U\+M\+::\+Recording\+Type r, Q\+String l)
+\item 
+\mbox{\Hypertarget{class_recording_a93af6ebb8ec5ae00ac85679756c82049}\label{class_recording_a93af6ebb8ec5ae00ac85679756c82049}} 
+{\bfseries Recording} (const Q\+String \&i, const Q\+String \&ti, const Q\+Date\+Time \&cd, const Q\+Date\+Time \&lmd, bool iA, bool iD, const Q\+String \&d, E\+N\+U\+M\+::\+Recording\+Type ty, const Q\+String \&li)
+\item 
+\mbox{\Hypertarget{class_recording_ab354d60b8ecb06699378a849f6143ac6}\label{class_recording_ab354d60b8ecb06699378a849f6143ac6}} 
+{\bfseries Recording} (const \hyperlink{class_recording}{Recording} \&r)
+\item 
+\mbox{\Hypertarget{class_recording_ac5c7522d695c8a657f5e801df97a9e06}\label{class_recording_ac5c7522d695c8a657f5e801df97a9e06}} 
+\hyperlink{class_recording}{Recording} \& \hyperlink{class_recording_ac5c7522d695c8a657f5e801df97a9e06}{operator=} (const \hyperlink{class_recording}{Recording} \&r)
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur = dans le cas nouveau recording B=A. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_recording_a9f403a39bec2db40c9171a6c3a20942d}{to\+String} () const
+\begin{DoxyCompactList}\small\item\em Transforme un recording en un flux ostream a afficher. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_recording_a99e10c8a8c13bce5f70195b6c30a1cc9}\label{class_recording_a99e10c8a8c13bce5f70195b6c30a1cc9}} 
+void {\bfseries save\+Note} (Q\+File $\ast$file)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 198 of file notes.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_recording_a9f403a39bec2db40c9171a6c3a20942d}\label{class_recording_a9f403a39bec2db40c9171a6c3a20942d}} 
+\index{Recording@{Recording}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Recording@{Recording}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily std\+::string Recording\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Transforme un recording en un flux ostream a afficher. 
+
+\begin{DoxyReturn}{Returns}
+Le flux ostream 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_note_a1bd4acfbde0b71d05fd7d4ca889bca2b}{Note}.
+
+
+
+Definition at line 290 of file notes.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+notes.\+h\item 
+\hyperlink{notes_8cpp}{notes.\+cpp}\end{DoxyCompactItemize}

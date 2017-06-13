@@ -44,7 +44,7 @@ void displayAllNote(){
     NotesManager* m=NotesManager::getInstance();
 
     for(NotesManager::Iterator it=m->getIterator(); !it.isDone(); it.next()){
-        it.current().display();
+        if(!it.liste()->isEmpty()) it.current().display();
     };
 }
 
@@ -375,11 +375,12 @@ try{
 //      //it.current().display();
 //      m->getNoteVersion("testTask",0).display();
 
+      displayAllVersion();
 //      m->getNewArticle("TestReinsertion","TestReins","Test de la reinsertion d'une note apres une suppression");
 
 
    cout<<endl<<endl<<"================"<<endl;
-   displayAllRelation();
+   //displayAllRelation();
 
 
     }
@@ -391,12 +392,8 @@ try{
 
 
 int main(int argc, char * argv[]) {
-
-//    NotesManager* m=NotesManager::getInstance();
-//    m->setFilename("test_save.xml");
-//    m->load();
-//    displayAllVersion();
-//    fct();
+  
+    //fct();
     PROGRAMME(argc,argv);
     //creation();
 

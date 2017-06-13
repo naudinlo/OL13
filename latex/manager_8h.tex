@@ -1,0 +1,56 @@
+\hypertarget{manager_8h}{}\section{manager.\+h File Reference}
+\label{manager_8h}\index{manager.\+h@{manager.\+h}}
+
+
+Regroupe les manager nécessaires pour la gestion des notes et des relations.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}notes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}relations.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Q\+Include.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_tuple_note___relation}{Tuple\+Note\+\_\+\+Relation}
+\item 
+class \hyperlink{class_notes_manager}{Notes\+Manager}
+\item 
+class \hyperlink{class_notes_manager_1_1_iterator}{Notes\+Manager\+::\+Iterator}
+\item 
+class \hyperlink{class_relation_manager}{Relation\+Manager}
+\item 
+class \hyperlink{class_relation_manager_1_1_iterator}{Relation\+Manager\+::\+Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{manager_8h_aa775e7d18b47ab8005e0ac3039d7f92d}\label{manager_8h_aa775e7d18b47ab8005e0ac3039d7f92d}} 
+ostream \& \hyperlink{manager_8h_aa775e7d18b47ab8005e0ac3039d7f92d}{operator$<$$<$} (ostream \&f, const \hyperlink{class_note}{Note} \&n)
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur $<$$<$ d\textquotesingle{}affichage d\textquotesingle{}une note. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Regroupe les manager nécessaires pour la gestion des notes et des relations. 
+
+\begin{DoxyAuthor}{Author}
+Garnier Maxime, Naudin Louise, Pépin Hugues 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14 Juin 2017
+\end{DoxyDate}
+Classes présentes \+:
+\begin{DoxyItemize}
+\item \hyperlink{class_notes_manager}{Notes\+Manager} Un manager sur l\textquotesingle{}ensemble des notes, qu\textquotesingle{}elles soient articles, taches, enregistrement. Qu\textquotesingle{}elles soient archivées ou supprimées. Manager multi-\/fonction qui permet de traiter l\textquotesingle{}ensemble des notes depuis d\textquotesingle{}un seul élément.
+
+Possède un attribut Q\+List$<$\+Note$\ast$$>$$\ast$$\ast$ notes qui regroupe l\textquotesingle{}ensemble des notes et de leurs versions.
+\item \hyperlink{class_relation_manager}{Relation\+Manager} Un manager sur l\textquotesingle{}ensemble des relations. Possède un Handler pour assurer l\textquotesingle{}unité de l\textquotesingle{}accès aux données. Possède un Iterator pour faciliter la manipulation des relations.
+
+Possède un attribut Relation$\ast$$\ast$ tabrelations permettant d\textquotesingle{}accéder à chaque relation et à l\textquotesingle{}ensemble de ses couples de notes associé.
+\end{DoxyItemize}
+
+L\textquotesingle{}ensemble des méthodes définies dans ce fichier sont explicitées dans le fichier .cpp associé. 
