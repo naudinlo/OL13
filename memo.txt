@@ -1,0 +1,19 @@
+***NOTESMANAGER***
+
+getNewNote --> vraiment utile ?
+getNote --> OK
+deleteNote --> A revoir
+createNote --> OK
+editNote --> revoir avec interface
+setFileName --> OK
+getFileName --> OK
+load --> à adapter
+save --> à adapter
+emptyTrash --> OK (à priori)
+
+
+
+***RELATIONSMANAGER***
+--> à revoir de façon générale
+getRelation
+deleteRelation

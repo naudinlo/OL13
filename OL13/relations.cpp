@@ -5,7 +5,31 @@
  * \date      14 Juin 2017
  * \brief     Définitions des fonctions déclarées dans le relations.h
  *
- * \details  //Détail
+ * \details
+ *
+ * \details   Classes présentes :
+ *                  - NotesCouple
+ *                      La classe NotesCouple est en agrégation avec la classe Relation :
+ *                      une relation contient un ensemble de couple de notes.
+ *                      Dans le cas où l'ensemble des couples d'une relation est supprimé,
+ *                      la relation existe toujours mais est vide. Elle pourra être repeuplée par de nouveaux couples.
+ *
+ *                      La classe NotesCouple possède deux attributs noteX et noteY pointant chacun
+ *                      sur une note du couple, un attribut pour le label du couple et un attribut
+ *                      booléen spécifiant si le couple est symétrique.
+ *                      C'est à dire que la relation va de noteX vers noteY et réciproquement.
+ *
+ *                      La classe NotesCouple est composée par la classe Notes : si les notes sont supprimées,
+ *                      les couplent n'existent plus non plus.
+ *
+ *                  - Relation
+ *                      La classe Relation possède un titre, une description et un ensemble de couple de notes.
+ *                      Dans l'implémentation de cette classe, un Design Pattern Iterator est utilisé pour
+ *                      faciliter la manipulation des données.
+ *
+ *                      Une classe manager dans manager.h/.cpp est utilisée pour gérer l'ensemble des relations.
+ *
+ *             L'ensemble des méthodes de ces classes sont explicitées dans la suite du fichier.
  *
  */
 
@@ -14,8 +38,11 @@
 #include "sstream"
 
 
+/**
+ * \fn        std::string Relation::displayRelation()
+ * \brief     Affiche une relation et l'ensemble des couples de notes qui en font parti
+ */
 std::string Relation::displayRelation(){
-//    RelationManager& rm=RelationManager::getInstance();
     std::stringstream f;
     f<<"\n"<<this->getTitle().toStdString()<<" "<<this->getDescription().toStdString()<<endl;
     for(Relation::Iterator it=this->getIterator(); !it.isDone(); it.next()){
@@ -28,8 +55,15 @@ std::string Relation::displayRelation(){
     return f.str();
 }
 
+/**
+ * \fn        NotesCouple &Relation::getNewCoupleRelation(Note* n1,  Note* n2, QString label, bool s)
+ * \brief     Créer un couple de note dans une relation
+ * \param     Note* n1                  Note X du couple dans la relation
+ *            Note* n2                  Note Y du couple dans la relation
+ *            QString label             Label du couple dans la relation
+ *            bool s                    Symétrie du couple dans la relation
+ */
 NotesCouple &Relation::getNewCoupleRelation(Note* n1,  Note* n2, QString label, bool s) {
-//    if (n1!=n2){
         NotesCouple* nc= new NotesCouple(n1,n2,label,s);
         for(unsigned int i=0; i<nbCouple; i++){
             if ((relations[i]->getCoupleNoteX()==n1 && relations[i]->getCoupleNoteY()==n2) || (relations[i]->getCoupleNoteX()==n2 && relations[i]->getCoupleNoteY()==n1)){
@@ -43,10 +77,13 @@ NotesCouple &Relation::getNewCoupleRelation(Note* n1,  Note* n2, QString label, 
             addCoupleRelation(ncsym);
         }
         return *nc;
-//    }
-//    else return 0;
 }
 
+/**
+ * \fn        void Relation::addCoupleRelation(NotesCouple* nc)
+ * \brief     Ajoute un couple de note à un tableau de couple de note d'une relation
+ * \param     NotesCouple* nc             Couple de note à ajouter à la relation
+ */
 void Relation::addCoupleRelation(NotesCouple* nc){
     if (nbCouple==nbMaxCouple){
         //besoin en grandissement
@@ -64,6 +101,12 @@ void Relation::addCoupleRelation(NotesCouple* nc){
     nbCouple++;
 }
 
+/**
+ * \fn        NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2)const
+ * \brief     Retourne un pointeur sur un couple d'une référence dont les deux notes sont passées en paramètre
+ * \param     Note* n1             Note X du couple de la relation a retourner
+ * \param     Note* n2             Note Y du couple de la relation a retourner
+ */
 NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2)const{
     for(unsigned int i=0; i<nbCouple; i++){
         if (relations[i]->getCoupleNoteX()->getId()==n1->getId() && relations[i]->getCoupleNoteY()->getId()==n2->getId()){
@@ -74,16 +117,13 @@ NotesCouple* Relation::getCoupleRelation(Note *n1, Note *n2)const{
     throw NotesException("erreur, impossible to the relation from this couple, relation de notes inexistante");
 }
 
-//Relation& Relation::getRelationFromCouple(const QString& id1, const QString& id2) const {
-//    for(unsigned int i=0; i<nbCouple; i++){
-//        if (relations[i]->getCoupleNoteX()->getId()==id1 && relations[i]->getCoupleNoteY()->getId()==id2){
-//            return this;
-//        }
-//    }
-//    return 0;
-//    throw NotesException("erreur, impossible to the relation from this couple, relation de notes inexistante");
-//}
 
+/**
+ * \fn        void Relation::displayCoupleRelation(Note *n1, Note *n2)const
+ * \brief     Affiche un couple dans une relation
+ * \param     Note* n1             Note X du couple de la relation a afficher
+ * \param     Note* n2             Note Y du couple de la relation a afficher
+ */
 void Relation::displayCoupleRelation(Note *n1, Note *n2)const{
     const NotesCouple* nc=getCoupleRelation(n1,n2);
     if (nc!=0){
@@ -104,6 +144,13 @@ void Relation::displayCoupleRelation(Note *n1, Note *n2)const{
 
 
 
+/**
+ * \fn        void Relation::removeCoupleRelation(Note* n1, Note* n2)
+ * \brief     Supprime un couple de note d'une relation
+ * \details   Si le couple demandé est symétrique, le deux couples créés par ces notes sont supprimés.
+ * \param     Note* n1             Note X du couple a supprimer de la relation
+ * \param     Note* n2             Note Y du couple a supprimer de la relation
+ */
 void Relation::removeCoupleRelation(Note* n1, Note* n2){
     unsigned int i=0;
     while(i<nbCouple && relations[i]->getCoupleNoteX()->getId()!=n1->getId() && relations[i]->getCoupleNoteY()->getId()!=n2->getId()){
@@ -125,6 +172,13 @@ void Relation::removeCoupleRelation(Note* n1, Note* n2){
 }
 
 
+/**
+ * \fn        void Relation::removeNoteRelation(Note* n1)
+ * \brief     Supprime une note d'une relation
+ * \details   Si une note passée en paramètre appartient à un couple présent au sein de la relation this,
+ *              le couple est supprimée de la relation.
+ * \param     Note* n1             Note a supprimer de la relation
+ */
 void Relation::removeNoteRelation(Note* n1){
     for(unsigned int i=0; i<nbCouple; i++){
         if (relations[i]->getCoupleNoteX()->getId()==n1->getId() || relations[i]->getCoupleNoteY()->getId()==n1->getId()){
@@ -136,67 +190,3 @@ void Relation::removeNoteRelation(Note* n1){
 }
 
 
-//QList<Note*>* Relation::addNoteAscendant(Note * n, QList<Note*>* listAscendants){
-//    for(unsigned int i=0; i<nbCouple; i++){
-//        if (relations[i]->getCoupleNoteX()->getId()==n->getId()){
-////            Note& ny=NotesManager::getInstance()->getNote(relations[i]->getCoupleNoteY()->getId());
-//            Note* ny=relations[i]->getCoupleNoteY();
-//            listAscendants->push_front(ny);
-//        }
-//    }
-//    return listAscendants;
-//}
-
-//Note** Relation::noteRelAsc(Note * n){
-//    Note ** tabNoteAsc[5];
-//    unsigned int nbNoteAsc=0;
-//    for(unsigned int i=0; i<nbCouple; i++){
-//        if (relations[i]->getCoupleNoteX()->getId()==n->getId()){
-////            Note& ny=NotesManager::getInstance()->getNote(relations[i]->getCoupleNoteY()->getId());
-//            Note* ny=relations[i]->getCoupleNoteY();
-//            std::cout<<"une trouve : "<<ny->getId().toStdString();
-//            tabNoteAsc[nbNoteAsc++]=*ny;
-//        }
-//    }
-//    return tabNoteAsc;
-//}
-
-
-
-/*
-void Relation::removeCoupleRelation(Note* n1, Note* n2){
-    unsigned int i;
-      while(i<nbCouple && relations[i]->getCoupleNoteX()->getId()!=n1->getId() && relations[i]->getCoupleNoteY()->getId()!=n2->getId()){
-          i++;
-      }
-      if (i==nbCouple) throw NotesException("erreur : Aucune relation entre ses deux notes");
-      delete relations[i];
-      relations[i]=relations[--nbCouple];
-}
-*/
-
-
-//Relation::~Relation(){
-//    for(unsigned int i=0; i<nbCouple; i++){
-//        delete rel[i];
-//    }
-//    delete[] articles;
-//    nbArticles=0;
-//    nbMaxArticles=0;
-//    articles=nullptr;
-//}
-
-/*
- std::string Relation::toStringRel(Note *n1, Note *n2)const{
-    std::stringstream f;
-    const NotesCouple* nc=getCoupleRelation(n1,n2);
-    if (nc!=nullptr){
-        f<<"\n=== RELATION "<<this->getTitle().toStdString()<<" ===\n";
-        f<<"\n - Description : "<<this->getDescription().toStdString();
-        f<<"\n - Note "<<nc->getCoupleNoteX()->getTitle().toStdString();
-        f<<" est en relation avec Note "<<nc->getCoupleNoteY()->getTitle().toStdString();
-        f<<"\n";
-    }
-    else { throw "Erreur de display relation couple";}
-};
-*/

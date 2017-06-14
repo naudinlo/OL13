@@ -839,8 +839,6 @@ NotesManager::Handler NotesManager::handler=NotesManager::Handler();
  * \brief     Permet d'obtenir un pointeur sur le manager de notes.
  */
 NotesManager *NotesManager::getInstance(){
-    //if (instanceUnique==0)
-        //instanceUnique=new NotesManager;
     if(handler.instance==0) handler.instance=new NotesManager;
     return handler.instance;
 }
@@ -865,15 +863,11 @@ void NotesManager::libererInstance(){
  * \param    const QString& id          ID de la note a supprimer
  */
 void NotesManager::deleteNote(const QString& id){
-   //NotesManager::Iterator it=NotesManager::getIterator();
     //Suppression de la dernière version
-//    std::cout<<id.toStdString()<<" : id en cours a supprimer\n";
     Note& n=getNote(id);
     if (n.getNbIsRef()!=0){
-        std::cout<<"La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.\n";
-//        QMessageBox msgBox;
-//        msgBox.setText("La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.\n");
-//        msgBox.exec();
+        //Note référencée par d'autres : ne peut être supprimée, est automatiquement archivée.
+//        std::cout<<"La note est référencée par d'autres notes et ne peut donc être supprimée. Elle est automatiquement archivée.\n";
         n.setIsArchive(true);
     }
     else{
@@ -883,8 +877,7 @@ void NotesManager::deleteNote(const QString& id){
         for(RelationManager::Iterator it= m.getIterator(); !it.isDone(); it.next()){
             it.current().removeNoteRelation(&n);
         }
-        std::cout<<"Toutes les relations sont supprimées\n";
-//        if(n.getNbRef()!=0) n.deleteAllReferenceOLD();
+//        std::cout<<"Toutes les relations sont supprimées\n";
         if(n.references.size()!=0) n.deleteAllReference();
         n.setIsDeleted(true);
     }
@@ -904,11 +897,7 @@ void NotesManager::emptyTrash(){
     while(!itNote.isDone()){
         if(!itNote.liste()->isEmpty())
         if (itNote.current().getIsDeleted()){
-            //Note& n=NotesManager::getNote(itNote.current().getId());
             cout<<endl<<"// Note en cours de suppression : "<<itNote.current().getId().toStdString()<<" \\\\"<<endl;
-            //===V1
-            //std::cout<<"get the ListeVersion\n";
-            //QList<Note*>* listVersion=getListeVersions(itNote.current().getId());
             std::cout<<"qDeleteALl\n";
             qDeleteAll(itNote.liste()->begin(),itNote.liste()->end());
             std::cout<<"Clear\n";
@@ -1097,6 +1086,7 @@ QList<TupleNote_Relation*> NotesManager::getListTupleDescendants(const QString& 
  * \brief     Fonctions relatives au Design Pattern Singleton sur le RelationManager
  */
 RelationManager::Handler RelationManager::handler=RelationManager::Handler();
+
 
 /**
  * \fn        RelationManager& RelationManager::getInstance()

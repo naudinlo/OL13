@@ -5,7 +5,30 @@
  * \date      14 Juin 2017
  * \brief     //Bref
  *
- * \details  //Détail
+ *
+ * \details   Classes présentes :
+ *                  - NotesCouple
+ *                      La classe NotesCouple est en agrégation avec la classe Relation :
+ *                      une relation contient un ensemble de couple de notes.
+ *                      Dans le cas où l'ensemble des couples d'une relation est supprimé,
+ *                      la relation existe toujours mais est vide. Elle pourra être repeuplée par de nouveaux couples.
+ *
+ *                      La classe NotesCouple possède deux attributs noteX et noteY pointant chacun
+ *                      sur une note du couple, un attribut pour le label du couple et un attribut
+ *                      booléen spécifiant si le couple est symétrique.
+ *                      C'est à dire que la relation va de noteX vers noteY et réciproquement.
+ *
+ *                      La classe NotesCouple est composée par la classe Notes : si les notes sont supprimées,
+ *                      les couplent n'existent plus non plus.
+ *
+ *                  - Relation
+ *                      La classe Relation possède un titre, une description et un ensemble de couple de notes.
+ *                      Dans l'implémentation de cette classe, un Design Pattern Iterator est utilisé pour
+ *                      faciliter la manipulation des données.
+ *
+ *                      Une classe manager dans manager.h/.cpp est utilisée pour gérer l'ensemble des relations.
+ *
+ *             L'ensemble des méthodes définies dans ce fichier sont explicitées dans le fichier .cpp associé.
  *
  */
 
@@ -17,6 +40,8 @@
 
 class NotesCouple;
 class Relation;
+
+/**************Couple de note********************/
 
 class NotesCouple {
 private:
@@ -33,6 +58,8 @@ public:
     bool getSymetric() const {return symetric;}
 };
 
+/**************Relation********************/
+
 class Relation {
 private:
     QString title;
@@ -42,25 +69,19 @@ private:
     unsigned int nbMaxCouple;
     void addCoupleRelation(NotesCouple* nc);
 public:
-    NotesCouple& getNewCoupleRelation(Note* n1, Note* n2, QString label=0, bool s=false);
     Relation(QString t, QString d):title(t), description(d),relations(new NotesCouple*[5]), nbCouple(0), nbMaxCouple(5){}
+
     const QString getTitle() const{return title;}
     void setTitle(QString t){title=t;}
     void setDescription(QString d){description=d;}
+
+    NotesCouple& getNewCoupleRelation(Note* n1, Note* n2, QString label=0, bool s=false);
     const QString getDescription() const{return description;}
     NotesCouple* getCoupleRelation(Note* n1, Note* n2)const;
     void removeCoupleRelation(Note* n1, Note* n2);
     void removeNoteRelation(Note* n1);
-//    Relation& getRelationFromCouple(const QString& id1, const QString& id2) const;
-
-//    QList<Note*>* addNoteAscendant(Note * n, QList<Note*>* listAscendants);
-//    Note** noteRelAsc(Note * n);
 
     std::string displayRelation();
-//    std::string toString() const;
-//    void display(std::ostream& f=std::cout) const{
-//        f<<displayRelation();
-//    }
 
     //Iterator
     class Iterator{
@@ -82,15 +103,8 @@ public:
         return Iterator(relations, nbCouple);
     }
 
-//    std::string toStringRel(Note *n1, Note *n2)const;
-//    void displayRel(Note *n1, Note *n2, std::ostream& f=std::cout) const{
-//        f<<toStringRel(n1,n2);
-//    }
     void displayCoupleRelation(Note *n1, Note *n2)const;
 };
-
-
-
 
 
 

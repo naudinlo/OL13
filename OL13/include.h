@@ -3,7 +3,7 @@
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
- * \brief     Regroupe l'ensemble des includes nécessaires au projet
+ * \brief     Regroupe une partie des includes nécessaires au projet
  *
  */
 

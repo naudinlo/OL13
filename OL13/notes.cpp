@@ -22,7 +22,7 @@
 #include "QString"
 
 
-//====OPERATEUR AFFECTATION, CONSTRUCTEUR DE RECOPIE
+/**************OPERATEUR AFFECTATION, CONSTRUCTEUR DE RECOPIE********************/
 
 
 /**
@@ -32,12 +32,6 @@
  *            Mets à jour la date de dernière modification avec currentDateTime.
  * \param    const Note& n         La note a recopier.
  */
-//Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::currentDateTime()),nbRef(n.nbIsRef),nbMaxRef(n.nbMaxRef),nbIsRef(n.nbIsRef),isDeleted(false),isArchive(false){
-//    Note** references(new Note*[n.nbMaxRef]);
-//    for(unsigned int i=0; i<n.nbRef; i++){
-//        this->references[i]=n.references[i];
-//    }
-//};
 Note::Note(const Note& n):id(n.id),title(n.title),creation_date(n.creation_date),lastmodif_date(QDateTime::currentDateTime()),nbIsRef(n.nbIsRef),isDeleted(false),isArchive(false){
 };
 
@@ -112,35 +106,21 @@ Recording& Recording::operator=(const Recording& r){
 };
 
 
-//====CONSTRUCTEUR
+
+/**************CONSTRUCTEUR********************/
+
 /**
  * \fn          Note::Note(const QString& i, const QString& ti)
  * \brief       Constructeur des classes notes, articles task et recording
  * \details     Les classes dérivées Article, Task, Recording utilise en premier lieu le constructeur de Note.
  *              Dans le constructeur de Note, la date de création et de dernière modification sont mises à jours avec la date courrante.
  */
-//// LNA test ref 09.06
-//Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false), references(new Note*[5]), nbRef(0), nbMaxRef(5),nbIsRef(0){
-////Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false), nbRef(0), nbMaxRef(5),nbIsRef(0){
-//    creation_date=QDateTime::currentDateTime();
-//    lastmodif_date=creation_date;
-//}
 Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(false), isDeleted(false),nbIsRef(0){
     creation_date=QDateTime::currentDateTime();
     lastmodif_date=creation_date;
     this->generateRef(i);
     this->generateRef(ti);
 }
-//Note::Note(const QString& i, const QString& ti):id(i){
-//    this->generateRef(i);
-//    this->generateRef(ti);
-//    this->setTitle(ti);
-//    this->setIsArchive(false);
-//    this->setIsDeleted(false);
-//    this->setNbIsRef(0);
-//    creation_date=QDateTime::currentDateTime();
-//    lastmodif_date=creation_date;
-//}
 
 /**
  * \fn          Article(const QString& i, const QString& ti, const QString &te)
@@ -181,7 +161,7 @@ Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::
 
 
 
-//====DESTRUCTEUR
+/**************DESTRUCTEUR********************/
 
 /**
  * \fn        Note::~Note()
@@ -189,11 +169,10 @@ Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::
  */
 Note::~Note(){
 //    save();
-//    for(unsigned int i=0; i<nbRef; i++) delete references[i];
-//    delete[] references;
 }
 
-//====METHODE ET SURCHARGE
+
+/**************MÉTHODES ET SURCHARGES********************/
 
 /**
  * \fn        std::string Note::toString() const
@@ -217,13 +196,6 @@ std::string Article::toString()const {
     f<<"\n=== ARTICLE "<<getId().toStdString()<<" ===\n";
     f<<"ID : "<<getId().toStdString()<<"\n - Title : "<<getTitle().toStdString()<<"\n - Text : "<<text.toPlainText().toStdString()<<"\n - Creation date : "<<getCreation_date().toString("dd.MM.yyyy").toStdString()<<"\n - Last modification date : "<<getLastmodif_date().toString("dd.MM.yyyy").toStdString()<<"\n";
 
-    // LNA test ref 09.06
-//    Affichage des references
-//    f<<"\n - Reference :";
-//    if(getNbRef()==0) f<<" none";
-//    for(unsigned int i=0; i<getNbRef(); i++){
-//        f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
-//    }
     f<<"\n - Reference :";
     if(this->references.size()==0) f<<" none";
     for(unsigned int i=0; i<this->references.size(); i++){
@@ -269,13 +241,6 @@ std::string Task::toString() const {
     if(dueDate.isNull()){f<<"\n - No due date.";}
     else {f<<"\n - Due date : "<<dueDate.toString("dd.MM.yyyy").toStdString();}
 
-    // LNA test ref 09.06
-    //Affichage des references
-//    f<<"\n - Reference :";
-//    if(getNbRef()==0) f<<" none";
-//    for(unsigned int i=0; i<getNbRef(); i++){
-//        f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
-//    }
     f<<"\n - Reference :";
     if(this->references.size()==0) f<<" none";
     for(unsigned int i=0; i<this->references.size(); i++){
@@ -313,13 +278,6 @@ std::string Recording::toString() const {
         break;
     }
 
-    // LNA test ref 09.06
-    //Affichage des references
-//    f<<"\n - Reference :";
-//    if(getNbRef()==0) f<<" none";
-//    for(unsigned int i=0; i<getNbRef(); i++){
-//        f<<"\n   - "<<getReferenceInt(i).getId().toStdString()<<" "<<getReferenceInt(i).getTitle().toStdString();
-//    }
     f<<"\n - Reference :";
     if(this->references.size()==0) f<<" none";
     for(unsigned int i=0; i<this->references.size(); i++){
@@ -374,32 +332,20 @@ QString getRecordingtoStr(ENUM::StatusType recording) {
 
 
 
+/**************GESTION DES RÉFÉRENCES********************/
 
-//====REFERENCE
 /**
- * \fn       Note& Note::setNewRef(Note* n)
+ * \fn       Note& Note::setNewRef(const QString& id)
  * \brief     Définie une note comme référence d'une autre
  * \details   Lorsqu'une note prend comme référence une autre, cette autre note augmente son attribut
  *              nbIsRef lui permettant de connaître le nombre de notes qui la référencent.
- * \param    Note* n         La note référencée.
+ * \param    const QString&         L'ID de la note référencée.
  */
-//Note& Note::setNewRefOLD(Note* n){
-//    for(unsigned int i=0; i<nbRef; i++){
-//        if (references[i]->getId()==n->getId()){
-//            throw NotesException("erreur, ID déjà existant");
-//        }
-//    }
-//    addReference(n);
-//    //Incrémente de un le nombre de note qui référence this
-//    n->setNbIsRef(n->getNbIsRef()+1);
-//    return *n;
-//};
 void Note::setNewRef(const QString& id){
     bool alreadyInRef=false;
     if (this->getId()!=id){
         for(unsigned int i=0; i<references.size(); i++){
             if (references.at(i)==id){ alreadyInRef=true;
-//                throw NotesException("erreur, ID déjà existant");
             }
         }
         if (!alreadyInRef){
@@ -409,46 +355,14 @@ void Note::setNewRef(const QString& id){
             nRef.setNbIsRef(nRef.getNbIsRef()+1);
         }
     }
-//    else {
-//        throw NotesException("Vous ne pouvez pas créer une référence sur votre propre note");
-//    }
 };
 
-/**
- * \fn       void Note::addReference(Note* n)
- * \brief     Ajoute une note au tableau des références d'une note
- * \param    Note* n         La note a ajouté au tableau référence.
- */
-//void Note::addReferenceOLD(Note* n){
-//    if (nbRef==nbMaxRef){
-//        //besoin en grandissement
-//        Note** newtab=references;
-//        for(unsigned int i=0; i<nbRef; i++){
-//            newtab[i]=references[i];
-//            //mise à jour des attributs
-//        }
-//        nbMaxRef+=5;
-//        Note ** old=references;
-//        references=newtab;
-//        delete[] old;
-//    }
-//    references[nbRef]=n;
-//    nbRef++;
-//};
 
 /**
  * \fn       Note& Note::getReference(const QString& id) const
  * \brief    Retourne une note référencée par une autre
  * \param    const QString& id         L'ID de la note référencée.
  */
-//Note& Note::getReferenceOLD(const QString& id)const{
-//    for(unsigned int i=0; i<nbRef; i++){
-//        if (references[i]->getId()==id){
-//            return (*references[i]);
-//        }
-//    }
-//    throw NotesException("erreur, ID inexistant");
-//};
 Note& Note::getReference(const QString& id)const{
     for(unsigned int i=0; i<references.size(); i++){
         if (references.at(i)==id){
@@ -460,29 +374,11 @@ Note& Note::getReference(const QString& id)const{
 };
 
 
-//Note& Note::getReferenceIntOLD(unsigned int i) const{
-//    return (*references[i]);
-//};
-//Note& Note::getReferenceInt(unsigned int i) const{
-//    Note& nRef=NotesManager::getInstance()->getNote(references.at(i));
-//    return nRef;
-//};
-
-
 /**
  * \fn        void Note::deleteReference(const QString& id)
  * \brief     Supprime la référence sur une note spécifiée par son ID
  * \param    const QString& id         L'ID de la note référencée a supprimer.
  */
-//void Note::deleteReferenceOLD(const QString& id){
-//    for(unsigned int i=0; i<nbRef; i++){
-//        if (references[i]->getId()==id)
-//        references[i]->setNbIsRef(references[i]->getNbIsRef()-1);
-//        //Faut il delete les reference ? Pas de risque de supprimer les notes derrières ?
-//        delete references[i];
-//        references[i]=references[--nbRef];
-//    }
-//}
 void Note::deleteReference(const QString& id){
     for(unsigned int i=0; i<references.size(); i++){
         if (references.at(i)==id){
@@ -498,22 +394,8 @@ void Note::deleteReference(const QString& id){
  * \fn        void Note::deleteAllReference()
  * \brief     Supprime l'ensemble des références d'une note
  * \details   À chaque suppression, les notes anciennement référencées par cette note diminuent
- *              le nombre de notes qui les références.
+ *              le nombre de notes qui les référence.
  */
-//void Note::deleteAllReferenceOLD(){
-//    for(unsigned int i=0; i<nbRef; i++){
-//        references[i]->setNbIsRef(references[i]->getNbIsRef()-1);
-//        //Faut il delete les reference ? Pas de risque de supprimer les notes derrières ?
-////        delete references[i];
-//        references[i]=references[--nbRef];
-//        i--;
-////        deleteReference(references[i]->getId());
-//    }
-//    delete[] references;
-////    Note** newtab=references;
-////    references=newtab;
-//}
-
 void Note::deleteAllReference(){
     for(unsigned int i=0; i<references.size(); i++){
         Note& nRef=NotesManager::getInstance()->getNote(references.at(i));
@@ -521,6 +403,50 @@ void Note::deleteAllReference(){
     }
     this->references.clear();
 }
+
+/**
+ * \fn        void Note::generateRef(const QString& champTexte)
+ * \brief     Détecte la présence d'une expression régulière dans un champ de text
+ *              et ajoute une référence en conséquence
+ * \details   Cette méthode est appelée par le constructeur de notes et
+ *              par les setters de champ de texte de notes.
+ *            Si l'expression régulière \:ref{(.+)} est repérée,
+ *              et si l'ID retourné correspond à celui d'une note active,
+ *              la note correspondant à l'ID est ajoutée en référence de la note this.
+ * \param     const QString& champTexte     champ de texte dans laquelle la regex doit être repérée
+ */
+void Note::generateRef(const QString& champTexte){
+    // définition expression regulière pour capturer reference
+        QRegExp rx("\\\\ref\\{(.+)\\}");
+        rx.setMinimal(true); // setMinimal : true
+
+        // récupération liste id notes actives
+        QList<QString> listNotes;
+        NotesManager::Iterator it=NotesManager::getInstance()->getIterator();
+        while(!it.isDone()){
+            if(!it.liste()->isEmpty())
+            if(!it.current().getIsDeleted()){
+                listNotes.append(it.current().getId());
+            }
+            it.next();
+        }
+
+        // intialisation position pour parcours des resultats capturés
+        QStringList list;
+        int pos = 0;
+
+        // parcours de toutes les ref capturées, dans QString id= rx.cap(1)
+        while ((pos = rx.indexIn(champTexte, pos)) != -1){
+            QString id = rx.cap(1);
+            if(listNotes.contains(id)){
+                this->setNewRef(id);
+            }
+            pos += rx.matchedLength();
+        }
+}
+
+
+/**************SAUVEGARDE********************/
 
 
 void Note::saveNote(QFile* file){}
@@ -592,38 +518,6 @@ void Recording::saveNote(QFile* file){
 }
 
 
-void Note::generateRef(const QString& champTexte){
-    // définition expression regulière pour capturer reference
-        QRegExp rx("\\\\ref\\{(.+)\\}");
-        rx.setMinimal(true); // setMinimal : true
 
-        // récupération liste id notes actives
-        QList<QString> listNotes;
-        NotesManager::Iterator it=NotesManager::getInstance()->getIterator();
-        while(!it.isDone()){
-            if(!it.liste()->isEmpty())
-            if(!it.current().getIsDeleted()){
-                listNotes.append(it.current().getId());
-            }
-            it.next();
-        }
-
-        // intialisation position pour parcours des resultats capturés
-        QStringList list;
-        int pos = 0;
-
-        // parcours de toutes les ref capturées, dans QString id= rx.cap(1)
-        while ((pos = rx.indexIn(champTexte, pos)) != -1){
-            QString id = rx.cap(1);
-            if(listNotes.contains(id)){
-                this->setNewRef(id);
-//                champTexte.replace(QRegExp("\\ref{"+id+"}"),id);
-            }
-//            else{
-//                champTexte.replace(QRegExp("\\ref{"+id+"}"),"<<Reference incorrecte>>");
-//            }
-            pos += rx.matchedLength();
-        }
-}
 
 
