@@ -97,7 +97,6 @@ public:
     void save() const;
     void load_fichier() const;
     void save_fichier();
-    QString updateId(QString Id2)const;
 
     QList<TupleNote_Relation*> getListTupleAscendants(const QString& id);
     QList<TupleNote_Relation*> getListTupleDescendants(const QString& id);

@@ -3,12 +3,7 @@
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
- * \brief     //Expliquer brievement à quoi sert ce fichier.
- *              //EX : Définit les modèles de voiture et leur particularités.
- *
- * \details    //Expliquer en détail.
- *              //EX :Cette classe surcharge les accesseurs standards du module_voiture pour
- *                  convenir aux spécificités des différents modèles possibles.
+ * \brief     Définit l'interface principale de l'application.
  */
 
 
@@ -401,8 +396,8 @@ void selection_note::emit_selection(QModelIndex i){
 /**
  * interface::afficher_note
  * @brief slot qui permet l'ouverture d'une note.
- * @param id
- * @param i
+ * @param Qstring id
+ * @param int i
  * \details Elle vérifie si une note était déjà ouverte avant : la ferme, restaure la note, supprime le pointeur sur la note courante
  * essaye d'ouvrir la versions sélectionné : connecte cette dernière avec l'interface
  * si il est impossible d'ouvrir la note, on affiche la page d'acceuil.

@@ -1,4 +1,5 @@
 <map id="Edit_NotesCouple::Edit_NotesCouple" name="Edit_NotesCouple::Edit_NotesCouple">
-<area shape="rect" id="node2" href="$class_edit___notes_couple.html#a1395f82d63778d45d927620e8c453d52" title="ferme le fenetre et envoie un signal pour creer le nouveau couple " alt="" coords="215,5,385,32"/>
-<area shape="rect" id="node3" href="$class_edit___notes_couple.html#ad51b47f9284bea44cddc186674c57bc9" title="Edit_NotesCouple::eneable\lE_label" alt="" coords="211,57,389,98"/>
+<area shape="rect" id="node2" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="257,5,343,32"/>
+<area shape="rect" id="node3" href="$class_edit___notes_couple.html#a1395f82d63778d45d927620e8c453d52" title="ferme le fenetre et envoie un signal pour creer le nouveau couple " alt="" coords="215,56,385,83"/>
+<area shape="rect" id="node4" href="$class_edit___notes_couple.html#ad51b47f9284bea44cddc186674c57bc9" title="Edit_NotesCouple::eneable\lE_label" alt="" coords="211,107,389,149"/>
 </map>

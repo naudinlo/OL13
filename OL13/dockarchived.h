@@ -55,6 +55,11 @@ class DockArchived: public Dock{
     Q_OBJECT
 
 public:
+    /**
+     * @fn DockArchived
+     * @brief Constructeur du Dock d'archives
+     * @param parent
+     */
     DockArchived(QWidget* parent):Dock(parent){
     }
 

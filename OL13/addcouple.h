@@ -1,5 +1,5 @@
 /**
- * \file      add_couple.h
+ * \file      addcouple.h
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
@@ -38,6 +38,10 @@ public slots:
     void on_toView_clicked(QModelIndex i);
     void on_save_clicked();
 signals:
+    /**
+     * \fn      void addNewCouple(QString, QString, QString, bool);
+     * @brief   signal addNewCouple
+     */
     void addNewCouple(QString, QString, QString, bool);
 };
 

@@ -1,0 +1,9 @@
+<map id="Note::getCreation_date" name="Note::getCreation_date">
+<area shape="rect" id="node2" href="$classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6" title="constructeur " alt="" coords="208,5,372,32"/>
+<area shape="rect" id="node3" href="$class_article.html#ae40d268ecffbaaa549968a81ea609ba4" title="Transforme un article en un flux ostream a afficher. " alt="" coords="234,56,346,83"/>
+<area shape="rect" id="node4" href="$class_task.html#a7fe5cb7b57a21693e7abfea2f9618563" title="Transforme une task en un flux ostream a afficher. " alt="" coords="239,107,341,133"/>
+<area shape="rect" id="node5" href="$class_recording.html#a9f403a39bec2db40c9171a6c3a20942d" title="Transforme un recording en un flux ostream a afficher. " alt="" coords="223,259,357,285"/>
+<area shape="rect" id="node6" href="$class_article.html#a83c6688e4886b871938b9dca34e78041" title="Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note..." alt="" coords="431,171,551,197"/>
+<area shape="rect" id="node7" href="$class_task.html#a313eb342d047e8e5cab91bf51609a2f3" title="Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note..." alt="" coords="435,233,546,260"/>
+<area shape="rect" id="node8" href="$class_recording.html#a99e10c8a8c13bce5f70195b6c30a1cc9" title="Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note..." alt="" coords="420,296,561,323"/>
+</map>

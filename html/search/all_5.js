@@ -2,9 +2,15 @@ var searchData=
 [
   ['generateref',['generateRef',['../class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661',1,'Note']]],
   ['getcouplerelation',['getCoupleRelation',['../class_relation.html#a086c39ecf396e3cfcb465fd9eea5a904',1,'Relation']]],
+  ['getcreation_5fdate',['getCreation_date',['../class_note.html#a89b9be4eae802c78a0959aa9bd408e41',1,'Note']]],
   ['getfilename',['getFilename',['../class_notes_manager.html#a566cbb0dd7b606ec34629a2aa8010b73',1,'NotesManager']]],
+  ['getid',['getId',['../class_note.html#afafbebe4aa35b8d29d903bc53fa31929',1,'Note']]],
+  ['getinfo',['getinfo',['../class_notes_exception.html#a3c595994b69172290b548fdac074248d',1,'NotesException']]],
   ['getinstance',['getInstance',['../class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f',1,'NotesManager::getInstance()'],['../class_relation_manager.html#a35c3622f29ccfbda84be848503041396',1,'RelationManager::getInstance()']]],
+  ['getisarchive',['getIsArchive',['../class_note.html#a3ff22c94b72b8c5cb93638bd16262d0d',1,'Note']]],
+  ['getisdeleted',['getIsDeleted',['../class_note.html#af56c546c7e0e471b2dd5b201d4835e37',1,'Note']]],
   ['getiterator',['getIterator',['../class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da',1,'NotesManager']]],
+  ['getlastmodif_5fdate',['getLastmodif_date',['../class_note.html#ab1811bb7017d2e1487c90f39b946d572',1,'Note']]],
   ['getlistarchive',['getListArchive',['../class_notes_manager.html#a81aee1d57c39232f870199acb356fc57',1,'NotesManager']]],
   ['getlistascendants',['getListAscendants',['../class_notes_manager.html#ac85019776c1e8653665e24abc9d8001d',1,'NotesManager']]],
   ['getlistdeleted',['getListDeleted',['../class_notes_manager.html#ae6b144ba1bc14b895be36b194a2e768e',1,'NotesManager']]],
@@ -21,8 +27,11 @@ var searchData=
   ['getnewtask',['getNewTask',['../class_notes_manager.html#a39562bf5aef0d7a113317c1421d578fd',1,'NotesManager']]],
   ['getnote',['getNote',['../class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff',1,'NotesManager']]],
   ['getnoteversion',['getNoteVersion',['../class_notes_manager.html#a0461145357fe17bf07c3b09c665b95db',1,'NotesManager']]],
-  ['getrecordingtostr',['getRecordingtoStr',['../notes_8cpp.html#aa6165ba06daabc993e9ad2631272e29a',1,'notes.cpp']]],
+  ['getrecordingtostr',['getRecordingtoStr',['../notes_8cpp.html#aa6165ba06daabc993e9ad2631272e29a',1,'getRecordingtoStr(ENUM::StatusType recording):&#160;notes.cpp'],['../notes_8h.html#aa6165ba06daabc993e9ad2631272e29a',1,'getRecordingtoStr(ENUM::StatusType recording):&#160;notes.cpp']]],
   ['getreference',['getReference',['../class_note.html#a8e3ba6961f62a38f49b5fd209c083896',1,'Note']]],
   ['getrelation',['getRelation',['../class_relation_manager.html#ad9ffbaba761149560d915f081d379ecc',1,'RelationManager']]],
-  ['getstatustostr',['getStatustoStr',['../notes_8cpp.html#a2d3681150acecf4a009747b830644ce4',1,'notes.cpp']]]
+  ['getstatustostr',['getStatustoStr',['../notes_8cpp.html#a2d3681150acecf4a009747b830644ce4',1,'getStatustoStr(ENUM::StatusType status):&#160;notes.cpp'],['../notes_8h.html#a2d3681150acecf4a009747b830644ce4',1,'getStatustoStr(ENUM::StatusType status):&#160;notes.cpp']]],
+  ['gettext',['getText',['../class_article.html#a178a250fddb6c30288d893f4f3439ca8',1,'Article']]],
+  ['gettitle',['getTitle',['../class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9',1,'Note']]],
+  ['gettype',['getType',['../class_note.html#a342ef6ee08089d6b973e46c0bbfd8735',1,'Note']]]
 ];

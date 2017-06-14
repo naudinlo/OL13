@@ -1,4 +1,6 @@
 <map id="NotesManager::emptyTrash" name="NotesManager::emptyTrash">
 <area shape="rect" id="node2" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="236,5,417,32"/>
 <area shape="rect" id="node3" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="241,56,413,83"/>
+<area shape="rect" id="node4" href="$class_note.html#af56c546c7e0e471b2dd5b201d4835e37" title="Accesseur du champ isDeleted. " alt="" coords="262,107,391,133"/>
+<area shape="rect" id="node5" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="284,157,369,184"/>
 </map>

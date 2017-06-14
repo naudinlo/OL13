@@ -2,7 +2,7 @@
 \label{notes_8cpp}\index{O\+L13/notes.\+cpp@{O\+L13/notes.\+cpp}}
 
 
-Définitions des fonctions déclarées dans le \hyperlink{notes_8h_source}{notes.\+h}.  
+Définitions des fonctions déclarées dans le \hyperlink{notes_8h}{notes.\+h}.  
 
 
 {\ttfamily \#include \char`\"{}notes.\+h\char`\"{}}\newline
@@ -30,15 +30,12 @@ std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&f, const \hyperli
 \item 
 Q\+String \hyperlink{notes_8cpp_a2d3681150acecf4a009747b830644ce4}{get\+Statusto\+Str} (E\+N\+U\+M\+::\+Status\+Type status)
 \begin{DoxyCompactList}\small\item\em Retourner directement le statut de int à string. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{notes_8cpp_aa6165ba06daabc993e9ad2631272e29a}\label{notes_8cpp_aa6165ba06daabc993e9ad2631272e29a}} 
 Q\+String \hyperlink{notes_8cpp_aa6165ba06daabc993e9ad2631272e29a}{get\+Recordingto\+Str} (E\+N\+U\+M\+::\+Status\+Type recording)
 \begin{DoxyCompactList}\small\item\em Retourner directement le recording de int à string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Définitions des fonctions déclarées dans le \hyperlink{notes_8h_source}{notes.\+h}. 
-
-Définitions des fonctions déclarées dans le qnotes.\+h.
+Définitions des fonctions déclarées dans le \hyperlink{notes_8h}{notes.\+h}. 
 
 \begin{DoxyAuthor}{Author}
 Garnier Maxime, Naudin Louise, Pépin Hugues 
@@ -55,28 +52,32 @@ Domaines des méthodes comprises dans ce fichier \+:
 \item Constructeur
 \item Destructeur
 \item Affichage
-\item Référencement de notes Le détail est donné dans la suite du fichier.
-\end{DoxyItemize}
-
-\begin{DoxyAuthor}{Author}
-Garnier Maxime, Naudin Louise, Pépin Hugues 
-\end{DoxyAuthor}
-\begin{DoxyVersion}{Version}
-1.\+0 
-\end{DoxyVersion}
-\begin{DoxyDate}{Date}
-14 Juin 2017
-\end{DoxyDate}
-Domaines des méthodes comprises dans ce fichier \+:
-\begin{DoxyItemize}
-\item Constructeur
-\item Destructeur
-\item Affichage
-\item Sauvegarde
-\item Chargement Le détail est donné dans la suite du fichier. 
+\item Référencement de notes Le détail est donné dans la suite du fichier. 
 \end{DoxyItemize}
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{notes_8cpp_aa6165ba06daabc993e9ad2631272e29a}\label{notes_8cpp_aa6165ba06daabc993e9ad2631272e29a}} 
+\index{notes.\+cpp@{notes.\+cpp}!get\+Recordingto\+Str@{get\+Recordingto\+Str}}
+\index{get\+Recordingto\+Str@{get\+Recordingto\+Str}!notes.\+cpp@{notes.\+cpp}}
+\subsubsection{\texorpdfstring{get\+Recordingto\+Str()}{getRecordingtoStr()}}
+{\footnotesize\ttfamily Q\+String get\+Recordingto\+Str (\begin{DoxyParamCaption}\item[{E\+N\+U\+M\+::\+Status\+Type}]{recording }\end{DoxyParamCaption})}
+
+
+
+Retourner directement le recording de int à string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em E\+N\+U\+M\+::\+Status\+Type} & recording \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String 
+\end{DoxyReturn}
+
+
+Definition at line 340 of file notes.\+cpp.
+
 \mbox{\Hypertarget{notes_8cpp_a2d3681150acecf4a009747b830644ce4}\label{notes_8cpp_a2d3681150acecf4a009747b830644ce4}} 
 \index{notes.\+cpp@{notes.\+cpp}!get\+Statusto\+Str@{get\+Statusto\+Str}}
 \index{get\+Statusto\+Str@{get\+Statusto\+Str}!notes.\+cpp@{notes.\+cpp}}
@@ -87,9 +88,19 @@ Domaines des méthodes comprises dans ce fichier \+:
 
 Retourner directement le statut de int à string. 
 
-Retourne directement le statut de int à stringQ. 
+Retourne directement le statut de int à stringQ.
 
-Definition at line 319 of file notes.\+cpp.
+
+\begin{DoxyParams}{Parameters}
+{\em E\+N\+U\+M\+::\+Status\+Type} & status \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String 
+\end{DoxyReturn}
+
+
+Definition at line 329 of file notes.\+cpp.
 
 \mbox{\Hypertarget{notes_8cpp_af4393c1ef6628fa330eb9468177d22f6}\label{notes_8cpp_af4393c1ef6628fa330eb9468177d22f6}} 
 \index{notes.\+cpp@{notes.\+cpp}!operator$<$$<$@{operator$<$$<$}}
@@ -104,6 +115,30 @@ Surcharge opérateur $<$$<$.
 Surcharge affichage avec polymorphisme.
 
 Version personnalisée pour le type article, task et recording. 
+\begin{DoxyParams}{Parameters}
+{\em std\+:ostream\&} & f \\
+\hline
+{\em const} & \hyperlink{class_article}{Article}\& a \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
 
-Definition at line 300 of file notes.\+cpp.
 
+Definition at line 308 of file notes.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{notes_8cpp_af4393c1ef6628fa330eb9468177d22f6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{notes_8cpp_af4393c1ef6628fa330eb9468177d22f6_icgraph}
+\end{center}
+\end{figure}

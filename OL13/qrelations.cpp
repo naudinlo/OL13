@@ -1,3 +1,18 @@
+/**
+* \file      qrelations.cpp
+* \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+* \version   1.0
+* \date      14 Juin 2017
+* \brief     Implémentation des relations de manière graphique
+*
+* \details         class :
+*                   -QDockRelation
+*                       Permet l'affichage de la structure arborescente des relations
+*                   -Edit_NotesCouples
+*                       Permet l'edition de nouveaux couples
+*                   -Edit_relation
+*                       Permet l'edition d'une nouvelle relation
+*/
 #include "qrelations.h"
 /**
  * \fn QDockRelation::QDockRelation

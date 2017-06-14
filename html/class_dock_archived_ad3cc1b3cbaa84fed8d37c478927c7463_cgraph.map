@@ -1,0 +1,8 @@
+<map id="DockArchived::DockArchived" name="DockArchived::DockArchived">
+<area shape="rect" id="node2" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="241,5,423,32"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="253,56,411,83"/>
+<area shape="rect" id="node6" href="$class_note.html#acef3631134d65fba4ac015463884164c" title="Affectation du champ isArchive. " alt="" coords="269,107,395,133"/>
+<area shape="rect" id="node7" href="$class_note.html#a613e10e150caaeb73a24c342553e6c0e" title="Affectation du champ isDeleted. " alt="" coords="267,157,397,184"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="471,31,643,57"/>
+<area shape="rect" id="node5" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="514,81,599,108"/>
+</map>

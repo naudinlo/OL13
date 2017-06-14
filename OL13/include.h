@@ -22,9 +22,9 @@
 #include <stdio.h>
 #include <string>
 #include <string.h>
-#include <ctime>    //obligatoire pour timing
-#include <ratio>        //pas sur que nécessaire
-#include <chrono>       //pas sur que nécessaire
+#include <ctime>
+#include <ratio>
+#include <chrono>
 #include <QDateTime>
 
 

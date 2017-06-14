@@ -1,5 +1,5 @@
 /**
- * \file      note.h
+ * \file      notes.h
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
@@ -50,7 +50,10 @@ class Task;
 class Recording;
 
 /**************Enumération********************/
-
+/**
+ *\namespace ENUM
+ * \brief Namespace dédié aux énumarations
+ */
 namespace ENUM
 {
     enum StatusType { Pending, OnGoing, Completed };
@@ -62,7 +65,17 @@ namespace ENUM
 
 class NotesException{
 public:
+    /**
+     * @fn NotesException
+     * @param message
+     * @brief Constructeur de NotesException
+     */
     NotesException(const QString& message):info(message){}
+    /**
+     * @fn getinfo
+     * @brief Accesseur du champ info
+     * @return QString
+     */
     QString getinfo() const {return info;}
 private:
     QString info;
@@ -83,17 +96,68 @@ private:
     unsigned int nbIsRef;
 
 public:
+    /**
+     * @fn getId
+     * @brief Accesseur du champ id
+     * @return QString
+     */
     const QString getId() const {return id;}
+    /**
+     * @fn getTitle
+     * @brief Accesseur du champ title
+     * @return QString
+     */
     const QString getTitle() const {return title;}
+    /**
+     * @fn getCreation_date
+     * @brief Accesseur du champ creation_date
+     * @return QDateTime
+     */
     const QDateTime getCreation_date() const {return creation_date;}
+    /**
+     * @fn getLastmodif_date
+     * @brief Accesseur du champ lastmodif_date
+     * @return QDateTime
+     */
     const QDateTime getLastmodif_date() const {return lastmodif_date;}
+    /**
+     * @fn getIsArchive
+     * @brief Accesseur du champ isArchive
+     * @return bool
+     */
     bool getIsArchive() const {return isArchive;}
+    /**
+     * @fn getIsDeleted
+     * @brief Accesseur du champ isDeleted
+     * @return bool
+     */
     bool getIsDeleted() const {return isDeleted;}
+    /**
+     * @fn setIsArchive
+     * @brief Affectation du champ isArchive
+     */
     void setIsArchive(bool a){isArchive=a;}
+    /**
+     * @fn setIsDeleted
+     * @brief Affectation du champ isDeleted
+     */
     void setIsDeleted(bool d){isDeleted=d;}
-
+    /**
+     * @fn getType
+     * @brief Accesseur du type de note
+     */
     QString getType()const {return QString(typeid(*this).name()).remove(0,1);}
     Note(const QString& i, const QString& ti);
+    /**
+     * @fn Note::Note
+     * @brief Constructeur de note
+     * @param i
+     * @param ti
+     * @param cd
+     * @param lmd
+     * @param iA
+     * @param iD
+     */
     Note(const QString&i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD):
         id(i),title(ti),creation_date(cd),lastmodif_date(lmd),isArchive(iA),isDeleted(iD), nbIsRef(0){}
 
@@ -131,7 +195,17 @@ class Article : public Note{
 private:
     QTextDocument text;
 public:
+    /**
+     * @fn      const QTextDocument& getText()const
+     * @brief   Accesseur du champ Text
+     * @return const QTextDocument&
+     */
     const QTextDocument& getText()const {return text;}
+    /**
+     * @fn      void setText(const QString& t)
+     * @brief   Affectation du champ Text
+     * @param   const QString&
+     */
     void setText(const QString& t){generateRef(t); text.setPlainText(t);}
 
     Article(const QString& i, const QString& ti, const QString& te);

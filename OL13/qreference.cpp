@@ -1,3 +1,10 @@
+/**
+* \file      qreference.cpp
+* \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+* \version   1.0
+* \date      14 Juin 2017
+* \brief     Fenetre permettant la visualisation des relations existantes
+*/
 #include "qreference.h"
 #include "ui_qreference.h"
 /**

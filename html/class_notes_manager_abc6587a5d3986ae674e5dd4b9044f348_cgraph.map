@@ -1,3 +1,6 @@
 <map id="NotesManager::restoreNoteTrash" name="NotesManager::restoreNoteTrash">
-<area shape="rect" id="node2" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="235,13,407,39"/>
+<area shape="rect" id="node2" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="235,5,407,32"/>
+<area shape="rect" id="node3" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="278,56,363,83"/>
+<area shape="rect" id="node4" href="$class_note.html#af56c546c7e0e471b2dd5b201d4835e37" title="Accesseur du champ isDeleted. " alt="" coords="256,107,385,133"/>
+<area shape="rect" id="node5" href="$class_note.html#a613e10e150caaeb73a24c342553e6c0e" title="Affectation du champ isDeleted. " alt="" coords="256,157,385,184"/>
 </map>

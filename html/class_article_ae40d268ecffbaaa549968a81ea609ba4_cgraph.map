@@ -1,0 +1,8 @@
+<map id="Article::toString" name="Article::toString">
+<area shape="rect" id="node2" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="204,5,289,32"/>
+<area shape="rect" id="node3" href="$class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="197,56,296,83"/>
+<area shape="rect" id="node4" href="$class_note.html#a89b9be4eae802c78a0959aa9bd408e41" title="Accesseur du champ creation_date. " alt="" coords="169,107,324,133"/>
+<area shape="rect" id="node5" href="$class_note.html#ab1811bb7017d2e1487c90f39b946d572" title="Accesseur du champ lastmodif_date. " alt="" coords="165,157,328,184"/>
+<area shape="rect" id="node6" href="$class_note.html#a3ff22c94b72b8c5cb93638bd16262d0d" title="Accesseur du champ isArchive. " alt="" coords="183,208,310,235"/>
+<area shape="rect" id="node7" href="$class_note.html#af56c546c7e0e471b2dd5b201d4835e37" title="Accesseur du champ isDeleted. " alt="" coords="182,259,311,285"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="OL13/qmanagerelation.cpp" name="OL13/qmanagerelation.cpp">
+<area shape="rect" id="node2" href="$qmanagerelation_8h.html" title="Fenetre de dialoque permettant de gérer les relations. " alt="" coords="2214,80,2342,107"/>
+<area shape="rect" id="node4" href="$_q_include_8h.html" title="contient les inclusions Qt nécessaire " alt="" coords="2119,528,2203,555"/>
+<area shape="rect" id="node41" href="$manager_8h.html" title="Regroupe les manager nécessaires pour la gestion des notes et des relations. " alt="" coords="2602,304,2685,331"/>
+<area shape="rect" id="node47" href="$quirelation_8h.html" title="Gérer les couples d&#39;une relations par l&#39;interface. " alt="" coords="2300,155,2392,181"/>
+<area shape="rect" id="node44" href="$notes_8h.html" title="Définit le type note et ses types dérivés. " alt="" coords="2567,453,2632,480"/>
+<area shape="rect" id="node46" href="$relations_8h.html" title="Définit le type relation. " alt="" coords="2394,379,2477,405"/>
+<area shape="rect" id="node48" href="$addcouple_8h.html" title="Fenetre de création de nouveau couple. " alt="" coords="2300,229,2392,256"/>
+<area shape="rect" id="node49" href="$qrelations_8h.html" title="Implémentation des relations de manière graphique. " alt="" coords="2468,229,2557,256"/>
+</map>

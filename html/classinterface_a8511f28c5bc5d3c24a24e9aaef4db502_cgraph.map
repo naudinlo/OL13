@@ -1,12 +1,15 @@
 <map id="interface::~interface" name="interface::~interface">
-<area shape="rect" id="node2" href="$classinterface.html#a430ee153cb2ea74b9103081d48cd61f3" title="Vide la corbeille. " alt="" coords="209,49,368,75"/>
-<area shape="rect" id="node7" href="$class_notes_manager.html#a566cbb0dd7b606ec34629a2aa8010b73" title="Accesseur de l&#39;attribut filename du manager. " alt="" coords="196,179,381,206"/>
-<area shape="rect" id="node8" href="$class_notes_manager.html#a797d858176de3f5e64aa8194797909fb" title="Affectation de l&#39;attribut filename du manager à f. " alt="" coords="196,230,381,257"/>
-<area shape="rect" id="node9" href="$class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac" title="Sauvegarde des notes dans un fichier XML. " alt="" coords="457,143,597,170"/>
-<area shape="rect" id="node11" href="$class_notes_manager.html#abd12bae3c990a408e9ef55aa0d93b675" title="Permet de libérer le manager de note. " alt="" coords="189,281,388,307"/>
-<area shape="rect" id="node3" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="673,38,855,65"/>
-<area shape="rect" id="node4" href="$class_notes_manager.html#a84e962ad7fa999cbb687fb43c1b3bab4" title="Supprime définitivement l&#39;ensemble des notes déclarées comme supprimées. " alt="" coords="436,93,619,119"/>
-<area shape="rect" id="node6" href="$classselection__note.html#aab004424eba4264628d2e01108f2e63b" title="Etablie/Met à jours le model contennant tous les Notes actif. " alt="" coords="451,27,604,68"/>
-<area shape="rect" id="node5" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="678,93,850,119"/>
-<area shape="rect" id="node10" href="$class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="667,143,861,170"/>
+<area shape="rect" id="node2" href="$classinterface.html#a430ee153cb2ea74b9103081d48cd61f3" title="Vide la corbeille. " alt="" coords="209,96,368,123"/>
+<area shape="rect" id="node10" href="$class_notes_manager.html#a566cbb0dd7b606ec34629a2aa8010b73" title="Accesseur de l&#39;attribut filename du manager. " alt="" coords="196,223,381,250"/>
+<area shape="rect" id="node11" href="$class_notes_manager.html#a797d858176de3f5e64aa8194797909fb" title="Affectation de l&#39;attribut filename du manager à f. " alt="" coords="196,274,381,300"/>
+<area shape="rect" id="node12" href="$class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac" title="Sauvegarde des notes dans un fichier XML. " alt="" coords="457,198,597,224"/>
+<area shape="rect" id="node14" href="$class_notes_manager.html#abd12bae3c990a408e9ef55aa0d93b675" title="Permet de libérer le manager de note. " alt="" coords="189,324,388,351"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="673,42,855,68"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a84e962ad7fa999cbb687fb43c1b3bab4" title="Supprime définitivement l&#39;ensemble des notes déclarées comme supprimées. " alt="" coords="436,147,619,174"/>
+<area shape="rect" id="node8" href="$class_notes_exception.html#a3c595994b69172290b548fdac074248d" title="Accesseur du champ info. " alt="" coords="447,96,607,123"/>
+<area shape="rect" id="node9" href="$classselection__note.html#aab004424eba4264628d2e01108f2e63b" title="Etablie/Met à jours le model contennant tous les Notes actif. " alt="" coords="451,30,604,72"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="678,147,850,174"/>
+<area shape="rect" id="node6" href="$class_note.html#af56c546c7e0e471b2dd5b201d4835e37" title="Accesseur du champ isDeleted. " alt="" coords="699,96,829,123"/>
+<area shape="rect" id="node7" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="721,198,807,224"/>
+<area shape="rect" id="node13" href="$class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="667,248,861,275"/>
 </map>

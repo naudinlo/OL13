@@ -2,7 +2,8 @@
 <area shape="rect" id="node2" href="$class_notes_manager.html#a797d858176de3f5e64aa8194797909fb" title="Affectation de l&#39;attribut filename du manager à f. " alt="" coords="159,5,344,32"/>
 <area shape="rect" id="node3" href="$class_notes_manager.html#a566cbb0dd7b606ec34629a2aa8010b73" title="Accesseur de l&#39;attribut filename du manager. " alt="" coords="159,56,344,83"/>
 <area shape="rect" id="node4" href="$class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac" title="Sauvegarde des notes dans un fichier XML. " alt="" coords="181,107,321,133"/>
-<area shape="rect" id="node5" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="399,56,580,83"/>
-<area shape="rect" id="node6" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="403,107,575,133"/>
-<area shape="rect" id="node7" href="$class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="392,157,587,184"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="399,31,580,57"/>
+<area shape="rect" id="node6" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="403,81,575,108"/>
+<area shape="rect" id="node7" href="$class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="392,132,587,159"/>
+<area shape="rect" id="node8" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="447,183,532,209"/>
 </map>

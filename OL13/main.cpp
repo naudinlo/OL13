@@ -3,15 +3,11 @@
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
- * \brief     //Bref
- *
- * \details  //Détail
- *
+ * \brief     Fichier principal de l'application
  */
 
 
 #include "QInclude.h"
-//#include "include.h"
 #include "notes.h"
 #include "relations.h"
 #include "interface.h"

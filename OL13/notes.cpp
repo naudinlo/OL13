@@ -47,14 +47,15 @@ Note& Note::operator=(const Note& n){
 };
 
 /**
- * \fn      Article(const Article& a)
+ * \fn      Article::Article(const Article& a)
  * \brief    Surcharge la méthode constructeur dans le cas nouvel article Article B(A)
  */
 Article::Article(const Article& a):Note(a), text(a.text.toPlainText()){};
 
 /**
  * \fn      Article::operator=(const Article& a)
- * \brief    Surcharge de l'opérateur = dans le cas nouvel article Article B=A
+ * \brief   Surcharge de l'opérateur = dans le cas nouvel article Article B=A
+ * \return  Article&
  */
 Article& Article::operator=(const Article& a){
     if (this!=&a){  //empecher l'auto-affectation
@@ -74,6 +75,8 @@ Task::Task(const Task& t):Note(t), action(t.action),status(t.status),priority(t.
 /**
  * \fn      Task& Task::operator=(const Task& t)
  * \brief    Surcharge de l'opérateur = dans le cas nouvelle task B=A
+ * \param   const Task& t
+ * \return  Task&
  */
 Task& Task::operator=(const Task& t){
     if (this!=&t){  //empecher l'auto-affectation
@@ -87,14 +90,16 @@ Task& Task::operator=(const Task& t){
 };
 
 /**
- * \fn       Recording(const Recording& r)
- * \brief    Surcharge de l'opérateur = dans le cas nouveau recording B(A)
+ * \fn       Recording::Recording(const Recording& r)
+ * \brief    Constructeur de recopie
  */
 Recording::Recording(const Recording& r):Note(r),description(r.description.toPlainText()),type(r.type){};
 
 /**
  * \fn       Recording& Recording::operator=(const Recording& r)
  * \brief    Surcharge de l'opérateur = dans le cas nouveau recording B=A
+ * \param    const Recording& r
+ * \return   Recording&
  */
 Recording& Recording::operator=(const Recording& r){
     if (this!=&r){  //empecher l'auto-affectation
@@ -123,7 +128,7 @@ Note::Note(const QString& i, const QString& ti):id(i), title(ti), isArchive(fals
 }
 
 /**
- * \fn          Article(const QString& i, const QString& ti, const QString &te)
+ * \fn          Article::Article(const QString& i, const QString& ti, const QString &te)
  * \brief       Constructeur de la classe Article
  * \details     La classe dérivé Article utilise en premier lieu le constructeur de Note.
  */
@@ -148,10 +153,10 @@ Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusTy
 };  //Troisième type : dueDate ajoutée
 Task::Task(const QString& i, const QString& ti, const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d):Note(i, ti), action(a), status(s), priority(p), dueDate(d){
     this->generateRef(a);
-} //Quatrième type : prio et dueDate ajoutés
+}
 
 /**
- * \fn          Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l)
+ * \fn          Recording::Recording(const QString i, const QString& ti, const QString d, ENUM::RecordingType r, QString l)
  * \brief       Constructeur de la classe Recording
  * \details     La classe dérivé Recording utilise en premier lieu le constructeur de Note.
  */
@@ -296,6 +301,9 @@ std::string Recording::toString() const {
 * \fn        std::ostream& operator<<(std::ostream& f, const Article& a)
 * \brief     Surcharge opérateur <<
 * \details   Version personnalisée pour le type article, task et recording.
+* \param     std:ostream& f
+* \param     const Article& a
+* \return    std::ostream&
 */
 std::ostream& operator<<(std::ostream& f, const Article& a){
     a.display(f);
@@ -315,6 +323,8 @@ std::ostream& operator<<(std::ostream& f, const Recording& r){
 /**
 * \fn        QString getStatustoStr(ENUM::StatusType status)
 * \brief     Retourner directement le statut de int à string
+* \param     ENUM::StatusType status
+* \return    QString
 */
 QString getStatustoStr(ENUM::StatusType status) {
     QString statusName[] = {"Pending", "OnGoing", "Completed"};
@@ -324,6 +334,8 @@ QString getStatustoStr(ENUM::StatusType status) {
 /**
 * \fn        QString getRecordingtoStr(ENUM::StatusType recording)
 * \brief     Retourner directement le recording de int à string
+* \param     ENUM::StatusType recording
+* \return    QString
 */
 QString getRecordingtoStr(ENUM::StatusType recording) {
     QString recordingName[] = {"Image", "Audio", "Video"};
@@ -362,6 +374,7 @@ void Note::setNewRef(const QString& id){
  * \fn       Note& Note::getReference(const QString& id) const
  * \brief    Retourne une note référencée par une autre
  * \param    const QString& id         L'ID de la note référencée.
+ * \return   Note&
  */
 Note& Note::getReference(const QString& id)const{
     for(unsigned int i=0; i<references.size(); i++){
@@ -448,10 +461,18 @@ void Note::generateRef(const QString& champTexte){
 
 /**************SAUVEGARDE********************/
 
-
+/**
+ * \fn      void Note::saveNote(QFile* file)
+ * \brief   Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note
+ * \param   QFile* file
+ */
 void Note::saveNote(QFile* file){}
 
-
+/**
+ * \fn      void Article::saveNote(QFile* file)
+ * \brief   Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note
+ * \param   QFile* file
+ */
 void Article::saveNote(QFile* file){
     QXmlStreamWriter stream(file);
     stream.writeStartElement("article");
@@ -467,7 +488,11 @@ void Article::saveNote(QFile* file){
     stream.writeEndElement();
 }
 
-
+/**
+ * \fn      void Task::saveNote(QFile* file)
+ * \brief   Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note
+ * \param   QFile* file
+ */
 void Task::saveNote(QFile* file){
     QXmlStreamWriter stream(file);
     stream.writeStartElement("task");
@@ -494,7 +519,11 @@ void Task::saveNote(QFile* file){
     stream.writeEndElement();
 }
 
-
+/**
+ * \fn      void Recording::saveNote(QFile* file)
+ * \brief   Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note
+ * \param   QFile* file
+ */
 void Recording::saveNote(QFile* file){
     QXmlStreamWriter stream(file);
     stream.writeStartElement("recording");

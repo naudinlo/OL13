@@ -1,3 +1,16 @@
+/**
+* \file      quirelation.cpp
+* \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+* \version   1.0
+* \date      14 Juin 2017
+* \brief     Gérer les couples d'une relations par l'interface.
+*
+* \details         class :
+*                       QUIRelation :
+*                           Attibuts:
+*                               -Relation& R
+*                               -NotesCouple* c //le couple qu'on a selectionné
+*/
 #include "quirelation.h"
 #include "ui_quirelation.h"
 /**

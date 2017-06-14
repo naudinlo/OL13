@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NoteManager>
+    <NoteVersions>
+        <T></T><article><id>id2</id><title>autre</title><c_date>mar. juin 13 22:23:19 2017</c_date><lm_date>mar. juin 13 22:23:19 2017</lm_date><isArchive>true</isArchive><isDeleted>false</isDeleted><text></text></article>
+    </NoteVersions>
+    <NoteVersions>
+        <T></T><article><id>id3</id><title>autre</title><c_date>mar. juin 13 22:23:36 2017</c_date><lm_date>mar. juin 13 22:23:36 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text></text></article>
+    </NoteVersions>
+</NoteManager>

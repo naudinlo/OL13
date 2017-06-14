@@ -25,8 +25,8 @@ Collaboration diagram for interface\+:\nopagebreak
 void \hyperlink{classinterface_ac23ab5d301d541fecb1c92e214935fd1}{update\+\_\+model} ()
 \begin{DoxyCompactList}\small\item\em envoi un signal de mis à jours à tous les docks. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classinterface_a65202c3659f8058ab91b3b01cf8f267f}\label{classinterface_a65202c3659f8058ab91b3b01cf8f267f}} 
-void {\bfseries E\+\_\+relation} ()
-\item 
+void \hyperlink{classinterface_a65202c3659f8058ab91b3b01cf8f267f}{E\+\_\+relation} ()
+\begin{DoxyCompactList}\small\item\em E\+\_\+relation. \end{DoxyCompactList}\item 
 void \hyperlink{classinterface_a287c8a46ece12a94540a190b96b911c9}{Aff\+\_\+relation} ()
 \begin{DoxyCompactList}\small\item\em lance et connecte la fenetre de gestion des relations. \end{DoxyCompactList}\item 
 void \hyperlink{classinterface_a430ee153cb2ea74b9103081d48cd61f3}{Vider\+Corbeille} ()
@@ -44,9 +44,9 @@ void \hyperlink{classinterface_a320051a7a36aa24f53b12df82649f15f}{afficher\+\_\+
 \mbox{\Hypertarget{classinterface_a3144306293774f567cbe90fa90cfd796}\label{classinterface_a3144306293774f567cbe90fa90cfd796}} 
 void \hyperlink{classinterface_a3144306293774f567cbe90fa90cfd796}{supp\+\_\+dock\+\_\+editer} ()
 \begin{DoxyCompactList}\small\item\em ferme le dock editer \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classinterface_a1a6237ea46e9abd0662b8ec19c556f5e}\label{classinterface_a1a6237ea46e9abd0662b8ec19c556f5e}} 
-void {\bfseries supp\+\_\+dock\+\_\+aff\+\_\+rel} ()
-\item 
+\mbox{\Hypertarget{classinterface_a4c1879f0b3b09843bb3506f35bd1217b}\label{classinterface_a4c1879f0b3b09843bb3506f35bd1217b}} 
+void \hyperlink{classinterface_a4c1879f0b3b09843bb3506f35bd1217b}{supp\+\_\+dock\+\_\+aff\+\_\+rel} ()
+\begin{DoxyCompactList}\small\item\em ferme le dock editer \end{DoxyCompactList}\item 
 void \hyperlink{classinterface_aca23c755ba40ca8198010ff0487b22a8}{supprimer\+\_\+note} ()
 \begin{DoxyCompactList}\small\item\em appelle la fenêtre de dialogue de suppression de note \end{DoxyCompactList}\item 
 void \hyperlink{classinterface_abe2464522932a5d8ed76d1ba02c9d2c6}{close\+\_\+page\+\_\+note} ()
@@ -99,7 +99,7 @@ Constructeur de la classe interface Fenêtre principale de l\textquotesingle{}ap
 \end{DoxyParams}
 
 
-Definition at line 28 of file interface.\+cpp.
+Definition at line 23 of file interface.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -120,7 +120,7 @@ Ferme l\textquotesingle{}interface.
 
 Vide la corbeille puis effectuer une sauvegarde automatique si il y a un fichier de sauvegarde référencer. 
 
-Definition at line 123 of file interface.\+cpp.
+Definition at line 118 of file interface.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -144,7 +144,7 @@ lance et connecte la fenetre de gestion des relations.
 
 connecte cette dernière avec le dock relation sur la page principale 
 
-Definition at line 146 of file interface.\+h.
+Definition at line 147 of file interface.\+h.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -165,14 +165,14 @@ slot qui permet l\textquotesingle{}ouverture d\textquotesingle{}une note.
 
 \hyperlink{classinterface_a320051a7a36aa24f53b12df82649f15f}{interface\+::afficher\+\_\+note} 
 \begin{DoxyParams}{Parameters}
-{\em id} & \\
+{\em Qstring} & id \\
 \hline
-{\em i} & \\
+{\em int} & i\\
 \hline
 \end{DoxyParams}
 Elle vérifie si une note était déjà ouverte avant \+: la ferme, restaure la note, supprime le pointeur sur la note courante essaye d\textquotesingle{}ouvrir la versions sélectionné \+: connecte cette dernière avec l\textquotesingle{}interface si il est impossible d\textquotesingle{}ouvrir la note, on affiche la page d\textquotesingle{}acceuil. 
 
-Definition at line 402 of file interface.\+cpp.
+Definition at line 397 of file interface.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -200,7 +200,7 @@ Ferme la note en cours, si elle est bien encore ouverte.
 
 Action déclenché lorqu\textquotesingle{}on click sur le bouton de fermeture d\textquotesingle{}une note 
 
-Definition at line 440 of file interface.\+cpp.
+Definition at line 435 of file interface.\+cpp.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -221,7 +221,7 @@ Ouvre une fenetre de dialogue de type \hyperlink{class_creation___note}{Creation
 
 Une fois la note créer, le dock de note actif est mis à jour sont mis à jours 
 
-Definition at line 299 of file interface.\+cpp.
+Definition at line 294 of file interface.\+cpp.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -247,7 +247,7 @@ En cas de fichier invalide, la sauvegarde n\textquotesingle{}est pas effectué, 
 \end{DoxyParams}
 
 
-Definition at line 258 of file interface.\+cpp.
+Definition at line 253 of file interface.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -275,7 +275,7 @@ appelle la fenêtre de dialogue de suppression de note
 
 Ferme la page en cours, et mes à jours les docks 
 
-Definition at line 195 of file interface.\+h.
+Definition at line 196 of file interface.\+h.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -303,7 +303,7 @@ Vide la corbeille.
 
 ferme la page en cours, et appelle empty\+Trash, une methode du manager mes à jours les docks 
 
-Definition at line 159 of file interface.\+h.
+Definition at line 160 of file interface.\+h.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]

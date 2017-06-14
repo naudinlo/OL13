@@ -1,9 +1,9 @@
 /**
- * \file      relation.h
+ * \file      relations.h
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
- * \brief     //Bref
+ * \brief     Définit le type relation
  *
  *
  * \details   Classes présentes :

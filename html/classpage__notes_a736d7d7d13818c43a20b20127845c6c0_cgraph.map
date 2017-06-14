@@ -1,7 +1,9 @@
 <map id="page_notes::~page_notes" name="page_notes::~page_notes">
-<area shape="rect" id="node2" href="$class_q_note.html#a577f684ef199a17dc468d706b1383581" title="sauvegarde les modfications apporté par l&#39;utilisateur sur la note. " alt="" coords="225,31,345,57"/>
-<area shape="rect" id="node3" href="$class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="393,31,559,57"/>
-<area shape="rect" id="node4" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="607,5,788,32"/>
-<area shape="rect" id="node5" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="618,56,777,83"/>
-<area shape="rect" id="node6" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="836,56,1008,83"/>
+<area shape="rect" id="node2" href="$class_q_note.html#a577f684ef199a17dc468d706b1383581" title="sauvegarde les modfications apporté par l&#39;utilisateur sur la note. " alt="" coords="245,31,365,57"/>
+<area shape="rect" id="node8" href="$class_notes_exception.html#a3c595994b69172290b548fdac074248d" title="Accesseur du champ info. " alt="" coords="225,81,385,108"/>
+<area shape="rect" id="node3" href="$class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="433,31,599,57"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="647,5,828,32"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="658,56,817,83"/>
+<area shape="rect" id="node6" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="876,31,1048,57"/>
+<area shape="rect" id="node7" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="919,81,1005,108"/>
 </map>

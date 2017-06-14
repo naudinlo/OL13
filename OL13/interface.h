@@ -3,7 +3,7 @@
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
- * \brief     // Définit l'interface principale de l'application.
+ * \brief     Définit l'interface principale de l'application.
  *
  * \details    //Classes présentes:
  *           -interface :
@@ -131,6 +131,7 @@ public slots:
            }
     /**
     * \fn E_relation
+    * \brief E_relation
     */
    void E_relation(){
        new_relation = new Edit_relation(listNote->getModel(),note_id,this);
@@ -180,7 +181,7 @@ public slots:
        MenuEd->removeAction(dock_editer_note->toggleViewAction());
        dock_editer_note->close();
    } /**
-    * \fn supp_dock_editer
+    * \fn supp_dock_aff_rel
     * \brief ferme le dock editer
     * */
    void supp_dock_aff_rel(){
