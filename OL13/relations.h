@@ -5,7 +5,30 @@
  * \date      14 Juin 2017
  * \brief     //Bref
  *
- * \details  //Détail
+ *
+ * \details   Classes présentes :
+ *                  - NotesCouple
+ *                      La classe NotesCouple est en agrégation avec la classe Relation :
+ *                      une relation contient un ensemble de couple de notes.
+ *                      Dans le cas où l'ensemble des couples d'une relation est supprimé,
+ *                      la relation existe toujours mais est vide. Elle pourra être repeuplée par de nouveaux couples.
+ *
+ *                      La classe NotesCouple possède deux attributs noteX et noteY pointant chacun
+ *                      sur une note du couple, un attribut pour le label du couple et un attribut
+ *                      booléen spécifiant si le couple est symétrique.
+ *                      C'est à dire que la relation va de noteX vers noteY et réciproquement.
+ *
+ *                      La classe NotesCouple est composée par la classe Notes : si les notes sont supprimées,
+ *                      les couplent n'existent plus non plus.
+ *
+ *                  - Relation
+ *                      La classe Relation possède un titre, une description et un ensemble de couple de notes.
+ *                      Dans l'implémentation de cette classe, un Design Pattern Iterator est utilisé pour
+ *                      faciliter la manipulation des données.
+ *
+ *                      Une classe manager dans manager.h/.cpp est utilisée pour gérer l'ensemble des relations.
+ *
+ *             L'ensemble des méthodes définies dans ce fichier sont explicitées dans le fichier .cpp associé.
  *
  */
 
@@ -17,6 +40,8 @@
 
 class NotesCouple;
 class Relation;
+
+/**************Couple de note********************/
 
 class NotesCouple {
 private:
@@ -32,6 +57,8 @@ public:
     void setLabel(QString l) {label=l;}
     bool getSymetric() const {return symetric;}
 };
+
+/**************Relation********************/
 
 class Relation {
 private:
@@ -78,9 +105,6 @@ public:
 
     void displayCoupleRelation(Note *n1, Note *n2)const;
 };
-
-
-
 
 
 
