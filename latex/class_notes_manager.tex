@@ -37,9 +37,6 @@ Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$ $\ast$ \hyperlink{class_notes
 \begin{DoxyCompactList}\small\item\em Retourne la liste des versions d\textquotesingle{}une note spécifiée en paramètre. \end{DoxyCompactList}\item 
 void \hyperlink{class_notes_manager_a989429244c36c35ef68204f6ae2a0a5f}{delete\+Note} (const Q\+String \&id)
 \begin{DoxyCompactList}\small\item\em Action de suppression d\textquotesingle{}une note spécifiée en paramètre. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_notes_manager_a5a47d17ce4add155db4715f027a7ea4f}\label{class_notes_manager_a5a47d17ce4add155db4715f027a7ea4f}} 
-void {\bfseries create\+Note} (const Q\+String \&id)
-\item 
 void \hyperlink{class_notes_manager_a797d858176de3f5e64aa8194797909fb}{set\+Filename} (const Q\+String f)
 \begin{DoxyCompactList}\small\item\em Affectation de l\textquotesingle{}attribut filename du manager à f. \end{DoxyCompactList}\item 
 Q\+String \hyperlink{class_notes_manager_a566cbb0dd7b606ec34629a2aa8010b73}{get\+Filename} () const
@@ -111,7 +108,7 @@ Lorsque la suppression d\textquotesingle{}une note est demandée, celle ci est a
 \end{DoxyParams}
 
 
-Definition at line 879 of file manager.\+cpp.
+Definition at line 813 of file manager.\+cpp.
 
 \mbox{\Hypertarget{class_notes_manager_a3259c7aa22b5f2eee6f7bceddc707b1d}\label{class_notes_manager_a3259c7aa22b5f2eee6f7bceddc707b1d}} 
 \index{Notes\+Manager@{Notes\+Manager}!edit\+Article@{edit\+Article}}
@@ -182,7 +179,7 @@ Supprime définitivement l\textquotesingle{}ensemble des notes déclarées comme
 
 Parcourt l\textquotesingle{}ensemble des notes, lorsqu\textquotesingle{}une note est reconnue comme supprimée chaque version de cette note est supprimée puis la liste des versions elle-\/même est vidée et supprimée 
 
-Definition at line 926 of file manager.\+cpp.
+Definition at line 846 of file manager.\+cpp.
 
 \mbox{\Hypertarget{class_notes_manager_a566cbb0dd7b606ec34629a2aa8010b73}\label{class_notes_manager_a566cbb0dd7b606ec34629a2aa8010b73}} 
 \index{Notes\+Manager@{Notes\+Manager}!get\+Filename@{get\+Filename}}
@@ -199,7 +196,7 @@ Qstring
 \end{DoxyReturn}
 
 
-Definition at line 97 of file manager.\+h.
+Definition at line 95 of file manager.\+h.
 
 \mbox{\Hypertarget{class_notes_manager_ac85019776c1e8653665e24abc9d8001d}\label{class_notes_manager_ac85019776c1e8653665e24abc9d8001d}} 
 \index{Notes\+Manager@{Notes\+Manager}!get\+List\+Ascendants@{get\+List\+Ascendants}}
@@ -218,7 +215,7 @@ Retourne la liste des notes en relation ascendant avec une note specifiée en pa
 \end{DoxyParams}
 
 
-Definition at line 1062 of file manager.\+cpp.
+Definition at line 968 of file manager.\+cpp.
 
 \mbox{\Hypertarget{class_notes_manager_a2ed035544b433b9cddfc83fb4c081a65}\label{class_notes_manager_a2ed035544b433b9cddfc83fb4c081a65}} 
 \index{Notes\+Manager@{Notes\+Manager}!get\+List\+Descendants@{get\+List\+Descendants}}
@@ -237,7 +234,7 @@ Retourne la liste des notes en relation descendante avec une note specifiée en 
 \end{DoxyParams}
 
 
-Definition at line 1101 of file manager.\+cpp.
+Definition at line 1007 of file manager.\+cpp.
 
 \mbox{\Hypertarget{class_notes_manager_ae3af78108c46b9816207e66fcde64c5b}\label{class_notes_manager_ae3af78108c46b9816207e66fcde64c5b}} 
 \index{Notes\+Manager@{Notes\+Manager}!get\+Liste\+Versions@{get\+Liste\+Versions}}
@@ -275,7 +272,7 @@ Renvoie la liste de tous les couples ascendants de la relation portant l\textquo
 \end{DoxyParams}
 
 
-Definition at line 1082 of file manager.\+cpp.
+Definition at line 988 of file manager.\+cpp.
 
 \mbox{\Hypertarget{class_notes_manager_a4b8636fd8bc9d750d778585d3e4372cf}\label{class_notes_manager_a4b8636fd8bc9d750d778585d3e4372cf}} 
 \index{Notes\+Manager@{Notes\+Manager}!get\+List\+Tuple\+Descendants@{get\+List\+Tuple\+Descendants}}
@@ -294,7 +291,7 @@ Renvoie la liste de tous les couples descendants de la relation portant l\textqu
 \end{DoxyParams}
 
 
-Definition at line 1120 of file manager.\+cpp.
+Definition at line 1026 of file manager.\+cpp.
 
 \mbox{\Hypertarget{class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923}\label{class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923}} 
 \index{Notes\+Manager@{Notes\+Manager}!get\+New\+Article@{get\+New\+Article}}
@@ -454,9 +451,9 @@ Definition at line 299 of file manager.\+cpp.
 
 Charge les notes d\textquotesingle{}un fichier X\+ML dans l\textquotesingle{}application. 
 
-Cette fonction ne charge que les notes. Le nom du fichier X\+ML est stocké dans le \hyperlink{class_notes_manager}{Notes\+Manager}. 
+Cette fonction ne charge que les notes une fonction dédiée aux relations est définie dans la classe \hyperlink{class_relation_manager}{Relation\+Manager}. Le nom du fichier X\+ML est stocké dans le \hyperlink{class_notes_manager}{Notes\+Manager}. 
 
-Definition at line 434 of file manager.\+cpp.
+Definition at line 432 of file manager.\+cpp.
 
 \mbox{\Hypertarget{class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348}\label{class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348}} 
 \index{Notes\+Manager@{Notes\+Manager}!restore\+Note\+Trash@{restore\+Note\+Trash}}
@@ -475,7 +472,7 @@ Restaure une note supprimée en passant à false son attribut is\+Deleted.
 \end{DoxyParams}
 
 
-Definition at line 967 of file manager.\+cpp.
+Definition at line 873 of file manager.\+cpp.
 
 \mbox{\Hypertarget{class_notes_manager_ad271bd7f8079b01b04a32b886b498bac}\label{class_notes_manager_ad271bd7f8079b01b04a32b886b498bac}} 
 \index{Notes\+Manager@{Notes\+Manager}!save@{save}}
@@ -487,7 +484,7 @@ Definition at line 967 of file manager.\+cpp.
 
 Sauvegarde des notes dans un fichier X\+ML. 
 
-Cette fonction ne sauvegarde que les notes. Le nom du fichier X\+ML est stocké dans le \hyperlink{class_notes_manager}{Notes\+Manager}. 
+Cette fonction sauvegarde les notes ainsi que les relations. Le nom du fichier X\+ML est stocké dans le \hyperlink{class_notes_manager}{Notes\+Manager}. 
 
 Definition at line 375 of file manager.\+cpp.
 
@@ -508,7 +505,7 @@ Affectation de l\textquotesingle{}attribut filename du manager à f.
 \end{DoxyParams}
 
 
-Definition at line 91 of file manager.\+h.
+Definition at line 89 of file manager.\+h.
 
 
 

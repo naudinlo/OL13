@@ -17,6 +17,8 @@ void \hyperlink{class_relation_manager_a074413b3ed72a1342821e911c1fa3587}{delete
 \mbox{\Hypertarget{class_relation_manager_abbd0627b6e986fcc5af94e3c71e0b148}\label{class_relation_manager_abbd0627b6e986fcc5af94e3c71e0b148}} 
 unsigned int \hyperlink{class_relation_manager_abbd0627b6e986fcc5af94e3c71e0b148}{get\+Nb\+Relations} () const
 \begin{DoxyCompactList}\small\item\em Accesseur du nombre de relations. \end{DoxyCompactList}\item 
+void \hyperlink{class_relation_manager_a37273bc4c1d223bf99ff10ba7feba50a}{load} (const Q\+String \&file)
+\begin{DoxyCompactList}\small\item\em Charge les relations d\textquotesingle{}un fichier X\+ML dans l\textquotesingle{}application. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_relation_manager_aefe037f480e43c5c7e786cb13b3f1084}\label{class_relation_manager_aefe037f480e43c5c7e786cb13b3f1084}} 
 \hyperlink{class_relation_manager_1_1_iterator}{Iterator} {\bfseries get\+Iterator} ()
 \end{DoxyCompactItemize}
@@ -34,7 +36,7 @@ static void \hyperlink{class_relation_manager_a64126ecfdd2046d9c9797e80427bcba3}
 \subsection{Detailed Description}
 
 
-Definition at line 158 of file manager.\+h.
+Definition at line 156 of file manager.\+h.
 
 
 
@@ -56,7 +58,7 @@ Supprime une relation dont le titre est passé en paramètre.
 \end{DoxyParams}
 
 
-Definition at line 1046 of file manager.\+cpp.
+Definition at line 952 of file manager.\+cpp.
 
 \mbox{\Hypertarget{class_relation_manager_a1f9d556e0505105205e1fdb4905c4a80}\label{class_relation_manager_a1f9d556e0505105205e1fdb4905c4a80}} 
 \index{Relation\+Manager@{Relation\+Manager}!get\+New\+Relation@{get\+New\+Relation}}
@@ -75,7 +77,7 @@ Créé une nouvelle relation à partir d\textquotesingle{}un titre et d\textquot
 \end{DoxyParams}
 
 
-Definition at line 1011 of file manager.\+cpp.
+Definition at line 917 of file manager.\+cpp.
 
 \mbox{\Hypertarget{class_relation_manager_ad9ffbaba761149560d915f081d379ecc}\label{class_relation_manager_ad9ffbaba761149560d915f081d379ecc}} 
 \index{Relation\+Manager@{Relation\+Manager}!get\+Relation@{get\+Relation}}
@@ -94,7 +96,26 @@ Retourne une référence sur une relation dont le titre est donné en paramètre
 \end{DoxyParams}
 
 
-Definition at line 1034 of file manager.\+cpp.
+Definition at line 940 of file manager.\+cpp.
+
+\mbox{\Hypertarget{class_relation_manager_a37273bc4c1d223bf99ff10ba7feba50a}\label{class_relation_manager_a37273bc4c1d223bf99ff10ba7feba50a}} 
+\index{Relation\+Manager@{Relation\+Manager}!load@{load}}
+\index{load@{load}!Relation\+Manager@{Relation\+Manager}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Relation\+Manager\+::load (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Charge les relations d\textquotesingle{}un fichier X\+ML dans l\textquotesingle{}application. 
+
+Cette fonction ne charge que les relations une fonction dédiée aux notes est définie dans la classe \hyperlink{class_notes_manager}{Notes\+Manager}. 
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& file Nom du fichier X\+ML à parser \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1072 of file manager.\+cpp.
 
 
 

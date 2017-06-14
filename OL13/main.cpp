@@ -396,14 +396,9 @@ try{
 
 int main(int argc, char * argv[]) {
     NotesManager* m=NotesManager::getInstance();
-    m->setFilename("test2.xml");
-    m->load();
-    RelationManager& rm=RelationManager::getInstance();
-    rm.load("test2.xml");
-    //displayAllVersion();
-    displayAllRelation();
-    Relation& R1=rm.getRelation("titreRelation1");
-    cout<<endl<<endl<<R1.displayRelation()<<endl<<endl;
+    //m->load();
+    //m->save_fichier();
+    m->load_fichier();
     //fct();
     //PROGRAMME(argc,argv);
     //creation();

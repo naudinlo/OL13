@@ -89,6 +89,9 @@ Public Member Functions</h2></td></tr>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#abbd0627b6e986fcc5af94e3c71e0b148">getNbRelations</a> () const</td></tr>
 <tr class="memdesc:abbd0627b6e986fcc5af94e3c71e0b148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du nombre de relations. <br /></td></tr>
 <tr class="separator:abbd0627b6e986fcc5af94e3c71e0b148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37273bc4c1d223bf99ff10ba7feba50a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a">load</a> (const QString &amp;file)</td></tr>
+<tr class="memdesc:a37273bc4c1d223bf99ff10ba7feba50a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge les relations d'un fichier XML dans l'application.  <a href="#a37273bc4c1d223bf99ff10ba7feba50a">More...</a><br /></td></tr>
+<tr class="separator:a37273bc4c1d223bf99ff10ba7feba50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefe037f480e43c5c7e786cb13b3f1084"><td class="memItemLeft" align="right" valign="top"><a id="aefe037f480e43c5c7e786cb13b3f1084"></a>
 <a class="el" href="class_relation_manager_1_1_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getIterator</b> ()</td></tr>
 <tr class="separator:aefe037f480e43c5c7e786cb13b3f1084"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -106,7 +109,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00158">158</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00156">156</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a074413b3ed72a1342821e911c1fa3587"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a074413b3ed72a1342821e911c1fa3587">&#9670;&nbsp;</a></span>deleteRelation()</h2>
@@ -132,7 +135,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01046">1046</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00952">952</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
 
 </div>
 </div>
@@ -170,7 +173,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01011">1011</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00917">917</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
 
 </div>
 </div>
@@ -198,7 +201,35 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01034">1034</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00940">940</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a37273bc4c1d223bf99ff10ba7feba50a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37273bc4c1d223bf99ff10ba7feba50a">&#9670;&nbsp;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RelationManager::load </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Charge les relations d'un fichier XML dans l'application. </p>
+<p>Cette fonction ne charge que les relations une fonction dédiée aux notes est définie dans la classe <a class="el" href="class_notes_manager.html">NotesManager</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>QString&amp; file Nom du fichier XML à parser </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01072">1072</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
 
 </div>
 </div>

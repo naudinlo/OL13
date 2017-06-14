@@ -81,8 +81,6 @@ public:
     Note& getNoteVersion(const QString& id, int indice);
     QList<Note*>* getListeVersions(const QString& id);
     void deleteNote(const QString& id);
-    void createNote(const QString& id); //je l'ai déplacé en privé pour pourvoir ajouté une note créer par interface
-//    void editNote(const QString& id);
     /**
      * \fn        void setFilename(const QString f)
      * \brief     Affectation de l'attribut filename du manager à f.
@@ -97,6 +95,8 @@ public:
     QString getFilename()const {return filename;}
     void load();
     void save() const;
+    void load_fichier() const;
+    void save_fichier();
     QString updateId(QString Id2)const;
 
     QList<TupleNote_Relation*> getListTupleAscendants(const QString& id);

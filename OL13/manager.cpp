@@ -354,7 +354,7 @@ QList<Note*> NotesManager::getListArchive(){
  * \fn        NotesManager::NotesManager()
  * \brief     Constructeur de la classe NotesManager
  */
-NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0){}
+NotesManager::NotesManager():notes(0),nbNotes(0),nbMaxNotes(0),filename("default.xml"){}
 
 /**
  * \fn        NotesManager::~NotesManager()
@@ -369,7 +369,7 @@ NotesManager::~NotesManager(){
 /**
  * \fn        void NotesManager::save() const
  * \brief     Sauvegarde des notes dans un fichier XML
- * \details   Cette fonction ne sauvegarde que les notes.
+ * \details   Cette fonction sauvegarde les notes ainsi que les relations.
  *              Le nom du fichier XML est stocké dans le NotesManager.
  */
 void NotesManager::save() const {
@@ -393,8 +393,6 @@ void NotesManager::save() const {
             stream.writeEndElement();
         }
     }
-
-
 
     //Partie Relation
     RelationManager::Iterator it=RelationManager::getInstance().getIterator();
@@ -428,8 +426,8 @@ void NotesManager::save() const {
 /**
  * \fn        void NotesManager::load()
  * \brief     Charge les notes d'un fichier XML dans l'application
- * \details   Cette fonction ne charge que les notes.
- *              Le nom du fichier XML est stocké dans le NotesManager.
+ * \details   Cette fonction ne charge que les notes une fonction dédiée aux relations est définie dans la
+ *              classe RelationManager. Le nom du fichier XML est stocké dans le NotesManager.
  */
 void NotesManager::load() {
     QFile fin(filename);
@@ -450,71 +448,7 @@ void NotesManager::load() {
         if(token == QXmlStreamReader::StartElement) {
             // If it's named taches, we'll go to the next.
             if(xml.name() == "NoteManager") continue;
-            //if(xml.name()=="relationmanager") continue;
-            // If it's named tache, we'll dig the information from there.
-            /*if(xml.name() == "relation") {
-                qDebug()<<"relation xml.tokenString="<<xml.tokenString();
-                xml.readNext();
-                QString titre;
-                QString description;
-                while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "relation")) {
-                    qDebug()<<"boucle relation";
 
-                    // We've found titre
-                    if(xml.name() == "title") {
-                        xml.readNext(); titre=xml.text().toString();
-                        qDebug()<<"titre="<<titre<<"\n";
-                    }
-
-                    // We've found description
-                    if(xml.name() == "description") {
-                        xml.readNext(); description=xml.text().toString();
-                        qDebug()<<"description="<<description<<"\n";
-                    }
-
-                    if(xml.name() == "notecouple") continue;
-                    if(xml.name() =="couple"){
-                        xml.readNext();
-                        QString notex;
-                        QString notey;
-                        QString label;
-                        bool symetric;
-                        while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "couple")) {
-                            if(xml.tokenType() == QXmlStreamReader::StartElement){
-
-                                // We've found notex
-                                if(xml.name() == "notex") {
-                                    xml.readNext(); notex=xml.text().toString();
-                                    qDebug()<<"notex="<<notex<<"\n";
-                                }
-
-                                // We've found notey
-                                if(xml.name() == "notey") {
-                                    xml.readNext(); notey=xml.text().toString();
-                                    qDebug()<<"notey="<<notey<<"\n";
-                                }
-
-                                // We've found label
-                                if(xml.name() == "label") {
-                                    xml.readNext(); label=xml.text().toString();
-                                    qDebug()<<"label="<<label<<"\n";
-                                }
-
-                                // We've found symetric
-                                if(xml.name() == "symetric") {
-                                    xml.readNext(); if(xml.text().toString()=="false") symetric=false; else symetric=true;
-                                    qDebug()<<"symetric="<<symetric<<"\n";
-                                }
-                            }
-                            xml.readNext();
-                        }
-                        RelationManager& rm=RelationManager::getInstance();
-                        Relation& R=rm.getNewRelation(titre,description);
-                        R.getNewCoupleRelation(&getNote(notex),&getNote(notey),label,symetric);
-                    }
-                }
-                xml.readNext();
-            }*/
             if(xml.name() == "NoteVersions") {
                 xml.readNext();
                 while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "NoteVersions")) {
@@ -828,6 +762,59 @@ void NotesManager::load() {
     qDebug()<<"fin load\n";
 }
 
+void NotesManager::save_fichier(){
+    QFile newfile("fichier.xml");
+    if (!newfile.open(QIODevice::WriteOnly | QIODevice::Text))
+        throw NotesException(QString("erreur sauvegarde notes : ouverture fichier xml"));
+    NotesManager* m=NotesManager::getInstance();
+    QXmlStreamWriter stream(&newfile);
+    stream.setAutoFormatting(true);
+    stream.writeStartDocument();
+
+    if(m->getFilename()!="") stream.writeTextElement("Fichier",m->getFilename());
+    else stream.writeTextElement("Fichier","default.xml");
+    stream.writeEndDocument();
+}
+
+void NotesManager::load_fichier() const{
+    QFile fin("fichier.xml");
+    QString fichier;
+        // If we can't open it, let's show an error message.
+        if (!fin.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            throw NotesException("Erreur ouverture fichier notes");
+        }
+        // QXmlStreamReader takes any QIODevice.
+        QXmlStreamReader xml(&fin);
+        //qDebug()<<"debut fichier\n";
+        // We'll parse the XML until we reach end of it.
+        while(!xml.atEnd() && !xml.hasError()) {
+            // Read next element.
+            QXmlStreamReader::TokenType token = xml.readNext();
+            // If token is just StartDocument, we'll go to next.
+            if(token == QXmlStreamReader::StartDocument) continue;
+            // If token is StartElement, we'll see if we can read it.
+            if(token == QXmlStreamReader::StartElement) {
+                // We've found Fichier.
+                if(xml.name() == "Fichier") {
+                    xml.readNext(); fichier=xml.text().toString();
+                    qDebug()<<"fichier="<<fichier<<"\n";
+                }
+            }
+        }
+        // Error handling.
+        if(xml.hasError()) {
+            throw NotesException("Erreur lecteur fichier notes, parser xml");
+        }
+        // Removes any device() or data from the reader * and resets its internal state to the initial state.
+        xml.clear();
+        qDebug()<<"fin load\n";
+        NotesManager* m=NotesManager::getInstance();
+        if(fichier=="") m->setFilename("default.xml");
+        m->setFilename(fichier);
+        m->load();
+        RelationManager& rm=RelationManager::getInstance();
+        rm.load(getFilename());
+}
 
 /**
  * \fn        ostream& operator<<(ostream& f, const Note& n)
@@ -902,20 +889,6 @@ void NotesManager::deleteNote(const QString& id){
     }
 }
 
-//void NotesManager::emptyTrash(){
-//    NotesManager::Iterator it=NotesManager::getIterator();
-//    int i=0;
-//    while(!it.isDone()){
-//        if (it.current().getIsDeleted()){
-//            it.current().setNbRef(0);
-//            delete &it.current();
-//            notes[i]=notes[--nbNotes];
-//            i++;
-//        }
-//    }
-//}
-
-
 /**
  * \fn        void NotesManager::emptyTrash()
  * \brief     Supprime définitivement l'ensemble des notes déclarées comme supprimées
@@ -944,20 +917,6 @@ void NotesManager::emptyTrash(){
         itNote.next();
     }
 }
-
-
-//void NotesManager::editNote(const QString &id){
-//    NotesManager::Iterator it=NotesManager::getIterator();
-//    while(!it.isDone() && it.current().getId()!=id) it.next();
-//    if (it.isDone()){
-//        throw NotesException("error, impossible to edit note, non existent note");
-//    }
-//    else{
-//        Note* ncopy(&it.current());   //last modif date automatiquement mis à jour dans la copie
-//        //a definir avec l'interface
-//    }
-//}
-
 
 /**
  * \fn        void NotesManager::restoreNoteTrash(const QString& id)
@@ -1156,6 +1115,13 @@ RelationManager::Handler RelationManager::handler=RelationManager::Handler();
     handler.instance=0;
 }
 
+ /**
+  * \fn        void RelationManager::load()
+  * \brief     Charge les relations d'un fichier XML dans l'application
+  * \details   Cette fonction ne charge que les relations une fonction dédiée aux notes est définie dans la
+  *              classe NotesManager.
+  * \param     const QString& file      Nom du fichier XML à parser
+  */
 void RelationManager::load(const QString &file){
     QFile fin(file);
     // If we can't open it, let's show an error message.
@@ -1266,34 +1232,3 @@ void RelationManager::load(const QString &file){
     qDebug()<<"fin load\n";
 }
 
-//**
-// * A COMPLÉTER
-// */
-//const QString& RelationManager::getTitleRelfromCouple(const QString& id1,const QString& id2){
-//    Note& nx=NotesManager::getInstance()->getNote(id1);
-//    Note& ny=NotesManager::getInstance()->getNote(id2);
-//    RelationManager& m=RelationManager::getInstance();
-//    for(RelationManager::Iterator it= m.getIterator(); !it.isDone(); it.next()){
-//        if (it.current().=nullptr)
-//            return it.current().getRelationFromCoupl(id1,id2).getTitle();
-//    }
-//}
-
-QString NotesManager::updateId(QString Id2)const {
-    QString Id=Id2;
-    int i=Id.length()-1;
-    if(Id[i]=='9')
-    {
-//        QChar c(Id[i-1].toAscii()+1);
-        QChar c(Id[i-1].toLatin1()+1);
-        Id[i-1]=c;
-        Id[i]='0';
-    }
-    else
-    {
-//        QChar c(Id[i].toAscii()+1);
-        QChar c(Id[i].toLatin1()+1);
-        Id[i]=c;
-    }
-    return Id;
-}
