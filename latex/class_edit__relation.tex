@@ -2,8 +2,7 @@
 \label{class_edit__relation}\index{Edit\+\_\+relation@{Edit\+\_\+relation}}
 
 
-Inheritance diagram for Edit\+\_\+relation\+:
-\nopagebreak
+Inheritance diagram for Edit\+\_\+relation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Inheritance diagram for Edit\+\_\+relation\+:
 \end{figure}
 
 
-Collaboration diagram for Edit\+\_\+relation\+:
-\nopagebreak
+Collaboration diagram for Edit\+\_\+relation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,14 +22,13 @@ Collaboration diagram for Edit\+\_\+relation\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_edit__relation_ab8b401c68bf851bea39fc38fbce0f9f5}\label{class_edit__relation_ab8b401c68bf851bea39fc38fbce0f9f5}} 
-void {\bfseries clic\+Selection} ()
-\item 
+void \hyperlink{class_edit__relation_ab8b401c68bf851bea39fc38fbce0f9f5}{clic\+Selection} ()
+\begin{DoxyCompactList}\small\item\em appelle le constructeur de relation \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_edit__relation_a558f8134fbd20281e24ceb350882ddaf}\label{class_edit__relation_a558f8134fbd20281e24ceb350882ddaf}} 
 void {\bfseries enabled\+Append} ()
 \item 
-\mbox{\Hypertarget{class_edit__relation_a06254b8a5265ba82160c6ab62bbf9101}\label{class_edit__relation_a06254b8a5265ba82160c6ab62bbf9101}} 
-void {\bfseries add\+Couple} (\hyperlink{class_note}{Note} $\ast$n1, \hyperlink{class_note}{Note} $\ast$n2, Q\+String label, bool s)
-\end{DoxyCompactItemize}
+void \hyperlink{class_edit__relation_a06254b8a5265ba82160c6ab62bbf9101}{add\+Couple} (\hyperlink{class_note}{Note} $\ast$n1, \hyperlink{class_note}{Note} $\ast$n2, Q\+String label, bool s)
+\begin{DoxyCompactList}\small\item\em creer le nouveau couple avec les paramètres choisis \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,16 +38,86 @@ void {\bfseries new\+Relation} ()
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_edit__relation_aea8577d292461d142c4087fd5446a48c}\label{class_edit__relation_aea8577d292461d142c4087fd5446a48c}} 
-{\bfseries Edit\+\_\+relation} (Q\+Standard\+Item\+Model $\ast$m, Q\+String id, Q\+Widget $\ast$parent)
+\hyperlink{class_edit__relation_aea8577d292461d142c4087fd5446a48c}{Edit\+\_\+relation} (Q\+Standard\+Item\+Model $\ast$m, Q\+String id, Q\+Widget $\ast$parent)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 116 of file qrelations.\+h.
+Definition at line 111 of file qrelations.\+h.
 
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_edit__relation_aea8577d292461d142c4087fd5446a48c}\label{class_edit__relation_aea8577d292461d142c4087fd5446a48c}} 
+\index{Edit\+\_\+relation@{Edit\+\_\+relation}!Edit\+\_\+relation@{Edit\+\_\+relation}}
+\index{Edit\+\_\+relation@{Edit\+\_\+relation}!Edit\+\_\+relation@{Edit\+\_\+relation}}
+\subsubsection{\texorpdfstring{Edit\+\_\+relation()}{Edit\_relation()}}
+{\footnotesize\ttfamily Edit\+\_\+relation\+::\+Edit\+\_\+relation (\begin{DoxyParamCaption}\item[{Q\+Standard\+Item\+Model $\ast$}]{m,  }\item[{Q\+String}]{id,  }\item[{Q\+Widget $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \\
+\hline
+{\em id} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file qrelations.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_edit__relation_aea8577d292461d142c4087fd5446a48c_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_edit__relation_a06254b8a5265ba82160c6ab62bbf9101}\label{class_edit__relation_a06254b8a5265ba82160c6ab62bbf9101}} 
+\index{Edit\+\_\+relation@{Edit\+\_\+relation}!add\+Couple@{add\+Couple}}
+\index{add\+Couple@{add\+Couple}!Edit\+\_\+relation@{Edit\+\_\+relation}}
+\subsubsection{\texorpdfstring{add\+Couple}{addCouple}}
+{\footnotesize\ttfamily void Edit\+\_\+relation\+::add\+Couple (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} $\ast$}]{n1,  }\item[{\hyperlink{class_note}{Note} $\ast$}]{n2,  }\item[{Q\+String}]{label,  }\item[{bool}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+
+
+creer le nouveau couple avec les paramètres choisis 
+
+\hyperlink{classadd_couple}{add\+Couple} 
+\begin{DoxyParams}{Parameters}
+{\em n1} & \\
+\hline
+{\em n2} & \\
+\hline
+{\em label} & \\
+\hline
+{\em s} & \\
+\hline
+\end{DoxyParams}
+les paramètre sont recu par signal depuis edit\+\_\+couple. 
+
+Definition at line 151 of file qrelations.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_edit__relation_a06254b8a5265ba82160c6ab62bbf9101_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_edit__relation_a06254b8a5265ba82160c6ab62bbf9101_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

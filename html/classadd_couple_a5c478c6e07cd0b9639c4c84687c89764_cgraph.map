@@ -1,0 +1,5 @@
+<map id="addCouple::addCouple" name="addCouple::addCouple">
+<area shape="rect" id="node2" href="$classadd_couple.html#aa0334cda3e89d32093da234cbd1e8c07" title="Met à jour le model. " alt="" coords="205,31,388,57"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="436,5,617,32"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="441,68,613,95"/>
+</map>

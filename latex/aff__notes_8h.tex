@@ -2,7 +2,7 @@
 \label{aff__notes_8h}\index{O\+L13/aff\+\_\+notes.\+h@{O\+L13/aff\+\_\+notes.\+h}}
 
 
-//\+Expliquer brievement à quoi sert ce fichier. //\+EX \+: Définit les modèles de voiture et leur particularités.  
+Page Principale de l\textquotesingle{}application.  
 
 
 {\ttfamily \#include \char`\"{}Q\+Include.\+h\char`\"{}}\newline
@@ -36,7 +36,7 @@ class \hyperlink{classpage__vide}{page\+\_\+vide}
 
 
 \subsection{Detailed Description}
-//\+Expliquer brievement à quoi sert ce fichier. //\+EX \+: Définit les modèles de voiture et leur particularités. 
+Page Principale de l\textquotesingle{}application. 
 
 \begin{DoxyAuthor}{Author}
 Garnier Maxime, Naudin Louise, Pépin Hugues 
@@ -47,4 +47,13 @@ Garnier Maxime, Naudin Louise, Pépin Hugues
 \begin{DoxyDate}{Date}
 14 Juin 2017
 \end{DoxyDate}
-//\+Expliquer en détail. //\+EX \+:Cette classe surcharge les accesseurs standards du module\+\_\+voiture pour convenir aux spécificités des différents modèles possibles. 
+Class \+: -\/page\+\_\+notes\+: Permet l\textquotesingle{}affichage d\textquotesingle{}une note, des docks associées et actions. Attributs \+: \begin{DoxyVerb}     QNote* note;
+      Note& n;
+      Note* newNote;                 //pointeur vers la nouvelle version d'une note
+      QWidget* dock_editer;         //dock permetant l'edition/restauration d'une note
+      QDockRelation* dock_aff_Rel; //dock permetant la vue arborescente des relations
+      Qreference* widget_ref;     //Indication des références de la note.
+\end{DoxyVerb}
+
+
+-\/page\+\_\+vide \+: Affichage de la page d\textquotesingle{}acceuil. 

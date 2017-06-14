@@ -1,16 +1,5 @@
 var searchData=
 [
-  ['qarticle',['QArticle',['../class_q_article.html',1,'']]],
-  ['qdockrelation',['QDockRelation',['../class_q_dock_relation.html',1,'']]],
-  ['qinclude_2eh',['QInclude.h',['../_q_include_8h.html',1,'']]],
-  ['qmanagerelation',['QManageRelation',['../class_q_manage_relation.html',1,'']]],
-  ['qnote',['QNote',['../class_q_note.html',1,'QNote'],['../class_q_note.html#a4f3980466d58be3cb5e15d2e45d74840',1,'QNote::QNote()']]],
-  ['qnote_2ecpp',['qnote.cpp',['../qnote_8cpp.html',1,'']]],
-  ['qnote_2eh',['qnote.h',['../qnote_8h.html',1,'']]],
-  ['qnotescouple',['QNotesCouple',['../class_q_notes_couple.html',1,'']]],
-  ['qrecording',['QRecording',['../class_q_recording.html',1,'']]],
-  ['qreference',['Qreference',['../class_qreference.html',1,'']]],
-  ['qrelations',['Qrelations',['../class_qrelations.html',1,'']]],
-  ['qtask',['QTask',['../class_q_task.html',1,'']]],
-  ['quirelation',['QUiRelation',['../class_q_ui_relation.html',1,'']]]
+  ['page_5fnotes',['page_notes',['../classpage__notes.html',1,'page_notes'],['../classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6',1,'page_notes::page_notes()']]],
+  ['page_5fvide',['page_vide',['../classpage__vide.html',1,'page_vide'],['../classpage__vide.html#a179cdfb1ca970cd7276b7e7d640ad182',1,'page_vide::page_vide()']]]
 ];

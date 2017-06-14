@@ -1,0 +1,58 @@
+\hypertarget{dockarchived_8h}{}\section{O\+L13/dockarchived.h File Reference}
+\label{dockarchived_8h}\index{O\+L13/dockarchived.\+h@{O\+L13/dockarchived.\+h}}
+
+
+Fenetre dialoque permettant l\textquotesingle{}edition d\textquotesingle{}une nouvelle note.  
+
+
+{\ttfamily \#include \char`\"{}Q\+Include.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}manager.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+Dock\+Widget$>$}\newline
+Include dependency graph for dockarchived.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dockarchived_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dockarchived_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_dock}{Dock}
+\item 
+class \hyperlink{class_dock_archived}{Dock\+Archived}
+\item 
+class \hyperlink{class_dock_remove}{Dock\+Remove}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fenetre dialoque permettant l\textquotesingle{}edition d\textquotesingle{}une nouvelle note. 
+
+\begin{DoxyAuthor}{Author}
+Garnier Maxime, Naudin Louise, Pépin Hugues 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14 Juin 2017
+\end{DoxyDate}
+class \+:
+\begin{DoxyItemize}
+\item \hyperlink{class_dock}{Dock}\+:classe abstraite
+\item \hyperlink{class_dock_remove}{Dock\+Remove}
+\item \hyperlink{class_dock_archived}{Dock\+Archived} \begin{DoxyVerb}  Attribut:
+          QNote note
+  Signaux :
+          change_creer() signal interne à la fenetre.
+          NewNote() envoie la note créer à l'interface //Plus utile.\end{DoxyVerb}
+
+\end{DoxyItemize}

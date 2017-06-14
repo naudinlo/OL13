@@ -1,7 +1,7 @@
 <map id="OL13/Creation_Note.h" name="OL13/Creation_Note.h">
 <area shape="rect" id="node2" href="$_creation___note_8cpp.html" title="//Bref " alt="" coords="5,80,169,107"/>
 <area shape="rect" id="node3" href="$include_8h.html" title="Regroupe une partie des includes nécessaires au projet. " alt="" coords="141,155,250,181"/>
-<area shape="rect" id="node4" href="$interface_8h.html" title="//Expliquer brievement à quoi sert ce fichier. //EX : Définit les modèles de voiture et leur particul..." alt="" coords="269,80,386,107"/>
+<area shape="rect" id="node4" href="$interface_8h.html" title="// Définit l&#39;interface principale de l&#39;application. " alt="" coords="269,80,386,107"/>
 <area shape="rect" id="node5" href="$interface_8cpp.html" title="//Expliquer brievement à quoi sert ce fichier. //EX : Définit les modèles de voiture et leur particul..." alt="" coords="274,155,405,181"/>
 <area shape="rect" id="node6" href="$main_8cpp.html" title="//Bref " alt="" coords="429,155,540,181"/>
 </map>

@@ -1,0 +1,9 @@
+<map id="page_notes::editer_note" name="page_notes::editer_note">
+<area shape="rect" id="node2" href="$class_q_note.html#ae6fb14b839acc1979b145a892d6a0a92" title="mode lecture seul de la note. " alt="" coords="252,5,371,32"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="221,56,402,83"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a3259c7aa22b5f2eee6f7bceddc707b1d" title="Créé une nouvelle instance d&#39;un article passé en paramètre. " alt="" coords="225,107,397,133"/>
+<area shape="rect" id="node7" href="$class_notes_manager.html#a1c4cfa021a12b6416c4e800d643b5e0a" title="Créé une nouvelle instance d&#39;un recording passé en paramètre. " alt="" coords="215,157,408,184"/>
+<area shape="rect" id="node8" href="$class_notes_manager.html#a8f8f2b6aaa8c7d41356f9e4be7da2da5" title="Créé une nouvelle instance d&#39;une task passée en paramètre. " alt="" coords="230,208,393,235"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#ae3af78108c46b9816207e66fcde64c5b" title="Retourne la liste des versions d&#39;une note spécifiée en paramètre. " alt="" coords="456,157,667,184"/>
+<area shape="rect" id="node6" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="715,157,887,184"/>
+</map>

@@ -1,4 +1,5 @@
 <map id="NotesManager::save" name="NotesManager::save">
-<area shape="rect" id="node2" href="$classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir un fichier de sauvegarde. " alt="" coords="193,5,299,32"/>
-<area shape="rect" id="node3" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="347,5,475,32"/>
+<area shape="rect" id="node2" href="$classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="193,5,329,32"/>
+<area shape="rect" id="node3" href="$classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir/créer un fichier de sauvegarde. " alt="" coords="209,56,314,83"/>
+<area shape="rect" id="node4" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="377,56,505,83"/>
 </map>

@@ -9,5 +9,6 @@ var searchData=
   ['displayrelation',['displayRelation',['../class_relation.html#a0b8a359787fe32c991710039fd081f97',1,'Relation']]],
   ['dock',['Dock',['../class_dock.html',1,'']]],
   ['dockarchived',['DockArchived',['../class_dock_archived.html',1,'']]],
+  ['dockarchived_2eh',['dockarchived.h',['../dockarchived_8h.html',1,'']]],
   ['dockremove',['DockRemove',['../class_dock_remove.html',1,'']]]
 ];

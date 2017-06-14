@@ -1,0 +1,5 @@
+<map id="interface::supprimer_note" name="interface::supprimer_note">
+<area shape="rect" id="node2" href="$classselection__note.html#aab004424eba4264628d2e01108f2e63b" title="Etablie/Met à jours le model contennant tous les Notes actif. " alt="" coords="221,23,375,65"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="423,5,604,32"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="427,56,599,83"/>
+</map>

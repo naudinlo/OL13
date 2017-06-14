@@ -2,8 +2,7 @@
 \label{classpage__notes}\index{page\+\_\+notes@{page\+\_\+notes}}
 
 
-Inheritance diagram for page\+\_\+notes\+:
-\nopagebreak
+Inheritance diagram for page\+\_\+notes\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Inheritance diagram for page\+\_\+notes\+:
 \end{figure}
 
 
-Collaboration diagram for page\+\_\+notes\+:
-\nopagebreak
+Collaboration diagram for page\+\_\+notes\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,18 +21,14 @@ Collaboration diagram for page\+\_\+notes\+:
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classpage__notes_a4d2e70a79da90f0d27331ba989140e05}\label{classpage__notes_a4d2e70a79da90f0d27331ba989140e05}} 
-void {\bfseries on\+\_\+savebutton\+\_\+clicked} ()
-\item 
-\mbox{\Hypertarget{classpage__notes_a882eeafe3e68fd54648719624fed2345}\label{classpage__notes_a882eeafe3e68fd54648719624fed2345}} 
-void {\bfseries editer\+\_\+note} (bool status)
-\item 
-\mbox{\Hypertarget{classpage__notes_a143159873c27f4c3eeee183d031274fb}\label{classpage__notes_a143159873c27f4c3eeee183d031274fb}} 
-void {\bfseries Archiver\+\_\+page\+\_\+note} ()
-\item 
-\mbox{\Hypertarget{classpage__notes_af0db24bdc1f7bff2398f78a0c32fc51f}\label{classpage__notes_af0db24bdc1f7bff2398f78a0c32fc51f}} 
-void {\bfseries aff\+\_\+\+Relation} (Q\+String titre)
-\end{DoxyCompactItemize}
+void \hyperlink{classpage__notes_a3810696feb56abdad663cb7ae4b2f1b0}{on\+\_\+savebutton\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em Editer les changement sur la nouvelle version de la note. \end{DoxyCompactList}\item 
+void \hyperlink{classpage__notes_a9fd367fb577c6048353f18ad56792c1f}{editer\+\_\+note} (bool status)
+\begin{DoxyCompactList}\small\item\em permet d\textquotesingle{}edité une nouvelle versions de la note \end{DoxyCompactList}\item 
+void \hyperlink{classpage__notes_a8d23f8f379d4aa402193f589ac3e4afa}{Archiver\+\_\+page\+\_\+note} ()
+\begin{DoxyCompactList}\small\item\em Archive la note courante. \end{DoxyCompactList}\item 
+void \hyperlink{classpage__notes_a5c00719607b3e0f3a78c3b35b6df4df9}{aff\+\_\+\+Relation} (Q\+String titre)
+\begin{DoxyCompactList}\small\item\em permet d\textquotesingle{}afficher une relation depuis le dock de la vue des relations \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,7 +48,9 @@ void {\bfseries close\+\_\+page} ()
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classpage__notes_ad9a1b3dbe6c7901ed37a5784b1094fa6}{page\+\_\+notes} (\hyperlink{class_note}{Note} \&N)
-\item 
+\begin{DoxyCompactList}\small\item\em constructeur \end{DoxyCompactList}\item 
+\hyperlink{classpage__notes_a736d7d7d13818c43a20b20127845c6c0}{$\sim$page\+\_\+notes} ()
+\begin{DoxyCompactList}\small\item\em effectue une saugarde automatique de la note \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classpage__notes_ab2beff1e0ece138a3a7e1419bfa8fbde}\label{classpage__notes_ab2beff1e0ece138a3a7e1419bfa8fbde}} 
 Q\+Widget \& {\bfseries getdock\+\_\+editer} ()
 \item 
@@ -102,7 +98,7 @@ Q\+V\+Box\+Layout $\ast$ {\bfseries L\+\_\+titre}
 \subsection{Detailed Description}
 
 
-Definition at line 26 of file aff\+\_\+notes.\+h.
+Definition at line 33 of file aff\+\_\+notes.\+h.
 
 
 
@@ -113,12 +109,167 @@ Definition at line 26 of file aff\+\_\+notes.\+h.
 \subsubsection{\texorpdfstring{page\+\_\+notes()}{page\_notes()}}
 {\footnotesize\ttfamily page\+\_\+notes\+::page\+\_\+notes (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} \&}]{N }\end{DoxyParamCaption})}
 
-Window fenetre principale\+:
+
+
+constructeur 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & \\
+\hline
+\end{DoxyParams}
+Donne les informations non éditable de la note ouverte créer les docks relative à la note courante Window fenetre principale\+:
 
 Création des docks \hyperlink{class_dock}{Dock} editer
 
-Definition at line 15 of file aff\+\_\+notes.\+cpp.
+Definition at line 21 of file aff\+\_\+notes.\+cpp.
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpage__notes_ad9a1b3dbe6c7901ed37a5784b1094fa6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpage__notes_a736d7d7d13818c43a20b20127845c6c0}\label{classpage__notes_a736d7d7d13818c43a20b20127845c6c0}} 
+\index{page\+\_\+notes@{page\+\_\+notes}!````~page\+\_\+notes@{$\sim$page\+\_\+notes}}
+\index{````~page\+\_\+notes@{$\sim$page\+\_\+notes}!page\+\_\+notes@{page\+\_\+notes}}
+\subsubsection{\texorpdfstring{$\sim$page\+\_\+notes()}{~page\_notes()}}
+{\footnotesize\ttfamily page\+\_\+notes\+::$\sim$page\+\_\+notes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+effectue une saugarde automatique de la note 
+
+demmande la fermeture des docks par l\textquotesingle{}interface 
+
+Definition at line 113 of file aff\+\_\+notes.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpage__notes_a736d7d7d13818c43a20b20127845c6c0_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpage__notes_a5c00719607b3e0f3a78c3b35b6df4df9}\label{classpage__notes_a5c00719607b3e0f3a78c3b35b6df4df9}} 
+\index{page\+\_\+notes@{page\+\_\+notes}!aff\+\_\+\+Relation@{aff\+\_\+\+Relation}}
+\index{aff\+\_\+\+Relation@{aff\+\_\+\+Relation}!page\+\_\+notes@{page\+\_\+notes}}
+\subsubsection{\texorpdfstring{aff\+\_\+\+Relation}{aff\_Relation}}
+{\footnotesize\ttfamily page\+\_\+notes\+::aff\+\_\+\+Relation (\begin{DoxyParamCaption}\item[{Q\+String}]{titre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+
+
+permet d\textquotesingle{}afficher une relation depuis le dock de la vue des relations 
+
+
+\begin{DoxyParams}{Parameters}
+{\em titre} & \\
+\hline
+\end{DoxyParams}
+demande la mis à jour des docks en cas de modifications de la relations 
+
+Definition at line 137 of file aff\+\_\+notes.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpage__notes_a5c00719607b3e0f3a78c3b35b6df4df9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpage__notes_a5c00719607b3e0f3a78c3b35b6df4df9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpage__notes_a8d23f8f379d4aa402193f589ac3e4afa}\label{classpage__notes_a8d23f8f379d4aa402193f589ac3e4afa}} 
+\index{page\+\_\+notes@{page\+\_\+notes}!Archiver\+\_\+page\+\_\+note@{Archiver\+\_\+page\+\_\+note}}
+\index{Archiver\+\_\+page\+\_\+note@{Archiver\+\_\+page\+\_\+note}!page\+\_\+notes@{page\+\_\+notes}}
+\subsubsection{\texorpdfstring{Archiver\+\_\+page\+\_\+note}{Archiver\_page\_note}}
+{\footnotesize\ttfamily page\+\_\+notes\+::\+Archiver\+\_\+page\+\_\+note (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+
+
+Archive la note courante. 
+
+demande une mis à jour des docks 
+
+Definition at line 125 of file aff\+\_\+notes.\+h.
+
+\mbox{\Hypertarget{classpage__notes_a9fd367fb577c6048353f18ad56792c1f}\label{classpage__notes_a9fd367fb577c6048353f18ad56792c1f}} 
+\index{page\+\_\+notes@{page\+\_\+notes}!editer\+\_\+note@{editer\+\_\+note}}
+\index{editer\+\_\+note@{editer\+\_\+note}!page\+\_\+notes@{page\+\_\+notes}}
+\subsubsection{\texorpdfstring{editer\+\_\+note}{editer\_note}}
+{\footnotesize\ttfamily page\+\_\+notes\+::editer\+\_\+note (\begin{DoxyParamCaption}\item[{bool}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+
+
+permet d\textquotesingle{}edité une nouvelle versions de la note 
+
+editer\+\_\+note 
+\begin{DoxyParams}{Parameters}
+{\em status} & \\
+\hline
+\end{DoxyParams}
+si la note est archivé, supprimé on effectue sa restauration. On demande la mis à jours des docks
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & Créer une nouvelle version de la note en cours\\
+\hline
+\end{DoxyParams}
+si elle était archivé/supprimé la restaure et créer une nouvelle versions demmande donc la mis à jours des docks 
+
+Definition at line 98 of file aff\+\_\+notes.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpage__notes_a9fd367fb577c6048353f18ad56792c1f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpage__notes_a9fd367fb577c6048353f18ad56792c1f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpage__notes_a3810696feb56abdad663cb7ae4b2f1b0}\label{classpage__notes_a3810696feb56abdad663cb7ae4b2f1b0}} 
+\index{page\+\_\+notes@{page\+\_\+notes}!on\+\_\+savebutton\+\_\+clicked@{on\+\_\+savebutton\+\_\+clicked}}
+\index{on\+\_\+savebutton\+\_\+clicked@{on\+\_\+savebutton\+\_\+clicked}!page\+\_\+notes@{page\+\_\+notes}}
+\subsubsection{\texorpdfstring{on\+\_\+savebutton\+\_\+clicked}{on\_savebutton\_clicked}}
+{\footnotesize\ttfamily page\+\_\+notes\+::on\+\_\+savebutton\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+
+
+Editer les changement sur la nouvelle version de la note. 
+
+demande la mise à jour des docks 
+
+Definition at line 71 of file aff\+\_\+notes.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpage__notes_a3810696feb56abdad663cb7ae4b2f1b0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpage__notes_a3810696feb56abdad663cb7ae4b2f1b0_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

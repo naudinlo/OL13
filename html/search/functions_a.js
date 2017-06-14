@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['qnote',['QNote',['../class_q_note.html#a4f3980466d58be3cb5e15d2e45d74840',1,'QNote']]]
+  ['page_5fnotes',['page_notes',['../classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6',1,'page_notes']]],
+  ['page_5fvide',['page_vide',['../classpage__vide.html#a179cdfb1ca970cd7276b7e7d640ad182',1,'page_vide']]]
 ];
