@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['_7enote',['~Note',['../class_note.html#ade484273015c82e7fa59a028de0d8818',1,'Note']]]
+  ['undoredo_2ecpp',['undoredo.cpp',['../undoredo_8cpp.html',1,'']]],
+  ['undoredo_2eh',['undoredo.h',['../undoredo_8h.html',1,'']]],
+  ['update_5fmodel',['update_model',['../classselection__note.html#aab004424eba4264628d2e01108f2e63b',1,'selection_note']]]
 ];

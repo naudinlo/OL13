@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['updateid',['updateId',['../class_notes_manager.html#a2a8aba4f2f40239fce1b541a10b92a7e',1,'NotesManager']]]
+  ['page_5fnotes',['page_notes',['../classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6',1,'page_notes']]]
 ];

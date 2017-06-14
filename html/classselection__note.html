@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">1</span>
+   &#160;<span id="projectnumber">2</span>
    </div>
   </td>
  </tr>
@@ -79,11 +79,12 @@ Inheritance diagram for selection_note:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a70f407c89a87e5d8ce992f18ef64773d"><td class="memItemLeft" align="right" valign="top"><a id="a70f407c89a87e5d8ce992f18ef64773d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>emit_selection</b> (QModelIndex i)</td></tr>
+<tr class="memitem:a70f407c89a87e5d8ce992f18ef64773d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselection__note.html#a70f407c89a87e5d8ce992f18ef64773d">emit_selection</a> (QModelIndex i)</td></tr>
+<tr class="memdesc:a70f407c89a87e5d8ce992f18ef64773d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifie la note/versions que l'utilisateur souhaité affiché  <a href="#a70f407c89a87e5d8ce992f18ef64773d">More...</a><br /></td></tr>
 <tr class="separator:a70f407c89a87e5d8ce992f18ef64773d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab004424eba4264628d2e01108f2e63b"><td class="memItemLeft" align="right" valign="top"><a id="aab004424eba4264628d2e01108f2e63b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update_model</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselection__note.html#aab004424eba4264628d2e01108f2e63b">update_model</a> ()</td></tr>
+<tr class="memdesc:aab004424eba4264628d2e01108f2e63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Etablie/Met à jours le model contennant tous les Notes actifs, en appellant Le <a class="el" href="class_note.html">Note</a> Manager. <br /></td></tr>
 <tr class="separator:aab004424eba4264628d2e01108f2e63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
@@ -94,6 +95,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>selection</b> (QStrin
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a69a11fa0461c0c103f099e894bf0b399"><td class="memItemLeft" align="right" valign="top"><a id="a69a11fa0461c0c103f099e894bf0b399"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselection__note.html#a69a11fa0461c0c103f099e894bf0b399">selection_note</a> ()</td></tr>
+<tr class="memdesc:a69a11fa0461c0c103f099e894bf0b399"><td class="mdescLeft">&#160;</td><td class="mdescRight">création de la widget de selection de note <br /></td></tr>
+<tr class="separator:a69a11fa0461c0c103f099e894bf0b399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87ea63b64611ba8668ab50affd116aea"><td class="memItemLeft" align="right" valign="top"><a id="a87ea63b64611ba8668ab50affd116aea"></a>
 QStandardItemModel *&#160;</td><td class="memItemRight" valign="bottom"><b>getModel</b> () const</td></tr>
 <tr class="separator:a87ea63b64611ba8668ab50affd116aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,9 +109,46 @@ QTreeView *&#160;</td><td class="memItemRight" valign="bottom"><b>getVue</b> ()<
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="interface_8h_source.html#l00034">34</a> of file <a class="el" href="interface_8h_source.html">interface.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="interface_8h_source.html">interface.h</a></li>
-<li><a class="el" href="interface_8cpp_source.html">interface.cpp</a></li>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a70f407c89a87e5d8ce992f18ef64773d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70f407c89a87e5d8ce992f18ef64773d">&#9670;&nbsp;</a></span>emit_selection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void selection_note::emit_selection </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Identifie la note/versions que l'utilisateur souhaité affiché </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="interface_8cpp_source.html#l00324">324</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>OL13/<a class="el" href="interface_8h_source.html">interface.h</a></li>
+<li>OL13/<a class="el" href="interface_8cpp_source.html">interface.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

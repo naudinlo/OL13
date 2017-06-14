@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['deleteallreference',['deleteAllReference',['../class_note.html#aacbb89b120107a4b25dd16043908c693',1,'Note']]],
-  ['deletenote',['deleteNote',['../class_notes_manager.html#a989429244c36c35ef68204f6ae2a0a5f',1,'NotesManager']]],
-  ['deletereference',['deleteReference',['../class_note.html#a91c86cf6ed18e4badb59a41e737a15fa',1,'Note']]],
-  ['deleterelation',['deleteRelation',['../class_relation_manager.html#a074413b3ed72a1342821e911c1fa3587',1,'RelationManager']]]
+  ['addaction_5fnew_5frel',['addAction_new_rel',['../classinterface.html#afda8f97b198f7d434cb1eb2d845dfefc',1,'interface']]],
+  ['afficher_5fnote',['afficher_note',['../classinterface.html#a320051a7a36aa24f53b12df82649f15f',1,'interface']]]
 ];

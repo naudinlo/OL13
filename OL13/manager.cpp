@@ -25,8 +25,9 @@
  * \brief     Créer une nouvelle note de type article
  *              La première version de cette note est ajoutée à la liste des versions d'une note
  * \param     const QString& id         ID de la note à créer
- *            const QString& ti         Titre de l'article à créer
- *            const QString& de         Text de l'article a créer
+ * \param     const QString& ti         Titre de l'article à créer
+ * \param     const QString& de         Text de l'article a créer
+ * \return    Article&
  */
 Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const QString& te){
     Article* n=new Article(id,ti,te);
@@ -57,12 +58,12 @@ Article& NotesManager::getNewArticle(const QString& id, const QString& ti,const 
  * \fn        Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s)
  * \brief     Créer une nouvelle note de type task
  *              La première version de cette note est ajoutée à la liste des versions d'une note
- * \param     const QString& id         ID de la note à créer
- *            const QString& ti         Titre de la tache à créer
- *            const QString& a          Action de la tache à créer
- *            ENUM::StatusType s     Status de la tache à créer
- *            unsigned int p            Priority de la tache à créer
- *            const QDateTime d         Date limite de la tache à créer
+ * \param     const QString& id         ID de la note à créer.
+ * \param     const QString& ti         Titre de la tache à créer.
+ * \param     const QString& a          Action de la tache à créer.
+ * \param     ENUM::StatusType s        Status de la tache à créer.
+ * \param     unsigned int p            Priority de la tache à créer.
+ * \param     const QDateTime d         Date limite de la tache à créer.
  */
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d){
     Task* n=new Task(id,ti,a,s,p,d);
@@ -93,10 +94,10 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
  * \brief     Créer une nouvelle note de type task
  *              La première version de cette note est ajoutée à la liste des versions d'une note
  * \param     const QString& id         ID de la note a créer
- *            const QString& ti         Titre de la tache a créer
- *            const QString& a          Action de la tache a créer
- *            ENUM::StatusType s     Status de la tache a créer
- *            unsigned int p            Priority de la tache à créer
+ * \param     const QString& ti         Titre de la tache a créer
+ * \param     const QString& a          Action de la tache a créer
+ * \param     ENUM::StatusType s        Status de la tache a créer
+ * \param     unsigned int p            Priority de la tache à créer
  */
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p){
     Task* n=new Task(id,ti,a,s,p);
@@ -127,10 +128,10 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
  * \brief     Créer une nouvelle note de type task
  *              La première version de cette note est ajoutée à la liste des versions d'une note
  * \param     const QString& id         ID de la note a créer
- *            const QString& ti         Titre de la tache a créer
- *            const QString& a          Action de la tache a créer
- *            ENUM::StatusType s     Status de la tache a créer
- *            const QDateTime d         Date limite de la tache à créer
+ * \param     const QString& ti         Titre de la tache a créer
+ * \param     const QString& a          Action de la tache a créer
+ * \param     ENUM::StatusType s     Status de la tache a créer
+ * \param     const QDateTime d         Date limite de la tache à créer
  */
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, const QDateTime d){
     Task* n=new Task(id,ti,a,s,d);
@@ -162,9 +163,9 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
  * \brief     Créer une nouvelle note de type task
  *              La première version de cette note est ajoutée à la liste des versions d'une note
  * \param     const QString& id         ID de la note a créer
- *            const QString& ti         Titre de la tache a créer
- *            const QString& a          Action de la tache a créer
- *            ENUM::StatusType s     Status de la tache a créer
+ * \param     const QString& ti         Titre de la tache a créer
+ * \param     const QString& a          Action de la tache a créer
+ * \param     ENUM::StatusType s     Status de la tache a créer
  */
 Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s){
     Task* n=new Task(id,ti,a,s);
@@ -196,10 +197,10 @@ Task& NotesManager::getNewTask(const QString& id, const QString& ti,const QStrin
  * \brief     Créé une nouvelle note de type recording
  *              La première version de cette note est ajoutée à la liste des versions d'une note
  * \param     const QString& id         ID de la note a créer
- *            const QString& ti         Titre du recording a créer
- *            const QString& d          Description du recording a créer
- *            ENUM::RecordingType r     Type du recording a créer
- *            QString l                 Link du recording a créer
+ * \param     const QString& ti         Titre du recording a créer
+ * \param     const QString& d          Description du recording a créer
+ * \param     ENUM::RecordingType r     Type du recording a créer
+ * \param     QString l                 Link du recording a créer
  */
 Recording& NotesManager::getNewRecording(const QString& id, const QString& ti,const QString& d, ENUM::RecordingType r, QString l){
     Recording* n=new Recording(id,ti,d,r,l);
@@ -365,6 +366,12 @@ NotesManager::~NotesManager(){
     delete[] notes;
 }
 
+/**
+ * \fn        void NotesManager::save() const
+ * \brief     Sauvegarde des notes dans un fichier XML
+ * \details   Cette fonction ne sauvegarde que les notes.
+ *              Le nom du fichier XML est stocké dans le NotesManager.
+ */
 void NotesManager::save() const {
     QFile newfile(filename);
     if (!newfile.open(QIODevice::WriteOnly | QIODevice::Text))
@@ -390,7 +397,7 @@ void NotesManager::save() const {
 
 
     //Partie Relation
-    /*RelationManager::Iterator it=RelationManager::getInstance().getIterator();
+    RelationManager::Iterator it=RelationManager::getInstance().getIterator();
     while(!it.isDone()){
         stream.writeStartElement("relation");
         stream.writeTextElement("title", it.current().getTitle());
@@ -411,14 +418,19 @@ void NotesManager::save() const {
         stream.writeEndElement();
         it.next();
     }
-    stream.writeEndElement();*/
+    stream.writeEndElement();
 
     stream.writeEndDocument();
     newfile.close();
     cout<<endl<<"Save effectuee"<<endl;
 }
 
-
+/**
+ * \fn        void NotesManager::load()
+ * \brief     Charge les notes d'un fichier XML dans l'application
+ * \details   Cette fonction ne charge que les notes.
+ *              Le nom du fichier XML est stocké dans le NotesManager.
+ */
 void NotesManager::load() {
     QFile fin(filename);
     // If we can't open it, let's show an error message.
@@ -829,12 +841,15 @@ ostream& operator<<(ostream& f, const Note& n){
 
 /**
  * \fn        NotesManager::Handler NotesManager::handler=NotesManager::Handler()
- *              NotesManager *NotesManager::getInstance()
- *              void NotesManager::libererInstance()
  * \brief     Fonctions relatives au Design Pattern Singleton sur le NotesManager
  */
 NotesManager::Handler NotesManager::handler=NotesManager::Handler();
 
+
+/**
+ * \fn        NotesManager *NotesManager::getInstance()
+ * \brief     Permet d'obtenir un pointeur sur le manager de notes.
+ */
 NotesManager *NotesManager::getInstance(){
     //if (instanceUnique==0)
         //instanceUnique=new NotesManager;
@@ -842,6 +857,10 @@ NotesManager *NotesManager::getInstance(){
     return handler.instance;
 }
 
+/**
+ * \fn        void NotesManager::libererInstance()
+ * \brief     Permet de libérer le manager de note.
+ */
 void NotesManager::libererInstance(){
     delete handler.instance;
     handler.instance=0;
@@ -1054,6 +1073,12 @@ QList<Note*> NotesManager::getListAscendants(const QString& id){
    }
    return listAscendants;
 }
+
+/**
+ * \fn        QList<TupleNote_Relation*> NotesManager::getListTupleAscendants(const QString& id)
+ * \brief     Renvoie la liste de tous les couples ascendants de la relation portant l'ID id.
+ * \param    const QString& id          ID de la relation concernée
+ */
 QList<TupleNote_Relation*> NotesManager::getListTupleAscendants(const QString& id){
    RelationManager& rm=RelationManager::getInstance();
    QList<TupleNote_Relation*> listAscendants;
@@ -1087,6 +1112,11 @@ QList<Note*> NotesManager::getListDescendants(const QString& id){
    }
    return listDescendants;
 }
+/**
+ * \fn        QList<TupleNote_Relation*> NotesManager::getListTupleDescendants(const QString& id)
+ * \brief     Renvoie la liste de tous les couples descendants de la relation portant l'ID id.
+ * \param    const QString& id          ID de la relation concernée
+ */
 QList<TupleNote_Relation*> NotesManager::getListTupleDescendants(const QString& id){
    RelationManager& rm=RelationManager::getInstance();
    QList<TupleNote_Relation*> listDescendants;
@@ -1104,22 +1134,139 @@ QList<TupleNote_Relation*> NotesManager::getListTupleDescendants(const QString& 
 
 /**
  * \fn        RelationManager::Handler RelationManager::handler=RelationManager::Handler();
-                void RelationManager::libererInstance(){
  * \brief     Fonctions relatives au Design Pattern Singleton sur le RelationManager
  */
 RelationManager::Handler RelationManager::handler=RelationManager::Handler();
 
+/**
+ * \fn        RelationManager& RelationManager::getInstance()
+ * \brief     Permet d'obtenir un pointeur sur le manager de relations.
+ */
  RelationManager& RelationManager::getInstance(){
     if(handler.instance==0) handler.instance=new RelationManager;
     return *handler.instance;
 }
-void RelationManager::libererInstance(){
+
+ /**
+  * \fn        void RelationManager::libererInstance()
+  * \brief     Permet de libérer le manager de relation.
+  */
+ void RelationManager::libererInstance(){
     delete handler.instance;
     handler.instance=0;
 }
 
+void RelationManager::load(const QString &file){
+    QFile fin(file);
+    // If we can't open it, let's show an error message.
+    if (!fin.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        throw NotesException("Erreur ouverture fichier notes");
+    }
+    // QXmlStreamReader takes any QIODevice.
+    QXmlStreamReader xml(&fin);
+    //qDebug()<<"debut fichier\n";
+    // We'll parse the XML until we reach end of it.
+    while(!xml.atEnd() && !xml.hasError()) {
+        // Read next element.
+        QXmlStreamReader::TokenType token = xml.readNext();
+        // If token is just StartDocument, we'll go to next.
+        if(token == QXmlStreamReader::StartDocument) continue;
+        // If token is StartElement, we'll see if we can read it.
+        if(token == QXmlStreamReader::StartElement) {
+            // If it's named taches, we'll go to the next.
+            if(xml.name() == "NoteManager") continue;
+            // If it's named tache, we'll dig the information from there.
+            if(xml.name() == "relation") {
+                qDebug()<<"new relation\n";
+                QString title;
+                QString description;
+                QXmlStreamAttributes attributes = xml.attributes();
+                xml.readNext();
+                //We're going to loop over the things because the order might change.
+                //We'll continue the loop until we hit an EndElement named article.
+                while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "relation")) {
+                    if(xml.tokenType() == QXmlStreamReader::StartElement) {
 
-///**
+                        // We've found title
+                        if(xml.name() == "title") {
+                            xml.readNext(); title=xml.text().toString();
+                            qDebug()<<"titre="<<title<<"\n";
+                        }
+                        // We've found description
+                        if(xml.name() == "description") {
+                            xml.readNext();
+                            description=xml.text().toString();
+                            qDebug()<<"description="<<description<<"\n";
+                        }
+
+                        if(xml.name()=="notecouple") xml.readNext();
+
+                        if(xml.name() == "couple") {
+                            Relation& r=getNewRelation(title,description);
+                            qDebug()<<"new couple\n";
+                            QString notex;
+                            QString notey;
+                            QString label;
+                            bool symetric;
+                            QXmlStreamAttributes attributes = xml.attributes();
+                            xml.readNext();
+                            //We're going to loop over the things because the order might change.
+                            //We'll continue the loop until we hit an EndElement named article.
+                            while(!(xml.tokenType() == QXmlStreamReader::EndElement && xml.name() == "couple")) {
+                                if(xml.tokenType() == QXmlStreamReader::StartElement) {
+
+                                    // We've found notex
+                                    if(xml.name() == "notex") {
+                                        xml.readNext(); notex=xml.text().toString();
+                                        qDebug()<<"notex="<<notex<<"\n";
+                                    }
+                                    // We've found notey
+                                    if(xml.name() == "notey") {
+                                        xml.readNext();
+                                        notey=xml.text().toString();
+                                        qDebug()<<"notey="<<notey<<"\n";
+                                    }
+
+                                    // We've found label
+                                    if(xml.name() == "label") {
+                                        xml.readNext();
+                                        label=xml.text().toString();
+                                        qDebug()<<"label="<<label<<"\n";
+                                    }
+
+                                    // We've found symetric
+                                    if(xml.name() == "symetric") {
+                                        xml.readNext();
+                                        if(xml.text().toString()=="false") symetric=false;
+                                        else symetric=true;
+                                        qDebug()<<"symetric="<<symetric<<"\n";
+                                    }
+                                }
+                                // ...and next...
+                                xml.readNext();
+                            }
+                            qDebug()<<"ajout couple "<<notex<<"  "<<notey<<"\n";
+                            NotesManager* m=NotesManager::getInstance();
+                            r.getNewCoupleRelation(&m->getNote(notex),&m->getNote(notey),label,symetric);
+                        }
+                    }
+                    // ...and next...
+                    xml.readNext();
+                }
+                qDebug()<<"ajout relation "<<title<<"\n";
+            }
+        }
+    }
+    // Error handling.
+    if(xml.hasError()) {
+        throw NotesException("Erreur lecteur fichier notes, parser xml");
+    }
+    // Removes any device() or data from the reader * and resets its internal state to the initial state.
+    xml.clear();
+    qDebug()<<"fin load\n";
+}
+
+//**
 // * A COMPLÉTER
 // */
 //const QString& RelationManager::getTitleRelfromCouple(const QString& id1,const QString& id2){

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['restorenotetrash',['restoreNoteTrash',['../class_notes_manager.html#abc6587a5d3986ae674e5dd4b9044f348',1,'NotesManager']]]
+  ['libererinstance',['libererInstance',['../class_notes_manager.html#abd12bae3c990a408e9ef55aa0d93b675',1,'NotesManager::libererInstance()'],['../class_relation_manager.html#a64126ecfdd2046d9c9797e80427bcba3',1,'RelationManager::libererInstance()']]],
+  ['load',['load',['../class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64',1,'NotesManager']]]
 ];

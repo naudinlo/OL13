@@ -83,7 +83,17 @@ public:
     void deleteNote(const QString& id);
     void createNote(const QString& id); //je l'ai déplacé en privé pour pourvoir ajouté une note créer par interface
 //    void editNote(const QString& id);
+    /**
+     * \fn        void setFilename(const QString f)
+     * \brief     Affectation de l'attribut filename du manager à f.
+     * \param       const QString f
+     */
     void setFilename(const QString f){filename=f;}
+    /**
+     * \fn        QString getFilename()
+     * \brief     Accesseur de l'attribut filename du manager.
+     * \return    Qstring
+     */
     QString getFilename()const {return filename;}
     void load();
     void save() const;
@@ -105,6 +115,10 @@ public:
     void emptyTrash();
     void restoreNoteTrash(const QString& id);
 
+    /**
+     * \fn        int getnbNote()
+     * \brief     Accesseur du nombre de notes.
+     */
     int getnbNote(){return nbNotes;}
 
     class Iterator{
@@ -130,6 +144,10 @@ public:
                 return (*liste()).begin();
             }
         };
+        /**
+         * \fn        Iterator getIterator()
+         * \brief     Permet d'accéder à l'itérateur de notes.
+         */
         Iterator getIterator(){
             return Iterator(notes, nbNotes);
         }
@@ -160,11 +178,15 @@ public:
     Relation &getRelation(const QString& title);
     void deleteRelation(const QString& title);
 //    const QString& getTitleRelfromCouple(const QString& id1,const QString& id2);
-
+    /**
+     * \fn        int getNbRelations()
+     * \brief     Accesseur du nombre de relations.
+     */
     unsigned int getNbRelations() const{return nbRelations;}
 
     static RelationManager& getInstance();
     static void libererInstance();
+    void load(const QString& file);
 
     //Iterator
     class Iterator{

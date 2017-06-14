@@ -22,20 +22,14 @@ void {\bfseries Aff\+\_\+relation} ()
 void {\bfseries Vider\+Corbeille} ()
 \item 
 \mbox{\Hypertarget{classinterface_afda8f97b198f7d434cb1eb2d845dfefc}\label{classinterface_afda8f97b198f7d434cb1eb2d845dfefc}} 
-void {\bfseries add\+Action\+\_\+new\+\_\+rel} ()
-\item 
-\mbox{\Hypertarget{classinterface_af42d8f6426ad19ce13f1dd2ce9f519c1}\label{classinterface_af42d8f6426ad19ce13f1dd2ce9f519c1}} 
-void {\bfseries Ouvrir\+Fichier} ()
-\item 
-\mbox{\Hypertarget{classinterface_a23957135caad59d8850fe8e2cbee28a3}\label{classinterface_a23957135caad59d8850fe8e2cbee28a3}} 
-void {\bfseries Creer\+Note} ()
-\item 
-\mbox{\Hypertarget{classinterface_ae2e321a0c7bb4080920c203057d45d82}\label{classinterface_ae2e321a0c7bb4080920c203057d45d82}} 
-void {\bfseries add\+New\+Note} ()
-\item 
-\mbox{\Hypertarget{classinterface_a320051a7a36aa24f53b12df82649f15f}\label{classinterface_a320051a7a36aa24f53b12df82649f15f}} 
-void {\bfseries afficher\+\_\+note} (Q\+String id, int i)
-\item 
+void \hyperlink{classinterface_afda8f97b198f7d434cb1eb2d845dfefc}{add\+Action\+\_\+new\+\_\+rel} ()
+\begin{DoxyCompactList}\small\item\em fonction outils, permettant de connecter, afficher l\textquotesingle{}action d\textquotesingle{}achiver une note a la page courante. \end{DoxyCompactList}\item 
+void \hyperlink{classinterface_af42d8f6426ad19ce13f1dd2ce9f519c1}{Ouvrir\+Fichier} ()
+\begin{DoxyCompactList}\small\item\em Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et les docks. \end{DoxyCompactList}\item 
+void \hyperlink{classinterface_a23957135caad59d8850fe8e2cbee28a3}{Creer\+Note} ()
+\begin{DoxyCompactList}\small\item\em Ouvre une fenetre de dialogue de type \hyperlink{class_creation___note}{Creation\+\_\+\+Note}, pour permettre la création d\textquotesingle{}une note. Connecte cette fennetre au docks. \end{DoxyCompactList}\item 
+void \hyperlink{classinterface_a320051a7a36aa24f53b12df82649f15f}{afficher\+\_\+note} (Q\+String id, int i)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classinterface_a320051a7a36aa24f53b12df82649f15f}{interface\+::afficher\+\_\+note} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classinterface_ab53612546e2db13b35dca0df8911413e}\label{classinterface_ab53612546e2db13b35dca0df8911413e}} 
 void {\bfseries supp\+\_\+dock\+\_\+editer} ()
 \item 
@@ -46,11 +40,10 @@ void {\bfseries supp\+\_\+dock\+\_\+aff\+\_\+rel} ()
 void {\bfseries supprimer\+\_\+note} ()
 \item 
 \mbox{\Hypertarget{classinterface_abe2464522932a5d8ed76d1ba02c9d2c6}\label{classinterface_abe2464522932a5d8ed76d1ba02c9d2c6}} 
-void {\bfseries close\+\_\+page\+\_\+note} ()
-\item 
-\mbox{\Hypertarget{classinterface_a319f133949e2be97a203f725c3f1e565}\label{classinterface_a319f133949e2be97a203f725c3f1e565}} 
-void {\bfseries save} ()
-\end{DoxyCompactItemize}
+void \hyperlink{classinterface_abe2464522932a5d8ed76d1ba02c9d2c6}{close\+\_\+page\+\_\+note} ()
+\begin{DoxyCompactList}\small\item\em Ferme la note en cours, si elle est bien encore ouverte. \end{DoxyCompactList}\item 
+void \hyperlink{classinterface_a319f133949e2be97a203f725c3f1e565}{save} ()
+\begin{DoxyCompactList}\small\item\em Permet de choisir un fichier de sauvegarde. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -63,6 +56,11 @@ void {\bfseries L\+\_\+update\+\_\+model} ()
 \mbox{\Hypertarget{classinterface_ad09217bb805eb4405dfc8d0b7cc6e547}\label{classinterface_ad09217bb805eb4405dfc8d0b7cc6e547}} 
 void {\bfseries A\+\_\+update\+\_\+model} ()
 \end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classinterface_a13e0ee4b9df1714d747d62ec46220c55}{interface} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe interface Fenêtre principale de l\textquotesingle{}application, gére tous les docks, effectue la liason entre les docks, les widget, et les boites de dialogues. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -72,7 +70,110 @@ Definition at line 53 of file interface.\+h.
 
 
 
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classinterface_a13e0ee4b9df1714d747d62ec46220c55}\label{classinterface_a13e0ee4b9df1714d747d62ec46220c55}} 
+\index{interface@{interface}!interface@{interface}}
+\index{interface@{interface}!interface@{interface}}
+\subsubsection{\texorpdfstring{interface()}{interface()}}
+{\footnotesize\ttfamily interface\+::interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe interface Fenêtre principale de l\textquotesingle{}application, gére tous les docks, effectue la liason entre les docks, les widget, et les boites de dialogues. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file interface.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classinterface_a320051a7a36aa24f53b12df82649f15f}\label{classinterface_a320051a7a36aa24f53b12df82649f15f}} 
+\index{interface@{interface}!afficher\+\_\+note@{afficher\+\_\+note}}
+\index{afficher\+\_\+note@{afficher\+\_\+note}!interface@{interface}}
+\subsubsection{\texorpdfstring{afficher\+\_\+note}{afficher\_note}}
+{\footnotesize\ttfamily void interface\+::afficher\+\_\+note (\begin{DoxyParamCaption}\item[{Q\+String}]{id,  }\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\hyperlink{classinterface_a320051a7a36aa24f53b12df82649f15f}{interface\+::afficher\+\_\+note} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em i} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 347 of file interface.\+cpp.
+
+\mbox{\Hypertarget{classinterface_a23957135caad59d8850fe8e2cbee28a3}\label{classinterface_a23957135caad59d8850fe8e2cbee28a3}} 
+\index{interface@{interface}!Creer\+Note@{Creer\+Note}}
+\index{Creer\+Note@{Creer\+Note}!interface@{interface}}
+\subsubsection{\texorpdfstring{Creer\+Note}{CreerNote}}
+{\footnotesize\ttfamily void interface\+::\+Creer\+Note (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ouvre une fenetre de dialogue de type \hyperlink{class_creation___note}{Creation\+\_\+\+Note}, pour permettre la création d\textquotesingle{}une note. Connecte cette fennetre au docks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 256 of file interface.\+cpp.
+
+\mbox{\Hypertarget{classinterface_af42d8f6426ad19ce13f1dd2ce9f519c1}\label{classinterface_af42d8f6426ad19ce13f1dd2ce9f519c1}} 
+\index{interface@{interface}!Ouvrir\+Fichier@{Ouvrir\+Fichier}}
+\index{Ouvrir\+Fichier@{Ouvrir\+Fichier}!interface@{interface}}
+\subsubsection{\texorpdfstring{Ouvrir\+Fichier}{OuvrirFichier}}
+{\footnotesize\ttfamily void interface\+::\+Ouvrir\+Fichier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et les docks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 196 of file interface.\+cpp.
+
+\mbox{\Hypertarget{classinterface_a319f133949e2be97a203f725c3f1e565}\label{classinterface_a319f133949e2be97a203f725c3f1e565}} 
+\index{interface@{interface}!save@{save}}
+\index{save@{save}!interface@{interface}}
+\subsubsection{\texorpdfstring{save}{save}}
+{\footnotesize\ttfamily void interface\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Permet de choisir un fichier de sauvegarde. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 216 of file interface.\+cpp.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{interface_8h}{interface.\+h}\item 
-\hyperlink{interface_8cpp}{interface.\+cpp}\end{DoxyCompactItemize}
+O\+L13/\hyperlink{interface_8h}{interface.\+h}\item 
+O\+L13/\hyperlink{interface_8cpp}{interface.\+cpp}\end{DoxyCompactItemize}

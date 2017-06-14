@@ -131,7 +131,7 @@ void interface::addAction_new_rel(){
 
 }
 /**
- * \brief Création dese docks : Editer_note, et Afficher_Relation
+ * \brief Création des docks : Editer_note, et Afficher_Relation
  * affiché lors de l'ouverture d'une note
  *
 */

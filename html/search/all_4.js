@@ -1,10 +1,17 @@
 var searchData=
 [
+  ['getfilename',['getFilename',['../class_notes_manager.html#a566cbb0dd7b606ec34629a2aa8010b73',1,'NotesManager']]],
+  ['getinstance',['getInstance',['../class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f',1,'NotesManager::getInstance()'],['../class_relation_manager.html#a35c3622f29ccfbda84be848503041396',1,'RelationManager::getInstance()']]],
+  ['getiterator',['getIterator',['../class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da',1,'NotesManager']]],
   ['getlistarchive',['getListArchive',['../class_notes_manager.html#a81aee1d57c39232f870199acb356fc57',1,'NotesManager']]],
   ['getlistascendants',['getListAscendants',['../class_notes_manager.html#ac85019776c1e8653665e24abc9d8001d',1,'NotesManager']]],
   ['getlistdeleted',['getListDeleted',['../class_notes_manager.html#ae6b144ba1bc14b895be36b194a2e768e',1,'NotesManager']]],
   ['getlistdescendants',['getListDescendants',['../class_notes_manager.html#a2ed035544b433b9cddfc83fb4c081a65',1,'NotesManager']]],
   ['getlisteversions',['getListeVersions',['../class_notes_manager.html#ae3af78108c46b9816207e66fcde64c5b',1,'NotesManager']]],
+  ['getlisttupleascendants',['getListTupleAscendants',['../class_notes_manager.html#a9f2c72d67d67c89a61f77a9b1a0ae390',1,'NotesManager']]],
+  ['getlisttupledescendants',['getListTupleDescendants',['../class_notes_manager.html#a4b8636fd8bc9d750d778585d3e4372cf',1,'NotesManager']]],
+  ['getnbnote',['getnbNote',['../class_notes_manager.html#a9cab39a524fd23c6523f895e81f75028',1,'NotesManager']]],
+  ['getnbrelations',['getNbRelations',['../class_relation_manager.html#abbd0627b6e986fcc5af94e3c71e0b148',1,'RelationManager']]],
   ['getnewarticle',['getNewArticle',['../class_notes_manager.html#a44bfd4e7fe88b7f300a4be5589f92923',1,'NotesManager']]],
   ['getnewrecording',['getNewRecording',['../class_notes_manager.html#a71d0bc2e2716a4e558705ea76e3ad491',1,'NotesManager']]],
   ['getnewrelation',['getNewRelation',['../class_relation_manager.html#a1f9d556e0505105205e1fdb4905c4a80',1,'RelationManager']]],

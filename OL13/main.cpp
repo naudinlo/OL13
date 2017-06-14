@@ -332,18 +332,19 @@ try{
 
 //   cout<<"\n\n===== PARTIE TEST RELATION ET VERSION =====\n";
 
-//   RelationManager& rm=RelationManager::getInstance();
-//   Relation& rel1=rm.getNewRelation("titreRelation1", "descriptionRelation1");
-//   Relation& rel2=rm.getNewRelation("titreRelation2", "descriptionRelation2");
-//   rel1.getNewCoupleRelation(&a2,&t2);
-//   rel1.getNewCoupleRelation(&ar1,&t2);
-//   rel1.getNewCoupleRelation(&a2,&ar1);
-//   rel2.getNewCoupleRelation(&a2,&ar1);
+   RelationManager& rm=RelationManager::getInstance();
+   Relation& rel1=rm.getNewRelation("titreRelation1", "descriptionRelation1");
+   Relation& rel2=rm.getNewRelation("titreRelation2", "descriptionRelation2");
+   rel1.getNewCoupleRelation(&a2,&t2);
+   rel1.getNewCoupleRelation(&ar1,&t2);
+   rel1.getNewCoupleRelation(&a2,&ar1);
+   rel2.getNewCoupleRelation(&a2,&ar1);
+   displayAllRelation();
 
 //   m->setFilename("test_save.xml");
 //   m->save();
 ////   displayAllRelation();
-////   cout<<rel1.displayRelation();
+//   cout<<rel1.displayRelation();
 //   cout<<rel2.displayRelation();
 ////   rel1.removeNoteRelation(&a2);
 //   cout<<rel1.displayRelation();
@@ -376,6 +377,8 @@ try{
 //      m->getNoteVersion("testTask",0).display();
 
       displayAllVersion();
+      m->setFilename("test2.xml");
+      m->save();
 //      m->getNewArticle("TestReinsertion","TestReins","Test de la reinsertion d'une note apres une suppression");
 
 
@@ -392,8 +395,17 @@ try{
 
 
 int main(int argc, char * argv[]) {
-//    fct();
-    PROGRAMME(argc,argv);
+    NotesManager* m=NotesManager::getInstance();
+    m->setFilename("test2.xml");
+    m->load();
+    RelationManager& rm=RelationManager::getInstance();
+    rm.load("test2.xml");
+    //displayAllVersion();
+    displayAllRelation();
+    Relation& R1=rm.getRelation("titreRelation1");
+    cout<<endl<<endl<<R1.displayRelation()<<endl<<endl;
+    //fct();
+    //PROGRAMME(argc,argv);
     //creation();
 
     return 0;
