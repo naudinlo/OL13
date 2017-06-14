@@ -1,0 +1,4 @@
+<map id="Dock" name="Dock">
+<area shape="rect" id="node3" href="$class_dock_archived.html" title="{DockArchived\n||+ DockArchived()\l+ update_archNoteModel()\l+ on_remove_clicked()\l}" alt="" coords="5,359,180,465"/>
+<area shape="rect" id="node4" href="$class_dock_remove.html" title="{DockRemove\n||+ update_archNoteModel()\l+ DockRemove()\l+ on_remove_clicked()\l}" alt="" coords="204,359,379,465"/>
+</map>

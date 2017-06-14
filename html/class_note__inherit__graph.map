@@ -1,0 +1,5 @@
+<map id="Note" name="Note">
+<area shape="rect" id="node2" href="$class_article.html" title="{Article\n||+ getText()\l+ setText()\l+ Article()\l+ Article()\l+ Article()\l+ operator=()\l+ toString()\l+ saveNote()\l}" alt="" coords="5,307,103,487"/>
+<area shape="rect" id="node3" href="$class_recording.html" title="{Recording\n||+ getDescription()\l+ getType()\l+ getLink()\l+ setDescription()\l+ setType()\l+ setLink()\l+ Recording()\l+ Recording()\l+ Recording()\l+ operator=()\l+ toString()\l+ saveNote()\l}" alt="" coords="127,277,253,516"/>
+<area shape="rect" id="node4" href="$class_task.html" title="{Task\n||+ getAction()\l+ setAction()\l+ getStatus()\l+ setStatus()\l+ getPriority()\l+ setPriority()\l+ getDueDate()\l+ setDueDate()\l+ Task()\l+ Task()\land 7 more...\l}" alt="" coords="277,285,388,509"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Task::Task" name="Task::Task">
+<area shape="rect" id="node2" href="$class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661" title="Détecte la présence d&#39;une expression régulière dans un champ de text et ajoute une référence en consé..." alt="" coords="272,51,399,77"/>
+<area shape="rect" id="node8" href="$class_note.html#a0490153115307d5f59974d7000260e48" title="Constructeur des classes notes, articles task et recording. " alt="" coords="140,76,224,103"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="613,25,795,52"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="843,25,1015,52"/>
+<area shape="rect" id="node5" href="$class_note.html#a3af2edc369310b9f122bd1fd6dbfa717" title="Définie une note comme référence d&#39;une autre. " alt="" coords="447,76,565,103"/>
+<area shape="rect" id="node7" href="$class_task.html#a7fe5cb7b57a21693e7abfea2f9618563" title="Transforme une task en un flux ostream a afficher. " alt="" coords="455,127,557,153"/>
+<area shape="rect" id="node6" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="625,76,783,103"/>
+</map>

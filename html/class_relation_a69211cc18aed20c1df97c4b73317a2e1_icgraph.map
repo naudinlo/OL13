@@ -1,0 +1,6 @@
+<map id="Relation::getNewCoupleRelation" name="Relation::getNewCoupleRelation">
+<area shape="rect" id="node2" href="$class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a" title="Charge les relations d&#39;un fichier XML dans l&#39;application. " alt="" coords="260,29,411,56"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="459,29,597,56"/>
+<area shape="rect" id="node4" href="$classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1" title="Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et l..." alt="" coords="645,29,796,56"/>
+<area shape="rect" id="node5" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="844,29,972,56"/>
+</map>

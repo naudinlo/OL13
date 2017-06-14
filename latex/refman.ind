@@ -1,0 +1,71 @@
+\begin{theindex}
+
+  \item {add\+Couple}, \hyperpage{9}
+  \item {afficher\+\_\+note}
+    \subitem {interface}, \hyperpage{18}
+  \item {Append\+Text}, \hyperpage{10}
+  \item {Article}, \hyperpage{10}
+    \subitem {to\+String}, \hyperpage{11}
+
+  \indexspace
+
+  \item {Couple\+Model}, \hyperpage{11}
+  \item {Creation\+\_\+\+Note}, \hyperpage{12}
+  \item {Creer\+Note}
+    \subitem {interface}, \hyperpage{19}
+
+  \indexspace
+
+  \item {delete\+All\+Reference}
+    \subitem {Note}, \hyperpage{23}
+  \item {delete\+Reference}
+    \subitem {Note}, \hyperpage{23}
+  \item {Deleted\+Note}, \hyperpage{13}
+  \item {Dock}, \hyperpage{13}
+  \item {Dock\+Archived}, \hyperpage{14}
+  \item {Dock\+Remove}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Edit\+\_\+\+Notes\+Couple}, \hyperpage{15}
+    \subitem {Edit\+\_\+\+Notes\+Couple}, \hyperpage{16}
+  \item {Edit\+\_\+relation}, \hyperpage{16}
+
+  \indexspace
+
+  \item {interface}, \hyperpage{17}
+    \subitem {afficher\+\_\+note}, \hyperpage{18}
+    \subitem {Creer\+Note}, \hyperpage{19}
+    \subitem {interface}, \hyperpage{18}
+    \subitem {Ouvrir\+Fichier}, \hyperpage{19}
+    \subitem {save}, \hyperpage{19}
+
+  \indexspace
+
+  \item {Note}, \hyperpage{21}
+    \subitem {delete\+All\+Reference}, \hyperpage{23}
+    \subitem {delete\+Reference}, \hyperpage{23}
+    \subitem {Note}, \hyperpage{23}
+  \item {Notes\+Manager\+::\+Iterator}, \hyperpage{21}
+
+  \indexspace
+
+  \item {Ouvrir\+Fichier}
+    \subitem {interface}, \hyperpage{19}
+
+  \indexspace
+
+  \item {Relation\+::\+Iterator}, \hyperpage{20}
+  \item {Relation\+Manager\+::\+Iterator}, \hyperpage{20}
+
+  \indexspace
+
+  \item {save}
+    \subitem {interface}, \hyperpage{19}
+
+  \indexspace
+
+  \item {to\+String}
+    \subitem {Article}, \hyperpage{11}
+
+\end{theindex}

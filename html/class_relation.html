@@ -67,6 +67,13 @@ $(function() {
 <div class="title">Relation Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for Relation:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_relation__coll__graph.png" border="0" usemap="#_relation_coll__map" alt="Collaboration graph"/></div>
+<map name="_relation_coll__map" id="_relation_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -75,9 +82,6 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a69211cc18aed20c1df97c4b73317a2e1"><td class="memItemLeft" align="right" valign="top"><a id="a69211cc18aed20c1df97c4b73317a2e1"></a>
-<a class="el" href="class_notes_couple.html">NotesCouple</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNewCoupleRelation</b> (<a class="el" href="class_note.html">Note</a> *n1, <a class="el" href="class_note.html">Note</a> *n2, QString label=0, bool s=false)</td></tr>
-<tr class="separator:a69211cc18aed20c1df97c4b73317a2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac665710061b98c5e13acaf3d9c5f68f6"><td class="memItemLeft" align="right" valign="top"><a id="ac665710061b98c5e13acaf3d9c5f68f6"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Relation</b> (QString t, QString d)</td></tr>
 <tr class="separator:ac665710061b98c5e13acaf3d9c5f68f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -90,32 +94,259 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setTitle</b> (QString
 <tr class="memitem:a5fd3dc676bd0e4994b5fa1897c3a3a93"><td class="memItemLeft" align="right" valign="top"><a id="a5fd3dc676bd0e4994b5fa1897c3a3a93"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setDescription</b> (QString d)</td></tr>
 <tr class="separator:a5fd3dc676bd0e4994b5fa1897c3a3a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69211cc18aed20c1df97c4b73317a2e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_notes_couple.html">NotesCouple</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a69211cc18aed20c1df97c4b73317a2e1">getNewCoupleRelation</a> (<a class="el" href="class_note.html">Note</a> *n1, <a class="el" href="class_note.html">Note</a> *n2, QString label=0, bool s=false)</td></tr>
+<tr class="memdesc:a69211cc18aed20c1df97c4b73317a2e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer un couple de note dans une relation.  <a href="#a69211cc18aed20c1df97c4b73317a2e1">More...</a><br /></td></tr>
+<tr class="separator:a69211cc18aed20c1df97c4b73317a2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bae20c027348b4e374c525f6ab1d840"><td class="memItemLeft" align="right" valign="top"><a id="a8bae20c027348b4e374c525f6ab1d840"></a>
 const QString&#160;</td><td class="memItemRight" valign="bottom"><b>getDescription</b> () const</td></tr>
 <tr class="separator:a8bae20c027348b4e374c525f6ab1d840"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a086c39ecf396e3cfcb465fd9eea5a904"><td class="memItemLeft" align="right" valign="top"><a id="a086c39ecf396e3cfcb465fd9eea5a904"></a>
-<a class="el" href="class_notes_couple.html">NotesCouple</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getCoupleRelation</b> (<a class="el" href="class_note.html">Note</a> *n1, <a class="el" href="class_note.html">Note</a> *n2) const</td></tr>
+<tr class="memitem:a086c39ecf396e3cfcb465fd9eea5a904"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_notes_couple.html">NotesCouple</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a086c39ecf396e3cfcb465fd9eea5a904">getCoupleRelation</a> (<a class="el" href="class_note.html">Note</a> *n1, <a class="el" href="class_note.html">Note</a> *n2) const</td></tr>
+<tr class="memdesc:a086c39ecf396e3cfcb465fd9eea5a904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un pointeur sur un couple d'une référence dont les deux notes sont passées en paramètre.  <a href="#a086c39ecf396e3cfcb465fd9eea5a904">More...</a><br /></td></tr>
 <tr class="separator:a086c39ecf396e3cfcb465fd9eea5a904"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab81e16d688dcb4703e8ab299fef80c10"><td class="memItemLeft" align="right" valign="top"><a id="ab81e16d688dcb4703e8ab299fef80c10"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>removeCoupleRelation</b> (<a class="el" href="class_note.html">Note</a> *n1, <a class="el" href="class_note.html">Note</a> *n2)</td></tr>
+<tr class="memitem:ab81e16d688dcb4703e8ab299fef80c10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#ab81e16d688dcb4703e8ab299fef80c10">removeCoupleRelation</a> (<a class="el" href="class_note.html">Note</a> *n1, <a class="el" href="class_note.html">Note</a> *n2)</td></tr>
+<tr class="memdesc:ab81e16d688dcb4703e8ab299fef80c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime un couple de note d'une relation.  <a href="#ab81e16d688dcb4703e8ab299fef80c10">More...</a><br /></td></tr>
 <tr class="separator:ab81e16d688dcb4703e8ab299fef80c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f25fe0ab5bf722eb08d2dd31e99c7f4"><td class="memItemLeft" align="right" valign="top"><a id="a8f25fe0ab5bf722eb08d2dd31e99c7f4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>removeNoteRelation</b> (<a class="el" href="class_note.html">Note</a> *n1)</td></tr>
+<tr class="memitem:a8f25fe0ab5bf722eb08d2dd31e99c7f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a8f25fe0ab5bf722eb08d2dd31e99c7f4">removeNoteRelation</a> (<a class="el" href="class_note.html">Note</a> *n1)</td></tr>
+<tr class="memdesc:a8f25fe0ab5bf722eb08d2dd31e99c7f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime une note d'une relation.  <a href="#a8f25fe0ab5bf722eb08d2dd31e99c7f4">More...</a><br /></td></tr>
 <tr class="separator:a8f25fe0ab5bf722eb08d2dd31e99c7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b8a359787fe32c991710039fd081f97"><td class="memItemLeft" align="right" valign="top"><a id="a0b8a359787fe32c991710039fd081f97"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>displayRelation</b> ()</td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a0b8a359787fe32c991710039fd081f97">displayRelation</a> ()</td></tr>
+<tr class="memdesc:a0b8a359787fe32c991710039fd081f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche une relation et l'ensemble des couples de notes qui en font parti. <br /></td></tr>
 <tr class="separator:a0b8a359787fe32c991710039fd081f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae30f6b7351f9ff6b3ed74422738a6ea2"><td class="memItemLeft" align="right" valign="top"><a id="ae30f6b7351f9ff6b3ed74422738a6ea2"></a>
 <a class="el" href="class_relation_1_1_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getIterator</b> ()</td></tr>
 <tr class="separator:ae30f6b7351f9ff6b3ed74422738a6ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6974a453611dee90f2ca2da9fe30de6"><td class="memItemLeft" align="right" valign="top"><a id="aa6974a453611dee90f2ca2da9fe30de6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>displayCoupleRelation</b> (<a class="el" href="class_note.html">Note</a> *n1, <a class="el" href="class_note.html">Note</a> *n2) const</td></tr>
+<tr class="memitem:aa6974a453611dee90f2ca2da9fe30de6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#aa6974a453611dee90f2ca2da9fe30de6">displayCoupleRelation</a> (<a class="el" href="class_note.html">Note</a> *n1, <a class="el" href="class_note.html">Note</a> *n2) const</td></tr>
+<tr class="memdesc:aa6974a453611dee90f2ca2da9fe30de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche un couple dans une relation.  <a href="#aa6974a453611dee90f2ca2da9fe30de6">More...</a><br /></td></tr>
 <tr class="separator:aa6974a453611dee90f2ca2da9fe30de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="relations_8h_source.html#l00036">36</a> of file <a class="el" href="relations_8h_source.html">relations.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<p class="definition">Definition at line <a class="el" href="relations_8h_source.html#l00063">63</a> of file <a class="el" href="relations_8h_source.html">relations.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa6974a453611dee90f2ca2da9fe30de6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6974a453611dee90f2ca2da9fe30de6">&#9670;&nbsp;</a></span>displayCoupleRelation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Relation::displayCoupleRelation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche un couple dans une relation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Note*</td><td>n1 <a class="el" href="class_note.html">Note</a> X du couple de la relation a afficher </td></tr>
+    <tr><td class="paramname">Note*</td><td>n2 <a class="el" href="class_note.html">Note</a> Y du couple de la relation a afficher </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="relations_8cpp_source.html#l00127">127</a> of file <a class="el" href="relations_8cpp_source.html">relations.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_relation_aa6974a453611dee90f2ca2da9fe30de6_cgraph.png" border="0" usemap="#class_relation_aa6974a453611dee90f2ca2da9fe30de6_cgraph" alt=""/></div>
+<map name="class_relation_aa6974a453611dee90f2ca2da9fe30de6_cgraph" id="class_relation_aa6974a453611dee90f2ca2da9fe30de6_cgraph">
+<area shape="rect" id="node2" href="class_relation.html#a086c39ecf396e3cfcb465fd9eea5a904" title="Retourne un pointeur sur un couple d&#39;une référence dont les deux notes sont passées en paramètre..." alt="" coords="259,5,441,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a086c39ecf396e3cfcb465fd9eea5a904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a086c39ecf396e3cfcb465fd9eea5a904">&#9670;&nbsp;</a></span>getCoupleRelation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_notes_couple.html">NotesCouple</a> * Relation::getCoupleRelation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne un pointeur sur un couple d'une référence dont les deux notes sont passées en paramètre. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Note*</td><td>n1 <a class="el" href="class_note.html">Note</a> X du couple de la relation a retourner </td></tr>
+    <tr><td class="paramname">Note*</td><td>n2 <a class="el" href="class_note.html">Note</a> Y du couple de la relation a retourner </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="relations_8cpp_source.html#l00110">110</a> of file <a class="el" href="relations_8cpp_source.html">relations.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_relation_a086c39ecf396e3cfcb465fd9eea5a904_icgraph.png" border="0" usemap="#class_relation_a086c39ecf396e3cfcb465fd9eea5a904_icgraph" alt=""/></div>
+<map name="class_relation_a086c39ecf396e3cfcb465fd9eea5a904_icgraph" id="class_relation_a086c39ecf396e3cfcb465fd9eea5a904_icgraph">
+<area shape="rect" id="node2" href="class_relation.html#aa6974a453611dee90f2ca2da9fe30de6" title="Affiche un couple dans une relation. " alt="" coords="236,5,441,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a69211cc18aed20c1df97c4b73317a2e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69211cc18aed20c1df97c4b73317a2e1">&#9670;&nbsp;</a></span>getNewCoupleRelation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_notes_couple.html">NotesCouple</a> &amp; Relation::getNewCoupleRelation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>label</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>s</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer un couple de note dans une relation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Note*</td><td>n1 <a class="el" href="class_note.html">Note</a> X du couple dans la relation Note* n2 <a class="el" href="class_note.html">Note</a> Y du couple dans la relation QString label Label du couple dans la relation bool s Symétrie du couple dans la relation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="relations_8cpp_source.html#l00066">66</a> of file <a class="el" href="relations_8cpp_source.html">relations.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_relation_a69211cc18aed20c1df97c4b73317a2e1_icgraph.png" border="0" usemap="#class_relation_a69211cc18aed20c1df97c4b73317a2e1_icgraph" alt=""/></div>
+<map name="class_relation_a69211cc18aed20c1df97c4b73317a2e1_icgraph" id="class_relation_a69211cc18aed20c1df97c4b73317a2e1_icgraph">
+<area shape="rect" id="node2" href="class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a" title="Charge les relations d&#39;un fichier XML dans l&#39;application. " alt="" coords="260,29,411,56"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="459,29,597,56"/>
+<area shape="rect" id="node4" href="classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1" title="Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et l..." alt="" coords="645,29,796,56"/>
+<area shape="rect" id="node5" href="classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="844,29,972,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab81e16d688dcb4703e8ab299fef80c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab81e16d688dcb4703e8ab299fef80c10">&#9670;&nbsp;</a></span>removeCoupleRelation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Relation::removeCoupleRelation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime un couple de note d'une relation. </p>
+<p>Si le couple demandé est symétrique, le deux couples créés par ces notes sont supprimés. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Note*</td><td>n1 <a class="el" href="class_note.html">Note</a> X du couple a supprimer de la relation </td></tr>
+    <tr><td class="paramname">Note*</td><td>n2 <a class="el" href="class_note.html">Note</a> Y du couple a supprimer de la relation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="relations_8cpp_source.html#l00154">154</a> of file <a class="el" href="relations_8cpp_source.html">relations.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8f25fe0ab5bf722eb08d2dd31e99c7f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f25fe0ab5bf722eb08d2dd31e99c7f4">&#9670;&nbsp;</a></span>removeNoteRelation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Relation::removeNoteRelation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime une note d'une relation. </p>
+<p>Si une note passée en paramètre appartient à un couple présent au sein de la relation this, le couple est supprimée de la relation. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Note*</td><td>n1 <a class="el" href="class_note.html">Note</a> a supprimer de la relation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="relations_8cpp_source.html#l00182">182</a> of file <a class="el" href="relations_8cpp_source.html">relations.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>OL13/<a class="el" href="relations_8h_source.html">relations.h</a></li>
 <li>OL13/<a class="el" href="relations_8cpp_source.html">relations.cpp</a></li>
 </ul>

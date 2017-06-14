@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['generateref',['generateRef',['../class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661',1,'Note']]],
+  ['getcouplerelation',['getCoupleRelation',['../class_relation.html#a086c39ecf396e3cfcb465fd9eea5a904',1,'Relation']]],
   ['getfilename',['getFilename',['../class_notes_manager.html#a566cbb0dd7b606ec34629a2aa8010b73',1,'NotesManager']]],
   ['getinstance',['getInstance',['../class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f',1,'NotesManager::getInstance()'],['../class_relation_manager.html#a35c3622f29ccfbda84be848503041396',1,'RelationManager::getInstance()']]],
   ['getiterator',['getIterator',['../class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da',1,'NotesManager']]],
@@ -13,6 +15,7 @@ var searchData=
   ['getnbnote',['getnbNote',['../class_notes_manager.html#a9cab39a524fd23c6523f895e81f75028',1,'NotesManager']]],
   ['getnbrelations',['getNbRelations',['../class_relation_manager.html#abbd0627b6e986fcc5af94e3c71e0b148',1,'RelationManager']]],
   ['getnewarticle',['getNewArticle',['../class_notes_manager.html#a44bfd4e7fe88b7f300a4be5589f92923',1,'NotesManager']]],
+  ['getnewcouplerelation',['getNewCoupleRelation',['../class_relation.html#a69211cc18aed20c1df97c4b73317a2e1',1,'Relation']]],
   ['getnewrecording',['getNewRecording',['../class_notes_manager.html#a71d0bc2e2716a4e558705ea76e3ad491',1,'NotesManager']]],
   ['getnewrelation',['getNewRelation',['../class_relation_manager.html#a1f9d556e0505105205e1fdb4905c4a80',1,'RelationManager']]],
   ['getnewtask',['getNewTask',['../class_notes_manager.html#a39562bf5aef0d7a113317c1421d578fd',1,'NotesManager']]],

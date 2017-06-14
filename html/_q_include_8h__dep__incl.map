@@ -1,0 +1,32 @@
+<map id="OL13/QInclude.h" name="OL13/QInclude.h">
+<area shape="rect" id="node2" href="$addcouple_8h_source.html" title="OL13/addcouple.h" alt="" coords="246,229,373,256"/>
+<area shape="rect" id="node4" href="$quirelation_8h_source.html" title="OL13/quirelation.h" alt="" coords="385,379,511,405"/>
+<area shape="rect" id="node5" href="$aff__notes_8h.html" title="//Expliquer brievement à quoi sert ce fichier. //EX : Définit les modèles de voiture et leur particul..." alt="" coords="851,453,971,480"/>
+<area shape="rect" id="node10" href="$main_8cpp.html" title="//Bref " alt="" coords="38,603,149,629"/>
+<area shape="rect" id="node11" href="$qmanagerelation_8h_source.html" title="OL13/qmanagerelation.h" alt="" coords="548,453,711,480"/>
+<area shape="rect" id="node14" href="$notes_8h_source.html" title="OL13/notes.h" alt="" coords="617,80,717,107"/>
+<area shape="rect" id="node15" href="$manager_8h.html" title="Regroupe les manager nécessaires pour la gestion des notes et des relations. " alt="" coords="961,229,1079,256"/>
+<area shape="rect" id="node16" href="$qnote_8h.html" title="//Bref " alt="" coords="1105,304,1205,331"/>
+<area shape="rect" id="node20" href="$qrelations_8h_source.html" title="OL13/qrelations.h" alt="" coords="753,304,877,331"/>
+<area shape="rect" id="node22" href="$qreference_8h_source.html" title="OL13/qreference.h" alt="" coords="1229,304,1357,331"/>
+<area shape="rect" id="node24" href="$dockarchived_8h_source.html" title="OL13/dockarchived.h" alt="" coords="1454,304,1597,331"/>
+<area shape="rect" id="node26" href="$supp__note_8h.html" title="//Bref " alt="" coords="1621,304,1749,331"/>
+<area shape="rect" id="node28" href="$manager_8cpp.html" title="Définitions des fonctions déclarées dans le manager.h. " alt="" coords="1774,304,1906,331"/>
+<area shape="rect" id="node29" href="$notes_8cpp.html" title="Définitions des fonctions déclarées dans le notes.h. " alt="" coords="512,304,627,331"/>
+<area shape="rect" id="node3" href="$addcouple_8cpp_source.html" title="OL13/addcouple.cpp" alt="" coords="347,304,488,331"/>
+<area shape="rect" id="node7" href="$interface_8h.html" title="//Expliquer brievement à quoi sert ce fichier. //EX : Définit les modèles de voiture et leur particul..." alt="" coords="925,528,1043,555"/>
+<area shape="rect" id="node13" href="$quirelation_8cpp_source.html" title="OL13/quirelation.cpp" alt="" coords="377,453,519,480"/>
+<area shape="rect" id="node6" href="$aff__notes_8cpp.html" title="//Bref " alt="" coords="766,528,901,555"/>
+<area shape="rect" id="node8" href="$include_8h.html" title="Regroupe une partie des includes nécessaires au projet. " alt="" coords="1001,603,1111,629"/>
+<area shape="rect" id="node9" href="$interface_8cpp.html" title="//Expliquer brievement à quoi sert ce fichier. //EX : Définit les modèles de voiture et leur particul..." alt="" coords="847,603,977,629"/>
+<area shape="rect" id="node12" href="$qmanagerelation_8cpp_source.html" title="OL13/qmanagerelation.cpp" alt="" coords="541,528,718,555"/>
+<area shape="rect" id="node30" href="$relations_8h_source.html" title="OL13/relations.h" alt="" coords="709,155,827,181"/>
+<area shape="rect" id="node17" href="$_creation___note_8h.html" title="//Expliquer brievement à quoi sert ce fichier. //EX : Définit les modèles de voiture et leur particul..." alt="" coords="1705,453,1855,480"/>
+<area shape="rect" id="node19" href="$qnote_8cpp.html" title="//Bref " alt="" coords="1003,379,1117,405"/>
+<area shape="rect" id="node18" href="$_creation___note_8cpp.html" title="//Bref " alt="" coords="1578,528,1742,555"/>
+<area shape="rect" id="node21" href="$qrelations_8cpp_source.html" title="OL13/qrelations.cpp" alt="" coords="587,379,725,405"/>
+<area shape="rect" id="node23" href="$qreference_8cpp_source.html" title="OL13/qreference.cpp" alt="" coords="1294,379,1437,405"/>
+<area shape="rect" id="node25" href="$dockarchived_8cpp_source.html" title="OL13/dockarchived.cpp" alt="" coords="1563,379,1720,405"/>
+<area shape="rect" id="node27" href="$supp__note_8cpp.html" title="//Bref " alt="" coords="1795,379,1938,405"/>
+<area shape="rect" id="node31" href="$relations_8cpp.html" title="Définitions des fonctions déclarées dans le relations.h. " alt="" coords="805,229,936,256"/>
+</map>

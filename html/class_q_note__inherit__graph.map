@@ -1,0 +1,5 @@
+<map id="QNote" name="QNote">
+<area shape="rect" id="node3" href="$class_q_article.html" title="{QArticle\n||+ QArticle()\l+ load_note()\l+ readOnly()\l+ saveNote()\l+ check_creer()\l}" alt="" coords="5,366,119,502"/>
+<area shape="rect" id="node4" href="$class_q_recording.html" title="{QRecording\n||+ QRecording()\l+ load_note()\l+ readOnly()\l+ OuvrirFichier()\l+ check_creer()\l+ read_record()\l+ stop_record()\l+ saveNote()\l}" alt="" coords="143,344,258,524"/>
+<area shape="rect" id="node5" href="$class_q_task.html" title="{QTask\n||+ QTask()\l+ load_note()\l+ readOnly()\l+ saveNote()\l+ check_creer()\l}" alt="" coords="283,366,396,502"/>
+</map>
