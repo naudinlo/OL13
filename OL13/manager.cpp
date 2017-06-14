@@ -421,6 +421,7 @@ void NotesManager::save() const {
     stream.writeEndDocument();
     newfile.close();
     cout<<endl<<"Save effectuee"<<endl;
+    //m->save_fichier();
 }
 
 /**

@@ -30,6 +30,7 @@ interface::interface(): QMainWindow()
 {
     /*** Initialisation des attributs ***/
         note_manager=NotesManager::getInstance();
+        //note_manager->load_fichier();
         note_page=0;
         ZoneCentrale=new page_vide();
 

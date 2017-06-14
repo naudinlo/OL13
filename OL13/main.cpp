@@ -395,12 +395,8 @@ try{
 
 
 int main(int argc, char * argv[]) {
-    NotesManager* m=NotesManager::getInstance();
-    //m->load();
-    //m->save_fichier();
-    m->load_fichier();
     //fct();
-    //PROGRAMME(argc,argv);
+    PROGRAMME(argc,argv);
     //creation();
 
     return 0;
