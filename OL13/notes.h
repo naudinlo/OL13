@@ -49,6 +49,7 @@ class Article;
 class Task;
 class Recording;
 
+/**************Enumération********************/
 
 namespace ENUM
 {
@@ -57,6 +58,8 @@ namespace ENUM
 }
 
 
+/**************NotesException********************/
+
 class NotesException{
 public:
     NotesException(const QString& message):info(message){}
@@ -64,6 +67,9 @@ public:
 private:
     QString info;
 };
+
+
+/**************Note********************/
 
 class Note{
 private:
@@ -74,16 +80,8 @@ private:
     bool isArchive; //Si jamais on l'archive alors elle devient const
     bool isDeleted; //Si jamais on la met dans la corbeille
 
-    // LNA test ref 09.06
-//    Note ** referencesOLD;
-//    QList<QString> referencesQ;
-//    unsigned int nbRefOLD;
-//    unsigned int nbMaxRefOLD;
-
     unsigned int nbIsRef;
 
-//    void addReferenceOLD(Note* n);
-//    void addReferenceQ(const QString& id);
 public:
     const QString getId() const {return id;}
     const QString getTitle() const {return title;}
@@ -96,8 +94,6 @@ public:
 
     QString getType()const {return QString(typeid(*this).name()).remove(0,1);}
     Note(const QString& i, const QString& ti);
-//    Note(const QString&i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD):
-//        id(i),title(ti),creation_date(cd),lastmodif_date(lmd),isArchive(iA),isDeleted(iD), references(new Note*[5]), nbRef(0), nbMaxRef(5),nbIsRef(0){}
     Note(const QString&i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD):
         id(i),title(ti),creation_date(cd),lastmodif_date(lmd),isArchive(iA),isDeleted(iD), nbIsRef(0){}
 
@@ -115,29 +111,20 @@ public:
     }
     virtual void saveNote(QFile *file);
 
-    //Les notes que this reference
-//    unsigned int getNbRefOLD() const{return nbRef;}
-//    unsigned int getNbMaxRefOLD() const{return nbMaxRef;}
-//    void setNbRefOLD(unsigned int n){ nbRef=n;}
     void setNbIsRef(unsigned int n){nbIsRef=n;}
     unsigned int getNbIsRef()const{return nbIsRef;}
-
-//    void deleteReferenceOLD(const QString& id);
-//    void deleteAllReferenceOLD();
-//    Note& setNewRefOLD(Note* n);
-//    Note& getReferenceOLD(const QString &id) const;
-//    Note& getReferenceIntOLD(unsigned int i) const;
 
     QList<QString> references;
     void deleteReference(const QString& id);
     void deleteAllReference();
     void setNewRef(const QString& id);
     Note& getReference(const QString &id) const;
-//    Note& getReferenceInt(unsigned int i) const;
 
     void generateRef(const QString& champTexte);
 
 };
+
+/**************Article********************/
 
 
 class Article : public Note{
@@ -151,15 +138,14 @@ public:
     Article(const QString& i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD, const QString& te):
         Note(i,ti,cd,lmd,iA,iD), text(te){}
 
-    //PRIVATE ?
     Article(const Article& a); //constructeur de recopie private pour le handler
     Article& operator=(const Article& a);   //operateur d'affectation private pour le handler
-    //~Note();
 
     std::string toString() const;
     void saveNote(QFile *file);
 };
 
+/**************Task********************/
 
 class Task : public Note{
 private:
@@ -185,14 +171,15 @@ public:
     Task(const QString& i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD, const QString a, ENUM::StatusType s, unsigned int p, const QDateTime dD):
         Note(i,ti,cd,lmd,iA,iD), action(a),status(s),priority(p),dueDate(dD){}
 
-    //PRIVATE ?
     Task(const Task& t); //constructeur de recopie private pour le handler
     Task& operator=(const Task& a);   //operateur d'affectation private pour le handler
-    //~Note();
 
     std::string toString() const;
     void saveNote(QFile *file);
 };
+
+
+/**************Recording********************/
 
 
 class Recording : public Note{
@@ -203,7 +190,7 @@ private:
 public:
     const QTextDocument& getDescription() const {return description;}
     ENUM::RecordingType getType() const {return type;}
-    const QString getLink() const {return link;} //voir si on garde cette structure pour les images
+    const QString getLink() const {return link;}
     void setDescription(const QString& d) {generateRef(d);description.setPlainText(d);}
     void setType(const ENUM::RecordingType& r) {type=r;}
     void setLink(const QString& l){link=l;}
@@ -211,14 +198,15 @@ public:
     Recording(const QString& i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD, const QString& d, ENUM::RecordingType ty, const QString& li):
         Note(i,ti,cd,lmd,iA,iD), description(d), type(ty), link(li){}
 
-    //PRIVATE ?
     Recording(const Recording& r); //constructeur de recopie private pour le handler
     Recording& operator=(const Recording& r);   //operateur d'affectation private pour le handler
-    //~Note();
 
     std::string toString() const;
     void saveNote(QFile *file);
 };
+
+/**************Autre********************/
+
 
 /**
  * \brief     Surcharge affichage avec polymorphisme
