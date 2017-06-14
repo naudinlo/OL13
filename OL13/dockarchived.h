@@ -1,3 +1,23 @@
+/**
+ * \file      dockarchived.h
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     Fenetre dialoque permettant l'edition d'une nouvelle note
+ * \details    class :
+ *                  - Dock:classe abstraite
+ *
+ *                  - DockRemove
+ *                  - DockArchived
+ *
+ *                          Attribut:
+ *                                  QNote note
+ *                          Signaux :
+ *                                  change_creer() signal interne à la fenetre.
+ *                                  NewNote() envoie la note créer à l'interface //Plus utile.
+ */
+
+
 #ifndef DOCKARCHIVED_H
 #define DOCKARCHIVED_H
 #include "QInclude.h"

@@ -1,3 +1,15 @@
+/**
+ * \file      add_couple.h
+ * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+ * \version   1.0
+ * \date      14 Juin 2017
+ * \brief     Fenetre de création de nouveau couple
+ *
+ * \details    class :
+ *                  addCouple
+ */
+
+
 #ifndef ADDCOUPLE_H
 #define ADDCOUPLE_H
 

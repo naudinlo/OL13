@@ -1,6 +1,10 @@
 #include "qmanagerelation.h"
 #include "ui_qmanagerelation.h"
-
+/**
+ * \fn QManageRelation::QManageRelation
+ * @param parent
+ * \brief constructeur de QManagerRelation.
+ */
 QManageRelation::QManageRelation(QWidget *parent) :
     QDialog(parent),
     currentR(QString::null),
@@ -13,6 +17,10 @@ QManageRelation::QManageRelation(QWidget *parent) :
 
 
 }
+/**
+ * \fn QManageRelation::UpdateModel
+ * \brief Mais à jour la liste de relation.
+ */
 void QManageRelation::UpdateModel(){
     model->clear();
     for(RelationManager::Iterator it=RelationManager::getInstance().getIterator() ;!it.isDone();it.next()){
@@ -24,12 +32,19 @@ void QManageRelation::UpdateModel(){
     }
     ui->RelationView->setModel(model);
 }
-
+/**
+ * \fn QManageRelation::~QManageRelation
+ */
 QManageRelation::~QManageRelation()
 {
     delete ui;
 }
-
+/**
+ * \fn QManageRelation::on_RelationView_doubleClicked
+ * @param index
+ * \brief Recupération de la relation choisie.
+ * \details rends possible des les fonctions de suppression et d'affichage d'une relation.
+ */
 void QManageRelation::on_RelationView_doubleClicked(QModelIndex index){
         currentR = model->itemFromIndex(index)->whatsThis();
         ui->remove->setEnabled(true);

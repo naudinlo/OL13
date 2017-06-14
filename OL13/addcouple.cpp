@@ -2,6 +2,11 @@
 #include "ui_addcouple.h"
 #include "manager.h"
 
+/**
+ * @fn addCouple::addCouple
+ * @param parent
+ * \brief constructeur
+ */
 addCouple::addCouple(QWidget *parent) :
     QDialog(parent),
     i1(QModelIndex()),
@@ -24,6 +29,14 @@ addCouple::addCouple(QWidget *parent) :
     ui->From->setModel(modelfrom);
     ui->toView->setModel(modelto);
 }
+
+/**
+ * @fn addCouple::updateModel_to
+ * @param index
+ * \brief Met à jour le model
+ * \details les ids sont affichées de tels façon à empécher l'ecriture d'un couple sur soi-même
+ *
+ */
 void addCouple::updateModel_to(QModelIndex index){
     modelto->clear();
     i1=index;
@@ -39,17 +52,27 @@ void addCouple::updateModel_to(QModelIndex index){
         }
     }
 }
+/**
+ * @fn addCouple::on_toView_clicked
+ * @param i
+ * \brief Autorise le boutton save
+ */
 void addCouple::on_toView_clicked(QModelIndex i){
 
     ui->save->setEnabled(true);
     i2=i;
 }
-
+/**
+ * @fn addCouple::on_save_clicked
+ * \brief envoi le signal des paramètres du nouveau couple formé.
+ */
 void addCouple::on_save_clicked(){
     emit(addNewCouple(modelfrom->itemFromIndex(i1)->whatsThis(),modelto->itemFromIndex(i2)->whatsThis(),ui->lineEdit->text(),ui->Yes->isChecked()));
     this->close();
 }
-
+/**
+ * @fn addCouple::~addCouple
+ */
 addCouple::~addCouple()
 {
     delete ui;

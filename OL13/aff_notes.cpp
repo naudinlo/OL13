@@ -11,7 +11,13 @@
 
 
 #include "aff_notes.h"
-
+/**
+ * @fn page_notes::page_notes
+ * @param N
+ * \brief constructeur
+ * \details Donne les informations non éditable de la note ouverte
+ * créer les docks relative à la note courante
+ */
 page_notes::page_notes(Note& N):n(N),newNote(nullptr)
 {
     /** Window fenetre principale:
@@ -77,6 +83,7 @@ page_notes::page_notes(Note& N):n(N),newNote(nullptr)
    //NEW LNA
    //     connect(supprimer,SIGNAL(clicked(bool)),this,SLOT(supprimer_note(bool)));
         connect(savebutton,SIGNAL(clicked(bool)),this,SLOT(on_savebutton_clicked()));
+        //connect(savebutton,SIGNAL(clicked(bool)),widget_ref,SLOT(update_model()));
 
         L_titre=new QVBoxLayout;
         L_titre->addWidget(savebutton);
@@ -98,13 +105,18 @@ page_notes::page_notes(Note& N):n(N),newNote(nullptr)
         layout_info->addWidget(widget_ref);
         layout_p->addLayout(layout_info);
 }
+/**
+ * @fn page_notes::~page_notes
+ * \brief effectue une saugarde automatique de la note
+ * \details demmande la fermeture des docks par l'interface
+ */
 page_notes::~page_notes(){
     if(newNote !=nullptr){
         try{
         note->saveNote(*newNote);
         }
         catch(NotesException e){
-            QMessageBox::critical(this,"automatique sauvegarde",e.getinfo());
+            QMessageBox::critical(this,"echec: automatique sauvegarde",e.getinfo());
         }
     }
     emit(update_model());
@@ -115,7 +127,10 @@ page_notes::~page_notes(){
     delete layout_p;
     delete note;
 }
-
+/**
+ * @fn page_vide::page_vide
+ * \brief constructeur de la page d'acceuil
+ */
 page_vide::page_vide():QWidget(){
     QLabel *text = new QLabel("Sélectionner une note à afficher");
     text->setEnabled(false);

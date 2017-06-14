@@ -1,3 +1,19 @@
+/**
+* \file      qrelation.h
+* \author    Garnier Maxime, Naudin Louise, Pépin Hugues
+* \version   1.0
+* \date      14 Juin 2017
+* \brief     // implémentation des relations de manière graphique
+*
+* \details         class :
+*                   -QDockRelation
+*                       Permet l'affichage de la structure arborescente des relations
+*                   -Edit_NotesCouples
+*                       Permet l'edition de nouveaux couples
+*                   -Edit_relation
+*                       Permet l'edition d'une nouvelle relation
+*/
+
 #ifndef QRELATIONS_H
 #define QRELATIONS_H
 
@@ -5,20 +21,6 @@
 #include "relations.h"
 #include "manager.h"
 #include "notes.h"
-
-class QNotesCouple: public QWidget {
-private:
-    Note* notex;
-    Note* notey;
-    QLineEdit* label;
-    bool symetric;
-public:
-    QNotesCouple(Note* x, Note* y, bool s):notex(x),notey(y), symetric(s){
-        label=new QLineEdit;
-    }
-    //void add_Label(QString id1, QString id2);
-
-};
 
 
 class QDockRelation:public QWidget{
@@ -42,20 +44,6 @@ signals:
     void selectionRelation(QString titre);
 };
 
-
-class Qrelations
-{
-    Relation& R; //Relation Courante
-public:
-    Qrelations(QString t, QString d);
-    void getNewCoupleRelation(Note* n1,Note* n2,QString l=0,bool s=false)
-    {
-        R.getNewCoupleRelation(n1,n2,l,s);
-    }
-    string displayRelation(){
-        return R.displayRelation();
-    }
-};
 
 class Edit_NotesCouple: public QDialog{
 
@@ -84,6 +72,10 @@ signals:
     void setCouple(QString); //message récuper par l'affichage d'une relation
 
 public slots:
+    /**
+     * @fn fermer
+     * \brief ferme le fenetre et envoie un signal pour creer le nouveau couple
+     */
     void fermer(){
         //envoi un signal pour créer un nouveau couple selon la config choisie
         if(yes->isChecked()){
@@ -96,7 +88,10 @@ public slots:
             emit newCouple(n1,n2,"",symetric);
         }
         this->close();
-    }
+    }/**
+     * @nf eneableE_label
+     *
+     */
     void eneableE_label(){
         if(yes->isChecked()){
             E_Label->setEnabled(true);
@@ -115,7 +110,7 @@ public slots:
 
 class Edit_relation:public QDialog{
     Note& note; //note courante
-    Qrelations* R; //Relation en cours d'édition
+    Relation* R; //Relation en cours d'édition
 
     Q_OBJECT
     QGridLayout* L_fen;
@@ -144,6 +139,15 @@ public slots:
         else
             append->setEnabled(false);
     }
+    /**
+     * @nf addCouple
+     * @param n1
+     * @param n2
+     * @param label
+     * @param s
+     * \brief creer le nouveau couple avec les paramètres choisis
+     * \details les paramètre sont recu par signal depuis edit_couple.
+     */
     void addCouple(Note* n1, Note* n2, QString label,bool s){
      try{
             if(label.isEmpty())

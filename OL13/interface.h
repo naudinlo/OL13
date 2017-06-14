@@ -3,12 +3,30 @@
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
- * \brief     //Expliquer brievement à quoi sert ce fichier.
- *              //EX : Définit les modèles de voiture et leur particularités.
+ * \brief     // Définit l'interface principale de l'application.
  *
- * \details    //Expliquer en détail.
- *              //EX :Cette classe surcharge les accesseurs standards du module_voiture pour
- *                  convenir aux spécificités des différents modèles possibles.
+ * \details    //Classes présentes:
+ *           -interface :
+ *                  L'interface est la pièce maitresse de l'application graphique, elle
+ *                  connecte et relie les docks, fenêtres de diagualogue et les fenêtres principales.
+ *                  attributs :
+ *                                    Creation_Note* fen_creerNote;         //fenetre dialogue permettant de créer une note
+ *                                    selection_note* listNote;             //liste des notes
+ *                                    page_notes* note_page;                //Fenetre principale
+*                                     Edit_relation* new_relation;          //fenetre dialogue d'ajout de relation
+ *                                    supp_note* fen_supp;                  //fenetre dialogue de suppression de note
+ *                                    QManageRelation* affR;                //dock d'affichage des relations d'une note
+ *                                    DockArchived* dock_aff_archived_Note; //dock d'affichagedes notes archivées
+ *                                    DockRemove* dock_aff_removed_Note;    // dock d'affichagedes notes supprimées
+ *                 Signaux:
+ *                                    void S_update_model();
+ *                                    void L_update_model();
+ *                                    void A_update_model();
+ *
+ *           -selection_note:
+ *                  Premier dock, sur le coté gauche, affiche les notes actives, et à permet leurs affichages par un double-click,
+ *                  en envoyant le signal selection(Qstring, int).
+ *                  Ce dock est mis à jour par reception du signal L_update_model() emis par l'interface.
  */
 
 
@@ -58,10 +76,10 @@ class interface:public QMainWindow
     page_notes* note_page;    //affichage d'une note
     Edit_relation* new_relation; //fenetre d'ajout de relation
     NotesManager* note_manager;
-    supp_note* fen_supp;
-    QManageRelation* affR;
-    DockArchived* dock_aff_archived_Note;
-    DockRemove* dock_aff_removed_Note;
+    supp_note* fen_supp; //fenetre dialogue
+    QManageRelation* affR; //dock d'aff des relations d'une note
+    DockArchived* dock_aff_archived_Note; //dock des notes archivées
+    DockRemove* dock_aff_removed_Note; // dock des notes supprimées
 
 
     Q_OBJECT
@@ -95,58 +113,49 @@ class interface:public QMainWindow
 public:
     interface();
 
-    ~interface(){
-        ViderCorbeille();
-        if(note_manager->getFilename().isEmpty()){
-                    int reponse =QMessageBox::question(this,"Sauvegarde","Vous n'avez pas de fichier de sauvegarde en cours, voulez vous un nouveau fichier",QMessageBox::Yes|QMessageBox::No);
-                    if(reponse ==QMessageBox::Yes){
-                        QString fichier = QFileDialog::getSaveFileName(this, "Créer un fichier", QString(), "File (*.xml)");
-                        note_manager->setFilename(fichier);
-                    }
-                    else{
-
-                    QString fichier = QFileDialog::getOpenFileName(this, "Ouvrir un fichier", QString(), "File (*.xml)");
-                    note_manager->setFilename(fichier);
-                }
-
-              }
-
-                if(!(note_manager->getFilename().isEmpty()))
-                {
-                    note_manager->save();
-                    fichiersRecents->addAction(note_manager->getFilename());
-                    QMessageBox::information(this,"Sauvegarde","Sauvegarde Reussi");
-                }
-                else{
-                    QMessageBox::critical(this,"Sauvegarde","Pas de fichier de sauvegarde");
-                }
-        NotesManager::libererInstance();
-
-    }
+    ~interface();
 signals:
     void S_update_model();
     void L_update_model();
     void A_update_model();
 
 public slots:
+    /**
+     * \fn update_model
+     * \brief envoi un signal de mis à jours à tous les docks.
+     */
     void update_model(){
         emit(S_update_model());
         emit(L_update_model());
         emit(A_update_model());
            }
+    /**
+    * \fn E_relation
+    */
    void E_relation(){
        new_relation = new Edit_relation(listNote->getModel(),note_id,this);
        connect(new_relation,SIGNAL(newRelation()),note_page->getdock_aff_rel(),SLOT(updateModels()));
        new_relation->show();
 
    }
+   /**
+    * \fn Aff_relation
+    * \brief lance et connecte la fenetre de gestion des relations.
+    * \details connecte cette dernière avec le dock relation sur la page principale
+    */
    void Aff_relation(){
         affR= new QManageRelation (this);
-        connect(affR->getSelectedR(),SIGNAL(newCouple()),note_page->getdock_aff_rel(),SLOT(updateModels()));
+        if(note_page !=nullptr){
+            connect(affR,SIGNAL(update_relation()),note_page->getdock_aff_rel(),SLOT(updateModels()));
+        }
         affR->exec();
    }
-
-
+   /**
+    * \fn ViderCorbeille
+    * \brief Vide la corbeille
+    * \details ferme la page en cours, et appelle emptyTrash, une methode du manager
+    * mes à jours les docks
+    */
    void ViderCorbeille(){
        close_page_note();
        try{
@@ -163,15 +172,26 @@ public slots:
    void OuvrirFichier();
    void CreerNote();
   void afficher_note(QString id, int i);
+  /**
+    * \fn supp_dock_editer
+    * \brief ferme le dock editer
+    */
    void supp_dock_editer(){
        MenuEd->removeAction(dock_editer_note->toggleViewAction());
        dock_editer_note->close();
-   }
+   } /**
+    * \fn supp_dock_editer
+    * \brief ferme le dock editer
+    * */
    void supp_dock_aff_rel(){
        MenuEd->removeAction(dock_aff_Relation->toggleViewAction());
        dock_aff_Relation->close();
    }
-
+   /**
+    * \fn supprimer_note
+    * \brief appelle la fenêtre de dialogue de suppression de note
+    * \details Ferme la page en cours, et mes à jours les docks
+    */
    void supprimer_note(){
        fen_supp = new supp_note(listNote->getModel(),this);
        fen_supp->show();

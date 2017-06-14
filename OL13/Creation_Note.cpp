@@ -11,7 +11,12 @@
 
 
 #include "Creation_Note.h"
-
+/**
+ * @fn Creation_Note::Creation_Note
+ * @param parent
+ * \brief Constructeur de la fenetre de création
+ * \details Connexion des bouttons
+ */
 Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null(false), E_note_not_null(true){
     /* **Window: creation Note
     *La où est saisi le titre et l'id de la note
@@ -61,19 +66,33 @@ Creation_Note::Creation_Note(QWidget* parent): QDialog(parent), E_title_not_null
     connect(this,SIGNAL(change_Creer()),this,SLOT(activer_Creer()));
 
 }
+/**
+ * @fn Creation_Note::edit_article
+ */
 void Creation_Note::edit_article(){
     B_type->setTitle("Article");
     note=new QArticle();
 }
+/**
+ * @fn Creation_Note::edit_tache
+ */
 void Creation_Note::edit_tache(){
     B_type->setTitle("Tache");
     note=new QTask();
 }
+/**
+ * @fn Creation_Note::edit_enregistrement
+ */
 void Creation_Note::edit_enregistrement(){
     B_type->setTitle("Enregistrement");
     note=new QRecording();
 }
-
+/**
+ * @fn Creation_Note::select_type
+ * @param type
+ * \brief permet de charger la bonne configuration en fonction du type de note
+ * \details connexion entre la page et les conditions d'edition de la note
+ */
 void Creation_Note::select_type(int type){
     L_type->removeWidget(note);
     delete note;
@@ -99,12 +118,15 @@ void Creation_Note::select_type(int type){
     connect(note,SIGNAL(checked_creer(bool)),this,SLOT(activer_E_note_not_null(bool)));
     L_type->addWidget(note,0,0);
 }
-
+/**
+ * @fn Creation_Note::Creer_Note
+ * \brief Vérification de la création de la note
+ */
 void Creation_Note::Creer_Note(){
     try{
-    Note& essai=note->get_note(E_id->text(),E_title->text());
+    note->get_note(E_id->text(),E_title->text());
     //QMessageBox::information(this,E_title->text(),QString::fromStdString(essai.toString()));
-    emit(newNote(essai));
+    emit(newNote());
     }
     catch(NotesException e)
     {

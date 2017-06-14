@@ -1,6 +1,11 @@
 #include "quirelation.h"
 #include "ui_quirelation.h"
-
+/**
+ * @fn QUiRelation::QUiRelation
+ * @param r
+ * @param parent
+ * \brief constructeur
+ */
 QUiRelation::QUiRelation(Relation &r, QWidget *parent) :QDialog(parent),R(r),
     ui(new Ui::QUiRelation)
 {
@@ -11,12 +16,19 @@ QUiRelation::QUiRelation(Relation &r, QWidget *parent) :QDialog(parent),R(r),
     create_model();
 
 }
-
+/**
+ * \fn QUiRelation::~QUiRelation
+ */
 QUiRelation::~QUiRelation()
 {
     delete ui;
 }
-
+/**
+ * @fn QUiRelation::create_model
+ * \brief Met à jour le model.
+ * \details sauvegarde tous les couples et caractérisque de la relation courrante.
+ *
+ */
 void QUiRelation::create_model(){
     model->clear();
     QList<QString> presentNote;
@@ -42,7 +54,11 @@ void QUiRelation::create_model(){
     }
     ui->RelationView->setModel(model);
 }
-
+/**
+ * @fn QUiRelation::on_RelationView_doubleClicked
+ * @param index
+ * \details selection d'un couple parmi le model.
+ */
 void QUiRelation::on_RelationView_doubleClicked(QModelIndex index){
 
     NotesManager* m=NotesManager::getInstance();
@@ -58,9 +74,19 @@ void QUiRelation::on_RelationView_doubleClicked(QModelIndex index){
         }
 
 }
+/**
+ * @fn QUiRelation::on_EDesciption_textChanged
+ * brief Mettre à jour la Description de la relation.
+ */
 void QUiRelation::on_EDesciption_textChanged(){
     R.setDescription(ui->EDesciption->document()->toPlainText());
 }
+/**
+ * \fn QUiRelation::on_ETitre_textChanged
+ * @param t
+ *
+ * brief Mettre à jour du titre de la relation.
+ */
 void QUiRelation::on_ETitre_textChanged(QString t){
     R.setTitle(t);
 }

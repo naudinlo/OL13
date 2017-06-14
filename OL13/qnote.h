@@ -3,9 +3,22 @@
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
- * \brief     //Bref
+ * \brief     Contient les classes de tous les types de notes utilisé par l'interface.
+ * \details Architecture symétrique au fichier note, Le choix de re implémenter une versions graphique
+ * nous permet de bien séparé les données de l'affichage de celle ci afin de faciliter la maintenabilité de l'application
  *
- * \details  //Détail
+ * Les classes :
+ *              -QNote : classe abstraite pure
+ *                      Signals:
+ *                          void checked_creer(bool);
+ * .
+ *              -QTask : Permet l'affichage graphique d'une Task
+ *                  dérive de la classe QNote
+ *              -QRecording: Permet l'affichage graphique d'un Recording
+ *                  dérive de la classe QNote
+ *              -QArticle: Permet l'affichage graphique d'un Article
+ *                  dérive de la classe QNote
+ *
  *
  */
 
@@ -51,8 +64,6 @@ public:
     void saveNote(Note &N);
 public slots:
     void check_creer();
-signals:
-    void checked_creer(bool);
 };
 
 class QTask: public QNote{
@@ -76,8 +87,6 @@ public:
     void load_note(Note &N);
     void readOnly(bool status);
     void saveNote(Note& N);
-signals:
-    void checked_creer(bool);
 public slots:
     void check_creer();
 };
@@ -111,7 +120,6 @@ public slots:
     void stop_record();
     void saveNote(Note& n);
 signals:
-    void checked_creer(bool);
     void recording_ready();
 };
 

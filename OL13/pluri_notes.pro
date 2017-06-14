@@ -13,7 +13,6 @@ HEADERS += \
     supp_note.h \
     quirelation.h \
     qmanagerelation.h \
-    couplemodel.h \
     addcouple.h \
     dockarchived.h \
     qreference.h
@@ -39,7 +38,6 @@ SOURCES += \
     supp_note.cpp \
     quirelation.cpp \
     qmanagerelation.cpp \
-    couplemodel.cpp \
     addcouple.cpp \
     dockarchived.cpp \
     qreference.cpp

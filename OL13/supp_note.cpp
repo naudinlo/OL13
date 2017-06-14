@@ -11,7 +11,12 @@
 
 
 #include "supp_note.h"
-
+/**
+ * @fn supp_note::supp_note
+ * @param m
+ * @param parent
+ * \brief constructeur
+ */
 supp_note::supp_note(QStandardItemModel* m, QWidget* parent):QDialog(parent),model(m)
 {
     layout =new QVBoxLayout;
@@ -28,7 +33,12 @@ supp_note::supp_note(QStandardItemModel* m, QWidget* parent):QDialog(parent),mod
     layout->addWidget(supp);
     connect(supp,SIGNAL(clicked(bool)),this,SLOT(supp_selection_note()));
 }
-
+/**
+ * @fn supp_note::supp_selection_note
+ * \brief supprimer les notes selectionné
+ * \details Pour les details de la suppréssion se répertorié à la classe manager.
+ *
+ */
 void supp_note::supp_selection_note(){
     QItemSelectionModel *selection = vue->selectionModel();
     QModelIndexList listeSelections = selection->selectedIndexes();
@@ -55,7 +65,7 @@ void supp_note::supp_selection_note(){
 
             try
             {
-                //manager->deleteNote(current_id,i.row());
+                //manager->deleteNote(current_id,i.row()); Dans la vue d'une seconde Versions de l'application
             }
             catch(NotesException e){
                 QMessageBox::warning(this,'Impossibe de supprimer '+current_id,e.getinfo());

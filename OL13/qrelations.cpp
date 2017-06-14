@@ -1,9 +1,9 @@
 #include "qrelations.h"
-
-Qrelations::Qrelations(QString t, QString d):R(RelationManager::getInstance().getNewRelation(t,d)){
-
-}
-
+/**
+ * \fn QDockRelation::QDockRelation
+ * @param ID
+ * \brief constructeur du dock relation.
+ */
 QDockRelation::QDockRelation(const QString& ID):id(ID){
 
       model_from =new QStandardItemModel;
@@ -34,6 +34,10 @@ QDockRelation::QDockRelation(const QString& ID):id(ID){
        //connect(vue,SIGNAL(activated(QModelIndex)),this,SLOT(emit_selection(QModelIndex)));
 
 }
+/**
+ * \fn QDockRelation::updateModels
+ * \brief Mis à jour l'affichache de la visualisation des rélations
+ */
 void QDockRelation::updateModels(){
     model_from->clear();
     model_to->clear();
@@ -64,7 +68,12 @@ void QDockRelation::updateModels(){
 
 
 }
-
+/**
+ * \fn QDockRelation::emit_From_selection
+ * @param i
+ * \brief selection d'une note ou d'une relation à afficher
+ * \details depuis les couples vers la note actuelle
+ */
 void QDockRelation::emit_From_selection(QModelIndex i){
     if(i.column()==0){
         emit(selectionNote(model_from->itemFromIndex(i)->whatsThis(),0));
@@ -75,6 +84,12 @@ void QDockRelation::emit_From_selection(QModelIndex i){
     }
 
 }
+/**
+ * \fn QDockRelation::emit_to_selection
+ * @param i
+ * \brief selection d'une note ou d'une relation à afficher
+ * \details depuis les couples rélié par la note actuelle
+ */
 void QDockRelation::emit_to_selection(QModelIndex i){
     if(i.column()==0){
         emit(selectionNote(model_to->itemFromIndex(i)->whatsThis(),0));
@@ -85,6 +100,13 @@ void QDockRelation::emit_to_selection(QModelIndex i){
     }
 
 }
+/**
+ * @fn Edit_relation::Edit_relation
+ * @param m
+ * @param id
+ * @param parent
+ * \fn constructueur de la fenetre d'ajout de relation
+ */
 Edit_relation::Edit_relation(QStandardItemModel* m,QString id, QWidget* parent): QDialog(parent),
     model(m),note(NotesManager::getInstance()->getNote(id)){
     /*** Window: Permettant de chosir le titre, la descp de la relation, et les notes faisant
@@ -138,15 +160,24 @@ Edit_relation::Edit_relation(QStandardItemModel* m,QString id, QWidget* parent):
         connect(append,SIGNAL(clicked(bool)),this,SLOT(clicSelection()));
 
 }
+/**
+ * @fn Edit_relation::clicSelection
+ * \brief appelle le constructeur de relation
+ */
 
 void Edit_relation::clicSelection()
 {   /* Création d'une relation, en donnant les paramètre: titre, descp
       */
-    R=new Qrelations(E_titre->text(),E_description->document()->toPlainText());
+    R=&RelationManager::getInstance().getNewRelation(E_titre->text(),E_description->document()->toPlainText());
+
     addNoteToR(); //se charge d'ajouter les couples dans la relation définie précedement
     this->close();
 }
-
+/**
+ * @fn Edit_relation::addNoteToR
+ * \brief appelle la fenetre d'edition de couple sur les notes selectionnées dans la fenetre
+ * \details recupere les ids des notes depuis le model, regarde à l'avance quelles sont les notes qu'on souhaite symétrique
+ */
 void Edit_relation::addNoteToR(){
     /***
      * Recupération des notes définisant les nouveaux couples
@@ -184,7 +215,14 @@ void Edit_relation::addNoteToR(){
     }
             QMessageBox::information(this,"relation",QString::fromStdString(R->displayRelation()));
 }
-
+/**
+ * @fn Edit_NotesCouple::Edit_NotesCouple
+ * @param na
+ * @param nb
+ * @param parent
+ * @param s
+ * \brief constructeur de la fenetre d'edition de couple
+ */
 Edit_NotesCouple::Edit_NotesCouple(Note *na, Note *nb, QWidget* parent, bool s):QDialog(parent),n1(na),n2(nb),symetric(s){
     /***
      * Window; permettant d'éditer un couple d'une relation: label

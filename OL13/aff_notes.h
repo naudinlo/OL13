@@ -3,12 +3,19 @@
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
- * \brief     //Expliquer brievement à quoi sert ce fichier.
- *              //EX : Définit les modèles de voiture et leur particularités.
- *
- * \details    //Expliquer en détail.
- *              //EX :Cette classe surcharge les accesseurs standards du module_voiture pour
- *                  convenir aux spécificités des différents modèles possibles.
+ * \brief     Page Principale de l'application.
+ * \details    Class :
+ *                  -page_notes: Permet l'affichage d'une note, des docks associées et actions.
+ *                      Attributs :
+*
+*                                QNote* note;
+*                                 Note& n;
+*                                 Note* newNote;                 //pointeur vers la nouvelle version d'une note
+*                                 QWidget* dock_editer;         //dock permetant l'edition/restauration d'une note
+*                                 QDockRelation* dock_aff_Rel; //dock permetant la vue arborescente des relations
+*                                 Qreference* widget_ref;     //Indication des références de la note.
+*
+ *                  -page_vide : Affichage de la page d'acceuil.
  */
 
 
@@ -56,16 +63,39 @@ signals:
     void supp_dock_aff_rel();
     void close_page();
 public slots:
+    /**
+     * @fn on_savebutton_clicked
+     * \brief Editer les changement sur la nouvelle version de la note
+     * \details demande la mise à jour des docks
+     */
     void on_savebutton_clicked(){
         if(newNote!=nullptr){ //normalement impossible
+            try{
             note->saveNote(*newNote);
+            }
+            catch(NotesException e){
+
+            }
         }
         emit(update_model());
         widget_ref->update_model();
     }
-
+    /**
+     * \nf editer_note
+     * @param status
+     * \brief permet d'edité une nouvelle versions de la note
+     * \details si la note est archivé, supprimé on effectue sa restauration.
+     * On demande la mis à jours des docks
+     */
+    /**
+     * @fn editer_note
+     * @param status
+     * \brief Créer une nouvelle version de la note en cours
+     * \details si elle était archivé/supprimé la restaure et créer une nouvelle versions
+     * demmande donc la mis à jours des docks
+     *
+     */
     void editer_note(bool status){
-        //TODO : FAIRE EN SORTE QUE LA FONCTION MARCHE!!!
         note->readOnly(status);
         delete dock_editer;
         if(n.getIsDeleted() ){
@@ -87,13 +117,23 @@ public slots:
         }
         savebutton->setHidden(false);
         emit(update_model());
-    }
+    }/**
+     * @fn Archiver_page_note
+     * \brief Archive la note courante.
+     * \details demande une mis à jour des docks
+     */
     void Archiver_page_note(){
         n.setIsArchive(true);
         n.setIsDeleted(false);
         emit(update_model());
         emit(close_page());
     }
+    /**
+     * @fn aff_Relation
+     * @param titre
+     * \brief permet d'afficher une relation depuis le dock de la vue des relations
+     * \details demande la mis à jour des docks en cas de modifications de la relations
+     */
     void aff_Relation(QString titre){ //permet d'afficher une relation depuis le dock
         QUiRelation showR(RelationManager::getInstance().getRelation(titre),this);
         connect(&showR,SIGNAL(newCouple()),this->getdock_aff_rel(),SLOT(updateModels()));

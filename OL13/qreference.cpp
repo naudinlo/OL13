@@ -1,6 +1,11 @@
 #include "qreference.h"
 #include "ui_qreference.h"
-
+/**
+ * @fn Qreference::Qreference
+ * @param n
+ * @param parent
+ * \fn constructeur de la widget
+ */
 Qreference::Qreference(Note &n, QWidget *parent) :
     QWidget(parent),note(n),
     ui(new Ui::Qreference)
@@ -10,18 +15,23 @@ Qreference::Qreference(Note &n, QWidget *parent) :
     update_model();
     ui->refView->setModel(model_ref);
 }
-
+/**
+ * \fn Qreference::~Qreference
+ */
 Qreference::~Qreference()
 {
     delete ui;
 }
-
+/**
+ * @fn Qreference::update_model
+ * \brief Met à jour le tableau de note référée
+ */
 void Qreference::update_model(){
     model_ref->clear();
     QList<QStandardItem* >item;
-    for(unsigned int i=0;i<note.references.size();i++){
-        item.append(new QStandardItem(note.references.at(i)));
-//        item.append(new QStandardItem(note.getReferenceInt(i).getId()));
+    Note& n=NotesManager::getInstance()->getNote(note.getId());
+    for(unsigned int i=0;i<n.references.size();i++){
+        item.append(new QStandardItem(n.references.at(i)));
     }
     model_ref->appendRow(item);
 
