@@ -180,7 +180,7 @@ int PROGRAMME(int argc,char *argv[])
     QApplication app(argc, argv);
     interface Fenprincipale;
     Fenprincipale.showMaximized();
-
+    Fenprincipale.setWindowIcon(QIcon("Pluri-notes.png"));
     return app.exec();
 }
 

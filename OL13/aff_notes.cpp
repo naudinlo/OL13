@@ -100,7 +100,12 @@ page_notes::page_notes(Note& N):n(N),newNote(nullptr)
 }
 page_notes::~page_notes(){
     if(newNote !=nullptr){
+        try{
         note->saveNote(*newNote);
+        }
+        catch(NotesException e){
+            QMessageBox::critical(this,"automatique sauvegarde",e.getinfo());
+        }
     }
     emit(update_model());
     emit(supp_dock_editer());  // c'est l'interface qui gère la supp du dock

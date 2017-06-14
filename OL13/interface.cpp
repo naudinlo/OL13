@@ -47,29 +47,43 @@ interface::interface(): QMainWindow()
         MenuEd->addAction(Actiongras);
         QAction *ActionQuitter =new QAction("&Quitter", this);
         ActionQuitter->setShortcut(QKeySequence("ctrl+Q"));
-    //    ActionQuitter->setIcon(QIcon("LOGOUT.png"));
+        ActionQuitter->setIcon(QIcon("LOGOUT.png"));
         connect(ActionQuitter,SIGNAL(triggered(bool)),qApp,SLOT(quit()));
         MenuFichier->addAction(ActionQuitter);
         QAction *ActionOuvrir=new QAction("&Ouvrir",this);
         connect(ActionOuvrir,SIGNAL(triggered(bool)),this,SLOT(OuvrirFichier()));
         ActionOuvrir->setShortcut(QKeySequence("ctrl+O"));
-    //    ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
+        ActionOuvrir->setIcon(QIcon("Ouvrir.png"));
         QToolBar *toolBarFichier =addToolBar("Fichier");
         toolBarFichier->addAction(ActionOuvrir);
         MenuFichier->addAction(ActionOuvrir);
         QAction *ActionNouveau=new QAction("&Nouvelle note",this);
-    //    ActionNouveau->setIcon(QIcon("new.png"));
+        ActionNouveau->setIcon(QIcon("new.png"));
         ActionNouveau->setShortcut(QKeySequence("ctrl+N"));
         connect(ActionNouveau,SIGNAL(triggered(bool)),this,SLOT(CreerNote()));
         toolBarFichier->addAction(ActionNouveau);
         MenuFichier->addAction(ActionNouveau);
         QAction *ActionSave=new QAction("&Sauvegarder",this);
-    //    ActionSave->setIcon(QIcon("save.png"));
+        ActionSave->setIcon(QIcon("save.png"));
         ActionSave->setShortcut(QKeySequence("ctrl+S"));
         connect(ActionSave,SIGNAL(triggered(bool)),this,SLOT(save()));
         toolBarFichier->addAction(ActionSave);
         MenuFichier->addAction(ActionSave);
 
+        //Action: supprimer une note
+            //TODO : supprimer note ! Créer slot supprimer_note
+            QAction *ActionSupprimer=new QAction("&Supprimer note",this);
+            ActionSupprimer->setIcon(QIcon("delete_Note.jpeg"));
+            connect(ActionSupprimer,SIGNAL(triggered(bool)),this,SLOT(supprimer_note()));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
+            toolBar_supp_note=addToolBar("Edition");
+            toolBar_supp_note->addAction(ActionSupprimer);
+            MenuFichier->addAction(ActionSupprimer);
+
+            QAction *ActionViderCorbeille=new QAction("&Vider la corbeille",this);
+            ActionViderCorbeille->setIcon(QIcon("corbeil.jpeg"));
+            connect(ActionViderCorbeille,SIGNAL(triggered(bool)),this,SLOT(ViderCorbeille()));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
+            toolBar_supp_note->addAction(ActionViderCorbeille);
+            MenuFichier->addAction(ActionViderCorbeille);
 
     //Action: ajouter des relation
         Action_new_relation=new QAction("Editer de nouvelles relations ",this);
@@ -93,13 +107,7 @@ interface::interface(): QMainWindow()
         connect(Action_Fermer_Note,SIGNAL(triggered(bool)),this,SLOT(close_page_note()));
 
 
-        //Action: supprimer une note
-            //TODO : supprimer note ! Créer slot supprimer_note
-            QAction *ActionSupprimer=new QAction("&Supprimer note",this);
-            connect(ActionSupprimer,SIGNAL(triggered(bool)),this,SLOT(supprimer_note()));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
-            toolBar_supp_note=addToolBar("Edition");
-            toolBar_supp_note->addAction(ActionSupprimer);
-            MenuFichier->addAction(ActionSupprimer);
+
 
 
         Action_aff_relation=new QAction("Afficher les relations ",this);
@@ -108,9 +116,7 @@ interface::interface(): QMainWindow()
         toolBar_supp_note->addAction(Action_aff_relation);
 
 
-        QAction *ActionViderCorbeille=new QAction("&Vider la corbeille",this);
-        connect(ActionViderCorbeille,SIGNAL(triggered(bool)),this,SLOT(ViderCorbeille()));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer
-        MenuFichier->addAction(ActionViderCorbeille);
+
 
     CreateDock_selected_Note();
     setCentralWidget(ZoneCentrale);
