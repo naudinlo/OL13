@@ -1,5 +1,15 @@
 \hypertarget{class_relation}{}\section{Relation Class Reference}
 \label{class_relation}\index{Relation@{Relation}}
+
+
+Collaboration diagram for Relation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{class_relation__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -7,9 +17,6 @@ class \hyperlink{class_relation_1_1_iterator}{Iterator}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_relation_a69211cc18aed20c1df97c4b73317a2e1}\label{class_relation_a69211cc18aed20c1df97c4b73317a2e1}} 
-\hyperlink{class_notes_couple}{Notes\+Couple} \& {\bfseries get\+New\+Couple\+Relation} (\hyperlink{class_note}{Note} $\ast$n1, \hyperlink{class_note}{Note} $\ast$n2, Q\+String label=0, bool s=false)
 \item 
 \mbox{\Hypertarget{class_relation_ac665710061b98c5e13acaf3d9c5f68f6}\label{class_relation_ac665710061b98c5e13acaf3d9c5f68f6}} 
 {\bfseries Relation} (Q\+String t, Q\+String d)
@@ -23,37 +30,160 @@ void {\bfseries set\+Title} (Q\+String t)
 \mbox{\Hypertarget{class_relation_a5fd3dc676bd0e4994b5fa1897c3a3a93}\label{class_relation_a5fd3dc676bd0e4994b5fa1897c3a3a93}} 
 void {\bfseries set\+Description} (Q\+String d)
 \item 
+\hyperlink{class_notes_couple}{Notes\+Couple} \& \hyperlink{class_relation_a69211cc18aed20c1df97c4b73317a2e1}{get\+New\+Couple\+Relation} (\hyperlink{class_note}{Note} $\ast$n1, \hyperlink{class_note}{Note} $\ast$n2, Q\+String label=0, bool s=false)
+\begin{DoxyCompactList}\small\item\em Créer un couple de note dans une relation. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_relation_a8bae20c027348b4e374c525f6ab1d840}\label{class_relation_a8bae20c027348b4e374c525f6ab1d840}} 
 const Q\+String {\bfseries get\+Description} () const
 \item 
-\mbox{\Hypertarget{class_relation_a086c39ecf396e3cfcb465fd9eea5a904}\label{class_relation_a086c39ecf396e3cfcb465fd9eea5a904}} 
-\hyperlink{class_notes_couple}{Notes\+Couple} $\ast$ {\bfseries get\+Couple\+Relation} (\hyperlink{class_note}{Note} $\ast$n1, \hyperlink{class_note}{Note} $\ast$n2) const
-\item 
-\mbox{\Hypertarget{class_relation_ab81e16d688dcb4703e8ab299fef80c10}\label{class_relation_ab81e16d688dcb4703e8ab299fef80c10}} 
-void {\bfseries remove\+Couple\+Relation} (\hyperlink{class_note}{Note} $\ast$n1, \hyperlink{class_note}{Note} $\ast$n2)
-\item 
-\mbox{\Hypertarget{class_relation_a8f25fe0ab5bf722eb08d2dd31e99c7f4}\label{class_relation_a8f25fe0ab5bf722eb08d2dd31e99c7f4}} 
-void {\bfseries remove\+Note\+Relation} (\hyperlink{class_note}{Note} $\ast$n1)
-\item 
+\hyperlink{class_notes_couple}{Notes\+Couple} $\ast$ \hyperlink{class_relation_a086c39ecf396e3cfcb465fd9eea5a904}{get\+Couple\+Relation} (\hyperlink{class_note}{Note} $\ast$n1, \hyperlink{class_note}{Note} $\ast$n2) const
+\begin{DoxyCompactList}\small\item\em Retourne un pointeur sur un couple d\textquotesingle{}une référence dont les deux notes sont passées en paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{class_relation_ab81e16d688dcb4703e8ab299fef80c10}{remove\+Couple\+Relation} (\hyperlink{class_note}{Note} $\ast$n1, \hyperlink{class_note}{Note} $\ast$n2)
+\begin{DoxyCompactList}\small\item\em Supprime un couple de note d\textquotesingle{}une relation. \end{DoxyCompactList}\item 
+void \hyperlink{class_relation_a8f25fe0ab5bf722eb08d2dd31e99c7f4}{remove\+Note\+Relation} (\hyperlink{class_note}{Note} $\ast$n1)
+\begin{DoxyCompactList}\small\item\em Supprime une note d\textquotesingle{}une relation. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_relation_a0b8a359787fe32c991710039fd081f97}\label{class_relation_a0b8a359787fe32c991710039fd081f97}} 
-std\+::string {\bfseries display\+Relation} ()
-\item 
+std\+::string \hyperlink{class_relation_a0b8a359787fe32c991710039fd081f97}{display\+Relation} ()
+\begin{DoxyCompactList}\small\item\em Affiche une relation et l\textquotesingle{}ensemble des couples de notes qui en font parti. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_relation_ae30f6b7351f9ff6b3ed74422738a6ea2}\label{class_relation_ae30f6b7351f9ff6b3ed74422738a6ea2}} 
 \hyperlink{class_relation_1_1_iterator}{Iterator} {\bfseries get\+Iterator} ()
 \item 
-\mbox{\Hypertarget{class_relation_aa6974a453611dee90f2ca2da9fe30de6}\label{class_relation_aa6974a453611dee90f2ca2da9fe30de6}} 
-void {\bfseries display\+Couple\+Relation} (\hyperlink{class_note}{Note} $\ast$n1, \hyperlink{class_note}{Note} $\ast$n2) const
-\end{DoxyCompactItemize}
+void \hyperlink{class_relation_aa6974a453611dee90f2ca2da9fe30de6}{display\+Couple\+Relation} (\hyperlink{class_note}{Note} $\ast$n1, \hyperlink{class_note}{Note} $\ast$n2) const
+\begin{DoxyCompactList}\small\item\em Affiche un couple dans une relation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 36 of file relations.\+h.
+Definition at line 63 of file relations.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_relation_aa6974a453611dee90f2ca2da9fe30de6}\label{class_relation_aa6974a453611dee90f2ca2da9fe30de6}} 
+\index{Relation@{Relation}!display\+Couple\+Relation@{display\+Couple\+Relation}}
+\index{display\+Couple\+Relation@{display\+Couple\+Relation}!Relation@{Relation}}
+\subsubsection{\texorpdfstring{display\+Couple\+Relation()}{displayCoupleRelation()}}
+{\footnotesize\ttfamily void Relation\+::display\+Couple\+Relation (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} $\ast$}]{n1,  }\item[{\hyperlink{class_note}{Note} $\ast$}]{n2 }\end{DoxyParamCaption}) const}
+
+
+
+Affiche un couple dans une relation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Note$\ast$} & n1 \hyperlink{class_note}{Note} X du couple de la relation a afficher \\
+\hline
+{\em Note$\ast$} & n2 \hyperlink{class_note}{Note} Y du couple de la relation a afficher \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file relations.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relation_aa6974a453611dee90f2ca2da9fe30de6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_relation_a086c39ecf396e3cfcb465fd9eea5a904}\label{class_relation_a086c39ecf396e3cfcb465fd9eea5a904}} 
+\index{Relation@{Relation}!get\+Couple\+Relation@{get\+Couple\+Relation}}
+\index{get\+Couple\+Relation@{get\+Couple\+Relation}!Relation@{Relation}}
+\subsubsection{\texorpdfstring{get\+Couple\+Relation()}{getCoupleRelation()}}
+{\footnotesize\ttfamily \hyperlink{class_notes_couple}{Notes\+Couple} $\ast$ Relation\+::get\+Couple\+Relation (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} $\ast$}]{n1,  }\item[{\hyperlink{class_note}{Note} $\ast$}]{n2 }\end{DoxyParamCaption}) const}
+
+
+
+Retourne un pointeur sur un couple d\textquotesingle{}une référence dont les deux notes sont passées en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Note$\ast$} & n1 \hyperlink{class_note}{Note} X du couple de la relation a retourner \\
+\hline
+{\em Note$\ast$} & n2 \hyperlink{class_note}{Note} Y du couple de la relation a retourner \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file relations.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relation_a086c39ecf396e3cfcb465fd9eea5a904_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_relation_a69211cc18aed20c1df97c4b73317a2e1}\label{class_relation_a69211cc18aed20c1df97c4b73317a2e1}} 
+\index{Relation@{Relation}!get\+New\+Couple\+Relation@{get\+New\+Couple\+Relation}}
+\index{get\+New\+Couple\+Relation@{get\+New\+Couple\+Relation}!Relation@{Relation}}
+\subsubsection{\texorpdfstring{get\+New\+Couple\+Relation()}{getNewCoupleRelation()}}
+{\footnotesize\ttfamily \hyperlink{class_notes_couple}{Notes\+Couple} \& Relation\+::get\+New\+Couple\+Relation (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} $\ast$}]{n1,  }\item[{\hyperlink{class_note}{Note} $\ast$}]{n2,  }\item[{Q\+String}]{label = {\ttfamily 0},  }\item[{bool}]{s = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Créer un couple de note dans une relation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Note$\ast$} & n1 \hyperlink{class_note}{Note} X du couple dans la relation Note$\ast$ n2 \hyperlink{class_note}{Note} Y du couple dans la relation Q\+String label Label du couple dans la relation bool s Symétrie du couple dans la relation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file relations.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relation_a69211cc18aed20c1df97c4b73317a2e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_relation_ab81e16d688dcb4703e8ab299fef80c10}\label{class_relation_ab81e16d688dcb4703e8ab299fef80c10}} 
+\index{Relation@{Relation}!remove\+Couple\+Relation@{remove\+Couple\+Relation}}
+\index{remove\+Couple\+Relation@{remove\+Couple\+Relation}!Relation@{Relation}}
+\subsubsection{\texorpdfstring{remove\+Couple\+Relation()}{removeCoupleRelation()}}
+{\footnotesize\ttfamily void Relation\+::remove\+Couple\+Relation (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} $\ast$}]{n1,  }\item[{\hyperlink{class_note}{Note} $\ast$}]{n2 }\end{DoxyParamCaption})}
+
+
+
+Supprime un couple de note d\textquotesingle{}une relation. 
+
+Si le couple demandé est symétrique, le deux couples créés par ces notes sont supprimés. 
+\begin{DoxyParams}{Parameters}
+{\em Note$\ast$} & n1 \hyperlink{class_note}{Note} X du couple a supprimer de la relation \\
+\hline
+{\em Note$\ast$} & n2 \hyperlink{class_note}{Note} Y du couple a supprimer de la relation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 154 of file relations.\+cpp.
+
+\mbox{\Hypertarget{class_relation_a8f25fe0ab5bf722eb08d2dd31e99c7f4}\label{class_relation_a8f25fe0ab5bf722eb08d2dd31e99c7f4}} 
+\index{Relation@{Relation}!remove\+Note\+Relation@{remove\+Note\+Relation}}
+\index{remove\+Note\+Relation@{remove\+Note\+Relation}!Relation@{Relation}}
+\subsubsection{\texorpdfstring{remove\+Note\+Relation()}{removeNoteRelation()}}
+{\footnotesize\ttfamily void Relation\+::remove\+Note\+Relation (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} $\ast$}]{n1 }\end{DoxyParamCaption})}
+
+
+
+Supprime une note d\textquotesingle{}une relation. 
+
+Si une note passée en paramètre appartient à un couple présent au sein de la relation this, le couple est supprimée de la relation. 
+\begin{DoxyParams}{Parameters}
+{\em Note$\ast$} & n1 \hyperlink{class_note}{Note} a supprimer de la relation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 182 of file relations.\+cpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-relations.\+h\item 
-\hyperlink{relations_8cpp}{relations.\+cpp}\end{DoxyCompactItemize}
+O\+L13/relations.\+h\item 
+O\+L13/\hyperlink{relations_8cpp}{relations.\+cpp}\end{DoxyCompactItemize}

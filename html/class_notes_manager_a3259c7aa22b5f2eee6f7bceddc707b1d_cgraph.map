@@ -1,0 +1,4 @@
+<map id="NotesManager::editArticle" name="NotesManager::editArticle">
+<area shape="rect" id="node2" href="$class_notes_manager.html#ae3af78108c46b9816207e66fcde64c5b" title="Retourne la liste des versions d&#39;une note spécifiée en paramètre. " alt="" coords="225,5,436,32"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="484,5,656,32"/>
+</map>

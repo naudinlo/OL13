@@ -29,6 +29,7 @@ interface::interface(): QMainWindow()
 {
     /*** Initialisation des attributs ***/
         note_manager=NotesManager::getInstance();
+        //note_manager->load_fichier();
         note_page=0;
         ZoneCentrale=new page_vide();
 
@@ -165,9 +166,10 @@ void interface::addAction_new_rel(){
 
 }
 /**
+<<<<<<< HEAD
  * \fn        interface::CreateDock_edited_Note
- * \brief Création dese docks : Editer_note, et Afficher_Relation
- * affiché lors de l'ouverture d'une note
+ * \brief Création des docks : Editer_note, et Afficher_Relation
+ * affichés lors de l'ouverture d'une note
  *
 */
 

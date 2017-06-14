@@ -1,0 +1,18 @@
+<map id="NotesManager::getNote" name="NotesManager::getNote">
+<area shape="rect" id="node2" href="$class_notes_manager.html#a989429244c36c35ef68204f6ae2a0a5f" title="Action de suppression d&#39;une note spécifiée en paramètre. " alt="" coords="489,130,665,157"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#ac85019776c1e8653665e24abc9d8001d" title="Retourne la liste des notes en relation ascendant avec une note specifiée en paramètre. " alt="" coords="215,50,438,77"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a9f2c72d67d67c89a61f77a9b1a0ae390" title="Renvoie la liste de tous les couples ascendants de la relation portant l&#39;ID id. " alt="" coords="235,101,419,143"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#a2ed035544b433b9cddfc83fb4c081a65" title="Retourne la liste des notes en relation descendante avec une note specifiée en paramètre. " alt="" coords="212,167,441,194"/>
+<area shape="rect" id="node6" href="$class_notes_manager.html#a4b8636fd8bc9d750d778585d3e4372cf" title="Renvoie la liste de tous les couples descendants de la relation portant l&#39;ID id. " alt="" coords="235,219,419,260"/>
+<area shape="rect" id="node7" href="$class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a" title="Charge les relations d&#39;un fichier XML dans l&#39;application. " alt="" coords="251,335,402,362"/>
+<area shape="rect" id="node11" href="$class_note.html#a3af2edc369310b9f122bd1fd6dbfa717" title="Définie une note comme référence d&#39;une autre. " alt="" coords="267,487,386,514"/>
+<area shape="rect" id="node15" href="$class_note.html#a8e3ba6961f62a38f49b5fd209c083896" title="Retourne une note référencée par une autre. " alt="" coords="260,386,393,413"/>
+<area shape="rect" id="node16" href="$class_note.html#a91c86cf6ed18e4badb59a41e737a15fa" title="Supprime la référence sur une note spécifiée par son ID. " alt="" coords="251,437,402,463"/>
+<area shape="rect" id="node17" href="$class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="244,285,409,311"/>
+<area shape="rect" id="node8" href="$class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="508,335,647,362"/>
+<area shape="rect" id="node9" href="$classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1" title="Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et l..." alt="" coords="713,335,864,362"/>
+<area shape="rect" id="node10" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="912,335,1040,362"/>
+<area shape="rect" id="node12" href="$class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661" title="Détecte la présence d&#39;une expression régulière dans un champ de text et ajoute une référence en consé..." alt="" coords="514,487,641,514"/>
+<area shape="rect" id="node13" href="$class_note.html#a0490153115307d5f59974d7000260e48" title="Constructeur des classes notes, articles task et recording. " alt="" coords="747,462,831,489"/>
+<area shape="rect" id="node14" href="$class_task.html#a08a0f57803d8ef35f687f23f759e9f0c" title="Constructeur de la classe task. " alt="" coords="933,487,1019,514"/>
+</map>

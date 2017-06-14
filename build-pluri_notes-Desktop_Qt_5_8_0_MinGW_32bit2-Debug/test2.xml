@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NoteManager>
+    <NoteVersions>
+        <T></T><article><id>test</id><title>test1v4</title><c_date>mer. juin 14 14:50:46 2017</c_date><lm_date>mer. juin 14 14:50:46 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text>test des versions editées</text></article><article><id>test</id><title>test1v3</title><c_date>mer. juin 14 14:50:46 2017</c_date><lm_date>mer. juin 14 14:50:46 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text>test des versions editées</text></article><article><id>test</id><title>test1v2</title><c_date>mer. juin 14 14:50:46 2017</c_date><lm_date>mer. juin 14 14:50:46 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text>\ref{test2} et encore \ref{testTask}</text></article><article><id>test</id><title>test1</title><c_date>mer. juin 14 14:50:46 2017</c_date><lm_date>mer. juin 14 14:50:46 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text>test de l'itérator</text></article>
+    </NoteVersions>
+    <NoteVersions>
+        <T></T><article><id>refTest</id><title>test1 \ref{test}</title><c_date>mer. juin 14 14:50:46 2017</c_date><lm_date>mer. juin 14 14:50:46 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text>test de l'itérator</text></article>
+    </NoteVersions>
+    <NoteVersions>
+        <T></T><task><id>testTask</id><title>testTaskv4</title><c_date>mer. juin 14 14:50:46 2017</c_date><lm_date>mer. juin 14 14:50:46 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><action>Alors?</action><priority>-1</priority><d_date></d_date><status>OnGoing</status></task><task><id>testTask</id><title>testTaskv3</title><c_date>mer. juin 14 14:50:46 2017</c_date><lm_date>mer. juin 14 14:50:46 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><action>U</action><priority>-1</priority><d_date></d_date><status>OnGoing</status></task><task><id>testTask</id><title>testTaskv2</title><c_date>mer. juin 14 14:50:46 2017</c_date><lm_date>mer. juin 14 14:50:46 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><action>URGENT edition</action><priority>-1</priority><d_date></d_date><status>OnGoing</status></task><task><id>testTask</id><title>testTask1</title><c_date>mer. juin 14 14:50:46 2017</c_date><lm_date>mer. juin 14 14:50:46 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><action>testTask de l'itérator</action><priority>-1</priority><d_date></d_date><status>OnGoing</status></task>
+    </NoteVersions>
+    <NoteVersions>
+        <T></T><article><id>test2</id><title>test2</title><c_date>mer. juin 14 14:50:46 2017</c_date><lm_date>mer. juin 14 14:50:46 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text>test2 \ref{test} de l'itérator</text></article>
+    </NoteVersions>
+    <relation>
+        <title>titreRelation1</title>
+        <description>descriptionRelation1</description>
+        <notecouple>
+            <couple>
+                <notex>test</notex>
+                <notey>testTask</notey>
+                <label></label>
+                <symetric>false</symetric>
+            </couple>
+            <couple>
+                <notex>test2</notex>
+                <notey>testTask</notey>
+                <label></label>
+                <symetric>false</symetric>
+            </couple>
+            <couple>
+                <notex>test</notex>
+                <notey>test2</notey>
+                <label></label>
+                <symetric>false</symetric>
+            </couple>
+        </notecouple>
+    </relation>
+    <relation>
+        <title>titreRelation2</title>
+        <description>descriptionRelation2</description>
+        <notecouple>
+            <couple>
+                <notex>test</notex>
+                <notey>test2</notey>
+                <label></label>
+                <symetric>false</symetric>
+            </couple>
+        </notecouple>
+    </relation>
+</NoteManager>

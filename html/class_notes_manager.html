@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">1</span>
+   &#160;<span id="projectnumber">2</span>
    </div>
   </td>
  </tr>
@@ -68,6 +68,13 @@ $(function() {
 <div class="title">NotesManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for NotesManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager__coll__graph.png" border="0" usemap="#_notes_manager_coll__map" alt="Collaboration graph"/></div>
+<map name="_notes_manager_coll__map" id="_notes_manager_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -115,28 +122,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a989429244c36c35ef68204f6ae2a0a5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#a989429244c36c35ef68204f6ae2a0a5f">deleteNote</a> (const QString &amp;id)</td></tr>
 <tr class="memdesc:a989429244c36c35ef68204f6ae2a0a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action de suppression d'une note spécifiée en paramètre.  <a href="#a989429244c36c35ef68204f6ae2a0a5f">More...</a><br /></td></tr>
 <tr class="separator:a989429244c36c35ef68204f6ae2a0a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a47d17ce4add155db4715f027a7ea4f"><td class="memItemLeft" align="right" valign="top"><a id="a5a47d17ce4add155db4715f027a7ea4f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>createNote</b> (const QString &amp;id)</td></tr>
-<tr class="separator:a5a47d17ce4add155db4715f027a7ea4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a797d858176de3f5e64aa8194797909fb"><td class="memItemLeft" align="right" valign="top"><a id="a797d858176de3f5e64aa8194797909fb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setFilename</b> (const QString f)</td></tr>
+<tr class="memitem:a797d858176de3f5e64aa8194797909fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#a797d858176de3f5e64aa8194797909fb">setFilename</a> (const QString f)</td></tr>
+<tr class="memdesc:a797d858176de3f5e64aa8194797909fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affectation de l'attribut filename du manager à f.  <a href="#a797d858176de3f5e64aa8194797909fb">More...</a><br /></td></tr>
 <tr class="separator:a797d858176de3f5e64aa8194797909fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a566cbb0dd7b606ec34629a2aa8010b73"><td class="memItemLeft" align="right" valign="top"><a id="a566cbb0dd7b606ec34629a2aa8010b73"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>getFilename</b> () const</td></tr>
+<tr class="memitem:a566cbb0dd7b606ec34629a2aa8010b73"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#a566cbb0dd7b606ec34629a2aa8010b73">getFilename</a> () const</td></tr>
+<tr class="memdesc:a566cbb0dd7b606ec34629a2aa8010b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'attribut filename du manager.  <a href="#a566cbb0dd7b606ec34629a2aa8010b73">More...</a><br /></td></tr>
 <tr class="separator:a566cbb0dd7b606ec34629a2aa8010b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4fb2de50633dd25b71024343341cd64"><td class="memItemLeft" align="right" valign="top"><a id="ad4fb2de50633dd25b71024343341cd64"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> ()</td></tr>
+<tr class="memitem:ad4fb2de50633dd25b71024343341cd64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64">load</a> ()</td></tr>
+<tr class="memdesc:ad4fb2de50633dd25b71024343341cd64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge les notes d'un fichier XML dans l'application.  <a href="#ad4fb2de50633dd25b71024343341cd64">More...</a><br /></td></tr>
 <tr class="separator:ad4fb2de50633dd25b71024343341cd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad271bd7f8079b01b04a32b886b498bac"><td class="memItemLeft" align="right" valign="top"><a id="ad271bd7f8079b01b04a32b886b498bac"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>save</b> () const</td></tr>
+<tr class="memitem:ad271bd7f8079b01b04a32b886b498bac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac">save</a> () const</td></tr>
+<tr class="memdesc:ad271bd7f8079b01b04a32b886b498bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde des notes dans un fichier XML.  <a href="#ad271bd7f8079b01b04a32b886b498bac">More...</a><br /></td></tr>
 <tr class="separator:ad271bd7f8079b01b04a32b886b498bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a8aba4f2f40239fce1b541a10b92a7e"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#a2a8aba4f2f40239fce1b541a10b92a7e">updateId</a> (QString Id2) const</td></tr>
+<tr class="memitem:a716744a0992b0ce74d43d80c7d987531"><td class="memItemLeft" align="right" valign="top"><a id="a716744a0992b0ce74d43d80c7d987531"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>load_fichier</b> () const</td></tr>
+<tr class="separator:a716744a0992b0ce74d43d80c7d987531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76c059043681ec4c41d91e75e06ea353"><td class="memItemLeft" align="right" valign="top"><a id="a76c059043681ec4c41d91e75e06ea353"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>save_fichier</b> ()</td></tr>
+<tr class="separator:a76c059043681ec4c41d91e75e06ea353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a8aba4f2f40239fce1b541a10b92a7e"><td class="memItemLeft" align="right" valign="top"><a id="a2a8aba4f2f40239fce1b541a10b92a7e"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>updateId</b> (QString Id2) const</td></tr>
 <tr class="separator:a2a8aba4f2f40239fce1b541a10b92a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f2c72d67d67c89a61f77a9b1a0ae390"><td class="memItemLeft" align="right" valign="top"><a id="a9f2c72d67d67c89a61f77a9b1a0ae390"></a>
-QList&lt; <a class="el" href="class_tuple_note___relation.html">TupleNote_Relation</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getListTupleAscendants</b> (const QString &amp;id)</td></tr>
+<tr class="memitem:a9f2c72d67d67c89a61f77a9b1a0ae390"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_tuple_note___relation.html">TupleNote_Relation</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#a9f2c72d67d67c89a61f77a9b1a0ae390">getListTupleAscendants</a> (const QString &amp;id)</td></tr>
+<tr class="memdesc:a9f2c72d67d67c89a61f77a9b1a0ae390"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la liste de tous les couples ascendants de la relation portant l'ID id.  <a href="#a9f2c72d67d67c89a61f77a9b1a0ae390">More...</a><br /></td></tr>
 <tr class="separator:a9f2c72d67d67c89a61f77a9b1a0ae390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b8636fd8bc9d750d778585d3e4372cf"><td class="memItemLeft" align="right" valign="top"><a id="a4b8636fd8bc9d750d778585d3e4372cf"></a>
-QList&lt; <a class="el" href="class_tuple_note___relation.html">TupleNote_Relation</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getListTupleDescendants</b> (const QString &amp;id)</td></tr>
+<tr class="memitem:a4b8636fd8bc9d750d778585d3e4372cf"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_tuple_note___relation.html">TupleNote_Relation</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#a4b8636fd8bc9d750d778585d3e4372cf">getListTupleDescendants</a> (const QString &amp;id)</td></tr>
+<tr class="memdesc:a4b8636fd8bc9d750d778585d3e4372cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la liste de tous les couples descendants de la relation portant l'ID id.  <a href="#a4b8636fd8bc9d750d778585d3e4372cf">More...</a><br /></td></tr>
 <tr class="separator:a4b8636fd8bc9d750d778585d3e4372cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac85019776c1e8653665e24abc9d8001d"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_note.html">Note</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#ac85019776c1e8653665e24abc9d8001d">getListAscendants</a> (const QString &amp;id)</td></tr>
 <tr class="memdesc:ac85019776c1e8653665e24abc9d8001d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la liste des notes en relation ascendant avec une note specifiée en paramètre.  <a href="#ac85019776c1e8653665e24abc9d8001d">More...</a><br /></td></tr>
@@ -159,77 +170,24 @@ QList&lt; <a class="el" href="class_note.html">Note</a> * &gt;&#160;</td><td cla
 <tr class="memdesc:abc6587a5d3986ae674e5dd4b9044f348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restaure une note supprimée en passant à false son attribut isDeleted.  <a href="#abc6587a5d3986ae674e5dd4b9044f348">More...</a><br /></td></tr>
 <tr class="separator:abc6587a5d3986ae674e5dd4b9044f348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cab39a524fd23c6523f895e81f75028"><td class="memItemLeft" align="right" valign="top"><a id="a9cab39a524fd23c6523f895e81f75028"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getnbNote</b> ()</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#a9cab39a524fd23c6523f895e81f75028">getnbNote</a> ()</td></tr>
+<tr class="memdesc:a9cab39a524fd23c6523f895e81f75028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du nombre de notes. <br /></td></tr>
 <tr class="separator:a9cab39a524fd23c6523f895e81f75028"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4907351a20cc85b1fe0327ac1b15c7da"><td class="memItemLeft" align="right" valign="top"><a id="a4907351a20cc85b1fe0327ac1b15c7da"></a>
-<a class="el" href="class_notes_manager_1_1_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getIterator</b> ()</td></tr>
-<tr class="separator:a4907351a20cc85b1fe0327ac1b15c7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa44d5b479d01362a21a0aa5021cd340"><td class="memItemLeft" align="right" valign="top"><a id="afa44d5b479d01362a21a0aa5021cd340"></a>
-<a class="el" href="class_article.html">Article</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNewArticle</b> (const QString &amp;id, const QString &amp;ti, const QString &amp;te)</td></tr>
-<tr class="separator:afa44d5b479d01362a21a0aa5021cd340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44cca3e307d7f7453b2d3080d7cb42be"><td class="memItemLeft" align="right" valign="top"><a id="a44cca3e307d7f7453b2d3080d7cb42be"></a>
-<a class="el" href="class_task.html">Task</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNewTask</b> (const QString &amp;id, const QString &amp;ti, const QString &amp;a, ENUM::StatusType s, unsigned int p, const QDateTime d)</td></tr>
-<tr class="separator:a44cca3e307d7f7453b2d3080d7cb42be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad0991ce10ef7e3329986d6b76ff4667"><td class="memItemLeft" align="right" valign="top"><a id="aad0991ce10ef7e3329986d6b76ff4667"></a>
-<a class="el" href="class_task.html">Task</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNewTask</b> (const QString &amp;id, const QString &amp;ti, const QString &amp;a, ENUM::StatusType s, unsigned int p)</td></tr>
-<tr class="separator:aad0991ce10ef7e3329986d6b76ff4667"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade9ba3a4fb0090079d30a83faf47855c"><td class="memItemLeft" align="right" valign="top"><a id="ade9ba3a4fb0090079d30a83faf47855c"></a>
-<a class="el" href="class_task.html">Task</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNewTask</b> (const QString &amp;id, const QString &amp;ti, const QString &amp;a, ENUM::StatusType s, const QDateTime d)</td></tr>
-<tr class="separator:ade9ba3a4fb0090079d30a83faf47855c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d7f624981c238451a2cecb4a443da57"><td class="memItemLeft" align="right" valign="top"><a id="a9d7f624981c238451a2cecb4a443da57"></a>
-<a class="el" href="class_task.html">Task</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNewTask</b> (const QString &amp;id, const QString &amp;ti, const QString &amp;a, ENUM::StatusType s)</td></tr>
-<tr class="separator:a9d7f624981c238451a2cecb4a443da57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2d502c467aa99f8b3c0e93f1ca8d2a2"><td class="memItemLeft" align="right" valign="top"><a id="aa2d502c467aa99f8b3c0e93f1ca8d2a2"></a>
-<a class="el" href="class_recording.html">Recording</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNewRecording</b> (const QString &amp;id, const QString &amp;ti, const QString &amp;d, ENUM::RecordingType r, QString l)</td></tr>
-<tr class="separator:aa2d502c467aa99f8b3c0e93f1ca8d2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f91202dd3f49047a721bb2149f3f49"><td class="memItemLeft" align="right" valign="top"><a id="ab5f91202dd3f49047a721bb2149f3f49"></a>
-<a class="el" href="class_note.html">Note</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNote</b> (const QString &amp;id)</td></tr>
-<tr class="separator:ab5f91202dd3f49047a721bb2149f3f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a989429244c36c35ef68204f6ae2a0a5f"><td class="memItemLeft" align="right" valign="top"><a id="a989429244c36c35ef68204f6ae2a0a5f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteNote</b> (const QString &amp;id)</td></tr>
-<tr class="separator:a989429244c36c35ef68204f6ae2a0a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a47d17ce4add155db4715f027a7ea4f"><td class="memItemLeft" align="right" valign="top"><a id="a5a47d17ce4add155db4715f027a7ea4f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>createNote</b> (const QString &amp;id)</td></tr>
-<tr class="separator:a5a47d17ce4add155db4715f027a7ea4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a08ec1cfdd1b619141887166becbe8d"><td class="memItemLeft" align="right" valign="top"><a id="a7a08ec1cfdd1b619141887166becbe8d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>editNote</b> (QString &amp;id)</td></tr>
-<tr class="separator:a7a08ec1cfdd1b619141887166becbe8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a797d858176de3f5e64aa8194797909fb"><td class="memItemLeft" align="right" valign="top"><a id="a797d858176de3f5e64aa8194797909fb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setFilename</b> (const QString f)</td></tr>
-<tr class="separator:a797d858176de3f5e64aa8194797909fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a566cbb0dd7b606ec34629a2aa8010b73"><td class="memItemLeft" align="right" valign="top"><a id="a566cbb0dd7b606ec34629a2aa8010b73"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>getFilename</b> () const</td></tr>
-<tr class="separator:a566cbb0dd7b606ec34629a2aa8010b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4fb2de50633dd25b71024343341cd64"><td class="memItemLeft" align="right" valign="top"><a id="ad4fb2de50633dd25b71024343341cd64"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> ()</td></tr>
-<tr class="separator:ad4fb2de50633dd25b71024343341cd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad271bd7f8079b01b04a32b886b498bac"><td class="memItemLeft" align="right" valign="top"><a id="ad271bd7f8079b01b04a32b886b498bac"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>save</b> () const</td></tr>
-<tr class="separator:ad271bd7f8079b01b04a32b886b498bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84e962ad7fa999cbb687fb43c1b3bab4"><td class="memItemLeft" align="right" valign="top"><a id="a84e962ad7fa999cbb687fb43c1b3bab4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>emptyTrash</b> ()</td></tr>
-<tr class="separator:a84e962ad7fa999cbb687fb43c1b3bab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc6587a5d3986ae674e5dd4b9044f348"><td class="memItemLeft" align="right" valign="top"><a id="abc6587a5d3986ae674e5dd4b9044f348"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>restoreNoteTrash</b> (const QString &amp;id)</td></tr>
-<tr class="separator:abc6587a5d3986ae674e5dd4b9044f348"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4907351a20cc85b1fe0327ac1b15c7da"><td class="memItemLeft" align="right" valign="top"><a id="a4907351a20cc85b1fe0327ac1b15c7da"></a>
-<a class="el" href="class_notes_manager_1_1_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getIterator</b> ()</td></tr>
+<a class="el" href="class_notes_manager_1_1_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da">getIterator</a> ()</td></tr>
+<tr class="memdesc:a4907351a20cc85b1fe0327ac1b15c7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'accéder à l'itérateur de notes. <br /></td></tr>
 <tr class="separator:a4907351a20cc85b1fe0327ac1b15c7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1a91e51ba8506c7ae7cd60d06bd075f"><td class="memItemLeft" align="right" valign="top"><a id="ad1a91e51ba8506c7ae7cd60d06bd075f"></a>
-static <a class="el" href="class_notes_manager.html">NotesManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
+static <a class="el" href="class_notes_manager.html">NotesManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f">getInstance</a> ()</td></tr>
+<tr class="memdesc:ad1a91e51ba8506c7ae7cd60d06bd075f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'obtenir un pointeur sur le manager de notes. <br /></td></tr>
 <tr class="separator:ad1a91e51ba8506c7ae7cd60d06bd075f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd12bae3c990a408e9ef55aa0d93b675"><td class="memItemLeft" align="right" valign="top"><a id="abd12bae3c990a408e9ef55aa0d93b675"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstance</b> ()</td></tr>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_notes_manager.html#abd12bae3c990a408e9ef55aa0d93b675">libererInstance</a> ()</td></tr>
+<tr class="memdesc:abd12bae3c990a408e9ef55aa0d93b675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de libérer le manager de note. <br /></td></tr>
 <tr class="separator:abd12bae3c990a408e9ef55aa0d93b675"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affdf4def67ae5f74f019a29a0b7d9b19"><td class="memItemLeft" align="right" valign="top"><a id="affdf4def67ae5f74f019a29a0b7d9b19"></a>
-static <a class="el" href="class_notes_manager.html">NotesManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
-<tr class="separator:affdf4def67ae5f74f019a29a0b7d9b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bc9bbb0fc833106ea703b292c80307f"><td class="memItemLeft" align="right" valign="top"><a id="a0bc9bbb0fc833106ea703b292c80307f"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstance</b> ()</td></tr>
-<tr class="separator:a0bc9bbb0fc833106ea703b292c80307f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -259,7 +217,19 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00852">852</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00865">865</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a989429244c36c35ef68204f6ae2a0a5f_cgraph.png" border="0" usemap="#class_notes_manager_a989429244c36c35ef68204f6ae2a0a5f_cgraph" alt=""/></div>
+<map name="class_notes_manager_a989429244c36c35ef68204f6ae2a0a5f_cgraph" id="class_notes_manager_a989429244c36c35ef68204f6ae2a0a5f_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="483,5,642,32"/>
+<area shape="rect" id="node4" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="229,31,424,57"/>
+<area shape="rect" id="node5" href="class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="244,81,409,108"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="701,5,873,32"/>
+<area shape="rect" id="node6" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="472,81,653,108"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -287,7 +257,16 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00232">232</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00237">237</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a3259c7aa22b5f2eee6f7bceddc707b1d_cgraph.png" border="0" usemap="#class_notes_manager_a3259c7aa22b5f2eee6f7bceddc707b1d_cgraph" alt=""/></div>
+<map name="class_notes_manager_a3259c7aa22b5f2eee6f7bceddc707b1d_cgraph" id="class_notes_manager_a3259c7aa22b5f2eee6f7bceddc707b1d_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#ae3af78108c46b9816207e66fcde64c5b" title="Retourne la liste des versions d&#39;une note spécifiée en paramètre. " alt="" coords="225,5,436,32"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="484,5,656,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -315,7 +294,16 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00264">264</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00269">269</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a1c4cfa021a12b6416c4e800d643b5e0a_cgraph.png" border="0" usemap="#class_notes_manager_a1c4cfa021a12b6416c4e800d643b5e0a_cgraph" alt=""/></div>
+<map name="class_notes_manager_a1c4cfa021a12b6416c4e800d643b5e0a_cgraph" id="class_notes_manager_a1c4cfa021a12b6416c4e800d643b5e0a_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#ae3af78108c46b9816207e66fcde64c5b" title="Retourne la liste des versions d&#39;une note spécifiée en paramètre. " alt="" coords="247,5,457,32"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="505,5,677,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -343,7 +331,16 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00248">248</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00253">253</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a8f8f2b6aaa8c7d41356f9e4be7da2da5_cgraph.png" border="0" usemap="#class_notes_manager_a8f8f2b6aaa8c7d41356f9e4be7da2da5_cgraph" alt=""/></div>
+<map name="class_notes_manager_a8f8f2b6aaa8c7d41356f9e4be7da2da5_cgraph" id="class_notes_manager_a8f8f2b6aaa8c7d41356f9e4be7da2da5_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#ae3af78108c46b9816207e66fcde64c5b" title="Retourne la liste des versions d&#39;une note spécifiée en paramètre. " alt="" coords="216,5,427,32"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="475,5,647,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -365,7 +362,57 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
 <p>Supprime définitivement l'ensemble des notes déclarées comme supprimées. </p>
 <p>Parcourt l'ensemble des notes, lorsqu'une note est reconnue comme supprimée chaque version de cette note est supprimée puis la liste des versions elle-même est vidée et supprimée </p>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00899">899</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00893">893</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a84e962ad7fa999cbb687fb43c1b3bab4_cgraph.png" border="0" usemap="#class_notes_manager_a84e962ad7fa999cbb687fb43c1b3bab4_cgraph" alt=""/></div>
+<map name="class_notes_manager_a84e962ad7fa999cbb687fb43c1b3bab4_cgraph" id="class_notes_manager_a84e962ad7fa999cbb687fb43c1b3bab4_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="236,5,417,32"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="241,56,413,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a566cbb0dd7b606ec34629a2aa8010b73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a566cbb0dd7b606ec34629a2aa8010b73">&#9670;&nbsp;</a></span>getFilename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString NotesManager::getFilename </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'attribut filename du manager. </p>
+<dl class="section return"><dt>Returns</dt><dd>Qstring </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00095">95</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a566cbb0dd7b606ec34629a2aa8010b73_icgraph.png" border="0" usemap="#class_notes_manager_a566cbb0dd7b606ec34629a2aa8010b73_icgraph" alt=""/></div>
+<map name="class_notes_manager_a566cbb0dd7b606ec34629a2aa8010b73_icgraph" id="class_notes_manager_a566cbb0dd7b606ec34629a2aa8010b73_icgraph">
+<area shape="rect" id="node2" href="classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir un fichier de sauvegarde. " alt="" coords="448,5,553,32"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="239,73,377,100"/>
+<area shape="rect" id="node3" href="classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="624,33,752,60"/>
+<area shape="rect" id="node5" href="classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1" title="Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et l..." alt="" coords="425,61,576,88"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -393,7 +440,18 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01046">1046</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01011">1011</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_ac85019776c1e8653665e24abc9d8001d_cgraph.png" border="0" usemap="#class_notes_manager_ac85019776c1e8653665e24abc9d8001d_cgraph" alt=""/></div>
+<map name="class_notes_manager_ac85019776c1e8653665e24abc9d8001d_cgraph" id="class_notes_manager_ac85019776c1e8653665e24abc9d8001d_cgraph">
+<area shape="rect" id="node2" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="276,5,471,32"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="283,56,464,83"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="294,107,453,133"/>
+<area shape="rect" id="node5" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="519,107,691,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -421,7 +479,18 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01079">1079</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01050">1050</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a2ed035544b433b9cddfc83fb4c081a65_cgraph.png" border="0" usemap="#class_notes_manager_a2ed035544b433b9cddfc83fb4c081a65_cgraph" alt=""/></div>
+<map name="class_notes_manager_a2ed035544b433b9cddfc83fb4c081a65_cgraph" id="class_notes_manager_a2ed035544b433b9cddfc83fb4c081a65_cgraph">
+<area shape="rect" id="node2" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="283,5,477,32"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="289,56,471,83"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="301,107,459,133"/>
+<area shape="rect" id="node5" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="525,107,697,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -449,7 +518,103 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00309">309</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00314">314</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_ae3af78108c46b9816207e66fcde64c5b_cgraph.png" border="0" usemap="#class_notes_manager_ae3af78108c46b9816207e66fcde64c5b_cgraph" alt=""/></div>
+<map name="class_notes_manager_ae3af78108c46b9816207e66fcde64c5b_cgraph" id="class_notes_manager_ae3af78108c46b9816207e66fcde64c5b_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="264,5,436,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_ae3af78108c46b9816207e66fcde64c5b_icgraph.png" border="0" usemap="#class_notes_manager_ae3af78108c46b9816207e66fcde64c5b_icgraph" alt=""/></div>
+<map name="class_notes_manager_ae3af78108c46b9816207e66fcde64c5b_icgraph" id="class_notes_manager_ae3af78108c46b9816207e66fcde64c5b_icgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#a3259c7aa22b5f2eee6f7bceddc707b1d" title="Créé une nouvelle instance d&#39;un article passé en paramètre. " alt="" coords="275,5,447,32"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#a8f8f2b6aaa8c7d41356f9e4be7da2da5" title="Créé une nouvelle instance d&#39;une task passée en paramètre. " alt="" coords="279,56,442,83"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#a1c4cfa021a12b6416c4e800d643b5e0a" title="Créé une nouvelle instance d&#39;un recording passé en paramètre. " alt="" coords="264,107,457,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9f2c72d67d67c89a61f77a9b1a0ae390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f2c72d67d67c89a61f77a9b1a0ae390">&#9670;&nbsp;</a></span>getListTupleAscendants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="class_tuple_note___relation.html">TupleNote_Relation</a> * &gt; NotesManager::getListTupleAscendants </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la liste de tous les couples ascendants de la relation portant l'ID id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>QString&amp; id ID de la relation concernée </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01031">1031</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a9f2c72d67d67c89a61f77a9b1a0ae390_cgraph.png" border="0" usemap="#class_notes_manager_a9f2c72d67d67c89a61f77a9b1a0ae390_cgraph" alt=""/></div>
+<map name="class_notes_manager_a9f2c72d67d67c89a61f77a9b1a0ae390_cgraph" id="class_notes_manager_a9f2c72d67d67c89a61f77a9b1a0ae390_cgraph">
+<area shape="rect" id="node2" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="237,5,432,32"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="244,56,425,83"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="255,107,414,133"/>
+<area shape="rect" id="node5" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="480,107,652,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4b8636fd8bc9d750d778585d3e4372cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b8636fd8bc9d750d778585d3e4372cf">&#9670;&nbsp;</a></span>getListTupleDescendants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; <a class="el" href="class_tuple_note___relation.html">TupleNote_Relation</a> * &gt; NotesManager::getListTupleDescendants </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la liste de tous les couples descendants de la relation portant l'ID id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>QString&amp; id ID de la relation concernée </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01069">1069</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a4b8636fd8bc9d750d778585d3e4372cf_cgraph.png" border="0" usemap="#class_notes_manager_a4b8636fd8bc9d750d778585d3e4372cf_cgraph" alt=""/></div>
+<map name="class_notes_manager_a4b8636fd8bc9d750d778585d3e4372cf_cgraph" id="class_notes_manager_a4b8636fd8bc9d750d778585d3e4372cf_cgraph">
+<area shape="rect" id="node2" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="237,5,432,32"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="244,56,425,83"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="255,107,414,133"/>
+<area shape="rect" id="node5" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="480,107,652,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -488,12 +653,31 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
 <p>Créer une nouvelle note de type article La première version de cette note est ajoutée à la liste des versions d'une note. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note à créer const QString&amp; ti Titre de l'article à créer const QString&amp; de Text de l'article a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note à créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; ti Titre de l'article à créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; de Text de l'article a créer </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_article.html">Article</a>&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00031">31</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00032">32</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923_cgraph.png" border="0" usemap="#class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923_cgraph" alt=""/></div>
+<map name="class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923_cgraph" id="class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="248,5,420,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923_icgraph.png" border="0" usemap="#class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923_icgraph" alt=""/></div>
+<map name="class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923_icgraph" id="class_notes_manager_a44bfd4e7fe88b7f300a4be5589f92923_icgraph">
+<area shape="rect" id="node2" href="class_q_note.html#a4f3980466d58be3cb5e15d2e45d74840" title="Constructueur de la clase QNote. " alt="" coords="248,29,352,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -544,12 +728,32 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
 <p>Créé une nouvelle note de type recording La première version de cette note est ajoutée à la liste des versions d'une note. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note a créer const QString&amp; ti Titre du recording a créer const QString&amp; d Description du recording a créer ENUM::RecordingType r Type du recording a créer QString l Link du recording a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; ti Titre du recording a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; d Description du recording a créer </td></tr>
+    <tr><td class="paramname">ENUM::RecordingType</td><td>r Type du recording a créer </td></tr>
+    <tr><td class="paramname">QString</td><td>l Link du recording a créer </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00201">201</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00205">205</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a71d0bc2e2716a4e558705ea76e3ad491_cgraph.png" border="0" usemap="#class_notes_manager_a71d0bc2e2716a4e558705ea76e3ad491_cgraph" alt=""/></div>
+<map name="class_notes_manager_a71d0bc2e2716a4e558705ea76e3ad491_cgraph" id="class_notes_manager_a71d0bc2e2716a4e558705ea76e3ad491_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="268,5,440,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a71d0bc2e2716a4e558705ea76e3ad491_icgraph.png" border="0" usemap="#class_notes_manager_a71d0bc2e2716a4e558705ea76e3ad491_icgraph" alt=""/></div>
+<map name="class_notes_manager_a71d0bc2e2716a4e558705ea76e3ad491_icgraph" id="class_notes_manager_a71d0bc2e2716a4e558705ea76e3ad491_icgraph">
+<area shape="rect" id="node2" href="class_q_note.html#a4f3980466d58be3cb5e15d2e45d74840" title="Constructueur de la clase QNote. " alt="" coords="268,29,372,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -594,15 +798,39 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
 <p>Créer une nouvelle note de type task La première version de cette note est ajoutée à la liste des versions d'une note. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note à créer const QString&amp; ti Titre de la tache à créer const QString&amp; a Action de la tache à créer ENUM::StatusType s Status de la tache à créer unsigned int p Priority de la tache à créer const QDateTime d Date limite de la tache à créer</td></tr>
-    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note a créer const QString&amp; ti Titre de la tache a créer const QString&amp; a Action de la tache a créer ENUM::StatusType s Status de la tache a créer unsigned int p Priority de la tache à créer</td></tr>
-    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note a créer const QString&amp; ti Titre de la tache a créer const QString&amp; a Action de la tache a créer ENUM::StatusType s Status de la tache a créer const QDateTime d Date limite de la tache à créer</td></tr>
-    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note a créer const QString&amp; ti Titre de la tache a créer const QString&amp; a Action de la tache a créer ENUM::StatusType s Status de la tache a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note à créer. </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; ti Titre de la tache à créer. </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; a Action de la tache à créer. </td></tr>
+    <tr><td class="paramname">ENUM::StatusType</td><td>s Status de la tache à créer. </td></tr>
+    <tr><td class="paramname">unsigned</td><td>int p Priority de la tache à créer. </td></tr>
+    <tr><td class="paramname">const</td><td>QDateTime d Date limite de la tache à créer.</td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; ti Titre de la tache a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; a Action de la tache a créer </td></tr>
+    <tr><td class="paramname">ENUM::StatusType</td><td>s Status de la tache a créer </td></tr>
+    <tr><td class="paramname">unsigned</td><td>int p Priority de la tache à créer</td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; ti Titre de la tache a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; a Action de la tache a créer </td></tr>
+    <tr><td class="paramname">ENUM::StatusType</td><td>s Status de la tache a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QDateTime d Date limite de la tache à créer</td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; id ID de la note a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; ti Titre de la tache a créer </td></tr>
+    <tr><td class="paramname">const</td><td>QString&amp; a Action de la tache a créer </td></tr>
+    <tr><td class="paramname">ENUM::StatusType</td><td>s Status de la tache a créer </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00167">167</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00170">170</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a39562bf5aef0d7a113317c1421d578fd_cgraph.png" border="0" usemap="#class_notes_manager_a39562bf5aef0d7a113317c1421d578fd_cgraph" alt=""/></div>
+<map name="class_notes_manager_a39562bf5aef0d7a113317c1421d578fd_cgraph" id="class_notes_manager_a39562bf5aef0d7a113317c1421d578fd_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="239,5,411,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -630,7 +858,38 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00278">278</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00283">283</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a9c401bfe7c91ab37a7c8c4db398e92ff_cgraph.png" border="0" usemap="#class_notes_manager_a9c401bfe7c91ab37a7c8c4db398e92ff_cgraph" alt=""/></div>
+<map name="class_notes_manager_a9c401bfe7c91ab37a7c8c4db398e92ff_cgraph" id="class_notes_manager_a9c401bfe7c91ab37a7c8c4db398e92ff_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="212,5,384,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a9c401bfe7c91ab37a7c8c4db398e92ff_icgraph.png" border="0" usemap="#class_notes_manager_a9c401bfe7c91ab37a7c8c4db398e92ff_icgraph" alt=""/></div>
+<map name="class_notes_manager_a9c401bfe7c91ab37a7c8c4db398e92ff_icgraph" id="class_notes_manager_a9c401bfe7c91ab37a7c8c4db398e92ff_icgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#a989429244c36c35ef68204f6ae2a0a5f" title="Action de suppression d&#39;une note spécifiée en paramètre. " alt="" coords="489,130,665,157"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#ac85019776c1e8653665e24abc9d8001d" title="Retourne la liste des notes en relation ascendant avec une note specifiée en paramètre. " alt="" coords="215,50,438,77"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#a9f2c72d67d67c89a61f77a9b1a0ae390" title="Renvoie la liste de tous les couples ascendants de la relation portant l&#39;ID id. " alt="" coords="235,101,419,143"/>
+<area shape="rect" id="node5" href="class_notes_manager.html#a2ed035544b433b9cddfc83fb4c081a65" title="Retourne la liste des notes en relation descendante avec une note specifiée en paramètre. " alt="" coords="212,167,441,194"/>
+<area shape="rect" id="node6" href="class_notes_manager.html#a4b8636fd8bc9d750d778585d3e4372cf" title="Renvoie la liste de tous les couples descendants de la relation portant l&#39;ID id. " alt="" coords="235,219,419,260"/>
+<area shape="rect" id="node7" href="class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a" title="Charge les relations d&#39;un fichier XML dans l&#39;application. " alt="" coords="251,335,402,362"/>
+<area shape="rect" id="node11" href="class_note.html#a3af2edc369310b9f122bd1fd6dbfa717" title="Définie une note comme référence d&#39;une autre. " alt="" coords="267,487,386,514"/>
+<area shape="rect" id="node15" href="class_note.html#a8e3ba6961f62a38f49b5fd209c083896" title="Retourne une note référencée par une autre. " alt="" coords="260,386,393,413"/>
+<area shape="rect" id="node16" href="class_note.html#a91c86cf6ed18e4badb59a41e737a15fa" title="Supprime la référence sur une note spécifiée par son ID. " alt="" coords="251,437,402,463"/>
+<area shape="rect" id="node17" href="class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="244,285,409,311"/>
+<area shape="rect" id="node8" href="class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="508,335,647,362"/>
+<area shape="rect" id="node9" href="classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1" title="Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et l..." alt="" coords="713,335,864,362"/>
+<area shape="rect" id="node10" href="classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="912,335,1040,362"/>
+<area shape="rect" id="node12" href="class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661" title="Détecte la présence d&#39;une expression régulière dans un champ de text et ajoute une référence en consé..." alt="" coords="514,487,641,514"/>
+<area shape="rect" id="node13" href="class_note.html#a0490153115307d5f59974d7000260e48" title="Constructeur des classes notes, articles task et recording. " alt="" coords="747,462,831,489"/>
+<area shape="rect" id="node14" href="class_task.html#a08a0f57803d8ef35f687f23f759e9f0c" title="Constructeur de la classe task. " alt="" coords="933,487,1019,514"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -668,7 +927,61 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00294">294</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00299">299</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a0461145357fe17bf07c3b09c665b95db_cgraph.png" border="0" usemap="#class_notes_manager_a0461145357fe17bf07c3b09c665b95db_cgraph" alt=""/></div>
+<map name="class_notes_manager_a0461145357fe17bf07c3b09c665b95db_cgraph" id="class_notes_manager_a0461145357fe17bf07c3b09c665b95db_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="256,5,428,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad4fb2de50633dd25b71024343341cd64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4fb2de50633dd25b71024343341cd64">&#9670;&nbsp;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NotesManager::load </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Charge les notes d'un fichier XML dans l'application. </p>
+<p>Cette fonction ne charge que les notes une fonction dédiée aux relations est définie dans la classe <a class="el" href="class_relation_manager.html">RelationManager</a>. Le nom du fichier XML est stocké dans le <a class="el" href="class_notes_manager.html">NotesManager</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00433">433</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_ad4fb2de50633dd25b71024343341cd64_cgraph.png" border="0" usemap="#class_notes_manager_ad4fb2de50633dd25b71024343341cd64_cgraph" alt=""/></div>
+<map name="class_notes_manager_ad4fb2de50633dd25b71024343341cd64_cgraph" id="class_notes_manager_ad4fb2de50633dd25b71024343341cd64_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="689,94,861,121"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="447,69,629,96"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#a566cbb0dd7b606ec34629a2aa8010b73" title="Accesseur de l&#39;attribut filename du manager. " alt="" coords="197,69,382,96"/>
+<area shape="rect" id="node5" href="class_notes_manager.html#a797d858176de3f5e64aa8194797909fb" title="Affectation de l&#39;attribut filename du manager à f. " alt="" coords="197,120,382,146"/>
+<area shape="rect" id="node6" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="192,170,387,197"/>
+<area shape="rect" id="node7" href="class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a" title="Charge les relations d&#39;un fichier XML dans l&#39;application. " alt="" coords="214,221,365,248"/>
+<area shape="rect" id="node8" href="class_relation.html#a69211cc18aed20c1df97c4b73317a2e1" title="Créer un couple de note dans une relation. " alt="" coords="435,170,641,197"/>
+<area shape="rect" id="node9" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="459,221,617,248"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_ad4fb2de50633dd25b71024343341cd64_icgraph.png" border="0" usemap="#class_notes_manager_ad4fb2de50633dd25b71024343341cd64_icgraph" alt=""/></div>
+<map name="class_notes_manager_ad4fb2de50633dd25b71024343341cd64_icgraph" id="class_notes_manager_ad4fb2de50633dd25b71024343341cd64_icgraph">
+<area shape="rect" id="node2" href="classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1" title="Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et l..." alt="" coords="192,29,343,56"/>
+<area shape="rect" id="node3" href="classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="391,29,519,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -696,36 +1009,109 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00957">957</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00916">916</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348_cgraph.png" border="0" usemap="#class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348_cgraph" alt=""/></div>
+<map name="class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348_cgraph" id="class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="235,13,407,39"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a2a8aba4f2f40239fce1b541a10b92a7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a8aba4f2f40239fce1b541a10b92a7e">&#9670;&nbsp;</a></span>updateId()</h2>
+<a id="ad271bd7f8079b01b04a32b886b498bac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad271bd7f8079b01b04a32b886b498bac">&#9670;&nbsp;</a></span>save()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QString NotesManager::updateId </td>
+          <td class="memname">void NotesManager::save </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>Id2</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A COMPLÉTER </p>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01138">1138</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p>Sauvegarde des notes dans un fichier XML. </p>
+<p>Cette fonction sauvegarde les notes ainsi que les relations. Le nom du fichier XML est stocké dans le <a class="el" href="class_notes_manager.html">NotesManager</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00375">375</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_ad271bd7f8079b01b04a32b886b498bac_cgraph.png" border="0" usemap="#class_notes_manager_ad271bd7f8079b01b04a32b886b498bac_cgraph" alt=""/></div>
+<map name="class_notes_manager_ad271bd7f8079b01b04a32b886b498bac_cgraph" id="class_notes_manager_ad271bd7f8079b01b04a32b886b498bac_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="200,5,381,32"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="205,56,377,83"/>
+<area shape="rect" id="node4" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="193,107,388,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_ad271bd7f8079b01b04a32b886b498bac_icgraph.png" border="0" usemap="#class_notes_manager_ad271bd7f8079b01b04a32b886b498bac_icgraph" alt=""/></div>
+<map name="class_notes_manager_ad271bd7f8079b01b04a32b886b498bac_icgraph" id="class_notes_manager_ad271bd7f8079b01b04a32b886b498bac_icgraph">
+<area shape="rect" id="node2" href="classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir un fichier de sauvegarde. " alt="" coords="193,5,299,32"/>
+<area shape="rect" id="node3" href="classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="347,5,475,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a797d858176de3f5e64aa8194797909fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a797d858176de3f5e64aa8194797909fb">&#9670;&nbsp;</a></span>setFilename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NotesManager::setFilename </td>
+          <td>(</td>
+          <td class="paramtype">const QString&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Affectation de l'attribut filename du manager à f. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>QString f </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00089">89</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_notes_manager_a797d858176de3f5e64aa8194797909fb_icgraph.png" border="0" usemap="#class_notes_manager_a797d858176de3f5e64aa8194797909fb_icgraph" alt=""/></div>
+<map name="class_notes_manager_a797d858176de3f5e64aa8194797909fb_icgraph" id="class_notes_manager_a797d858176de3f5e64aa8194797909fb_icgraph">
+<area shape="rect" id="node2" href="classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1" title="Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et l..." alt="" coords="425,50,576,76"/>
+<area shape="rect" id="node4" href="classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir un fichier de sauvegarde. " alt="" coords="448,100,553,127"/>
+<area shape="rect" id="node5" href="class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="239,50,377,76"/>
+<area shape="rect" id="node3" href="classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="624,75,752,102"/>
+</map>
+</div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="manager_8h_source.html">manager.h</a></li>
-<li><a class="el" href="manager__old_8h_source.html">manager_old.h</a></li>
-<li><a class="el" href="manager_8cpp_source.html">manager.cpp</a></li>
-<li><a class="el" href="manager__old_8cpp_source.html">manager_old.cpp</a></li>
+<li>OL13/<a class="el" href="manager_8h_source.html">manager.h</a></li>
+<li>OL13/<a class="el" href="manager_8cpp_source.html">manager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

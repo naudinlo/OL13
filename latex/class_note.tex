@@ -1,9 +1,23 @@
 \hypertarget{class_note}{}\section{Note Class Reference}
 \label{class_note}\index{Note@{Note}}
-Inheritance diagram for Note\+:\begin{figure}[H]
+
+
+Inheritance diagram for Note\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_note}
+\includegraphics[width=350pt]{class_note__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Note\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{class_note__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -80,12 +94,8 @@ void \hyperlink{class_note_a3af2edc369310b9f122bd1fd6dbfa717}{set\+New\+Ref} (co
 \begin{DoxyCompactList}\small\item\em Définie une note comme référence d\textquotesingle{}une autre. \end{DoxyCompactList}\item 
 \hyperlink{class_note}{Note} \& \hyperlink{class_note_a8e3ba6961f62a38f49b5fd209c083896}{get\+Reference} (const Q\+String \&id) const
 \begin{DoxyCompactList}\small\item\em Retourne une note référencée par une autre. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_note_a59c51184b95c19d5003287b54c9f5d7f}\label{class_note_a59c51184b95c19d5003287b54c9f5d7f}} 
-\hyperlink{class_note}{Note} \& {\bfseries get\+Reference\+Int} (unsigned int i) const
-\item 
-\mbox{\Hypertarget{class_note_a5a0cb370ddd5a3da10fe8aa8a256d661}\label{class_note_a5a0cb370ddd5a3da10fe8aa8a256d661}} 
-void {\bfseries generate\+Ref} (const Q\+String \&champ\+Texte)
-\end{DoxyCompactItemize}
+void \hyperlink{class_note_a5a0cb370ddd5a3da10fe8aa8a256d661}{generate\+Ref} (const Q\+String \&champ\+Texte)
+\begin{DoxyCompactList}\small\item\em Détecte la présence d\textquotesingle{}une expression régulière dans un champ de text et ajoute une référence en conséquence. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -97,7 +107,7 @@ Q\+List$<$ Q\+String $>$ {\bfseries references}
 \subsection{Detailed Description}
 
 
-Definition at line 68 of file notes.\+h.
+Definition at line 74 of file notes.\+h.
 
 
 
@@ -114,8 +124,22 @@ Constructeur des classes notes, articles task et recording.
 
 Les classes dérivées \hyperlink{class_article}{Article}, \hyperlink{class_task}{Task}, \hyperlink{class_recording}{Recording} utilise en premier lieu le constructeur de \hyperlink{class_note}{Note}. Dans le constructeur de \hyperlink{class_note}{Note}, la date de création et de dernière modification sont mises à jours avec la date courrante. 
 
-Definition at line 112 of file notes.\+cpp.
+Definition at line 106 of file notes.\+cpp.
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_note_a0490153115307d5f59974d7000260e48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_note_a0490153115307d5f59974d7000260e48_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_note_ac06fd282c05bbfe2e1675fe0677b2efb}\label{class_note_ac06fd282c05bbfe2e1675fe0677b2efb}} 
 \index{Note@{Note}!Note@{Note}}
 \index{Note@{Note}!Note@{Note}}
@@ -133,7 +157,7 @@ Recopie l\textquotesingle{}ensemble des informations d\textquotesingle{}une note
 \end{DoxyParams}
 
 
-Definition at line 41 of file notes.\+cpp.
+Definition at line 35 of file notes.\+cpp.
 
 
 
@@ -148,10 +172,24 @@ Definition at line 41 of file notes.\+cpp.
 
 Supprime l\textquotesingle{}ensemble des références d\textquotesingle{}une note. 
 
-À chaque suppression, les notes anciennement référencées par cette note diminuent le nombre de notes qui les références. 
+À chaque suppression, les notes anciennement référencées par cette note diminuent le nombre de notes qui les référence. 
 
-Definition at line 505 of file notes.\+cpp.
+Definition at line 399 of file notes.\+cpp.
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_note_aacbb89b120107a4b25dd16043908c693_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_note_aacbb89b120107a4b25dd16043908c693_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_note_a91c86cf6ed18e4badb59a41e737a15fa}\label{class_note_a91c86cf6ed18e4badb59a41e737a15fa}} 
 \index{Note@{Note}!delete\+Reference@{delete\+Reference}}
 \index{delete\+Reference@{delete\+Reference}!Note@{Note}}
@@ -169,8 +207,48 @@ Supprime la référence sur une note spécifiée par son ID.
 \end{DoxyParams}
 
 
-Definition at line 457 of file notes.\+cpp.
+Definition at line 374 of file notes.\+cpp.
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_note_a91c86cf6ed18e4badb59a41e737a15fa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_note_a5a0cb370ddd5a3da10fe8aa8a256d661}\label{class_note_a5a0cb370ddd5a3da10fe8aa8a256d661}} 
+\index{Note@{Note}!generate\+Ref@{generate\+Ref}}
+\index{generate\+Ref@{generate\+Ref}!Note@{Note}}
+\subsubsection{\texorpdfstring{generate\+Ref()}{generateRef()}}
+{\footnotesize\ttfamily void Note\+::generate\+Ref (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{champ\+Texte }\end{DoxyParamCaption})}
+
+
+
+Détecte la présence d\textquotesingle{}une expression régulière dans un champ de text et ajoute une référence en conséquence. 
+
+Cette méthode est appelée par le constructeur de notes et par les setters de champ de texte de notes. Si l\textquotesingle{}expression régulière \textbackslash{}\+:ref\{(.+)\} est repérée, et si l\textquotesingle{}ID retourné correspond à celui d\textquotesingle{}une note active, la note correspondant à l\textquotesingle{}ID est ajoutée en référence de la note this. 
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& champ\+Texte champ de texte dans laquelle la regex doit être repérée \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 418 of file notes.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_note_a5a0cb370ddd5a3da10fe8aa8a256d661_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_note_a5a0cb370ddd5a3da10fe8aa8a256d661_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_note_a8e3ba6961f62a38f49b5fd209c083896}\label{class_note_a8e3ba6961f62a38f49b5fd209c083896}} 
 \index{Note@{Note}!get\+Reference@{get\+Reference}}
 \index{get\+Reference@{get\+Reference}!Note@{Note}}
@@ -188,8 +266,15 @@ Retourne une note référencée par une autre.
 \end{DoxyParams}
 
 
-Definition at line 440 of file notes.\+cpp.
+Definition at line 358 of file notes.\+cpp.
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_note_a8e3ba6961f62a38f49b5fd209c083896_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_note_a3af2edc369310b9f122bd1fd6dbfa717}\label{class_note_a3af2edc369310b9f122bd1fd6dbfa717}} 
 \index{Note@{Note}!set\+New\+Ref@{set\+New\+Ref}}
 \index{set\+New\+Ref@{set\+New\+Ref}!Note@{Note}}
@@ -202,13 +287,27 @@ Définie une note comme référence d\textquotesingle{}une autre.
 
 Lorsqu\textquotesingle{}une note prend comme référence une autre, cette autre note augmente son attribut nb\+Is\+Ref lui permettant de connaître le nombre de notes qui la référencent. 
 \begin{DoxyParams}{Parameters}
-{\em Note$\ast$} & n La note référencée. \\
+{\em const} & Q\+String\& L\textquotesingle{}ID de la note référencée. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 388 of file notes.\+cpp.
+Definition at line 344 of file notes.\+cpp.
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_note_a3af2edc369310b9f122bd1fd6dbfa717_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_note_a3af2edc369310b9f122bd1fd6dbfa717_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_note_a1bd4acfbde0b71d05fd7d4ca889bca2b}\label{class_note_a1bd4acfbde0b71d05fd7d4ca889bca2b}} 
 \index{Note@{Note}!to\+String@{to\+String}}
 \index{to\+String@{to\+String}!Note@{Note}}
@@ -228,11 +327,11 @@ Reimplemented in \hyperlink{class_recording_a9f403a39bec2db40c9171a6c3a20942d}{R
 
 
 
-Definition at line 194 of file notes.\+cpp.
+Definition at line 182 of file notes.\+cpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-notes.\+h\item 
-\hyperlink{notes_8cpp}{notes.\+cpp}\end{DoxyCompactItemize}
+O\+L13/notes.\+h\item 
+O\+L13/\hyperlink{notes_8cpp}{notes.\+cpp}\end{DoxyCompactItemize}

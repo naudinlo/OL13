@@ -1,0 +1,7 @@
+<map id="OL13/aff_notes.h" name="OL13/aff_notes.h">
+<area shape="rect" id="node2" href="$aff__notes_8cpp.html" title="//Bref " alt="" coords="5,80,140,107"/>
+<area shape="rect" id="node3" href="$interface_8h.html" title="//Expliquer brievement à quoi sert ce fichier. //EX : Définit les modèles de voiture et leur particul..." alt="" coords="165,80,282,107"/>
+<area shape="rect" id="node4" href="$include_8h.html" title="Regroupe une partie des includes nécessaires au projet. " alt="" coords="25,155,134,181"/>
+<area shape="rect" id="node5" href="$interface_8cpp.html" title="//Expliquer brievement à quoi sert ce fichier. //EX : Définit les modèles de voiture et leur particul..." alt="" coords="158,155,289,181"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="//Bref " alt="" coords="313,155,424,181"/>
+</map>

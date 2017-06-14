@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">1</span>
+   &#160;<span id="projectnumber">2</span>
    </div>
   </td>
  </tr>
@@ -69,12 +69,19 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for Recording:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_recording.png" usemap="#Recording_map" alt=""/>
-  <map id="Recording_map" name="Recording_map">
-<area href="class_note.html" alt="Note" shape="rect" coords="0,0,70,24"/>
+<div class="center"><img src="class_recording__inherit__graph.png" border="0" usemap="#_recording_inherit__map" alt="Inheritance graph"/></div>
+<map name="_recording_inherit__map" id="_recording_inherit__map">
+<area shape="rect" id="node2" href="class_note.html" title="{Note\n|+ references\l|+ getId()\l+ getTitle()\l+ getCreation_date()\l+ getLastmodif_date()\l+ getIsArchive()\l+ getIsDeleted()\l+ setIsArchive()\l+ setIsDeleted()\l+ getType()\l+ Note()\land 17 more...\l}" alt="" coords="5,5,153,229"/>
 </map>
- </div></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for Recording:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_recording__coll__graph.png" border="0" usemap="#_recording_coll__map" alt="Collaboration graph"/></div>
+<map name="_recording_coll__map" id="_recording_coll__map">
+<area shape="rect" id="node2" href="class_note.html" title="{Note\n|+ references\l|+ getId()\l+ getTitle()\l+ getCreation_date()\l+ getLastmodif_date()\l+ getIsArchive()\l+ getIsDeleted()\l+ setIsArchive()\l+ setIsDeleted()\l+ getType()\l+ Note()\land 17 more...\l}" alt="" coords="5,5,153,229"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -190,11 +197,8 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getNbIsRef</b
 <tr class="memitem:a8e3ba6961f62a38f49b5fd209c083896 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_note.html">Note</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#a8e3ba6961f62a38f49b5fd209c083896">getReference</a> (const QString &amp;id) const</td></tr>
 <tr class="memdesc:a8e3ba6961f62a38f49b5fd209c083896 inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne une note référencée par une autre.  <a href="class_note.html#a8e3ba6961f62a38f49b5fd209c083896">More...</a><br /></td></tr>
 <tr class="separator:a8e3ba6961f62a38f49b5fd209c083896 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59c51184b95c19d5003287b54c9f5d7f inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a59c51184b95c19d5003287b54c9f5d7f"></a>
-<a class="el" href="class_note.html">Note</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getReferenceInt</b> (unsigned int i) const</td></tr>
-<tr class="separator:a59c51184b95c19d5003287b54c9f5d7f inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a0cb370ddd5a3da10fe8aa8a256d661 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a5a0cb370ddd5a3da10fe8aa8a256d661"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>generateRef</b> (const QString &amp;champTexte)</td></tr>
+<tr class="memitem:a5a0cb370ddd5a3da10fe8aa8a256d661 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661">generateRef</a> (const QString &amp;champTexte)</td></tr>
+<tr class="memdesc:a5a0cb370ddd5a3da10fe8aa8a256d661 inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détecte la présence d'une expression régulière dans un champ de text et ajoute une référence en conséquence.  <a href="class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661">More...</a><br /></td></tr>
 <tr class="separator:a5a0cb370ddd5a3da10fe8aa8a256d661 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -206,7 +210,7 @@ QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ref
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="notes_8h_source.html#l00198">198</a> of file <a class="el" href="notes_8h_source.html">notes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notes_8h_source.html#l00185">185</a> of file <a class="el" href="notes_8h_source.html">notes.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9f403a39bec2db40c9171a6c3a20942d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f403a39bec2db40c9171a6c3a20942d">&#9670;&nbsp;</a></span>toString()</h2>
@@ -236,13 +240,13 @@ QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ref
 
 <p>Reimplemented from <a class="el" href="class_note.html#a1bd4acfbde0b71d05fd7d4ca889bca2b">Note</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00290">290</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00264">264</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="notes_8h_source.html">notes.h</a></li>
-<li><a class="el" href="notes_8cpp_source.html">notes.cpp</a></li>
+<li>OL13/<a class="el" href="notes_8h_source.html">notes.h</a></li>
+<li>OL13/<a class="el" href="notes_8cpp_source.html">notes.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

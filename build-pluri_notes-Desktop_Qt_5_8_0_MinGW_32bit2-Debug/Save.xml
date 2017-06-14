@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NoteManager>
+    <NoteVersions>
+        <T></T><article><id>a</id><title>a</title><c_date>mar. juin 13 20:42:48 2017</c_date><lm_date>mar. juin 13 20:42:48 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text></text></article>
+    </NoteVersions>
+    <NoteVersions>
+        <T></T><recording><id>b</id><title>b</title><c_date>mar. juin 13 20:43:18 2017</c_date><lm_date>mar. juin 13 20:43:18 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><description>b</description><type>Image</type><link>C:/Users/maxim/Documents/GitHub/OL13/build-pluri_notes-Desktop_Qt_5_8_0_MinGW_32bit2-Debug/Ouvrir.png</link></recording>
+    </NoteVersions>
+    <NoteVersions>
+        <T></T><article><id>c</id><title>c</title><c_date>mar. juin 13 20:43:29 2017</c_date><lm_date>mar. juin 13 20:43:29 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text></text></article>
+    </NoteVersions>
+</NoteManager>

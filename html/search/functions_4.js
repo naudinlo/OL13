@@ -1,5 +1,28 @@
 var searchData=
 [
-  ['operator_3c_3c',['operator&lt;&lt;',['../manager_8cpp.html#ad5abd58f54640f4efcdd2d16f5264932',1,'operator&lt;&lt;(ostream &amp;f, const Note &amp;n):&#160;manager.cpp'],['../manager_8h.html#aa775e7d18b47ab8005e0ac3039d7f92d',1,'operator&lt;&lt;(ostream &amp;f, const Note &amp;n):&#160;manager.cpp'],['../notes_8cpp.html#af4393c1ef6628fa330eb9468177d22f6',1,'operator&lt;&lt;(std::ostream &amp;f, const Article &amp;a):&#160;notes.cpp']]],
-  ['operator_3d',['operator=',['../class_note.html#ac9b2b6b880bd4c01738ee43bde04b7e5',1,'Note::operator=()'],['../class_article.html#ae4059abc035598ff3faf554fd74a1492',1,'Article::operator=()'],['../class_task.html#a2430b942d050bf32c771821daa31493f',1,'Task::operator=()'],['../class_recording.html#ac5c7522d695c8a657f5e801df97a9e06',1,'Recording::operator=()']]]
+  ['generateref',['generateRef',['../class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661',1,'Note']]],
+  ['getcouplerelation',['getCoupleRelation',['../class_relation.html#a086c39ecf396e3cfcb465fd9eea5a904',1,'Relation']]],
+  ['getfilename',['getFilename',['../class_notes_manager.html#a566cbb0dd7b606ec34629a2aa8010b73',1,'NotesManager']]],
+  ['getinstance',['getInstance',['../class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f',1,'NotesManager::getInstance()'],['../class_relation_manager.html#a35c3622f29ccfbda84be848503041396',1,'RelationManager::getInstance()']]],
+  ['getiterator',['getIterator',['../class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da',1,'NotesManager']]],
+  ['getlistarchive',['getListArchive',['../class_notes_manager.html#a81aee1d57c39232f870199acb356fc57',1,'NotesManager']]],
+  ['getlistascendants',['getListAscendants',['../class_notes_manager.html#ac85019776c1e8653665e24abc9d8001d',1,'NotesManager']]],
+  ['getlistdeleted',['getListDeleted',['../class_notes_manager.html#ae6b144ba1bc14b895be36b194a2e768e',1,'NotesManager']]],
+  ['getlistdescendants',['getListDescendants',['../class_notes_manager.html#a2ed035544b433b9cddfc83fb4c081a65',1,'NotesManager']]],
+  ['getlisteversions',['getListeVersions',['../class_notes_manager.html#ae3af78108c46b9816207e66fcde64c5b',1,'NotesManager']]],
+  ['getlisttupleascendants',['getListTupleAscendants',['../class_notes_manager.html#a9f2c72d67d67c89a61f77a9b1a0ae390',1,'NotesManager']]],
+  ['getlisttupledescendants',['getListTupleDescendants',['../class_notes_manager.html#a4b8636fd8bc9d750d778585d3e4372cf',1,'NotesManager']]],
+  ['getnbnote',['getnbNote',['../class_notes_manager.html#a9cab39a524fd23c6523f895e81f75028',1,'NotesManager']]],
+  ['getnbrelations',['getNbRelations',['../class_relation_manager.html#abbd0627b6e986fcc5af94e3c71e0b148',1,'RelationManager']]],
+  ['getnewarticle',['getNewArticle',['../class_notes_manager.html#a44bfd4e7fe88b7f300a4be5589f92923',1,'NotesManager']]],
+  ['getnewcouplerelation',['getNewCoupleRelation',['../class_relation.html#a69211cc18aed20c1df97c4b73317a2e1',1,'Relation']]],
+  ['getnewrecording',['getNewRecording',['../class_notes_manager.html#a71d0bc2e2716a4e558705ea76e3ad491',1,'NotesManager']]],
+  ['getnewrelation',['getNewRelation',['../class_relation_manager.html#a1f9d556e0505105205e1fdb4905c4a80',1,'RelationManager']]],
+  ['getnewtask',['getNewTask',['../class_notes_manager.html#a39562bf5aef0d7a113317c1421d578fd',1,'NotesManager']]],
+  ['getnote',['getNote',['../class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff',1,'NotesManager']]],
+  ['getnoteversion',['getNoteVersion',['../class_notes_manager.html#a0461145357fe17bf07c3b09c665b95db',1,'NotesManager']]],
+  ['getrecordingtostr',['getRecordingtoStr',['../notes_8cpp.html#aa6165ba06daabc993e9ad2631272e29a',1,'notes.cpp']]],
+  ['getreference',['getReference',['../class_note.html#a8e3ba6961f62a38f49b5fd209c083896',1,'Note']]],
+  ['getrelation',['getRelation',['../class_relation_manager.html#ad9ffbaba761149560d915f081d379ecc',1,'RelationManager']]],
+  ['getstatustostr',['getStatustoStr',['../notes_8cpp.html#a2d3681150acecf4a009747b830644ce4',1,'notes.cpp']]]
 ];

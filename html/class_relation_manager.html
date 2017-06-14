@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">1</span>
+   &#160;<span id="projectnumber">2</span>
    </div>
   </td>
  </tr>
@@ -68,6 +68,13 @@ $(function() {
 <div class="title">RelationManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for RelationManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_relation_manager__coll__graph.png" border="0" usemap="#_relation_manager_coll__map" alt="Collaboration graph"/></div>
+<map name="_relation_manager_coll__map" id="_relation_manager_coll__map">
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -85,24 +92,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a074413b3ed72a1342821e911c1fa3587"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a074413b3ed72a1342821e911c1fa3587">deleteRelation</a> (const QString &amp;title)</td></tr>
 <tr class="memdesc:a074413b3ed72a1342821e911c1fa3587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime une relation dont le titre est passé en paramètre.  <a href="#a074413b3ed72a1342821e911c1fa3587">More...</a><br /></td></tr>
 <tr class="separator:a074413b3ed72a1342821e911c1fa3587"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52a7eb1d368bf881c5acaf45650e45b0"><td class="memItemLeft" align="right" valign="top"><a id="a52a7eb1d368bf881c5acaf45650e45b0"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getNbRelations</b> () const</td></tr>
-<tr class="separator:a52a7eb1d368bf881c5acaf45650e45b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefe037f480e43c5c7e786cb13b3f1084"><td class="memItemLeft" align="right" valign="top"><a id="aefe037f480e43c5c7e786cb13b3f1084"></a>
-<a class="el" href="class_relation_manager_1_1_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getIterator</b> ()</td></tr>
-<tr class="separator:aefe037f480e43c5c7e786cb13b3f1084"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d758195fc82d8bc0fff5622a675e7ce"><td class="memItemLeft" align="right" valign="top"><a id="a6d758195fc82d8bc0fff5622a675e7ce"></a>
-<a class="el" href="class_relation.html">Relation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNewRelation</b> (const QString &amp;title, const QString &amp;desc)</td></tr>
-<tr class="separator:a6d758195fc82d8bc0fff5622a675e7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93e61e07638f39ccf0985cd876e5f285"><td class="memItemLeft" align="right" valign="top"><a id="a93e61e07638f39ccf0985cd876e5f285"></a>
-<a class="el" href="class_relation.html">Relation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getRelation</b> (const QString &amp;title)</td></tr>
-<tr class="separator:a93e61e07638f39ccf0985cd876e5f285"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a074413b3ed72a1342821e911c1fa3587"><td class="memItemLeft" align="right" valign="top"><a id="a074413b3ed72a1342821e911c1fa3587"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteRelation</b> (const QString &amp;title)</td></tr>
-<tr class="separator:a074413b3ed72a1342821e911c1fa3587"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52a7eb1d368bf881c5acaf45650e45b0"><td class="memItemLeft" align="right" valign="top"><a id="a52a7eb1d368bf881c5acaf45650e45b0"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getNbRelations</b> () const</td></tr>
-<tr class="separator:a52a7eb1d368bf881c5acaf45650e45b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd0627b6e986fcc5af94e3c71e0b148"><td class="memItemLeft" align="right" valign="top"><a id="abbd0627b6e986fcc5af94e3c71e0b148"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#abbd0627b6e986fcc5af94e3c71e0b148">getNbRelations</a> () const</td></tr>
+<tr class="memdesc:abbd0627b6e986fcc5af94e3c71e0b148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du nombre de relations. <br /></td></tr>
+<tr class="separator:abbd0627b6e986fcc5af94e3c71e0b148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37273bc4c1d223bf99ff10ba7feba50a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a">load</a> (const QString &amp;file)</td></tr>
+<tr class="memdesc:a37273bc4c1d223bf99ff10ba7feba50a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge les relations d'un fichier XML dans l'application.  <a href="#a37273bc4c1d223bf99ff10ba7feba50a">More...</a><br /></td></tr>
+<tr class="separator:a37273bc4c1d223bf99ff10ba7feba50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefe037f480e43c5c7e786cb13b3f1084"><td class="memItemLeft" align="right" valign="top"><a id="aefe037f480e43c5c7e786cb13b3f1084"></a>
 <a class="el" href="class_relation_manager_1_1_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getIterator</b> ()</td></tr>
 <tr class="separator:aefe037f480e43c5c7e786cb13b3f1084"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,21 +106,17 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getNbRelation
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a35c3622f29ccfbda84be848503041396"><td class="memItemLeft" align="right" valign="top"><a id="a35c3622f29ccfbda84be848503041396"></a>
-static <a class="el" href="class_relation_manager.html">RelationManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
+static <a class="el" href="class_relation_manager.html">RelationManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396">getInstance</a> ()</td></tr>
+<tr class="memdesc:a35c3622f29ccfbda84be848503041396"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'obtenir un pointeur sur le manager de relations. <br /></td></tr>
 <tr class="separator:a35c3622f29ccfbda84be848503041396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64126ecfdd2046d9c9797e80427bcba3"><td class="memItemLeft" align="right" valign="top"><a id="a64126ecfdd2046d9c9797e80427bcba3"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstance</b> ()</td></tr>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a64126ecfdd2046d9c9797e80427bcba3">libererInstance</a> ()</td></tr>
+<tr class="memdesc:a64126ecfdd2046d9c9797e80427bcba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de libérer le manager de relation. <br /></td></tr>
 <tr class="separator:a64126ecfdd2046d9c9797e80427bcba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a373c5b354fd5f0b3f4b7884913a6c11a"><td class="memItemLeft" align="right" valign="top"><a id="a373c5b354fd5f0b3f4b7884913a6c11a"></a>
-static <a class="el" href="class_relation_manager.html">RelationManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
-<tr class="separator:a373c5b354fd5f0b3f4b7884913a6c11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68eedd5e60e4ec92891061c3dbe61fc4"><td class="memItemLeft" align="right" valign="top"><a id="a68eedd5e60e4ec92891061c3dbe61fc4"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstance</b> ()</td></tr>
-<tr class="separator:a68eedd5e60e4ec92891061c3dbe61fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00140">140</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8h_source.html#l00157">157</a> of file <a class="el" href="manager_8h_source.html">manager.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a074413b3ed72a1342821e911c1fa3587"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a074413b3ed72a1342821e911c1fa3587">&#9670;&nbsp;</a></span>deleteRelation()</h2>
@@ -150,7 +142,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01030">1030</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00995">995</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
 
 </div>
 </div>
@@ -188,7 +180,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00995">995</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00960">960</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
 
 </div>
 </div>
@@ -216,15 +208,62 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>libererInstanc
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01018">1018</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l00983">983</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a37273bc4c1d223bf99ff10ba7feba50a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37273bc4c1d223bf99ff10ba7feba50a">&#9670;&nbsp;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RelationManager::load </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Charge les relations d'un fichier XML dans l'application. </p>
+<p>Cette fonction ne charge que les relations une fonction dédiée aux notes est définie dans la classe <a class="el" href="class_notes_manager.html">NotesManager</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>QString&amp; file Nom du fichier XML à parser </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="manager_8cpp_source.html#l01116">1116</a> of file <a class="el" href="manager_8cpp_source.html">manager.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_relation_manager_a37273bc4c1d223bf99ff10ba7feba50a_cgraph.png" border="0" usemap="#class_relation_manager_a37273bc4c1d223bf99ff10ba7feba50a_cgraph" alt=""/></div>
+<map name="class_relation_manager_a37273bc4c1d223bf99ff10ba7feba50a_cgraph" id="class_relation_manager_a37273bc4c1d223bf99ff10ba7feba50a_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="217,5,398,32"/>
+<area shape="rect" id="node3" href="class_relation.html#a69211cc18aed20c1df97c4b73317a2e1" title="Créer un couple de note dans une relation. " alt="" coords="204,56,411,83"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="228,107,387,133"/>
+<area shape="rect" id="node5" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="459,107,631,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_relation_manager_a37273bc4c1d223bf99ff10ba7feba50a_icgraph.png" border="0" usemap="#class_relation_manager_a37273bc4c1d223bf99ff10ba7feba50a_icgraph" alt=""/></div>
+<map name="class_relation_manager_a37273bc4c1d223bf99ff10ba7feba50a_icgraph" id="class_relation_manager_a37273bc4c1d223bf99ff10ba7feba50a_icgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="204,29,343,56"/>
+<area shape="rect" id="node3" href="classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1" title="Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et l..." alt="" coords="391,29,541,56"/>
+<area shape="rect" id="node4" href="classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="589,29,717,56"/>
+</map>
+</div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="manager_8h_source.html">manager.h</a></li>
-<li><a class="el" href="manager__old_8h_source.html">manager_old.h</a></li>
-<li><a class="el" href="manager_8cpp_source.html">manager.cpp</a></li>
-<li><a class="el" href="manager__old_8cpp_source.html">manager_old.cpp</a></li>
+<li>OL13/<a class="el" href="manager_8h_source.html">manager.h</a></li>
+<li>OL13/<a class="el" href="manager_8cpp_source.html">manager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

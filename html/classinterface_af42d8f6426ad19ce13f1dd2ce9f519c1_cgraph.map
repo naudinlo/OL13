@@ -1,0 +1,11 @@
+<map id="interface::OuvrirFichier" name="interface::OuvrirFichier">
+<area shape="rect" id="node2" href="$class_notes_manager.html#a797d858176de3f5e64aa8194797909fb" title="Affectation de l&#39;attribut filename du manager à f. " alt="" coords="395,5,581,32"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="204,107,343,133"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="888,157,1060,184"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="646,132,827,159"/>
+<area shape="rect" id="node6" href="$class_notes_manager.html#a566cbb0dd7b606ec34629a2aa8010b73" title="Accesseur de l&#39;attribut filename du manager. " alt="" coords="395,157,581,184"/>
+<area shape="rect" id="node7" href="$class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="391,208,585,235"/>
+<area shape="rect" id="node8" href="$class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a" title="Charge les relations d&#39;un fichier XML dans l&#39;application. " alt="" coords="413,259,563,285"/>
+<area shape="rect" id="node9" href="$class_relation.html#a69211cc18aed20c1df97c4b73317a2e1" title="Créer un couple de note dans une relation. " alt="" coords="633,208,840,235"/>
+<area shape="rect" id="node10" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="657,259,816,285"/>
+</map>

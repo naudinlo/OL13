@@ -65,8 +65,7 @@ private:
     };
     static Handler handler;
 public:
-//    Note& getNewNote(const QString& id, const QString& ti); //Revoir pour la déclaration suivant le type de note
-    Article& getNewArticle(const QString& id, const QString& ti,const QString& te); //Revoir pour la déclaration suivant le type de note
+    Article& getNewArticle(const QString& id, const QString& ti,const QString& te);
     Task& getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p, const QDateTime d);
     Task& getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, unsigned int p);
     Task& getNewTask(const QString& id, const QString& ti,const QString& a, ENUM::StatusType s, const QDateTime d);
@@ -81,12 +80,23 @@ public:
     Note& getNoteVersion(const QString& id, int indice);
     QList<Note*>* getListeVersions(const QString& id);
     void deleteNote(const QString& id);
-    void createNote(const QString& id); //je l'ai déplacé en privé pour pourvoir ajouté une note créer par interface
-//    void editNote(const QString& id);
+
+    /**
+     * \fn        void setFilename(const QString f)
+     * \brief     Affectation de l'attribut filename du manager à f.
+     * \param       const QString f
+     */
     void setFilename(const QString f){filename=f;}
+    /**
+     * \fn        QString getFilename()
+     * \brief     Accesseur de l'attribut filename du manager.
+     * \return    Qstring
+     */
     QString getFilename()const {return filename;}
     void load();
     void save() const;
+    void load_fichier() const;
+    void save_fichier();
     QString updateId(QString Id2)const;
 
     QList<TupleNote_Relation*> getListTupleAscendants(const QString& id);
@@ -105,6 +115,10 @@ public:
     void emptyTrash();
     void restoreNoteTrash(const QString& id);
 
+    /**
+     * \fn        int getnbNote()
+     * \brief     Accesseur du nombre de notes.
+     */
     int getnbNote(){return nbNotes;}
 
     class Iterator{
@@ -112,7 +126,6 @@ public:
             QList<Note*>** tab;  //adresse du tableau de pointeur
             unsigned int nb;        //nb élément dans le tableau
             unsigned int index;     //indice courant
-            //Dans la partie privée
             Iterator(QList<Note*>** t, unsigned int n):tab(t), nb(n), index(0){}
             friend class NotesManager;
         public:
@@ -130,6 +143,10 @@ public:
                 return (*liste()).begin();
             }
         };
+        /**
+         * \fn        Iterator getIterator()
+         * \brief     Permet d'accéder à l'itérateur de notes.
+         */
         Iterator getIterator(){
             return Iterator(notes, nbNotes);
         }
@@ -159,12 +176,16 @@ public:
     Relation &getNewRelation(const QString& title,const QString& desc);
     Relation &getRelation(const QString& title);
     void deleteRelation(const QString& title);
-//    const QString& getTitleRelfromCouple(const QString& id1,const QString& id2);
 
+    /**
+     * \fn        int getNbRelations()
+     * \brief     Accesseur du nombre de relations.
+     */
     unsigned int getNbRelations() const{return nbRelations;}
 
     static RelationManager& getInstance();
     static void libererInstance();
+    void load(const QString& file);
 
     //Iterator
     class Iterator{
@@ -181,15 +202,7 @@ public:
         }
         bool isDone()const {return nb==index;}
         Relation& current() const {return *tab[index];}
-//        NotesCouple& relationCouple() {return tabrelations[index];}
         Relation* listeRel() {return tab[index];}
-//        Relation::Iterator getIteratorRelation(){
-//            return (*listeRel()).begin();
-//        }
-//        QList<Note*>* liste() {return tab[index];}
-//        QList<Note*>::iterator getIteratorVersions(){
-//            return (*liste()).begin();
-//        }
     };
     Iterator getIterator(){
         return Iterator(tabrelations, nbRelations);

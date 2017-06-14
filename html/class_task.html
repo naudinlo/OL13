@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">1</span>
+   &#160;<span id="projectnumber">2</span>
    </div>
   </td>
  </tr>
@@ -69,12 +69,19 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for Task:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_task.png" usemap="#Task_map" alt=""/>
-  <map id="Task_map" name="Task_map">
-<area href="class_note.html" alt="Note" shape="rect" coords="0,0,38,24"/>
+<div class="center"><img src="class_task__inherit__graph.png" border="0" usemap="#_task_inherit__map" alt="Inheritance graph"/></div>
+<map name="_task_inherit__map" id="_task_inherit__map">
+<area shape="rect" id="node2" href="class_note.html" title="{Note\n|+ references\l|+ getId()\l+ getTitle()\l+ getCreation_date()\l+ getLastmodif_date()\l+ getIsArchive()\l+ getIsDeleted()\l+ setIsArchive()\l+ setIsDeleted()\l+ getType()\l+ Note()\land 17 more...\l}" alt="" coords="5,5,153,229"/>
 </map>
- </div></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for Task:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_task__coll__graph.png" border="0" usemap="#_task_coll__map" alt="Collaboration graph"/></div>
+<map name="_task_coll__map" id="_task_coll__map">
+<area shape="rect" id="node2" href="class_note.html" title="{Note\n|+ references\l|+ getId()\l+ getTitle()\l+ getCreation_date()\l+ getLastmodif_date()\l+ getIsArchive()\l+ getIsDeleted()\l+ setIsArchive()\l+ setIsDeleted()\l+ getType()\l+ Note()\land 17 more...\l}" alt="" coords="5,5,153,229"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -206,11 +213,8 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getNbIsRef</b
 <tr class="memitem:a8e3ba6961f62a38f49b5fd209c083896 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_note.html">Note</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#a8e3ba6961f62a38f49b5fd209c083896">getReference</a> (const QString &amp;id) const</td></tr>
 <tr class="memdesc:a8e3ba6961f62a38f49b5fd209c083896 inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne une note référencée par une autre.  <a href="class_note.html#a8e3ba6961f62a38f49b5fd209c083896">More...</a><br /></td></tr>
 <tr class="separator:a8e3ba6961f62a38f49b5fd209c083896 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59c51184b95c19d5003287b54c9f5d7f inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a59c51184b95c19d5003287b54c9f5d7f"></a>
-<a class="el" href="class_note.html">Note</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getReferenceInt</b> (unsigned int i) const</td></tr>
-<tr class="separator:a59c51184b95c19d5003287b54c9f5d7f inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a0cb370ddd5a3da10fe8aa8a256d661 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a5a0cb370ddd5a3da10fe8aa8a256d661"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>generateRef</b> (const QString &amp;champTexte)</td></tr>
+<tr class="memitem:a5a0cb370ddd5a3da10fe8aa8a256d661 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661">generateRef</a> (const QString &amp;champTexte)</td></tr>
+<tr class="memdesc:a5a0cb370ddd5a3da10fe8aa8a256d661 inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détecte la présence d'une expression régulière dans un champ de text et ajoute une référence en conséquence.  <a href="class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661">More...</a><br /></td></tr>
 <tr class="separator:a5a0cb370ddd5a3da10fe8aa8a256d661 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -222,7 +226,7 @@ QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ref
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="notes_8h_source.html#l00164">164</a> of file <a class="el" href="notes_8h_source.html">notes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notes_8h_source.html#l00150">150</a> of file <a class="el" href="notes_8h_source.html">notes.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a08a0f57803d8ef35f687f23f759e9f0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a08a0f57803d8ef35f687f23f759e9f0c">&#9670;&nbsp;</a></span>Task()</h2>
@@ -277,7 +281,21 @@ QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ref
 <p>Constructeur de la classe task. </p>
 <p>La classe dérivé <a class="el" href="class_task.html">Task</a> utilise en premier lieu le constructeur de <a class="el" href="class_note.html">Note</a>. <a class="el" href="class_task.html">Task</a> possède 4 constructeurs différents car deux de ses attributs sont optionnels. </p>
 
-<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00160">160</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00149">149</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_task_a08a0f57803d8ef35f687f23f759e9f0c_cgraph.png" border="0" usemap="#class_task_a08a0f57803d8ef35f687f23f759e9f0c_cgraph" alt=""/></div>
+<map name="class_task_a08a0f57803d8ef35f687f23f759e9f0c_cgraph" id="class_task_a08a0f57803d8ef35f687f23f759e9f0c_cgraph">
+<area shape="rect" id="node2" href="class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661" title="Détecte la présence d&#39;une expression régulière dans un champ de text et ajoute une référence en consé..." alt="" coords="272,51,399,77"/>
+<area shape="rect" id="node8" href="class_note.html#a0490153115307d5f59974d7000260e48" title="Constructeur des classes notes, articles task et recording. " alt="" coords="140,76,224,103"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="613,25,795,52"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="843,25,1015,52"/>
+<area shape="rect" id="node5" href="class_note.html#a3af2edc369310b9f122bd1fd6dbfa717" title="Définie une note comme référence d&#39;une autre. " alt="" coords="447,76,565,103"/>
+<area shape="rect" id="node7" href="class_task.html#a7fe5cb7b57a21693e7abfea2f9618563" title="Transforme une task en un flux ostream a afficher. " alt="" coords="455,127,557,153"/>
+<area shape="rect" id="node6" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="625,76,783,103"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -310,13 +328,23 @@ QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ref
 
 <p>Reimplemented from <a class="el" href="class_note.html#a1bd4acfbde0b71d05fd7d4ca889bca2b">Note</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00237">237</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00218">218</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_task_a7fe5cb7b57a21693e7abfea2f9618563_icgraph.png" border="0" usemap="#class_task_a7fe5cb7b57a21693e7abfea2f9618563_icgraph" alt=""/></div>
+<map name="class_task_a7fe5cb7b57a21693e7abfea2f9618563_icgraph" id="class_task_a7fe5cb7b57a21693e7abfea2f9618563_icgraph">
+<area shape="rect" id="node2" href="class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661" title="Détecte la présence d&#39;une expression régulière dans un champ de text et ajoute une référence en consé..." alt="" coords="156,31,283,57"/>
+<area shape="rect" id="node3" href="class_note.html#a0490153115307d5f59974d7000260e48" title="Constructeur des classes notes, articles task et recording. " alt="" coords="331,5,415,32"/>
+<area shape="rect" id="node4" href="class_task.html#a08a0f57803d8ef35f687f23f759e9f0c" title="Constructeur de la classe task. " alt="" coords="463,31,549,57"/>
+</map>
+</div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="notes_8h_source.html">notes.h</a></li>
-<li><a class="el" href="notes_8cpp_source.html">notes.cpp</a></li>
+<li>OL13/<a class="el" href="notes_8h_source.html">notes.h</a></li>
+<li>OL13/<a class="el" href="notes_8cpp_source.html">notes.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

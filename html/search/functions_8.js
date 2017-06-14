@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['task',['Task',['../class_task.html#a08a0f57803d8ef35f687f23f759e9f0c',1,'Task::Task(const QString &amp;i, const QString &amp;ti, const QString &amp;a, ENUM::StatusType s, unsigned int p, const QDateTime d)'],['../class_task.html#a0aec5018915f11c96398b75f969a3220',1,'Task::Task(const Task &amp;t)']]],
-  ['tostring',['toString',['../class_note.html#a1bd4acfbde0b71d05fd7d4ca889bca2b',1,'Note::toString()'],['../class_article.html#ae40d268ecffbaaa549968a81ea609ba4',1,'Article::toString()'],['../class_task.html#a7fe5cb7b57a21693e7abfea2f9618563',1,'Task::toString()'],['../class_recording.html#a9f403a39bec2db40c9171a6c3a20942d',1,'Recording::toString()']]]
+  ['operator_3c_3c',['operator&lt;&lt;',['../manager_8cpp.html#ad5abd58f54640f4efcdd2d16f5264932',1,'operator&lt;&lt;(ostream &amp;f, const Note &amp;n):&#160;manager.cpp'],['../manager_8h.html#aa775e7d18b47ab8005e0ac3039d7f92d',1,'operator&lt;&lt;(ostream &amp;f, const Note &amp;n):&#160;manager.cpp'],['../notes_8cpp.html#af4393c1ef6628fa330eb9468177d22f6',1,'operator&lt;&lt;(std::ostream &amp;f, const Article &amp;a):&#160;notes.cpp']]],
+  ['operator_3d',['operator=',['../class_note.html#ac9b2b6b880bd4c01738ee43bde04b7e5',1,'Note::operator=()'],['../class_article.html#ae4059abc035598ff3faf554fd74a1492',1,'Article::operator=()'],['../class_task.html#a2430b942d050bf32c771821daa31493f',1,'Task::operator=()'],['../class_recording.html#ac5c7522d695c8a657f5e801df97a9e06',1,'Recording::operator=()']]],
+  ['ouvrirfichier',['OuvrirFichier',['../classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1',1,'interface']]]
 ];

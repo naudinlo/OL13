@@ -1,0 +1,3 @@
+editNoteArticle //permet d'éditer un article
+editNoteTask //permet d'éditer une tâche
+editNoteRecording //permet d'éditer un enregistrement

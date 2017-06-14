@@ -1,0 +1,6 @@
+<map id="page_notes" name="page_notes">
+<area shape="rect" id="node4" href="$class_qreference.html" title="{Qreference\n|+ model_ref\l|+ Qreference()\l+ ~Qreference()\l+ update_model()\l}" alt="" coords="52,191,175,297"/>
+<area shape="rect" id="node5" href="$class_q_dock_relation.html" title="{QDockRelation\n||+ QDockRelation()\l+ emit_From_selection()\l+ emit_to_selection()\l+ updateModels()\l}" alt="" coords="199,183,362,305"/>
+<area shape="rect" id="node6" href="$class_q_note.html" title="{QNote\n|# grid\l|+ get_note()\l+ readOnly()\l+ QNote()\l+ load_note()\l+ getLayout_titre()\l+ check_creer()\l+ saveNote()\l}" alt="" coords="386,161,514,327"/>
+<area shape="rect" id="node3" href="$class_note.html" title="{Note\n|+ references\l|+ getId()\l+ getTitle()\l+ getCreation_date()\l+ getLastmodif_date()\l+ getIsArchive()\l+ getIsDeleted()\l+ setIsArchive()\l+ setIsDeleted()\l+ getType()\l+ Note()\land 17 more...\l}" alt="" coords="538,132,686,356"/>
+</map>

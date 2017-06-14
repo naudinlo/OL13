@@ -1,20 +1,33 @@
 \hypertarget{classselection__note}{}\section{selection\+\_\+note Class Reference}
 \label{classselection__note}\index{selection\+\_\+note@{selection\+\_\+note}}
-Inheritance diagram for selection\+\_\+note\+:\begin{figure}[H]
+
+
+Inheritance diagram for selection\+\_\+note\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classselection__note}
+\includegraphics[width=175pt]{classselection__note__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for selection\+\_\+note\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classselection__note__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classselection__note_a70f407c89a87e5d8ce992f18ef64773d}\label{classselection__note_a70f407c89a87e5d8ce992f18ef64773d}} 
-void {\bfseries emit\+\_\+selection} (Q\+Model\+Index i)
-\item 
+void \hyperlink{classselection__note_a70f407c89a87e5d8ce992f18ef64773d}{emit\+\_\+selection} (Q\+Model\+Index i)
+\begin{DoxyCompactList}\small\item\em Identifie la note/versions que l\textquotesingle{}utilisateur souhaité affiché \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classselection__note_aab004424eba4264628d2e01108f2e63b}\label{classselection__note_aab004424eba4264628d2e01108f2e63b}} 
-void {\bfseries update\+\_\+model} ()
-\end{DoxyCompactItemize}
+void \hyperlink{classselection__note_aab004424eba4264628d2e01108f2e63b}{update\+\_\+model} ()
+\begin{DoxyCompactList}\small\item\em Etablie/\+Met à jours le model contennant tous les Notes actifs, en appellant Le \hyperlink{class_note}{Note} Manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,6 +37,9 @@ void {\bfseries selection} (Q\+String, int)
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{classselection__note_a69a11fa0461c0c103f099e894bf0b399}\label{classselection__note_a69a11fa0461c0c103f099e894bf0b399}} 
+\hyperlink{classselection__note_a69a11fa0461c0c103f099e894bf0b399}{selection\+\_\+note} ()
+\begin{DoxyCompactList}\small\item\em création de la widget de selection de note \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classselection__note_a87ea63b64611ba8668ab50affd116aea}\label{classselection__note_a87ea63b64611ba8668ab50affd116aea}} 
 Q\+Standard\+Item\+Model $\ast$ {\bfseries get\+Model} () const
 \item 
@@ -39,7 +55,36 @@ Definition at line 34 of file interface.\+h.
 
 
 
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classselection__note_a70f407c89a87e5d8ce992f18ef64773d}\label{classselection__note_a70f407c89a87e5d8ce992f18ef64773d}} 
+\index{selection\+\_\+note@{selection\+\_\+note}!emit\+\_\+selection@{emit\+\_\+selection}}
+\index{emit\+\_\+selection@{emit\+\_\+selection}!selection\+\_\+note@{selection\+\_\+note}}
+\subsubsection{\texorpdfstring{emit\+\_\+selection}{emit\_selection}}
+{\footnotesize\ttfamily void selection\+\_\+note\+::emit\+\_\+selection (\begin{DoxyParamCaption}\item[{Q\+Model\+Index}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Identifie la note/versions que l\textquotesingle{}utilisateur souhaité affiché 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 325 of file interface.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classselection__note_a70f407c89a87e5d8ce992f18ef64773d_icgraph}
+\end{center}
+\end{figure}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{interface_8h}{interface.\+h}\item 
-\hyperlink{interface_8cpp}{interface.\+cpp}\end{DoxyCompactItemize}
+O\+L13/\hyperlink{interface_8h}{interface.\+h}\item 
+O\+L13/\hyperlink{interface_8cpp}{interface.\+cpp}\end{DoxyCompactItemize}
