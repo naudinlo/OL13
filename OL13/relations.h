@@ -42,25 +42,19 @@ private:
     unsigned int nbMaxCouple;
     void addCoupleRelation(NotesCouple* nc);
 public:
-    NotesCouple& getNewCoupleRelation(Note* n1, Note* n2, QString label=0, bool s=false);
     Relation(QString t, QString d):title(t), description(d),relations(new NotesCouple*[5]), nbCouple(0), nbMaxCouple(5){}
+
     const QString getTitle() const{return title;}
     void setTitle(QString t){title=t;}
     void setDescription(QString d){description=d;}
+
+    NotesCouple& getNewCoupleRelation(Note* n1, Note* n2, QString label=0, bool s=false);
     const QString getDescription() const{return description;}
     NotesCouple* getCoupleRelation(Note* n1, Note* n2)const;
     void removeCoupleRelation(Note* n1, Note* n2);
     void removeNoteRelation(Note* n1);
-//    Relation& getRelationFromCouple(const QString& id1, const QString& id2) const;
-
-//    QList<Note*>* addNoteAscendant(Note * n, QList<Note*>* listAscendants);
-//    Note** noteRelAsc(Note * n);
 
     std::string displayRelation();
-//    std::string toString() const;
-//    void display(std::ostream& f=std::cout) const{
-//        f<<displayRelation();
-//    }
 
     //Iterator
     class Iterator{
@@ -82,10 +76,6 @@ public:
         return Iterator(relations, nbCouple);
     }
 
-//    std::string toStringRel(Note *n1, Note *n2)const;
-//    void displayRel(Note *n1, Note *n2, std::ostream& f=std::cout) const{
-//        f<<toStringRel(n1,n2);
-//    }
     void displayCoupleRelation(Note *n1, Note *n2)const;
 };
 
