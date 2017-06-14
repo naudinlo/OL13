@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<NoteManager/>
+<NoteManager>
+    <NoteVersions>
+        <T></T><recording><id>UML</id><title>LO21</title><c_date>mer. juin 14 23:52:14 2017</c_date><lm_date>mer. juin 14 23:52:23 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><description>Créer par :
+Garnier Maxime, Naudin Louise, Pépin Hugues</description><type>Image</type><link></link></recording><recording><id>UML</id><title>LO21</title><c_date>mer. juin 14 23:52:14 2017</c_date><lm_date>mer. juin 14 23:52:14 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><description>Créer par :
+Garnier Maxime, Naudin Louise, Pépin Hugues</description><type>Image</type><link>/home/peps/Téléchargements/UML1.png</link></recording>
+    </NoteVersions>
+</NoteManager>

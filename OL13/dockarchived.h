@@ -62,8 +62,14 @@ public:
 public slots:
     void on_remove_clicked(){
         Note& n=NotesManager::getInstance()->getNote(currentNote);
-        n.setIsArchive(false);
-        n.setIsDeleted(true);
+        try{
+            NotesManager::getInstance()->deleteNote(currentNote);
+            n.setIsArchive(false);
+        }
+        catch(NotesException e){
+            QMessageBox::warning(this,"Suppression",e.getinfo());
+        }
+
         emit(update_removeDock());
         update_archNoteModel();
     }

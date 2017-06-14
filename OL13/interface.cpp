@@ -29,7 +29,12 @@ interface::interface(): QMainWindow()
 {
     /*** Initialisation des attributs ***/
         note_manager=NotesManager::getInstance();
-        //note_manager->load_fichier();
+        try{
+            note_manager->load_fichier();}
+        catch(NotesException e){
+            QMessageBox::critical(this,"recupération des données",e.getinfo());
+        }
+
         note_page=0;
         ZoneCentrale=new page_vide();
 
@@ -260,6 +265,7 @@ void interface::save(){
         if(reponse ==QMessageBox::Yes){
             QString fichier = QFileDialog::getSaveFileName(this, "Créer un fichier", QString(), "File (*.xml)");
             note_manager->setFilename(fichier);
+
         }
         else if(note_manager->getFilename().isEmpty()){
             int reponse =QMessageBox::question(this,"Sauvegarde","Vous n'avez pas de fichier de sauvegarde en cours, voulez vous un nouveau fichier",QMessageBox::Yes|QMessageBox::No);
@@ -278,6 +284,8 @@ void interface::save(){
         if(!(note_manager->getFilename().isEmpty()))
         {
             note_manager->save();
+            note_manager->save_fichier();
+
             fichiersRecents->addAction(note_manager->getFilename());
             QMessageBox::information(this,"Sauvegarde","Sauvegarde Reussi");
         }

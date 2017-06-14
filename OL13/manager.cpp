@@ -781,7 +781,7 @@ void NotesManager::load_fichier() const{
     QFile fin("fichier.xml");
     QString fichier;
         // If we can't open it, let's show an error message.
-        if (!fin.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        if (!fin.open(QIODevice::ReadWrite | QIODevice::Text)) {
             throw NotesException("Erreur ouverture fichier notes");
         }
         // QXmlStreamReader takes any QIODevice.
