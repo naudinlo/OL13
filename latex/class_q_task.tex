@@ -2,8 +2,7 @@
 \label{class_q_task}\index{Q\+Task@{Q\+Task}}
 
 
-Inheritance diagram for Q\+Task\+:
-\nopagebreak
+Inheritance diagram for Q\+Task\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Inheritance diagram for Q\+Task\+:
 \end{figure}
 
 
-Collaboration diagram for Q\+Task\+:
-\nopagebreak
+Collaboration diagram for Q\+Task\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,35 +24,119 @@ Collaboration diagram for Q\+Task\+:
 \mbox{\Hypertarget{class_q_task_a9ee271061467da09180f8106734bb327}\label{class_q_task_a9ee271061467da09180f8106734bb327}} 
 void {\bfseries check\+\_\+creer} ()
 \end{DoxyCompactItemize}
-\subsection*{Signals}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_q_task_a21a78164df191b35a712ccb43c6bc7e2}\label{class_q_task_a21a78164df191b35a712ccb43c6bc7e2}} 
-void {\bfseries checked\+\_\+creer} (bool)
-\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_task_a548fc51beaa1dcea345c362782aa11c0}\label{class_q_task_a548fc51beaa1dcea345c362782aa11c0}} 
-void {\bfseries load\+\_\+note} (\hyperlink{class_note}{Note} \&N)
-\item 
-\mbox{\Hypertarget{class_q_task_a1bf9080c14e7a94094bde3fa315d66d9}\label{class_q_task_a1bf9080c14e7a94094bde3fa315d66d9}} 
-void {\bfseries read\+Only} (bool status)
-\item 
-\mbox{\Hypertarget{class_q_task_ae304b097cdfd1169d2b190bbad3922eb}\label{class_q_task_ae304b097cdfd1169d2b190bbad3922eb}} 
-void {\bfseries save\+Note} (\hyperlink{class_note}{Note} \&N)
-\end{DoxyCompactItemize}
+void \hyperlink{class_q_task_a548fc51beaa1dcea345c362782aa11c0}{load\+\_\+note} (\hyperlink{class_note}{Note} \&N)
+\begin{DoxyCompactList}\small\item\em charge les données d\textquotesingle{}une T\+Ask dans l\textquotesingle{}interface graphique \end{DoxyCompactList}\item 
+void \hyperlink{class_q_task_a1bf9080c14e7a94094bde3fa315d66d9}{read\+Only} (bool status)
+\begin{DoxyCompactList}\small\item\em mode lecture seul de la note. \end{DoxyCompactList}\item 
+void \hyperlink{class_q_task_ae304b097cdfd1169d2b190bbad3922eb}{save\+Note} (\hyperlink{class_note}{Note} \&N)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_q_task_ae304b097cdfd1169d2b190bbad3922eb}{Q\+Task\+::save\+Note}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 58 of file qnote.\+h.
+Definition at line 69 of file qnote.\+h.
 
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_q_task_a548fc51beaa1dcea345c362782aa11c0}\label{class_q_task_a548fc51beaa1dcea345c362782aa11c0}} 
+\index{Q\+Task@{Q\+Task}!load\+\_\+note@{load\+\_\+note}}
+\index{load\+\_\+note@{load\+\_\+note}!Q\+Task@{Q\+Task}}
+\subsubsection{\texorpdfstring{load\+\_\+note()}{load\_note()}}
+{\footnotesize\ttfamily void Q\+Task\+::load\+\_\+note (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} \&}]{N }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+charge les données d\textquotesingle{}une T\+Ask dans l\textquotesingle{}interface graphique 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_q_note_adca0a8f2851fbb1c3843ca4fe7957c11}{Q\+Note}.
+
+
+
+Definition at line 315 of file qnote.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_q_task_a548fc51beaa1dcea345c362782aa11c0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_task_a1bf9080c14e7a94094bde3fa315d66d9}\label{class_q_task_a1bf9080c14e7a94094bde3fa315d66d9}} 
+\index{Q\+Task@{Q\+Task}!read\+Only@{read\+Only}}
+\index{read\+Only@{read\+Only}!Q\+Task@{Q\+Task}}
+\subsubsection{\texorpdfstring{read\+Only()}{readOnly()}}
+{\footnotesize\ttfamily void Q\+Task\+::read\+Only (\begin{DoxyParamCaption}\item[{bool}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+mode lecture seul de la note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_q_note_ae6fb14b839acc1979b145a892d6a0a92}{Q\+Note}.
+
+
+
+Definition at line 353 of file qnote.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_q_task_a1bf9080c14e7a94094bde3fa315d66d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_task_ae304b097cdfd1169d2b190bbad3922eb}\label{class_q_task_ae304b097cdfd1169d2b190bbad3922eb}} 
+\index{Q\+Task@{Q\+Task}!save\+Note@{save\+Note}}
+\index{save\+Note@{save\+Note}!Q\+Task@{Q\+Task}}
+\subsubsection{\texorpdfstring{save\+Note()}{saveNote()}}
+{\footnotesize\ttfamily void Q\+Task\+::save\+Note (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} \&}]{N }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\hyperlink{class_q_task_ae304b097cdfd1169d2b190bbad3922eb}{Q\+Task\+::save\+Note}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_q_note_a577f684ef199a17dc468d706b1383581}{Q\+Note}.
+
+
+
+Definition at line 388 of file qnote.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_task_ae304b097cdfd1169d2b190bbad3922eb_cgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 O\+L13/\hyperlink{qnote_8h}{qnote.\+h}\item 
-O\+L13/\hyperlink{qnote_8cpp}{qnote.\+cpp}\end{DoxyCompactItemize}
+O\+L13/qnote.\+cpp\end{DoxyCompactItemize}

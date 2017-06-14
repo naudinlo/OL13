@@ -1,0 +1,6 @@
+<map id="interface::ViderCorbeille" name="interface::ViderCorbeille">
+<area shape="rect" id="node2" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="443,33,624,60"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#a84e962ad7fa999cbb687fb43c1b3bab4" title="Supprime définitivement l&#39;ensemble des notes déclarées comme supprimées. " alt="" coords="212,92,395,118"/>
+<area shape="rect" id="node5" href="$classselection__note.html#aab004424eba4264628d2e01108f2e63b" title="Etablie/Met à jours le model contennant tous les Notes actif. " alt="" coords="227,26,380,67"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="447,88,619,114"/>
+</map>

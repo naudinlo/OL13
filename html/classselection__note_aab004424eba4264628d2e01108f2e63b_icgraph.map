@@ -1,0 +1,9 @@
+<map id="selection_note::update_model" name="selection_note::update_model">
+<area shape="rect" id="node2" href="$classselection__note.html#a69a11fa0461c0c103f099e894bf0b399" title="constructeur du dock de selection de note " alt="" coords="207,5,405,32"/>
+<area shape="rect" id="node3" href="$classinterface.html#a320051a7a36aa24f53b12df82649f15f" title="slot qui permet l&#39;ouverture d&#39;une note. " alt="" coords="230,56,382,83"/>
+<area shape="rect" id="node5" href="$classinterface.html#a430ee153cb2ea74b9103081d48cd61f3" title="Vide la corbeille. " alt="" coords="227,157,385,184"/>
+<area shape="rect" id="node8" href="$classinterface.html#aca23c755ba40ca8198010ff0487b22a8" title="appelle la fenêtre de dialogue de suppression de note " alt="" coords="222,107,390,133"/>
+<area shape="rect" id="node4" href="$classinterface.html#afda8f97b198f7d434cb1eb2d845dfefc" title="fonction outils, permettant de connecter, afficher l&#39;action d&#39;achiver une note a la page courante..." alt="" coords="453,45,591,86"/>
+<area shape="rect" id="node6" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="458,111,586,137"/>
+<area shape="rect" id="node7" href="$classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="454,161,590,188"/>
+</map>

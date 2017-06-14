@@ -2,7 +2,7 @@
 \label{interface_8h}\index{O\+L13/interface.\+h@{O\+L13/interface.\+h}}
 
 
-//\+Expliquer brievement à quoi sert ce fichier. //\+EX \+: Définit les modèles de voiture et leur particularités.  
+// Définit l\textquotesingle{}interface principale de l\textquotesingle{}application.  
 
 
 {\ttfamily \#include \char`\"{}Creation\+\_\+\+Note.\+h\char`\"{}}\newline
@@ -43,7 +43,7 @@ class \hyperlink{classinterface}{interface}
 
 
 \subsection{Detailed Description}
-//\+Expliquer brievement à quoi sert ce fichier. //\+EX \+: Définit les modèles de voiture et leur particularités. 
+// Définit l\textquotesingle{}interface principale de l\textquotesingle{}application. 
 
 \begin{DoxyAuthor}{Author}
 Garnier Maxime, Naudin Louise, Pépin Hugues 
@@ -54,4 +54,6 @@ Garnier Maxime, Naudin Louise, Pépin Hugues
 \begin{DoxyDate}{Date}
 14 Juin 2017
 \end{DoxyDate}
-//\+Expliquer en détail. //\+EX \+:Cette classe surcharge les accesseurs standards du module\+\_\+voiture pour convenir aux spécificités des différents modèles possibles. 
+//\+Classes présentes\+: -\/interface \+: L\textquotesingle{}interface est la pièce maitresse de l\textquotesingle{}application graphique, elle connecte et relie les docks, fenêtres de diagualogue et les fenêtres principales. attributs \+: Creation\+\_\+\+Note$\ast$ fen\+\_\+creer\+Note; //fenetre dialogue permettant de créer une note selection\+\_\+note$\ast$ list\+Note; //liste des notes page\+\_\+notes$\ast$ note\+\_\+page; //\+Fenetre principale Edit\+\_\+relation$\ast$ new\+\_\+relation; //fenetre dialogue d\textquotesingle{}ajout de relation supp\+\_\+note$\ast$ fen\+\_\+supp; //fenetre dialogue de suppression de note Q\+Manage\+Relation$\ast$ affR; //dock d\textquotesingle{}affichage des relations d\textquotesingle{}une note Dock\+Archived$\ast$ dock\+\_\+aff\+\_\+archived\+\_\+\+Note; //dock d\textquotesingle{}affichagedes notes archivées Dock\+Remove$\ast$ dock\+\_\+aff\+\_\+removed\+\_\+\+Note; // dock d\textquotesingle{}affichagedes notes supprimées Signaux\+: void S\+\_\+update\+\_\+model(); void L\+\_\+update\+\_\+model(); void A\+\_\+update\+\_\+model();
+
+-\/selection\+\_\+note\+: Premier dock, sur le coté gauche, affiche les notes actives, et à permet leurs affichages par un double-\/click, en envoyant le signal selection(\+Qstring, int). Ce dock est mis à jour par reception du signal L\+\_\+update\+\_\+model() emis par l\textquotesingle{}interface. 

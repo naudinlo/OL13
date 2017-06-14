@@ -61,6 +61,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_q_manage_relation-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -71,42 +72,204 @@ $(function() {
 Inheritance diagram for QManageRelation:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_q_manage_relation__inherit__graph.png" border="0" usemap="#_q_manage_relation_inherit__map" alt="Inheritance graph"/></div>
-<map name="_q_manage_relation_inherit__map" id="_q_manage_relation_inherit__map">
-</map>
 </div>
 <div class="dynheader">
 Collaboration diagram for QManageRelation:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_q_manage_relation__coll__graph.png" border="0" usemap="#_q_manage_relation_coll__map" alt="Collaboration graph"/></div>
-<map name="_q_manage_relation_coll__map" id="_q_manage_relation_coll__map">
-</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:aef7e40af43fa29fb5d8b325718897883"><td class="memItemLeft" align="right" valign="top"><a id="aef7e40af43fa29fb5d8b325718897883"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_show_clicked</b> ()</td></tr>
-<tr class="separator:aef7e40af43fa29fb5d8b325718897883"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45a9416aa18e0d6729ef5d0f9c37e626"><td class="memItemLeft" align="right" valign="top"><a id="a45a9416aa18e0d6729ef5d0f9c37e626"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_RelationView_doubleClicked</b> (QModelIndex index)</td></tr>
+<tr class="memitem:ab901c21b731bde77d9c1bc68780ec700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_manage_relation.html#ab901c21b731bde77d9c1bc68780ec700">on_show_clicked</a> ()</td></tr>
+<tr class="memdesc:ab901c21b731bde77d9c1bc68780ec700"><td class="mdescLeft">&#160;</td><td class="mdescRight">ouvre l'editeur de couple  <a href="#ab901c21b731bde77d9c1bc68780ec700">More...</a><br /></td></tr>
+<tr class="separator:ab901c21b731bde77d9c1bc68780ec700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1233b4965e2160a022a52b73d4812c8e"><td class="memItemLeft" align="right" valign="top"><a id="a1233b4965e2160a022a52b73d4812c8e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>emit_update_relation</b> ()</td></tr>
+<tr class="separator:a1233b4965e2160a022a52b73d4812c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45a9416aa18e0d6729ef5d0f9c37e626"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_manage_relation.html#a45a9416aa18e0d6729ef5d0f9c37e626">on_RelationView_doubleClicked</a> (QModelIndex index)</td></tr>
+<tr class="memdesc:a45a9416aa18e0d6729ef5d0f9c37e626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupération de la relation choisie.  <a href="#a45a9416aa18e0d6729ef5d0f9c37e626">More...</a><br /></td></tr>
 <tr class="separator:a45a9416aa18e0d6729ef5d0f9c37e626"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94a9a99974177cde7677f5c6ede78722"><td class="memItemLeft" align="right" valign="top"><a id="a94a9a99974177cde7677f5c6ede78722"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>on_remove_clicked</b> ()</td></tr>
-<tr class="separator:a94a9a99974177cde7677f5c6ede78722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ad8c5f51b68248b2d42e980d99e4820"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_manage_relation.html#a0ad8c5f51b68248b2d42e980d99e4820">on_remove_clicked</a> ()</td></tr>
+<tr class="memdesc:a0ad8c5f51b68248b2d42e980d99e4820"><td class="mdescLeft">&#160;</td><td class="mdescRight">supprime la relation selectionner  <a href="#a0ad8c5f51b68248b2d42e980d99e4820">More...</a><br /></td></tr>
+<tr class="separator:a0ad8c5f51b68248b2d42e980d99e4820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a03b0dc7b3470c608cc801b6c8203234e"><td class="memItemLeft" align="right" valign="top"><a id="a03b0dc7b3470c608cc801b6c8203234e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update_relation</b> ()</td></tr>
+<tr class="separator:a03b0dc7b3470c608cc801b6c8203234e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af470c7a01389927cd834432d4d37f5c9"><td class="memItemLeft" align="right" valign="top"><a id="af470c7a01389927cd834432d4d37f5c9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>QManageRelation</b> (QWidget *parent=0)</td></tr>
+<tr class="memitem:af470c7a01389927cd834432d4d37f5c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_manage_relation.html#af470c7a01389927cd834432d4d37f5c9">QManageRelation</a> (QWidget *parent=0)</td></tr>
+<tr class="memdesc:af470c7a01389927cd834432d4d37f5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructeur de QManagerRelation.  <a href="#af470c7a01389927cd834432d4d37f5c9">More...</a><br /></td></tr>
 <tr class="separator:af470c7a01389927cd834432d4d37f5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28ec1f2567446d681dd20bfcf3c53a41"><td class="memItemLeft" align="right" valign="top"><a id="a28ec1f2567446d681dd20bfcf3c53a41"></a>
-<a class="el" href="class_q_ui_relation.html">QUiRelation</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getSelectedR</b> ()</td></tr>
-<tr class="separator:a28ec1f2567446d681dd20bfcf3c53a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="qmanagerelation_8h_source.html#l00012">12</a> of file <a class="el" href="qmanagerelation_8h_source.html">qmanagerelation.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<p class="definition">Definition at line <a class="el" href="qmanagerelation_8h_source.html#l00028">28</a> of file <a class="el" href="qmanagerelation_8h_source.html">qmanagerelation.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af470c7a01389927cd834432d4d37f5c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af470c7a01389927cd834432d4d37f5c9">&#9670;&nbsp;</a></span>QManageRelation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QManageRelation::QManageRelation </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>constructeur de QManagerRelation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="qmanagerelation_8cpp_source.html#l00008">8</a> of file <a class="el" href="qmanagerelation_8cpp_source.html">qmanagerelation.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_manage_relation_af470c7a01389927cd834432d4d37f5c9_cgraph.png" border="0" usemap="#class_q_manage_relation_af470c7a01389927cd834432d4d37f5c9_cgraph" alt=""/></div>
+<map name="class_q_manage_relation_af470c7a01389927cd834432d4d37f5c9_cgraph" id="class_q_manage_relation_af470c7a01389927cd834432d4d37f5c9_cgraph">
+<area shape="rect" id="node2" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="243,13,437,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a45a9416aa18e0d6729ef5d0f9c37e626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45a9416aa18e0d6729ef5d0f9c37e626">&#9670;&nbsp;</a></span>on_RelationView_doubleClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QManageRelation::on_RelationView_doubleClicked </td>
+          <td>(</td>
+          <td class="paramtype">QModelIndex&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recupération de la relation choisie. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>rends possible des les fonctions de suppression et d'affichage d'une relation. </p>
+
+<p class="definition">Definition at line <a class="el" href="qmanagerelation_8cpp_source.html#l00048">48</a> of file <a class="el" href="qmanagerelation_8cpp_source.html">qmanagerelation.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0ad8c5f51b68248b2d42e980d99e4820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ad8c5f51b68248b2d42e980d99e4820">&#9670;&nbsp;</a></span>on_remove_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QManageRelation::on_remove_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>supprime la relation selectionner </p>
+<p>envoie le message de demande de mis à jour. </p>
+
+<p class="definition">Definition at line <a class="el" href="qmanagerelation_8h_source.html#l00068">68</a> of file <a class="el" href="qmanagerelation_8h_source.html">qmanagerelation.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_manage_relation_a0ad8c5f51b68248b2d42e980d99e4820_cgraph.png" border="0" usemap="#class_q_manage_relation_a0ad8c5f51b68248b2d42e980d99e4820_cgraph" alt=""/></div>
+<map name="class_q_manage_relation_a0ad8c5f51b68248b2d42e980d99e4820_cgraph" id="class_q_manage_relation_a0ad8c5f51b68248b2d42e980d99e4820_cgraph">
+<area shape="rect" id="node2" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="207,5,402,32"/>
+<area shape="rect" id="node3" href="class_relation_manager.html#a074413b3ed72a1342821e911c1fa3587" title="Supprime une relation dont le titre est passé en paramètre. " alt="" coords="200,56,409,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab901c21b731bde77d9c1bc68780ec700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab901c21b731bde77d9c1bc68780ec700">&#9670;&nbsp;</a></span>on_show_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QManageRelation::on_show_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ouvre l'editeur de couple </p>
+<p>mets à jours les données et envoi un signal de mis à jour. </p>
+
+<p class="definition">Definition at line <a class="el" href="qmanagerelation_8h_source.html#l00049">49</a> of file <a class="el" href="qmanagerelation_8h_source.html">qmanagerelation.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_manage_relation_ab901c21b731bde77d9c1bc68780ec700_cgraph.png" border="0" usemap="#class_q_manage_relation_ab901c21b731bde77d9c1bc68780ec700_cgraph" alt=""/></div>
+<map name="class_q_manage_relation_ab901c21b731bde77d9c1bc68780ec700_cgraph" id="class_q_manage_relation_ab901c21b731bde77d9c1bc68780ec700_cgraph">
+<area shape="rect" id="node2" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="200,13,395,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>OL13/<a class="el" href="qmanagerelation_8h_source.html">qmanagerelation.h</a></li>
 <li>OL13/<a class="el" href="qmanagerelation_8cpp_source.html">qmanagerelation.cpp</a></li>
 </ul>

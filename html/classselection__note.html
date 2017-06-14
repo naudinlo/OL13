@@ -72,15 +72,11 @@ $(function() {
 Inheritance diagram for selection_note:</div>
 <div class="dyncontent">
 <div class="center"><img src="classselection__note__inherit__graph.png" border="0" usemap="#selection__note_inherit__map" alt="Inheritance graph"/></div>
-<map name="selection__note_inherit__map" id="selection__note_inherit__map">
-</map>
 </div>
 <div class="dynheader">
 Collaboration diagram for selection_note:</div>
 <div class="dyncontent">
 <div class="center"><img src="classselection__note__coll__graph.png" border="0" usemap="#selection__note_coll__map" alt="Collaboration graph"/></div>
-<map name="selection__note_coll__map" id="selection__note_coll__map">
-</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
@@ -88,9 +84,8 @@ Public Slots</h2></td></tr>
 <tr class="memitem:a70f407c89a87e5d8ce992f18ef64773d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselection__note.html#a70f407c89a87e5d8ce992f18ef64773d">emit_selection</a> (QModelIndex i)</td></tr>
 <tr class="memdesc:a70f407c89a87e5d8ce992f18ef64773d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifie la note/versions que l'utilisateur souhaité affiché  <a href="#a70f407c89a87e5d8ce992f18ef64773d">More...</a><br /></td></tr>
 <tr class="separator:a70f407c89a87e5d8ce992f18ef64773d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab004424eba4264628d2e01108f2e63b"><td class="memItemLeft" align="right" valign="top"><a id="aab004424eba4264628d2e01108f2e63b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselection__note.html#aab004424eba4264628d2e01108f2e63b">update_model</a> ()</td></tr>
-<tr class="memdesc:aab004424eba4264628d2e01108f2e63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Etablie/Met à jours le model contennant tous les Notes actifs, en appellant Le <a class="el" href="class_note.html">Note</a> Manager. <br /></td></tr>
+<tr class="memitem:aab004424eba4264628d2e01108f2e63b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselection__note.html#aab004424eba4264628d2e01108f2e63b">update_model</a> ()</td></tr>
+<tr class="memdesc:aab004424eba4264628d2e01108f2e63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Etablie/Met à jours le model contennant tous les Notes actif.  <a href="#aab004424eba4264628d2e01108f2e63b">More...</a><br /></td></tr>
 <tr class="separator:aab004424eba4264628d2e01108f2e63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
@@ -103,7 +98,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>selection</b> (QStrin
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a69a11fa0461c0c103f099e894bf0b399"><td class="memItemLeft" align="right" valign="top"><a id="a69a11fa0461c0c103f099e894bf0b399"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classselection__note.html#a69a11fa0461c0c103f099e894bf0b399">selection_note</a> ()</td></tr>
-<tr class="memdesc:a69a11fa0461c0c103f099e894bf0b399"><td class="mdescLeft">&#160;</td><td class="mdescRight">création de la widget de selection de note <br /></td></tr>
+<tr class="memdesc:a69a11fa0461c0c103f099e894bf0b399"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructeur du dock de selection de note <br /></td></tr>
 <tr class="separator:a69a11fa0461c0c103f099e894bf0b399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87ea63b64611ba8668ab50affd116aea"><td class="memItemLeft" align="right" valign="top"><a id="a87ea63b64611ba8668ab50affd116aea"></a>
 QStandardItemModel *&#160;</td><td class="memItemRight" valign="bottom"><b>getModel</b> () const</td></tr>
@@ -114,7 +109,7 @@ QTreeView *&#160;</td><td class="memItemRight" valign="bottom"><b>getVue</b> ()<
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="interface_8h_source.html#l00034">34</a> of file <a class="el" href="interface_8h_source.html">interface.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interface_8h_source.html#l00052">52</a> of file <a class="el" href="interface_8h_source.html">interface.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a70f407c89a87e5d8ce992f18ef64773d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70f407c89a87e5d8ce992f18ef64773d">&#9670;&nbsp;</a></span>emit_selection</h2>
@@ -141,20 +136,73 @@ QTreeView *&#160;</td><td class="memItemRight" valign="bottom"><b>getVue</b> ()<
 </div><div class="memdoc">
 
 <p>Identifie la note/versions que l'utilisateur souhaité affiché </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Si on choisit de cliquer sur l'id, d'une note on envoie les paramètre de façon à obtenir la dernière versions. Sinon on envoie les coordonnées de la version sellectionner </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">i</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="interface_8cpp_source.html#l00325">325</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interface_8cpp_source.html#l00375">375</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classselection__note_a70f407c89a87e5d8ce992f18ef64773d_icgraph.png" border="0" usemap="#classselection__note_a70f407c89a87e5d8ce992f18ef64773d_icgraph" alt=""/></div>
 <map name="classselection__note_a70f407c89a87e5d8ce992f18ef64773d_icgraph" id="classselection__note_a70f407c89a87e5d8ce992f18ef64773d_icgraph">
-<area shape="rect" id="node2" href="classselection__note.html#a69a11fa0461c0c103f099e894bf0b399" title="création de la widget de selection de note " alt="" coords="192,13,391,39"/>
+<area shape="rect" id="node2" href="classselection__note.html#a69a11fa0461c0c103f099e894bf0b399" title="constructeur du dock de selection de note " alt="" coords="192,13,391,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab004424eba4264628d2e01108f2e63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab004424eba4264628d2e01108f2e63b">&#9670;&nbsp;</a></span>update_model</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void selection_note::update_model </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Etablie/Met à jours le model contennant tous les Notes actif. </p>
+<p>les notes affichées sont les notes actifs (non supprimées, non archivées) en effectuant une requete au près du <a class="el" href="class_note.html">Note</a> Manager </p>
+
+<p class="definition">Definition at line <a class="el" href="interface_8cpp_source.html#l00333">333</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classselection__note_aab004424eba4264628d2e01108f2e63b_cgraph.png" border="0" usemap="#classselection__note_aab004424eba4264628d2e01108f2e63b_cgraph" alt=""/></div>
+<map name="classselection__note_aab004424eba4264628d2e01108f2e63b_cgraph" id="classselection__note_aab004424eba4264628d2e01108f2e63b_cgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="207,5,388,32"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="211,56,383,83"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classselection__note_aab004424eba4264628d2e01108f2e63b_icgraph.png" border="0" usemap="#classselection__note_aab004424eba4264628d2e01108f2e63b_icgraph" alt=""/></div>
+<map name="classselection__note_aab004424eba4264628d2e01108f2e63b_icgraph" id="classselection__note_aab004424eba4264628d2e01108f2e63b_icgraph">
+<area shape="rect" id="node2" href="classselection__note.html#a69a11fa0461c0c103f099e894bf0b399" title="constructeur du dock de selection de note " alt="" coords="207,5,405,32"/>
+<area shape="rect" id="node3" href="classinterface.html#a320051a7a36aa24f53b12df82649f15f" title="slot qui permet l&#39;ouverture d&#39;une note. " alt="" coords="230,56,382,83"/>
+<area shape="rect" id="node5" href="classinterface.html#a430ee153cb2ea74b9103081d48cd61f3" title="Vide la corbeille. " alt="" coords="227,157,385,184"/>
+<area shape="rect" id="node8" href="classinterface.html#aca23c755ba40ca8198010ff0487b22a8" title="appelle la fenêtre de dialogue de suppression de note " alt="" coords="222,107,390,133"/>
+<area shape="rect" id="node4" href="classinterface.html#afda8f97b198f7d434cb1eb2d845dfefc" title="fonction outils, permettant de connecter, afficher l&#39;action d&#39;achiver une note a la page courante..." alt="" coords="453,45,591,86"/>
+<area shape="rect" id="node6" href="classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="458,111,586,137"/>
+<area shape="rect" id="node7" href="classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="454,161,590,188"/>
 </map>
 </div>
 

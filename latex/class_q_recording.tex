@@ -2,8 +2,7 @@
 \label{class_q_recording}\index{Q\+Recording@{Q\+Recording}}
 
 
-Inheritance diagram for Q\+Recording\+:
-\nopagebreak
+Inheritance diagram for Q\+Recording\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Inheritance diagram for Q\+Recording\+:
 \end{figure}
 
 
-Collaboration diagram for Q\+Recording\+:
-\nopagebreak
+Collaboration diagram for Q\+Recording\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,26 +21,20 @@ Collaboration diagram for Q\+Recording\+:
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_recording_a9eaf976da6c3c768d15a5e53f3982753}\label{class_q_recording_a9eaf976da6c3c768d15a5e53f3982753}} 
-Q\+String {\bfseries Ouvrir\+Fichier} ()
-\item 
+Q\+String \hyperlink{class_q_recording_a9eaf976da6c3c768d15a5e53f3982753}{Ouvrir\+Fichier} ()
+\begin{DoxyCompactList}\small\item\em Permet à l\textquotesingle{}utilisateur de choisir un enregistrement. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_recording_ad889ab95e55e1ce9ebff8726aa916fe2}\label{class_q_recording_ad889ab95e55e1ce9ebff8726aa916fe2}} 
-void {\bfseries check\+\_\+creer} ()
-\item 
-\mbox{\Hypertarget{class_q_recording_a5c5c221fed1648c1813da1f195e26663}\label{class_q_recording_a5c5c221fed1648c1813da1f195e26663}} 
-void {\bfseries read\+\_\+record} ()
-\item 
+void \hyperlink{class_q_recording_ad889ab95e55e1ce9ebff8726aa916fe2}{check\+\_\+creer} ()
+\begin{DoxyCompactList}\small\item\em Vérifier que les champs nécessaire à l\textquotesingle{}appelle des constructeurs on été saisi par l\textquotesingle{}utilisateur. \end{DoxyCompactList}\item 
+void \hyperlink{class_q_recording_a5c5c221fed1648c1813da1f195e26663}{read\+\_\+record} ()
+\begin{DoxyCompactList}\small\item\em lance la lecture de l\textquotesingle{}enregestriment importé \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_recording_a35476e910a18814b7beb0e73819279d8}\label{class_q_recording_a35476e910a18814b7beb0e73819279d8}} 
 void {\bfseries stop\+\_\+record} ()
 \item 
-\mbox{\Hypertarget{class_q_recording_a37492f3dbda2dad2a8cd62012fe91b78}\label{class_q_recording_a37492f3dbda2dad2a8cd62012fe91b78}} 
-void {\bfseries save\+Note} (\hyperlink{class_note}{Note} \&n)
-\end{DoxyCompactItemize}
+void \hyperlink{class_q_recording_a37492f3dbda2dad2a8cd62012fe91b78}{save\+Note} (\hyperlink{class_note}{Note} \&n)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_q_recording_a37492f3dbda2dad2a8cd62012fe91b78}{Q\+Recording\+::save\+Note}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_q_recording_a6a2b27ca530a1b1da1f97759c7742206}\label{class_q_recording_a6a2b27ca530a1b1da1f97759c7742206}} 
-void {\bfseries checked\+\_\+creer} (bool)
 \item 
 \mbox{\Hypertarget{class_q_recording_aee0cf464a60e91f566bcff3d3caa3534}\label{class_q_recording_aee0cf464a60e91f566bcff3d3caa3534}} 
 void {\bfseries recording\+\_\+ready} ()
@@ -50,23 +42,148 @@ void {\bfseries recording\+\_\+ready} ()
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_recording_aa6984351b5a0bceaa63be793b160c73b}\label{class_q_recording_aa6984351b5a0bceaa63be793b160c73b}} 
-virtual void {\bfseries load\+\_\+note} (\hyperlink{class_note}{Note} \&N)
-\item 
-\mbox{\Hypertarget{class_q_recording_a98fa21d8814450c0d912c8ce102ca832}\label{class_q_recording_a98fa21d8814450c0d912c8ce102ca832}} 
-void {\bfseries read\+Only} (bool status)
-\end{DoxyCompactItemize}
+virtual void \hyperlink{class_q_recording_aa6984351b5a0bceaa63be793b160c73b}{load\+\_\+note} (\hyperlink{class_note}{Note} \&N)
+\begin{DoxyCompactList}\small\item\em charge les données d\textquotesingle{}un \hyperlink{class_recording}{Recording} dans l\textquotesingle{}interface graphique \end{DoxyCompactList}\item 
+void \hyperlink{class_q_recording_a98fa21d8814450c0d912c8ce102ca832}{read\+Only} (bool status)
+\begin{DoxyCompactList}\small\item\em mode lecture seul de la note. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 85 of file qnote.\+h.
+Definition at line 94 of file qnote.\+h.
 
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_q_recording_aa6984351b5a0bceaa63be793b160c73b}\label{class_q_recording_aa6984351b5a0bceaa63be793b160c73b}} 
+\index{Q\+Recording@{Q\+Recording}!load\+\_\+note@{load\+\_\+note}}
+\index{load\+\_\+note@{load\+\_\+note}!Q\+Recording@{Q\+Recording}}
+\subsubsection{\texorpdfstring{load\+\_\+note()}{load\_note()}}
+{\footnotesize\ttfamily void Q\+Recording\+::load\+\_\+note (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} \&}]{N }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+charge les données d\textquotesingle{}un \hyperlink{class_recording}{Recording} dans l\textquotesingle{}interface graphique 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_q_note_adca0a8f2851fbb1c3843ca4fe7957c11}{Q\+Note}.
+
+
+
+Definition at line 299 of file qnote.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_q_recording_aa6984351b5a0bceaa63be793b160c73b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_recording_a9eaf976da6c3c768d15a5e53f3982753}\label{class_q_recording_a9eaf976da6c3c768d15a5e53f3982753}} 
+\index{Q\+Recording@{Q\+Recording}!Ouvrir\+Fichier@{Ouvrir\+Fichier}}
+\index{Ouvrir\+Fichier@{Ouvrir\+Fichier}!Q\+Recording@{Q\+Recording}}
+\subsubsection{\texorpdfstring{Ouvrir\+Fichier}{OuvrirFichier}}
+{\footnotesize\ttfamily Q\+String Q\+Recording\+::\+Ouvrir\+Fichier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Permet à l\textquotesingle{}utilisateur de choisir un enregistrement. 
+
+\begin{DoxyReturn}{Returns}
+Qstring fichier 
+\end{DoxyReturn}
+
+
+Definition at line 176 of file qnote.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_recording_a9eaf976da6c3c768d15a5e53f3982753_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_recording_a5c5c221fed1648c1813da1f195e26663}\label{class_q_recording_a5c5c221fed1648c1813da1f195e26663}} 
+\index{Q\+Recording@{Q\+Recording}!read\+\_\+record@{read\+\_\+record}}
+\index{read\+\_\+record@{read\+\_\+record}!Q\+Recording@{Q\+Recording}}
+\subsubsection{\texorpdfstring{read\+\_\+record}{read\_record}}
+{\footnotesize\ttfamily void Q\+Recording\+::read\+\_\+record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+lance la lecture de l\textquotesingle{}enregestriment importé 
+
+la lecture dépends du type d\textquotesingle{}enregistrement La classe Q\+Media\+Player demmande de faire des liasions avec les fichiers librairie de l\textquotesingle{}ordinateur. Fonctionnel sous linux. 
+
+Definition at line 134 of file qnote.\+cpp.
+
+\mbox{\Hypertarget{class_q_recording_a98fa21d8814450c0d912c8ce102ca832}\label{class_q_recording_a98fa21d8814450c0d912c8ce102ca832}} 
+\index{Q\+Recording@{Q\+Recording}!read\+Only@{read\+Only}}
+\index{read\+Only@{read\+Only}!Q\+Recording@{Q\+Recording}}
+\subsubsection{\texorpdfstring{read\+Only()}{readOnly()}}
+{\footnotesize\ttfamily void Q\+Recording\+::read\+Only (\begin{DoxyParamCaption}\item[{bool}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+mode lecture seul de la note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_q_note_ae6fb14b839acc1979b145a892d6a0a92}{Q\+Note}.
+
+
+
+Definition at line 347 of file qnote.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_q_recording_a98fa21d8814450c0d912c8ce102ca832_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_recording_a37492f3dbda2dad2a8cd62012fe91b78}\label{class_q_recording_a37492f3dbda2dad2a8cd62012fe91b78}} 
+\index{Q\+Recording@{Q\+Recording}!save\+Note@{save\+Note}}
+\index{save\+Note@{save\+Note}!Q\+Recording@{Q\+Recording}}
+\subsubsection{\texorpdfstring{save\+Note}{saveNote}}
+{\footnotesize\ttfamily void Q\+Recording\+::save\+Note (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} \&}]{N }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\hyperlink{class_q_recording_a37492f3dbda2dad2a8cd62012fe91b78}{Q\+Recording\+::save\+Note}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 401 of file qnote.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_recording_a37492f3dbda2dad2a8cd62012fe91b78_cgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 O\+L13/\hyperlink{qnote_8h}{qnote.\+h}\item 
-O\+L13/\hyperlink{qnote_8cpp}{qnote.\+cpp}\end{DoxyCompactItemize}
+O\+L13/qnote.\+cpp\end{DoxyCompactItemize}

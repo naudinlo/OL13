@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['libererinstance',['libererInstance',['../class_notes_manager.html#abd12bae3c990a408e9ef55aa0d93b675',1,'NotesManager::libererInstance()'],['../class_relation_manager.html#a64126ecfdd2046d9c9797e80427bcba3',1,'RelationManager::libererInstance()']]],
-  ['load',['load',['../class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64',1,'NotesManager::load()'],['../class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a',1,'RelationManager::load()']]]
+  ['include_2eh',['include.h',['../include_8h.html',1,'']]],
+  ['interface',['interface',['../classinterface.html',1,'interface'],['../classinterface.html#a13e0ee4b9df1714d747d62ec46220c55',1,'interface::interface()']]],
+  ['interface_2ecpp',['interface.cpp',['../interface_8cpp.html',1,'']]],
+  ['interface_2eh',['interface.h',['../interface_8h.html',1,'']]],
+  ['iterator',['Iterator',['../class_relation_manager_1_1_iterator.html',1,'RelationManager::Iterator'],['../class_relation_1_1_iterator.html',1,'Relation::Iterator'],['../class_notes_manager_1_1_iterator.html',1,'NotesManager::Iterator']]]
 ];

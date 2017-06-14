@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['save',['save',['../classinterface.html#a319f133949e2be97a203f725c3f1e565',1,'interface::save()'],['../class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac',1,'NotesManager::save()']]],
-  ['selection_5fnote',['selection_note',['../classselection__note.html',1,'selection_note'],['../classselection__note.html#a69a11fa0461c0c103f099e894bf0b399',1,'selection_note::selection_note()']]],
-  ['setfilename',['setFilename',['../class_notes_manager.html#a797d858176de3f5e64aa8194797909fb',1,'NotesManager']]],
-  ['setnewref',['setNewRef',['../class_note.html#a3af2edc369310b9f122bd1fd6dbfa717',1,'Note']]],
-  ['supp_5fnote',['supp_note',['../classsupp__note.html',1,'']]],
-  ['supp_5fnote_2ecpp',['supp_note.cpp',['../supp__note_8cpp.html',1,'']]],
-  ['supp_5fnote_2eh',['supp_note.h',['../supp__note_8h.html',1,'']]]
+  ['read_5frecord',['read_record',['../class_q_recording.html#a5c5c221fed1648c1813da1f195e26663',1,'QRecording']]],
+  ['readonly',['readOnly',['../class_q_note.html#ae6fb14b839acc1979b145a892d6a0a92',1,'QNote::readOnly()'],['../class_q_article.html#af6c14f4ce3df750a0e1a22207309068e',1,'QArticle::readOnly()'],['../class_q_task.html#a1bf9080c14e7a94094bde3fa315d66d9',1,'QTask::readOnly()'],['../class_q_recording.html#a98fa21d8814450c0d912c8ce102ca832',1,'QRecording::readOnly()']]],
+  ['recording',['Recording',['../class_recording.html',1,'']]],
+  ['relation',['Relation',['../class_relation.html',1,'']]],
+  ['relationmanager',['RelationManager',['../class_relation_manager.html',1,'']]],
+  ['relations_2ecpp',['relations.cpp',['../relations_8cpp.html',1,'']]],
+  ['removecouplerelation',['removeCoupleRelation',['../class_relation.html#ab81e16d688dcb4703e8ab299fef80c10',1,'Relation']]],
+  ['removenoterelation',['removeNoteRelation',['../class_relation.html#a8f25fe0ab5bf722eb08d2dd31e99c7f4',1,'Relation']]],
+  ['restorenotetrash',['restoreNoteTrash',['../class_notes_manager.html#abc6587a5d3986ae674e5dd4b9044f348',1,'NotesManager']]]
 ];

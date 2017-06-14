@@ -1,0 +1,4 @@
+<map id="QManageRelation::on_remove_clicked" name="QManageRelation::on_remove_clicked">
+<area shape="rect" id="node2" href="$class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="207,5,402,32"/>
+<area shape="rect" id="node3" href="$class_relation_manager.html#a074413b3ed72a1342821e911c1fa3587" title="Supprime une relation dont le titre est passé en paramètre. " alt="" coords="200,56,409,83"/>
+</map>

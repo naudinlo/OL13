@@ -2,7 +2,7 @@
 \label{qnote_8h}\index{O\+L13/qnote.\+h@{O\+L13/qnote.\+h}}
 
 
-//\+Bref  
+Contient les classes de tous les types de notes utilisé par l\textquotesingle{}interface.  
 
 
 {\ttfamily \#include \char`\"{}Q\+Include.\+h\char`\"{}}\newline
@@ -40,7 +40,7 @@ class \hyperlink{class_q_recording}{Q\+Recording}
 
 
 \subsection{Detailed Description}
-//\+Bref 
+Contient les classes de tous les types de notes utilisé par l\textquotesingle{}interface. 
 
 \begin{DoxyAuthor}{Author}
 Garnier Maxime, Naudin Louise, Pépin Hugues 
@@ -51,4 +51,6 @@ Garnier Maxime, Naudin Louise, Pépin Hugues
 \begin{DoxyDate}{Date}
 14 Juin 2017
 \end{DoxyDate}
-//\+Détail 
+Architecture symétrique au fichier note, Le choix de re implémenter une versions graphique nous permet de bien séparé les données de l\textquotesingle{}affichage de celle ci afin de faciliter la maintenabilité de l\textquotesingle{}application
+
+Les classes \+: -\/\+Q\+Note \+: classe abstraite pure Signals\+: void checked\+\_\+creer(bool); -\/\+Q\+Task \+: Permet l\textquotesingle{}affichage graphique d\textquotesingle{}une \hyperlink{class_task}{Task} dérive de la classe \hyperlink{class_q_note}{Q\+Note} -\/\+Q\+Recording\+: Permet l\textquotesingle{}affichage graphique d\textquotesingle{}un \hyperlink{class_recording}{Recording} dérive de la classe \hyperlink{class_q_note}{Q\+Note} -\/\+Q\+Article\+: Permet l\textquotesingle{}affichage graphique d\textquotesingle{}un \hyperlink{class_article}{Article} dérive de la classe \hyperlink{class_q_note}{Q\+Note} 

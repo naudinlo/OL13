@@ -2,8 +2,7 @@
 \label{class_q_note}\index{Q\+Note@{Q\+Note}}
 
 
-Inheritance diagram for Q\+Note\+:
-\nopagebreak
+Inheritance diagram for Q\+Note\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Inheritance diagram for Q\+Note\+:
 \end{figure}
 
 
-Collaboration diagram for Q\+Note\+:
-\nopagebreak
+Collaboration diagram for Q\+Note\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,9 +24,8 @@ Collaboration diagram for Q\+Note\+:
 \mbox{\Hypertarget{class_q_note_a2c59bd1dee880b825b692204adea842b}\label{class_q_note_a2c59bd1dee880b825b692204adea842b}} 
 virtual void {\bfseries check\+\_\+creer} ()=0
 \item 
-\mbox{\Hypertarget{class_q_note_a577f684ef199a17dc468d706b1383581}\label{class_q_note_a577f684ef199a17dc468d706b1383581}} 
-virtual void {\bfseries save\+Note} (\hyperlink{class_note}{Note} \&n)
-\end{DoxyCompactItemize}
+virtual void \hyperlink{class_q_note_a577f684ef199a17dc468d706b1383581}{save\+Note} (\hyperlink{class_note}{Note} \&n)
+\begin{DoxyCompactList}\small\item\em sauvegarde les modfications apporté par l\textquotesingle{}utilisateur sur la note. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,14 +38,12 @@ void {\bfseries checked\+\_\+creer} (bool)
 \mbox{\Hypertarget{class_q_note_a9938dcbd69ea0f0cbc12a8faa2a38576}\label{class_q_note_a9938dcbd69ea0f0cbc12a8faa2a38576}} 
 virtual \hyperlink{class_note}{Note} \& {\bfseries get\+\_\+note} (Q\+String id, Q\+String title)=0
 \item 
-\mbox{\Hypertarget{class_q_note_ae6fb14b839acc1979b145a892d6a0a92}\label{class_q_note_ae6fb14b839acc1979b145a892d6a0a92}} 
-virtual void {\bfseries read\+Only} (bool status)
-\item 
+virtual void \hyperlink{class_q_note_ae6fb14b839acc1979b145a892d6a0a92}{read\+Only} (bool status)
+\begin{DoxyCompactList}\small\item\em mode lecture seul de la note. \end{DoxyCompactList}\item 
 \hyperlink{class_q_note_a4f3980466d58be3cb5e15d2e45d74840}{Q\+Note} ()
 \begin{DoxyCompactList}\small\item\em Constructueur de la clase \hyperlink{class_q_note}{Q\+Note}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_q_note_adca0a8f2851fbb1c3843ca4fe7957c11}\label{class_q_note_adca0a8f2851fbb1c3843ca4fe7957c11}} 
-virtual void {\bfseries load\+\_\+note} (\hyperlink{class_note}{Note} \&n)
-\item 
+virtual void \hyperlink{class_q_note_adca0a8f2851fbb1c3843ca4fe7957c11}{load\+\_\+note} (\hyperlink{class_note}{Note} \&n)
+\begin{DoxyCompactList}\small\item\em Methode Virtuel charge les données d\textquotesingle{}une note dans l\textquotesingle{}interface graphique. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_note_aa7e7772b41fe2443cf1225bf1937a4ca}\label{class_q_note_aa7e7772b41fe2443cf1225bf1937a4ca}} 
 Q\+V\+Box\+Layout $\ast$ {\bfseries get\+Layout\+\_\+titre} ()
 \end{DoxyCompactItemize}
@@ -63,7 +58,7 @@ Q\+Grid\+Layout $\ast$ {\bfseries grid}
 \subsection{Detailed Description}
 
 
-Definition at line 21 of file qnote.\+h.
+Definition at line 34 of file qnote.\+h.
 
 
 
@@ -84,20 +79,106 @@ Constructueur de la clase \hyperlink{class_q_task}{Q\+Task}.
 
 Constructueur de la clase \hyperlink{class_q_article}{Q\+Article}. 
 
-Definition at line 17 of file qnote.\+cpp.
+Definition at line 22 of file qnote.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_q_note_adca0a8f2851fbb1c3843ca4fe7957c11}\label{class_q_note_adca0a8f2851fbb1c3843ca4fe7957c11}} 
+\index{Q\+Note@{Q\+Note}!load\+\_\+note@{load\+\_\+note}}
+\index{load\+\_\+note@{load\+\_\+note}!Q\+Note@{Q\+Note}}
+\subsubsection{\texorpdfstring{load\+\_\+note()}{load\_note()}}
+{\footnotesize\ttfamily void Q\+Note\+::load\+\_\+note (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Methode Virtuel charge les données d\textquotesingle{}une note dans l\textquotesingle{}interface graphique. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_q_recording_aa6984351b5a0bceaa63be793b160c73b}{Q\+Recording}, \hyperlink{class_q_task_a548fc51beaa1dcea345c362782aa11c0}{Q\+Task}, and \hyperlink{class_q_article_aea21c10581abe74709317283739e9552}{Q\+Article}.
+
+
+
+Definition at line 280 of file qnote.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_q_note_adca0a8f2851fbb1c3843ca4fe7957c11_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_note_ae6fb14b839acc1979b145a892d6a0a92}\label{class_q_note_ae6fb14b839acc1979b145a892d6a0a92}} 
+\index{Q\+Note@{Q\+Note}!read\+Only@{read\+Only}}
+\index{read\+Only@{read\+Only}!Q\+Note@{Q\+Note}}
+\subsubsection{\texorpdfstring{read\+Only()}{readOnly()}}
+{\footnotesize\ttfamily void Q\+Note\+::read\+Only (\begin{DoxyParamCaption}\item[{bool}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+mode lecture seul de la note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_q_recording_a98fa21d8814450c0d912c8ce102ca832}{Q\+Recording}, \hyperlink{class_q_task_a1bf9080c14e7a94094bde3fa315d66d9}{Q\+Task}, and \hyperlink{class_q_article_af6c14f4ce3df750a0e1a22207309068e}{Q\+Article}.
+
+
+
+Definition at line 338 of file qnote.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_note_ae6fb14b839acc1979b145a892d6a0a92_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_note_a577f684ef199a17dc468d706b1383581}\label{class_q_note_a577f684ef199a17dc468d706b1383581}} 
+\index{Q\+Note@{Q\+Note}!save\+Note@{save\+Note}}
+\index{save\+Note@{save\+Note}!Q\+Note@{Q\+Note}}
+\subsubsection{\texorpdfstring{save\+Note}{saveNote}}
+{\footnotesize\ttfamily void Q\+Note\+::save\+Note (\begin{DoxyParamCaption}\item[{\hyperlink{class_note}{Note} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+sauvegarde les modfications apporté par l\textquotesingle{}utilisateur sur la note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & \\
+\hline
+\end{DoxyParams}
+On supprime tous les réfèrences avant de ré-\/éditer tous les références. 
+
+Reimplemented in \hyperlink{class_q_task_ae304b097cdfd1169d2b190bbad3922eb}{Q\+Task}, and \hyperlink{class_q_article_ae59d03688947d16b86f9ab10384894ec}{Q\+Article}.
+
+
+
+Definition at line 369 of file qnote.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_q_note_a4f3980466d58be3cb5e15d2e45d74840_cgraph}
+\includegraphics[width=350pt]{class_q_note_a577f684ef199a17dc468d706b1383581_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=158pt]{class_q_note_a4f3980466d58be3cb5e15d2e45d74840_icgraph}
+\includegraphics[width=350pt]{class_q_note_a577f684ef199a17dc468d706b1383581_icgraph}
 \end{center}
 \end{figure}
 
@@ -105,4 +186,4 @@ Here is the caller graph for this function\+:\nopagebreak
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 O\+L13/\hyperlink{qnote_8h}{qnote.\+h}\item 
-O\+L13/\hyperlink{qnote_8cpp}{qnote.\+cpp}\end{DoxyCompactItemize}
+O\+L13/qnote.\+cpp\end{DoxyCompactItemize}

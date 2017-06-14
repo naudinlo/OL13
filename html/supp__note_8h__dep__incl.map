@@ -1,5 +1,5 @@
 <map id="OL13/supp_note.h" name="OL13/supp_note.h">
-<area shape="rect" id="node2" href="$interface_8h.html" title="//Expliquer brievement à quoi sert ce fichier. //EX : Définit les modèles de voiture et leur particul..." alt="" coords="145,80,263,107"/>
+<area shape="rect" id="node2" href="$interface_8h.html" title="// Définit l&#39;interface principale de l&#39;application. " alt="" coords="145,80,263,107"/>
 <area shape="rect" id="node6" href="$supp__note_8cpp.html" title="//Bref " alt="" coords="287,80,430,107"/>
 <area shape="rect" id="node3" href="$include_8h.html" title="Regroupe une partie des includes nécessaires au projet. " alt="" coords="5,155,115,181"/>
 <area shape="rect" id="node4" href="$interface_8cpp.html" title="//Expliquer brievement à quoi sert ce fichier. //EX : Définit les modèles de voiture et leur particul..." alt="" coords="139,155,269,181"/>
