@@ -814,7 +814,7 @@ void NotesManager::load_fichier() const{
         m->setFilename(fichier);
         m->load();
         RelationManager& rm=RelationManager::getInstance();
-        rm.load(getFilename());
+        //rm.load(getFilename());
 }
 
 /**

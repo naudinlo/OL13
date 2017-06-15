@@ -30,7 +30,8 @@ interface::interface(): QMainWindow()
     /*** Initialisation des attributs ***/
         note_manager=NotesManager::getInstance();
         try{
-            note_manager->load_fichier();}
+            note_manager->load_fichier();
+        }
         catch(NotesException e){
             QMessageBox::critical(this,"recupération des données",e.getinfo());
         }
@@ -118,6 +119,7 @@ interface::interface(): QMainWindow()
 
     CreateDock_selected_Note();
     setCentralWidget(ZoneCentrale);
+    update_model();
 }
 /**
  * \fn interface::~interface
@@ -247,6 +249,7 @@ void interface::OuvrirFichier(){
         fichiersRecents->addAction(fichier);
         note_manager->setFilename(fichier);
         note_manager->load();
+        RelationManager::getInstance().load(fichier);
         update_model();
 
     }
