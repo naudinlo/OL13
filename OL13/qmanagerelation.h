@@ -3,7 +3,7 @@
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
- * \brief     // Fenetre de dialoque permettant de gérer les relations.
+ * \brief     Fenetre de dialoque permettant de gérer les relations.
  *
  * \details         attributs :
  *                                   QString currentR // titre de la relations selectionné
@@ -11,8 +11,6 @@
  *                                    void update_relation()
  *
  */
-
-
 
 #ifndef QMANAGERELATION_H
 #define QMANAGERELATION_H

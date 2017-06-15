@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<NoteManager>
-    <NoteVersions>
-        <T></T><article><id>test</id><title>test1v4</title><c_date>lun. juin 12 22:03:15 2017</c_date><lm_date>lun. juin 12 22:03:15 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text>test des versions editées</text></article><article><id>test</id><title>test1v3</title><c_date>lun. juin 12 22:03:15 2017</c_date><lm_date>lun. juin 12 22:03:15 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text>test des versions editées</text></article><article><id>test</id><title>test1v2</title><c_date>lun. juin 12 22:03:15 2017</c_date><lm_date>lun. juin 12 22:03:15 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text>test des versions editées</text></article><article><id>test</id><title>test1</title><c_date>lun. juin 12 22:03:15 2017</c_date><lm_date>lun. juin 12 22:03:15 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text>test de l'itérator</text></article>
-    </NoteVersions>
-    <NoteVersions>
-        <T></T><task><id>testTask</id><title>testTaskv4</title><c_date>lun. juin 12 22:03:15 2017</c_date><lm_date>lun. juin 12 22:03:15 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><action>Alors?</action><priority>-1</priority><d_date></d_date><status>OnGoing</status></task><task><id>testTask</id><title>testTaskv3</title><c_date>lun. juin 12 22:03:15 2017</c_date><lm_date>lun. juin 12 22:03:15 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><action>U</action><priority>-1</priority><d_date></d_date><status>OnGoing</status></task><task><id>testTask</id><title>testTaskv2</title><c_date>lun. juin 12 22:03:15 2017</c_date><lm_date>lun. juin 12 22:03:15 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><action>URGENT edition</action><priority>-1</priority><d_date></d_date><status>OnGoing</status></task><task><id>testTask</id><title>testTask1</title><c_date>lun. juin 12 22:03:15 2017</c_date><lm_date>lun. juin 12 22:03:15 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><action>testTask de l'itérator</action><priority>-1</priority><d_date></d_date><status>OnGoing</status></task>
-    </NoteVersions>
-    <NoteVersions>
-        <T></T><article><id>test2</id><title>test2</title><c_date>lun. juin 12 22:03:15 2017</c_date><lm_date>lun. juin 12 22:03:15 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text>test2 de l'itérator</text></article>
-    </NoteVersions>
-</NoteManager>
+<NoteManager/>

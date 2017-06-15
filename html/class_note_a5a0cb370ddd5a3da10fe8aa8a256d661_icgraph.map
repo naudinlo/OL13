@@ -1,4 +1,6 @@
 <map id="Note::generateRef" name="Note::generateRef">
-<area shape="rect" id="node2" href="$class_note.html#a0490153115307d5f59974d7000260e48" title="Constructeur des classes notes, articles task et recording. " alt="" coords="180,5,264,32"/>
-<area shape="rect" id="node3" href="$class_task.html#a08a0f57803d8ef35f687f23f759e9f0c" title="Constructeur de la classe task. " alt="" coords="312,31,399,57"/>
+<area shape="rect" id="node2" href="$class_note.html#a0490153115307d5f59974d7000260e48" title="Constructeur des classes notes, articles task et recording. " alt="" coords="211,5,295,32"/>
+<area shape="rect" id="node3" href="$class_article.html#af3f6b98ba3cc46aaa5625a17266eb67f" title="Constructeur de la classe Article. " alt="" coords="375,31,479,57"/>
+<area shape="rect" id="node4" href="$class_task.html#a08a0f57803d8ef35f687f23f759e9f0c" title="Constructeur de la classe task. " alt="" coords="210,107,297,133"/>
+<area shape="rect" id="node5" href="$class_recording.html#a2e3359660cd7573807fb46c15daf4e78" title="Constructeur de la classe Recording. " alt="" coords="180,157,327,184"/>
 </map>

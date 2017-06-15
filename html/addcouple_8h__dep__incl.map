@@ -1,0 +1,13 @@
+<map id="OL13/addcouple.h" name="OL13/addcouple.h">
+<area shape="rect" id="node2" href="$addcouple_8cpp.html" title="Fenetre de création de nouveau couple. " alt="" coords="54,80,195,107"/>
+<area shape="rect" id="node3" href="$quirelation_8h.html" title="Gérer les couples d&#39;une relations par l&#39;interface. " alt="" coords="220,80,347,107"/>
+<area shape="rect" id="node4" href="$aff__notes_8h.html" title="Page Principale de l&#39;application. " alt="" coords="66,155,186,181"/>
+<area shape="rect" id="node6" href="$interface_8h.html" title="Définit l&#39;interface principale de l&#39;application. " alt="" coords="165,229,282,256"/>
+<area shape="rect" id="node10" href="$qmanagerelation_8h.html" title="Fenetre de dialoque permettant de gérer les relations. " alt="" coords="261,155,423,181"/>
+<area shape="rect" id="node12" href="$quirelation_8cpp.html" title="Gérer les couples d&#39;une relations par l&#39;interface. " alt="" coords="447,155,589,181"/>
+<area shape="rect" id="node5" href="$aff__notes_8cpp.html" title="Page Principale de l&#39;application. " alt="" coords="5,229,140,256"/>
+<area shape="rect" id="node7" href="$include_8h.html" title="Regroupe une partie des includes nécessaires au projet. " alt="" coords="25,304,134,331"/>
+<area shape="rect" id="node8" href="$interface_8cpp.html" title="Définit l&#39;interface principale de l&#39;application. " alt="" coords="158,304,289,331"/>
+<area shape="rect" id="node9" href="$main_8cpp.html" title="Fichier principal de l&#39;application. " alt="" coords="313,304,424,331"/>
+<area shape="rect" id="node11" href="$qmanagerelation_8cpp.html" title="Fenetre de dialoque permettant de gérer les relations. " alt="" coords="307,229,484,256"/>
+</map>

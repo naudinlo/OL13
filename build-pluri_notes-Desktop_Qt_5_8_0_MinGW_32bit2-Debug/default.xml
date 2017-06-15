@@ -1,6 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<NoteManager>
-    <NoteVersions>
-        <T></T><article><id>test</id><title>t</title><c_date>mer. juin 14 18:22:17 2017</c_date><lm_date>mer. juin 14 18:22:17 2017</lm_date><isArchive>false</isArchive><isDeleted>false</isDeleted><text></text></article>
-    </NoteVersions>
-</NoteManager>
+<NoteManager/>

@@ -39,34 +39,107 @@ void {\bfseries set\+Type} (const E\+N\+U\+M\+::\+Recording\+Type \&r)
 \mbox{\Hypertarget{class_recording_aa8c715e910a52614d836a4ea8572bd20}\label{class_recording_aa8c715e910a52614d836a4ea8572bd20}} 
 void {\bfseries set\+Link} (const Q\+String \&l)
 \item 
-\mbox{\Hypertarget{class_recording_a2e3359660cd7573807fb46c15daf4e78}\label{class_recording_a2e3359660cd7573807fb46c15daf4e78}} 
-{\bfseries Recording} (const Q\+String i, const Q\+String \&ti, const Q\+String d, E\+N\+U\+M\+::\+Recording\+Type r, Q\+String l)
-\item 
+\hyperlink{class_recording_a2e3359660cd7573807fb46c15daf4e78}{Recording} (const Q\+String i, const Q\+String \&ti, const Q\+String d, E\+N\+U\+M\+::\+Recording\+Type r, Q\+String l)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_recording}{Recording}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_recording_a93af6ebb8ec5ae00ac85679756c82049}\label{class_recording_a93af6ebb8ec5ae00ac85679756c82049}} 
 {\bfseries Recording} (const Q\+String \&i, const Q\+String \&ti, const Q\+Date\+Time \&cd, const Q\+Date\+Time \&lmd, bool iA, bool iD, const Q\+String \&d, E\+N\+U\+M\+::\+Recording\+Type ty, const Q\+String \&li)
 \item 
 \mbox{\Hypertarget{class_recording_ab354d60b8ecb06699378a849f6143ac6}\label{class_recording_ab354d60b8ecb06699378a849f6143ac6}} 
-{\bfseries Recording} (const \hyperlink{class_recording}{Recording} \&r)
-\item 
-\mbox{\Hypertarget{class_recording_ac5c7522d695c8a657f5e801df97a9e06}\label{class_recording_ac5c7522d695c8a657f5e801df97a9e06}} 
+\hyperlink{class_recording_ab354d60b8ecb06699378a849f6143ac6}{Recording} (const \hyperlink{class_recording}{Recording} \&r)
+\begin{DoxyCompactList}\small\item\em Constructeur de recopie. \end{DoxyCompactList}\item 
 \hyperlink{class_recording}{Recording} \& \hyperlink{class_recording_ac5c7522d695c8a657f5e801df97a9e06}{operator=} (const \hyperlink{class_recording}{Recording} \&r)
 \begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur = dans le cas nouveau recording B=A. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{class_recording_a9f403a39bec2db40c9171a6c3a20942d}{to\+String} () const
 \begin{DoxyCompactList}\small\item\em Transforme un recording en un flux ostream a afficher. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_recording_a99e10c8a8c13bce5f70195b6c30a1cc9}\label{class_recording_a99e10c8a8c13bce5f70195b6c30a1cc9}} 
-void {\bfseries save\+Note} (Q\+File $\ast$file)
-\end{DoxyCompactItemize}
+void \hyperlink{class_recording_a99e10c8a8c13bce5f70195b6c30a1cc9}{save\+Note} (Q\+File $\ast$file)
+\begin{DoxyCompactList}\small\item\em Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 185 of file notes.\+h.
+Definition at line 259 of file notes.\+h.
 
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_recording_a2e3359660cd7573807fb46c15daf4e78}\label{class_recording_a2e3359660cd7573807fb46c15daf4e78}} 
+\index{Recording@{Recording}!Recording@{Recording}}
+\index{Recording@{Recording}!Recording@{Recording}}
+\subsubsection{\texorpdfstring{Recording()}{Recording()}}
+{\footnotesize\ttfamily Recording\+::\+Recording (\begin{DoxyParamCaption}\item[{const Q\+String}]{i,  }\item[{const Q\+String \&}]{ti,  }\item[{const Q\+String}]{d,  }\item[{E\+N\+U\+M\+::\+Recording\+Type}]{r,  }\item[{Q\+String}]{l }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \hyperlink{class_recording}{Recording}. 
+
+La classe dérivé \hyperlink{class_recording}{Recording} utilise en premier lieu le constructeur de \hyperlink{class_note}{Note}. 
+
+Definition at line 163 of file notes.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_recording_a2e3359660cd7573807fb46c15daf4e78_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_recording_ac5c7522d695c8a657f5e801df97a9e06}\label{class_recording_ac5c7522d695c8a657f5e801df97a9e06}} 
+\index{Recording@{Recording}!operator=@{operator=}}
+\index{operator=@{operator=}!Recording@{Recording}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{class_recording}{Recording} \& Recording\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_recording}{Recording} \&}]{r }\end{DoxyParamCaption})}
+
+
+
+Surcharge de l\textquotesingle{}opérateur = dans le cas nouveau recording B=A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{class_recording}{Recording}\& r \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_recording}{Recording}\& 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file notes.\+cpp.
+
+\mbox{\Hypertarget{class_recording_a99e10c8a8c13bce5f70195b6c30a1cc9}\label{class_recording_a99e10c8a8c13bce5f70195b6c30a1cc9}} 
+\index{Recording@{Recording}!save\+Note@{save\+Note}}
+\index{save\+Note@{save\+Note}!Recording@{Recording}}
+\subsubsection{\texorpdfstring{save\+Note()}{saveNote()}}
+{\footnotesize\ttfamily void Recording\+::save\+Note (\begin{DoxyParamCaption}\item[{Q\+File $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+File$\ast$} & file \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_note_a0c2cc72d7f3235c665a30ef915c5c58d}{Note}.
+
+
+
+Definition at line 527 of file notes.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_recording_a99e10c8a8c13bce5f70195b6c30a1cc9_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_recording_a9f403a39bec2db40c9171a6c3a20942d}\label{class_recording_a9f403a39bec2db40c9171a6c3a20942d}} 
 \index{Recording@{Recording}!to\+String@{to\+String}}
 \index{to\+String@{to\+String}!Recording@{Recording}}
@@ -86,11 +159,25 @@ Reimplemented from \hyperlink{class_note_a1bd4acfbde0b71d05fd7d4ca889bca2b}{Note
 
 
 
-Definition at line 264 of file notes.\+cpp.
+Definition at line 269 of file notes.\+cpp.
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_recording_a9f403a39bec2db40c9171a6c3a20942d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_recording_a9f403a39bec2db40c9171a6c3a20942d_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-O\+L13/notes.\+h\item 
+O\+L13/\hyperlink{notes_8h}{notes.\+h}\item 
 O\+L13/\hyperlink{notes_8cpp}{notes.\+cpp}\end{DoxyCompactItemize}

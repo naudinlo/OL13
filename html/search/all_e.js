@@ -1,11 +1,15 @@
 var searchData=
 [
   ['save',['save',['../classinterface.html#a319f133949e2be97a203f725c3f1e565',1,'interface::save()'],['../class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac',1,'NotesManager::save()']]],
-  ['savenote',['saveNote',['../class_q_note.html#a577f684ef199a17dc468d706b1383581',1,'QNote::saveNote()'],['../class_q_article.html#ae59d03688947d16b86f9ab10384894ec',1,'QArticle::saveNote()'],['../class_q_task.html#ae304b097cdfd1169d2b190bbad3922eb',1,'QTask::saveNote()'],['../class_q_recording.html#a37492f3dbda2dad2a8cd62012fe91b78',1,'QRecording::saveNote()']]],
+  ['savenote',['saveNote',['../class_note.html#a0c2cc72d7f3235c665a30ef915c5c58d',1,'Note::saveNote()'],['../class_article.html#a83c6688e4886b871938b9dca34e78041',1,'Article::saveNote()'],['../class_task.html#a313eb342d047e8e5cab91bf51609a2f3',1,'Task::saveNote()'],['../class_recording.html#a99e10c8a8c13bce5f70195b6c30a1cc9',1,'Recording::saveNote()'],['../class_q_note.html#a577f684ef199a17dc468d706b1383581',1,'QNote::saveNote()'],['../class_q_article.html#ae59d03688947d16b86f9ab10384894ec',1,'QArticle::saveNote()'],['../class_q_task.html#ae304b097cdfd1169d2b190bbad3922eb',1,'QTask::saveNote()'],['../class_q_recording.html#a37492f3dbda2dad2a8cd62012fe91b78',1,'QRecording::saveNote()']]],
   ['select_5ftype',['select_type',['../class_creation___note.html#a4627e5957db87af2b7c43937857e9d6e',1,'Creation_Note']]],
   ['selection_5fnote',['selection_note',['../classselection__note.html',1,'selection_note'],['../classselection__note.html#a69a11fa0461c0c103f099e894bf0b399',1,'selection_note::selection_note()']]],
   ['setfilename',['setFilename',['../class_notes_manager.html#a797d858176de3f5e64aa8194797909fb',1,'NotesManager']]],
+  ['setisarchive',['setIsArchive',['../class_note.html#acef3631134d65fba4ac015463884164c',1,'Note']]],
+  ['setisdeleted',['setIsDeleted',['../class_note.html#a613e10e150caaeb73a24c342553e6c0e',1,'Note']]],
   ['setnewref',['setNewRef',['../class_note.html#a3af2edc369310b9f122bd1fd6dbfa717',1,'Note']]],
+  ['settext',['setText',['../class_article.html#a7144942027b1761cfcbd21761dd5cee8',1,'Article']]],
+  ['supp_5fdock_5faff_5frel',['supp_dock_aff_rel',['../classinterface.html#a4c1879f0b3b09843bb3506f35bd1217b',1,'interface']]],
   ['supp_5fdock_5fediter',['supp_dock_editer',['../classinterface.html#a3144306293774f567cbe90fa90cfd796',1,'interface']]],
   ['supp_5fnote',['supp_note',['../classsupp__note.html',1,'supp_note'],['../classsupp__note.html#a0a8f0c351866f8026cabfd981b919889',1,'supp_note::supp_note()']]],
   ['supp_5fnote_2ecpp',['supp_note.cpp',['../supp__note_8cpp.html',1,'']]],

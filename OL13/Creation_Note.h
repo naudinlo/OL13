@@ -3,7 +3,7 @@
  * \author    Garnier Maxime, Naudin Louise, Pépin Hugues
  * \version   1.0
  * \date      14 Juin 2017
- * \brief     Fenetre dialoque permettant l'edition d'une nouvelle note
+ * \brief     Fenetre dialogue permettant l'edition d'une nouvelle note
  * \details    class :
  *                  - Creation_Note
  *                          Attribut:
@@ -52,19 +52,20 @@ public:
 signals:
     void change_Creer();
     void newNote(); //envoie la note créer à l'interface.
-//signal emis par
  public slots:
-    void Creer_Note(); //slot interessant
+    void Creer_Note();
 
     void select_type(int type);
     /**
-     * @fn fenclose
+     * @fn      fenclose
+     * @brief   Ferme la fenêtre
      */
     void fenclose(){
         delete this;
     }
     /**
-     * @fn activer_E_title_not_null
+     * @fn      activer_E_title_not_null
+     * @brief   Vérifie si un titre a été entré lors de la création d'une note
      */
     void activer_E_title_not_null(){
         E_title_not_null=!E_title->text().isEmpty();
@@ -80,6 +81,7 @@ signals:
     }
     /**
      * @fn activer_E_id_not_null
+     * @brief   Vérifie si un ID a été entré lors de la création d'une note
      */
     void activer_E_id_not_null(){
         E_id_not_null=!E_id->text().isEmpty();
@@ -87,6 +89,7 @@ signals:
     }
     /**
      * @fn activer_Creer
+     * @brief   active la création
      */
     void activer_Creer(){
         Creer->setEnabled(E_title_not_null && E_note_not_null);

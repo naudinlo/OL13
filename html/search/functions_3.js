@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['e_5frelation',['E_relation',['../classinterface.html#a65202c3659f8058ab91b3b01cf8f267f',1,'interface']]],
   ['edit_5fnotescouple',['Edit_NotesCouple',['../class_edit___notes_couple.html#aa0780f3a53175747c5a7136d4f2ffa30',1,'Edit_NotesCouple']]],
   ['edit_5frelation',['Edit_relation',['../class_edit__relation.html#aea8577d292461d142c4087fd5446a48c',1,'Edit_relation']]],
   ['editarticle',['editArticle',['../class_notes_manager.html#a3259c7aa22b5f2eee6f7bceddc707b1d',1,'NotesManager']]],

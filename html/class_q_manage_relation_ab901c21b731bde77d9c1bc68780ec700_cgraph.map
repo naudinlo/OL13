@@ -1,3 +1,4 @@
 <map id="QManageRelation::on_show_clicked" name="QManageRelation::on_show_clicked">
-<area shape="rect" id="node2" href="$class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="200,13,395,39"/>
+<area shape="rect" id="node2" href="$class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="200,5,395,32"/>
+<area shape="rect" id="node3" href="$class_notes_exception.html#a3c595994b69172290b548fdac074248d" title="Accesseur du champ info. " alt="" coords="217,56,377,83"/>
 </map>

@@ -1,9 +1,9 @@
 <map id="OL13/qreference.h" name="OL13/qreference.h">
 <area shape="rect" id="node2" href="$aff__notes_8h.html" title="Page Principale de l&#39;application. " alt="" coords="87,80,207,107"/>
-<area shape="rect" id="node8" href="$qreference_8cpp_source.html" title="OL13/qreference.cpp" alt="" coords="232,80,375,107"/>
-<area shape="rect" id="node3" href="$aff__notes_8cpp.html" title="//Bref " alt="" coords="5,155,140,181"/>
-<area shape="rect" id="node4" href="$interface_8h.html" title="// Définit l&#39;interface principale de l&#39;application. " alt="" coords="165,155,282,181"/>
+<area shape="rect" id="node8" href="$qreference_8cpp.html" title="Fenetre permettant la visualisation des relations existantes. " alt="" coords="232,80,375,107"/>
+<area shape="rect" id="node3" href="$aff__notes_8cpp.html" title="Page Principale de l&#39;application. " alt="" coords="5,155,140,181"/>
+<area shape="rect" id="node4" href="$interface_8h.html" title="Définit l&#39;interface principale de l&#39;application. " alt="" coords="165,155,282,181"/>
 <area shape="rect" id="node5" href="$include_8h.html" title="Regroupe une partie des includes nécessaires au projet. " alt="" coords="25,229,134,256"/>
-<area shape="rect" id="node6" href="$interface_8cpp.html" title="//Expliquer brievement à quoi sert ce fichier. //EX : Définit les modèles de voiture et leur particul..." alt="" coords="158,229,289,256"/>
-<area shape="rect" id="node7" href="$main_8cpp.html" title="//Bref " alt="" coords="313,229,424,256"/>
+<area shape="rect" id="node6" href="$interface_8cpp.html" title="Définit l&#39;interface principale de l&#39;application. " alt="" coords="158,229,289,256"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="Fichier principal de l&#39;application. " alt="" coords="313,229,424,256"/>
 </map>

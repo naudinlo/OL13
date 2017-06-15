@@ -1,0 +1,191 @@
+\hypertarget{notes_8h}{}\section{O\+L13/notes.h File Reference}
+\label{notes_8h}\index{O\+L13/notes.\+h@{O\+L13/notes.\+h}}
+
+
+Définit le type note et ses types dérivés.  
+
+
+{\ttfamily \#include $<$Q\+String$>$}\newline
+{\ttfamily \#include $<$Q\+Text\+Document$>$}\newline
+{\ttfamily \#include $<$Q\+Date$>$}\newline
+{\ttfamily \#include $<$typeinfo$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Q\+Include.\+h\char`\"{}}\newline
+Include dependency graph for notes.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{notes_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{notes_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_notes_exception}{Notes\+Exception}
+\item 
+class \hyperlink{class_note}{Note}
+\item 
+class \hyperlink{class_article}{Article}
+\item 
+class \hyperlink{class_task}{Task}
+\item 
+class \hyperlink{class_recording}{Recording}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_e_n_u_m}{E\+N\+UM}
+\begin{DoxyCompactList}\small\item\em Namespace dédié aux énumarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_e_n_u_m_a048721c5d814c470a1064a422e357ae8}\label{namespace_e_n_u_m_a048721c5d814c470a1064a422e357ae8}} 
+enum {\bfseries Status\+Type} \{ {\bfseries Pending}, 
+{\bfseries On\+Going}, 
+{\bfseries Completed}
+ \}
+\item 
+\mbox{\Hypertarget{namespace_e_n_u_m_aa87d6a792637fd53ef4537eb4b34345d}\label{namespace_e_n_u_m_aa87d6a792637fd53ef4537eb4b34345d}} 
+enum {\bfseries Recording\+Type} \{ {\bfseries Image}, 
+{\bfseries Audio}, 
+{\bfseries Video}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{notes_8h_a77c5ac8a7a47957b3de43ad34e76db1d}{operator$<$$<$} (std\+::ostream \&f, const \hyperlink{class_article}{Article} \&a)
+\begin{DoxyCompactList}\small\item\em Surcharge affichage avec polymorphisme. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{notes_8h_a92387c2f3832da4b2d85106ac2763f6f}\label{notes_8h_a92387c2f3832da4b2d85106ac2763f6f}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&f, const \hyperlink{class_task}{Task} \&t)
+\item 
+\mbox{\Hypertarget{notes_8h_abf2a1502a47f27791b17d25b6271e1ad}\label{notes_8h_abf2a1502a47f27791b17d25b6271e1ad}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&f, const \hyperlink{class_recording}{Recording} \&t)
+\item 
+Q\+String \hyperlink{notes_8h_a2d3681150acecf4a009747b830644ce4}{get\+Statusto\+Str} (E\+N\+U\+M\+::\+Status\+Type status)
+\begin{DoxyCompactList}\small\item\em Retourne directement le statut de int à stringQ. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{notes_8h_aa6165ba06daabc993e9ad2631272e29a}{get\+Recordingto\+Str} (E\+N\+U\+M\+::\+Status\+Type recording)
+\begin{DoxyCompactList}\small\item\em Retourner directement le recording de int à string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Définit le type note et ses types dérivés. 
+
+\begin{DoxyAuthor}{Author}
+Garnier Maxime, Naudin Louise, Pépin Hugues 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14 Juin 2017
+\end{DoxyDate}
+Classes présentes \+:
+\begin{DoxyItemize}
+\item \hyperlink{class_notes_exception}{Notes\+Exception} Gère les exceptions relatives aux notes.
+\item \hyperlink{class_note}{Note} Classe mère abstraite définissant l\textquotesingle{}ensemble des attributs et comportement des notes.
+
+Possède un attribut \hyperlink{class_note}{Note} $\ast$$\ast$ references permettant d\textquotesingle{}accéder aux références de la note. Possède deux attributs booléens is\+Archived et is\+Deleted permettant de spécifier si une note est supprimée ou non.
+
+Les méthodes to\+String et display sont virtuelles \+: redéfinies dans les sous classes, elles permettent un affichage personnalisé des différents typs de notes.
+\item \hyperlink{class_article}{Article} Classe article, dérivant de la classe \hyperlink{class_note}{Note}, avec en plus l\textquotesingle{}attribut text.
+\item \hyperlink{class_task}{Task} Classe task, dérivant de la classe \hyperlink{class_note}{Note}, avec en plus les attributs action, status, et les attributs optionnels due\+Date et priority.
+\item \hyperlink{class_recording}{Recording} Classe recording, dérivant de la classe \hyperlink{class_note}{Note}, avec en plus les attributs descriptions, type et un link vers un fichier image, audio ou video.
+\end{DoxyItemize}
+
+L\textquotesingle{}ensemble des méthodes définies dans ce fichier sont explicitées dans le fichier .cpp associé. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{notes_8h_aa6165ba06daabc993e9ad2631272e29a}\label{notes_8h_aa6165ba06daabc993e9ad2631272e29a}} 
+\index{notes.\+h@{notes.\+h}!get\+Recordingto\+Str@{get\+Recordingto\+Str}}
+\index{get\+Recordingto\+Str@{get\+Recordingto\+Str}!notes.\+h@{notes.\+h}}
+\subsubsection{\texorpdfstring{get\+Recordingto\+Str()}{getRecordingtoStr()}}
+{\footnotesize\ttfamily Q\+String get\+Recordingto\+Str (\begin{DoxyParamCaption}\item[{E\+N\+U\+M\+::\+Status\+Type}]{recording }\end{DoxyParamCaption})}
+
+
+
+Retourner directement le recording de int à string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em E\+N\+U\+M\+::\+Status\+Type} & recording \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String 
+\end{DoxyReturn}
+
+
+Definition at line 340 of file notes.\+cpp.
+
+\mbox{\Hypertarget{notes_8h_a2d3681150acecf4a009747b830644ce4}\label{notes_8h_a2d3681150acecf4a009747b830644ce4}} 
+\index{notes.\+h@{notes.\+h}!get\+Statusto\+Str@{get\+Statusto\+Str}}
+\index{get\+Statusto\+Str@{get\+Statusto\+Str}!notes.\+h@{notes.\+h}}
+\subsubsection{\texorpdfstring{get\+Statusto\+Str()}{getStatustoStr()}}
+{\footnotesize\ttfamily Q\+String get\+Statusto\+Str (\begin{DoxyParamCaption}\item[{E\+N\+U\+M\+::\+Status\+Type}]{status }\end{DoxyParamCaption})}
+
+
+
+Retourne directement le statut de int à stringQ. 
+
+Retourne directement le statut de int à stringQ.
+
+
+\begin{DoxyParams}{Parameters}
+{\em E\+N\+U\+M\+::\+Status\+Type} & status \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String 
+\end{DoxyReturn}
+
+
+Definition at line 329 of file notes.\+cpp.
+
+\mbox{\Hypertarget{notes_8h_a77c5ac8a7a47957b3de43ad34e76db1d}\label{notes_8h_a77c5ac8a7a47957b3de43ad34e76db1d}} 
+\index{notes.\+h@{notes.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!notes.\+h@{notes.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{f,  }\item[{const \hyperlink{class_article}{Article} \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Surcharge affichage avec polymorphisme. 
+
+Surcharge affichage avec polymorphisme.
+
+Version personnalisée pour le type article, task et recording. 
+\begin{DoxyParams}{Parameters}
+{\em std\+:ostream\&} & f \\
+\hline
+{\em const} & \hyperlink{class_article}{Article}\& a \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+Definition at line 308 of file notes.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{notes_8h_a77c5ac8a7a47957b3de43ad34e76db1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{notes_8h_a77c5ac8a7a47957b3de43ad34e76db1d_icgraph}
+\end{center}
+\end{figure}

@@ -62,21 +62,19 @@ void {\bfseries set\+Due\+Date} (const Q\+Date\+Time d)
 \mbox{\Hypertarget{class_task_a0aec5018915f11c96398b75f969a3220}\label{class_task_a0aec5018915f11c96398b75f969a3220}} 
 \hyperlink{class_task_a0aec5018915f11c96398b75f969a3220}{Task} (const \hyperlink{class_task}{Task} \&t)
 \begin{DoxyCompactList}\small\item\em Surcharge la méthode constructeur dans le cas nouvelle task B(\+A) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_task_a2430b942d050bf32c771821daa31493f}\label{class_task_a2430b942d050bf32c771821daa31493f}} 
 \hyperlink{class_task}{Task} \& \hyperlink{class_task_a2430b942d050bf32c771821daa31493f}{operator=} (const \hyperlink{class_task}{Task} \&a)
 \begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur = dans le cas nouvelle task B=A. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{class_task_a7fe5cb7b57a21693e7abfea2f9618563}{to\+String} () const
 \begin{DoxyCompactList}\small\item\em Transforme une task en un flux ostream a afficher. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_task_a313eb342d047e8e5cab91bf51609a2f3}\label{class_task_a313eb342d047e8e5cab91bf51609a2f3}} 
-void {\bfseries save\+Note} (Q\+File $\ast$file)
-\end{DoxyCompactItemize}
+void \hyperlink{class_task_a313eb342d047e8e5cab91bf51609a2f3}{save\+Note} (Q\+File $\ast$file)
+\begin{DoxyCompactList}\small\item\em Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 150 of file notes.\+h.
+Definition at line 224 of file notes.\+h.
 
 
 
@@ -93,7 +91,7 @@ Constructeur de la classe task.
 
 La classe dérivé \hyperlink{class_task}{Task} utilise en premier lieu le constructeur de \hyperlink{class_note}{Note}. \hyperlink{class_task}{Task} possède 4 constructeurs différents car deux de ses attributs sont optionnels. 
 
-Definition at line 149 of file notes.\+cpp.
+Definition at line 154 of file notes.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -105,6 +103,65 @@ Here is the call graph for this function\+:\nopagebreak
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_task_a2430b942d050bf32c771821daa31493f}\label{class_task_a2430b942d050bf32c771821daa31493f}} 
+\index{Task@{Task}!operator=@{operator=}}
+\index{operator=@{operator=}!Task@{Task}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{class_task}{Task} \& Task\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_task}{Task} \&}]{t }\end{DoxyParamCaption})}
+
+
+
+Surcharge de l\textquotesingle{}opérateur = dans le cas nouvelle task B=A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{class_task}{Task}\& t \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_task}{Task}\& 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file notes.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_task_a2430b942d050bf32c771821daa31493f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_task_a313eb342d047e8e5cab91bf51609a2f3}\label{class_task_a313eb342d047e8e5cab91bf51609a2f3}} 
+\index{Task@{Task}!save\+Note@{save\+Note}}
+\index{save\+Note@{save\+Note}!Task@{Task}}
+\subsubsection{\texorpdfstring{save\+Note()}{saveNote()}}
+{\footnotesize\ttfamily void Task\+::save\+Note (\begin{DoxyParamCaption}\item[{Q\+File $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+File$\ast$} & file \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_note_a0c2cc72d7f3235c665a30ef915c5c58d}{Note}.
+
+
+
+Definition at line 496 of file notes.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_a313eb342d047e8e5cab91bf51609a2f3_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_task_a7fe5cb7b57a21693e7abfea2f9618563}\label{class_task_a7fe5cb7b57a21693e7abfea2f9618563}} 
 \index{Task@{Task}!to\+String@{to\+String}}
 \index{to\+String@{to\+String}!Task@{Task}}
@@ -124,18 +181,18 @@ Reimplemented from \hyperlink{class_note_a1bd4acfbde0b71d05fd7d4ca889bca2b}{Note
 
 
 
-Definition at line 218 of file notes.\+cpp.
+Definition at line 223 of file notes.\+cpp.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_task_a7fe5cb7b57a21693e7abfea2f9618563_icgraph}
+\includegraphics[width=315pt]{class_task_a7fe5cb7b57a21693e7abfea2f9618563_cgraph}
 \end{center}
 \end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-O\+L13/notes.\+h\item 
+O\+L13/\hyperlink{notes_8h}{notes.\+h}\item 
 O\+L13/\hyperlink{notes_8cpp}{notes.\+cpp}\end{DoxyCompactItemize}

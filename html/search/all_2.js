@@ -1,14 +1,14 @@
 var searchData=
 [
   ['deleteallreference',['deleteAllReference',['../class_note.html#aacbb89b120107a4b25dd16043908c693',1,'Note']]],
-  ['deletednote',['DeletedNote',['../class_deleted_note.html',1,'']]],
   ['deletenote',['deleteNote',['../class_notes_manager.html#a989429244c36c35ef68204f6ae2a0a5f',1,'NotesManager']]],
   ['deletereference',['deleteReference',['../class_note.html#a91c86cf6ed18e4badb59a41e737a15fa',1,'Note']]],
   ['deleterelation',['deleteRelation',['../class_relation_manager.html#a074413b3ed72a1342821e911c1fa3587',1,'RelationManager']]],
   ['displaycouplerelation',['displayCoupleRelation',['../class_relation.html#aa6974a453611dee90f2ca2da9fe30de6',1,'Relation']]],
   ['displayrelation',['displayRelation',['../class_relation.html#a0b8a359787fe32c991710039fd081f97',1,'Relation']]],
-  ['dock',['Dock',['../class_dock.html',1,'']]],
-  ['dockarchived',['DockArchived',['../class_dock_archived.html',1,'']]],
+  ['dock',['Dock',['../class_dock.html',1,'Dock'],['../class_dock.html#a1e81e2926e94969514ac45a9d839731c',1,'Dock::Dock()']]],
+  ['dockarchived',['DockArchived',['../class_dock_archived.html',1,'DockArchived'],['../class_dock_archived.html#ad3cc1b3cbaa84fed8d37c478927c7463',1,'DockArchived::DockArchived()']]],
+  ['dockarchived_2ecpp',['dockarchived.cpp',['../dockarchived_8cpp.html',1,'']]],
   ['dockarchived_2eh',['dockarchived.h',['../dockarchived_8h.html',1,'']]],
-  ['dockremove',['DockRemove',['../class_dock_remove.html',1,'']]]
+  ['dockremove',['DockRemove',['../class_dock_remove.html',1,'DockRemove'],['../class_dock_remove.html#aa2665bd1459600d9346029df9f2bba27',1,'DockRemove::DockRemove()']]]
 ];

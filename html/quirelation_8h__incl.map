@@ -1,8 +1,8 @@
 <map id="OL13/quirelation.h" name="OL13/quirelation.h">
-<area shape="rect" id="node3" href="$relations_8h_source.html" title="relations.h" alt="" coords="1567,229,1650,256"/>
+<area shape="rect" id="node3" href="$relations_8h.html" title="Définit le type relation. " alt="" coords="1567,229,1650,256"/>
 <area shape="rect" id="node10" href="$_q_include_8h.html" title="contient les inclusions Qt nécessaire " alt="" coords="1776,379,1860,405"/>
 <area shape="rect" id="node44" href="$manager_8h.html" title="Regroupe les manager nécessaires pour la gestion des notes et des relations. " alt="" coords="1466,155,1549,181"/>
-<area shape="rect" id="node46" href="$addcouple_8h_source.html" title="addcouple.h" alt="" coords="1817,80,1909,107"/>
-<area shape="rect" id="node47" href="$qrelations_8h_source.html" title="qrelations.h" alt="" coords="1643,80,1732,107"/>
-<area shape="rect" id="node4" href="$notes_8h_source.html" title="notes.h" alt="" coords="1432,304,1497,331"/>
+<area shape="rect" id="node46" href="$addcouple_8h.html" title="Fenetre de création de nouveau couple. " alt="" coords="1817,80,1909,107"/>
+<area shape="rect" id="node47" href="$qrelations_8h.html" title="Implémentation des relations de manière graphique. " alt="" coords="1643,80,1732,107"/>
+<area shape="rect" id="node4" href="$notes_8h.html" title="Définit le type note et ses types dérivés. " alt="" coords="1432,304,1497,331"/>
 </map>

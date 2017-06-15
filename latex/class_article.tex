@@ -21,40 +21,163 @@ Collaboration diagram for Article\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_article_a6620c09453a87251bf312d1c7b9e4112}\label{class_article_a6620c09453a87251bf312d1c7b9e4112}} 
-const Q\+Text\+Document \& {\bfseries get\+Text} () const
-\item 
-\mbox{\Hypertarget{class_article_a7144942027b1761cfcbd21761dd5cee8}\label{class_article_a7144942027b1761cfcbd21761dd5cee8}} 
-void {\bfseries set\+Text} (const Q\+String \&t)
-\item 
-\mbox{\Hypertarget{class_article_af3f6b98ba3cc46aaa5625a17266eb67f}\label{class_article_af3f6b98ba3cc46aaa5625a17266eb67f}} 
-{\bfseries Article} (const Q\+String \&i, const Q\+String \&ti, const Q\+String \&te)
-\item 
+const Q\+Text\+Document \& \hyperlink{class_article_a178a250fddb6c30288d893f4f3439ca8}{get\+Text} () const
+\begin{DoxyCompactList}\small\item\em Accesseur du champ Text. \end{DoxyCompactList}\item 
+void \hyperlink{class_article_a7144942027b1761cfcbd21761dd5cee8}{set\+Text} (const Q\+String \&t)
+\begin{DoxyCompactList}\small\item\em Affectation du champ Text. \end{DoxyCompactList}\item 
+\hyperlink{class_article_af3f6b98ba3cc46aaa5625a17266eb67f}{Article} (const Q\+String \&i, const Q\+String \&ti, const Q\+String \&te)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_article}{Article}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_article_a067e635213e9ff6b93fd8f88e471652f}\label{class_article_a067e635213e9ff6b93fd8f88e471652f}} 
 {\bfseries Article} (const Q\+String \&i, const Q\+String \&ti, const Q\+Date\+Time \&cd, const Q\+Date\+Time \&lmd, bool iA, bool iD, const Q\+String \&te)
 \item 
 \mbox{\Hypertarget{class_article_a77eaa1a87e24eec7788f438a30ff162f}\label{class_article_a77eaa1a87e24eec7788f438a30ff162f}} 
-{\bfseries Article} (const \hyperlink{class_article}{Article} \&a)
-\item 
-\mbox{\Hypertarget{class_article_ae4059abc035598ff3faf554fd74a1492}\label{class_article_ae4059abc035598ff3faf554fd74a1492}} 
+\hyperlink{class_article_a77eaa1a87e24eec7788f438a30ff162f}{Article} (const \hyperlink{class_article}{Article} \&a)
+\begin{DoxyCompactList}\small\item\em Surcharge la méthode constructeur dans le cas nouvel article \hyperlink{class_article}{Article} B(\+A) \end{DoxyCompactList}\item 
 \hyperlink{class_article}{Article} \& \hyperlink{class_article_ae4059abc035598ff3faf554fd74a1492}{operator=} (const \hyperlink{class_article}{Article} \&a)
 \begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur = dans le cas nouvel article \hyperlink{class_article}{Article} B=A. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{class_article_ae40d268ecffbaaa549968a81ea609ba4}{to\+String} () const
 \begin{DoxyCompactList}\small\item\em Transforme un article en un flux ostream a afficher. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_article_a83c6688e4886b871938b9dca34e78041}\label{class_article_a83c6688e4886b871938b9dca34e78041}} 
-void {\bfseries save\+Note} (Q\+File $\ast$file)
-\end{DoxyCompactItemize}
+void \hyperlink{class_article_a83c6688e4886b871938b9dca34e78041}{save\+Note} (Q\+File $\ast$file)
+\begin{DoxyCompactList}\small\item\em Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 130 of file notes.\+h.
+Definition at line 194 of file notes.\+h.
 
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_article_af3f6b98ba3cc46aaa5625a17266eb67f}\label{class_article_af3f6b98ba3cc46aaa5625a17266eb67f}} 
+\index{Article@{Article}!Article@{Article}}
+\index{Article@{Article}!Article@{Article}}
+\subsubsection{\texorpdfstring{Article()}{Article()}}
+{\footnotesize\ttfamily Article\+::\+Article (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{i,  }\item[{const Q\+String \&}]{ti,  }\item[{const Q\+String \&}]{te }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \hyperlink{class_article}{Article}. 
+
+La classe dérivé \hyperlink{class_article}{Article} utilise en premier lieu le constructeur de \hyperlink{class_note}{Note}. 
+
+Definition at line 135 of file notes.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_article_af3f6b98ba3cc46aaa5625a17266eb67f_cgraph}
+\end{center}
+\end{figure}
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_article_a178a250fddb6c30288d893f4f3439ca8}\label{class_article_a178a250fddb6c30288d893f4f3439ca8}} 
+\index{Article@{Article}!get\+Text@{get\+Text}}
+\index{get\+Text@{get\+Text}!Article@{Article}}
+\subsubsection{\texorpdfstring{get\+Text()}{getText()}}
+{\footnotesize\ttfamily const Q\+Text\+Document \& Article\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accesseur du champ Text. 
+
+\begin{DoxyReturn}{Returns}
+const Q\+Text\+Document\& 
+\end{DoxyReturn}
+
+
+Definition at line 203 of file notes.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_article_a178a250fddb6c30288d893f4f3439ca8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_article_ae4059abc035598ff3faf554fd74a1492}\label{class_article_ae4059abc035598ff3faf554fd74a1492}} 
+\index{Article@{Article}!operator=@{operator=}}
+\index{operator=@{operator=}!Article@{Article}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{class_article}{Article} \& Article\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_article}{Article} \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Surcharge de l\textquotesingle{}opérateur = dans le cas nouvel article \hyperlink{class_article}{Article} B=A. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_article}{Article}\& 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file notes.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{class_article_ae4059abc035598ff3faf554fd74a1492_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_article_a83c6688e4886b871938b9dca34e78041}\label{class_article_a83c6688e4886b871938b9dca34e78041}} 
+\index{Article@{Article}!save\+Note@{save\+Note}}
+\index{save\+Note@{save\+Note}!Article@{Article}}
+\subsubsection{\texorpdfstring{save\+Note()}{saveNote()}}
+{\footnotesize\ttfamily void Article\+::save\+Note (\begin{DoxyParamCaption}\item[{Q\+File $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+File$\ast$} & file \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_note_a0c2cc72d7f3235c665a30ef915c5c58d}{Note}.
+
+
+
+Definition at line 476 of file notes.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_article_a83c6688e4886b871938b9dca34e78041_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_article_a7144942027b1761cfcbd21761dd5cee8}\label{class_article_a7144942027b1761cfcbd21761dd5cee8}} 
+\index{Article@{Article}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!Article@{Article}}
+\subsubsection{\texorpdfstring{set\+Text()}{setText()}}
+{\footnotesize\ttfamily void Article\+::set\+Text (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Affectation du champ Text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String\& \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 209 of file notes.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_article_a7144942027b1761cfcbd21761dd5cee8_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_article_ae40d268ecffbaaa549968a81ea609ba4}\label{class_article_ae40d268ecffbaaa549968a81ea609ba4}} 
 \index{Article@{Article}!to\+String@{to\+String}}
 \index{to\+String@{to\+String}!Article@{Article}}
@@ -74,11 +197,18 @@ Reimplemented from \hyperlink{class_note_a1bd4acfbde0b71d05fd7d4ca889bca2b}{Note
 
 
 
-Definition at line 194 of file notes.\+cpp.
+Definition at line 199 of file notes.\+cpp.
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_article_ae40d268ecffbaaa549968a81ea609ba4_cgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-O\+L13/notes.\+h\item 
+O\+L13/\hyperlink{notes_8h}{notes.\+h}\item 
 O\+L13/\hyperlink{notes_8cpp}{notes.\+cpp}\end{DoxyCompactItemize}

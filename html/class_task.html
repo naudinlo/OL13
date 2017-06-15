@@ -128,44 +128,46 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setDueDate</b> (const
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_task.html#a0aec5018915f11c96398b75f969a3220">Task</a> (const <a class="el" href="class_task.html">Task</a> &amp;t)</td></tr>
 <tr class="memdesc:a0aec5018915f11c96398b75f969a3220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge la méthode constructeur dans le cas nouvelle task B(A) <br /></td></tr>
 <tr class="separator:a0aec5018915f11c96398b75f969a3220"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2430b942d050bf32c771821daa31493f"><td class="memItemLeft" align="right" valign="top"><a id="a2430b942d050bf32c771821daa31493f"></a>
-<a class="el" href="class_task.html">Task</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_task.html#a2430b942d050bf32c771821daa31493f">operator=</a> (const <a class="el" href="class_task.html">Task</a> &amp;a)</td></tr>
-<tr class="memdesc:a2430b942d050bf32c771821daa31493f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'opérateur = dans le cas nouvelle task B=A. <br /></td></tr>
+<tr class="memitem:a2430b942d050bf32c771821daa31493f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_task.html">Task</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_task.html#a2430b942d050bf32c771821daa31493f">operator=</a> (const <a class="el" href="class_task.html">Task</a> &amp;a)</td></tr>
+<tr class="memdesc:a2430b942d050bf32c771821daa31493f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'opérateur = dans le cas nouvelle task B=A.  <a href="#a2430b942d050bf32c771821daa31493f">More...</a><br /></td></tr>
 <tr class="separator:a2430b942d050bf32c771821daa31493f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fe5cb7b57a21693e7abfea2f9618563"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_task.html#a7fe5cb7b57a21693e7abfea2f9618563">toString</a> () const</td></tr>
 <tr class="memdesc:a7fe5cb7b57a21693e7abfea2f9618563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforme une task en un flux ostream a afficher.  <a href="#a7fe5cb7b57a21693e7abfea2f9618563">More...</a><br /></td></tr>
 <tr class="separator:a7fe5cb7b57a21693e7abfea2f9618563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a313eb342d047e8e5cab91bf51609a2f3"><td class="memItemLeft" align="right" valign="top"><a id="a313eb342d047e8e5cab91bf51609a2f3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>saveNote</b> (QFile *file)</td></tr>
+<tr class="memitem:a313eb342d047e8e5cab91bf51609a2f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_task.html#a313eb342d047e8e5cab91bf51609a2f3">saveNote</a> (QFile *file)</td></tr>
+<tr class="memdesc:a313eb342d047e8e5cab91bf51609a2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note.  <a href="#a313eb342d047e8e5cab91bf51609a2f3">More...</a><br /></td></tr>
 <tr class="separator:a313eb342d047e8e5cab91bf51609a2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_note"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_note')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_note.html">Note</a></td></tr>
-<tr class="memitem:a8a7271e7e9f3fcc04944361f7ea0b846 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a8a7271e7e9f3fcc04944361f7ea0b846"></a>
-const QString&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () const</td></tr>
-<tr class="separator:a8a7271e7e9f3fcc04944361f7ea0b846 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cd1137ae025c9495c5c24b1db90cbb3 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a7cd1137ae025c9495c5c24b1db90cbb3"></a>
-const QString&#160;</td><td class="memItemRight" valign="bottom"><b>getTitle</b> () const</td></tr>
-<tr class="separator:a7cd1137ae025c9495c5c24b1db90cbb3 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af29efb383791ec5d16f6db3fb5c7205d inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="af29efb383791ec5d16f6db3fb5c7205d"></a>
-const QDateTime&#160;</td><td class="memItemRight" valign="bottom"><b>getCreation_date</b> () const</td></tr>
-<tr class="separator:af29efb383791ec5d16f6db3fb5c7205d inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a394327fab9f02f4d4e87b3ee78d99121 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a394327fab9f02f4d4e87b3ee78d99121"></a>
-const QDateTime&#160;</td><td class="memItemRight" valign="bottom"><b>getLastmodif_date</b> () const</td></tr>
-<tr class="separator:a394327fab9f02f4d4e87b3ee78d99121 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fc3517be2c98114e1912080b7f12d57 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a8fc3517be2c98114e1912080b7f12d57"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getIsArchive</b> () const</td></tr>
-<tr class="separator:a8fc3517be2c98114e1912080b7f12d57 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76e4262b2c064b8ec4791ab1316d5568 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a76e4262b2c064b8ec4791ab1316d5568"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getIsDeleted</b> () const</td></tr>
-<tr class="separator:a76e4262b2c064b8ec4791ab1316d5568 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4174e5bcefa138c9e5d55b34239b2e5d inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a4174e5bcefa138c9e5d55b34239b2e5d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIsArchive</b> (bool a)</td></tr>
-<tr class="separator:a4174e5bcefa138c9e5d55b34239b2e5d inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae112c975e37801222608656927568a37 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="ae112c975e37801222608656927568a37"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIsDeleted</b> (bool d)</td></tr>
-<tr class="separator:ae112c975e37801222608656927568a37 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6325df1dc1410d7854cac36ff312b8c inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="ad6325df1dc1410d7854cac36ff312b8c"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>getType</b> () const</td></tr>
-<tr class="separator:ad6325df1dc1410d7854cac36ff312b8c inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afafbebe4aa35b8d29d903bc53fa31929 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top">const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#afafbebe4aa35b8d29d903bc53fa31929">getId</a> () const</td></tr>
+<tr class="memdesc:afafbebe4aa35b8d29d903bc53fa31929 inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du champ id.  <a href="class_note.html#afafbebe4aa35b8d29d903bc53fa31929">More...</a><br /></td></tr>
+<tr class="separator:afafbebe4aa35b8d29d903bc53fa31929 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd40e5372b7fd231bbd31038bf0bb4d9 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top">const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9">getTitle</a> () const</td></tr>
+<tr class="memdesc:afd40e5372b7fd231bbd31038bf0bb4d9 inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du champ title.  <a href="class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9">More...</a><br /></td></tr>
+<tr class="separator:afd40e5372b7fd231bbd31038bf0bb4d9 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b9be4eae802c78a0959aa9bd408e41 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top">const QDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#a89b9be4eae802c78a0959aa9bd408e41">getCreation_date</a> () const</td></tr>
+<tr class="memdesc:a89b9be4eae802c78a0959aa9bd408e41 inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du champ creation_date.  <a href="class_note.html#a89b9be4eae802c78a0959aa9bd408e41">More...</a><br /></td></tr>
+<tr class="separator:a89b9be4eae802c78a0959aa9bd408e41 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1811bb7017d2e1487c90f39b946d572 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top">const QDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#ab1811bb7017d2e1487c90f39b946d572">getLastmodif_date</a> () const</td></tr>
+<tr class="memdesc:ab1811bb7017d2e1487c90f39b946d572 inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du champ lastmodif_date.  <a href="class_note.html#ab1811bb7017d2e1487c90f39b946d572">More...</a><br /></td></tr>
+<tr class="separator:ab1811bb7017d2e1487c90f39b946d572 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff22c94b72b8c5cb93638bd16262d0d inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#a3ff22c94b72b8c5cb93638bd16262d0d">getIsArchive</a> () const</td></tr>
+<tr class="memdesc:a3ff22c94b72b8c5cb93638bd16262d0d inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du champ isArchive.  <a href="class_note.html#a3ff22c94b72b8c5cb93638bd16262d0d">More...</a><br /></td></tr>
+<tr class="separator:a3ff22c94b72b8c5cb93638bd16262d0d inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af56c546c7e0e471b2dd5b201d4835e37 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#af56c546c7e0e471b2dd5b201d4835e37">getIsDeleted</a> () const</td></tr>
+<tr class="memdesc:af56c546c7e0e471b2dd5b201d4835e37 inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du champ isDeleted.  <a href="class_note.html#af56c546c7e0e471b2dd5b201d4835e37">More...</a><br /></td></tr>
+<tr class="separator:af56c546c7e0e471b2dd5b201d4835e37 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef3631134d65fba4ac015463884164c inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="acef3631134d65fba4ac015463884164c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#acef3631134d65fba4ac015463884164c">setIsArchive</a> (bool a)</td></tr>
+<tr class="memdesc:acef3631134d65fba4ac015463884164c inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affectation du champ isArchive. <br /></td></tr>
+<tr class="separator:acef3631134d65fba4ac015463884164c inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a613e10e150caaeb73a24c342553e6c0e inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a613e10e150caaeb73a24c342553e6c0e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#a613e10e150caaeb73a24c342553e6c0e">setIsDeleted</a> (bool d)</td></tr>
+<tr class="memdesc:a613e10e150caaeb73a24c342553e6c0e inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affectation du champ isDeleted. <br /></td></tr>
+<tr class="separator:a613e10e150caaeb73a24c342553e6c0e inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a342ef6ee08089d6b973e46c0bbfd8735 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top"><a id="a342ef6ee08089d6b973e46c0bbfd8735"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#a342ef6ee08089d6b973e46c0bbfd8735">getType</a> () const</td></tr>
+<tr class="memdesc:a342ef6ee08089d6b973e46c0bbfd8735 inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du type de note. <br /></td></tr>
+<tr class="separator:a342ef6ee08089d6b973e46c0bbfd8735 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0490153115307d5f59974d7000260e48 inherit pub_methods_class_note"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note.html#a0490153115307d5f59974d7000260e48">Note</a> (const QString &amp;i, const QString &amp;ti)</td></tr>
 <tr class="memdesc:a0490153115307d5f59974d7000260e48 inherit pub_methods_class_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur des classes notes, articles task et recording.  <a href="class_note.html#a0490153115307d5f59974d7000260e48">More...</a><br /></td></tr>
 <tr class="separator:a0490153115307d5f59974d7000260e48 inherit pub_methods_class_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,7 +228,7 @@ QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ref
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="notes_8h_source.html#l00150">150</a> of file <a class="el" href="notes_8h_source.html">notes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notes_8h_source.html#l00224">224</a> of file <a class="el" href="notes_8h_source.html">notes.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a08a0f57803d8ef35f687f23f759e9f0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a08a0f57803d8ef35f687f23f759e9f0c">&#9670;&nbsp;</a></span>Task()</h2>
@@ -281,25 +283,114 @@ QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ref
 <p>Constructeur de la classe task. </p>
 <p>La classe dérivé <a class="el" href="class_task.html">Task</a> utilise en premier lieu le constructeur de <a class="el" href="class_note.html">Note</a>. <a class="el" href="class_task.html">Task</a> possède 4 constructeurs différents car deux de ses attributs sont optionnels. </p>
 
-<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00149">149</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00154">154</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_task_a08a0f57803d8ef35f687f23f759e9f0c_cgraph.png" border="0" usemap="#class_task_a08a0f57803d8ef35f687f23f759e9f0c_cgraph" alt=""/></div>
 <map name="class_task_a08a0f57803d8ef35f687f23f759e9f0c_cgraph" id="class_task_a08a0f57803d8ef35f687f23f759e9f0c_cgraph">
-<area shape="rect" id="node2" href="class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661" title="Détecte la présence d&#39;une expression régulière dans un champ de text et ajoute une référence en consé..." alt="" coords="272,51,399,77"/>
-<area shape="rect" id="node8" href="class_note.html#a0490153115307d5f59974d7000260e48" title="Constructeur des classes notes, articles task et recording. " alt="" coords="140,76,224,103"/>
-<area shape="rect" id="node3" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="613,25,795,52"/>
-<area shape="rect" id="node4" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="843,25,1015,52"/>
-<area shape="rect" id="node5" href="class_note.html#a3af2edc369310b9f122bd1fd6dbfa717" title="Définie une note comme référence d&#39;une autre. " alt="" coords="447,76,565,103"/>
-<area shape="rect" id="node7" href="class_task.html#a7fe5cb7b57a21693e7abfea2f9618563" title="Transforme une task en un flux ostream a afficher. " alt="" coords="455,127,557,153"/>
-<area shape="rect" id="node6" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="625,76,783,103"/>
+<area shape="rect" id="node2" href="class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661" title="Détecte la présence d&#39;une expression régulière dans un champ de text et ajoute une référence en consé..." alt="" coords="140,79,267,106"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="492,29,673,55"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="721,29,893,55"/>
+<area shape="rect" id="node5" href="class_note.html#af56c546c7e0e471b2dd5b201d4835e37" title="Accesseur du champ isDeleted. " alt="" coords="315,79,444,106"/>
+<area shape="rect" id="node6" href="class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="765,130,850,157"/>
+<area shape="rect" id="node7" href="class_note.html#a3af2edc369310b9f122bd1fd6dbfa717" title="Définie une note comme référence d&#39;une autre. " alt="" coords="320,130,439,157"/>
+<area shape="rect" id="node8" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="503,79,662,106"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2430b942d050bf32c771821daa31493f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2430b942d050bf32c771821daa31493f">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_task.html">Task</a> &amp; Task::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_task.html">Task</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Surcharge de l'opérateur = dans le cas nouvelle task B=A. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td><a class="el" href="class_task.html">Task</a>&amp; t </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_task.html">Task</a>&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00073">73</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_task_a2430b942d050bf32c771821daa31493f_cgraph.png" border="0" usemap="#class_task_a2430b942d050bf32c771821daa31493f_cgraph" alt=""/></div>
+<map name="class_task_a2430b942d050bf32c771821daa31493f_cgraph" id="class_task_a2430b942d050bf32c771821daa31493f_cgraph">
+<area shape="rect" id="node2" href="class_note.html#ac9b2b6b880bd4c01738ee43bde04b7e5" title="Surcharge de l&#39;opérateur = dans le cas nouvelle note B=A. " alt="" coords="167,5,279,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a313eb342d047e8e5cab91bf51609a2f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a313eb342d047e8e5cab91bf51609a2f3">&#9670;&nbsp;</a></span>saveNote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Task::saveNote </td>
+          <td>(</td>
+          <td class="paramtype">QFile *&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QFile*</td><td>file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="class_note.html#a0c2cc72d7f3235c665a30ef915c5c58d">Note</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00496">496</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_task_a313eb342d047e8e5cab91bf51609a2f3_cgraph.png" border="0" usemap="#class_task_a313eb342d047e8e5cab91bf51609a2f3_cgraph" alt=""/></div>
+<map name="class_task_a313eb342d047e8e5cab91bf51609a2f3_cgraph" id="class_task_a313eb342d047e8e5cab91bf51609a2f3_cgraph">
+<area shape="rect" id="node2" href="class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="384,5,469,32"/>
+<area shape="rect" id="node3" href="class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="377,68,476,95"/>
+<area shape="rect" id="node4" href="class_note.html#a89b9be4eae802c78a0959aa9bd408e41" title="Accesseur du champ creation_date. " alt="" coords="349,144,504,171"/>
+<area shape="rect" id="node5" href="class_recording.html#a9f403a39bec2db40c9171a6c3a20942d" title="Transforme un recording en un flux ostream a afficher. " alt="" coords="164,153,297,180"/>
+<area shape="rect" id="node6" href="class_note.html#ab1811bb7017d2e1487c90f39b946d572" title="Accesseur du champ lastmodif_date. " alt="" coords="345,201,508,228"/>
+<area shape="rect" id="node7" href="class_note.html#a3ff22c94b72b8c5cb93638bd16262d0d" title="Accesseur du champ isArchive. " alt="" coords="363,255,490,281"/>
+<area shape="rect" id="node8" href="class_note.html#af56c546c7e0e471b2dd5b201d4835e37" title="Accesseur du champ isDeleted. " alt="" coords="362,305,491,332"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a7fe5cb7b57a21693e7abfea2f9618563"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7fe5cb7b57a21693e7abfea2f9618563">&#9670;&nbsp;</a></span>toString()</h2>
 
@@ -328,15 +419,18 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="class_note.html#a1bd4acfbde0b71d05fd7d4ca889bca2b">Note</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00218">218</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="notes_8cpp_source.html#l00223">223</a> of file <a class="el" href="notes_8cpp_source.html">notes.cpp</a>.</p>
 <div class="dynheader">
-Here is the caller graph for this function:</div>
+Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_task_a7fe5cb7b57a21693e7abfea2f9618563_icgraph.png" border="0" usemap="#class_task_a7fe5cb7b57a21693e7abfea2f9618563_icgraph" alt=""/></div>
-<map name="class_task_a7fe5cb7b57a21693e7abfea2f9618563_icgraph" id="class_task_a7fe5cb7b57a21693e7abfea2f9618563_icgraph">
-<area shape="rect" id="node2" href="class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661" title="Détecte la présence d&#39;une expression régulière dans un champ de text et ajoute une référence en consé..." alt="" coords="156,31,283,57"/>
-<area shape="rect" id="node3" href="class_note.html#a0490153115307d5f59974d7000260e48" title="Constructeur des classes notes, articles task et recording. " alt="" coords="331,5,415,32"/>
-<area shape="rect" id="node4" href="class_task.html#a08a0f57803d8ef35f687f23f759e9f0c" title="Constructeur de la classe task. " alt="" coords="463,31,549,57"/>
+<div class="center"><img src="class_task_a7fe5cb7b57a21693e7abfea2f9618563_cgraph.png" border="0" usemap="#class_task_a7fe5cb7b57a21693e7abfea2f9618563_cgraph" alt=""/></div>
+<map name="class_task_a7fe5cb7b57a21693e7abfea2f9618563_cgraph" id="class_task_a7fe5cb7b57a21693e7abfea2f9618563_cgraph">
+<area shape="rect" id="node2" href="class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="195,5,280,32"/>
+<area shape="rect" id="node3" href="class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="188,56,287,83"/>
+<area shape="rect" id="node4" href="class_note.html#a89b9be4eae802c78a0959aa9bd408e41" title="Accesseur du champ creation_date. " alt="" coords="160,107,315,133"/>
+<area shape="rect" id="node5" href="class_note.html#ab1811bb7017d2e1487c90f39b946d572" title="Accesseur du champ lastmodif_date. " alt="" coords="156,157,319,184"/>
+<area shape="rect" id="node6" href="class_note.html#a3ff22c94b72b8c5cb93638bd16262d0d" title="Accesseur du champ isArchive. " alt="" coords="174,208,301,235"/>
+<area shape="rect" id="node7" href="class_note.html#af56c546c7e0e471b2dd5b201d4835e37" title="Accesseur du champ isDeleted. " alt="" coords="173,259,302,285"/>
 </map>
 </div>
 

@@ -1,0 +1,8 @@
+<map id="Recording::toString" name="Recording::toString">
+<area shape="rect" id="node2" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="225,5,311,32"/>
+<area shape="rect" id="node3" href="$class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="219,56,317,83"/>
+<area shape="rect" id="node4" href="$class_note.html#a89b9be4eae802c78a0959aa9bd408e41" title="Accesseur du champ creation_date. " alt="" coords="191,107,345,133"/>
+<area shape="rect" id="node5" href="$class_note.html#ab1811bb7017d2e1487c90f39b946d572" title="Accesseur du champ lastmodif_date. " alt="" coords="187,157,349,184"/>
+<area shape="rect" id="node6" href="$class_note.html#a3ff22c94b72b8c5cb93638bd16262d0d" title="Accesseur du champ isArchive. " alt="" coords="205,208,331,235"/>
+<area shape="rect" id="node7" href="$class_note.html#af56c546c7e0e471b2dd5b201d4835e37" title="Accesseur du champ isDeleted. " alt="" coords="203,259,333,285"/>
+</map>

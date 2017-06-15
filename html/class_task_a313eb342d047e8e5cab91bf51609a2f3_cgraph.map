@@ -1,0 +1,9 @@
+<map id="Task::saveNote" name="Task::saveNote">
+<area shape="rect" id="node2" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="384,5,469,32"/>
+<area shape="rect" id="node3" href="$class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="377,68,476,95"/>
+<area shape="rect" id="node4" href="$class_note.html#a89b9be4eae802c78a0959aa9bd408e41" title="Accesseur du champ creation_date. " alt="" coords="349,144,504,171"/>
+<area shape="rect" id="node5" href="$class_recording.html#a9f403a39bec2db40c9171a6c3a20942d" title="Transforme un recording en un flux ostream a afficher. " alt="" coords="164,153,297,180"/>
+<area shape="rect" id="node6" href="$class_note.html#ab1811bb7017d2e1487c90f39b946d572" title="Accesseur du champ lastmodif_date. " alt="" coords="345,201,508,228"/>
+<area shape="rect" id="node7" href="$class_note.html#a3ff22c94b72b8c5cb93638bd16262d0d" title="Accesseur du champ isArchive. " alt="" coords="363,255,490,281"/>
+<area shape="rect" id="node8" href="$class_note.html#af56c546c7e0e471b2dd5b201d4835e37" title="Accesseur du champ isDeleted. " alt="" coords="362,305,491,332"/>
+</map>

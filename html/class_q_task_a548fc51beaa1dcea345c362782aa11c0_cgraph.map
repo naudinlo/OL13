@@ -1,4 +1,5 @@
 <map id="QTask::load_note" name="QTask::load_note">
 <area shape="rect" id="node2" href="$class_q_note.html#adca0a8f2851fbb1c3843ca4fe7957c11" title="Methode Virtuel charge les données d&#39;une note dans l&#39;interface graphique. " alt="" coords="177,5,300,32"/>
-<area shape="rect" id="node3" href="$class_q_note.html#ae6fb14b839acc1979b145a892d6a0a92" title="mode lecture seul de la note. " alt="" coords="179,56,298,83"/>
+<area shape="rect" id="node4" href="$class_q_note.html#ae6fb14b839acc1979b145a892d6a0a92" title="mode lecture seul de la note. " alt="" coords="179,56,298,83"/>
+<area shape="rect" id="node3" href="$class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="348,5,447,32"/>
 </map>

@@ -1,3 +1,5 @@
 <map id="QArticle::load_note" name="QArticle::load_note">
 <area shape="rect" id="node2" href="$class_q_note.html#adca0a8f2851fbb1c3843ca4fe7957c11" title="Methode Virtuel charge les données d&#39;une note dans l&#39;interface graphique. " alt="" coords="187,5,309,32"/>
+<area shape="rect" id="node4" href="$class_article.html#a178a250fddb6c30288d893f4f3439ca8" title="Accesseur du champ Text. " alt="" coords="193,56,303,83"/>
+<area shape="rect" id="node3" href="$class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="357,5,456,32"/>
 </map>

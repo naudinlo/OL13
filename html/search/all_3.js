@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['e_5frelation',['E_relation',['../classinterface.html#a65202c3659f8058ab91b3b01cf8f267f',1,'interface']]],
   ['edit_5fnotescouple',['Edit_NotesCouple',['../class_edit___notes_couple.html',1,'Edit_NotesCouple'],['../class_edit___notes_couple.html#aa0780f3a53175747c5a7136d4f2ffa30',1,'Edit_NotesCouple::Edit_NotesCouple()']]],
   ['edit_5frelation',['Edit_relation',['../class_edit__relation.html',1,'Edit_relation'],['../class_edit__relation.html#aea8577d292461d142c4087fd5446a48c',1,'Edit_relation::Edit_relation()']]],
   ['editarticle',['editArticle',['../class_notes_manager.html#a3259c7aa22b5f2eee6f7bceddc707b1d',1,'NotesManager']]],
@@ -10,5 +11,6 @@ var searchData=
   ['emit_5fselection',['emit_selection',['../classselection__note.html#a70f407c89a87e5d8ce992f18ef64773d',1,'selection_note']]],
   ['emit_5fto_5fselection',['emit_to_selection',['../class_q_dock_relation.html#aeb73f1a25957fb93815d3a47e1eed931',1,'QDockRelation']]],
   ['emptytrash',['emptyTrash',['../class_notes_manager.html#a84e962ad7fa999cbb687fb43c1b3bab4',1,'NotesManager']]],
-  ['eneablee_5flabel',['eneableE_label',['../class_edit___notes_couple.html#ad51b47f9284bea44cddc186674c57bc9',1,'Edit_NotesCouple']]]
+  ['eneablee_5flabel',['eneableE_label',['../class_edit___notes_couple.html#ad51b47f9284bea44cddc186674c57bc9',1,'Edit_NotesCouple']]],
+  ['enum',['ENUM',['../namespace_e_n_u_m.html',1,'']]]
 ];
