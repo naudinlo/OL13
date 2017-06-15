@@ -1,5 +1,4 @@
 <map id="RelationManager::load" name="RelationManager::load">
 <area shape="rect" id="node2" href="$classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1" title="Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et l..." alt="" coords="204,5,355,32"/>
-<area shape="rect" id="node4" href="$class_notes_manager.html#a716744a0992b0ce74d43d80c7d987531" title="Récupération de l&#39;environnement. " alt="" coords="210,57,349,98"/>
-<area shape="rect" id="node3" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="403,35,531,61"/>
+<area shape="rect" id="node3" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="403,5,531,32"/>
 </map>
