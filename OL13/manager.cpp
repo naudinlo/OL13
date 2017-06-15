@@ -762,7 +762,12 @@ void NotesManager::load() {
     xml.clear();
     qDebug()<<"fin load\n";
 }
-
+/**
+ * @fn NotesManager::save_fichier
+ * @brief Sauvegarde de l'environnement
+ * @details Permet de sauvegarder le nom du dernier fichier utilisée pour pouvoir restauré l'environnement après fermeture.
+ *          Si aucun fichier n'a été utilisé, sauvegarde l'environnement dans un fichier default.xml.
+ */
 void NotesManager::save_fichier(){
     QFile newfile("fichier.xml");
     if (!newfile.open(QIODevice::WriteOnly | QIODevice::Text))
@@ -776,7 +781,12 @@ void NotesManager::save_fichier(){
     else stream.writeTextElement("Fichier","default.xml");
     stream.writeEndDocument();
 }
-
+/**
+ * @fn NotesManager::load_fichier
+ * @brief Récupération de l'environnement
+ * @details Permet de récupérer le nom du fichier où la sauvegarde de l'environnement à été faite puis charge se fichier pour récupérer l'environnement
+ *          lors du démarage de l'application.
+ */
 void NotesManager::load_fichier() const{
     QFile fin("fichier.xml");
     QString fichier;

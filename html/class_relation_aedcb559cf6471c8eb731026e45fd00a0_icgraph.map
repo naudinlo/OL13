@@ -1,0 +1,16 @@
+<map id="Relation::getIterator" name="Relation::getIterator">
+<area shape="rect" id="node2" href="$class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac" title="Sauvegarde des notes dans un fichier XML. " alt="" coords="233,31,373,57"/>
+<area shape="rect" id="node6" href="$class_notes_manager.html#ac85019776c1e8653665e24abc9d8001d" title="Retourne la liste des notes en relation ascendant avec une note specifiée en paramètre. " alt="" coords="191,81,414,108"/>
+<area shape="rect" id="node9" href="$class_notes_manager.html#a9f2c72d67d67c89a61f77a9b1a0ae390" title="Renvoie la liste de tous les couples ascendants de la relation portant l&#39;ID id. " alt="" coords="211,133,395,174"/>
+<area shape="rect" id="node10" href="$class_notes_manager.html#a2ed035544b433b9cddfc83fb4c081a65" title="Retourne la liste des notes en relation descendante avec une note specifiée en paramètre. " alt="" coords="188,199,417,225"/>
+<area shape="rect" id="node11" href="$class_notes_manager.html#a4b8636fd8bc9d750d778585d3e4372cf" title="Renvoie la liste de tous les couples descendants de la relation portant l&#39;ID id. " alt="" coords="211,250,395,291"/>
+<area shape="rect" id="node12" href="$class_q_ui_relation.html#a4d31962371f2008d814958cdf3810e14" title="constructeur " alt="" coords="219,316,387,343"/>
+<area shape="rect" id="node13" href="$class_relation.html#a0b8a359787fe32c991710039fd081f97" title="Affiche une relation et l&#39;ensemble des couples de notes qui en font parti. " alt="" coords="220,367,385,393"/>
+<area shape="rect" id="node3" href="$classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="497,5,633,32"/>
+<area shape="rect" id="node4" href="$classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir/créer un fichier de sauvegarde. " alt="" coords="512,56,617,83"/>
+<area shape="rect" id="node5" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="750,56,878,83"/>
+<area shape="rect" id="node7" href="$class_q_dock_relation.html#a3d3bd086c56c255eca9e0991359f0f84" title="Mis à jour l&#39;affichache de la visualisation des rélations. " alt="" coords="465,169,664,196"/>
+<area shape="rect" id="node8" href="$class_q_dock_relation.html#a3cef55579cbcd3a665253b62876f69dc" title="constructeur du dock relation. " alt="" coords="712,169,916,196"/>
+<area shape="rect" id="node14" href="$class_edit__relation.html#ab8b401c68bf851bea39fc38fbce0f9f5" title="appelle le constructeur de relation " alt="" coords="477,367,653,393"/>
+<area shape="rect" id="node15" href="$class_edit__relation.html#aea8577d292461d142c4087fd5446a48c" title="Edit_relation::Edit\l_relation" alt="" coords="751,359,877,401"/>
+</map>

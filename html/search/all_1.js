@@ -7,5 +7,6 @@ var searchData=
   ['creation_5fnote_2ecpp',['Creation_Note.cpp',['../_creation___note_8cpp.html',1,'']]],
   ['creation_5fnote_2eh',['Creation_Note.h',['../_creation___note_8h.html',1,'']]],
   ['creer_5fnote',['Creer_Note',['../class_creation___note.html#a533d14d9799dfb6257de99778d38a8ba',1,'Creation_Note']]],
-  ['creernote',['CreerNote',['../classinterface.html#a23957135caad59d8850fe8e2cbee28a3',1,'interface']]]
+  ['creernote',['CreerNote',['../classinterface.html#a23957135caad59d8850fe8e2cbee28a3',1,'interface']]],
+  ['current',['current',['../class_notes_manager_1_1_iterator.html#a4fd73444f2edd5f196d7b950527f5a90',1,'NotesManager::Iterator::current()'],['../class_relation_manager_1_1_iterator.html#a7933bc6a58564cdec8d0641b112e7856',1,'RelationManager::Iterator::current()'],['../class_relation_1_1_iterator.html#ae790f3731aad304b3930fb23fa5b9c7c',1,'Relation::Iterator::current()']]]
 ];

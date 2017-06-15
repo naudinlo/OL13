@@ -54,12 +54,10 @@ void \hyperlink{class_notes_manager_ad4fb2de50633dd25b71024343341cd64}{load} ()
 \begin{DoxyCompactList}\small\item\em Charge les notes d\textquotesingle{}un fichier X\+ML dans l\textquotesingle{}application. \end{DoxyCompactList}\item 
 void \hyperlink{class_notes_manager_ad271bd7f8079b01b04a32b886b498bac}{save} () const
 \begin{DoxyCompactList}\small\item\em Sauvegarde des notes dans un fichier X\+ML. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_notes_manager_a716744a0992b0ce74d43d80c7d987531}\label{class_notes_manager_a716744a0992b0ce74d43d80c7d987531}} 
-void {\bfseries load\+\_\+fichier} () const
-\item 
-\mbox{\Hypertarget{class_notes_manager_a76c059043681ec4c41d91e75e06ea353}\label{class_notes_manager_a76c059043681ec4c41d91e75e06ea353}} 
-void {\bfseries save\+\_\+fichier} ()
-\item 
+void \hyperlink{class_notes_manager_a716744a0992b0ce74d43d80c7d987531}{load\+\_\+fichier} () const
+\begin{DoxyCompactList}\small\item\em Récupération de l\textquotesingle{}environnement. \end{DoxyCompactList}\item 
+void \hyperlink{class_notes_manager_a76c059043681ec4c41d91e75e06ea353}{save\+\_\+fichier} ()
+\begin{DoxyCompactList}\small\item\em Sauvegarde de l\textquotesingle{}environnement. \end{DoxyCompactList}\item 
 Q\+List$<$ \hyperlink{class_tuple_note___relation}{Tuple\+Note\+\_\+\+Relation} $\ast$ $>$ \hyperlink{class_notes_manager_a9f2c72d67d67c89a61f77a9b1a0ae390}{get\+List\+Tuple\+Ascendants} (const Q\+String \&id)
 \begin{DoxyCompactList}\small\item\em Renvoie la liste de tous les couples ascendants de la relation portant l\textquotesingle{}ID id. \end{DoxyCompactList}\item 
 Q\+List$<$ \hyperlink{class_tuple_note___relation}{Tuple\+Note\+\_\+\+Relation} $\ast$ $>$ \hyperlink{class_notes_manager_a4b8636fd8bc9d750d778585d3e4372cf}{get\+List\+Tuple\+Descendants} (const Q\+String \&id)
@@ -98,7 +96,7 @@ static void \hyperlink{class_notes_manager_abd12bae3c990a408e9ef55aa0d93b675}{li
 \subsection{Detailed Description}
 
 
-Definition at line 50 of file manager.\+h.
+Definition at line 66 of file manager.\+h.
 
 
 
@@ -120,7 +118,7 @@ Lorsque la suppression d\textquotesingle{}une note est demandée, celle ci est a
 \end{DoxyParams}
 
 
-Definition at line 865 of file manager.\+cpp.
+Definition at line 875 of file manager.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -247,7 +245,7 @@ Supprime définitivement l\textquotesingle{}ensemble des notes déclarées comme
 
 Parcourt l\textquotesingle{}ensemble des notes, lorsqu\textquotesingle{}une note est reconnue comme supprimée chaque version de cette note est supprimée puis la liste des versions elle-\/même est vidée et supprimée 
 
-Definition at line 893 of file manager.\+cpp.
+Definition at line 903 of file manager.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -278,7 +276,7 @@ Qstring
 \end{DoxyReturn}
 
 
-Definition at line 95 of file manager.\+h.
+Definition at line 111 of file manager.\+h.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -304,7 +302,7 @@ Retourne la liste des notes en relation ascendant avec une note specifiée en pa
 \end{DoxyParams}
 
 
-Definition at line 1011 of file manager.\+cpp.
+Definition at line 1021 of file manager.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -337,7 +335,7 @@ Retourne la liste des notes en relation descendante avec une note specifiée en 
 \end{DoxyParams}
 
 
-Definition at line 1050 of file manager.\+cpp.
+Definition at line 1060 of file manager.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -403,7 +401,7 @@ Renvoie la liste de tous les couples ascendants de la relation portant l\textquo
 \end{DoxyParams}
 
 
-Definition at line 1031 of file manager.\+cpp.
+Definition at line 1041 of file manager.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -436,7 +434,7 @@ Renvoie la liste de tous les couples descendants de la relation portant l\textqu
 \end{DoxyParams}
 
 
-Definition at line 1069 of file manager.\+cpp.
+Definition at line 1079 of file manager.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -674,7 +672,7 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_notes_manager_ad4fb2de50633dd25b71024343341cd64_cgraph}
+\includegraphics[width=349pt]{class_notes_manager_ad4fb2de50633dd25b71024343341cd64_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
@@ -682,6 +680,34 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_notes_manager_ad4fb2de50633dd25b71024343341cd64_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_notes_manager_a716744a0992b0ce74d43d80c7d987531}\label{class_notes_manager_a716744a0992b0ce74d43d80c7d987531}} 
+\index{Notes\+Manager@{Notes\+Manager}!load\+\_\+fichier@{load\+\_\+fichier}}
+\index{load\+\_\+fichier@{load\+\_\+fichier}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{load\+\_\+fichier()}{load\_fichier()}}
+{\footnotesize\ttfamily void Notes\+Manager\+::load\+\_\+fichier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Récupération de l\textquotesingle{}environnement. 
+
+Permet de récupérer le nom du fichier où la sauvegarde de l\textquotesingle{}environnement à été faite puis charge se fichier pour récupérer l\textquotesingle{}environnement lors du démarage de l\textquotesingle{}application. 
+
+Definition at line 790 of file manager.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notes_manager_a716744a0992b0ce74d43d80c7d987531_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_notes_manager_a716744a0992b0ce74d43d80c7d987531_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348}\label{class_notes_manager_abc6587a5d3986ae674e5dd4b9044f348}} 
@@ -701,7 +727,7 @@ Restaure une note supprimée en passant à false son attribut is\+Deleted.
 \end{DoxyParams}
 
 
-Definition at line 916 of file manager.\+cpp.
+Definition at line 926 of file manager.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -738,6 +764,34 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_notes_manager_ad271bd7f8079b01b04a32b886b498bac_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{class_notes_manager_a76c059043681ec4c41d91e75e06ea353}\label{class_notes_manager_a76c059043681ec4c41d91e75e06ea353}} 
+\index{Notes\+Manager@{Notes\+Manager}!save\+\_\+fichier@{save\+\_\+fichier}}
+\index{save\+\_\+fichier@{save\+\_\+fichier}!Notes\+Manager@{Notes\+Manager}}
+\subsubsection{\texorpdfstring{save\+\_\+fichier()}{save\_fichier()}}
+{\footnotesize\ttfamily void Notes\+Manager\+::save\+\_\+fichier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sauvegarde de l\textquotesingle{}environnement. 
+
+Permet de sauvegarder le nom du dernier fichier utilisée pour pouvoir restauré l\textquotesingle{}environnement après fermeture. Si aucun fichier n\textquotesingle{}a été utilisé, sauvegarde l\textquotesingle{}environnement dans un fichier default.\+xml. 
+
+Definition at line 771 of file manager.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notes_manager_a76c059043681ec4c41d91e75e06ea353_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notes_manager_a76c059043681ec4c41d91e75e06ea353_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_notes_manager_a797d858176de3f5e64aa8194797909fb}\label{class_notes_manager_a797d858176de3f5e64aa8194797909fb}} 
 \index{Notes\+Manager@{Notes\+Manager}!set\+Filename@{set\+Filename}}
 \index{set\+Filename@{set\+Filename}!Notes\+Manager@{Notes\+Manager}}
@@ -755,7 +809,7 @@ Affectation de l\textquotesingle{}attribut filename du manager à f.
 \end{DoxyParams}
 
 
-Definition at line 89 of file manager.\+h.
+Definition at line 105 of file manager.\+h.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]

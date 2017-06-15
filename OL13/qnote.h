@@ -39,10 +39,22 @@ class QNote: public QWidget{
 protected:
     QGridLayout* grid;
 public:
+    /**
+     * @fn get_note
+     * @brief Méthode virtuelle qui appelle le constructeur des notes
+     * @param QSting id
+     * @param QString title
+     * @return Note&
+     */
     virtual Note& get_note(QString id,QString title)=0; //fct qui fait appelle au constructeur des notes
     virtual void readOnly(bool status);
     QNote();
     virtual void load_note(Note& n);
+    /**
+     * @fn getLayout_titre
+     * @brief Accesseur de l'attribut layout_titre
+     * @return QVBoxLayout
+     */
     QVBoxLayout* getLayout_titre(){return layout_titre;}
 public slots:
     virtual void check_creer()=0;    

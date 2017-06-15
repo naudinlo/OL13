@@ -50,9 +50,19 @@ protected:
 public:
     page_notes(Note &N);
     ~page_notes();
+    /**
+     * @fn getdock_editer
+     * @brief Accesseur de l'attribut dock_editer
+     * @return QWidget&
+     */
     QWidget& getdock_editer(){
         return *dock_editer;
     }
+    /**
+     * @fn getdock_aff_rel
+     * @brief Accesseur de l'attribut dock_aff_Rel
+     * @return
+     */
     QDockRelation* getdock_aff_rel(){
         return dock_aff_Rel;
     }

@@ -1,0 +1,7 @@
+<map id="selection_note::getVue" name="selection_note::getVue">
+<area shape="rect" id="node2" href="$classselection__note.html#a70f407c89a87e5d8ce992f18ef64773d" title="Identifie la note/versions que l&#39;utilisateur souhaité affiché " alt="" coords="215,5,354,47"/>
+<area shape="rect" id="node3" href="$classselection__note.html#aab004424eba4264628d2e01108f2e63b" title="Etablie/Met à jours le model contennant tous les Notes actif. " alt="" coords="208,71,361,112"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="409,27,591,54"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="414,78,586,105"/>
+<area shape="rect" id="node6" href="$class_notes_manager_1_1_iterator.html#a09b30631af5b7627b2b5a655a8ac450d" title="Vérifie si l&#39;itérateur est arrivé à la fin de la liste. " alt="" coords="423,129,577,171"/>
+</map>

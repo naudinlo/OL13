@@ -1,7 +1,7 @@
 <map id="NotesManager::getFilename" name="NotesManager::getFilename">
-<area shape="rect" id="node2" href="$classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="240,5,376,32"/>
-<area shape="rect" id="node3" href="$classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir/créer un fichier de sauvegarde. " alt="" coords="448,63,553,89"/>
-<area shape="rect" id="node5" href="$class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="239,131,377,157"/>
-<area shape="rect" id="node4" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="624,91,752,117"/>
-<area shape="rect" id="node6" href="$classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1" title="Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et l..." alt="" coords="425,119,576,145"/>
+<area shape="rect" id="node2" href="$classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="241,5,377,32"/>
+<area shape="rect" id="node3" href="$classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir/créer un fichier de sauvegarde. " alt="" coords="443,115,549,141"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#a76c059043681ec4c41d91e75e06ea353" title="Sauvegarde de l&#39;environnement. " alt="" coords="239,107,379,149"/>
+<area shape="rect" id="node6" href="$class_notes_manager.html#a716744a0992b0ce74d43d80c7d987531" title="Récupération de l&#39;environnement. " alt="" coords="427,166,565,207"/>
+<area shape="rect" id="node4" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="613,144,741,171"/>
 </map>

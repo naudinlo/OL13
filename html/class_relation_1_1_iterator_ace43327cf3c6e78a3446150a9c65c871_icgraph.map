@@ -1,0 +1,10 @@
+<map id="Relation::Iterator::isDone" name="Relation::Iterator::isDone">
+<area shape="rect" id="node2" href="$class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac" title="Sauvegarde des notes dans un fichier XML. " alt="" coords="185,35,325,61"/>
+<area shape="rect" id="node6" href="$class_q_ui_relation.html#a4d31962371f2008d814958cdf3810e14" title="constructeur " alt="" coords="171,85,339,112"/>
+<area shape="rect" id="node7" href="$class_relation.html#a0b8a359787fe32c991710039fd081f97" title="Affiche une relation et l&#39;ensemble des couples de notes qui en font parti. " alt="" coords="172,136,337,163"/>
+<area shape="rect" id="node3" href="$classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="407,5,543,32"/>
+<area shape="rect" id="node4" href="$classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir/créer un fichier de sauvegarde. " alt="" coords="422,56,527,83"/>
+<area shape="rect" id="node5" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="611,56,739,83"/>
+<area shape="rect" id="node8" href="$class_edit__relation.html#ab8b401c68bf851bea39fc38fbce0f9f5" title="appelle le constructeur de relation " alt="" coords="387,136,563,163"/>
+<area shape="rect" id="node9" href="$class_edit__relation.html#aea8577d292461d142c4087fd5446a48c" title="Edit_relation::Edit\l_relation" alt="" coords="612,129,737,170"/>
+</map>

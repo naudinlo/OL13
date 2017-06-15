@@ -12,21 +12,17 @@ Collaboration diagram for Notes\+Manager\+:\+:Iterator\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_notes_manager_1_1_iterator_a1a79699fe56e691c3f1c72eb46703fc6}\label{class_notes_manager_1_1_iterator_a1a79699fe56e691c3f1c72eb46703fc6}} 
-void {\bfseries next} ()
-\item 
-\mbox{\Hypertarget{class_notes_manager_1_1_iterator_ab9afd283687410c5591f97881ac17b29}\label{class_notes_manager_1_1_iterator_ab9afd283687410c5591f97881ac17b29}} 
-bool {\bfseries is\+Done} () const
-\item 
-\mbox{\Hypertarget{class_notes_manager_1_1_iterator_aaf695d1b7faf4afa9a36115f5e9d3547}\label{class_notes_manager_1_1_iterator_aaf695d1b7faf4afa9a36115f5e9d3547}} 
-\hyperlink{class_note}{Note} \& {\bfseries current} () const
-\item 
-\mbox{\Hypertarget{class_notes_manager_1_1_iterator_ab64667e5cf5e2285761c6eaa12797a83}\label{class_notes_manager_1_1_iterator_ab64667e5cf5e2285761c6eaa12797a83}} 
-Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$ $\ast$ {\bfseries liste} ()
-\item 
-\mbox{\Hypertarget{class_notes_manager_1_1_iterator_ab0cfae90dcf5788e37f4bf84f5c58093}\label{class_notes_manager_1_1_iterator_ab0cfae90dcf5788e37f4bf84f5c58093}} 
-Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$\+::iterator {\bfseries get\+Iterator\+Versions} ()
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_notes_manager_1_1_iterator_a4a6d6c9d3120acf8052728c0212b5ccd}\label{class_notes_manager_1_1_iterator_a4a6d6c9d3120acf8052728c0212b5ccd}} 
+void \hyperlink{class_notes_manager_1_1_iterator_a4a6d6c9d3120acf8052728c0212b5ccd}{next} ()
+\begin{DoxyCompactList}\small\item\em Incrémentation de l\textquotesingle{}itérateur. \end{DoxyCompactList}\item 
+bool \hyperlink{class_notes_manager_1_1_iterator_a09b30631af5b7627b2b5a655a8ac450d}{is\+Done} () const
+\begin{DoxyCompactList}\small\item\em Vérifie si l\textquotesingle{}itérateur est arrivé à la fin de la liste. \end{DoxyCompactList}\item 
+\hyperlink{class_note}{Note} \& \hyperlink{class_notes_manager_1_1_iterator_a4fd73444f2edd5f196d7b950527f5a90}{current} () const
+\begin{DoxyCompactList}\small\item\em Retourne la dernière version de la note courante. \end{DoxyCompactList}\item 
+Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$ $\ast$ \hyperlink{class_notes_manager_1_1_iterator_a99e3eb098c3b5c7b3041731d10a18c88}{liste} ()
+\begin{DoxyCompactList}\small\item\em Retourne la liste des toutes les versions de la note courante. \end{DoxyCompactList}\item 
+Q\+List$<$ \hyperlink{class_note}{Note} $\ast$ $>$\+::iterator \hyperlink{class_notes_manager_1_1_iterator_a09a650ca2eeca614a4129ed5e1795e96}{get\+Iterator\+Versions} ()
+\begin{DoxyCompactList}\small\item\em Renvoie un itérateur sur les versions de la note courante. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,8 +34,100 @@ class {\bfseries Notes\+Manager}
 \subsection{Detailed Description}
 
 
-Definition at line 123 of file manager.\+h.
+Definition at line 139 of file manager.\+h.
 
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_notes_manager_1_1_iterator_a4fd73444f2edd5f196d7b950527f5a90}\label{class_notes_manager_1_1_iterator_a4fd73444f2edd5f196d7b950527f5a90}} 
+\index{Notes\+Manager\+::\+Iterator@{Notes\+Manager\+::\+Iterator}!current@{current}}
+\index{current@{current}!Notes\+Manager\+::\+Iterator@{Notes\+Manager\+::\+Iterator}}
+\subsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily Notes\+Manager\+::\+Iterator\+::current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la dernière version de la note courante. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_note}{Note}\& 
+\end{DoxyReturn}
+
+
+Definition at line 175 of file manager.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notes_manager_1_1_iterator_a4fd73444f2edd5f196d7b950527f5a90_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_notes_manager_1_1_iterator_a09a650ca2eeca614a4129ed5e1795e96}\label{class_notes_manager_1_1_iterator_a09a650ca2eeca614a4129ed5e1795e96}} 
+\index{Notes\+Manager\+::\+Iterator@{Notes\+Manager\+::\+Iterator}!get\+Iterator\+Versions@{get\+Iterator\+Versions}}
+\index{get\+Iterator\+Versions@{get\+Iterator\+Versions}!Notes\+Manager\+::\+Iterator@{Notes\+Manager\+::\+Iterator}}
+\subsubsection{\texorpdfstring{get\+Iterator\+Versions()}{getIteratorVersions()}}
+{\footnotesize\ttfamily Notes\+Manager\+::\+Iterator\+::get\+Iterator\+Versions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie un itérateur sur les versions de la note courante. 
+
+\begin{DoxyReturn}{Returns}
+Q\+List$<$\+Note$\ast$$>$\+::iterator 
+\end{DoxyReturn}
+
+
+Definition at line 187 of file manager.\+h.
+
+\mbox{\Hypertarget{class_notes_manager_1_1_iterator_a09b30631af5b7627b2b5a655a8ac450d}\label{class_notes_manager_1_1_iterator_a09b30631af5b7627b2b5a655a8ac450d}} 
+\index{Notes\+Manager\+::\+Iterator@{Notes\+Manager\+::\+Iterator}!is\+Done@{is\+Done}}
+\index{is\+Done@{is\+Done}!Notes\+Manager\+::\+Iterator@{Notes\+Manager\+::\+Iterator}}
+\subsubsection{\texorpdfstring{is\+Done()}{isDone()}}
+{\footnotesize\ttfamily Notes\+Manager\+::\+Iterator\+::is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vérifie si l\textquotesingle{}itérateur est arrivé à la fin de la liste. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file manager.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notes_manager_1_1_iterator_a09b30631af5b7627b2b5a655a8ac450d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_notes_manager_1_1_iterator_a99e3eb098c3b5c7b3041731d10a18c88}\label{class_notes_manager_1_1_iterator_a99e3eb098c3b5c7b3041731d10a18c88}} 
+\index{Notes\+Manager\+::\+Iterator@{Notes\+Manager\+::\+Iterator}!liste@{liste}}
+\index{liste@{liste}!Notes\+Manager\+::\+Iterator@{Notes\+Manager\+::\+Iterator}}
+\subsubsection{\texorpdfstring{liste()}{liste()}}
+{\footnotesize\ttfamily Notes\+Manager\+::\+Iterator\+::liste (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la liste des toutes les versions de la note courante. 
+
+\begin{DoxyReturn}{Returns}
+Q\+List$<$\+Note$\ast$$>$$\ast$$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 181 of file manager.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_notes_manager_1_1_iterator_a99e3eb098c3b5c7b3041731d10a18c88_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

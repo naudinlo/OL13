@@ -35,18 +35,16 @@ void {\bfseries checked\+\_\+creer} (bool)
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_note_a9938dcbd69ea0f0cbc12a8faa2a38576}\label{class_q_note_a9938dcbd69ea0f0cbc12a8faa2a38576}} 
-virtual \hyperlink{class_note}{Note} \& {\bfseries get\+\_\+note} (Q\+String id, Q\+String title)=0
-\item 
+virtual \hyperlink{class_note}{Note} \& \hyperlink{class_q_note_a899d74d257db09590cd27a02ebad65da}{get\+\_\+note} (Q\+String id, Q\+String title)=0
+\begin{DoxyCompactList}\small\item\em Méthode virtuelle qui appelle le constructeur des notes. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_q_note_ae6fb14b839acc1979b145a892d6a0a92}{read\+Only} (bool status)
 \begin{DoxyCompactList}\small\item\em mode lecture seul de la note. \end{DoxyCompactList}\item 
 \hyperlink{class_q_note_a4f3980466d58be3cb5e15d2e45d74840}{Q\+Note} ()
 \begin{DoxyCompactList}\small\item\em Constructueur de la clase \hyperlink{class_q_note}{Q\+Note}. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_q_note_adca0a8f2851fbb1c3843ca4fe7957c11}{load\+\_\+note} (\hyperlink{class_note}{Note} \&n)
 \begin{DoxyCompactList}\small\item\em Methode Virtuel charge les données d\textquotesingle{}une note dans l\textquotesingle{}interface graphique. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_q_note_aa7e7772b41fe2443cf1225bf1937a4ca}\label{class_q_note_aa7e7772b41fe2443cf1225bf1937a4ca}} 
-Q\+V\+Box\+Layout $\ast$ {\bfseries get\+Layout\+\_\+titre} ()
-\end{DoxyCompactItemize}
+Q\+V\+Box\+Layout $\ast$ \hyperlink{class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8}{get\+Layout\+\_\+titre} ()
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}attribut layout\+\_\+titre. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -84,6 +82,64 @@ Definition at line 22 of file qnote.\+cpp.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_q_note_a899d74d257db09590cd27a02ebad65da}\label{class_q_note_a899d74d257db09590cd27a02ebad65da}} 
+\index{Q\+Note@{Q\+Note}!get\+\_\+note@{get\+\_\+note}}
+\index{get\+\_\+note@{get\+\_\+note}!Q\+Note@{Q\+Note}}
+\subsubsection{\texorpdfstring{get\+\_\+note()}{get\_note()}}
+{\footnotesize\ttfamily Q\+Note\+::get\+\_\+note (\begin{DoxyParamCaption}\item[{Q\+String}]{id,  }\item[{Q\+String}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Méthode virtuelle qui appelle le constructeur des notes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Sting} & id \\
+\hline
+{\em Q\+String} & title \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_note}{Note}\& 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_note_a899d74d257db09590cd27a02ebad65da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8}\label{class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8}} 
+\index{Q\+Note@{Q\+Note}!get\+Layout\+\_\+titre@{get\+Layout\+\_\+titre}}
+\index{get\+Layout\+\_\+titre@{get\+Layout\+\_\+titre}!Q\+Note@{Q\+Note}}
+\subsubsection{\texorpdfstring{get\+Layout\+\_\+titre()}{getLayout\_titre()}}
+{\footnotesize\ttfamily Q\+Note\+::get\+Layout\+\_\+titre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accesseur de l\textquotesingle{}attribut layout\+\_\+titre. 
+
+\begin{DoxyReturn}{Returns}
+Q\+V\+Box\+Layout 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file qnote.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_note_adca0a8f2851fbb1c3843ca4fe7957c11}\label{class_q_note_adca0a8f2851fbb1c3843ca4fe7957c11}} 
 \index{Q\+Note@{Q\+Note}!load\+\_\+note@{load\+\_\+note}}
 \index{load\+\_\+note@{load\+\_\+note}!Q\+Note@{Q\+Note}}

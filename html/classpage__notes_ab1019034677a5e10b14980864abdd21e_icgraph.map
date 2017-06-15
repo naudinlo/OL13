@@ -1,0 +1,8 @@
+<map id="page_notes::getdock_aff_rel" name="page_notes::getdock_aff_rel">
+<area shape="rect" id="node2" href="$classpage__notes.html#a5c00719607b3e0f3a78c3b35b6df4df9" title="permet d&#39;afficher une relation depuis le dock de la vue des relations " alt="" coords="196,5,360,32"/>
+<area shape="rect" id="node4" href="$classinterface.html#afda8f97b198f7d434cb1eb2d845dfefc" title="fonction outils, permettant de connecter, afficher l&#39;action d&#39;achiver une note a la page courante..." alt="" coords="209,57,347,98"/>
+<area shape="rect" id="node5" href="$classinterface.html#a65202c3659f8058ab91b3b01cf8f267f" title="E_relation. " alt="" coords="209,123,347,149"/>
+<area shape="rect" id="node7" href="$classinterface.html#a287c8a46ece12a94540a190b96b911c9" title="lance et connecte la fenetre de gestion des relations. " alt="" coords="207,173,349,200"/>
+<area shape="rect" id="node3" href="$classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6" title="constructeur " alt="" coords="408,5,572,32"/>
+<area shape="rect" id="node6" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="426,148,554,175"/>
+</map>

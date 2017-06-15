@@ -1,20 +1,21 @@
 <map id="NotesException::getinfo" name="NotesException::getinfo">
 <area shape="rect" id="node2" href="$classpage__notes.html#a736d7d7d13818c43a20b20127845c6c0" title="effectue une saugarde automatique de la note " alt="" coords="232,5,404,32"/>
 <area shape="rect" id="node3" href="$class_creation___note.html#a533d14d9799dfb6257de99778d38a8ba" title="Vérification de la création de la note. " alt="" coords="229,56,407,83"/>
-<area shape="rect" id="node5" href="$classinterface.html#a320051a7a36aa24f53b12df82649f15f" title="slot qui permet l&#39;ouverture d&#39;une note. " alt="" coords="242,107,394,133"/>
-<area shape="rect" id="node7" href="$classinterface.html#a430ee153cb2ea74b9103081d48cd61f3" title="Vide la corbeille. " alt="" coords="239,157,397,184"/>
-<area shape="rect" id="node10" href="$class_q_manage_relation.html#ab901c21b731bde77d9c1bc68780ec700" title="ouvre l&#39;editeur de couple " alt="" coords="245,209,391,250"/>
-<area shape="rect" id="node11" href="$class_q_manage_relation.html#a0ad8c5f51b68248b2d42e980d99e4820" title="supprime la relation selectionner " alt="" coords="245,274,391,315"/>
-<area shape="rect" id="node12" href="$class_edit__relation.html#a06254b8a5265ba82160c6ab62bbf9101" title="creer le nouveau couple avec les paramètres choisis " alt="" coords="237,340,399,367"/>
-<area shape="rect" id="node15" href="$class_q_ui_relation.html#a28751a4ca2c2efb17c12bb45811a4b27" title="QUiRelation::on_Relation\lView_doubleClicked" alt="" coords="235,391,401,433"/>
-<area shape="rect" id="node16" href="$class_q_ui_relation.html#a14fddadaa70fa8c82a0e49a547e2f6b5" title="supression du couple choisi. " alt="" coords="237,457,399,498"/>
-<area shape="rect" id="node17" href="$class_q_ui_relation.html#a05ca085cba21dd2c3004f1f77dd32872" title="ajoute le couple édité à la relation actuelle " alt="" coords="225,523,411,549"/>
-<area shape="rect" id="node18" href="$classsupp__note.html#a5dbf6d3af5c94d71f42eeb2cf626c9d3" title="supprimer les notes selectionné " alt="" coords="213,573,423,600"/>
-<area shape="rect" id="node4" href="$class_creation___note.html#a76278cf9f0de87cd61f204aafcebd5d2" title="Constructeur de la fenetre de création. " alt="" coords="471,44,665,71"/>
-<area shape="rect" id="node6" href="$classinterface.html#afda8f97b198f7d434cb1eb2d845dfefc" title="fonction outils, permettant de connecter, afficher l&#39;action d&#39;achiver une note a la page courante..." alt="" coords="499,95,637,137"/>
-<area shape="rect" id="node8" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="504,161,632,188"/>
-<area shape="rect" id="node9" href="$classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="500,212,636,239"/>
-<area shape="rect" id="node13" href="$class_edit__relation.html#ab8b401c68bf851bea39fc38fbce0f9f5" title="appelle le constructeur de relation " alt="" coords="480,340,656,367"/>
-<area shape="rect" id="node14" href="$class_edit__relation.html#aea8577d292461d142c4087fd5446a48c" title="Edit_relation::Edit\l_relation" alt="" coords="713,333,839,374"/>
-<area shape="rect" id="node19" href="$classsupp__note.html#a0a8f0c351866f8026cabfd981b919889" title="constructeur " alt="" coords="493,573,643,600"/>
+<area shape="rect" id="node5" href="$class_dock_archived.html#ad3cc1b3cbaa84fed8d37c478927c7463" title="Constructeur du Dock d&#39;archives. " alt="" coords="224,107,412,133"/>
+<area shape="rect" id="node6" href="$classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="504,157,632,184"/>
+<area shape="rect" id="node7" href="$classinterface.html#a320051a7a36aa24f53b12df82649f15f" title="slot qui permet l&#39;ouverture d&#39;une note. " alt="" coords="242,259,394,285"/>
+<area shape="rect" id="node9" href="$classinterface.html#a430ee153cb2ea74b9103081d48cd61f3" title="Vide la corbeille. " alt="" coords="239,208,397,235"/>
+<area shape="rect" id="node11" href="$class_q_manage_relation.html#ab901c21b731bde77d9c1bc68780ec700" title="ouvre l&#39;editeur de couple " alt="" coords="245,310,391,351"/>
+<area shape="rect" id="node12" href="$class_q_manage_relation.html#a0ad8c5f51b68248b2d42e980d99e4820" title="supprime la relation selectionner " alt="" coords="245,375,391,417"/>
+<area shape="rect" id="node13" href="$class_edit__relation.html#a06254b8a5265ba82160c6ab62bbf9101" title="creer le nouveau couple avec les paramètres choisis " alt="" coords="237,441,399,468"/>
+<area shape="rect" id="node16" href="$class_q_ui_relation.html#a28751a4ca2c2efb17c12bb45811a4b27" title="QUiRelation::on_Relation\lView_doubleClicked" alt="" coords="235,493,401,534"/>
+<area shape="rect" id="node17" href="$class_q_ui_relation.html#a14fddadaa70fa8c82a0e49a547e2f6b5" title="supression du couple choisi. " alt="" coords="237,558,399,599"/>
+<area shape="rect" id="node18" href="$class_q_ui_relation.html#a05ca085cba21dd2c3004f1f77dd32872" title="ajoute le couple édité à la relation actuelle " alt="" coords="225,624,411,651"/>
+<area shape="rect" id="node19" href="$classsupp__note.html#a5dbf6d3af5c94d71f42eeb2cf626c9d3" title="supprimer les notes selectionné " alt="" coords="213,675,423,701"/>
+<area shape="rect" id="node4" href="$class_creation___note.html#a76278cf9f0de87cd61f204aafcebd5d2" title="Constructeur de la fenetre de création. " alt="" coords="471,56,665,83"/>
+<area shape="rect" id="node8" href="$classinterface.html#afda8f97b198f7d434cb1eb2d845dfefc" title="fonction outils, permettant de connecter, afficher l&#39;action d&#39;achiver une note a la page courante..." alt="" coords="499,259,637,301"/>
+<area shape="rect" id="node10" href="$classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="500,208,636,235"/>
+<area shape="rect" id="node14" href="$class_edit__relation.html#ab8b401c68bf851bea39fc38fbce0f9f5" title="appelle le constructeur de relation " alt="" coords="480,441,656,468"/>
+<area shape="rect" id="node15" href="$class_edit__relation.html#aea8577d292461d142c4087fd5446a48c" title="Edit_relation::Edit\l_relation" alt="" coords="713,434,839,475"/>
+<area shape="rect" id="node20" href="$classsupp__note.html#a0a8f0c351866f8026cabfd981b919889" title="constructeur " alt="" coords="493,675,643,701"/>
 </map>

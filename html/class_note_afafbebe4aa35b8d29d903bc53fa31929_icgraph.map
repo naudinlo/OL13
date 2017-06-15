@@ -1,51 +1,51 @@
 <map id="Note::getId" name="Note::getId">
-<area shape="rect" id="node2" href="$classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6" title="constructeur " alt="" coords="925,101,1089,128"/>
-<area shape="rect" id="node3" href="$class_dock_archived.html#a557ea9fc3b685f0aefbae0bcd624cbec" title="Mise à jour du Dock des archives. " alt="" coords="172,330,320,371"/>
-<area shape="rect" id="node4" href="$class_dock_remove.html#a4e653c9a21161b7d76c9cfd330579047" title="Mise à jour du Dock des éléments supprimés. " alt="" coords="173,395,319,437"/>
-<area shape="rect" id="node5" href="$class_notes_manager.html#a44bfd4e7fe88b7f300a4be5589f92923" title="Créer une nouvelle note de type article La première version de cette note est ajoutée à la liste des ..." alt="" coords="149,461,343,488"/>
-<area shape="rect" id="node7" href="$class_notes_manager.html#a71d0bc2e2716a4e558705ea76e3ad491" title="Créé une nouvelle note de type recording La première version de cette note est ajoutée à la liste des..." alt="" coords="139,512,353,539"/>
-<area shape="rect" id="node8" href="$class_notes_manager.html#a3259c7aa22b5f2eee6f7bceddc707b1d" title="Créé une nouvelle instance d&#39;un article passé en paramètre. " alt="" coords="430,177,602,204"/>
-<area shape="rect" id="node10" href="$class_notes_manager.html#a8f8f2b6aaa8c7d41356f9e4be7da2da5" title="Créé une nouvelle instance d&#39;une task passée en paramètre. " alt="" coords="435,228,597,255"/>
-<area shape="rect" id="node11" href="$class_notes_manager.html#a1c4cfa021a12b6416c4e800d643b5e0a" title="Créé une nouvelle instance d&#39;un recording passé en paramètre. " alt="" coords="419,127,613,153"/>
-<area shape="rect" id="node12" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="167,792,325,819"/>
-<area shape="rect" id="node16" href="$class_q_dock_relation.html#a3d3bd086c56c255eca9e0991359f0f84" title="Mis à jour l&#39;affichache de la visualisation des rélations. " alt="" coords="679,489,877,516"/>
-<area shape="rect" id="node21" href="$class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="709,995,847,1021"/>
-<area shape="rect" id="node22" href="$class_note.html#a3af2edc369310b9f122bd1fd6dbfa717" title="Définie une note comme référence d&#39;une autre. " alt="" coords="457,1071,575,1097"/>
-<area shape="rect" id="node23" href="$class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661" title="Détecte la présence d&#39;une expression régulière dans un champ de text et ajoute une référence en consé..." alt="" coords="715,1136,841,1163"/>
-<area shape="rect" id="node27" href="$class_qreference.html#af2792e095c6033fa60f5f0fe273fa6a3" title="Met à jour le tableau de note référée. " alt="" coords="450,1122,582,1163"/>
-<area shape="rect" id="node31" href="$class_notes_manager.html#a0461145357fe17bf07c3b09c665b95db" title="Retourne la i&#45;ième versions d&#39;une note spécifiée en paramètre. " alt="" coords="145,1319,347,1345"/>
-<area shape="rect" id="node32" href="$class_notes_manager.html#ae3af78108c46b9816207e66fcde64c5b" title="Retourne la liste des versions d&#39;une note spécifiée en paramètre. " alt="" coords="141,177,351,204"/>
-<area shape="rect" id="node33" href="$class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac" title="Sauvegarde des notes dans un fichier XML. " alt="" coords="176,1369,316,1396"/>
-<area shape="rect" id="node36" href="$manager_8h.html#aa775e7d18b47ab8005e0ac3039d7f92d" title="Surcharge de l&#39;opérateur &lt;&lt; d&#39;affichage d&#39;une note. " alt="" coords="203,1420,289,1447"/>
-<area shape="rect" id="node37" href="$class_notes_manager.html#a84e962ad7fa999cbb687fb43c1b3bab4" title="Supprime définitivement l&#39;ensemble des notes déclarées comme supprimées. " alt="" coords="155,1471,337,1497"/>
-<area shape="rect" id="node38" href="$class_notes_manager.html#abc6587a5d3986ae674e5dd4b9044f348" title="Restaure une note supprimée en passant à false son attribut isDeleted. " alt="" coords="155,1522,337,1563"/>
-<area shape="rect" id="node39" href="$class_note.html#a1bd4acfbde0b71d05fd7d4ca889bca2b" title="Transforme une note en un flux ostream a afficher. " alt="" coords="195,1588,297,1615"/>
-<area shape="rect" id="node40" href="$class_article.html#ae40d268ecffbaaa549968a81ea609ba4" title="Transforme un article en un flux ostream a afficher. " alt="" coords="190,1639,302,1665"/>
-<area shape="rect" id="node41" href="$class_task.html#a7fe5cb7b57a21693e7abfea2f9618563" title="Transforme une task en un flux ostream a afficher. " alt="" coords="195,1689,297,1716"/>
-<area shape="rect" id="node42" href="$class_recording.html#a9f403a39bec2db40c9171a6c3a20942d" title="Transforme un recording en un flux ostream a afficher. " alt="" coords="179,1791,313,1817"/>
-<area shape="rect" id="node43" href="$class_article.html#a83c6688e4886b871938b9dca34e78041" title="Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note..." alt="" coords="456,1765,576,1792"/>
-<area shape="rect" id="node44" href="$class_task.html#a313eb342d047e8e5cab91bf51609a2f3" title="Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note..." alt="" coords="461,1829,571,1856"/>
-<area shape="rect" id="node45" href="$class_recording.html#a99e10c8a8c13bce5f70195b6c30a1cc9" title="Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note..." alt="" coords="445,1880,587,1907"/>
-<area shape="rect" id="node46" href="$class_edit___notes_couple.html#aa0780f3a53175747c5a7136d4f2ffa30" title="constructeur de la fenetre d&#39;edition de couple " alt="" coords="167,1943,325,1985"/>
-<area shape="rect" id="node47" href="$class_relation.html#a086c39ecf396e3cfcb465fd9eea5a904" title="Retourne un pointeur sur un couple d&#39;une référence dont les deux notes sont passées en paramètre..." alt="" coords="155,1217,337,1244"/>
-<area shape="rect" id="node48" href="$class_relation.html#aa6974a453611dee90f2ca2da9fe30de6" title="Affiche un couple dans une relation. " alt="" coords="413,1304,619,1331"/>
-<area shape="rect" id="node49" href="$class_relation.html#ab81e16d688dcb4703e8ab299fef80c10" title="Supprime un couple de note d&#39;une relation. " alt="" coords="143,2009,349,2036"/>
-<area shape="rect" id="node50" href="$class_relation.html#a8f25fe0ab5bf722eb08d2dd31e99c7f4" title="Supprime une note d&#39;une relation. " alt="" coords="150,2060,342,2087"/>
-<area shape="rect" id="node6" href="$class_q_recording.html#a9eaf976da6c3c768d15a5e53f3982753" title="Permet à l&#39;utilisateur de choisir un enregistrement. " alt="" coords="431,279,601,305"/>
-<area shape="rect" id="node9" href="$classpage__notes.html#a9fd367fb577c6048353f18ad56792c1f" title="permet d&#39;edité une nouvelle versions de la note " alt="" coords="697,152,859,179"/>
-<area shape="rect" id="node13" href="$class_dock_archived.html#ad3cc1b3cbaa84fed8d37c478927c7463" title="Constructeur du Dock d&#39;archives. " alt="" coords="422,868,610,895"/>
-<area shape="rect" id="node14" href="$class_notes_manager.html#a989429244c36c35ef68204f6ae2a0a5f" title="Action de suppression d&#39;une note spécifiée en paramètre. " alt="" coords="690,792,866,819"/>
-<area shape="rect" id="node15" href="$class_notes_manager.html#ac85019776c1e8653665e24abc9d8001d" title="Retourne la liste des notes en relation ascendant avec une note specifiée en paramètre. " alt="" coords="405,548,627,575"/>
-<area shape="rect" id="node17" href="$class_notes_manager.html#a9f2c72d67d67c89a61f77a9b1a0ae390" title="Renvoie la liste de tous les couples ascendants de la relation portant l&#39;ID id. " alt="" coords="424,599,608,641"/>
-<area shape="rect" id="node18" href="$class_notes_manager.html#a2ed035544b433b9cddfc83fb4c081a65" title="Retourne la liste des notes en relation descendante avec une note specifiée en paramètre. " alt="" coords="401,380,631,407"/>
-<area shape="rect" id="node19" href="$class_notes_manager.html#a4b8636fd8bc9d750d778585d3e4372cf" title="Renvoie la liste de tous les couples descendants de la relation portant l&#39;ID id. " alt="" coords="424,482,608,523"/>
-<area shape="rect" id="node20" href="$class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a" title="Charge les relations d&#39;un fichier XML dans l&#39;application. " alt="" coords="441,969,591,996"/>
-<area shape="rect" id="node24" href="$class_note.html#a8e3ba6961f62a38f49b5fd209c083896" title="Retourne une note référencée par une autre. " alt="" coords="449,716,583,743"/>
-<area shape="rect" id="node25" href="$class_note.html#a91c86cf6ed18e4badb59a41e737a15fa" title="Supprime la référence sur une note spécifiée par son ID. " alt="" coords="441,767,591,793"/>
-<area shape="rect" id="node26" href="$class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="433,919,599,945"/>
-<area shape="rect" id="node28" href="$class_edit__relation.html#ab8b401c68bf851bea39fc38fbce0f9f5" title="appelle le constructeur de relation " alt="" coords="428,817,604,844"/>
-<area shape="rect" id="node29" href="$class_q_ui_relation.html#a28751a4ca2c2efb17c12bb45811a4b27" title="QUiRelation::on_Relation\lView_doubleClicked" alt="" coords="433,1187,599,1229"/>
-<area shape="rect" id="node30" href="$class_q_ui_relation.html#a05ca085cba21dd2c3004f1f77dd32872" title="ajoute le couple édité à la relation actuelle " alt="" coords="423,431,609,457"/>
-<area shape="rect" id="node34" href="$classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="448,1364,584,1391"/>
-<area shape="rect" id="node35" href="$classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir/créer un fichier de sauvegarde. " alt="" coords="463,1415,569,1441"/>
+<area shape="rect" id="node2" href="$classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6" title="constructeur " alt="" coords="937,112,1101,139"/>
+<area shape="rect" id="node3" href="$class_dock_archived.html#a557ea9fc3b685f0aefbae0bcd624cbec" title="Mise à jour du Dock des archives. " alt="" coords="172,328,320,369"/>
+<area shape="rect" id="node4" href="$class_dock_remove.html#a4e653c9a21161b7d76c9cfd330579047" title="Mise à jour du Dock des éléments supprimés. " alt="" coords="173,393,319,434"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#a44bfd4e7fe88b7f300a4be5589f92923" title="Créer une nouvelle note de type article La première version de cette note est ajoutée à la liste des ..." alt="" coords="149,459,343,486"/>
+<area shape="rect" id="node7" href="$class_notes_manager.html#a71d0bc2e2716a4e558705ea76e3ad491" title="Créé une nouvelle note de type recording La première version de cette note est ajoutée à la liste des..." alt="" coords="139,510,353,536"/>
+<area shape="rect" id="node8" href="$class_notes_manager.html#a3259c7aa22b5f2eee6f7bceddc707b1d" title="Créé une nouvelle instance d&#39;un article passé en paramètre. " alt="" coords="430,226,602,252"/>
+<area shape="rect" id="node10" href="$class_notes_manager.html#a8f8f2b6aaa8c7d41356f9e4be7da2da5" title="Créé une nouvelle instance d&#39;une task passée en paramètre. " alt="" coords="435,124,597,151"/>
+<area shape="rect" id="node11" href="$class_notes_manager.html#a1c4cfa021a12b6416c4e800d643b5e0a" title="Créé une nouvelle instance d&#39;un recording passé en paramètre. " alt="" coords="419,175,613,202"/>
+<area shape="rect" id="node12" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="167,790,325,816"/>
+<area shape="rect" id="node16" href="$class_q_dock_relation.html#a3d3bd086c56c255eca9e0991359f0f84" title="Mis à jour l&#39;affichache de la visualisation des rélations. " alt="" coords="679,444,877,471"/>
+<area shape="rect" id="node21" href="$class_note.html#a3af2edc369310b9f122bd1fd6dbfa717" title="Définie une note comme référence d&#39;une autre. " alt="" coords="457,1018,575,1044"/>
+<area shape="rect" id="node22" href="$class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661" title="Détecte la présence d&#39;une expression régulière dans un champ de text et ajoute une référence en consé..." alt="" coords="715,1134,841,1160"/>
+<area shape="rect" id="node26" href="$class_qreference.html#af2792e095c6033fa60f5f0fe273fa6a3" title="Met à jour le tableau de note référée. " alt="" coords="450,1069,582,1110"/>
+<area shape="rect" id="node30" href="$class_notes_manager.html#a0461145357fe17bf07c3b09c665b95db" title="Retourne la i&#45;ième versions d&#39;une note spécifiée en paramètre. " alt="" coords="145,1184,347,1211"/>
+<area shape="rect" id="node31" href="$class_notes_manager.html#ae3af78108c46b9816207e66fcde64c5b" title="Retourne la liste des versions d&#39;une note spécifiée en paramètre. " alt="" coords="141,175,351,202"/>
+<area shape="rect" id="node32" href="$class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac" title="Sauvegarde des notes dans un fichier XML. " alt="" coords="176,1235,316,1262"/>
+<area shape="rect" id="node35" href="$class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="177,1286,315,1312"/>
+<area shape="rect" id="node36" href="$manager_8h.html#aa775e7d18b47ab8005e0ac3039d7f92d" title="Surcharge de l&#39;opérateur &lt;&lt; d&#39;affichage d&#39;une note. " alt="" coords="203,1336,289,1363"/>
+<area shape="rect" id="node37" href="$class_notes_manager.html#a84e962ad7fa999cbb687fb43c1b3bab4" title="Supprime définitivement l&#39;ensemble des notes déclarées comme supprimées. " alt="" coords="155,1387,337,1414"/>
+<area shape="rect" id="node38" href="$class_notes_manager.html#abc6587a5d3986ae674e5dd4b9044f348" title="Restaure une note supprimée en passant à false son attribut isDeleted. " alt="" coords="155,1438,337,1480"/>
+<area shape="rect" id="node39" href="$class_note.html#a1bd4acfbde0b71d05fd7d4ca889bca2b" title="Transforme une note en un flux ostream a afficher. " alt="" coords="195,1504,297,1531"/>
+<area shape="rect" id="node40" href="$class_article.html#ae40d268ecffbaaa549968a81ea609ba4" title="Transforme un article en un flux ostream a afficher. " alt="" coords="190,1555,302,1582"/>
+<area shape="rect" id="node41" href="$class_task.html#a7fe5cb7b57a21693e7abfea2f9618563" title="Transforme une task en un flux ostream a afficher. " alt="" coords="195,1606,297,1632"/>
+<area shape="rect" id="node42" href="$class_recording.html#a9f403a39bec2db40c9171a6c3a20942d" title="Transforme un recording en un flux ostream a afficher. " alt="" coords="179,1707,313,1734"/>
+<area shape="rect" id="node43" href="$class_article.html#a83c6688e4886b871938b9dca34e78041" title="Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note..." alt="" coords="456,1682,576,1708"/>
+<area shape="rect" id="node44" href="$class_task.html#a313eb342d047e8e5cab91bf51609a2f3" title="Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note..." alt="" coords="461,1746,571,1772"/>
+<area shape="rect" id="node45" href="$class_recording.html#a99e10c8a8c13bce5f70195b6c30a1cc9" title="Fonction virtuelle permettant une sauvegarde personnalisée suivant le réel type de la note..." alt="" coords="445,1796,587,1823"/>
+<area shape="rect" id="node46" href="$class_edit___notes_couple.html#aa0780f3a53175747c5a7136d4f2ffa30" title="constructeur de la fenetre d&#39;edition de couple " alt="" coords="167,1860,325,1901"/>
+<area shape="rect" id="node47" href="$class_relation.html#a086c39ecf396e3cfcb465fd9eea5a904" title="Retourne un pointeur sur un couple d&#39;une référence dont les deux notes sont passées en paramètre..." alt="" coords="155,1032,337,1059"/>
+<area shape="rect" id="node48" href="$class_relation.html#aa6974a453611dee90f2ca2da9fe30de6" title="Affiche un couple dans une relation. " alt="" coords="413,1200,619,1227"/>
+<area shape="rect" id="node49" href="$class_relation.html#ab81e16d688dcb4703e8ab299fef80c10" title="Supprime un couple de note d&#39;une relation. " alt="" coords="143,1926,349,1952"/>
+<area shape="rect" id="node50" href="$class_relation.html#a8f25fe0ab5bf722eb08d2dd31e99c7f4" title="Supprime une note d&#39;une relation. " alt="" coords="150,1976,342,2003"/>
+<area shape="rect" id="node6" href="$class_q_recording.html#a9eaf976da6c3c768d15a5e53f3982753" title="Permet à l&#39;utilisateur de choisir un enregistrement. " alt="" coords="431,276,601,303"/>
+<area shape="rect" id="node9" href="$classpage__notes.html#a9fd367fb577c6048353f18ad56792c1f" title="permet d&#39;edité une nouvelle versions de la note " alt="" coords="697,150,859,176"/>
+<area shape="rect" id="node13" href="$class_dock_archived.html#ad3cc1b3cbaa84fed8d37c478927c7463" title="Constructeur du Dock d&#39;archives. " alt="" coords="925,739,1113,766"/>
+<area shape="rect" id="node14" href="$class_notes_manager.html#a989429244c36c35ef68204f6ae2a0a5f" title="Action de suppression d&#39;une note spécifiée en paramètre. " alt="" coords="690,866,866,892"/>
+<area shape="rect" id="node15" href="$class_notes_manager.html#ac85019776c1e8653665e24abc9d8001d" title="Retourne la liste des notes en relation ascendant avec une note specifiée en paramètre. " alt="" coords="405,444,627,471"/>
+<area shape="rect" id="node17" href="$class_notes_manager.html#a9f2c72d67d67c89a61f77a9b1a0ae390" title="Renvoie la liste de tous les couples ascendants de la relation portant l&#39;ID id. " alt="" coords="424,496,608,537"/>
+<area shape="rect" id="node18" href="$class_notes_manager.html#a2ed035544b433b9cddfc83fb4c081a65" title="Retourne la liste des notes en relation descendante avec une note specifiée en paramètre. " alt="" coords="401,562,631,588"/>
+<area shape="rect" id="node19" href="$class_notes_manager.html#a4b8636fd8bc9d750d778585d3e4372cf" title="Renvoie la liste de tous les couples descendants de la relation portant l&#39;ID id. " alt="" coords="424,378,608,420"/>
+<area shape="rect" id="node20" href="$class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a" title="Charge les relations d&#39;un fichier XML dans l&#39;application. " alt="" coords="441,663,591,690"/>
+<area shape="rect" id="node23" href="$class_note.html#a8e3ba6961f62a38f49b5fd209c083896" title="Retourne une note référencée par une autre. " alt="" coords="449,714,583,740"/>
+<area shape="rect" id="node24" href="$class_note.html#a91c86cf6ed18e4badb59a41e737a15fa" title="Supprime la référence sur une note spécifiée par son ID. " alt="" coords="441,764,591,791"/>
+<area shape="rect" id="node25" href="$class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="433,866,599,892"/>
+<area shape="rect" id="node27" href="$class_edit__relation.html#ab8b401c68bf851bea39fc38fbce0f9f5" title="appelle le constructeur de relation " alt="" coords="428,815,604,842"/>
+<area shape="rect" id="node28" href="$class_q_ui_relation.html#a28751a4ca2c2efb17c12bb45811a4b27" title="QUiRelation::on_Relation\lView_doubleClicked" alt="" coords="433,1134,599,1176"/>
+<area shape="rect" id="node29" href="$class_q_ui_relation.html#a05ca085cba21dd2c3004f1f77dd32872" title="ajoute le couple édité à la relation actuelle " alt="" coords="423,916,609,943"/>
+<area shape="rect" id="node33" href="$classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="448,1302,584,1328"/>
+<area shape="rect" id="node34" href="$classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir/créer un fichier de sauvegarde. " alt="" coords="463,1352,569,1379"/>
 </map>

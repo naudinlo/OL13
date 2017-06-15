@@ -79,15 +79,16 @@ Collaboration diagram for Relation::Iterator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8ff276d2d33755160725b5dbc4a95a72"><td class="memItemLeft" align="right" valign="top"><a id="a8ff276d2d33755160725b5dbc4a95a72"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>next</b> ()</td></tr>
-<tr class="separator:a8ff276d2d33755160725b5dbc4a95a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac99e741753998f6c314c3b7884d4dd44"><td class="memItemLeft" align="right" valign="top"><a id="ac99e741753998f6c314c3b7884d4dd44"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDone</b> () const</td></tr>
-<tr class="separator:ac99e741753998f6c314c3b7884d4dd44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d68e76ae0fbe22f025ee747218beb26"><td class="memItemLeft" align="right" valign="top"><a id="a4d68e76ae0fbe22f025ee747218beb26"></a>
-<a class="el" href="class_notes_couple.html">NotesCouple</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>current</b> () const</td></tr>
-<tr class="separator:a4d68e76ae0fbe22f025ee747218beb26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a567ce85dbb1ec314899e495970945116"><td class="memItemLeft" align="right" valign="top"><a id="a567ce85dbb1ec314899e495970945116"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_1_1_iterator.html#a567ce85dbb1ec314899e495970945116">next</a> ()</td></tr>
+<tr class="memdesc:a567ce85dbb1ec314899e495970945116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incrémentation de l'itérateur. <br /></td></tr>
+<tr class="separator:a567ce85dbb1ec314899e495970945116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace43327cf3c6e78a3446150a9c65c871"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_1_1_iterator.html#ace43327cf3c6e78a3446150a9c65c871">isDone</a> () const</td></tr>
+<tr class="memdesc:ace43327cf3c6e78a3446150a9c65c871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si on a terminé d'itérer.  <a href="#ace43327cf3c6e78a3446150a9c65c871">More...</a><br /></td></tr>
+<tr class="separator:ace43327cf3c6e78a3446150a9c65c871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae790f3731aad304b3930fb23fa5b9c7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_notes_couple.html">NotesCouple</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_1_1_iterator.html#ae790f3731aad304b3930fb23fa5b9c7c">current</a> () const</td></tr>
+<tr class="memdesc:ae790f3731aad304b3930fb23fa5b9c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoi l'élément courant.  <a href="#ae790f3731aad304b3930fb23fa5b9c7c">More...</a><br /></td></tr>
+<tr class="separator:ae790f3731aad304b3930fb23fa5b9c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -97,8 +98,95 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Relation</b></td></t
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="relations_8h_source.html#l00087">87</a> of file <a class="el" href="relations_8h_source.html">relations.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<p class="definition">Definition at line <a class="el" href="relations_8h_source.html#l00145">145</a> of file <a class="el" href="relations_8h_source.html">relations.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae790f3731aad304b3930fb23fa5b9c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae790f3731aad304b3930fb23fa5b9c7c">&#9670;&nbsp;</a></span>current()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Relation::Iterator::current </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renvoi l'élément courant. </p>
+<dl class="section return"><dt>Returns</dt><dd>NotesCouples&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="relations_8h_source.html#l00178">178</a> of file <a class="el" href="relations_8h_source.html">relations.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_relation_1_1_iterator_ae790f3731aad304b3930fb23fa5b9c7c_icgraph.png" border="0" usemap="#class_relation_1_1_iterator_ae790f3731aad304b3930fb23fa5b9c7c_icgraph" alt=""/></div>
+<map name="class_relation_1_1_iterator_ae790f3731aad304b3930fb23fa5b9c7c_icgraph" id="class_relation_1_1_iterator_ae790f3731aad304b3930fb23fa5b9c7c_icgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac" title="Sauvegarde des notes dans un fichier XML. " alt="" coords="171,31,311,57"/>
+<area shape="rect" id="node3" href="classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="359,5,495,32"/>
+<area shape="rect" id="node4" href="classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir/créer un fichier de sauvegarde. " alt="" coords="374,56,479,83"/>
+<area shape="rect" id="node5" href="classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="543,56,671,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ace43327cf3c6e78a3446150a9c65c871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace43327cf3c6e78a3446150a9c65c871">&#9670;&nbsp;</a></span>isDone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Relation::Iterator::isDone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vérifie si on a terminé d'itérer. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="relations_8h_source.html#l00172">172</a> of file <a class="el" href="relations_8h_source.html">relations.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_relation_1_1_iterator_ace43327cf3c6e78a3446150a9c65c871_icgraph.png" border="0" usemap="#class_relation_1_1_iterator_ace43327cf3c6e78a3446150a9c65c871_icgraph" alt=""/></div>
+<map name="class_relation_1_1_iterator_ace43327cf3c6e78a3446150a9c65c871_icgraph" id="class_relation_1_1_iterator_ace43327cf3c6e78a3446150a9c65c871_icgraph">
+<area shape="rect" id="node2" href="class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac" title="Sauvegarde des notes dans un fichier XML. " alt="" coords="185,35,325,61"/>
+<area shape="rect" id="node6" href="class_q_ui_relation.html#a4d31962371f2008d814958cdf3810e14" title="constructeur " alt="" coords="171,85,339,112"/>
+<area shape="rect" id="node7" href="class_relation.html#a0b8a359787fe32c991710039fd081f97" title="Affiche une relation et l&#39;ensemble des couples de notes qui en font parti. " alt="" coords="172,136,337,163"/>
+<area shape="rect" id="node3" href="classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="407,5,543,32"/>
+<area shape="rect" id="node4" href="classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir/créer un fichier de sauvegarde. " alt="" coords="422,56,527,83"/>
+<area shape="rect" id="node5" href="classinterface.html#a13e0ee4b9df1714d747d62ec46220c55" title="Constructeur de la classe interface Fenêtre principale de l&#39;application, gére tous les docks..." alt="" coords="611,56,739,83"/>
+<area shape="rect" id="node8" href="class_edit__relation.html#ab8b401c68bf851bea39fc38fbce0f9f5" title="appelle le constructeur de relation " alt="" coords="387,136,563,163"/>
+<area shape="rect" id="node9" href="class_edit__relation.html#aea8577d292461d142c4087fd5446a48c" title="Edit_relation::Edit\l_relation" alt="" coords="612,129,737,170"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>OL13/<a class="el" href="relations_8h_source.html">relations.h</a></li>
 </ul>
 </div><!-- contents -->

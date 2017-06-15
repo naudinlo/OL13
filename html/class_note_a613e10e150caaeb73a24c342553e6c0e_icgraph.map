@@ -1,0 +1,10 @@
+<map id="Note::setIsDeleted" name="Note::setIsDeleted">
+<area shape="rect" id="node2" href="$classpage__notes.html#a9fd367fb577c6048353f18ad56792c1f" title="permet d&#39;edité une nouvelle versions de la note " alt="" coords="193,5,354,32"/>
+<area shape="rect" id="node4" href="$classpage__notes.html#a8d23f8f379d4aa402193f589ac3e4afa" title="Archive la note courante. " alt="" coords="202,57,345,98"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#a989429244c36c35ef68204f6ae2a0a5f" title="Action de suppression d&#39;une note spécifiée en paramètre. " alt="" coords="185,123,361,149"/>
+<area shape="rect" id="node9" href="$class_notes_manager.html#abc6587a5d3986ae674e5dd4b9044f348" title="Restaure une note supprimée en passant à false son attribut isDeleted. " alt="" coords="183,174,364,215"/>
+<area shape="rect" id="node3" href="$classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6" title="constructeur " alt="" coords="435,5,599,32"/>
+<area shape="rect" id="node6" href="$class_dock_archived.html#ad3cc1b3cbaa84fed8d37c478927c7463" title="Constructeur du Dock d&#39;archives. " alt="" coords="423,97,611,124"/>
+<area shape="rect" id="node7" href="$classsupp__note.html#a5dbf6d3af5c94d71f42eeb2cf626c9d3" title="supprimer les notes selectionné " alt="" coords="412,148,621,175"/>
+<area shape="rect" id="node8" href="$classsupp__note.html#a0a8f0c351866f8026cabfd981b919889" title="constructeur " alt="" coords="669,148,820,175"/>
+</map>

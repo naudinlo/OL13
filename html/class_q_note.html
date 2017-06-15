@@ -102,9 +102,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>checked_creer</b> (bo
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9938dcbd69ea0f0cbc12a8faa2a38576"><td class="memItemLeft" align="right" valign="top"><a id="a9938dcbd69ea0f0cbc12a8faa2a38576"></a>
-virtual <a class="el" href="class_note.html">Note</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_note</b> (QString id, QString title)=0</td></tr>
-<tr class="separator:a9938dcbd69ea0f0cbc12a8faa2a38576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a899d74d257db09590cd27a02ebad65da"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_note.html">Note</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_note.html#a899d74d257db09590cd27a02ebad65da">get_note</a> (QString id, QString title)=0</td></tr>
+<tr class="memdesc:a899d74d257db09590cd27a02ebad65da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode virtuelle qui appelle le constructeur des notes.  <a href="#a899d74d257db09590cd27a02ebad65da">More...</a><br /></td></tr>
+<tr class="separator:a899d74d257db09590cd27a02ebad65da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6fb14b839acc1979b145a892d6a0a92"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_note.html#ae6fb14b839acc1979b145a892d6a0a92">readOnly</a> (bool status)</td></tr>
 <tr class="memdesc:ae6fb14b839acc1979b145a892d6a0a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">mode lecture seul de la note.  <a href="#ae6fb14b839acc1979b145a892d6a0a92">More...</a><br /></td></tr>
 <tr class="separator:ae6fb14b839acc1979b145a892d6a0a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,9 +114,9 @@ virtual <a class="el" href="class_note.html">Note</a> &amp;&#160;</td><td class=
 <tr class="memitem:adca0a8f2851fbb1c3843ca4fe7957c11"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_note.html#adca0a8f2851fbb1c3843ca4fe7957c11">load_note</a> (<a class="el" href="class_note.html">Note</a> &amp;n)</td></tr>
 <tr class="memdesc:adca0a8f2851fbb1c3843ca4fe7957c11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methode Virtuel charge les données d'une note dans l'interface graphique.  <a href="#adca0a8f2851fbb1c3843ca4fe7957c11">More...</a><br /></td></tr>
 <tr class="separator:adca0a8f2851fbb1c3843ca4fe7957c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7e7772b41fe2443cf1225bf1937a4ca"><td class="memItemLeft" align="right" valign="top"><a id="aa7e7772b41fe2443cf1225bf1937a4ca"></a>
-QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><b>getLayout_titre</b> ()</td></tr>
-<tr class="separator:aa7e7772b41fe2443cf1225bf1937a4ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cfd446c3cf5a52caa7b07aa1ccb42f8"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_note.html#a7cfd446c3cf5a52caa7b07aa1ccb42f8">getLayout_titre</a> ()</td></tr>
+<tr class="memdesc:a7cfd446c3cf5a52caa7b07aa1ccb42f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'attribut layout_titre.  <a href="#a7cfd446c3cf5a52caa7b07aa1ccb42f8">More...</a><br /></td></tr>
+<tr class="separator:a7cfd446c3cf5a52caa7b07aa1ccb42f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -153,6 +153,120 @@ QGridLayout *&#160;</td><td class="memItemRight" valign="bottom"><b>grid</b></td
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a899d74d257db09590cd27a02ebad65da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a899d74d257db09590cd27a02ebad65da">&#9670;&nbsp;</a></span>get_note()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNote::get_note </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Méthode virtuelle qui appelle le constructeur des notes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QSting</td><td>id </td></tr>
+    <tr><td class="paramname">QString</td><td>title </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_note.html">Note</a>&amp; </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_note_a899d74d257db09590cd27a02ebad65da_icgraph.png" border="0" usemap="#class_q_note_a899d74d257db09590cd27a02ebad65da_icgraph" alt=""/></div>
+<map name="class_q_note_a899d74d257db09590cd27a02ebad65da_icgraph" id="class_q_note_a899d74d257db09590cd27a02ebad65da_icgraph">
+<area shape="rect" id="node2" href="class_creation___note.html#a533d14d9799dfb6257de99778d38a8ba" title="Vérification de la création de la note. " alt="" coords="171,5,348,32"/>
+<area shape="rect" id="node3" href="class_creation___note.html#a76278cf9f0de87cd61f204aafcebd5d2" title="Constructeur de la fenetre de création. " alt="" coords="396,5,591,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7cfd446c3cf5a52caa7b07aa1ccb42f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cfd446c3cf5a52caa7b07aa1ccb42f8">&#9670;&nbsp;</a></span>getLayout_titre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNote::getLayout_titre </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'attribut layout_titre. </p>
+<dl class="section return"><dt>Returns</dt><dd>QVBoxLayout </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="qnote_8h_source.html#l00058">58</a> of file <a class="el" href="qnote_8h_source.html">qnote.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8_cgraph.png" border="0" usemap="#class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8_cgraph" alt=""/></div>
+<map name="class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8_cgraph" id="class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8_cgraph">
+<area shape="rect" id="node2" href="class_q_note.html#a577f684ef199a17dc468d706b1383581" title="sauvegarde les modfications apporté par l&#39;utilisateur sur la note. " alt="" coords="207,237,327,264"/>
+<area shape="rect" id="node3" href="class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="375,187,540,213"/>
+<area shape="rect" id="node14" href="class_note.html#ab1a8b5e69f3f23ed460f4761c9d4863d" title="Affectation du champ title. " alt="" coords="408,237,507,264"/>
+<area shape="rect" id="node15" href="class_note.html#a763d4659a671cf77b610e65417d9ff13" title="Affectation du champ lastmodif_date. " alt="" coords="376,288,539,315"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="588,111,769,137"/>
+<area shape="rect" id="node5" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="599,161,758,188"/>
+<area shape="rect" id="node12" href="class_note.html#abd4e40260ae1c7c621bbd85eea478a06" title="Affectation du champ nbIsRef. " alt="" coords="619,212,739,239"/>
+<area shape="rect" id="node13" href="class_note.html#adc7d55aa12e59b2c67f91bd7f02935d8" title="Accesseur du champ nbIsRef. " alt="" coords="619,263,739,289"/>
+<area shape="rect" id="node6" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="817,5,989,32"/>
+<area shape="rect" id="node7" href="class_notes_manager_1_1_iterator.html#a09b30631af5b7627b2b5a655a8ac450d" title="Vérifie si l&#39;itérateur est arrivé à la fin de la liste. " alt="" coords="826,57,981,98"/>
+<area shape="rect" id="node8" href="class_notes_manager_1_1_iterator.html#a99e3eb098c3b5c7b3041731d10a18c88" title="Retourne la liste des toutes les versions de la note courante. " alt="" coords="826,122,981,163"/>
+<area shape="rect" id="node9" href="class_notes_manager_1_1_iterator.html#a4fd73444f2edd5f196d7b950527f5a90" title="Retourne la dernière version de la note courante. " alt="" coords="826,187,981,229"/>
+<area shape="rect" id="node10" href="class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="861,253,946,280"/>
+<area shape="rect" id="node11" href="class_notes_manager_1_1_iterator.html#a4a6d6c9d3120acf8052728c0212b5ccd" title="Incrémentation de l&#39;itérateur. " alt="" coords="826,305,981,346"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8_icgraph.png" border="0" usemap="#class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8_icgraph" alt=""/></div>
+<map name="class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8_icgraph" id="class_q_note_a7cfd446c3cf5a52caa7b07aa1ccb42f8_icgraph">
+<area shape="rect" id="node2" href="classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6" title="constructeur " alt="" coords="207,5,371,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="adca0a8f2851fbb1c3843ca4fe7957c11"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adca0a8f2851fbb1c3843ca4fe7957c11">&#9670;&nbsp;</a></span>load_note()</h2>
 
@@ -303,11 +417,19 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_q_note_a577f684ef199a17dc468d706b1383581_cgraph.png" border="0" usemap="#class_q_note_a577f684ef199a17dc468d706b1383581_cgraph" alt=""/></div>
 <map name="class_q_note_a577f684ef199a17dc468d706b1383581_cgraph" id="class_q_note_a577f684ef199a17dc468d706b1383581_cgraph">
-<area shape="rect" id="node2" href="class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="173,31,339,57"/>
-<area shape="rect" id="node3" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="387,5,568,32"/>
-<area shape="rect" id="node4" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="398,56,557,83"/>
-<area shape="rect" id="node5" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="616,31,788,57"/>
-<area shape="rect" id="node6" href="class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="659,81,745,108"/>
+<area shape="rect" id="node2" href="class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="173,187,339,213"/>
+<area shape="rect" id="node13" href="class_note.html#ab1a8b5e69f3f23ed460f4761c9d4863d" title="Affectation du champ title. " alt="" coords="207,237,305,264"/>
+<area shape="rect" id="node14" href="class_note.html#a763d4659a671cf77b610e65417d9ff13" title="Affectation du champ lastmodif_date. " alt="" coords="175,288,337,315"/>
+<area shape="rect" id="node3" href="class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="387,111,568,137"/>
+<area shape="rect" id="node4" href="class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="398,161,557,188"/>
+<area shape="rect" id="node11" href="class_note.html#abd4e40260ae1c7c621bbd85eea478a06" title="Affectation du champ nbIsRef. " alt="" coords="417,212,537,239"/>
+<area shape="rect" id="node12" href="class_note.html#adc7d55aa12e59b2c67f91bd7f02935d8" title="Accesseur du champ nbIsRef. " alt="" coords="417,263,537,289"/>
+<area shape="rect" id="node5" href="class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="616,5,788,32"/>
+<area shape="rect" id="node6" href="class_notes_manager_1_1_iterator.html#a09b30631af5b7627b2b5a655a8ac450d" title="Vérifie si l&#39;itérateur est arrivé à la fin de la liste. " alt="" coords="625,57,779,98"/>
+<area shape="rect" id="node7" href="class_notes_manager_1_1_iterator.html#a99e3eb098c3b5c7b3041731d10a18c88" title="Retourne la liste des toutes les versions de la note courante. " alt="" coords="625,122,779,163"/>
+<area shape="rect" id="node8" href="class_notes_manager_1_1_iterator.html#a4fd73444f2edd5f196d7b950527f5a90" title="Retourne la dernière version de la note courante. " alt="" coords="625,187,779,229"/>
+<area shape="rect" id="node9" href="class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="659,253,745,280"/>
+<area shape="rect" id="node10" href="class_notes_manager_1_1_iterator.html#a4a6d6c9d3120acf8052728c0212b5ccd" title="Incrémentation de l&#39;itérateur. " alt="" coords="625,305,779,346"/>
 </map>
 </div>
 <div class="dynheader">
@@ -320,7 +442,8 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node5" href="class_q_article.html#ae59d03688947d16b86f9ab10384894ec" title="QArticle::saveNote. " alt="" coords="198,123,329,149"/>
 <area shape="rect" id="node6" href="class_q_task.html#ae304b097cdfd1169d2b190bbad3922eb" title="QTask::saveNote. " alt="" coords="203,173,324,200"/>
 <area shape="rect" id="node7" href="class_q_recording.html#a37492f3dbda2dad2a8cd62012fe91b78" title="QRecording::saveNote. " alt="" coords="188,224,339,251"/>
-<area shape="rect" id="node4" href="classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6" title="constructeur " alt="" coords="401,64,565,91"/>
+<area shape="rect" id="node8" href="class_q_note.html#a7cfd446c3cf5a52caa7b07aa1ccb42f8" title="Accesseur de l&#39;attribut layout_titre. " alt="" coords="187,275,340,301"/>
+<area shape="rect" id="node4" href="classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6" title="constructeur " alt="" coords="401,169,565,196"/>
 </map>
 </div>
 

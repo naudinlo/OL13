@@ -12,18 +12,15 @@ Collaboration diagram for Relation\+Manager\+:\+:Iterator\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_relation_manager_1_1_iterator_a4deab2fdd2f7b70242ecbfab9d3d1552}\label{class_relation_manager_1_1_iterator_a4deab2fdd2f7b70242ecbfab9d3d1552}} 
-void {\bfseries next} ()
-\item 
-\mbox{\Hypertarget{class_relation_manager_1_1_iterator_a5e9588417d8c6dc8ce1285612dff7840}\label{class_relation_manager_1_1_iterator_a5e9588417d8c6dc8ce1285612dff7840}} 
-bool {\bfseries is\+Done} () const
-\item 
-\mbox{\Hypertarget{class_relation_manager_1_1_iterator_ad3f5e514500480f65dc9b14d1aae358f}\label{class_relation_manager_1_1_iterator_ad3f5e514500480f65dc9b14d1aae358f}} 
-\hyperlink{class_relation}{Relation} \& {\bfseries current} () const
-\item 
-\mbox{\Hypertarget{class_relation_manager_1_1_iterator_a017175bf4f16360c5b2ee5d8fd534d22}\label{class_relation_manager_1_1_iterator_a017175bf4f16360c5b2ee5d8fd534d22}} 
-\hyperlink{class_relation}{Relation} $\ast$ {\bfseries liste\+Rel} ()
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_relation_manager_1_1_iterator_a4abaf2a76e6cdbc8517db8d28d1b477a}\label{class_relation_manager_1_1_iterator_a4abaf2a76e6cdbc8517db8d28d1b477a}} 
+void \hyperlink{class_relation_manager_1_1_iterator_a4abaf2a76e6cdbc8517db8d28d1b477a}{next} ()
+\begin{DoxyCompactList}\small\item\em Incrémentation de l\textquotesingle{}itérateur. \end{DoxyCompactList}\item 
+bool \hyperlink{class_relation_manager_1_1_iterator_a085af111a011f8f1592202cb53132f4c}{is\+Done} () const
+\begin{DoxyCompactList}\small\item\em Vérifie si on a fini d\textquotesingle{}itéré \end{DoxyCompactList}\item 
+\hyperlink{class_relation}{Relation} \& \hyperlink{class_relation_manager_1_1_iterator_a7933bc6a58564cdec8d0641b112e7856}{current} () const
+\begin{DoxyCompactList}\small\item\em Renvoi la \hyperlink{class_relation}{Relation} courante. \end{DoxyCompactList}\item 
+\hyperlink{class_relation}{Relation} $\ast$ \hyperlink{class_relation_manager_1_1_iterator_a63a7e7acea4f01f43b2331bc1cdd0a57}{liste\+Rel} ()
+\begin{DoxyCompactList}\small\item\em Renvoi la liste de \hyperlink{class_relation}{Relation} courante. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,7 +32,75 @@ class {\bfseries Relation\+Manager}
 \subsection{Detailed Description}
 
 
-Definition at line 190 of file manager.\+h.
+Definition at line 236 of file manager.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_relation_manager_1_1_iterator_a7933bc6a58564cdec8d0641b112e7856}\label{class_relation_manager_1_1_iterator_a7933bc6a58564cdec8d0641b112e7856}} 
+\index{Relation\+Manager\+::\+Iterator@{Relation\+Manager\+::\+Iterator}!current@{current}}
+\index{current@{current}!Relation\+Manager\+::\+Iterator@{Relation\+Manager\+::\+Iterator}}
+\subsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily Relation\+Manager\+::\+Iterator\+::current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoi la \hyperlink{class_relation}{Relation} courante. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_relation}{Relation}\& 
+\end{DoxyReturn}
+
+
+Definition at line 263 of file manager.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relation_manager_1_1_iterator_a7933bc6a58564cdec8d0641b112e7856_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_relation_manager_1_1_iterator_a085af111a011f8f1592202cb53132f4c}\label{class_relation_manager_1_1_iterator_a085af111a011f8f1592202cb53132f4c}} 
+\index{Relation\+Manager\+::\+Iterator@{Relation\+Manager\+::\+Iterator}!is\+Done@{is\+Done}}
+\index{is\+Done@{is\+Done}!Relation\+Manager\+::\+Iterator@{Relation\+Manager\+::\+Iterator}}
+\subsubsection{\texorpdfstring{is\+Done()}{isDone()}}
+{\footnotesize\ttfamily Relation\+Manager\+::\+Iterator\+::is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vérifie si on a fini d\textquotesingle{}itéré 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 257 of file manager.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relation_manager_1_1_iterator_a085af111a011f8f1592202cb53132f4c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_relation_manager_1_1_iterator_a63a7e7acea4f01f43b2331bc1cdd0a57}\label{class_relation_manager_1_1_iterator_a63a7e7acea4f01f43b2331bc1cdd0a57}} 
+\index{Relation\+Manager\+::\+Iterator@{Relation\+Manager\+::\+Iterator}!liste\+Rel@{liste\+Rel}}
+\index{liste\+Rel@{liste\+Rel}!Relation\+Manager\+::\+Iterator@{Relation\+Manager\+::\+Iterator}}
+\subsubsection{\texorpdfstring{liste\+Rel()}{listeRel()}}
+{\footnotesize\ttfamily Relation\+Manager\+::\+Iterator\+::liste\+Rel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoi la liste de \hyperlink{class_relation}{Relation} courante. 
+
+\begin{DoxyReturn}{Returns}
+Relation$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 269 of file manager.\+h.
 
 
 

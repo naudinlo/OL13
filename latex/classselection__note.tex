@@ -37,12 +37,10 @@ void {\bfseries selection} (Q\+String, int)
 \mbox{\Hypertarget{classselection__note_a69a11fa0461c0c103f099e894bf0b399}\label{classselection__note_a69a11fa0461c0c103f099e894bf0b399}} 
 \hyperlink{classselection__note_a69a11fa0461c0c103f099e894bf0b399}{selection\+\_\+note} ()
 \begin{DoxyCompactList}\small\item\em constructeur du dock de selection de note \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classselection__note_a87ea63b64611ba8668ab50affd116aea}\label{classselection__note_a87ea63b64611ba8668ab50affd116aea}} 
-Q\+Standard\+Item\+Model $\ast$ {\bfseries get\+Model} () const
-\item 
-\mbox{\Hypertarget{classselection__note_aa4468145cd30e1fab18f3f7c2b5437aa}\label{classselection__note_aa4468145cd30e1fab18f3f7c2b5437aa}} 
-Q\+Tree\+View $\ast$ {\bfseries get\+Vue} ()
-\end{DoxyCompactItemize}
+Q\+Standard\+Item\+Model $\ast$ \hyperlink{classselection__note_a1fce8a25d0a91689b417fcd88fb982ca}{get\+Model} () const
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}attribut model. \end{DoxyCompactList}\item 
+Q\+Tree\+View $\ast$ \hyperlink{classselection__note_a8ebca9b8b266b7891b807a5f1af3cf2b}{get\+Vue} ()
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}attribut vue. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -70,13 +68,61 @@ Si on choisit de cliquer sur l\textquotesingle{}id, d\textquotesingle{}une note 
 \end{DoxyParams}
 
 
-Definition at line 370 of file interface.\+cpp.
+Definition at line 378 of file interface.\+cpp.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classselection__note_a70f407c89a87e5d8ce992f18ef64773d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classselection__note_a1fce8a25d0a91689b417fcd88fb982ca}\label{classselection__note_a1fce8a25d0a91689b417fcd88fb982ca}} 
+\index{selection\+\_\+note@{selection\+\_\+note}!get\+Model@{get\+Model}}
+\index{get\+Model@{get\+Model}!selection\+\_\+note@{selection\+\_\+note}}
+\subsubsection{\texorpdfstring{get\+Model()}{getModel()}}
+{\footnotesize\ttfamily selection\+\_\+note\+::get\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accesseur de l\textquotesingle{}attribut model. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Standard\+Item\+Model 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file interface.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classselection__note_a1fce8a25d0a91689b417fcd88fb982ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classselection__note_a8ebca9b8b266b7891b807a5f1af3cf2b}\label{classselection__note_a8ebca9b8b266b7891b807a5f1af3cf2b}} 
+\index{selection\+\_\+note@{selection\+\_\+note}!get\+Vue@{get\+Vue}}
+\index{get\+Vue@{get\+Vue}!selection\+\_\+note@{selection\+\_\+note}}
+\subsubsection{\texorpdfstring{get\+Vue()}{getVue()}}
+{\footnotesize\ttfamily selection\+\_\+note\+::get\+Vue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accesseur de l\textquotesingle{}attribut vue. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Tree\+View$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file interface.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classselection__note_a8ebca9b8b266b7891b807a5f1af3cf2b_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classselection__note_aab004424eba4264628d2e01108f2e63b}\label{classselection__note_aab004424eba4264628d2e01108f2e63b}} 
@@ -91,7 +137,7 @@ Etablie/\+Met à jours le model contennant tous les Notes actif.
 
 les notes affichées sont les notes actifs (non supprimées, non archivées) en effectuant une requete au près du \hyperlink{class_note}{Note} Manager 
 
-Definition at line 328 of file interface.\+cpp.
+Definition at line 336 of file interface.\+cpp.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]

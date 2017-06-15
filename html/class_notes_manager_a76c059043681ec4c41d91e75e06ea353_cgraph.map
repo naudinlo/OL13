@@ -1,0 +1,4 @@
+<map id="NotesManager::save_fichier" name="NotesManager::save_fichier">
+<area shape="rect" id="node2" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="195,5,377,32"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#a566cbb0dd7b606ec34629a2aa8010b73" title="Accesseur de l&#39;attribut filename du manager. " alt="" coords="193,56,379,83"/>
+</map>

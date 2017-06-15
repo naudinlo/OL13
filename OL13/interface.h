@@ -57,7 +57,17 @@ class selection_note: public QWidget{
     QStandardItemModel* model;
 public:
     selection_note();
+    /**
+     * @fn getModel
+     * @brief Accesseur de l'attribut model
+     * @return QStandardItemModel
+     */
     QStandardItemModel* getModel()const {return model;}
+    /**
+     * @fn getVue
+     * @brief Accesseur de l'attribut vue
+     * @return QTreeView*
+     */
     QTreeView* getVue(){return vue;}
 signals:
     void selection(QString, int);

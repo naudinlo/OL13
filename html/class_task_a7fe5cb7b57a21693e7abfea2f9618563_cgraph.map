@@ -3,6 +3,7 @@
 <area shape="rect" id="node3" href="$class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="188,56,287,83"/>
 <area shape="rect" id="node4" href="$class_note.html#a89b9be4eae802c78a0959aa9bd408e41" title="Accesseur du champ creation_date. " alt="" coords="160,107,315,133"/>
 <area shape="rect" id="node5" href="$class_note.html#ab1811bb7017d2e1487c90f39b946d572" title="Accesseur du champ lastmodif_date. " alt="" coords="156,157,319,184"/>
-<area shape="rect" id="node6" href="$class_note.html#a3ff22c94b72b8c5cb93638bd16262d0d" title="Accesseur du champ isArchive. " alt="" coords="174,208,301,235"/>
-<area shape="rect" id="node7" href="$class_note.html#af56c546c7e0e471b2dd5b201d4835e37" title="Accesseur du champ isDeleted. " alt="" coords="173,259,302,285"/>
+<area shape="rect" id="node6" href="$class_note.html#adc7d55aa12e59b2c67f91bd7f02935d8" title="Accesseur du champ nbIsRef. " alt="" coords="177,208,297,235"/>
+<area shape="rect" id="node7" href="$class_note.html#a3ff22c94b72b8c5cb93638bd16262d0d" title="Accesseur du champ isArchive. " alt="" coords="174,259,301,285"/>
+<area shape="rect" id="node8" href="$class_note.html#af56c546c7e0e471b2dd5b201d4835e37" title="Accesseur du champ isDeleted. " alt="" coords="173,309,302,336"/>
 </map>

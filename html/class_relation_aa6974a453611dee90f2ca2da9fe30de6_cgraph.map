@@ -1,5 +1,11 @@
 <map id="Relation::displayCoupleRelation" name="Relation::displayCoupleRelation">
-<area shape="rect" id="node2" href="$class_relation.html#a086c39ecf396e3cfcb465fd9eea5a904" title="Retourne un pointeur sur un couple d&#39;une référence dont les deux notes sont passées en paramètre..." alt="" coords="259,5,441,32"/>
-<area shape="rect" id="node3" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="489,31,575,57"/>
-<area shape="rect" id="node4" href="$class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="301,107,399,133"/>
+<area shape="rect" id="node2" href="$class_relation.html#a086c39ecf396e3cfcb465fd9eea5a904" title="Retourne un pointeur sur un couple d&#39;une référence dont les deux notes sont passées en paramètre..." alt="" coords="265,46,448,73"/>
+<area shape="rect" id="node3" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="559,21,645,47"/>
+<area shape="rect" id="node4" href="$class_notes_couple.html#a88ed049d759024520c07f1412a6a7d0a" title="Accesseur de l&#39;attribut notey. " alt="" coords="503,83,701,110"/>
+<area shape="rect" id="node5" href="$class_relation.html#aef1db31b9f1a2dc79a1688d4e466e2b1" title="Accesseur de l&#39;attribut title. " alt="" coords="297,147,416,174"/>
+<area shape="rect" id="node6" href="$class_relation.html#a925c2f709d5909121d60c2ab203eb201" title="Accesseur de l&#39;attribut description. " alt="" coords="277,198,437,225"/>
+<area shape="rect" id="node7" href="$class_notes_couple.html#a982a3efc376c58fb82cf508187cfb726" title="Accesseur de l&#39;attribut notex. " alt="" coords="259,249,455,275"/>
+<area shape="rect" id="node8" href="$class_notes_couple.html#a7ea47703a7ae6e11c46a2078bfc90924" title="Accesseur de l&#39;attribut label. " alt="" coords="280,299,433,326"/>
+<area shape="rect" id="node9" href="$class_notes_couple.html#ad27081ad94a661ab624670062664a6bd" title="Accesseur de l&#39;attribut symetric. " alt="" coords="269,350,444,377"/>
+<area shape="rect" id="node10" href="$class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="307,401,406,427"/>
 </map>

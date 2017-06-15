@@ -1,7 +1,11 @@
 <map id="RelationManager::load" name="RelationManager::load">
-<area shape="rect" id="node2" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="217,5,398,32"/>
-<area shape="rect" id="node3" href="$class_relation.html#a69211cc18aed20c1df97c4b73317a2e1" title="Créer un couple de note dans une relation. " alt="" coords="204,56,411,83"/>
-<area shape="rect" id="node4" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="228,107,387,133"/>
-<area shape="rect" id="node5" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="459,81,631,108"/>
-<area shape="rect" id="node6" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="502,132,587,159"/>
+<area shape="rect" id="node2" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="217,61,398,88"/>
+<area shape="rect" id="node3" href="$class_relation.html#a69211cc18aed20c1df97c4b73317a2e1" title="Créer un couple de note dans une relation. " alt="" coords="204,112,411,139"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="228,163,387,189"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="459,5,631,32"/>
+<area shape="rect" id="node6" href="$class_notes_manager_1_1_iterator.html#a09b30631af5b7627b2b5a655a8ac450d" title="Vérifie si l&#39;itérateur est arrivé à la fin de la liste. " alt="" coords="467,57,622,98"/>
+<area shape="rect" id="node7" href="$class_notes_manager_1_1_iterator.html#a99e3eb098c3b5c7b3041731d10a18c88" title="Retourne la liste des toutes les versions de la note courante. " alt="" coords="467,122,622,163"/>
+<area shape="rect" id="node8" href="$class_notes_manager_1_1_iterator.html#a4fd73444f2edd5f196d7b950527f5a90" title="Retourne la dernière version de la note courante. " alt="" coords="467,187,622,229"/>
+<area shape="rect" id="node9" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="502,253,587,280"/>
+<area shape="rect" id="node10" href="$class_notes_manager_1_1_iterator.html#a4a6d6c9d3120acf8052728c0212b5ccd" title="Incrémentation de l&#39;itérateur. " alt="" coords="467,305,622,346"/>
 </map>

@@ -12,15 +12,13 @@ Collaboration diagram for Relation\+:\+:Iterator\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_relation_1_1_iterator_a8ff276d2d33755160725b5dbc4a95a72}\label{class_relation_1_1_iterator_a8ff276d2d33755160725b5dbc4a95a72}} 
-void {\bfseries next} ()
-\item 
-\mbox{\Hypertarget{class_relation_1_1_iterator_ac99e741753998f6c314c3b7884d4dd44}\label{class_relation_1_1_iterator_ac99e741753998f6c314c3b7884d4dd44}} 
-bool {\bfseries is\+Done} () const
-\item 
-\mbox{\Hypertarget{class_relation_1_1_iterator_a4d68e76ae0fbe22f025ee747218beb26}\label{class_relation_1_1_iterator_a4d68e76ae0fbe22f025ee747218beb26}} 
-\hyperlink{class_notes_couple}{Notes\+Couple} \& {\bfseries current} () const
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_relation_1_1_iterator_a567ce85dbb1ec314899e495970945116}\label{class_relation_1_1_iterator_a567ce85dbb1ec314899e495970945116}} 
+void \hyperlink{class_relation_1_1_iterator_a567ce85dbb1ec314899e495970945116}{next} ()
+\begin{DoxyCompactList}\small\item\em Incrémentation de l\textquotesingle{}itérateur. \end{DoxyCompactList}\item 
+bool \hyperlink{class_relation_1_1_iterator_ace43327cf3c6e78a3446150a9c65c871}{is\+Done} () const
+\begin{DoxyCompactList}\small\item\em Vérifie si on a terminé d\textquotesingle{}itérer. \end{DoxyCompactList}\item 
+\hyperlink{class_notes_couple}{Notes\+Couple} \& \hyperlink{class_relation_1_1_iterator_ae790f3731aad304b3930fb23fa5b9c7c}{current} () const
+\begin{DoxyCompactList}\small\item\em Renvoi l\textquotesingle{}élément courant. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,8 +30,59 @@ class {\bfseries Relation}
 \subsection{Detailed Description}
 
 
-Definition at line 87 of file relations.\+h.
+Definition at line 145 of file relations.\+h.
 
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_relation_1_1_iterator_ae790f3731aad304b3930fb23fa5b9c7c}\label{class_relation_1_1_iterator_ae790f3731aad304b3930fb23fa5b9c7c}} 
+\index{Relation\+::\+Iterator@{Relation\+::\+Iterator}!current@{current}}
+\index{current@{current}!Relation\+::\+Iterator@{Relation\+::\+Iterator}}
+\subsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily Relation\+::\+Iterator\+::current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoi l\textquotesingle{}élément courant. 
+
+\begin{DoxyReturn}{Returns}
+Notes\+Couples\& 
+\end{DoxyReturn}
+
+
+Definition at line 178 of file relations.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relation_1_1_iterator_ae790f3731aad304b3930fb23fa5b9c7c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_relation_1_1_iterator_ace43327cf3c6e78a3446150a9c65c871}\label{class_relation_1_1_iterator_ace43327cf3c6e78a3446150a9c65c871}} 
+\index{Relation\+::\+Iterator@{Relation\+::\+Iterator}!is\+Done@{is\+Done}}
+\index{is\+Done@{is\+Done}!Relation\+::\+Iterator@{Relation\+::\+Iterator}}
+\subsubsection{\texorpdfstring{is\+Done()}{isDone()}}
+{\footnotesize\ttfamily Relation\+::\+Iterator\+::is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vérifie si on a terminé d\textquotesingle{}itérer. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 172 of file relations.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relation_1_1_iterator_ace43327cf3c6e78a3446150a9c65c871_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -135,16 +135,19 @@ public:
     /**
      * @fn setIsArchive
      * @brief Affectation du champ isArchive
+     * @param bool a
      */
     void setIsArchive(bool a){isArchive=a;}
     /**
      * @fn setIsDeleted
      * @brief Affectation du champ isDeleted
+     * @param bool b
      */
     void setIsDeleted(bool d){isDeleted=d;}
     /**
      * @fn getType
      * @brief Accesseur du type de note
+     * @return QString
      */
     QString getType()const {return QString(typeid(*this).name()).remove(0,1);}
     Note(const QString& i, const QString& ti);
@@ -160,9 +163,23 @@ public:
      */
     Note(const QString&i, const QString& ti, const QDateTime& cd, const QDateTime& lmd, bool iA, bool iD):
         id(i),title(ti),creation_date(cd),lastmodif_date(lmd),isArchive(iA),isDeleted(iD), nbIsRef(0){}
-
+    /**
+     * @fn setTitle
+     * @brief Affectation du champ title
+     * @param const Qstring& t
+     */
     void setTitle(const QString& t){generateRef(t); title=t;}
+    /**
+     * @fn setCreation_date
+     * @brief Affectation du champ creation_date
+     * @param const QDateTime& d
+     */
     void setCreation_date(const QDateTime& d){creation_date=d;}
+    /**
+     * @fn setLastmodif_date
+     * @brief Affectation du champ lastmodif_date
+     * @param const QDateTime& d
+     */
     void setLastmodif_date(const QDateTime& d){lastmodif_date=d;}
 
     Note(const Note& n); //constructeur de recopie private pour le handler
@@ -170,12 +187,26 @@ public:
     virtual ~Note();
 
     virtual std::string toString() const;
+    /**
+     * @fn display
+     * @brief Permet d'afficher une note sur un flux ostream
+     * @param std::ostream& f=std::cout
+     */
     void display(std::ostream& f=std::cout) const{
         f<<toString();
     }
     virtual void saveNote(QFile *file);
-
+    /**
+     * @fn setNbIsRef
+     * @brief Affectation du champ nbIsRef
+     * @param unsigned int n
+     */
     void setNbIsRef(unsigned int n){nbIsRef=n;}
+    /**
+     * @fn getNbIsRef
+     * @brief Accesseur du champ nbIsRef
+     * @return unsigned int
+     */
     unsigned int getNbIsRef()const{return nbIsRef;}
 
     QList<QString> references;

@@ -1,7 +1,11 @@
 <map id="QRecording::OuvrirFichier" name="QRecording::OuvrirFichier">
-<area shape="rect" id="node2" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="241,5,422,32"/>
-<area shape="rect" id="node3" href="$class_notes_manager.html#a44bfd4e7fe88b7f300a4be5589f92923" title="Créer une nouvelle note de type article La première version de cette note est ajoutée à la liste des ..." alt="" coords="234,107,429,133"/>
-<area shape="rect" id="node6" href="$class_notes_manager.html#a71d0bc2e2716a4e558705ea76e3ad491" title="Créé une nouvelle note de type recording La première version de cette note est ajoutée à la liste des..." alt="" coords="224,56,439,83"/>
-<area shape="rect" id="node4" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="487,56,659,83"/>
-<area shape="rect" id="node5" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="530,107,615,133"/>
+<area shape="rect" id="node2" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="241,87,422,113"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#a44bfd4e7fe88b7f300a4be5589f92923" title="Créer une nouvelle note de type article La première version de cette note est ajoutée à la liste des ..." alt="" coords="234,188,429,215"/>
+<area shape="rect" id="node10" href="$class_notes_manager.html#a71d0bc2e2716a4e558705ea76e3ad491" title="Créé une nouvelle note de type recording La première version de cette note est ajoutée à la liste des..." alt="" coords="224,137,439,164"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="487,5,659,32"/>
+<area shape="rect" id="node5" href="$class_notes_manager_1_1_iterator.html#a09b30631af5b7627b2b5a655a8ac450d" title="Vérifie si l&#39;itérateur est arrivé à la fin de la liste. " alt="" coords="495,57,650,98"/>
+<area shape="rect" id="node6" href="$class_notes_manager_1_1_iterator.html#a99e3eb098c3b5c7b3041731d10a18c88" title="Retourne la liste des toutes les versions de la note courante. " alt="" coords="495,122,650,163"/>
+<area shape="rect" id="node7" href="$class_notes_manager_1_1_iterator.html#a4fd73444f2edd5f196d7b950527f5a90" title="Retourne la dernière version de la note courante. " alt="" coords="495,187,650,229"/>
+<area shape="rect" id="node8" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="530,253,615,280"/>
+<area shape="rect" id="node9" href="$class_notes_manager_1_1_iterator.html#a4a6d6c9d3120acf8052728c0212b5ccd" title="Incrémentation de l&#39;itérateur. " alt="" coords="495,305,650,346"/>
 </map>

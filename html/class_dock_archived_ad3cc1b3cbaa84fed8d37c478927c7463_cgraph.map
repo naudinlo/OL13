@@ -1,8 +1,21 @@
 <map id="DockArchived::DockArchived" name="DockArchived::DockArchived">
-<area shape="rect" id="node2" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="241,5,423,32"/>
-<area shape="rect" id="node3" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="253,56,411,83"/>
-<area shape="rect" id="node6" href="$class_note.html#acef3631134d65fba4ac015463884164c" title="Affectation du champ isArchive. " alt="" coords="269,107,395,133"/>
-<area shape="rect" id="node7" href="$class_note.html#a613e10e150caaeb73a24c342553e6c0e" title="Affectation du champ isDeleted. " alt="" coords="267,157,397,184"/>
-<area shape="rect" id="node4" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="471,31,643,57"/>
-<area shape="rect" id="node5" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="514,81,599,108"/>
+<area shape="rect" id="node2" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="708,37,889,63"/>
+<area shape="rect" id="node3" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="719,290,878,317"/>
+<area shape="rect" id="node10" href="$class_notes_manager.html#a989429244c36c35ef68204f6ae2a0a5f" title="Action de suppression d&#39;une note spécifiée en paramètre. " alt="" coords="241,239,417,266"/>
+<area shape="rect" id="node12" href="$class_note.html#acef3631134d65fba4ac015463884164c" title="Affectation du champ isArchive. " alt="" coords="499,391,626,418"/>
+<area shape="rect" id="node20" href="$class_notes_exception.html#a3c595994b69172290b548fdac074248d" title="Accesseur du champ info. " alt="" coords="249,493,409,519"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="937,305,1109,331"/>
+<area shape="rect" id="node5" href="$class_notes_manager_1_1_iterator.html#a09b30631af5b7627b2b5a655a8ac450d" title="Vérifie si l&#39;itérateur est arrivé à la fin de la liste. " alt="" coords="946,421,1101,463"/>
+<area shape="rect" id="node6" href="$class_notes_manager_1_1_iterator.html#a99e3eb098c3b5c7b3041731d10a18c88" title="Retourne la liste des toutes les versions de la note courante. " alt="" coords="946,356,1101,397"/>
+<area shape="rect" id="node7" href="$class_notes_manager_1_1_iterator.html#a4fd73444f2edd5f196d7b950527f5a90" title="Retourne la dernière version de la note courante. " alt="" coords="946,173,1101,215"/>
+<area shape="rect" id="node8" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="981,122,1066,149"/>
+<area shape="rect" id="node9" href="$class_notes_manager_1_1_iterator.html#a4a6d6c9d3120acf8052728c0212b5ccd" title="Incrémentation de l&#39;itérateur. " alt="" coords="946,239,1101,280"/>
+<area shape="rect" id="node11" href="$class_note.html#adc7d55aa12e59b2c67f91bd7f02935d8" title="Accesseur du champ nbIsRef. " alt="" coords="739,189,859,215"/>
+<area shape="rect" id="node13" href="$class_relation_manager.html#a35c3622f29ccfbda84be848503041396" title="Permet d&#39;obtenir un pointeur sur le manager de relations. " alt="" coords="465,37,660,63"/>
+<area shape="rect" id="node14" href="$class_relation_manager.html#a467cb7895b238376feaac142cdec5dab" title="Renvoi l&#39;itérateur de la classe RelationManager. " alt="" coords="470,138,655,165"/>
+<area shape="rect" id="node17" href="$class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="480,239,645,266"/>
+<area shape="rect" id="node19" href="$class_note.html#a613e10e150caaeb73a24c342553e6c0e" title="Affectation du champ isDeleted. " alt="" coords="498,87,627,114"/>
+<area shape="rect" id="node15" href="$manager_8h.html#aa775e7d18b47ab8005e0ac3039d7f92d" title="Surcharge de l&#39;opérateur &lt;&lt; d&#39;affichage d&#39;une note. " alt="" coords="756,122,841,149"/>
+<area shape="rect" id="node16" href="$class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="974,71,1073,98"/>
+<area shape="rect" id="node18" href="$class_note.html#abd4e40260ae1c7c621bbd85eea478a06" title="Affectation du champ nbIsRef. " alt="" coords="739,239,859,266"/>
 </map>

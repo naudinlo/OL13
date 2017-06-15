@@ -1,0 +1,10 @@
+<map id="Note::setLastmodif_date" name="Note::setLastmodif_date">
+<area shape="rect" id="node2" href="$class_q_note.html#a577f684ef199a17dc468d706b1383581" title="sauvegarde les modfications apporté par l&#39;utilisateur sur la note. " alt="" coords="216,148,336,175"/>
+<area shape="rect" id="node3" href="$classpage__notes.html#a736d7d7d13818c43a20b20127845c6c0" title="effectue une saugarde automatique de la note " alt="" coords="388,5,560,32"/>
+<area shape="rect" id="node4" href="$classpage__notes.html#a3810696feb56abdad663cb7ae4b2f1b0" title="Editer les changement sur la nouvelle version de la note. " alt="" coords="384,57,564,98"/>
+<area shape="rect" id="node6" href="$class_q_article.html#ae59d03688947d16b86f9ab10384894ec" title="QArticle::saveNote. " alt="" coords="409,123,539,149"/>
+<area shape="rect" id="node7" href="$class_q_task.html#ae304b097cdfd1169d2b190bbad3922eb" title="QTask::saveNote. " alt="" coords="413,173,535,200"/>
+<area shape="rect" id="node8" href="$class_q_recording.html#a37492f3dbda2dad2a8cd62012fe91b78" title="QRecording::saveNote. " alt="" coords="399,224,549,251"/>
+<area shape="rect" id="node9" href="$class_q_note.html#a7cfd446c3cf5a52caa7b07aa1ccb42f8" title="Accesseur de l&#39;attribut layout_titre. " alt="" coords="397,275,551,301"/>
+<area shape="rect" id="node5" href="$classpage__notes.html#ad9a1b3dbe6c7901ed37a5784b1094fa6" title="constructeur " alt="" coords="612,169,776,196"/>
+</map>

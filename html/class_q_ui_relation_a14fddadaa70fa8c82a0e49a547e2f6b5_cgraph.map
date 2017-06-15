@@ -1,5 +1,8 @@
 <map id="QUiRelation::on_remove_clicked" name="QUiRelation::on_remove_clicked">
-<area shape="rect" id="node2" href="$class_relation.html#ab81e16d688dcb4703e8ab299fef80c10" title="Supprime un couple de note d&#39;une relation. " alt="" coords="215,5,420,32"/>
-<area shape="rect" id="node4" href="$class_notes_exception.html#a3c595994b69172290b548fdac074248d" title="Accesseur du champ info. " alt="" coords="237,56,397,83"/>
-<area shape="rect" id="node3" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="468,5,553,32"/>
+<area shape="rect" id="node2" href="$class_relation.html#ab81e16d688dcb4703e8ab299fef80c10" title="Supprime un couple de note d&#39;une relation. " alt="" coords="215,56,420,83"/>
+<area shape="rect" id="node4" href="$class_notes_couple.html#a88ed049d759024520c07f1412a6a7d0a" title="Accesseur de l&#39;attribut notey. " alt="" coords="468,107,667,133"/>
+<area shape="rect" id="node6" href="$class_notes_couple.html#a982a3efc376c58fb82cf508187cfb726" title="Accesseur de l&#39;attribut notex. " alt="" coords="219,157,415,184"/>
+<area shape="rect" id="node7" href="$class_notes_exception.html#a3c595994b69172290b548fdac074248d" title="Accesseur du champ info. " alt="" coords="237,208,397,235"/>
+<area shape="rect" id="node3" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="525,5,610,32"/>
+<area shape="rect" id="node5" href="$class_notes_couple.html#ad27081ad94a661ab624670062664a6bd" title="Accesseur de l&#39;attribut symetric. " alt="" coords="480,56,655,83"/>
 </map>

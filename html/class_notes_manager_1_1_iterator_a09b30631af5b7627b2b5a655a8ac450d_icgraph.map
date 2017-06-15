@@ -1,0 +1,51 @@
+<map id="NotesManager::Iterator::isDone" name="NotesManager::Iterator::isDone">
+<area shape="rect" id="node2" href="$classadd_couple.html#a5c478c6e07cd0b9639c4c84687c89764" title="constructeur " alt="" coords="509,5,661,32"/>
+<area shape="rect" id="node3" href="$classadd_couple.html#aa0334cda3e89d32093da234cbd1e8c07" title="Met à jour le model. " alt="" coords="224,17,407,44"/>
+<area shape="rect" id="node4" href="$classselection__note.html#aab004424eba4264628d2e01108f2e63b" title="Etablie/Met à jours le model contennant tous les Notes actif. " alt="" coords="239,189,392,230"/>
+<area shape="rect" id="node11" href="$class_notes_manager.html#a44bfd4e7fe88b7f300a4be5589f92923" title="Créer une nouvelle note de type article La première version de cette note est ajoutée à la liste des ..." alt="" coords="218,461,413,488"/>
+<area shape="rect" id="node13" href="$class_notes_manager.html#a39562bf5aef0d7a113317c1421d578fd" title="Créer une nouvelle note de type task La première version de cette note est ajoutée à la liste des ver..." alt="" coords="223,512,408,539"/>
+<area shape="rect" id="node14" href="$class_notes_manager.html#a71d0bc2e2716a4e558705ea76e3ad491" title="Créé une nouvelle note de type recording La première version de cette note est ajoutée à la liste des..." alt="" coords="208,411,423,437"/>
+<area shape="rect" id="node15" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="236,835,395,861"/>
+<area shape="rect" id="node17" href="$class_notes_manager.html#a989429244c36c35ef68204f6ae2a0a5f" title="Action de suppression d&#39;une note spécifiée en paramètre. " alt="" coords="759,965,935,992"/>
+<area shape="rect" id="node19" href="$class_notes_manager.html#ac85019776c1e8653665e24abc9d8001d" title="Retourne la liste des notes en relation ascendant avec une note specifiée en paramètre. " alt="" coords="474,528,697,555"/>
+<area shape="rect" id="node21" href="$class_notes_manager.html#a9f2c72d67d67c89a61f77a9b1a0ae390" title="Renvoie la liste de tous les couples ascendants de la relation portant l&#39;ID id. " alt="" coords="493,579,677,621"/>
+<area shape="rect" id="node22" href="$class_notes_manager.html#a2ed035544b433b9cddfc83fb4c081a65" title="Retourne la liste des notes en relation descendante avec une note specifiée en paramètre. " alt="" coords="471,645,700,672"/>
+<area shape="rect" id="node23" href="$class_notes_manager.html#a4b8636fd8bc9d750d778585d3e4372cf" title="Renvoie la liste de tous les couples descendants de la relation portant l&#39;ID id. " alt="" coords="493,462,677,503"/>
+<area shape="rect" id="node27" href="$class_note.html#a5a0cb370ddd5a3da10fe8aa8a256d661" title="Détecte la présence d&#39;une expression régulière dans un champ de text et ajoute une référence en consé..." alt="" coords="784,1388,911,1415"/>
+<area shape="rect" id="node36" href="$class_notes_manager.html#a0461145357fe17bf07c3b09c665b95db" title="Retourne la i&#45;ième versions d&#39;une note spécifiée en paramètre. " alt="" coords="214,1488,417,1515"/>
+<area shape="rect" id="node37" href="$class_notes_manager.html#ae3af78108c46b9816207e66fcde64c5b" title="Retourne la liste des versions d&#39;une note spécifiée en paramètre. " alt="" coords="210,1539,421,1565"/>
+<area shape="rect" id="node41" href="$class_notes_manager.html#ae6b144ba1bc14b895be36b194a2e768e" title="Retourne la liste des notes supprimée. " alt="" coords="217,1589,414,1616"/>
+<area shape="rect" id="node43" href="$class_notes_manager.html#a81aee1d57c39232f870199acb356fc57" title="Retourne la liste des notes archivée. " alt="" coords="218,1640,413,1667"/>
+<area shape="rect" id="node45" href="$class_notes_manager.html#ad271bd7f8079b01b04a32b886b498bac" title="Sauvegarde des notes dans un fichier XML. " alt="" coords="245,360,385,387"/>
+<area shape="rect" id="node47" href="$class_notes_manager.html#ad4fb2de50633dd25b71024343341cd64" title="Charge les notes d&#39;un fichier XML dans l&#39;application. " alt="" coords="246,1336,385,1363"/>
+<area shape="rect" id="node49" href="$class_notes_manager.html#a84e962ad7fa999cbb687fb43c1b3bab4" title="Supprime définitivement l&#39;ensemble des notes déclarées comme supprimées. " alt="" coords="224,276,407,303"/>
+<area shape="rect" id="node50" href="$class_notes_manager.html#abc6587a5d3986ae674e5dd4b9044f348" title="Restaure une note supprimée en passant à false son attribut isDeleted. " alt="" coords="225,1691,406,1733"/>
+<area shape="rect" id="node5" href="$classselection__note.html#a69a11fa0461c0c103f099e894bf0b399" title="constructeur du dock de selection de note " alt="" coords="486,157,685,184"/>
+<area shape="rect" id="node6" href="$classinterface.html#a320051a7a36aa24f53b12df82649f15f" title="slot qui permet l&#39;ouverture d&#39;une note. " alt="" coords="509,208,661,235"/>
+<area shape="rect" id="node7" href="$classselection__note.html#a8ebca9b8b266b7891b807a5f1af3cf2b" title="Accesseur de l&#39;attribut vue. " alt="" coords="508,56,663,83"/>
+<area shape="rect" id="node8" href="$classinterface.html#a430ee153cb2ea74b9103081d48cd61f3" title="Vide la corbeille. " alt="" coords="506,259,665,285"/>
+<area shape="rect" id="node10" href="$classinterface.html#aca23c755ba40ca8198010ff0487b22a8" title="appelle la fenêtre de dialogue de suppression de note " alt="" coords="501,107,669,133"/>
+<area shape="rect" id="node9" href="$classinterface.html#a8511f28c5bc5d3c24a24e9aaef4db502" title="Ferme l&#39;interface. " alt="" coords="779,309,915,336"/>
+<area shape="rect" id="node12" href="$class_q_recording.html#a9eaf976da6c3c768d15a5e53f3982753" title="Permet à l&#39;utilisateur de choisir un enregistrement. " alt="" coords="500,411,671,437"/>
+<area shape="rect" id="node16" href="$class_dock_archived.html#ad3cc1b3cbaa84fed8d37c478927c7463" title="Constructeur du Dock d&#39;archives. " alt="" coords="1005,805,1193,832"/>
+<area shape="rect" id="node24" href="$class_relation_manager.html#a37273bc4c1d223bf99ff10ba7feba50a" title="Charge les relations d&#39;un fichier XML dans l&#39;application. " alt="" coords="510,1184,661,1211"/>
+<area shape="rect" id="node26" href="$class_note.html#a3af2edc369310b9f122bd1fd6dbfa717" title="Définie une note comme référence d&#39;une autre. " alt="" coords="526,1235,645,1261"/>
+<area shape="rect" id="node29" href="$class_note.html#a8e3ba6961f62a38f49b5fd209c083896" title="Retourne une note référencée par une autre. " alt="" coords="519,965,652,992"/>
+<area shape="rect" id="node30" href="$class_note.html#a91c86cf6ed18e4badb59a41e737a15fa" title="Supprime la référence sur une note spécifiée par son ID. " alt="" coords="510,1067,661,1093"/>
+<area shape="rect" id="node31" href="$class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="503,1016,668,1043"/>
+<area shape="rect" id="node32" href="$class_qreference.html#af2792e095c6033fa60f5f0fe273fa6a3" title="Met à jour le tableau de note référée. " alt="" coords="519,1118,651,1159"/>
+<area shape="rect" id="node33" href="$class_edit__relation.html#ab8b401c68bf851bea39fc38fbce0f9f5" title="appelle le constructeur de relation " alt="" coords="497,747,673,773"/>
+<area shape="rect" id="node34" href="$class_q_ui_relation.html#a28751a4ca2c2efb17c12bb45811a4b27" title="QUiRelation::on_Relation\lView_doubleClicked" alt="" coords="502,798,669,839"/>
+<area shape="rect" id="node35" href="$class_q_ui_relation.html#a05ca085cba21dd2c3004f1f77dd32872" title="ajoute le couple édité à la relation actuelle " alt="" coords="493,864,678,891"/>
+<area shape="rect" id="node18" href="$classsupp__note.html#a5dbf6d3af5c94d71f42eeb2cf626c9d3" title="supprimer les notes selectionné " alt="" coords="995,965,1204,992"/>
+<area shape="rect" id="node20" href="$class_q_dock_relation.html#a3d3bd086c56c255eca9e0991359f0f84" title="Mis à jour l&#39;affichache de la visualisation des rélations. " alt="" coords="748,557,947,584"/>
+<area shape="rect" id="node25" href="$class_notes_manager.html#a716744a0992b0ce74d43d80c7d987531" title="Récupération de l&#39;environnement. " alt="" coords="778,1225,917,1266"/>
+<area shape="rect" id="node28" href="$class_note.html#a0490153115307d5f59974d7000260e48" title="Constructeur des classes notes, articles task et recording. " alt="" coords="1057,1388,1141,1415"/>
+<area shape="rect" id="node38" href="$class_notes_manager.html#a3259c7aa22b5f2eee6f7bceddc707b1d" title="Créé une nouvelle instance d&#39;un article passé en paramètre. " alt="" coords="499,1488,671,1515"/>
+<area shape="rect" id="node39" href="$class_notes_manager.html#a8f8f2b6aaa8c7d41356f9e4be7da2da5" title="Créé une nouvelle instance d&#39;une task passée en paramètre. " alt="" coords="504,1539,667,1565"/>
+<area shape="rect" id="node40" href="$class_notes_manager.html#a1c4cfa021a12b6416c4e800d643b5e0a" title="Créé une nouvelle instance d&#39;un recording passé en paramètre. " alt="" coords="489,1589,682,1616"/>
+<area shape="rect" id="node42" href="$class_dock_remove.html#a4e653c9a21161b7d76c9cfd330579047" title="Mise à jour du Dock des éléments supprimés. " alt="" coords="513,1641,658,1682"/>
+<area shape="rect" id="node44" href="$class_dock_archived.html#a557ea9fc3b685f0aefbae0bcd624cbec" title="Mise à jour du Dock des archives. " alt="" coords="511,1706,659,1747"/>
+<area shape="rect" id="node46" href="$classinterface.html#a319f133949e2be97a203f725c3f1e565" title="Permet de choisir/créer un fichier de sauvegarde. " alt="" coords="533,309,638,336"/>
+<area shape="rect" id="node48" href="$classinterface.html#af42d8f6426ad19ce13f1dd2ce9f519c1" title="Fenêtre permettant de selectionner/chargé un fichier de sauvegarde Met à jour le manager de note et l..." alt="" coords="510,1387,661,1413"/>
+</map>

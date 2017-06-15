@@ -1,3 +1,5 @@
 <map id="Relation::removeCoupleRelation" name="Relation::removeCoupleRelation">
-<area shape="rect" id="node2" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="259,5,344,32"/>
+<area shape="rect" id="node2" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="315,5,401,32"/>
+<area shape="rect" id="node3" href="$class_notes_couple.html#a88ed049d759024520c07f1412a6a7d0a" title="Accesseur de l&#39;attribut notey. " alt="" coords="259,56,457,83"/>
+<area shape="rect" id="node4" href="$class_notes_couple.html#ad27081ad94a661ab624670062664a6bd" title="Accesseur de l&#39;attribut symetric. " alt="" coords="271,107,445,133"/>
 </map>
