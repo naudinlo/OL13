@@ -1,16 +1,20 @@
 <map id="QTask::saveNote" name="QTask::saveNote">
-<area shape="rect" id="node2" href="$class_q_note.html#a577f684ef199a17dc468d706b1383581" title="sauvegarde les modfications apporté par l&#39;utilisateur sur la note. " alt="" coords="175,237,295,264"/>
-<area shape="rect" id="node3" href="$class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="343,187,508,213"/>
-<area shape="rect" id="node14" href="$class_note.html#ab1a8b5e69f3f23ed460f4761c9d4863d" title="Affectation du champ title. " alt="" coords="376,237,475,264"/>
-<area shape="rect" id="node15" href="$class_note.html#a763d4659a671cf77b610e65417d9ff13" title="Affectation du champ lastmodif_date. " alt="" coords="344,288,507,315"/>
-<area shape="rect" id="node4" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="556,111,737,137"/>
-<area shape="rect" id="node5" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="567,161,726,188"/>
-<area shape="rect" id="node12" href="$class_note.html#abd4e40260ae1c7c621bbd85eea478a06" title="Affectation du champ nbIsRef. " alt="" coords="587,212,707,239"/>
-<area shape="rect" id="node13" href="$class_note.html#adc7d55aa12e59b2c67f91bd7f02935d8" title="Accesseur du champ nbIsRef. " alt="" coords="587,263,707,289"/>
-<area shape="rect" id="node6" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="785,5,957,32"/>
-<area shape="rect" id="node7" href="$class_notes_manager_1_1_iterator.html#a09b30631af5b7627b2b5a655a8ac450d" title="Vérifie si l&#39;itérateur est arrivé à la fin de la liste. " alt="" coords="794,57,949,98"/>
-<area shape="rect" id="node8" href="$class_notes_manager_1_1_iterator.html#a99e3eb098c3b5c7b3041731d10a18c88" title="Retourne la liste des toutes les versions de la note courante. " alt="" coords="794,122,949,163"/>
-<area shape="rect" id="node9" href="$class_notes_manager_1_1_iterator.html#a4fd73444f2edd5f196d7b950527f5a90" title="Retourne la dernière version de la note courante. " alt="" coords="794,187,949,229"/>
-<area shape="rect" id="node10" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="829,253,914,280"/>
-<area shape="rect" id="node11" href="$class_notes_manager_1_1_iterator.html#a4a6d6c9d3120acf8052728c0212b5ccd" title="Incrémentation de l&#39;itérateur. " alt="" coords="794,305,949,346"/>
+<area shape="rect" id="node2" href="$class_q_note.html#a577f684ef199a17dc468d706b1383581" title="sauvegarde les modfications apporté par l&#39;utilisateur sur la note. " alt="" coords="178,237,298,264"/>
+<area shape="rect" id="node16" href="$class_task.html#ad463acfa4bddcc649113c25ea3fe36b8" title="Affectation de l&#39;attribut action. " alt="" coords="181,288,295,315"/>
+<area shape="rect" id="node17" href="$class_task.html#a994b79a94eca42dc5d0de46122397659" title="Affectation de l&#39;attribut dueDate. " alt="" coords="175,339,301,365"/>
+<area shape="rect" id="node18" href="$class_task.html#a593a947b4be458bd94f94bcc91a21e57" title="Affectation de l&#39;attribut priority. " alt="" coords="179,389,297,416"/>
+<area shape="rect" id="node19" href="$class_task.html#aa76f619ae910047bd304797639eda9d5" title="Affectation de l&#39;attribut status. " alt="" coords="181,440,295,467"/>
+<area shape="rect" id="node3" href="$class_note.html#aacbb89b120107a4b25dd16043908c693" title="Supprime l&#39;ensemble des références d&#39;une note. " alt="" coords="349,187,515,213"/>
+<area shape="rect" id="node14" href="$class_note.html#ab1a8b5e69f3f23ed460f4761c9d4863d" title="Affectation du champ title. " alt="" coords="383,237,481,264"/>
+<area shape="rect" id="node15" href="$class_note.html#a763d4659a671cf77b610e65417d9ff13" title="Affectation du champ lastmodif_date. " alt="" coords="351,288,513,315"/>
+<area shape="rect" id="node4" href="$class_notes_manager.html#ad1a91e51ba8506c7ae7cd60d06bd075f" title="Permet d&#39;obtenir un pointeur sur le manager de notes. " alt="" coords="563,111,744,137"/>
+<area shape="rect" id="node5" href="$class_notes_manager.html#a9c401bfe7c91ab37a7c8c4db398e92ff" title="Retourne une réfèrence sur l&#39;ID d&#39;une note spécifiée en paramètre. " alt="" coords="574,161,733,188"/>
+<area shape="rect" id="node12" href="$class_note.html#abd4e40260ae1c7c621bbd85eea478a06" title="Affectation du champ nbIsRef. " alt="" coords="593,212,713,239"/>
+<area shape="rect" id="node13" href="$class_note.html#adc7d55aa12e59b2c67f91bd7f02935d8" title="Accesseur du champ nbIsRef. " alt="" coords="593,263,713,289"/>
+<area shape="rect" id="node6" href="$class_notes_manager.html#a4907351a20cc85b1fe0327ac1b15c7da" title="Permet d&#39;accéder à l&#39;itérateur de notes. " alt="" coords="792,5,964,32"/>
+<area shape="rect" id="node7" href="$class_notes_manager_1_1_iterator.html#a09b30631af5b7627b2b5a655a8ac450d" title="Vérifie si l&#39;itérateur est arrivé à la fin de la liste. " alt="" coords="801,57,955,98"/>
+<area shape="rect" id="node8" href="$class_notes_manager_1_1_iterator.html#a99e3eb098c3b5c7b3041731d10a18c88" title="Retourne la liste des toutes les versions de la note courante. " alt="" coords="801,122,955,163"/>
+<area shape="rect" id="node9" href="$class_notes_manager_1_1_iterator.html#a4fd73444f2edd5f196d7b950527f5a90" title="Retourne la dernière version de la note courante. " alt="" coords="801,187,955,229"/>
+<area shape="rect" id="node10" href="$class_note.html#afafbebe4aa35b8d29d903bc53fa31929" title="Accesseur du champ id. " alt="" coords="835,253,921,280"/>
+<area shape="rect" id="node11" href="$class_notes_manager_1_1_iterator.html#a4a6d6c9d3120acf8052728c0212b5ccd" title="Incrémentation de l&#39;itérateur. " alt="" coords="801,305,955,346"/>
 </map>

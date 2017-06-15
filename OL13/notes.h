@@ -259,13 +259,53 @@ private:
     unsigned int priority;
     QDateTime dueDate;
 public:
+    /**
+     * @fn getAction
+     * @brief Accesseur de l'attribut action
+     * @return QString
+     */
     const QString getAction() const {return action;}
+    /**
+     * @fn setAction
+     * @brief Affectation de l'attribut action
+     * @param QString& a
+     */
     void setAction(const QString& a) {generateRef(a); action=a;}
+    /**
+     * @fn getStatus
+     * @brief Accesseur de l'attribut status
+     * @return ENUM::StatusType
+     */
     ENUM::StatusType getStatus() const {return status;}
+    /**
+     * @fn setStatus
+     * @brief Affectation de l'attribut status
+     * @param ENUM::StatusType& s
+     */
     void setStatus(const ENUM::StatusType& s) {status=s;}
+    /**
+     * @fn getPriority
+     * @brief Accesseur de l'attribut priority
+     * @return int
+     */
     int getPriority() const {return priority;}
+    /**
+     * @fn setPriority
+     * @brief Affectation de l'attribut priority
+     * @param unsigned int p
+     */
     void setPriority(unsigned int p) {priority=p;}
+    /**
+     * @fn getDueDate
+     * @brief Accesseur de l'attribut dueDate
+     * @return QDateTime&
+     */
     const QDateTime& getDueDate() const{return dueDate;}
+    /**
+     * @fn setDueDate
+     * @brief Affectation de l'attribut dueDate
+     * @param QDateTime d
+     */
     void setDueDate(const QDateTime d){dueDate=d;}
 
     //Constructeurs

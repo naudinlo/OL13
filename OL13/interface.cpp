@@ -72,7 +72,7 @@ interface::interface(): QMainWindow()
         MenuFichier->addAction(ActionSave);
 
         //Action: supprimer une note
-            //TODO : supprimer note ! Créer slot supprimer_note
+
             QAction *ActionSupprimer=new QAction("&Supprimer note",this);
             ActionSupprimer->setIcon(QIcon("delete_Note.jpeg"));
             connect(ActionSupprimer,SIGNAL(triggered(bool)),this,SLOT(supprimer_note()));    //TODO : une fenêtre avec l'ensemble des notes et on choisit celle à supprimer

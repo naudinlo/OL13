@@ -1,5 +1,9 @@
 <map id="QTask::load_note" name="QTask::load_note">
-<area shape="rect" id="node2" href="$class_q_note.html#adca0a8f2851fbb1c3843ca4fe7957c11" title="Methode Virtuel charge les données d&#39;une note dans l&#39;interface graphique. " alt="" coords="177,5,300,32"/>
-<area shape="rect" id="node4" href="$class_q_note.html#ae6fb14b839acc1979b145a892d6a0a92" title="mode lecture seul de la note. " alt="" coords="179,56,298,83"/>
-<area shape="rect" id="node3" href="$class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="348,5,447,32"/>
+<area shape="rect" id="node2" href="$class_q_note.html#adca0a8f2851fbb1c3843ca4fe7957c11" title="Methode Virtuel charge les données d&#39;une note dans l&#39;interface graphique. " alt="" coords="179,5,302,32"/>
+<area shape="rect" id="node4" href="$class_task.html#a3c99152a4a000b4b3ae8a50b2c450825" title="Accesseur de l&#39;attribut action. " alt="" coords="184,56,297,83"/>
+<area shape="rect" id="node5" href="$class_task.html#a3eff8551f6ca6e268a2127388a097720" title="Accesseur de l&#39;attribut status. " alt="" coords="183,107,298,133"/>
+<area shape="rect" id="node6" href="$class_task.html#abee7cd65af2bb2028dfaa3ec0d10bfe5" title="Accesseur de l&#39;attribut dueDate. " alt="" coords="177,157,304,184"/>
+<area shape="rect" id="node7" href="$class_task.html#a3fbfcf08d8976c01282220f7f4c74c91" title="Accesseur de l&#39;attribut priority. " alt="" coords="182,208,299,235"/>
+<area shape="rect" id="node8" href="$class_q_note.html#ae6fb14b839acc1979b145a892d6a0a92" title="mode lecture seul de la note. " alt="" coords="181,259,300,285"/>
+<area shape="rect" id="node3" href="$class_note.html#afd40e5372b7fd231bbd31038bf0bb4d9" title="Accesseur du champ title. " alt="" coords="352,5,451,32"/>
 </map>
